@@ -1,0 +1,48 @@
+/* Hide the menu initially */
+nav ul {
+    list-style-type: none;
+    position: fixed;  /* So it becomes a sidebar */
+    top: 0;
+    left: -250px;     /* Hidden off-screen initially */
+    height: 100%;     /* Full height */
+    width: 250px;     /* Sidebar width */
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    transition: left 0.3s ease;  /* Smooth transition */
+}
+
+nav ul.active {
+    left: 0;  /* Slide in the menu when 'active' class is added */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Show the hamburger menu icon on smaller screens */
+.menu-toggle {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* For larger screens, display the menu as a regular horizontal bar */
+@media (min-width: 768px) {
+    nav ul {
+        position: static;  /* Back to normal */
+        width: auto;       /* Normal width */
+        height: auto;
+        flex-direction: row;  /* Horizontal menu */
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: none;  /* Hide hamburger icon on larger screens */
+    }
+}
