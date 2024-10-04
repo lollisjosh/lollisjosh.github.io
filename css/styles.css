@@ -3,7 +3,7 @@ nav ul {
     list-style-type: none;
     position: fixed;  /* So it becomes a sidebar */
     top: 0;
-    left: -250px;     /* Hidden off-screen initially */
+    left: -300px;     /* Hidden off-screen initially */
     height: 100%;     /* Full height */
     width: 250px;     /* Sidebar width */
     background-color: #333;
@@ -12,6 +12,7 @@ nav ul {
     gap: 20px;
     padding: 20px;
     transition: left 0.3s ease;  /* Smooth transition */
+    z-index: 1000;    /* Ensure it appears above other content */
 }
 
 nav ul.active {
@@ -24,12 +25,13 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Show the hamburger menu icon on smaller screens */
+/* Ensure hamburger menu is visible */
 .menu-toggle {
     display: block;
     font-size: 30px;
     cursor: pointer;
-    color: white;
+    color: black;
+    z-index: 1001;    /* Ensure it appears above other content */
 }
 
 /* For larger screens, display the menu as a regular horizontal bar */

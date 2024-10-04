@@ -25,4 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             document.getElementById("pfp-placeholder").innerHTML = data;
         });
+
+        const menuToggle = document.getElementById("mobile-menu");
+        const navbar = document.getElementById("navbar").querySelector("ul");
+    
+        // Ensure the event listener is attached to the menu toggle
+        menuToggle.addEventListener("click", function() {
+            navbar.classList.toggle("active"); // This adds or removes the 'active' class
+        });
 });
