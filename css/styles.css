@@ -2,7 +2,7 @@
 nav ul {
     list-style-type: none;
     position: fixed;  /* So it becomes a sidebar */
-    top: 15px;
+    top: 32px;
     left: -300px;     /* Hidden off-screen initially */
     height: auto;     /* Full height */
     width: 75px;     /* Sidebar width */
@@ -29,7 +29,7 @@ nav ul li a {
 .menu-toggle {
     display: block;
     position: static;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
     color: black;
     z-index: 10    /* Ensure it appears above other content */
