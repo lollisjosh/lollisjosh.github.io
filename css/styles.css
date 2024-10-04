@@ -2,17 +2,17 @@
 nav ul {
     list-style-type: none;
     position: fixed;  /* So it becomes a sidebar */
-    top: 0;
+    top: 15px;
     left: -300px;     /* Hidden off-screen initially */
-    height: 100%;     /* Full height */
-    width: 250px;     /* Sidebar width */
+    height: auto;     /* Full height */
+    width: 75px;     /* Sidebar width */
     background-color: #333;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
     transition: left 0.3s ease;  /* Smooth transition */
-    z-index: 1000;    /* Ensure it appears above other content */
+    z-index: 1;    /* Ensure it appears above other content */
 }
 
 nav ul.active {
@@ -28,10 +28,11 @@ nav ul li a {
 /* Ensure hamburger menu is visible */
 .menu-toggle {
     display: block;
+    position: static;
     font-size: 30px;
     cursor: pointer;
     color: black;
-    z-index: 1001;    /* Ensure it appears above other content */
+    z-index: 10    /* Ensure it appears above other content */
 }
 
 /* For larger screens, display the menu as a regular horizontal bar */
@@ -65,7 +66,7 @@ main {
     text-align: center;      /* Center the text */
     height: 100vh;           /* Take full viewport height */
     flex-direction: column;  /* Stack the elements vertically */
-    background-color: #f5f5f5; /* Optional: set background color */
+    background-color: white; /* Optional: set background color */
 }
 
 /* Styling the title (h1) */
