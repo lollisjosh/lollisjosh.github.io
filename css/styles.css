@@ -59,15 +59,17 @@ body, html {
 }
 
 /* Main section of the homepage */
+/* Main section of the homepage */
 main {
     display: flex;
     justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+    align-items: center; /* Align items at the top */
     text-align: center;      /* Center the text */
-    height: 100vh;           /* Take full viewport height */
+    min-height: 100vh;       /* Minimum height to fit the viewport */
     flex-direction: column;  /* Stack the elements vertically */
     background-color: white; /* Optional: set background color */
 }
+
 
 /* Styling the title (h1) */
 main h1 {
