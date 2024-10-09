@@ -119,3 +119,63 @@ footer p {
 footer a {
     margin-left: 10px;            /* Optional: add space between text and badge */
 }
+
+
+  
+ /* General form styles */
+#fs-frm {
+    display: flex;
+    flex-direction: column; /* Stack elements in a column */
+    width: 70%; /* Limit the width of the form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Add padding for better spacing */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    background-color: #f9f9f9; /* Optional: Background color */
+}
+
+/* Fieldset styles */
+#fs-frm-inputs {
+    display: flex;
+    flex-direction: column; /* Stack inputs in a column */
+}
+
+/* Label styles */
+label {
+    margin-bottom: 5px; /* Space below each label */
+    font-weight: bold; /* Make labels bold */
+}
+
+/* Input and textarea styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    min-width: 100%; /* Prevent the textarea from shrinking below the parent width */
+}
+
+/* Specifically target the textarea */
+textarea {
+    min-height: 100px; /* Set a minimum height for the textarea */
+    resize: vertical; /* Allow vertical resizing only if you want */
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    padding: 10px 15px; /* Padding for the button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
