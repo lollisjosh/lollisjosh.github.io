@@ -1,18 +1,26 @@
-/* Hide the menu initially */
+/* General body and html settings */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Styles */
 nav ul {
     list-style-type: none;
-    position: fixed;  /* So it becomes a sidebar */
+    position: fixed;
     top: 32px;
-    left: -300px;     /* Hidden off-screen initially */
-    height: auto;     /* Full height */
-    width: 75px;     /* Sidebar width */
+    left: -300px;  /* Hidden off-screen initially */
+    height: auto;
+    width: 75px;
     background-color: #333;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
     transition: left 0.3s ease;  /* Smooth transition */
-    z-index: 1;    /* Ensure it appears above other content */
+    z-index: 1;  /* Ensure it appears above other content */
 }
 
 nav ul.active {
@@ -25,22 +33,21 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Ensure hamburger menu is visible */
+/* Hamburger menu settings */
 .menu-toggle {
     display: block;
     position: static;
     font-size: 50px;
     cursor: pointer;
     color: black;
-    z-index: 10    /* Ensure it appears above other content */
+    z-index: 10;  /* Ensure it appears above other content */
 }
 
-/* For larger screens, display the menu as a regular horizontal bar */
+/* Responsive styles for larger screens */
 @media (min-width: 768px) {
     nav ul {
-        position: static;  /* Back to normal */
-        width: auto;       /* Normal width */
-        height: auto;
+        position: static;
+        width: auto;
         flex-direction: row;  /* Horizontal menu */
         left: 0;
     }
@@ -50,51 +57,41 @@ nav ul li a {
     }
 }
 
-/* Ensure body takes the full viewport height */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Main section of the homepage */
-/* Main section of the homepage */
+/* Main Section Styles */
 main {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Align items at the top */
-    text-align: center;      /* Center the text */
-    min-height: 100vh;       /* Minimum height to fit the viewport */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Align items at the top */
+    text-align: center;  /* Center the text */
+    min-height: 100vh;  /* Minimum height to fit the viewport */
     flex-direction: column;  /* Stack the elements vertically */
-    background-color: white; /* Optional: set background color */
+    background-color: white;  /* Optional background color */
 }
 
-
-/* Styling the title (h1) */
+/* Title Styling */
 main h1 {
-    font-size: 4rem; /* Make the title large */
-    color: #333;     /* Set title color */
-    margin: 16px;       /* Remove default margin */
+    font-size: 4rem;
+    color: #333;
+    margin: 16px;
 }
 
-/* Styling the paragraph */
+/* Paragraph Styling */
 main p {
-    font-size: 1.5rem; /* Increase font size for the description */
-    color: #666;       /* Set paragraph color */
-    margin: 10px 0;    /* Add some spacing around paragraphs */
+    font-size: 1.5rem;
+    color: #666;
+    margin: 10px 0;
 }
 
-/* Image styling */
+/* Image Styling */
 .pfp {
-    width: 150px;          /* Set the width of the image */
-    height: 150px;         /* Set the height of the image */
-    object-fit: cover;     /* Ensure the image fills the circle without distortion */
-    border-radius: 50%;    /* Make the image circular */
-    border: 2px solid #333; /* Optional: Add a border for better visibility */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;  /* Ensure image fills the circle without distortion */
+    border-radius: 50%;  /* Make the image circular */
+    border: 2px solid #333;
 }
 
-/* For larger screens, you can increase the title and paragraph font size */
+/* Responsive font sizes for larger screens */
 @media (min-width: 768px) {
     main h1 {
         font-size: 5rem;
@@ -105,135 +102,129 @@ main p {
     }
 }
 
+/* Footer Styles */
 footer {
-    display: flex;                 /* Use Flexbox for layout */
-    justify-content: space-between; /* Space items evenly */
-    align-items: center;           /* Center items vertically */
-    padding: 10px;                /* Optional: add padding */
-    background-color: #333;       /* Optional: footer background color */
-    color: white;                  /* Optional: footer text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
 }
 
 footer p {
-    margin: 0;                    /* Remove default margin */
+    margin: 0;
 }
 
 footer a {
-    margin-left: 10px;            /* Optional: add space between text and badge */
+    margin-left: 10px;  /* Optional space between text and badge */
 }
 
-
-  
- /* General form styles */
+/* Form Styles */
 #fs-frm {
     display: flex;
-    flex-direction: column; /* Stack elements in a column */
-    width: 70%; /* Limit the width of the form */
-    margin: 0 auto; /* Center the form */
-    padding: 20px; /* Add padding for better spacing */
-    border: 1px solid #ccc; /* Optional: Add a border */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    background-color: #f9f9f9; /* Optional: Background color */
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-/* Fieldset styles */
+/* Fieldset Styles */
 #fs-frm-inputs {
     display: flex;
-    flex-direction: column; /* Stack inputs in a column */
+    flex-direction: column;
 }
 
-/* Label styles */
+/* Label Styles */
 label {
-    margin-bottom: 5px; /* Space below each label */
-    font-weight: bold; /* Make labels bold */
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-/* Input and textarea styles */
+/* Input and Textarea Styles */
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%; /* Full width for inputs */
-    padding: 10px; /* Padding inside inputs */
-    margin-bottom: 15px; /* Space below inputs */
-    border: 1px solid #ccc; /* Border for inputs */
-    border-radius: 4px; /* Rounded corners for inputs */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    min-width: 100%; /* Prevent the textarea from shrinking below the parent width */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+    min-width: 100%;  /* Prevent textarea from shrinking below parent width */
 }
 
-/* Specifically target the textarea */
+/* Textarea specific styles */
 textarea {
-    min-height: 100px; /* Set a minimum height for the textarea */
-    resize: vertical; /* Allow vertical resizing only if you want */
+    min-height: 100px;
+    resize: vertical;  /* Allow vertical resizing only */
 }
 
-/* Submit button styles */
+/* Submit Button Styles */
 input[type="submit"] {
-    padding: 10px 15px; /* Padding for the button */
-    background-color: #007bff; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size for the button */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
 }
 
-/* Center the embedded PDF and set a fixed width and height */
+/* PDF Container Styles */
 .pdf-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;      /* Full width of the container */
-    height: 100vh;    /* Full viewport height */
-    background-color: #f9f9f9; /* Background color for contrast */
-    padding: 20px;    /* Optional padding around the PDF */
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
 }
 
 .pdf-container object {
-    width: 80%;       /* Adjust width as necessary */
-    height: 90vh;     /* Full height minus some padding */
-    border: 2px solid #333;  /* Optional: Border around the PDF */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+    width: 80%;
+    height: 90vh;
+    border: 2px solid #333;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* For smaller screens */
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .pdf-container object {
-        width: 75%;     /* Make the PDF take up more width on small screens */
-        height: auto;   /* Reduce height for smaller screens */
+        width: 75%;
+        height: auto;
     }
 }
 
-/* General styles for the figure containing the iframe */
+/* Figure and Iframe Styles */
 figure {
     display: flex;
-    justify-content: center;    /* Center the iframe horizontally */
-    align-items: center;        /* Center the iframe vertically */
-    margin: 10px 0;             /* Add some space above and below the figure */
-    width: 75%;                /* Ensure the figure takes the full width of its container */
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 75%;
 }
 
-/* Styles for the iframe */
 iframe {
-    width: 75%;                 /* Set a default width for the iframe */
-    height: 600px;              /* Set the height of the iframe */
-    border: none;               /* Remove the border around the iframe */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
-    border-radius: 8px;         /* Optional: Add rounded corners */
+    width: 75%;
+    height: 600px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-/* For smaller screens */
+/* Responsive styles for iframe on smaller screens */
 @media (max-width: 768px) {
     iframe {
-        width: 75%;            /* Make the iframe take the full width on small screens */
-        height: 350px;          /* Reduce the height for smaller screens */
+        width: 75%;
+        height: 350px;
     }
 }
-
-
-
-
