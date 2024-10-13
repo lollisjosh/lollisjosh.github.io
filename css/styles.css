@@ -75,7 +75,7 @@ main {
 main h1 {
     font-size: 4rem; /* Make the title large */
     color: #333;     /* Set title color */
-    margin: 0;       /* Remove default margin */
+    margin: 16px;       /* Remove default margin */
 }
 
 /* Styling the paragraph */
@@ -180,4 +180,30 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Center the embedded PDF and set a fixed width and height */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;      /* Full width of the container */
+    height: 100vh;    /* Full viewport height */
+    background-color: #f9f9f9; /* Background color for contrast */
+    padding: 20px;    /* Optional padding around the PDF */
+}
+
+.pdf-container object {
+    width: 80%;       /* Adjust width as necessary */
+    height: 90vh;     /* Full height minus some padding */
+    border: 2px solid #333;  /* Optional: Border around the PDF */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .pdf-container object {
+        width: 75%;     /* Make the PDF take up more width on small screens */
+        height: auto;   /* Reduce height for smaller screens */
+    }
 }
