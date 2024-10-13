@@ -208,8 +208,31 @@ input[type="submit"]:hover {
     }
 }
 
+/* General styles for the figure containing the iframe */
+figure {
+    display: flex;
+    justify-content: center;    /* Center the iframe horizontally */
+    align-items: center;        /* Center the iframe vertically */
+    margin: 10px 0;             /* Add some space above and below the figure */
+    width: 75%;                /* Ensure the figure takes the full width of its container */
+}
 
+/* Styles for the iframe */
+iframe {
+    width: 75%;                 /* Set a default width for the iframe */
+    height: 600px;              /* Set the height of the iframe */
+    border: none;               /* Remove the border around the iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    border-radius: 8px;         /* Optional: Add rounded corners */
+}
 
+/* For smaller screens */
+@media (max-width: 768px) {
+    iframe {
+        width: 75%;            /* Make the iframe take the full width on small screens */
+        height: 350px;          /* Reduce the height for smaller screens */
+    }
+}
 
 
 
