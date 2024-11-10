@@ -1,10 +1,13 @@
 /* General body and html settings */
 body, html {
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);  /* Gradient background for the entire body */
+    color: #333;
 }
+
 
 /* Navigation Styles */
 nav ul {
@@ -12,15 +15,14 @@ nav ul {
     position: fixed;
     top: 32px;
     left: -300px;  /* Hidden off-screen initially */
-    height: auto;
-    width: 75px;
-    background-color: #333;
+    width: 250px;
+    background-color: #4b304e;  /* Deep plum background color for nav */
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    transition: left 0.3s ease;  /* Smooth transition */
-    z-index: 1;  /* Ensure it appears above other content */
+    transition: left 0.3s ease;
+    z-index: 1;
 }
 
 nav ul.active {
@@ -36,11 +38,13 @@ nav ul li a {
 /* Hamburger menu settings */
 .menu-toggle {
     display: block;
-    position: static;
-    font-size: 50px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
     cursor: pointer;
-    color: black;
-    z-index: 10;  /* Ensure it appears above other content */
+    color: #4b304e;
+    z-index: 10;
 }
 
 /* Responsive styles for larger screens */
@@ -48,58 +52,89 @@ nav ul li a {
     nav ul {
         position: static;
         width: auto;
-        flex-direction: row;  /* Horizontal menu */
+        flex-direction: row;
         left: 0;
+       /* background-color: transparent; */
     }
 
     .menu-toggle {
-        display: none;  /* Hide hamburger icon on larger screens */
+        display: none;
     }
 }
 
-/* Main Section Styles */
+/* Centering container in a flex context */
 main {
     display: flex;
-    justify-content: center;  /* Center horizontally */
-    align-items: center;  /* Align items at the top */
-    text-align: center;  /* Center the text */
-    min-height: 100vh;  /* Minimum height to fit the viewport */
-    flex-direction: column;  /* Stack the elements vertically */
-    background-color: white;  /* Optional background color */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
 }
 
-/* Title Styling */
 main h1 {
     font-size: 4rem;
-    color: #333;
+    color: #4b304e;
     margin: 16px;
 }
 
-/* Paragraph Styling */
 main p {
     font-size: 1.5rem;
     color: #666;
     margin: 10px 0;
 }
 
-/* Image Styling */
+/* Centering the intro section and profile picture */
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Center the placeholder container */
+#pfp-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Gradient border container */
+.pfp-border {
+    width: 166px; /* Slightly larger than the image */
+    height: 166px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #4b304e, #181986); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image styling */
 .pfp {
     width: 150px;
     height: 150px;
-    object-fit: cover;  /* Ensure image fills the circle without distortion */
-    border-radius: 50%;  /* Make the image circular */
-    border: 2px solid #333;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-/* Responsive font sizes for larger screens */
-@media (min-width: 768px) {
-    main h1 {
-        font-size: 5rem;
-    }
+/* Header placeholder styling to touch the top of the viewport */
+#header-placeholder {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px; /* Adjust this height as needed */
+    background-color: #4b304e; /* Same deep plum color as header */
+    margin: 0;
+    padding: 0;
+    z-index: 10; /* Ensures header stays above other elements */
+}
 
-    main p {
-        font-size: 2rem;
-    }
+header {
+    background-color: #4b304e;  /* Matching deep plum color for footer */
+
 }
 
 /* Footer Styles */
@@ -108,7 +143,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #333;
+    background-color: #4b304e;  /* Matching deep plum color for footer */
     color: white;
 }
 
@@ -117,7 +152,7 @@ footer p {
 }
 
 footer a {
-    margin-left: 10px;  /* Optional space between text and badge */
+    margin-left: 10px;
 }
 
 /* Form Styles */
@@ -127,9 +162,9 @@ footer a {
     width: 70%;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #c758d3;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #f9f9f900;
 }
 
 /* Fieldset Styles */
@@ -138,35 +173,31 @@ footer a {
     flex-direction: column;
 }
 
-/* Label Styles */
 label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-/* Input and Textarea Styles */
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #c758d3;  /* Adjusted color for form input borders */
     border-radius: 4px;
-    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
-    min-width: 100%;  /* Prevent textarea from shrinking below parent width */
+    box-sizing: border-box;
 }
 
 /* Textarea specific styles */
 textarea {
     min-height: 100px;
-    resize: vertical;  /* Allow vertical resizing only */
+    resize: vertical;
 }
 
-/* Submit Button Styles */
 input[type="submit"] {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #4b304e;
     color: white;
     border: none;
     border-radius: 4px;
@@ -175,7 +206,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #ed65ff;
 }
 
 /* PDF Container Styles */
@@ -185,7 +216,7 @@ input[type="submit"]:hover {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #f9f9f9;
+    background-color: #f9f9f900;
     padding: 20px;
 }
 
@@ -196,22 +227,35 @@ input[type="submit"]:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    .pdf-container object {
-        width: 75%;
-        height: auto;
-    }
+/* styles.css */
+
+/* Style for the chart container */
+#chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
+canvas {
+    width: 75vh !important;
+    height: auto !important;
+}
+
+#wakatimeLanguageChart {
+    width: 50%;   /* Adjust as needed */
+    max-width: 300px;
+    height: auto; /* Maintains aspect ratio */
+}
+
+
 /* Figure and Iframe Styles */
-figure {
+/* figure {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
     width: 75%;
-}
+} */
 
 iframe {
     width: 75%;
@@ -221,7 +265,6 @@ iframe {
     border-radius: 8px;
 }
 
-/* Responsive styles for iframe on smaller screens */
 @media (max-width: 768px) {
     iframe {
         width: 75%;

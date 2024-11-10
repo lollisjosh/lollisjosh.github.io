@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="css/styles.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -15,19 +15,86 @@
 
     <main>
         <h1>Skills</h1>
-        <a href="https://wakatime.com/@a45be745-6431-45a2-8c9d-c19040dcd283"><img
-                src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283.svg"
-                alt="Total time coded since Aug 12 2023" /></a>
-        <figure><iframe src="https://wakatime.com/share/@telloviz/a71a08c7-79ec-47e2-8962-0a4077fab094.svg"></iframe>
-        </figure>
 
-
+        <!-- Chart section -->
+        <div id="chart-container">
+            <canvas id="wakatimeLanguageChart"></canvas>
+        </div>
     </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
 
-    <script src="scripts.js"></script>
+    <!-- External JS files -->
+    <script>
+        // Load the header
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-placeholder").innerHTML = data;
+
+                    // Attach the hamburger menu toggle functionality after header is loaded
+                    const menuToggle = document.getElementById("mobile-menu");
+                    const navbar = document.getElementById("navbar").querySelector("ul");
+
+                    // Ensure the event listener is attached to the menu toggle
+                    menuToggle.addEventListener("click", function () {
+                        navbar.classList.toggle("active"); // This adds or removes the 'active' class
+                    });
+                });
+
+            // Load the footer
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                });
+
+            // Load WakaTime data and chart
+            fetch('https://wakatime.com/share/@telloviz/e49e51a9-de2a-4db3-aa66-877d02a49ec1.json')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.data.map(lang => lang.name);
+                    const dataValues = data.data.map(lang => lang.percent);
+                    const backgroundColors = data.data.map(lang => lang.color);
+
+                    // Initialize the chart after data is fetched
+                    const ctx = document.getElementById('wakatimeLanguageChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'pie', // Chart type
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: dataValues,
+                                backgroundColor: backgroundColors,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            let label = context.label || '';
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            label += context.raw.toFixed(2) + '%';
+                                            return label;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching WakaTime data:', error));
+        });
+    </script>
 </body>
 
 </html>
