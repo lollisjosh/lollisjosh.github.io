@@ -297,6 +297,10 @@ canvas {
     #language-data-message {
         display: block;
     }
+
+    #editor-data-message {
+        display: block;
+    }
 }
 
 

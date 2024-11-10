@@ -29,6 +29,14 @@
         <div id="chart-container">
             <canvas id="wakatimeAllTimeLangChart" class="wakatimeLangChart"></canvas>
         </div>
+
+        <h2>Editors Used</h2>
+        <h5 id="chart-data-message">Select a piece of pie for editor data.</h5>
+
+        <!-- Chart section for All Time -->
+        <div id="chart-container">
+            <canvas id="editorChart" class="wakatimeLangChart"></canvas>
+        </div>
     </main>
 
     <!-- Footer placeholder -->
@@ -37,128 +45,176 @@
     <!-- External JS files -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    // Load the header
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
+            // Load the header
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-placeholder").innerHTML = data;
 
-            // Attach the hamburger menu toggle functionality after header is loaded
-            const menuToggle = document.getElementById("mobile-menu");
-            const navbar = document.getElementById("navbar").querySelector("ul");
+                    // Attach the hamburger menu toggle functionality after header is loaded
+                    const menuToggle = document.getElementById("mobile-menu");
+                    const navbar = document.getElementById("navbar").querySelector("ul");
 
-            // Ensure the event listener is attached to the menu toggle
-            menuToggle.addEventListener("click", function () {
-                navbar.classList.toggle("active"); // This adds or removes the 'active' class
-            });
-        });
+                    // Ensure the event listener is attached to the menu toggle
+                    menuToggle.addEventListener("click", function () {
+                        navbar.classList.toggle("active"); // This adds or removes the 'active' class
+                    });
+                });
 
-    // Load the footer
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
+            // Load the footer
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                });
 
-    // Load WakaTime data for "Past 30 Days"
-    fetch('https://wakatime.com/share/@telloviz/e49e51a9-de2a-4db3-aa66-877d02a49ec1.json')
-        .then(response => response.json())
-        .then(data => {
-            const labels = data.data.map(lang => lang.name);
-            const dataValues = data.data.map(lang => lang.percent);
-            const backgroundColors = data.data.map(lang => lang.color);
-            const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
+            // Load WakaTime data for "Past 30 Days"
+            fetch('https://wakatime.com/share/@telloviz/e49e51a9-de2a-4db3-aa66-877d02a49ec1.json')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.data.map(lang => lang.name);
+                    const dataValues = data.data.map(lang => lang.percent);
+                    const backgroundColors = data.data.map(lang => lang.color);
+                    const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
 
-            // Initialize the "Past 30 Days" chart
-            const ctx30Days = document.getElementById('wakatime30DayLangChart').getContext('2d');
-            new Chart(ctx30Days, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: dataValues,
-                        backgroundColor: backgroundColors,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            display: false,
+                    // Initialize the "Past 30 Days" chart
+                    const ctx30Days = document.getElementById('wakatime30DayLangChart').getContext('2d');
+                    new Chart(ctx30Days, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: dataValues,
+                                backgroundColor: backgroundColors,
+                            }]
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.label || '';
-                                    let index = context.dataIndex; // Get the index of the current segment
-                                    let time = timeSpent[index];  // Get the time spent on that language
-                                    if (label) {
-                                        label += ': ';
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    display: false,
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            let label = context.label || '';
+                                            let index = context.dataIndex; // Get the index of the current segment
+                                            let time = timeSpent[index];  // Get the time spent on that language
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            // Display both percentage and time
+                                            label += context.raw.toFixed(2) + '%'; // Show percentage
+                                            label += ' (' + time + ')'; // Append time spent
+                                            return label;
+                                        }
                                     }
-                                    // Display both percentage and time
-                                    label += context.raw.toFixed(2) + '%'; // Show percentage
-                                    label += ' (' + time + ')'; // Append time spent
-                                    return label;
                                 }
                             }
                         }
-                    }
-                }
-            });
-        })
-        .catch(error => console.error('Error fetching WakaTime data for 30 Days:', error));
+                    });
+                })
+                .catch(error => console.error('Error fetching WakaTime data for 30 Days:', error));
 
-    // Load WakaTime data for "All Time"
-    fetch('https://wakatime.com/share/@telloviz/735e4f4d-0406-457a-a0e3-b376bf66fbb8.json')
-        .then(response => response.json())
-        .then(data => {
-            const labels = data.data.map(lang => lang.name);
-            const dataValues = data.data.map(lang => lang.percent);
-            const backgroundColors = data.data.map(lang => lang.color);
-            const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
+            // Load WakaTime data for "All Time"
+            fetch('https://wakatime.com/share/@telloviz/735e4f4d-0406-457a-a0e3-b376bf66fbb8.json')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.data.map(lang => lang.name);
+                    const dataValues = data.data.map(lang => lang.percent);
+                    const backgroundColors = data.data.map(lang => lang.color);
+                    const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
 
-            // Initialize the "All Time" chart
-            const ctxAllTime = document.getElementById('wakatimeAllTimeLangChart').getContext('2d');
-            new Chart(ctxAllTime, {
-                type: 'pie',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        data: dataValues,
-                        backgroundColor: backgroundColors,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            display: false,
+                    // Initialize the "All Time" chart
+                    const ctxAllTime = document.getElementById('wakatimeAllTimeLangChart').getContext('2d');
+                    new Chart(ctxAllTime, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: dataValues,
+                                backgroundColor: backgroundColors,
+                            }]
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function (context) {
-                                    let label = context.label || '';
-                                    let index = context.dataIndex; // Get the index of the current segment
-                                    let time = timeSpent[index];  // Get the time spent on that language
-                                    if (label) {
-                                        label += ': ';
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    display: false,
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            let label = context.label || '';
+                                            let index = context.dataIndex; // Get the index of the current segment
+                                            let time = timeSpent[index];  // Get the time spent on that language
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            // Display both percentage and time
+                                            label += context.raw.toFixed(2) + '%'; // Show percentage
+                                            label += ' (' + time + ')'; // Append time spent
+                                            return label;
+                                        }
                                     }
-                                    // Display both percentage and time
-                                    label += context.raw.toFixed(2) + '%'; // Show percentage
-                                    label += ' (' + time + ')'; // Append time spent
-                                    return label;
                                 }
                             }
                         }
-                    }
-                }
-            });
-        })
-        .catch(error => console.error('Error fetching WakaTime data for All Time:', error));
-});
+                    });
+                })
+                .catch(error => console.error('Error fetching WakaTime data for All Time:', error));
 
+            // AJAX request to get Wakatime share data
+            // For Editors Used chart
+            fetch('https://wakatime.com/share/@telloviz/138147c5-aee1-43aa-82ac-934427b92c04.json')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.data.map(item => item.name);
+                    const dataValues = data.data.map(item => item.percent);
+                    const backgroundColors = data.data.map(item => item.color);
+                    const timeSpent = data.data.map(item => item.text);
+
+                    const ctx = document.getElementById('editorChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: dataValues,
+                                backgroundColor: backgroundColors,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                    display: false,
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            let label = context.label || '';
+                                            let index = context.dataIndex;
+                                            let time = timeSpent[index];
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            label += context.raw.toFixed(2) + '%';
+                                            label += ' (' + time + ')';
+                                            return label;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching editor data:', error));
+
+        });
     </script>
 </body>
 
