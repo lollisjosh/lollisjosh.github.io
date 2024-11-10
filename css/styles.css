@@ -11,6 +11,20 @@ html {
 }
 
 
+#navbar {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Fixed position so it stays on top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Take full width of the viewport */
+    height: 10%;
+    background-color: #4b304e; /* Deep plum background */
+    
+    z-index: 10; /* Keep it on top of other elements */
+}
+
 /* Navigation Styles */
 nav ul {
     list-style-type: none;
@@ -20,14 +34,20 @@ nav ul {
     /* Hidden off-screen initially */
     width: 250px;
     background-color: #4b304e;
-    /* Deep plum background color for nav */
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+    justify-content: space-between;  /* Distribute space evenly between items */
+    gap: 10px;  /* Adjust to desired space between items */
+    padding: 10px;
     transition: left 0.3s ease;
     z-index: 1;
+    
 }
+
+nav ul li {
+    flex-grow: 1;  /* Allow list items to grow and fill the available space */
+}
+
 
 nav ul.active {
     left: 0;
@@ -57,21 +77,19 @@ nav ul li a {
 /* Centering container in a flex context */
 main {
     display: flex;
-    justify-content: center;
+    justify-content: normal;
     align-items: center;
     /* Align items to the top */
     min-height: 100vh;
     /* Minimum height to fit the viewport */
     text-align: center;
     flex-direction: column;
-    margin-top: 50px;
-    /* Add margin to create space below the header */
+    margin-top: 65px; 
 }
 
 main h1 {
     font-size: 4rem;
     color: #4b304e;
-    margin: 10vh;
     padding-top: 0;
     text-align: center;
     justify-content: center;
@@ -126,7 +144,7 @@ main p {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 50px;
+    height: 65px;
     /* Adjust this height as needed */
     background-color: #4b304e;
     /* Same deep plum color as header */
