@@ -1,10 +1,12 @@
 /* General body and html settings */
-body, html {
+body,
+html {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);  /* Gradient background for the entire body */
+    background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
+    /* Gradient background for the entire body */
     color: #333;
 }
 
@@ -14,9 +16,11 @@ nav ul {
     list-style-type: none;
     position: fixed;
     top: 32px;
-    left: -300px;  /* Hidden off-screen initially */
+    left: -300px;
+    /* Hidden off-screen initially */
     width: 250px;
-    background-color: #4b304e;  /* Deep plum background color for nav */
+    background-color: #4b304e;
+    /* Deep plum background color for nav */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -26,7 +30,8 @@ nav ul {
 }
 
 nav ul.active {
-    left: 0;  /* Slide in the menu when 'active' class is added */
+    left: 0;
+    /* Slide in the menu when 'active' class is added */
 }
 
 nav ul li a {
@@ -47,35 +52,29 @@ nav ul li a {
     z-index: 10;
 }
 
-/* Responsive styles for larger screens */
-@media (min-width: 768px) {
-    nav ul {
-        position: static;
-        width: auto;
-        flex-direction: row;
-        left: 0;
-       /* background-color: transparent; */
-    }
 
-    .menu-toggle {
-        display: none;
-    }
-}
 
 /* Centering container in a flex context */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Align items to the top */
     min-height: 100vh;
+    /* Minimum height to fit the viewport */
     text-align: center;
     flex-direction: column;
+    margin-top: 50px;
+    /* Add margin to create space below the header */
 }
 
 main h1 {
     font-size: 4rem;
     color: #4b304e;
-    margin: 16px;
+    margin: 10vh;
+    padding-top: 0;
+    text-align: center;
+    justify-content: center;
 }
 
 main p {
@@ -103,10 +102,12 @@ main p {
 
 /* Gradient border container */
 .pfp-border {
-    width: 166px; /* Slightly larger than the image */
+    width: 166px;
+    /* Slightly larger than the image */
     height: 166px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #4b304e, #181986); /* Gradient background */
+    background: linear-gradient(to bottom, #4b304e, #181986);
+    /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,15 +126,19 @@ main p {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 50px; /* Adjust this height as needed */
-    background-color: #4b304e; /* Same deep plum color as header */
+    height: 50px;
+    /* Adjust this height as needed */
+    background-color: #4b304e;
+    /* Same deep plum color as header */
     margin: 0;
     padding: 0;
-    z-index: 10; /* Ensures header stays above other elements */
+    z-index: 10;
+    /* Ensures header stays above other elements */
 }
 
 header {
-    background-color: #4b304e;  /* Matching deep plum color for footer */
+    background-color: #4b304e;
+    /* Matching deep plum color for footer */
 
 }
 
@@ -143,7 +148,8 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #4b304e;  /* Matching deep plum color for footer */
+    background-color: #4b304e;
+    /* Matching deep plum color for footer */
     color: white;
 }
 
@@ -184,7 +190,8 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #c758d3;  /* Adjusted color for form input borders */
+    border: 1px solid #c758d3;
+    /* Adjusted color for form input borders */
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -227,24 +234,37 @@ input[type="submit"]:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* styles.css */
-
 /* Style for the chart container */
 #chart-container {
-    width: 100%;
-    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the content */
+    align-items: center;
+    /* Vertically center the content */
+    height: 100vh;
+    /* Make sure it takes up the full viewport height */
     margin: 0 auto;
+    /* Center the container horizontally */
+    width: 100%;
+    flex-direction: column;
+    /* Stack the chart and its legend vertically */
 }
 
+/* Canvas styling */
 canvas {
     width: 75vh !important;
     height: auto !important;
+    justify-content: center;
+    align-items: center;
 }
 
 #wakatimeLanguageChart {
-    width: 50%;   /* Adjust as needed */
-    max-width: 300px;
-    height: auto; /* Maintains aspect ratio */
+    width: 100%;
+    /* Full width of the container */
+    max-width: 600px;
+    /* Maximum size of the chart */
+    height: auto;
+    /* Keep the aspect ratio intact */
 }
 
 
@@ -266,8 +286,42 @@ iframe {
 }
 
 @media (max-width: 768px) {
+
+    #chart-container {
+        height: auto;
+        /* Allow the chart container to resize on mobile */
+        padding: 20px;
+        /* Optional: add padding for spacing */
+    }
+
+    canvas {
+        width: 80vw !important;
+        /* Scale the canvas based on viewport width */
+        height: auto !important;
+    }
+
+    #wakatimeLanguageChart {
+        max-width: 100%;
+        /* Allow it to scale within the parent container */
+    }
+
     iframe {
         width: 75%;
         height: 350px;
+    }
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+    nav ul {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        left: 0;
+        background-color: transparent;
+    }
+
+    .menu-toggle {
+        display: none;
     }
 }
