@@ -1,4 +1,8 @@
 /* General body and html settings */
+* {
+    box-sizing: border-box;
+}
+
 body,
 html {
     min-height: 100vh;
@@ -6,23 +10,22 @@ html {
     padding: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
-    /* Gradient background for the entire body */
     color: #333;
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-
 #navbar {
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Distribute items evenly */
-    align-items: center; /* Center items vertically */
-    position: fixed; /* Fixed position so it stays on top */
-    top: 0; /* Align to the top */
-    left: 0; /* Align to the left */
-    width: 100%; /* Take full width of the viewport */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 10%;
-    background-color: #4b304e; /* Deep plum background */
-    
-    z-index: 10; /* Keep it on top of other elements */
+    background-color: #4b304e;
+    z-index: 10;
+    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Navigation Styles */
@@ -31,27 +34,24 @@ nav ul {
     position: fixed;
     top: 32px;
     left: -300px;
-    /* Hidden off-screen initially */
     width: 250px;
     background-color: #4b304e;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-between;  /* Distribute space evenly between items */
-    gap: 10px;  /* Adjust to desired space between items */
+    justify-content: space-between;
+    gap: 10px;
     padding: 10px;
     transition: left 0.3s ease;
     z-index: 1;
-    
+    max-width: 90vw; /* Limit width to prevent overflow */
 }
 
 nav ul li {
-    flex-grow: 1;  /* Allow list items to grow and fill the available space */
+    flex-grow: 1;
 }
-
 
 nav ul.active {
     left: 0;
-    /* Slide in the menu when 'active' class is added */
 }
 
 nav ul li a {
@@ -70,21 +70,18 @@ nav ul li a {
     cursor: pointer;
     color: #4b304e;
     z-index: 10;
+    max-width: 100vw; /* Prevent overflow */
 }
-
-
 
 /* Centering container in a flex context */
 main {
     display: flex;
     justify-content: normal;
     align-items: center;
-    /* Align items to the top */
     min-height: 100vh;
-    /* Minimum height to fit the viewport */
     text-align: center;
     flex-direction: column;
-    margin-top: 65px; 
+    margin-top: 65px;
 }
 
 main h1 {
@@ -121,11 +118,9 @@ main p {
 /* Gradient border container */
 .pfp-border {
     width: 166px;
-    /* Slightly larger than the image */
     height: 166px;
     border-radius: 50%;
     background: linear-gradient(to bottom, #4b304e, #181986);
-    /* Gradient background */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,36 +134,33 @@ main p {
     border-radius: 50%;
 }
 
-/* Header placeholder styling to touch the top of the viewport */
+/* Header placeholder styling */
 #header-placeholder {
     position: fixed;
     top: 0;
     width: 100%;
     height: 65px;
-    /* Adjust this height as needed */
     background-color: #4b304e;
-    /* Same deep plum color as header */
     margin: 0;
     padding: 0;
     z-index: 10;
-    /* Ensures header stays above other elements */
+    max-width: 100vw; /* Prevent overflow */
 }
 
 header {
     background-color: #4b304e;
-    /* Matching deep plum color for footer */
-
 }
 
 /* Footer Styles */
 footer {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #4b304e;
-    /* Matching deep plum color for footer */
     color: white;
+    max-width: 100vw; /* Prevent overflow */
 }
 
 footer p {
@@ -189,6 +181,7 @@ footer a {
     border: 1px solid #c758d3;
     border-radius: 5px;
     background-color: #f9f9f900;
+    max-width: 90vw; /* Prevent overflow */
 }
 
 /* Fieldset Styles */
@@ -209,7 +202,6 @@ textarea {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #c758d3;
-    /* Adjusted color for form input borders */
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -243,6 +235,7 @@ input[type="submit"]:hover {
     height: 100vh;
     background-color: #f9f9f900;
     padding: 20px;
+    max-width: 100vw; /* Prevent overflow */
 }
 
 .pdf-container object {
@@ -256,16 +249,13 @@ input[type="submit"]:hover {
 #chart-container {
     display: flex;
     justify-content: center;
-    /* Horizontally center the content */
     align-items: center;
-    /* Vertically center the content */
     height: 100vh;
-    /* Make sure it takes up the full viewport height */
     margin: 0 auto;
-    /* Center the container horizontally */
     width: 100%;
     flex-direction: column;
-    /* Stack the chart and its legend vertically */
+    padding: 0;
+    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Canvas styling */
@@ -275,16 +265,13 @@ canvas {
     justify-content: center;
     align-items: center;
     padding: 2%;
-
 }
 
 .wakatimeLanguageChart {
     width: 75%;
-    /* Full width of the container */
     max-width: 600px;
-    /* Maximum size of the chart */
     height: auto;
-    /* Keep the aspect ratio intact */
+    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Default: Hide the element on all screen sizes */
@@ -294,55 +281,26 @@ canvas {
 
 /* Mobile view: Show the element only on screens smaller than 768px */
 @media screen and (max-width: 768px) {
-    #language-data-message {
-        display: block;
-    }
-
+    #language-data-message,
     #editor-data-message {
         display: block;
     }
-}
-
-
-/* Figure and Iframe Styles */
-/* figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    width: 75%;
-} */
-
-iframe {
-    width: 75%;
-    height: 600px;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
 
     #chart-container {
         height: auto;
-        /* Allow the chart container to resize on mobile */
-        padding: 20px;
-        /* Optional: add padding for spacing */
     }
 
     canvas {
         width: 80vw !important;
-        /* Scale the canvas based on viewport width */
         height: auto !important;
     }
 
-    #wakatimeLanguageChart {
-        max-width: 100%;
-        /* Allow it to scale within the parent container */
+    .wakatimeLanguageChart {
+        max-width: 100vw;
     }
 
     iframe {
-        width: 75%;
+        width: 100%;
         height: 350px;
     }
 }
