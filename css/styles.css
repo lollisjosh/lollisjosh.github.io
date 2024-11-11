@@ -1,8 +1,4 @@
 /* General body and html settings */
-* {
-    box-sizing: border-box;
-}
-
 body,
 html {
     min-height: 100vh;
@@ -11,7 +7,6 @@ html {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 #navbar {
@@ -25,52 +20,55 @@ html {
     height: 10%;
     background-color: #4b304e;
     z-index: 10;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Navigation Styles */
 nav ul {
     list-style-type: none;
     position: fixed;
-    top: 32px;
-    left: -300px;
+    top: -300px;  /* Start offscreen */
+    left: 0;
     width: 250px;
     background-color: #4b304e;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items vertically */
     gap: 10px;
     padding: 10px;
-    transition: left 0.3s ease;
+    transition: top 0.6s ease;  /* Transition only for the top property */
     z-index: 1;
-    max-width: 90vw; /* Limit width to prevent overflow */
 }
 
+/* Add padding on the left to the ul itself for consistency */
 nav ul li {
     flex-grow: 1;
+    font-size: 32px;
+    margin-left: 3%;  /* This adds spacing to the left of each li */
 }
 
 nav ul.active {
-    left: 0;
+    top: 32px;  /* Moves the nav to the top of the screen */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    /* Keep margin-left on the link if you want individual spacing, 
+       but it should be consistent with the li's margin-left */
 }
 
 /* Hamburger menu settings */
 .menu-toggle {
     display: block;
     position: fixed;
-    top: 20px;
     left: 20px;
+    justify-content: center;
     font-size: 30px;
     cursor: pointer;
-    color: #4b304e;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #f4a0ff, #4b304e);
     z-index: 10;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Centering container in a flex context */
@@ -89,7 +87,6 @@ main h1 {
     color: #4b304e;
     padding-top: 0;
     text-align: center;
-    justify-content: center;
 }
 
 main p {
@@ -134,7 +131,7 @@ main p {
     border-radius: 50%;
 }
 
-/* Header placeholder styling */
+/* Header placeholder styling to touch the top of the viewport */
 #header-placeholder {
     position: fixed;
     top: 0;
@@ -144,7 +141,6 @@ main p {
     margin: 0;
     padding: 0;
     z-index: 10;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 header {
@@ -160,7 +156,6 @@ footer {
     padding: 10px;
     background-color: #4b304e;
     color: white;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 footer p {
@@ -181,7 +176,6 @@ footer a {
     border: 1px solid #c758d3;
     border-radius: 5px;
     background-color: #f9f9f900;
-    max-width: 90vw; /* Prevent overflow */
 }
 
 /* Fieldset Styles */
@@ -206,7 +200,6 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Textarea specific styles */
 textarea {
     min-height: 100px;
     resize: vertical;
@@ -235,7 +228,6 @@ input[type="submit"]:hover {
     height: 100vh;
     background-color: #f9f9f900;
     padding: 20px;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 .pdf-container object {
@@ -251,14 +243,11 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0 auto;
     width: 100%;
     flex-direction: column;
     padding: 0;
-    max-width: 100vw; /* Prevent overflow */
 }
 
-/* Canvas styling */
 canvas {
     width: 100%;
     height: 100%;
@@ -271,7 +260,6 @@ canvas {
     width: 75%;
     max-width: 600px;
     height: auto;
-    max-width: 100vw; /* Prevent overflow */
 }
 
 /* Default: Hide the element on all screen sizes */
@@ -279,13 +267,26 @@ canvas {
     display: none;
 }
 
-/* Mobile view: Show the element only on screens smaller than 768px */
 @media screen and (max-width: 768px) {
-    #language-data-message,
-    #editor-data-message {
+    #language-data-message {
         display: block;
     }
 
+    #editor-data-message {
+        display: block;
+    }
+}
+
+/* Figure and Iframe Styles */
+iframe {
+    width: 75%;
+    height: 600px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
     #chart-container {
         height: auto;
     }
@@ -295,27 +296,78 @@ canvas {
         height: auto !important;
     }
 
-    .wakatimeLanguageChart {
-        max-width: 100vw;
+    #wakatimeLanguageChart {
+        max-width: 100%;
     }
 
     iframe {
-        width: 100%;
+        width: 75%;
         height: 350px;
     }
-}
 
-/* Responsive styles for larger screens */
-@media (min-width: 768px) {
+    /* Navigation Styles */
     nav ul {
-        position: static;
-        width: auto;
-        flex-direction: row;
+        list-style-type: none;
+        position: fixed;
+        top: -300px;  /* Start offscreen */
         left: 0;
-        background-color: transparent;
+        width: 100%;
+        background-color: #4b304e;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align items vertically */
+        gap: 10px;
+        padding: 10px;
+        transition: top 0.6s ease;  /* Transition only for the top property */
+        z-index: 1;
+    }
+
+    nav ul.active {
+        top: 32px;  /* Moves the nav to the top of the screen */
     }
 
     .menu-toggle {
-        display: none;
+        display: block;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 32px;
+        margin-left: 3%;
+    }
+}
+
+/* For all screen sizes: force hamburger menu */
+@media (min-width: 768px) {
+    nav ul {
+        position: fixed;
+        top: -300px;  /* Start offscreen */
+        left: 0;
+        width: 100%;
+        background-color: #4b304e;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        transition: top 0.6s ease;  /* Transition only for the top property */
+        z-index: 1;
+    }
+
+    nav ul.active {
+        top: 32px;  /* This will move it to the top of the screen */
+        vertical-align: top;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 32px;
+        margin-left: 3%;  /* Ensure consistent margin on links */
     }
 }
