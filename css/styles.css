@@ -168,6 +168,9 @@ footer a {
     margin-left: 10px;
 }
 
+footer a {
+    margin-right: 2%;
+}
 
 /* Form Styles */
 #fs-frm {
@@ -241,7 +244,7 @@ input[type="submit"]:hover {
 }
 
 /* Style for the chart container */
-#chart-container {
+/* #chart-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -263,44 +266,57 @@ canvas {
     width: 75%;
     max-width: 600px;
     height: auto;
-}
+} */
 
 /* Default: Hide the element on all screen sizes */
 #language-data-message {
     display: none;
 }
 
+/* Default: Hide the element on all screen sizes */
+#chart-data-message {
+    display: none;
+}
+
+
+
 @media screen and (max-width: 768px) {
     #language-data-message {
         display: block;
     }
 
-    #editor-data-message {
+    #chart-data-message {
         display: block;
     }
 }
 
 /* Figure and Iframe Styles */
 iframe {
-    width: 75%;
-    height: 600px;
+    width: 50%;
+    max-height: 600px;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 @media (max-width: 768px) {
+    .chart-column-container {
+        background-color: transparent;
+        border: 2px solid #181986;
+        
+    }
+    
     #chart-container {
         height: auto;
     }
 
     canvas {
-        width: 80vw !important;
-        height: auto !important;
+        width: 100%;
+        height: auto;
     }
 
     #wakatimeLanguageChart {
-        max-width: 100%;
+        max-width: 75%;
     }
 
     iframe {
@@ -343,7 +359,30 @@ iframe {
 }
 
 /* For all screen sizes: force hamburger menu */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
+
+    /* .chart-column-container {
+        width: 50%;
+        background-color: transparent;
+        border: 2px solid #181986;
+        
+    } */
+
+    #chart-container {
+        width: 75%;
+        height: auto;
+    }
+
+    canvas {
+        width: 75%;
+        height: auto;
+    }
+
+    #wakatimeLanguageChart {
+        max-width: 75%;
+    }
+
+
     nav ul {
         position: fixed;
         top: -300px;  /* Start offscreen */
@@ -372,5 +411,10 @@ iframe {
         text-decoration: none;
         font-size: 32px;
         margin-left: 3%;  /* Ensure consistent margin on links */
+    }
+
+    .img-thumbnail {
+        height: 70%;
+        max-height: 300px;
     }
 }

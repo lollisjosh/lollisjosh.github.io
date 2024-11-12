@@ -1,7 +1,7 @@
 // Load the header
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the header and insert it into the placeholder
-    fetch("header.html")
+    fetch("/header.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header-placeholder").innerHTML = data;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     // Load the footer
-    fetch("footer.html")
+    fetch("/footer.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-placeholder").innerHTML = data;
