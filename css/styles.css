@@ -246,7 +246,8 @@ input[type="submit"]:hover {
 
     iframe {
         width: 75%;
-        height: 350px;
+        height: auto;
+        margin: 5px;
     }
 
     .chart-column-container {
@@ -284,15 +285,21 @@ input[type="submit"]:hover {
         display: flex;                 /* Flexbox to ensure the image inside is stretched */
         justify-content: center;       /* Center the image horizontally */
         align-items: center;           /* Center the image vertically */
+
     }
 
     .img-thumbnail {
-        width: 100%;                   /* Stretch image to fill the container's width */
-        height: 100%;                  /* Stretch image to fill the container's height */
-        object-fit: cover;             /* Ensure the image covers the container without distortion */
-        max-width: 300px;              /* Limit the image to 300px width */
-        max-height: 300px;             /* Limit the image to 300px height */
+        width: 100%;                    /* Stretch image to fill the container's width */
+        height: 100%;                   /* Stretch image to fill the container's height */
+        object-fit: cover;              /* Ensure the image covers the container without distortion */
+        max-width: 300px;               /* Limit the image to 300px width */
+        max-height: 300px;              /* Limit the image to 300px height */
+        border: 4px solid transparent; /* Set the border width */
+        border-image: linear-gradient(to top, #4b304e, #181986) 1; /* Apply the gradient */
     }
+
+    
+
 
 }
 
@@ -404,15 +411,22 @@ input[type="submit"]:hover {
         display: flex;                 /* Flexbox to ensure the image inside is stretched */
         justify-content: center;       /* Center the image horizontally */
         align-items: center;           /* Center the image vertically */
+        
     }
 
     .img-thumbnail {
-        width: 100%;                   /* Stretch image to fill the container's width */
-        height: 100%;                  /* Stretch image to fill the container's height */
-        object-fit: cover;             /* Ensure the image covers the container without distortion */
-        max-width: 300px;              /* Limit the image to 300px width */
-        max-height: 300px;             /* Limit the image to 300px height */
+        width: 100%;                    /* Stretch image to fill the container's width */
+        height: 100%;                   /* Stretch image to fill the container's height */
+        object-fit: cover;              /* Ensure the image covers the container without distortion */
+        max-width: 300px;               /* Limit the image to 300px width */
+        max-height: 300px;              /* Limit the image to 300px height */
+        border: 4px solid transparent; /* Set the border width */
+        border-image: linear-gradient(to top, #4b304e, #181986) 1; /* Apply the gradient */
     }
     
+    .project-video {
+        
+        margin: 2%;
+    }
     
 }
