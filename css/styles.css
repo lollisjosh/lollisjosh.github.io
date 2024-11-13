@@ -7,73 +7,11 @@ html {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal overflow */
-
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
 }
 
-#navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    background-color: #4b304e;
-    z-index: 10;
-}
-
-/* Navigation Styles */
-nav ul {
-    list-style-type: none;
-    position: fixed;
-    top: -300px;  /* Start offscreen */
-    left: 0;
-    width: 250px;
-    background-color: #4b304e;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items vertically */
-    gap: 10px;
-    padding: 10px;
-    transition: top 0.6s ease;  /* Transition only for the top property */
-    z-index: 1;
-}
-
-/* Add padding on the left to the ul itself for consistency */
-nav ul li {
-    flex-grow: 1;
-    font-size: 32px;
-    margin-left: 3%;  /* This adds spacing to the left of each li */
-}
-
-nav ul.active {
-    top: 32px;  /* Moves the nav to the top of the screen */
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    /* Keep margin-left on the link if you want individual spacing, 
-       but it should be consistent with the li's margin-left */
-}
-
-/* Hamburger menu settings */
-.menu-toggle {
-    display: block;
-    position: fixed;
-    left: 20px;
-    justify-content: center;
-    font-size: 30px;
-    cursor: pointer;
-    color: #ffffff;
-    background: linear-gradient(to bottom, #f4a0ff, #4b304e);
-    z-index: 10;
-}
-
-/* Centering container in a flex context */
+/* Main content styles */
 main {
     display: flex;
     justify-content: normal;
@@ -88,65 +26,12 @@ main h1 {
     font-size: 4rem;
     color: #4b304e;
     padding-top: 0;
-    text-align: center;
 }
 
 main p {
     font-size: 1.5rem;
     color: #666;
     margin: 10px 0;
-}
-
-/* Centering the intro section and profile picture */
-#intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Center the placeholder container */
-#pfp-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-/* Gradient border container */
-.pfp-border {
-    width: 166px;
-    height: 166px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #4b304e, #181986);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Image styling */
-.pfp {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Header placeholder styling to touch the top of the viewport */
-#header-placeholder {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 65px;
-    background-color: #4b304e;
-    margin: 0;
-    padding: 0;
-    z-index: 10;
-}
-
-header {
-    background-color: #4b304e;
 }
 
 /* Footer Styles */
@@ -168,10 +53,6 @@ footer a {
     margin-left: 10px;
 }
 
-footer a {
-    margin-right: 2%;
-}
-
 /* Form Styles */
 #fs-frm {
     display: flex;
@@ -184,7 +65,6 @@ footer a {
     background-color: #f9f9f900;
 }
 
-/* Fieldset Styles */
 #fs-frm-inputs {
     display: flex;
     flex-direction: column;
@@ -225,6 +105,39 @@ input[type="submit"]:hover {
     background-color: #ed65ff;
 }
 
+/* Profile Picture Styles */
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#pfp-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pfp-border {
+    width: 166px;
+    height: 166px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #4b304e, #181986);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pfp {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 /* PDF Container Styles */
 .pdf-container {
     display: flex;
@@ -243,63 +156,99 @@ input[type="submit"]:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the chart container */
-/* #chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    padding: 0;
-}
-
-canvas {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 2%;
-}
-
-.wakatimeLanguageChart {
-    width: 75%;
-    max-width: 600px;
-    height: auto;
-} */
-
-/* Default: Hide the element on all screen sizes */
-#language-data-message {
-    display: none;
-}
-
-/* Default: Hide the element on all screen sizes */
+/* Default: Hide elements */
+#language-data-message,
 #chart-data-message {
     display: none;
 }
 
 
 
-@media screen and (max-width: 768px) {
-    #language-data-message {
-        display: block;
-    }
+.header-list.active {
+    top: 65px;
+    /* Adjusted to slide out just below the navbar */
+}
 
+/* Media Queries */
+
+/* Mobile (<=768px) */
+@media screen and (max-width: 768px) {
+
+    #language-data-message,
     #chart-data-message {
         display: block;
     }
-}
 
-/* Figure and Iframe Styles */
-iframe {
-    width: 50%;
-    max-height: 600px;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+   
 
-@media (max-width: 768px) {
+    #navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #4b304e;
+        z-index: 10;
+        /* Navbar on top */
+    }
+
+    /* Menu List */
+    .header-list {
+        position: fixed;
+        top: -300px;
+        /* Hidden behind navbar initially */
+        left: 0;
+        width: 100%;
+        background-color: #4b304e;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        transition: top 0.6s ease;
+        /* Smooth sliding effect */
+        z-index: 5;
+        /* Lower z-index to stay under navbar */
+        opacity: 75%;
+        align-items: center;
+    }
+
+    .header-list.active {
+        top: 7%;
+        /* Adjusted to be just below the navbar */
+    }
+
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: fixed;
+/*        top: 20px;*/
+        left: 20px;
+        z-index: 15;
+        font-size: 30px;
+        cursor: pointer;
+        color: #ffffff;
+        background: linear-gradient(to bottom, #f4a0ff, #4b304e);
+        padding: 10px 20px; /* Optional: Add padding to create space around the text */
+        border-radius: 5px; /* Optional: Add rounded corners */
+    }
+
+    .header-list-item a {
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+        /*margin-left: 3%;*/
+    }
+
+    iframe {
+        width: 75%;
+        height: 350px;
+    }
+
     .chart-column-container {
         background-color: transparent;
         border: 2px solid #181986;
@@ -319,47 +268,39 @@ iframe {
         max-width: 75%;
     }
 
-    iframe {
-        width: 75%;
-        height: 350px;
+    .thumbnail-container {
+        width: 100%;                /* Ensure the container takes up full width of its parent */
+        height: 70%;                /* Set the desired height for the container */
+        max-height: 300px;          /* Maximum height limit for the container */
+        display: flex;              /* Flexbox to ensure the image inside is stretched */
+        justify-content: center;    /* Center the image horizontally */
+        align-items: center;        /* Center the image vertically */
+    }
+    
+    .img-thumbnail {
+        width: 100%;                /* Stretch image to fill the container's width */
+        height: 100%;               /* Stretch image to fill the container's height */
+        object-fit: cover;          /* Ensure the image covers the container without distortion */
+        max-width: 300px;           /* Limit the image to 300px width */
+        max-height: 300px;          /* Limit the image to 300px height */
     }
 
-    /* Navigation Styles */
-    nav ul {
-        list-style-type: none;
-        position: fixed;
-        top: -300px;  /* Start offscreen */
-        left: 0;
-        width: 100%;
-        background-color: #4b304e;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* Align items vertically */
-        gap: 10px;
-        padding: 10px;
-        transition: top 0.6s ease;  /* Transition only for the top property */
-        z-index: 1;
+    #projects-grid {
+        width: 80%;
+        height: auto;
+        
     }
 
-    nav ul.active {
-        top: 32px;  /* Moves the nav to the top of the screen */
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 32px;
-        margin-left: 3%;
-    }
 }
 
-/* For all screen sizes: force hamburger menu */
-@media (min-width: 769px) {
+
+/* Desktop Size */
+@media screen and (min-width: 769px) {
+    /* nav {
+        position: relative;
+        z-index: 10; 
+    } */
+
 
     /* .chart-column-container {
         width: 50%;
@@ -382,39 +323,93 @@ iframe {
         max-width: 75%;
     }
 
-
-    nav ul {
+    /* Navbar Styles */
+    #navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         position: fixed;
-        top: -300px;  /* Start offscreen */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #4b304e;
+        z-index: 10;
+    }
+
+    .header-list {
+        position: fixed;
+        top: -300px;
+        /* Start offscreen */
         left: 0;
         width: 100%;
         background-color: #4b304e;
+        display: inline-flex;
         flex-direction: column;
         gap: 10px;
         padding: 10px;
-        transition: top 0.6s ease;  /* Transition only for the top property */
-        z-index: 1;
+        transition: top 0.6s ease;
+        z-index: 5;
+        /* Ensure the nav ul is under the navbar */
+        opacity: 75%;
     }
 
-    nav ul.active {
-        top: 32px;  /* This will move it to the top of the screen */
-        vertical-align: top;
-        width: 100%;
+    .header-list.active {
+        top: 7%;
+        /* Adjusted to be just below the navbar */
     }
 
     .menu-toggle {
-        display: block;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    nav ul li a {
+        position: fixed;
+/*        top: 20px;*/
+        left: 20px;
+        z-index: 15;
+        font-size: 30px;
+        cursor: pointer;
+        color: #ffffff;
+        background: linear-gradient(to bottom, #f4a0ff, #4b304e);
+        padding: 10px 20px; /* Optional: Add padding to create space around the text */
+        border-radius: 5px; /* Optional: Add rounded corners */
+    }
+    
+
+    .header-list-item a {
         color: white;
         text-decoration: none;
         font-size: 32px;
-        margin-left: 3%;  /* Ensure consistent margin on links */
+        margin-left: 10px;
+    }
+
+
+    /* Projects Grid Styles */
+    #projects-grid {
+        width: 80%;                    /* Grid container takes up 80% of its parent width */
+        height: auto;
+        display: grid;                 /* Use grid layout */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically create columns based on available space */
+        gap: 20px;                     /* Add space between grid items */
+    }
+
+    .thumbnail-container {
+        width: 100%;                   /* Ensure the container fills the grid cell */
+        height: 70%;                   /* Set the desired height for the container */
+        max-height: 300px;             /* Maximum height limit for the container */
+        display: flex;                 /* Flexbox to ensure the image inside is stretched */
+        justify-content: center;       /* Center the image horizontally */
+        align-items: center;           /* Center the image vertically */
     }
 
     .img-thumbnail {
-        height: 70%;
-        max-height: 300px;
+        width: 100%;                   /* Stretch image to fill the container's width */
+        height: 100%;                  /* Stretch image to fill the container's height */
+        object-fit: cover;             /* Ensure the image covers the container without distortion */
+        max-width: 300px;              /* Limit the image to 300px width */
+        max-height: 300px;             /* Limit the image to 300px height */
     }
+    
+    
 }
