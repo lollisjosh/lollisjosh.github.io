@@ -35,10 +35,11 @@ main p {
 }
 
 
+#site-footer {
+}
 
 
-
-/* footer a {
+/* #site-footer a {
     margin-left: 10px;
     margin-right: 2%;
 } */
@@ -326,8 +327,8 @@ input[type="submit"]:hover {
         height: 20px;
     }
 
-    /* Footer Styles */
-/* footer {
+    /* #site-footer Styles */
+/* #site-footer {
     display: flex;
      width: 100%;
      justify-content: space-between;
@@ -338,7 +339,7 @@ input[type="submit"]:hover {
  } */
 
 
- footer {
+ #site-footer {
     display: inline-grid;
     width: 100%;
     justify-content: center;
@@ -348,14 +349,16 @@ input[type="submit"]:hover {
     color: white;
     align-content: center;
     justify-items: center;
+    background-color: #4b304e;
+
 }
- footer p {
+ #site-footer p {
     font-size: small; /* Or a valid size */
     text-wrap: wrap;
 }
 
-/* Style all font awesome icons inside footer */
-footer .fa {
+/* Style all font awesome icons inside #site-footer */
+#site-footer .fa {
     display: inline-flex;         /* Ensures the icon is centered */
     justify-content: center;      /* Centers the icon horizontally */
     align-items: center;          /* Centers the icon vertically */
@@ -369,7 +372,7 @@ footer .fa {
 }
 
 /* Add a hover effect if you want */
-footer .fa:hover {
+#site-footer .fa:hover {
     opacity: 0.7;
 }
 
@@ -381,7 +384,7 @@ footer .fa:hover {
 /* Set a specific color for each brand */
 
 /* GitHub */
-footer .fa-github {
+#site-footer .fa-github {
     background: #000000;
     color: white;
 
@@ -390,7 +393,7 @@ footer .fa-github {
 }
 
 /* Instagram */
-footer .fa-instagram {
+#site-footer .fa-instagram {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     color: white;
 
@@ -400,7 +403,7 @@ footer .fa-instagram {
 }
 
 /* YouTube */
-footer .fa-youtube {
+#site-footer .fa-youtube {
     background: #FF0000;
     color: white;
     border-radius: 6;
@@ -574,8 +577,8 @@ footer .fa-youtube {
         border-radius: 6px;
     }
 
-    /* Footer Styles */
-footer {
+    /* #site-footer Styles */
+#site-footer {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -583,16 +586,18 @@ footer {
     padding: 10px;
     background-color: #4b304e;
     color: white;
+    background-color: #4b304e;
+
 }
 
-    /* Correct the footer styles */
-footer p {
+    /* Correct the #site-footer styles */
+#site-footer p {
     font-size: large; /* Or a valid size */
     text-wrap: wrap;
 }
 
-/* Style all font awesome icons inside footer */
-footer .fa {
+/* Style all font awesome icons inside #site-footer */
+#site-footer .fa {
     display: inline-flex;         /* Ensures the icon is centered */
     justify-content: center;      /* Centers the icon horizontally */
     align-items: center;          /* Centers the icon vertically */
@@ -606,14 +611,14 @@ footer .fa {
 }
 
 /* Add a hover effect if you want */
-footer .fa:hover {
+#site-footer .fa:hover {
     opacity: 0.7;
 }
 
 /* Set a specific color for each brand */
 
 /* GitHub */
-footer .fa-github {
+#site-footer .fa-github {
     background: #000000;
     color: white;
 
@@ -623,7 +628,7 @@ footer .fa-github {
 }
 
 /* Instagram */
-footer .fa-instagram {
+#site-footer .fa-instagram {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     color: white;
 
@@ -633,7 +638,7 @@ footer .fa-instagram {
 }
 
 /* YouTube */
-footer .fa-youtube {
+#site-footer .fa-youtube {
     background: #FF0000;
     color: white;
     border: 4px solid transparent;
