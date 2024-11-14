@@ -22,11 +22,11 @@ main {
     margin-top: 65px;
 }
 
-main h1 {
+/* main h1 {
     font-size: 4rem;
     color: #4b304e;
     padding-top: 0;
-}
+} */
 
 main p {
     font-size: 1.5rem;
@@ -45,13 +45,12 @@ footer {
     color: white;
 }
 
-footer p {
-    margin: 0;
-}
 
-footer a {
+
+/* footer a {
     margin-left: 10px;
-}
+    margin-right: 2%;
+} */
 
 /* Form Styles */
 #fs-frm {
@@ -173,6 +172,13 @@ input[type="submit"]:hover {
 
 /* Mobile (<=768px) */
 @media screen and (max-width: 768px) {
+
+
+    main h1 {
+        font-size: 3rem;
+        color: #4b304e;
+        padding-top: 0;
+    }
 
     #language-data-message,
     #chart-data-message {
@@ -299,6 +305,16 @@ input[type="submit"]:hover {
     }
 
     
+    #wakatime-site-hours {
+        margin-left: 10px;
+        margin-right: 5%;
+    }
+
+    footer p {
+        margin: 2px;
+        font-size: xx-small;
+    
+    }
 
 
 }
@@ -318,6 +334,12 @@ input[type="submit"]:hover {
         border: 2px solid #181986;
         
     } */
+
+    main h1 {
+        font-size: 4rem;
+        color: #4b304e;
+        padding-top: 0;
+    }
 
     #chart-container {
         width: 75%;
@@ -427,6 +449,17 @@ input[type="submit"]:hover {
     .project-video {
         
         margin: 2%;
+    }
+
+
+    #wakatime-site-hours {
+        margin-left: 10px;
+        margin-right: 3%;
+    }
+
+    footer p {
+        margin: 2px;
+        font-size: regular;    
     }
     
 }
