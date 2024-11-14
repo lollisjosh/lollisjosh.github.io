@@ -250,11 +250,11 @@ input[type="submit"]:hover {
         margin: 5px;
     }
 
-    .chart-column-container {
+    /* .chart-column-container {
         background-color: transparent;
         border: 2px solid #181986;
 
-    }
+    } */
 
     #chart-container {
         height: auto;
