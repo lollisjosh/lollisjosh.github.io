@@ -1,4 +1,62 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    //  // Dynamically load the locally hosted Accessibility Toolbar script
+    //  const toolbarScript = document.createElement('script');
+    //  toolbarScript.src = "/acctoolbar.min.js"; // Update the path to where you stored the script
+    //  toolbarScript.onload = function () {
+    //      // Initialize the Accessibility Toolbar once the script has loaded
+    //      window.micAccessTool = new MicAccessTool({
+    //          link: 'http://your-awesome-website.com/your-accessibility-declaration.pdf', // Update with your link
+    //          contact: 'lollisjosh@csu.fullerton.edu', // Update with your contact email
+    //          buttonPosition: 'right', // Change to 'left' if preferred
+    //          forceLang: 'en' // Options: 'en', 'he-IL', 'ru-RU', 'fr_FR'
+    //      });
+    //  };
+    //  toolbarScript.onerror = function () {
+    //      console.error("Failed to load the Accessibility Toolbar script.");
+    //  };
+
+     // Carousel functionality
+     let currentIndex = 0;
+     const images = document.querySelectorAll('.carousel-images img');
+     const totalImages = images.length;
+ 
+     // Function to show the previous image
+     function prevImage() {
+         currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+         updateCarousel();
+     }
+ 
+     // Function to show the next image
+     function nextImage() {
+         currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+         updateCarousel();
+     }
+ 
+     // Function to update the carousel display
+     function updateCarousel() {
+         const carouselImages = document.querySelector('.carousel-images');
+         const imageWidth = carouselImages.querySelector('img').offsetWidth; // Get the width of one image
+         carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Use pixel values
+     }
+ 
+     // Attach event listeners to buttons after DOM content is loaded
+     const prevButton = document.querySelector('.carousel-btn.prev');
+     const nextButton = document.querySelector('.carousel-btn.next');
+ 
+     if (prevButton && nextButton) {
+         prevButton.addEventListener('click', prevImage);
+         nextButton.addEventListener('click', nextImage);
+     } else {
+         console.error('Carousel buttons not found.');
+     }
+ 
+     // Optional: Automatically cycle through images every 10 seconds
+     setInterval(nextImage, 10000); // Adjust the interval as needed
+ 
+    // document.head.appendChild(toolbarScript);
     // Load the header and insert it into the placeholder
     fetch("/header.html")
         .then(response => response.text())
@@ -34,12 +92,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 
-    // Load the footer
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
+    // // Load the footer
+    // fetch("footer.html")
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         document.getElementById("footer-placeholder").innerHTML = data;
+    //     });
 
         // Load WakaTime data for "Past 30 Days"
     fetch('https://wakatime.com/share/@telloviz/e49e51a9-de2a-4db3-aa66-877d02a49ec1.json')
