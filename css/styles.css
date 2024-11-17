@@ -189,6 +189,7 @@ input[type="submit"]:hover {
         /* Lower z-index to stay under navbar */
         opacity: 95%;
         align-items: center;
+        list-style-type: none;
     }
 
     .header-list.active {
@@ -529,6 +530,7 @@ input[type="submit"]:hover {
         z-index: 5;
         /* Ensure the nav ul is under the navbar */
         opacity: 95%;
+        list-style-type: none;
     }
 
     .header-list.active {
