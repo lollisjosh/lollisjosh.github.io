@@ -235,13 +235,15 @@ input[type="submit"]:hover {
 
     } */
 
-    #chart-container {
-        height: auto;
-    }
+    /* #chart-container {
+        
+        margin-bottom: 10%;
+    } */
 
     canvas {
         width: 100%;
         height: auto;
+        margin-bottom: 10%;
     }
 
     #wakatimeLanguageChart {
@@ -487,14 +489,16 @@ input[type="submit"]:hover {
         border-radius: 50%;
     }
 
-    #chart-container {
+    /* #chart-container {
         width: 75%;
         height: auto;
-    }
+        
+    } */
 
     canvas {
         width: 75%;
         height: auto;
+        margin-bottom: 10%;
     }
 
     #wakatimeLanguageChart {
