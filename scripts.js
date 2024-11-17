@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
     //      console.error("Failed to load the Accessibility Toolbar script.");
     //  };
 
+    document.querySelectorAll('.carousel-images img').forEach(img => {
+        img.addEventListener('click', () => {
+            window.open(img.getAttribute('data-full-res'), '_blank');
+        });
+    });
+    
      // Carousel functionality
      let currentIndex = 0;
      const images = document.querySelectorAll('.carousel-images img');
