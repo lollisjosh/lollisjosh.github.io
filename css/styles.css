@@ -567,6 +567,13 @@ input[type="submit"]:hover {
     .mobile-wakatimeLangChart {
         display: flex;
     }
+
+    .mobile-chart-column-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     
 
 
