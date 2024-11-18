@@ -548,7 +548,8 @@ input[type="submit"]:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5)    }
+    
 
     .pfp {
         width: 250px;
