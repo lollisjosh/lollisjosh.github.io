@@ -132,7 +132,7 @@ input[type="submit"]:hover {
         align-items: center;
         margin: 20px 0;
     }
-    
+
     .pfp-border {
         width: 280px;
         height: 258px;
@@ -142,7 +142,7 @@ input[type="submit"]:hover {
         justify-content: center;
         align-items: center;
     }
-    
+
     .pfp {
         width: 250px;
         height: 250px;
@@ -301,6 +301,7 @@ input[type="submit"]:hover {
         margin-left: 10px;
         margin-right: 5%;
     }
+
     #wakatime-site-hours img {
         border: 2px solid #331236;
         border-radius: 6px;
@@ -309,132 +310,183 @@ input[type="submit"]:hover {
     }
 
     /* PDF Container Styles */
-.pdf-container {
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    width: 100%;
-    height: auto;
-    background-color: #f9f9f900;
-    /* padding: 20px; */
-}
+    .pdf-container {
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        width: 100%;
+        height: auto;
+        background-color: #f9f9f900;
+        /* padding: 20px; */
+    }
 
-.pdf-container object {
-    width: 90%;
-    height: auto;
-    border: 2px solid #333;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+    .pdf-container object {
+        width: 90%;
+        height: auto;
+        border: 2px solid #333;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.carousel-container {
-    position: relative;
-    width: 90%;
-    max-width: 600px;
-    /* Adjust the size as needed */
-    /* margin: 0 auto; */
-    /* margin-bottom: 5%; */
-    overflow: hidden;
-}
+    .carousel-container {
+        position: relative;
+        width: 90%;
+        max-width: 600px;
+        /* Adjust the size as needed */
+        /* margin: 0 auto; */
+        /* margin-bottom: 5%; */
+        overflow: hidden;
+    }
 
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-}
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
 
-.carousel-images img {
-    width: 100%;
-    height: auto;
-}
+    .carousel-images img {
+        width: 100%;
+        height: auto;
+    }
 
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-}
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+    }
 
-.prev {
-    left: 10px;
-}
+    .prev {
+        left: 10px;
+    }
 
-.next {
-    right: 10px;
-}
+    .next {
+        right: 10px;
+    }
 
- #site-footer {
-    display: inline-grid;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #4b304e;
-    color: white;
-    align-content: center;
-    justify-items: center;
-    background-color: #4b304e;
+    #site-footer {
+        display: inline-grid;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #4b304e;
+        color: white;
+        align-content: center;
+        justify-items: center;
+        background-color: #4b304e;
 
-}
- #site-footer p {
-    font-size: small; /* Or a valid size */
-    text-wrap: wrap;
-}
+    }
 
-/* Style all font awesome icons inside #site-footer */
-#site-footer .fa {
-    display: inline-flex;         /* Ensures the icon is centered */
-    justify-content: center;      /* Centers the icon horizontally */
-    align-items: center;          /* Centers the icon vertically */
-    padding: 20px;                /* Space around the icon */
-    font-size: 30px;              /* Increase the font-size to make the icon larger */
-    width: 3px;                  /* Set width for square button */
-    height: 2px;                 /* Set height for square button */
-    text-align: center;           /* Center the text inside */
-    text-decoration: none;        /* Remove underline from links */
-    border-radius: 10px;          /* Optional: Rounded corners */
-}
+    #site-footer p {
+        font-size: small;
+        /* Or a valid size */
+        text-wrap: wrap;
+    }
 
-/* Add a hover effect if you want */
-#site-footer .fa:hover {
-    opacity: 0.7;
-}
+    /* Style all font awesome icons inside #site-footer */
+    #site-footer .fa {
+        display: inline-flex;
+        /* Ensures the icon is centered */
+        justify-content: center;
+        /* Centers the icon horizontally */
+        align-items: center;
+        /* Centers the icon vertically */
+        padding: 20px;
+        /* Space around the icon */
+        font-size: 30px;
+        /* Increase the font-size to make the icon larger */
+        width: 3px;
+        /* Set width for square button */
+        height: 2px;
+        /* Set height for square button */
+        text-align: center;
+        /* Center the text inside */
+        text-decoration: none;
+        /* Remove underline from links */
+        border-radius: 10px;
+        /* Optional: Rounded corners */
+    }
 
-#social-div {
-    display: flex;
-    
-}
+    /* Add a hover effect if you want */
+    #site-footer .fa:hover {
+        opacity: 0.7;
+    }
 
-/* Set a specific color for each brand */
+    #social-div {
+        display: flex;
 
-/* GitHub */
-#site-footer .fa-github {
-    background: #000000;
-    color: white;
+    }
 
-    border-radius: 6;
-    border: 2px solid #331236;
-}
+    #bio {
+        width: 100%;
+        justify-content: center;
+    }
 
-/* Instagram */
-#site-footer .fa-instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
+    #bio-container {
+        width: 100%;
+        height: auto;
+        border: 2px solid #4b304e;
+        border-radius: 6px;
+    }
 
-    
-    border-radius: 6;
-    border: 2px solid #331236;
-}
+    #role-tags {
+        height: auto;
+        display: flex;
+        /* Enables Flexbox */
+        justify-content: center; /* Aligns the items horizontally */
+        gap: 10px; /* Adds spacing between items */
+        margin: 2%;
+    }
 
-/* YouTube */
-#site-footer .fa-youtube {
-    background: #FF0000;
-    color: white;
-    border-radius: 6;
-    border: 2px solid #331236;
-}
+    #role-tags ul {
+        display: flex;
+        /* Flexbox for the list */
+        list-style-type: none; /* Removes bullets */
+        padding: 0; /* Removes default padding */
+        margin: 0; /* Removes default margin */
+        gap: 10px; /* Adds spacing between list items */
+    }
+
+    #role-tags ul li {
+        display: flex;
+        /* Ensure list items are flex containers if needed */
+        font-style: bold;
+        font-size: 15pt;
+
+    }
+
+
+    /* Set a specific color for each brand */
+
+    /* GitHub */
+    #site-footer .fa-github {
+        background: #000000;
+        color: white;
+
+        border-radius: 6;
+        border: 2px solid #331236;
+    }
+
+    /* Instagram */
+    #site-footer .fa-instagram {
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        color: white;
+
+
+        border-radius: 6;
+        border: 2px solid #331236;
+    }
+
+    /* YouTube */
+    #site-footer .fa-youtube {
+        background: #FF0000;
+        color: white;
+        border-radius: 6;
+        border: 2px solid #331236;
+    }
 
 
 
@@ -472,7 +524,7 @@ input[type="submit"]:hover {
         align-items: center;
         margin: 20px 0;
     }
-    
+
     .pfp-border {
         width: 280px;
         height: 258px;
@@ -482,7 +534,7 @@ input[type="submit"]:hover {
         justify-content: center;
         align-items: center;
     }
-    
+
     .pfp {
         width: 250px;
         height: 250px;
@@ -622,24 +674,24 @@ input[type="submit"]:hover {
         width: 100%;
         max-width: 600px;
         /* Adjust the size as needed */
-      /*  margin: 25px;*/
-      margin-bottom: 5%;
+        /*  margin: 25px;*/
+        margin-bottom: 5%;
 
         overflow: hidden;
         border: 4px solid #4b304e;
         border-radius: 6px;
     }
-    
+
     .carousel-images {
         display: flex;
         transition: transform 0.5s ease;
     }
-    
+
     .carousel-images img {
         width: 100%;
         height: auto;
     }
-    
+
     .carousel-btn {
         position: absolute;
         top: 50%;
@@ -650,11 +702,11 @@ input[type="submit"]:hover {
         cursor: pointer;
         border: none;
     }
-    
+
     .prev {
         left: 10px;
     }
-    
+
     .next {
         right: 10px;
     }
@@ -677,91 +729,143 @@ input[type="submit"]:hover {
     }
 
     /* PDF Container Styles */
-.pdf-container {
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    width: 100%;
-    height: 100vh;
-    background-color: #f9f9f900;
-    /* padding: 20px; */
-}
+    .pdf-container {
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        width: 100%;
+        height: 100vh;
+        background-color: #f9f9f900;
+        /* padding: 20px; */
+    }
 
-.pdf-container object {
-    width: 80%;
-    height: 90vh;
-    border: 2px solid #333;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+    .pdf-container object {
+        width: 80%;
+        height: 90vh;
+        border: 2px solid #333;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #bio {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #bio-container {
+        width: 45%;
+        height: auto;
+        border: 2px solid #4b304e;
+        border-radius: 6px;
+    }
+
+    #role-tags {
+        height: auto;
+        display: flex; /* Enables Flexbox */
+        justify-content: center; /* Aligns the items horizontally */
+        gap: 10px; /* Adds spacing between items */
+        margin: 2%;
+    }
+
+    #role-tags ul {
+        display: flex;
+        /* Flexbox for the list */
+        list-style-type: none;
+        /* Removes bullets */
+        padding: 0;
+        /* Removes default padding */
+        margin: 0;
+        /* Removes default margin */
+        gap: 10px;
+        /* Optional: Adds spacing between list items */
+    }
+
+    #role-tags ul li {
+        display: flex;
+        /* Ensure list items are flex containers if needed */
+        font-style: bold;
+        font-size: 20pt;
+
+    }
 
     /* #site-footer Styles */
-#site-footer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #4b304e;
-    color: white;
-    background-color: #4b304e;
+    #site-footer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #4b304e;
+        color: white;
+        background-color: #4b304e;
 
-}
+    }
 
     /* Correct the #site-footer styles */
-#site-footer p {
-    font-size: large; /* Or a valid size */
-    text-wrap: wrap;
-}
+    #site-footer p {
+        font-size: large;
+        /* Or a valid size */
+        text-wrap: wrap;
+    }
 
-/* Style all font awesome icons inside #site-footer */
-#site-footer .fa {
-    display: inline-flex;         /* Ensures the icon is centered */
-    justify-content: center;      /* Centers the icon horizontally */
-    align-items: center;          /* Centers the icon vertically */
-    padding: 20px;                /* Space around the icon */
-    font-size: 50px;              /* Increase the font-size to make the icon larger */
-    width: 20px;                  /* Set width for square button */
-    height: 20px;                 /* Set height for square button */
-    text-align: center;           /* Center the text inside */
-    text-decoration: none;        /* Remove underline from links */
-    border-radius: 10px;          /* Optional: Rounded corners */
-}
+    /* Style all font awesome icons inside #site-footer */
+    #site-footer .fa {
+        display: inline-flex;
+        /* Ensures the icon is centered */
+        justify-content: center;
+        /* Centers the icon horizontally */
+        align-items: center;
+        /* Centers the icon vertically */
+        padding: 20px;
+        /* Space around the icon */
+        font-size: 50px;
+        /* Increase the font-size to make the icon larger */
+        width: 20px;
+        /* Set width for square button */
+        height: 20px;
+        /* Set height for square button */
+        text-align: center;
+        /* Center the text inside */
+        text-decoration: none;
+        /* Remove underline from links */
+        border-radius: 10px;
+        /* Optional: Rounded corners */
+    }
 
-/* Add a hover effect if you want */
-#site-footer .fa:hover {
-    opacity: 0.7;
-}
+    /* Add a hover effect if you want */
+    #site-footer .fa:hover {
+        opacity: 0.7;
+    }
 
-/* Set a specific color for each brand */
+    /* Set a specific color for each brand */
 
-/* GitHub */
-#site-footer .fa-github {
-    background: #000000;
-    color: white;
+    /* GitHub */
+    #site-footer .fa-github {
+        background: #000000;
+        color: white;
 
-    border: 4px solid transparent;
-    border-radius: 6;
-    border: 4px solid #331236;
-}
+        border: 4px solid transparent;
+        border-radius: 6;
+        border: 4px solid #331236;
+    }
 
-/* Instagram */
-#site-footer .fa-instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
+    /* Instagram */
+    #site-footer .fa-instagram {
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        color: white;
 
-    border: 4px solid transparent;
-    border-radius: 6;
-    border: 4px solid #331236;
-}
+        border: 4px solid transparent;
+        border-radius: 6;
+        border: 4px solid #331236;
+    }
 
-/* YouTube */
-#site-footer .fa-youtube {
-    background: #FF0000;
-    color: white;
-    border: 4px solid transparent;
-    border-radius: 6;
-    border: 4px solid #331236;
-}
+    /* YouTube */
+    #site-footer .fa-youtube {
+        background: #FF0000;
+        color: white;
+        border: 4px solid transparent;
+        border-radius: 6;
+        border: 4px solid #331236;
+    }
 
 
 
