@@ -223,6 +223,11 @@ input[type="submit"]:hover {
         /*margin-left: 3%;*/
     }
 
+
+#resume-header {
+    margin-top: 5%;
+}
+
     iframe {
         width: 75%;
         height: auto;
@@ -317,6 +322,7 @@ input[type="submit"]:hover {
         width: 100%;
         height: auto;
         background-color: #f9f9f900;
+        margin-bottom: 2%;
         /* padding: 20px; */
     }
 
@@ -420,21 +426,24 @@ input[type="submit"]:hover {
 
     }
 
-    #bio {
-        width: 100%;
-        justify-content: center;
-    }
+    /* Bio Placeholder: Center the bio content */
+#bio-placeholder {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100%;            /* Ensure it takes full height of its parent */
+}
 
-    #bio-container {
-        width: 100%;
-        height: auto;
-        border: 2px solid #4b304e;
-        border-radius: 6px;
-    }
-
-    #bio-placeholder {
-        justify-content: center;
-    }
+/* Bio Container: Styling the bio section */
+#bio-container {
+    width: 85%;             /* Set the width of the bio container */
+    height: auto;           /* Allow the height to adjust based on content */
+    border: 2px solid #4b304e;
+    border-radius: 6px;
+    padding: 20px;          /* Optional: Add some padding inside */
+    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+    text-align: center;     /* Center text inside bio container */
+}
 
     #role-tags {
         height: auto;
@@ -791,6 +800,9 @@ input[type="submit"]:hover {
     font-size: 15pt;
 }
 
+#resume-header {
+    margin-top: 5%;
+}
     /* #site-footer Styles */
     #site-footer {
         display: flex;
