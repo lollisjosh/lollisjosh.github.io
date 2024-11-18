@@ -432,6 +432,10 @@ input[type="submit"]:hover {
         border-radius: 6px;
     }
 
+    #bio-placeholder {
+        justify-content: center;
+    }
+
     #role-tags {
         height: auto;
         display: flex;
@@ -745,47 +749,47 @@ input[type="submit"]:hover {
         border: 2px solid #333;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
+/* Bio Placeholder: Center the bio content */
+#bio-placeholder {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100%;            /* Ensure it takes full height of its parent */
+}
 
-    #bio {
-        width: 100%;
-        justify-content: center;
-    }
+/* Bio Container: Styling the bio section */
+#bio-container {
+    width: 50%;             /* Set the width of the bio container */
+    height: auto;           /* Allow the height to adjust based on content */
+    border: 2px solid #4b304e;
+    border-radius: 6px;
+    padding: 20px;          /* Optional: Add some padding inside */
+    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+    text-align: center;     /* Center text inside bio container */
+}
 
-    #bio-container {
-        width: 45%;
-        height: auto;
-        border: 2px solid #4b304e;
-        border-radius: 6px;
-    }
+/* Role Tags styling: Ensures it is centered and spaced */
+#role-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2%;
+}
 
-    #role-tags {
-        height: auto;
-        display: flex; /* Enables Flexbox */
-        justify-content: center; /* Aligns the items horizontally */
-        gap: 10px; /* Adds spacing between items */
-        margin: 2%;
-    }
+/* List inside Role Tags */
+#role-tags ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+}
 
-    #role-tags ul {
-        display: flex;
-        /* Flexbox for the list */
-        list-style-type: none;
-        /* Removes bullets */
-        padding: 0;
-        /* Removes default padding */
-        margin: 0;
-        /* Removes default margin */
-        gap: 10px;
-        /* Optional: Adds spacing between list items */
-    }
-
-    #role-tags ul li {
-        display: flex;
-        /* Ensure list items are flex containers if needed */
-        font-style: bold;
-        font-size: 20pt;
-
-    }
+/* List items inside Role Tags */
+#role-tags ul li {
+    font-weight: bold;
+    font-size: 15pt;
+}
 
     /* #site-footer Styles */
     #site-footer {
