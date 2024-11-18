@@ -15,28 +15,80 @@
     <main>
         <h1>Skills</h1>
 
-        <div class="chart-column-container">
+        <div id="desktop-chart-column-container">
+            <h2 class="desktop-lang-header">Languages Used</h2>
+            <h5 id="desktop-language-data-message">Select a piece of pie for language data.</h5>
+
+            <div id="desktop-lang-headers-row">
+                <h3 class="desktop-lang-header">Past 30 Days</h3>
+                <h3 class="desktop-lang-header">All Time</h3>
+            </div>
+            <div id="desktop-lang-row">
+
+                <!-- Chart section for Past 30 Days -->
+                <div class="desktop-chart-container">
+                    <canvas id="desktop-wakatime30DayLangChart" class="desktop-wakatimeLangChart"></canvas>
+                </div>
+
+                <!-- Chart section for All Time -->
+                <div class="desktop-chart-container">
+                    <canvas id="desktop-wakatimeAllTimeLangChart" class="desktop-wakatimeLangChart"></canvas>
+                </div>
+            </div>
+
+            <h2 class="desktop-editor-header">Editors Used</h2>
+            <h5 id="desktop-chart-data-message">Select a piece of pie for editor data.</h5>
+
+            <div id="desktop-editors-headers-row">
+                <h3 class="desktop-lang-header">Past 30 Days</h3>
+                <h3 class="desktop-lang-header">All Time</h3>
+            </div>
+
+            <div id="desktop-editors-row">
+
+                <!-- Chart section for 30 Days -->
+                <div class="desktop-chart-container">
+                    <canvas id="desktop-editorsUsedChart" class="desktop-wakatimeLangChart"></canvas>
+                </div>
+                <!-- Chart section for All Time -->
+                <div class="desktop-chart-container">
+                    <canvas id="desktop-editorChart" class="desktop-wakatimeLangChart"></canvas>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mobile-chart-column-container">
             <h2>Languages Used</h2>
             <h5 id="language-data-message">Select a piece of pie for language data.</h5>
-
             <h3>Past 30 Days</h3>
             <!-- Chart section for Past 30 Days -->
-            <div class="chart-container">
-                <canvas id="wakatime30DayLangChart" class="wakatimeLangChart"></canvas>
+            <div class="mobile-chart-container">
+                <canvas id="mobile-wakatime30DayLangChart" class="mobile-wakatimeLangChart"></canvas>
             </div>
 
-            <h3>All Time</h3>
             <!-- Chart section for All Time -->
-            <div class="chart-container">
-                <canvas id="wakatimeAllTimeLangChart" class="wakatimeLangChart"></canvas>
+            <h3>All Time</h3>
+            <div class="mobile-chart-container">
+                <canvas id="mobile-wakatimeAllTimeLangChart" class="mobile-wakatimeLangChart"></canvas>
             </div>
-        <h2>Editors Used</h2>
+        
+
+        <h2 class="mobile-chart-header">Editors Used</h2>
         <h5 id="chart-data-message">Select a piece of pie for editor data.</h5>
 
-        <h3>All Time</h3>
+
+        <!-- Chart section for 30 Days -->
+        <h3 class="mobile-chart-header">Past 30 Days</h3>
+
+        <div class="mobile-chart-container">
+            <canvas id="mobile-editorsUsedChart" class="mobile-wakatimeLangChart"></canvas>
+        </div>
         <!-- Chart section for All Time -->
-        <div class="chart-container">
-            <canvas id="editorChart" class="wakatimeLangChart"></canvas>
+        <h3 class="mobile-chart-header">All Time</h3>
+
+        <div class="mobile-chart-container">
+            <canvas id="mobile-editorChart" class="mobile-wakatimeLangChart"></canvas>
         </div>
     </div>
     </main>

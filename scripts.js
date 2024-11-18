@@ -125,7 +125,55 @@ document.addEventListener("DOMContentLoaded", function () {
             const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
 
             // Initialize the "Past 30 Days" chart
-            const ctx30Days = document.getElementById('wakatime30DayLangChart').getContext('2d');
+            const ctx30Days = document.getElementById('desktop-wakatime30DayLangChart').getContext('2d');
+            new Chart(ctx30Days, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: dataValues,
+                        backgroundColor: backgroundColors,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            display: false,
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let index = context.dataIndex; // Get the index of the current segment
+                                    let time = timeSpent[index];  // Get the time spent on that language
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    // Display both percentage and time
+                                    label += context.raw.toFixed(2) + '%'; // Show percentage
+                                    label += ' (' + time + ')'; // Append time spent
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching WakaTime data for 30 Days:', error));
+
+        fetch('https://wakatime.com/share/@telloviz/e49e51a9-de2a-4db3-aa66-877d02a49ec1.json')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.data.map(lang => lang.name);
+            const dataValues = data.data.map(lang => lang.percent);
+            const backgroundColors = data.data.map(lang => lang.color);
+            const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
+
+            // Initialize the "Past 30 Days" chart
+            const ctx30Days = document.getElementById('mobile-wakatime30DayLangChart').getContext('2d');
             new Chart(ctx30Days, {
                 type: 'pie',
                 data: {
@@ -174,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
 
             // Initialize the "All Time" chart
-            const ctxAllTime = document.getElementById('wakatimeAllTimeLangChart').getContext('2d');
+            const ctxAllTime = document.getElementById('desktop-wakatimeAllTimeLangChart').getContext('2d');
             new Chart(ctxAllTime, {
                 type: 'pie',
                 data: {
@@ -213,6 +261,154 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Error fetching WakaTime data for All Time:', error));
 
+        // Load WakaTime data for "All Time"
+    fetch('https://wakatime.com/share/@telloviz/735e4f4d-0406-457a-a0e3-b376bf66fbb8.json')
+    .then(response => response.json())
+    .then(data => {
+        const labels = data.data.map(lang => lang.name);
+        const dataValues = data.data.map(lang => lang.percent);
+        const backgroundColors = data.data.map(lang => lang.color);
+        const timeSpent = data.data.map(lang => lang.text); // Time spent on each language
+
+        // Initialize the "All Time" chart
+        const ctxAllTime = document.getElementById('mobile-wakatimeAllTimeLangChart').getContext('2d');
+        new Chart(ctxAllTime, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: dataValues,
+                    backgroundColor: backgroundColors,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                let index = context.dataIndex; // Get the index of the current segment
+                                let time = timeSpent[index];  // Get the time spent on that language
+                                if (label) {
+                                    label += ': ';
+                                }
+                                // Display both percentage and time
+                                label += context.raw.toFixed(2) + '%'; // Show percentage
+                                label += ' (' + time + ')'; // Append time spent
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching WakaTime data for All Time:', error));
+
+    // AJAX request to get Wakatime share data for Editors Used chart
+    fetch('https://wakatime.com/share/@telloviz/e53a65a6-ccff-473b-8d17-cd1f8d291632.json')
+        .then(response => response.json())
+        .then(data => {
+            const labels = data.data.map(item => item.name); // Get editor names
+            const dataValues = data.data.map(item => item.percent); // Get percentage data
+            const backgroundColors = data.data.map(item => item.color); // Get colors for each segment
+            const timeSpent = data.data.map(item => item.text); // Get time spent for each editor
+
+            // Initialize the "Editors Used" chart
+            const ctx = document.getElementById('desktop-editorsUsedChart').getContext('2d'); // Assuming 'editorsUsedChart' is the ID of your canvas
+            new Chart(ctx, {
+                type: 'pie', // Pie chart type
+                data: {
+                    labels: labels, // Editor names as labels
+                    datasets: [{
+                        data: dataValues, // Percentage data
+                        backgroundColor: backgroundColors, // Segment colors
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            display: false, // Optional: Set to 'true' to show the legend
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    let index = context.dataIndex; // Get the index of the current segment
+                                    let time = timeSpent[index];  // Get the time spent on that editor
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    // Display both percentage and time
+                                    label += context.raw.toFixed(2) + '%'; // Show percentage
+                                    label += ' (' + time + ')'; // Append time spent
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching editors used data:', error));
+
+        // AJAX request to get Wakatime share data for Editors Used chart
+    fetch('https://wakatime.com/share/@telloviz/e53a65a6-ccff-473b-8d17-cd1f8d291632.json')
+    .then(response => response.json())
+    .then(data => {
+        const labels = data.data.map(item => item.name); // Get editor names
+        const dataValues = data.data.map(item => item.percent); // Get percentage data
+        const backgroundColors = data.data.map(item => item.color); // Get colors for each segment
+        const timeSpent = data.data.map(item => item.text); // Get time spent for each editor
+
+        // Initialize the "Editors Used" chart
+        const ctx = document.getElementById('mobile-editorsUsedChart').getContext('2d'); // Assuming 'editorsUsedChart' is the ID of your canvas
+        new Chart(ctx, {
+            type: 'pie', // Pie chart type
+            data: {
+                labels: labels, // Editor names as labels
+                datasets: [{
+                    data: dataValues, // Percentage data
+                    backgroundColor: backgroundColors, // Segment colors
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        display: false, // Optional: Set to 'true' to show the legend
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                let index = context.dataIndex; // Get the index of the current segment
+                                let time = timeSpent[index];  // Get the time spent on that editor
+                                if (label) {
+                                    label += ': ';
+                                }
+                                // Display both percentage and time
+                                label += context.raw.toFixed(2) + '%'; // Show percentage
+                                label += ' (' + time + ')'; // Append time spent
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching editors used data:', error));
+
+
     // AJAX request to get Wakatime share data for Editors Used chart
     fetch('https://wakatime.com/share/@telloviz/138147c5-aee1-43aa-82ac-934427b92c04.json')
         .then(response => response.json())
@@ -222,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const backgroundColors = data.data.map(item => item.color);
             const timeSpent = data.data.map(item => item.text);
 
-            const ctx = document.getElementById('editorChart').getContext('2d');
+            const ctx = document.getElementById('desktop-editorChart').getContext('2d');
             new Chart(ctx, {
                 type: 'pie',
                 data: {
@@ -259,6 +455,55 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch(error => console.error('Error fetching editor data:', error));
+
+        // AJAX request to get Wakatime share data for Editors Used chart
+    fetch('https://wakatime.com/share/@telloviz/138147c5-aee1-43aa-82ac-934427b92c04.json')
+    .then(response => response.json())
+    .then(data => {
+        const labels = data.data.map(item => item.name);
+        const dataValues = data.data.map(item => item.percent);
+        const backgroundColors = data.data.map(item => item.color);
+        const timeSpent = data.data.map(item => item.text);
+
+        const ctx = document.getElementById('mobile-editorChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: dataValues,
+                    backgroundColor: backgroundColors,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                let index = context.dataIndex;
+                                let time = timeSpent[index];
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.raw.toFixed(2) + '%';
+                                label += ' (' + time + ')';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching editor data:', error));
+
+
 
 
 });
