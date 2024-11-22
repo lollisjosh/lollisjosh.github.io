@@ -11,6 +11,14 @@ html {
     /* Prevent horizontal overflow */
 }
 
+
+.funnel-display-header {
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
 /* Main content styles */
 main {
     display: flex;
@@ -121,6 +129,10 @@ input[type="submit"]:hover {
         color: #4b304e;
         padding-top: 0;
         text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
+        font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* You can adjust weight between 300-800 */
+    font-style: normal;
 
     }
 
