@@ -1,4 +1,7 @@
-/* General body and html settings */
+/***********************
+ * GLOBAL STYLES
+ ***********************/
+/* Base elements */
 body,
 html {
     min-height: 100vh;
@@ -11,25 +14,35 @@ html {
     /* Prevent horizontal overflow */
 }
 
-/* Global Content Container */
+/* Typography */
+.funnel-display-header {
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/***********************
+ * LAYOUT COMPONENTS
+ ***********************/
+/* Content Container */
 .content-container {
     background: #ffffff;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.253);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    min-height: 90%;
+    border: 4px solid #4b304e;
+    padding: 2rem;
 }
 
-
-.funnel-display-header {
-    font-family: "Funnel Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-  }
-
-/* Main content styles */
+/* Main Content Area */
 main {
     display: flex;
     justify-content: normal;
@@ -40,110 +53,260 @@ main {
     margin-top: 65px;
 }
 
-/* main h1 {
-    font-size: 4rem;
-    color: #4b304e;
-    padding-top: 0;
-} */
-
-main p {
-    font-size: 1.5rem;
-    color: #666;
-    margin: 10px 0;
-}
-
-/* Form Styles */
-#fs-frm {
+/***********************
+ * NAVIGATION
+ ***********************/
+/* Navbar */
+#navbar {
     display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 4px solid #c758d3;
-    border-radius: 6px;
-    background-color: #f9f9f900;
-}
-
-#fs-frm-inputs {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #c758d3;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-input[type="submit"] {
-    padding: 10px 15px;
-    background-color: #4b304e;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-input[type="submit"]:hover {
-    background-color: #ed65ff;
-}
-
-/* Profile Picture Styles */
-#intro {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: #4b304e;
+    z-index: 10;
+    /* Navbar on top */
 }
 
-
-
-/* Default: Hide elements */
-#language-data-message,
-#chart-data-message {
-    display: none;
+.header-list {
+    position: fixed;
+    top: -300px;
+    /* Hidden behind navbar initially */
+    left: 0;
+    width: 100%;
+    background-color: #4b304e;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    transition: top 0.6s ease;
+    /* Smooth sliding effect */
+    z-index: 5;
+    /* Lower z-index to stay under navbar */
+    opacity: 95%;
+    align-items: center;
+    list-style-type: none;
 }
-
-
 
 .header-list.active {
     top: 65px;
     /* Adjusted to slide out just below the navbar */
 }
 
-/* Media Queries */
+.menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    position: fixed;
+    /*        top: 20px;*/
+    left: 20px;
+    z-index: 15;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #f4a0ff, #4b304e);
+    padding: 10px 20px;
+    /* Optional: Add padding to create space around the text */
+    border-radius: 5px;
+    /* Optional: Add rounded corners */
+}
+
+/***********************
+ * PROJECT GRID
+ ***********************/
+#projects-grid {
+    width: 80%;
+    /* Grid container takes up 80% of its parent width */
+    height: auto;
+    display: grid;
+    /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Automatically create columns based on available space */
+    gap: 20px;
+    /* Add space between grid items */
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.project-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;  /* Add transparent border by default */
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #4b304e;  /* Match the content-container border color */
+}
+
+.thumbnail-container {
+    width: 100%;
+    /* Ensure the container fills the grid cell */
+    height: 70%;
+    /* Set the desired height for the container */
+    max-height: 300px;
+    /* Maximum height limit for the container */
+    display: flex;
+    /* Flexbox to ensure the image inside is stretched */
+    justify-content: center;
+    /* Center the image horizontally */
+    align-items: center;
+    /* Center the image vertically */
+}
+
+/***********************
+ * BIO SECTION
+ ***********************/
+/* Bio Placeholder: Center the bio content */
+#bio-placeholder {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100%;            /* Ensure it takes full height of its parent */
+}
+
+/* Bio Container: Styling the bio section */
+#bio-container {
+    width: 50%;             /* Set the width of the bio container */
+    height: auto;           /* Allow the height to adjust based on content */
+    border: 2px solid #4b304e;
+    border-radius: 6px;
+    padding: 20px;          /* Optional: Add some padding inside */
+    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+    text-align: center;     /* Center text inside bio container */
+    box-shadow: 8px, 8px 2px rgb(0, 0, 0);
+}
+
+/* Role Tags styling: Ensures it is centered and spaced */
+#role-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2%;
+}
+
+/* List inside Role Tags */
+#role-tags ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+}
+
+/* List items inside Role Tags */
+#role-tags ul li {
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+/***********************
+ * FOOTER
+ ***********************/
+/* #site-footer Styles */
+#site-footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4b304e;
+    color: white;
+    background-color: #4b304e;
+}
+
+/* Correct the #site-footer styles */
+#site-footer p {
+    font-size: large;
+    /* Or a valid size */
+    text-wrap: wrap;
+}
+
+/* Style all font awesome icons inside #site-footer */
+#site-footer .fa {
+    display: inline-flex;
+    /* Ensures the icon is centered */
+    justify-content: center;
+    /* Centers the icon horizontally */
+    align-items: center;
+    /* Centers the icon vertically */
+    padding: 20px;
+    /* Space around the icon */
+    font-size: 50px;
+    /* Increase the font-size to make the icon larger */
+    width: 20px;
+    /* Set width for square button */
+    height: 20px;
+    /* Set height for square button */
+    text-align: center;
+    /* Center the text inside */
+    text-decoration: none;
+    /* Remove underline from links */
+    border-radius: 10px;
+    /* Optional: Rounded corners */
+}
+
+/* Add a hover effect if you want */
+#site-footer .fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* GitHub */
+#site-footer .fa-github {
+    background: #000000;
+    color: white;
+
+    border: 4px solid transparent;
+    border-radius: 6;
+    border: 4px solid #331236;
+}
+
+/* Instagram */
+#site-footer .fa-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+
+    border: 4px solid transparent;
+    border-radius: 6;
+    border: 4px solid #331236;
+}
+
+/* YouTube */
+#site-footer .fa-youtube {
+    background: #FF0000;
+    color: white;
+    border: 4px solid transparent;
+    border-radius: 6;
+    border: 4px solid #331236;
+}
+
+/***********************
+ * MEDIA QUERIES
+ ***********************/
 /* Mobile (<=768px) */
 @media screen and (max-width: 768px) {
-
-
+    /* Mobile-specific styles */
     main h1 {
         font-size: 3rem;
         color: #4b304e;
         padding-top: 0;
         text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
         font-family: "Funnel Display", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500; /* You can adjust weight between 300-800 */
-    font-style: normal;
-
+        font-optical-sizing: auto;
+        font-weight: 500; /* You can adjust weight between 300-800 */
+        font-style: normal;
     }
 
     .snug-header {
@@ -165,8 +328,7 @@ input[type="submit"]:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5)   
-
+        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5)
     }
 
     .pfp {
@@ -180,8 +342,6 @@ input[type="submit"]:hover {
     #chart-data-message {
         display: block;
     }
-
-
 
     #navbar {
         display: flex;
@@ -249,10 +409,9 @@ input[type="submit"]:hover {
         /*margin-left: 3%;*/
     }
 
-
-#resume-header {
-    margin-top: 5%;
-}
+    #resume-header {
+        margin-top: 5%;
+    }
 
     iframe {
         width: 75%;
@@ -266,8 +425,6 @@ input[type="submit"]:hover {
 
     } */
 
-
-
     canvas {
         width: 100%;
         height: auto;
@@ -280,15 +437,11 @@ input[type="submit"]:hover {
 
     /* Projects Grid Styles */
     #projects-grid {
-        width: 80%;
-        /* Grid container takes up 80% of its parent width */
-        height: auto;
-        display: grid;
-        /* Use grid layout */
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        /* Automatically create columns based on available space */
-        gap: 20px;
-        /* Add space between grid items */
+        width: 90%; /* Wider on mobile */
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 1rem;
+        padding: 1rem;
+        margin: 0 auto;
     }
 
     .thumbnail-container {
@@ -304,7 +457,6 @@ input[type="submit"]:hover {
         /* Center the image horizontally */
         align-items: center;
         /* Center the image vertically */
-
     }
 
     .img-thumbnail {
@@ -318,12 +470,11 @@ input[type="submit"]:hover {
         /* Limit the image to 300px width */
         max-height: 300px;
         /* Limit the image to 300px height */
-        border: 4px solid transparent;
+        /*border: 4px solid transparent;*/
         /* Set the border width */
-        border-image: linear-gradient(to top, #4b304e, #181986) 1;
+        /*border-image: linear-gradient(to top, #4b304e, #181986) 1;*/
         /* Apply the gradient */
     }
-
 
     #wakatime-site-hours {
         margin-left: 10px;
@@ -407,7 +558,6 @@ input[type="submit"]:hover {
         align-content: center;
         justify-items: center;
         background-color: #4b304e;
-
     }
 
     #site-footer p {
@@ -447,54 +597,50 @@ input[type="submit"]:hover {
 
     #social-div {
         display: flex;
-
     }
 
     /* Bio Placeholder: Center the bio content */
-#bio-placeholder {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 100%;            /* Ensure it takes full height of its parent */
-}
+    #bio-placeholder {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        height: 100%;            /* Ensure it takes full height of its parent */
+    }
 
-/* Bio Container: Styling the bio section */
-#bio-container {
-    width: 85%;             /* Set the width of the bio container */
-    height: auto;           /* Allow the height to adjust based on content */
-    border: 2px solid #4b304e;
-    border-radius: 6px;
-    padding: 20px;          /* Optional: Add some padding inside */
-    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
-    text-align: center;     /* Center text inside bio container */
-}
+    /* Bio Container: Styling the bio section */
+    #bio-container {
+        width: 95%;             /* Wider container on mobile */
+        height: auto;
+        border: 2px solid #4b304e;
+        border-radius: 6px;
+        padding: 15px;          /* Slightly reduced padding */
+        box-sizing: border-box;
+        text-align: center;
+    }
 
     #role-tags {
-        height: auto;
+        width: 100%;
         display: flex;
-        /* Enables Flexbox */
-        justify-content: center; /* Aligns the items horizontally */
-        gap: 10px; /* Adds spacing between items */
-        margin: 2%;
+        justify-content: center;
+        gap: 5px;              /* Reduced gap between items */
+        margin: 1%;            /* Reduced margin */
     }
 
     #role-tags ul {
+        width: 100%;
         display: flex;
-        /* Flexbox for the list */
-        list-style-type: none; /* Removes bullets */
-        padding: 0; /* Removes default padding */
-        margin: 0; /* Removes default margin */
-        gap: 10px; /* Adds spacing between list items */
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 5px;             /* Reduced gap between list items */
     }
 
     #role-tags ul li {
-        display: flex;
-        /* Ensure list items are flex containers if needed */
-        font-style: bold;
-        font-size: 15pt;
-
+        font-weight: bold;
+        font-size: 14pt;      /* Smaller font size on mobile */
+        white-space: nowrap;  /* Prevent text wrapping */
     }
-
 
     /* Set a specific color for each brand */
 
@@ -511,7 +657,6 @@ input[type="submit"]:hover {
     #site-footer .fa-instagram {
         background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         color: white;
-
 
         border-radius: 6;
         border: 2px solid #331236;
@@ -535,7 +680,7 @@ input[type="submit"]:hover {
 
     #desktop-lang-row {
         display: none;
-        }
+    }
 
     #desktop-lang-headers-row {
         display: none;
@@ -544,17 +689,21 @@ input[type="submit"]:hover {
     .desktop-lang-header {
         display: none;
     }
+
     .desktop-editor-header {
         display: none;
     }
+
     #desktop-editors-row {
-        display: none;    }
+        display: none;
+    }
 
     #desktop-editors-headers-row {
         display: none;
     }
+
     #desktop-language-data-message {
-        display:none;
+        display: none;
     }
 
     #desktop-chart-data-message {
@@ -584,8 +733,6 @@ input[type="submit"]:hover {
         padding: 0 10%; /* Adds space around chart if necessary */
         margin-bottom: 20px;
     }
-    
-    
 
     .mobile-wakatimeLangChart {
         display: flex;
@@ -597,23 +744,78 @@ input[type="submit"]:hover {
         justify-content: center;
         align-items: center;
     }
-    
+
     .content-container {
-        width: 95%;
-        margin: 1rem auto;
-        padding: 1rem;
+        width: 75%;
+        margin-top: 10%;
+        /* margin: 1rem auto;
+        padding: 1rem; */
     }
 
+    .project-item {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+        border: 2px solid transparent;
+        margin-bottom: 1rem;
+    }
+
+    .project-item:hover,
+    .project-item:active {
+        transform: translateY(-3px); /* Smaller lift on mobile */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        border: 2px solid #4b304e;
+    }
+
+    .project-item h2 {
+        padding: 0.8rem;
+        margin: 0;
+        font-size: 1.2rem; /* Slightly smaller text on mobile */
+    }
+
+    .thumbnail-container {
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+    }
+
+    .thumbnail-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.01); /* Slightly larger by default */
+        transition: transform 0.3s ease;
+    }
+
+    .project-item:hover .thumbnail-container img,
+    .project-item:active .thumbnail-container img {
+        transform: scale(1.08);
+    }
+
+    #fs-frm {
+        width: 85%;
+        padding: 0.5rem;
+    }
+    
+    #fs-frm input,
+    #fs-frm textarea {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+
+    .content-container {
+        padding: 1rem;  /* Reduce padding on mobile */
+    }
 }
 
-
-/* Desktop Size */
+/* Desktop (>768px) */
 @media screen and (min-width: 769px) {
+    /* Desktop-specific styles */
     /* nav {
         position: relative;
         z-index: 10; 
     } */
-
 
     /* .chart-column-container {
         width: 50%;
@@ -627,7 +829,6 @@ input[type="submit"]:hover {
         color: #4b304e;
         padding-top: 0px;
         text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
-
     }
 
     .snug-header {
@@ -649,9 +850,8 @@ input[type="submit"]:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5)   
-     }
-    
+        box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5)
+    }
 
     .pfp {
         width: 250px;
@@ -732,16 +932,12 @@ input[type="submit"]:hover {
         /* Optional: Add rounded corners */
     }
 
-
     .header-list-item a {
         color: white;
         text-decoration: none;
         font-size: 32px;
         margin-left: 10px;
     }
-
-    
-
 
     /* Projects Grid Styles */
     #projects-grid {
@@ -754,6 +950,10 @@ input[type="submit"]:hover {
         /* Automatically create columns based on available space */
         gap: 20px;
         /* Add space between grid items */
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
     }
 
     .thumbnail-container {
@@ -769,7 +969,6 @@ input[type="submit"]:hover {
         /* Center the image horizontally */
         align-items: center;
         /* Center the image vertically */
-
     }
 
     .img-thumbnail {
@@ -783,9 +982,9 @@ input[type="submit"]:hover {
         /* Limit the image to 300px width */
         max-height: 300px;
         /* Limit the image to 300px height */
-        border: 4px solid transparent;
+        /*border: 4px solid transparent;*/
         /* Set the border width */
-        border-image: linear-gradient(to top, #4b304e, #181986) 1;
+        /*border-image: linear-gradient(to top, #4b304e, #181986) 1;*/
         /* Apply the gradient */
     }
 
@@ -832,15 +1031,12 @@ input[type="submit"]:hover {
     }
 
     .project-video {
-
         margin: 2%;
     }
-
 
     #wakatime-site-hours {
         margin-left: 10px;
         margin-right: 3%;
-
     }
 
     #wakatime-site-hours img {
@@ -852,65 +1048,67 @@ input[type="submit"]:hover {
     .pdf-container {
         display: flex;
         justify-content: center;
-        /*align-items: center;*/
         width: 100%;
-        height: 100vh;
+        height: 900px;  /* Reduced from 1200px */
         background-color: #f9f9f900;
-        /* padding: 20px; */
+        margin: 2rem 0;
     }
 
     .pdf-container object {
         width: 80%;
-        height: 90vh;
+        height: 100%;
         border: 4px solid #333;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         border-radius: 6px;
     }
-/* Bio Placeholder: Center the bio content */
-#bio-placeholder {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 100%;            /* Ensure it takes full height of its parent */
-}
 
-/* Bio Container: Styling the bio section */
-#bio-container {
-    width: 50%;             /* Set the width of the bio container */
-    height: auto;           /* Allow the height to adjust based on content */
-    border: 2px solid #4b304e;
-    border-radius: 6px;
-    padding: 20px;          /* Optional: Add some padding inside */
-    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
-    text-align: center;     /* Center text inside bio container */
-}
+    /* Bio Placeholder: Center the bio content */
+    #bio-placeholder {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+        height: 100%;            /* Ensure it takes full height of its parent */
+    }
 
-/* Role Tags styling: Ensures it is centered and spaced */
-#role-tags {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 2%;
-}
+    /* Bio Container: Styling the bio section */
+    #bio-container {
+        width: 50%;             /* Set the width of the bio container */
+        height: auto;           /* Allow the height to adjust based on content */
+        border: 2px solid #4b304e;
+        border-radius: 6px;
+        padding: 20px;          /* Optional: Add some padding inside */
+        box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+        text-align: center;     /* Center text inside bio container */
+        box-shadow: 8px, 8px 2px rgb(0, 0, 0);
+    }
 
-/* List inside Role Tags */
-#role-tags ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 10px;
-}
+    /* Role Tags styling: Ensures it is centered and spaced */
+    #role-tags {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 2%;
+    }
 
-/* List items inside Role Tags */
-#role-tags ul li {
-    font-weight: bold;
-    font-size: 15pt;
-}
+    /* List inside Role Tags */
+    #role-tags ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+    }
 
-#resume-header {
-    margin-top: 5%;
-}
+    /* List items inside Role Tags */
+    #role-tags ul li {
+        font-weight: bold;
+        font-size: 15pt;
+    }
+
+    #resume-header {
+        margin-top: 5%;
+    }
+
     /* #site-footer Styles */
     #site-footer {
         display: flex;
@@ -921,7 +1119,6 @@ input[type="submit"]:hover {
         background-color: #4b304e;
         color: white;
         background-color: #4b304e;
-
     }
 
     /* Correct the #site-footer styles */
@@ -1025,7 +1222,6 @@ input[type="submit"]:hover {
         display: none;
     }
 
-    
     /* .iframe-border {
         margin: 20px 0;
         padding: 10px;
@@ -1055,170 +1251,171 @@ input[type="submit"]:hover {
     } */
 
     /* Devlog Content Styles */
-.devlog-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    .devlog-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-.devlog-content h2 {
-    color: #4b304e;
-    margin-top: 2rem;
-}
+    .devlog-content h2 {
+        color: #4b304e;
+        margin-top: 2rem;
+    }
 
-.devlog-content p {
-    line-height: 1.6;
-    margin: 1rem 0;
-}
+    .devlog-content p {
+        line-height: 1.6;
+        margin: 1rem 0;
+    }
 
-.devlog-list {
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
+    .devlog-list {
+        margin: 1rem 0;
+        padding-left: 2rem;
+    }
 
-.devlog-list li {
-    margin-bottom: 0.5rem;
-}
+    .devlog-list li {
+        margin-bottom: 0.5rem;
+    }
 
-.devlog-section {
-    margin-bottom: 2rem;
-    text-align: left;
-}
+    .devlog-section {
+        margin-bottom: 2rem;
+        text-align: left;
+    }
 
-/* Blockquote styling for challenges/issues */
-.devlog-content blockquote {
-    border-left: 4px solid #4b304e;
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: rgba(75, 48, 78, 0.1);
-}
+    /* Blockquote styling for challenges/issues */
+    .devlog-content blockquote {
+        border-left: 4px solid #4b304e;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background: rgba(75, 48, 78, 0.1);
+    }
 
-/* Add to styles.css */
-.devlog-content blockquote {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border: none;
-    transition: transform 0.2s ease;
-}
+    /* Add to styles.css */
+    .devlog-content blockquote {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem;
+        margin: 2rem 0;
+        border: none;
+        transition: transform 0.2s ease;
+    }
 
-.devlog-content blockquote:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
+    .devlog-content blockquote:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
 
-.devlog-content h5 {
-    color: #4b304e;
-    font-size: 1.1rem;
-    margin: 0;
-    padding: 0.5rem 0;
-    font-family: "Funnel Display", sans-serif;
-}
+    .devlog-content h5 {
+        color: #4b304e;
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 0.5rem 0;
+        font-family: "Funnel Display", sans-serif;
+    }
 
-.devlog-content b {
-    display: block;
-    border-bottom: 2px solid #ed65ff;
-    margin-bottom: 1rem;
-}
+    .devlog-content b {
+        display: block;
+        border-bottom: 2px solid #ed65ff;
+        margin-bottom: 1rem;
+    }
 
-.devlog-content p {
-    color: #4a4a4a;
-    line-height: 1.6;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-}
+    .devlog-content p {
+        color: #4a4a4a;
+        line-height: 1.6;
+        margin: 0.5rem 0;
+        font-size: 1rem;
+    }
 
-/* Challenge/Remedy styling */
-.devlog-content h5:first-of-type {
-    color: #e74c3c;
-}
+    /* Challenge/Remedy styling */
+    .devlog-content h5:first-of-type {
+        color: #e74c3c;
+    }
 
-.devlog-content h5:last-of-type {
-    color: #27ae60;
-    margin-top: 1rem;
-}
+    .devlog-content h5:last-of-type {
+        color: #27ae60;
+        margin-top: 1rem;
+    }
 
-/* Add visual separator between challenge and remedy */
-.devlog-content blockquote b:last-of-type {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid #f0f0f0;
-}
+    /* Add visual separator between challenge and remedy */
+    .devlog-content blockquote b:last-of-type {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #f0f0f0;
+    }
 
-/* Add to styles.css */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
+    /* Add to styles.css */
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
 
-.blog-card {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    padding: 2%;
-    cursor: pointer; /* Add pointer cursor */
-}
+    .blog-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        padding: 2%;
+        cursor: pointer; /* Add pointer cursor */
+    }
 
-.blog-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block; /* Make anchor fill card */
-}
+    .blog-card a {
+        text-decoration: none;
+        color: inherit;
+        display: block; /* Make anchor fill card */
+    }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    background: #ed65ff;
-}
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        background: #ed65ff;
+    }
 
-/* Remove the separate blog-link class since entire card is now clickable */
+    /* Remove the separate blog-link class since entire card is now clickable */
 
-.blog-content {
-    padding: 1.5rem;
-}
+    .blog-content {
+        padding: 1.5rem;
+    }
 
-.blog-title {
-    color: #4b304e;
-    margin-bottom: 0.5rem;
-}
+    .blog-title {
+        color: #4b304e;
+        margin-bottom: 0.5rem;
+    }
 
-.blog-date {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
+    .blog-date {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
 
-.blog-preview {
-    color: #333;
-    margin-bottom: 1.5rem;
-}
+    .blog-preview {
+        color: #333;
+        margin-bottom: 1.5rem;
+    }
 
-.blog-link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #4b304e;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
+    .blog-link {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: #4b304e;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
 
-.blog-link:hover {
-    background: #ed65ff;
-}
+    .blog-link:hover {
+        background: #ed65ff;
+    }
 
     .content-container {
         width: 60%;
         min-height: 90%;
+        border: 4px solid #4b304e;
     }
 
     #desktop-chart-column-container {
@@ -1253,5 +1450,56 @@ input[type="submit"]:hover {
         width: 45%; /* Match chart container width */
         margin: 0 auto;
     }
+}
+
+/***********************
+ * UTILITY CLASSES
+ ***********************/
+/* Helper classes */
+
+/* Add these styles to your CSS file */
+#fs-frm {
+    width: 90%;  /* Reduced from 100% */
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fs-frm fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;  /* Ensure fieldset doesn't overflow */
+}
+
+#fs-frm input,
+#fs-frm textarea {
+    width: 100%;
+    max-width: 100%;  /* Prevent overflow */
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #4b304e;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;  /* Include padding in width calculation */
+}
+
+#fs-frm [type="submit"] {
+    background: #4b304e;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#fs-frm [type="submit"]:hover {
+    background: #ed65ff;
 }
 
