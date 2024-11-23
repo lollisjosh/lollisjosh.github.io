@@ -1,0 +1,39 @@
+<!-- artwork.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork | Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Artwork</h1>
+            
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <img src="/assets/images/splat.png" 
+                         alt="Digital Art" 
+                         data-full-res="/assets/images/splat.png">
+                    <img src="/assets/images/shoe.png" 
+                         alt="Shoe Design" 
+                         data-full-res="/assets/images/shoe.png">
+                    <!-- Add more images as needed -->
+                </div>
+                
+                <!-- Previous and Next Buttons -->
+                <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+                <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="/scripts.js"></script>
+</body>
+</html>
