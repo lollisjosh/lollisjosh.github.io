@@ -301,6 +301,15 @@ main {
     border: 4px solid #331236;
 }
 
+/* LinkedIn */
+#site-footer .fa-linkedin {
+    background: #0077B5;
+    color: white;
+    border: 4px solid transparent;
+    border-radius: 6;
+    border: 4px solid #331236;
+}
+
 /***********************
  * MEDIA QUERIES
  ***********************/
