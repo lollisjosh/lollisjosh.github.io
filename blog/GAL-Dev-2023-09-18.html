@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAL Devlog | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    
+    <main>
+        <div class="content-container">
+            <article>
+                <h1 class="funnel-display-header">Arm'n Aimer</h1>
+                <h4>Aiming Mechanic Development in Project GAL</h4>
+                <p>See the ongoing project page <a href="/projects/project_gal.html">here!</a></p>
+
+                <section class="devlog-section">
+                    <h2>Introduction</h2>
+                    <p>This Project Gal Dev Log provides a brief overview of the first-person aim-control I implemented in a recent development sprint. I will go over my initial goal for this sprint, the challenges that I ran into, and a brief discussion of my thought processes leading to accomplishing this sprint goal.</p>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Initial Goal</h2>
+                    <p>Since Gal is inspired by the classic carnival gallery shooting games, the initial goal was to allow the player an angle-restricted first-person camera control, using the mouse/gamepad. A sub-challenge emerged after accomplishing this goal, where the player-model's weapon-hand did not follow the player's view as it should in a first-person shooter-type game. A bulk of this sprint was spent solving this aspect.</p>
+                    <img class="img-thumbnail blog-gif" src="/assets/gifs/pop.gif" alt="pop.gif">
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Challenges/Issues</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>Since Gal is a sort-of fps game, the primary task was to implement fps-style aiming controls.</p>
+                        <p>I came to an initial working-solution for the fps control implementation; however, I never felt satisfied with the overly complicated nature of the technique I was adapting. This solution required the use of a custom Cinemachine Virtual Camera Extension. The extension script constantly threw warning messages in my console.</p>
+                        <p>In an attempt to simplify things, I imported the official Unity Starter Package First-Person Controller. After importing the package, my editor started to crash occasionally.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>To eventually overcome the instability caused by the First-Person Controller package, I created a new empty Unity project. I imported the asset package to this project and deleted anything I didn't need. I then exported it as a new package with a trimmed set of assets. The editor crash issue has since ceased.</p>
+                        <p>From then on, player-controlled Camera rotation was made possible using the Unity Input System Package. A Player Input Component on my Input Manager game object is in charge of triggering a Unity Event for each of the registered input action the user performs.</p>
+                        <p>In my case, the OnLook input event trigger was set to call the FirstPersonController.onLook(CallbackContext) function every time the player moves the mouse / joystick.</p>
+                    </blockquote>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>First-Person Aim Controls</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>Initially, players had the ability to view in all directions with no angular-limit, which turned out to be the source of a few distinct issues:</p>
+                        <ul>
+                            <li>Can see parts of player's model that should not be seen (bad for immersion)</li>
+                            <li>Can shoot back of horse head (undesirable behavior)</li>
+                            <li>Arm passes through player-model body (unrealistic / bad for immersion)</li>
+                            <li>Gives more time to hit targets already passed-by (reduces prioritization challenge)</li>
+                        </ul>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>As can be seen in the following snippet, camera rotation is being clamped in 4 distinct directions. The original file I am modifying only clamped the two-axes symmetrically (one clamp for horizontal, one clamp for vertical).</p>
+                        <p>I introduced the 4-direction clamp to remedy a couple of issues:</p>
+                        <ul>
+                            <li>Upward clamp
+                                <ul>
+                                    <li>Keeps the player from looking too far into the sky (there's no targets up there currently)</li>
+                                    <li>Promotes target prioritization.</li>
+                                </ul>
+                            </li>
+                            <li>Downward clamp
+                                <ul>
+                                    <li>Restricts view of untidy off-camera aspects</li>
+                                    <li>Removes temptation to shoot your horse</li>
+                                </ul>
+                            </li>
+                            <li>Horizontal clamp
+                                <ul>
+                                    <li>Remains symmetrical</li>
+                                    <li>Distinct left/right clamps provided for future potential and to maintain consistency with up/down clamp pattern.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </blockquote>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Model Artifacts Permeating View</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>Additionally, with this solution in place, I began to see player-model artifacts permeating the camera frustum. These were small cross-sections of the player-model's face. The solution itself didn't cause these artifacts, but since the camera was not in the player's control, new issues such as this began to surface.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>I solved the issue with model artifacts bleeding into view quickly by simply translating the neck bone from the player character armature toward the inside of the player character's model.</p>
+                    </blockquote>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Player-Model Arm Orientation Issues</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>Haphazard importation of 3rd-party models and assets throughout the early development stages left some prefab's transforms in awkward states of disorientation. This made it especially difficult to get a consistent set of vectors to use when trying to manipulate the player-model's arm toward the camera/aim.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>To address the orientation issues, I aligned the left-arm into a T-pose, ensuring that all arm bones pointed uniformly forward. I then carefully aligned the revolver pistol into the arm's hand, aligning it with the arm's forward vector direction.</p>
+                    </blockquote>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Player Feedback</h2>
+                    <p>Initial player feedback indicates the need for a smoother camera control. Players indicated that the camera can move too quickly, making it harder to control and thus potentially less enjoyable.</p>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>To Be Addressed</h2>
+                    <p>As of this log, a few issues remain and need attention:</p>
+                    <ul>
+                        <li>Arm clipping issues
+                            <ul>
+                                <li>I believe this happens when the arm is ~parallel with the view-frustum</li>
+                            </ul>
+                        </li>
+                        <li>Camera movement jitter
+                            <ul>
+                                <li>As mentioned in the feedback section, the aim movement needs to be interpolated/smoothed a bit to provide an easier to control aim mechanic.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Next Time:</h2>
+                    <p>In the next Project Gal Dev Log, I plan to discuss the shoot input control and its callback listener OnShoot(CallbackContext). You can see a preview of my progress in the following gif!</p>
+                </section>
+
+                <section class="devlog-section">
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, the development of the aiming mechanic in Project GAL involved overcoming challenges related to package importation, world/local vector orientation issues, camera clipping artifacts, inverse kinematic rigging and its MultiAimConstraint component.</p>
+                    <p>Re-orienting the character model's armature to a consistent forward vector orientation, debugging with raycastHit for world mouse position, and the MultiAimConstraint component technique, are what eventually led me to successfully implementing the view mechanic, and subsequent in solving the challenge of syncing the player-model's arm with that view mechanic!</p>
+                    <p>I could go on for some time more about this sprint, but I'm eager to keep developing!</p>
+                </section>
+
+                <h6>Until next time!</h6>
+                <h4>- Josh ✌️</h4>
+            </article>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/scripts.js"></script>
+</body>
+</html>
