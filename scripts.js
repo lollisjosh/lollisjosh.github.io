@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //      console.error("Failed to load the Accessibility Toolbar script.");
     //  };
 
+    
     // Load bio section
     fetch("/bio.html")
         .then(response => response.text())
@@ -74,23 +75,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // document.head.appendChild(toolbarScript);
     // Load the header and insert it into the placeholder
-    fetch("/header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
+    // In scripts.js, modify your header fetch section:
+fetch("/header.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-            // Attach the hamburger menu toggle functionality after header is loaded
-            const menuButton = document.getElementById("mobile-menu");
-            const navbarMenu = document.querySelector(".header-list"); // Adjust to .header-list
-
-            if (menuButton && navbarMenu) {
-                menuButton.addEventListener("click", function () {
-                    navbarMenu.classList.toggle("active"); // Toggles the 'active' class
-                });
-            } else {
-                console.error('Menu button or header list not found. Check IDs and classes.');
-            }
+        // Calculate header height AFTER header is loaded
+        const navbar = document.getElementById('navbar');
+        const headerHeight = navbar.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+        
+        // Update on window resize
+        window.addEventListener('resize', () => {
+            const headerHeight = navbar.offsetHeight;
+            document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
         });
+
+        // Attach the hamburger menu toggle functionality 
+        const menuButton = document.getElementById("mobile-menu");
+        const navbarMenu = document.querySelector(".header-list");
+
+        if (menuButton && navbarMenu) {
+            menuButton.addEventListener("click", function () {
+                navbarMenu.classList.toggle("active");
+            });
+        } else {
+            console.error('Menu button or header list not found. Check IDs and classes.');
+        }
+    });
 
     // Load the footer
     fetch("/footer.html")

@@ -13,223 +13,225 @@
     <div id="header-placeholder"></div>
     
     <main>
-        <article class="devlog-content">
-            <h1 class="funnel-display-header">Project GAL Development Log</h1>
-            <p>This is the first official dev log post for Project GAL.</p>
-            <br>
-            <section class="devlog-section">
-                <h2>Background/Intentions</h2>
-                <p>Project GAL aims to fill the gap in my portfolio with a 3D game development project, enhancing my prospects in the
-                    video game industry job market. I aim to have this project in a playable state by the end of this month (September
-                    2023) so I can include it on internship applications. This is going to be developed in parallel with my semester
-                    workload so that will certainly hold priority over this.</p>
-            </section>
-            <br>
-            <section class="devlog-section">
-                <h2>Development/Approach</h2>
-                <p>Originally, the project was a Western-themed 3D bullet-hell game. To ensure timely completion, I simplified it into a
-                    3D rail-based Western gallery shooter inspired by Disneyland's <i>Toy Story Midway Mania</i> and the arcade classic
-                    <i>Time Crisis</i>
-                </p>
-                <ul class="devlog-list">
-                    <li>Design patterns for controlling game-flow logic:
-                        <ul>
-                            <li>Currently using Tarodev's singleton systems.</li>
-                            <li>Possibly return to a C# native State Machine and custom event system for better code decoupling.</li>
-                            <li>I also like the additive scenes approach, allowing for a base scene with other additive scenes to mask it.</li>
-                        </ul>
-                    </li>
-                    <li>Minimize the use of <i>magic numbers</i> in code by exposing primitives to the editor with Unity's
-                        <i>SerializedFields</i>
-                    </li>
-                    <li>Utilize dependency injection by utilizing <i>SerializedFields</i> and <i>Scriptable Objects</i> where applicable.
-                    </li>
-                    <li>Prefab any scene GameObjects to improve git merges and give tracked data meaningful human readable representation.
-                    </li>
-                    <li>Prefab for reuse, allowing for the original concept to be quickly made later by simply modifying this project</li>
-                </ul>
-            </section>
-            <br>
-            <section class="devlog-section">
-                <h2>Challenges/Issues</h2>
-                <blockquote>
-                    <b>
-                        <h5>Challenge:</h5>
-                    </b>
-                    <p>The initial dolly-track navigation presented camera challenges due to sudden directional changes.</p>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>I redesigned the path as a straight-track with player-controlled first-person aiming. Players can look around
-                        within set limits, improving immersion. A centered reticle follows mouse-controlled camera motion.</p>
-                </blockquote>
-
-                <blockquote>
-                    <b>
-                        <h5>Challenge:</h5>
-                    </b>
-                    <p>The player character was initially planned for 3rd-person POV but the complexity of 3D character rigging/animating
-                        is time-consuming and not vital at this time.</p>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>Opted for a 1st person POV to eliminate the need for any player character visuals outside the player's arm/gun.</p>
-                </blockquote>
-
-                <blockquote>
-                    <b>
-                        <h5>Challenge:</h5>
-                    </b>
-                    <p>Hardware limitations on my aging PC have affected workflow efficiency.</p>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>Utilize third-party low-poly assets and work in an isolated scene for creating prefabs of smaller objects</p>
-                </blockquote>
-
-                <blockquote>
-                    <b>
-                        <h5>Challenge:</h5>
-                    </b>
-                    <p>understanding control flow between Unity's Editor Mode, Play Mode, and the standalone executable "mode".</p>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>Learning many approaches to solve the control flow problem through articles, youtube and documentation, then
-                        deciding what works best for the game.</p>
-                </blockquote>
-            </section>
-            <br>
-            <section class="devlog-section">
-                <h2>Shortcomings</h2>
-                <blockquote>
-                    <b>
-                        <h5>Issue:</h5>
-                    </b>
-                    <p>Player arm movement</p>
-                    <ul>
-                        <li>Gun-holding arm/hand doesn't follow aim/reticle</li>
-                    </ul>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>I will map the upper arm bone of the player model to rotate in accordance with the player aim/view camera movement.
+        <div class="content-container">
+            <article>
+                <h1 class="funnel-display-header">Project GAL Development Log</h1>
+                <p>This is the first official dev log post for Project GAL.</p>
+                <br>
+                <section class="devlog-section">
+                    <h2>Background/Intentions</h2>
+                    <p>Project GAL aims to fill the gap in my portfolio with a 3D game development project, enhancing my prospects in the
+                        video game industry job market. I aim to have this project in a playable state by the end of this month (September
+                        2023) so I can include it on internship applications. This is going to be developed in parallel with my semester
+                        workload so that will certainly hold priority over this.</p>
+                </section>
+                <br>
+                <section class="devlog-section">
+                    <h2>Development/Approach</h2>
+                    <p>Originally, the project was a Western-themed 3D bullet-hell game. To ensure timely completion, I simplified it into a
+                        3D rail-based Western gallery shooter inspired by Disneyland's <i>Toy Story Midway Mania</i> and the arcade classic
+                        <i>Time Crisis</i>
                     </p>
-                </blockquote>
-
-                <blockquote>
-                    <b>
-                        <h5>Issue:</h5>
-                    </b>
-                    <p>Horse model animation</p>
-                    <ul>
-                        <li>Horse head is idle, needs animation</li>
+                    <ul class="devlog-list">
+                        <li>Design patterns for controlling game-flow logic:
+                            <ul>
+                                <li>Currently using Tarodev's singleton systems.</li>
+                                <li>Possibly return to a C# native State Machine and custom event system for better code decoupling.</li>
+                                <li>I also like the additive scenes approach, allowing for a base scene with other additive scenes to mask it.</li>
+                            </ul>
+                        </li>
+                        <li>Minimize the use of <i>magic numbers</i> in code by exposing primitives to the editor with Unity's
+                            <i>SerializedFields</i>
+                        </li>
+                        <li>Utilize dependency injection by utilizing <i>SerializedFields</i> and <i>Scriptable Objects</i> where applicable.
+                        </li>
+                        <li>Prefab any scene GameObjects to improve git merges and give tracked data meaningful human readable representation.
+                        </li>
+                        <li>Prefab for reuse, allowing for the original concept to be quickly made later by simply modifying this project</li>
                     </ul>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>I will give the horse head a simple bobbing animation to imply the locomotion of the rest of the horse unseen by
-                        the viewer.</p>
-                </blockquote>
+                </section>
+                <br>
+                <section class="devlog-section">
+                    <h2>Challenges/Issues</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>The initial dolly-track navigation presented camera challenges due to sudden directional changes.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>I redesigned the path as a straight-track with player-controlled first-person aiming. Players can look around
+                            within set limits, improving immersion. A centered reticle follows mouse-controlled camera motion.</p>
+                    </blockquote>
 
-                <blockquote>
-                    <b>
-                        <h5>Issue:</h5>
-                    </b>
-                    <p>Gun doesn't shoot</p>
-                    <ul>
-                        <li>Gun has no shooting implementation yet</li>
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>The player character was initially planned for 3rd-person POV but the complexity of 3D character rigging/animating
+                            is time-consuming and not vital at this time.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>Opted for a 1st person POV to eliminate the need for any player character visuals outside the player's arm/gun.</p>
+                    </blockquote>
+
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>Hardware limitations on my aging PC have affected workflow efficiency.</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>Utilize third-party low-poly assets and work in an isolated scene for creating prefabs of smaller objects</p>
+                    </blockquote>
+
+                    <blockquote>
+                        <b>
+                            <h5 class="challenge">Challenge:</h5>
+                        </b>
+                        <p>understanding control flow between Unity's Editor Mode, Play Mode, and the standalone executable "mode".</p>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>Learning many approaches to solve the control flow problem through articles, youtube and documentation, then
+                            deciding what works best for the game.</p>
+                    </blockquote>
+                </section>
+                <br>
+                <section class="devlog-section">
+                    <h2>Shortcomings</h2>
+                    <blockquote>
+                        <b>
+                            <h5 class="issue">Issue:</h5>
+                        </b>
+                        <p>Player arm movement</p>
+                        <ul>
+                            <li>Gun-holding arm/hand doesn't follow aim/reticle</li>
+                        </ul>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>I will map the upper arm bone of the player model to rotate in accordance with the player aim/view camera movement.
+                        </p>
+                    </blockquote>
+
+                    <blockquote>
+                        <b>
+                            <h5 class="issue">Issue:</h5>
+                        </b>
+                        <p>Horse model animation</p>
+                        <ul>
+                            <li>Horse head is idle, needs animation</li>
+                        </ul>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>I will give the horse head a simple bobbing animation to imply the locomotion of the rest of the horse unseen by
+                            the viewer.</p>
+                    </blockquote>
+
+                    <blockquote>
+                        <b>
+                            <h5 class="issue">Issue:</h5>
+                        </b>
+                        <p>Gun doesn't shoot</p>
+                        <ul>
+                            <li>Gun has no shooting implementation yet</li>
+                        </ul>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>Using the raycast helper function in my Input Manager, I will detect projectile hits and animate the hit location,
+                            and score increment accordingly.</p>
+                    </blockquote>
+
+                    <blockquote>
+                        <b>
+                            <h5 class="issue">Issue:</h5>
+                        </b>
+                        <p>Start Menu UI</p>
+                        <ul>
+                            <li>Exists but isn't wired to events/actions</li>
+                        </ul>
+                        <b>
+                            <h5 class="remedy">Remedy:</h5>
+                        </b>
+                        <p>Using either Unity Events and/or a custom UI Manager with my custom event system, I will wire UI buttons to Input
+                            System Actions</p>
+                    </blockquote>
+                </section>
+                <br>
+                <section class="devlog-section">
+                    <h2>Current Results</h2>
+                    <p>Several elements are implemented and working:</p>
+                    <ul class="devlog-list">
+                        <li>
+                            <h5>Environment</h5>
+                            <ul>
+                                <li>Town Buildings and props look great</li>
+                                <li>ProBuilder painted landscape adds immersion and aesthetic appeal</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5>Player Controller</h5>
+                            <ul>
+                                <li>First-Person aim/look tracks mouse position properly</li>
+                                <li>Raycast Mouse Hit exposed by InputManager for easy game design access and debugging simplicity</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5>Dolly Track/Cart</h5>
+                            <ul>
+                                <li>Successfully transports Player and Camera through the level</li>
+                                <li>No hairpin turns that overcomplicate things</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5>Gallery Targets</h5>
+                            <ul>
+                                <li>3rd party military range targets used for gallery target visuals</li>
+                                <li>Gallery targets prefab created for easy placement around the level</li>
+                                <li>Uses hinge joint with spring/dampening settings dialed in for quick/snappy target popups</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>Using the raycast helper function in my Input Manager, I will detect projectile hits and animate the hit location,
-                        and score increment accordingly.</p>
-                </blockquote>
+                    <img class="img-thumbnail" src="../assets/gifs/Gal_Target_Prefab.gif" alt="GAL_Target_Prefab.gif">
+                </section>
+                <br>
+                <section class="devlog-section">
+                    <h2>Project Impact</h2>
+                    <p>The time spent on this project has already contributed to my growth as a game developer. While I haven't delved
+                        deeply into 3D game projects, this one has highlighted areas for improvement.</p>
 
-                <blockquote>
-                    <b>
-                        <h5>Issue:</h5>
-                    </b>
-                    <p>Start Menu UI</p>
-                    <ul>
-                        <li>Exists but isn't wired to events/actions</li>
-                    </ul>
-                    <b>
-                        <h5>Remedy:</h5>
-                    </b>
-                    <p>Using either Unity Events and/or a custom UI Manager with my custom event system, I will wire UI buttons to Input
-                        System Actions</p>
-                </blockquote>
-            </section>
-            <br>
-            <section class="devlog-section">
-                <h2>Current Results</h2>
-                <p>Several elements are implemented and working:</p>
-                <ul class="devlog-list">
-                    <li>
-                        <h5>Environment</h5>
-                        <ul>
-                            <li>Town Buildings and props look great</li>
-                            <li>ProBuilder painted landscape adds immersion and aesthetic appeal</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Player Controller</h5>
-                        <ul>
-                            <li>First-Person aim/look tracks mouse position properly</li>
-                            <li>Raycast Mouse Hit exposed by InputManager for easy game design access and debugging simplicity</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Dolly Track/Cart</h5>
-                        <ul>
-                            <li>Successfully transports Player and Camera through the level</li>
-                            <li>No hairpin turns that overcomplicate things</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h5>Gallery Targets</h5>
-                        <ul>
-                            <li>3rd party military range targets used for gallery target visuals</li>
-                            <li>Gallery targets prefab created for easy placement around the level</li>
-                            <li>Uses hinge joint with spring/dampening settings dialed in for quick/snappy target popups</li>
-                        </ul>
-                    </li>
-                </ul>
-                <img class="img-thumbnail" src="../assets/img/posts/GAL_Target_Prefab.gif" alt="GAL_Target_Prefab.gif">
-            </section>
-            <br>
-            <section class="devlog-section">
-                <h2>Project Impact</h2>
-                <p>The time spent on this project has already contributed to my growth as a game developer. While I haven't delved
-                    deeply into 3D game projects, this one has highlighted areas for improvement.</p>
+                    <p>For instance, I've gained practical experience with object rotations and Quaternions, translating my knowledge from
+                        the Computer Graphics college course I took. I can then use what I've experienced in my practical use of these
+                        concepts in creating more dynamic in-game movement and animations.</p>
 
-                <p>For instance, I've gained practical experience with object rotations and Quaternions, translating my knowledge from
-                    the Computer Graphics college course I took. I can then use what I've experienced in my practical use of these
-                    concepts in creating more dynamic in-game movement and animations.</p>
+                    <p>Furthermore, this project has clarified the complexities of Unity's Editor/Play Mode dynamic, thanks to techniques
+                        like Tarodev's singleton systems. I will use this knowledge to build games with a more straightforward and user
+                        friendly architecture, allowing for code reuse in future projects. This will allow me to speed up prototyping new
+                        ideas.</p>
 
-                <p>Furthermore, this project has clarified the complexities of Unity's Editor/Play Mode dynamic, thanks to techniques
-                    like Tarodev's singleton systems. I will use this knowledge to build games with a more straightforward and user
-                    friendly architecture, allowing for code reuse in future projects. This will allow me to speed up prototyping new
-                    ideas.</p>
-
-                <p>Additionally, I've learned to accept help from tutorials while balancing my desire for independent problem-solving.
-                    This approach has deepened my understanding and appreciation of Unity's capabilities and will fast track my own
-                    ability for future projects.</p>
-            </section>
-            <br>
-            <!-- Demo Video Section -->
-            <section class="video-section">
-                <h2>Demonstration Video</h2>
-                <div class="iframe-border">
-                    <iframe class="project-video" width="560" height="315" 
-                        src="https://www.youtube.com/embed/tzEoc89jLjY"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </section>
-        </article>
+                    <p>Additionally, I've learned to accept help from tutorials while balancing my desire for independent problem-solving.
+                        This approach has deepened my understanding and appreciation of Unity's capabilities and will fast track my own
+                        ability for future projects.</p>
+                </section>
+                <br>
+                <!-- Demo Video Section -->
+                <section class="video-section">
+                    <h2>Demonstration Video</h2>
+                    <div class="iframe-border">
+                        <iframe class="project-video" width="560" height="315" 
+                            src="https://www.youtube.com/embed/tzEoc89jLjY"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <div id="footer-placeholder"></div>
