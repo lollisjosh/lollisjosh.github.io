@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Project GAL</title>
+    <title>Projects - Project Gal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -12,61 +15,95 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
     <main>
-        <h1>Project GAL</h1>
-        
-        <!-- Devlog Links Section -->
-        <section class="devlog-section">
-            <h2>Read the Devlog</h2>
-            <div class="devlog-links">
-                <a href="/blog/GAL-Dev-2023-09-11.html">Gal Devlog 1</a>
-                <a href="/blog/GAL-Dev-2023-09-18.html">Gal Devlog 2</a>
-                <h3>Coming Soon:</h3>
-                <a href="/blog/GAL-Dev-2023-10-01.html">Gal Devlog 3</a>
-            </div>
-        </section>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Project GAL</h1>
+            
+            <!-- Devlog Section -->
+            <section class="version-section">
+                <h2 class="funnel-display-header">Development Logs</h2>
+                <div class="image-grid">
+                    <a href="/blog/GAL-Dev-2023-09-11.html" class="project-item">
+                        <h3 class="blog-title">GAL Devlog #1</h3>
+                        <h5 class="blog-date">September 11, 2023</h5>
+                        <h6 class="blog-preview">Initial development setup and project planning...</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Gal Dev Log" class="blog-thumbnail" src="/assets/gifs/gal-logo.gif">
+                        </div>
+                    </a>
+                    
+                    <a href="/blog/GAL-Dev-2023-09-18.html" class="project-item">
+                        <h3 class="blog-title">GAL Devlog #2</h3>
+                        <h5 class="blog-date">September 18, 2023</h5>
+                        <h6 class="blog-preview">Progress update and challenge solutions...</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Gal Dev Log" class="blog-thumbnail" src="/assets/gifs/gal-logo.gif">
+                        </div>
+                    </a>
 
-        <!-- Video Section -->
-        <section class="video-section">
-            <h2>Demo Videos</h2>
-            <div class="iframe-border">
-                <iframe class="project-video" width="560" height="315" 
-                    src="https://www.youtube.com/embed/tzEoc89jLjY?si=GvOB0CXiiy3rLEX2"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
+                    <a href="/blog/GAL-Dev-2023-10-01.html" class="project-item">
+                        <h3 class="blog-title">GAL Devlog #3</h3>
+                        <h5 class="blog-date">October 1, 2023</h5>
+                        <h6 class="blog-preview">Gameplay mechanics demo and development progress...</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Gal Dev Log" class="blog-thumbnail" src="/assets/gifs/gal-logo.gif">
+                        </div>
+                    </a>
+                </div>
+            </section>
 
-            <div class="iframe-border">
-                <iframe class="project-video" width="560" height="315" 
-                    src="https://www.youtube.com/embed/01thEJaXwEs?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
+            <!-- Demo Videos Section -->
+            <section class="version-section">
+                <h2 class="funnel-display-header">Demo Videos</h2>
+                <div class="video-section">
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/tzEoc89jLjY" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/01thEJaXwEs" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/Hy1No7ok5Zk" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
 
-            <div class="iframe-border">
-                <iframe class="project-video" width="560" height="315" 
-                    src="https://www.youtube.com/embed/Hy1No7ok5Zk?si=Qn0wag6uzCGy_9wZ"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                </iframe>
-            </div>
-        </section>
-
-        <!-- Images Section -->
-        <section class="images-section">
-            <h2>Images from the devlog</h2>
-            <div class="image-gallery" id="gallery">
-                <!-- Images will be loaded dynamically if using the projects-layout.html approach -->
-            </div>
-        </section>
+            <!-- Gallery Section -->
+            <section class="version-section">
+                <h2 class="funnel-display-header">Development Gallery</h2>
+                <div class="image-grid">
+                    <img src="/assets/gifs/GAL_aim.gif" 
+                         alt="Target aim demonstration">
+                    <img src="/assets/gifs/Gal_FPS_Demo.gif" 
+                         alt="First person shooter demo">
+                    <img src="/assets/gifs/Gal_Target_Prefab.gif" 
+                         alt="Target prefab interaction">
+                    <img src="/assets/gifs/hammer.gif" 
+                         alt="Hammer animation">
+                    <img src="/assets/gifs/hitFX.gif" 
+                         alt="Hit effects visualization">
+                    <img src="/assets/gifs/peekaboo.gif" 
+                         alt="Peekaboo game mechanic">
+                    <img src="/assets/gifs/pop.gif" 
+                         alt="Pop animation effect">
+                    <img src="/assets/gifs/revIso.gif" 
+                         alt="Isometric view reveal">
+                    <img src="/assets/gifs/targetshoot.gif" 
+                         alt="Target shooting demonstration">
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
+    
+    <!-- Add modal for image viewing -->
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="">
+    </div>
 
     <script src="/scripts.js"></script>
 </body>
