@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
     //  // Dynamically load the locally hosted Accessibility Toolbar script
@@ -516,7 +514,22 @@ fetch("/header.html")
     })
     .catch(error => console.error('Error fetching editor data:', error));
 
+    // Modal functionality for image grid
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const gridImages = document.querySelectorAll('.image-grid img');
 
+    gridImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+        });
+    });
 
+    // Click anywhere to close modal
+    modal.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
 
 });
