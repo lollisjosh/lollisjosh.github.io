@@ -984,6 +984,33 @@ main {
         max-height: 80vh;
         padding: 0.5rem;
     }
+
+    /* Update header sizes for mobile */
+    main h1 {
+        font-size: 2.5rem; /* Larger than h2 */
+        color: #4b304e;
+        padding-top: 0;
+        text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1rem;
+    }
+
+    .funnel-display-header {
+        font-size: 2rem; /* Smaller than h1 */
+        padding: 0.5rem;
+        margin: 1rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Ensure h2 is smaller than h1 */
+    h2.funnel-display-header {
+        font-size: 1.8rem;
+    }
+
+    /* Ensure h3 is smaller than h2 */
+    h3 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Desktop (>768px) */
