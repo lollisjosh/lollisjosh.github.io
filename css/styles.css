@@ -1532,8 +1532,8 @@ main {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin: 2rem 0;
+    padding: 3rem; /* Increased padding */
+    margin: 3rem 0; /* Increased margin */
     border: 2px solid #4b304e;
     transition: transform 0.2s ease;
 }
@@ -1550,14 +1550,14 @@ main {
 }
 
 /* Add subtle separator between versions */
-.version-section:not(:last-child)::after {
+/* .version-section:not(:last-child)::after {
     content: '';
     display: block;
     width: 50%;
     height: 2px;
     background: linear-gradient(to right, #4b304e, transparent);
     margin: 2rem auto 0;
-}   
+}    */
 }
 
 /***********************
@@ -1688,21 +1688,28 @@ main {
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+    gap: 2rem; /* Increased gap between grid items */
+    padding: 2rem; /* Increased padding around the entire grid */
+    margin: 1rem 0; /* Add vertical margin */
 }
 
 .image-grid img {
     width: 100%;
-    height: auto;
+    height: 250px; /* Fixed height */
+    object-fit: contain; /* Preserve aspect ratio */
     border-radius: 8px;
     transition: transform 0.3s ease;
     cursor: pointer;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in element size */
 }
 
 .image-grid img:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .modal {
@@ -1726,5 +1733,9 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
+    object-fit: contain;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
