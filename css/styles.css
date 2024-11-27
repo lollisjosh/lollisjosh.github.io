@@ -1526,6 +1526,38 @@ main {
         width: 45%; /* Match chart container width */
         margin: 0 auto;
     }
+
+    /* Add to your styles.css */
+.version-section {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 2px solid #4b304e;
+    transition: transform 0.2s ease;
+}
+
+.version-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.version-section h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #4b304e;
+}
+
+/* Add subtle separator between versions */
+.version-section:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, #4b304e, transparent);
+    margin: 2rem auto 0;
+}   
 }
 
 /***********************
