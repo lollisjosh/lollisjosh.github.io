@@ -821,7 +821,7 @@ main {
     }
 
     .content-container {
-        width: 85%;
+        width: 75%;
         padding: 1rem;
     }
 
@@ -918,6 +918,66 @@ main {
 
     .iframe-border {
         width: 90%;
+    }
+
+    /* Container adjustments */
+    .content-container {
+        width: 90%;
+        padding: 1rem;
+        margin: 1rem auto;
+        overflow: hidden; /* Prevent content overflow */
+        box-sizing: border-box;
+    }
+
+    /* Version section adjustments */
+    .version-section {
+        padding: 1rem;
+        margin: 1.5rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Image grid adjustments */
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .image-grid img {
+        width: 100%;
+        height: 200px; /* Slightly smaller height on mobile */
+        object-fit: contain;
+        padding: 0.5rem;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* Specific fix for single-image grids */
+    .version-section:nth-child(1) .image-grid,
+    .version-section:nth-child(2) .image-grid {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Header adjustments */
+    .funnel-display-header {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 1rem 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Modal adjustments for mobile */
+    .modal img {
+        max-width: 95%;
+        max-height: 80vh;
+        padding: 0.5rem;
     }
 }
 
@@ -1737,5 +1797,27 @@ main {
     background-color: white;
     padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .image-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr); /* Prevent overflow */
+        gap: 1rem;
+        width: 100%;
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
+
+    .image-grid img {
+        width: auto; /* Allow image width to be flexible */
+        max-width: 100%; /* Prevent overflow */
+        height: 200px;
+        object-fit: contain;
+        margin: 0 auto; /* Center image horizontally */
+        display: block; /* Enable margin auto centering */
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
 }
 
