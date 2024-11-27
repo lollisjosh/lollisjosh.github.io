@@ -12,30 +12,31 @@
     <!-- Header placeholder -->
     <div id="header-placeholder"></div>
     <main>
-        <h1>My Office</h1>
-        <h3>-Modeled in Autodesk 3ds Max-<br>-Rendered with Chaos Corona-</h3>
-        <div class="carousel-container">
-            <div class="carousel-images">
-                <img src="/assets/images/treasure-chest.png" 
-                     alt="A 3D render of an office space with a wooden desk, chair, lamps, vinyl records, and a Monstera plant in the corner." 
-                     data-full-res="/assets/images/treasure-chest.png">
-                <img src="/assets/images/early.png" alt="" data-full-res="/assets/images/early.png">
-                <img src="/assets/images/early-updated.png" alt="" data-full-res="/assets/images/early-updated.png">
-                <img src="/assets/images/patio.png" alt="" data-full-res="/assets/images/patio.png">
-                <img src="/assets/images/coffee-table.png" alt="" data-full-res="/assets/images/coffee-table.png">
-                <img src="/assets/images/office.png" alt="" data-full-res="/assets/images/office.png">
-            </div>
+        <div class="content-container">
+            <h1>My Office</h1>
+            <h3>-Modeled in Autodesk 3ds Max-<br>-Rendered with Chaos Corona-</h3>
             
-            <!-- Previous and Next Buttons -->
-            <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
-            <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+            <section class="version-section">
+                <h2 class="funnel-display-header">3D Renders</h2>
+                <div class="image-grid">
+                    <img src="/assets/images/treasure-chest.png" 
+                         alt="A 3D render of an office space with a wooden desk, chair, lamps, vinyl records, and a Monstera plant in the corner." 
+                         data-full-res="/assets/images/treasure-chest.png">
+                    <img src="/assets/images/early.png" alt="Early render of the office space">
+                    <img src="/assets/images/early-updated.png" alt="Updated early render">
+                    <img src="/assets/images/patio.png" alt="Patio view">
+                    <img src="/assets/images/coffee-table.png" alt="Coffee table detail">
+                    <img src="/assets/images/office.png" alt="Complete office view">
+                </div>
+            </section>
         </div>
-
     </main>
 
     <!-- Footer placeholder -->
     <div id="footer-placeholder"></div>
-
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="">
+    </div>
     <script src="/scripts.js"></script>
 
 </body>
