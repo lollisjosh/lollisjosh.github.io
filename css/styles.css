@@ -109,6 +109,8 @@ main {
     width: 100%;
     background-color: #4b304e;
     height: var(--navbar-height);
+    border-bottom: 4px solid #ed65ff; /* Add fuchsia border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .home-button {
@@ -152,6 +154,9 @@ main {
 
 .header-list.active {
     top: var(--navbar-height); /* Slide to just below navbar */
+    border-bottom: 4px solid #ed65ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-out;
 }
 
 .menu-toggle {
@@ -172,6 +177,23 @@ main {
     background: linear-gradient(to bottom, #f4a0ff, #4b304e);
     padding: 0; /* Remove fixed padding */
     border-radius: 5px;
+}
+
+/* Optional: Add hover effect on menu items */
+.header-list-item-a:hover {
+    color: #ed65ff;
+    text-shadow: 0 0 8px rgba(237, 101, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Add animation for smooth appearance */
+@keyframes slideDown {
+    from {
+        border-bottom-width: 0;
+    }
+    to {
+        border-bottom-width: 4px;
+    }
 }
 
 /***********************

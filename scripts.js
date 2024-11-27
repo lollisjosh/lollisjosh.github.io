@@ -95,8 +95,25 @@ fetch("/header.html")
         const navbarMenu = document.querySelector(".header-list");
 
         if (menuButton && navbarMenu) {
-            menuButton.addEventListener("click", function () {
+            // Toggle menu on button click
+            menuButton.addEventListener("click", function (e) {
+                e.stopPropagation(); // Prevent click from bubbling to document
                 navbarMenu.classList.toggle("active");
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener("click", function (e) {
+                // Check if menu is active and click is outside menu and button
+                if (navbarMenu.classList.contains("active") && 
+                    !navbarMenu.contains(e.target) && 
+                    !menuButton.contains(e.target)) {
+                    navbarMenu.classList.remove("active");
+                }
+            });
+
+            // Prevent menu from closing when clicking inside it
+            navbarMenu.addEventListener("click", function (e) {
+                e.stopPropagation();
             });
         } else {
             console.error('Menu button or header list not found. Check IDs and classes.');
