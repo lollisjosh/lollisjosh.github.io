@@ -104,11 +104,30 @@ main {
 /* Then style the navbar itself */
 #navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes items to edges */
     align-items: center;
     width: 100%;
     background-color: #4b304e;
     height: var(--navbar-height);
+}
+
+.home-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    z-index: 15;
+    font-size: 30px;
+    font-weight: 900; /* Make text bolder */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Add depth */
+    cursor: pointer;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #f4a0ff, #4b304e);
+    padding: 2px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    -webkit-text-stroke: 1px #ffffff; /* Add outline */
 }
 
 /* Menu list styling */
