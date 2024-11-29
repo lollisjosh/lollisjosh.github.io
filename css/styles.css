@@ -25,6 +25,7 @@ a {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+    color: #4b304e;
 }
 
 /***********************
@@ -130,6 +131,15 @@ main {
     border-radius: 5px;
     text-decoration: none;
     -webkit-text-stroke: 1px #ffffff; /* Add outline */
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.home-button:hover {
+    background: #ed65ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(237, 101, 255, 0.4);
+    border: 2px solid #ffffff;
 }
 
 /* Menu list styling */
@@ -177,6 +187,22 @@ main {
     background: linear-gradient(to bottom, #f4a0ff, #4b304e);
     padding: 0; /* Remove fixed padding */
     border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.menu-toggle:hover {
+    background: #ed65ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(237, 101, 255, 0.4);
+    border: 2px solid #ffffff;
+}
+
+/* Optional: Add glow effect */
+.menu-toggle:hover .toggle-button-text,
+.home-button:hover .home-button-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    color: white;
 }
 
 /* Optional: Add hover effect on menu items */
@@ -272,37 +298,50 @@ main {
 
 /* Bio Container: Styling the bio section */
 #bio-container {
-    width: 50%;             /* Set the width of the bio container */
-    height: auto;           /* Allow the height to adjust based on content */
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
     border: 2px solid #4b304e;
     border-radius: 6px;
-    padding: 20px;          /* Optional: Add some padding inside */
-    box-sizing: border-box; /* Ensure padding is included in width/height calculation */
-    text-align: center;     /* Center text inside bio container */
-    box-shadow: 8px, 8px 2px rgb(0, 0, 0);
+    box-sizing: border-box;
+    background: white;
 }
 
 /* Role Tags styling: Ensures it is centered and spaced */
 #role-tags {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tags-list {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 2%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
 }
 
-/* List inside Role Tags */
-#role-tags ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 10px;
-}
-
-/* List items inside Role Tags */
-#role-tags ul li {
+.tag {
     font-weight: bold;
-    font-size: 15pt;
+    font-size: 1.1rem;
+    color: #4b304e;
+    white-space: nowrap;
+}
+
+.tag-separator {
+    color: #ed65ff;
+    margin: 0 0.2rem;
+}
+
+#bio p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+    text-align: center; /* Add this line to center the text */
 }
 
 /***********************
@@ -663,6 +702,7 @@ main {
         background-color: #4b304e;
         border-top: 4px solid #ed65ff; /* Add fuchsia border */
         box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        gap: 0.25rem; /* Reduced from 1rem to 0.75rem */
     }
 
     #site-footer p {
@@ -702,6 +742,7 @@ main {
 
     #social-div {
         display: flex;
+        margin-bottom: 0.25rem; /* Also reduce this to match */
     }
 
     /* Bio Placeholder: Center the bio content */
@@ -714,13 +755,8 @@ main {
 
     /* Bio Container: Styling the bio section */
     #bio-container {
-        width: 95%;             /* Wider container on mobile */
-        height: auto;
-        border: 2px solid #4b304e;
-        border-radius: 6px;
-        padding: 15px;          /* Slightly reduced padding */
-        box-sizing: border-box;
-        text-align: center;
+        width: 90%;
+        padding: 1rem;
     }
 
     #role-tags {
@@ -729,6 +765,14 @@ main {
         justify-content: center;
         gap: 5px;              /* Reduced gap between items */
         margin: 1%;            /* Reduced margin */
+    }
+
+    .tags-list {
+        gap: 0.3rem;
+    }
+
+    .tag {
+        font-size: 0.9rem;
     }
 
     #role-tags ul {
@@ -1037,6 +1081,88 @@ main {
     h3 {
         font-size: 1.5rem;
     }
+
+    /* Add to your styles.css */
+    .toc-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .toc-card {
+        width: 80%;
+        justify-content: center;
+    }
+
+    /* Update mobile styles for TOC nav and cards */
+    .toc-nav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+    
+    .toc-card {
+        width: 100%; /* Change from 80% to 100% */
+        justify-content: center;
+        margin: 0.5rem 0;
+        min-width: unset; /* Remove min-width constraint */
+    }
+
+    /* Fix blog card image cropping */
+    .thumbnail-container {
+        width: 100%;
+        height: auto; /* Remove fixed height */
+        max-height: none; /* Remove max-height constraint */
+    }
+
+    .blog-thumbnail {
+        width: 100%;
+        height: auto; /* Allow height to adjust */
+        object-fit: contain;
+        max-width: 100%;
+    }
+    
+    /* Update project-item for better mobile display */
+    .project-item {
+        height: auto; /* Remove fixed height */
+        aspect-ratio: auto; /* Remove fixed aspect ratio */
+        margin-bottom: 2rem;
+    }
+
+    .toc-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .toc-card {
+        width: 90%; /* Adjust width to match parent container */
+        margin: 0.5rem auto; /* Center using auto margins */
+        min-width: unset;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    main h1.funnel-display-header {
+        font-size: 3rem;
+        padding-top: 0;
+        text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1.5rem;
+    }
+
+    h2.funnel-display-header {
+        font-size: 2rem;
+        margin: 1.2rem 0;
+    }
+
+    h3.funnel-display-header {
+        font-size: 1.5rem;
+    }
 }
 
 /* Desktop (>768px) */
@@ -1299,37 +1425,50 @@ main {
 
     /* Bio Container: Styling the bio section */
     #bio-container {
-        width: 50%;             /* Set the width of the bio container */
-        height: auto;           /* Allow the height to adjust based on content */
+        width: 95%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
         border: 2px solid #4b304e;
         border-radius: 6px;
-        padding: 20px;          /* Optional: Add some padding inside */
-        box-sizing: border-box; /* Ensure padding is included in width/height calculation */
-        text-align: center;     /* Center text inside bio container */
-        box-shadow: 8px, 8px 2px rgb(0, 0, 0);
+        box-sizing: border-box;
+        background: white;
     }
 
     /* Role Tags styling: Ensures it is centered and spaced */
     #role-tags {
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .tags-list {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin: 2%;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
 
-    /* List inside Role Tags */
-    #role-tags ul {
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        gap: 10px;
-    }
-
-    /* List items inside Role Tags */
-    #role-tags ul li {
+    .tag {
         font-weight: bold;
-        font-size: 15pt;
+        font-size: 1.1rem;
+        color: #4b304e;
+        white-space: nowrap;
+    }
+
+    .tag-separator {
+        color: #ed65ff;
+        margin: 0 0.2rem;
+    }
+
+    #bio p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 1rem;
+        color: #333;
+        text-align: center; /* Add this line to center the text */
     }
 
     #resume-header {
@@ -1672,6 +1811,22 @@ main {
     background: linear-gradient(to right, #4b304e, transparent);
     margin: 2rem auto 0;
 }    */
+
+    main h1.funnel-display-header {
+        font-size: 4.5rem;
+        padding-top: 0;
+        text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+    }
+
+    h2.funnel-display-header {
+        font-size: 3rem;
+        margin: 1.5rem 0;
+    }
+
+    h3.funnel-display-header {
+        font-size: 2rem;
+    }
 }
 
 /***********************
@@ -1874,5 +2029,63 @@ main {
         padding: 0.5rem;
         box-sizing: border-box;
     }
+}
+
+/* Add to your styles.css */
+.toc-nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.toc-card {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 2px solid #4b304e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #4b304e;
+    min-width: 200px;
+    box-shadow: 4px 4px 0 #4b304e;
+    text-align: center;
+}
+
+.toc-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #4b304e;
+    background: #ed65ff;
+    color: white;
+}
+
+.toc-icon {
+    font-size: 1.5rem;
+}
+
+.toc-title {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: inline-block; /* Add this to ensure proper centering */
+}
+
+/* Add smooth scrolling to the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add to your styles.css */
+.intro-greeting {
+    text-align: center;
+    font-family: "Funnel Display", sans-serif;
+    color: #4b304e;
+    margin: 1rem 0;
+    font-size: 2.5rem;
 }
 
