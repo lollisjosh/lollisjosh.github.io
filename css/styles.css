@@ -1163,6 +1163,44 @@ main {
     h3.funnel-display-header {
         font-size: 1.5rem;
     }
+
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0.5rem;
+        box-sizing: border-box; /* Add this */
+    }
+
+    .skill-category {
+        width: 85%;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8);
+        border: 2px solid #4b304e;
+        border-radius: 6px;
+        box-sizing: border-box; /* Add this */
+        max-width: 100%; /* Add this */
+    }
+
+    .version-section {
+        margin: 2rem 0;
+        padding: 1rem;
+        width: 100%; /* Add this */
+        box-sizing: border-box; /* Add this */
+    }
+
+    .version-section {
+        margin: 2rem 0;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        border: 2px solid #4b304e;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 }
 
 /* Desktop (>768px) */
@@ -2087,5 +2125,63 @@ html {
     color: #4b304e;
     margin: 1rem 0;
     font-size: 2.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    /* padding: 1rem; */
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid transparent; /* Start with transparent border */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #4b304e; /* Match the site's border color */
+}
+
+/* Update the inner elements for consistency */
+.skill-category h3 {
+    color: #4b304e;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(75, 48, 78, 0.2);
+    transition: padding 0.3s ease;
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+.section-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #4b304e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section-container:not(:last-child) {
+    margin-bottom: 3rem;
 }
 
