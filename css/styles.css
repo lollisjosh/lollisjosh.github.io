@@ -454,6 +454,9 @@ main {
         font-weight: 500; /* You can adjust weight between 300-800 */
         font-style: normal;
     }
+    .back-button {
+        display: none;
+    }
 
     .snug-header {
         margin-bottom: 0px;
@@ -1201,6 +1204,10 @@ main {
         border-radius: 8px;
         border: 2px solid #4b304e;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .content-container .back-button {
+        display: none !important; /* Force hide on mobile */
     }
 }
 
@@ -2068,6 +2075,10 @@ main {
         padding: 0.5rem;
         box-sizing: border-box;
     }
+
+    .back-button {
+        display: none;
+    }
 }
 
 /* Add to your styles.css */
@@ -2240,6 +2251,7 @@ html {
     gap: 0.5rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    z-index: 100; /* Ensure button stays above other content */
 }
 
 .back-button:hover {
