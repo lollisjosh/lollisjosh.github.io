@@ -170,6 +170,19 @@ main {
     animation: slideDown 0.3s ease-out;
 }
 
+/* Menu when active */
+.header-list.active {
+    display: flex;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgba(75, 48, 78, 0.95);
+    z-index: 9;
+    pointer-events: all; /* Ensure menu captures all clicks */
+}
+
 .menu-toggle {
     display: flex;
     justify-content: center;
@@ -2251,12 +2264,42 @@ html {
     gap: 0.5rem;
     transition: all 0.3s ease;
     border: 2px solid transparent;
-    z-index: 100; /* Ensure button stays above other content */
+    z-index: 5; /* Lower than navbar (10) and menu toggle (15) */
+    /* Add these properties */
+    isolation: isolate;
+    /* Force child elements to inherit z-index */
+    & > * {
+        z-index: inherit;
+    }
 }
 
 .back-button:hover {
     background: #ed65ff;
     transform: translateX(-5px);
     border: 2px solid #4b304e;
+}
+
+/* Back button styling */
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #4b304e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    z-index: 5;
+}
+
+/* Force back button and all its children below menu */
+.back-button, 
+.back-button * {
+    z-index: 5;
 }
 
