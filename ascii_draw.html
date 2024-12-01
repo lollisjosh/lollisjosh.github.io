@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - ASCII Draw</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">ASCII Draw</h1>
+            
+            <nav class="toc-nav">
+                <a href="#overview" class="toc-card">
+                    <span class="toc-icon">📝</span>
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#implementation" class="toc-card">
+                    <span class="toc-icon">⚙️</span>
+                    <span class="toc-title">Implementation</span>
+                </a>
+                <a href="#challenges" class="toc-card">
+                    <span class="toc-icon">🔧</span>
+                    <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#outcomes" class="toc-card">
+                    <span class="toc-icon">🎯</span>
+                    <span class="toc-title">Outcomes</span>
+                </a>
+            </nav>
+
+            <!-- Overview Section -->
+            <section id="overview" class="version-section">
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>An open-source contribution project that extends ASCII Draw with image import functionality, allowing users to convert PNG files into ASCII art. The imported images can be edited using the program's existing tools and saved or copied to the clipboard.</p>
+                
+                <h3>Technologies Used</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Core Technologies</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>GTK/GDK</li>
+                            <li>GNOME Builder</li>
+                            <li>Meson Build System</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development Tools</h3>
+                        <ul>
+                            <li>Git/GitHub</li>
+                            <li>Pylint</li>
+                            <li>XML</li>
+                            <li>GitHub Projects (Kanban)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Section -->
+            <section id="implementation" class="version-section">
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>PNG to ASCII Conversion</li>
+                            <li>Image Downsampling</li>
+                            <li>Brightness-based Character Mapping</li>
+                            <li>Integration with Existing Tools</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Core Functions</h3>
+                        <ul>
+                            <li>import_image</li>
+                            <li>pixbuf_to_rgb_hsb</li>
+                            <li>rgb_to_hsb</li>
+                            <li>brightness_to_ascii</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges Section -->
+            <section id="challenges" class="version-section">
+                <h2 class="funnel-display-header">Challenges Faced</h2>
+                
+                <blockquote>
+                    <h5 class="challenge">GTK/GDK Integration</h5>
+                    <b>Complex image handling and conversion of GDK pixbuf to usable format</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Implemented custom conversion functions after thorough documentation review and testing</p>
+                </blockquote>
+
+                <blockquote>
+                    <h5 class="challenge">Performance Optimization</h5>
+                    <b>Large images caused slow processing and impractical ASCII output</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Implemented downsampling techniques to reduce image sizes before conversion</p>
+                </blockquote>
+
+                <blockquote>
+                    <h5 class="challenge">UI Integration</h5>
+                    <b>Versioning conflicts with Glade UI tool</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Directly edited window.ui XML file for UI modifications</p>
+                </blockquote>
+            </section>
+
+            <!-- Outcomes Section -->
+            <section id="outcomes" class="version-section">
+                <h2 class="funnel-display-header">Project Outcomes</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li>Successfully implemented image import feature</li>
+                            <li>Integrated with existing save functionality</li>
+                            <li>Optimized for performance with large images</li>
+                            <li>Maintained consistent UI/UX</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Future Improvements</h3>
+                        <ul>
+                            <li>CLI functionality</li>
+                            <li>Enhanced canvas features</li>
+                            <li>Reverse conversion capability</li>
+                            <li>Performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
