@@ -44,6 +44,7 @@ a {
     /* Add these properties */
     word-wrap: break-word;
     overflow-wrap: break-word;
+    position: relative; /* Add this to enable absolute positioning of back button */
 }
 
 .content-container blockquote {
@@ -2223,5 +2224,27 @@ html {
 
 .repo-card .toc-icon {
     font-size: 1.5em;
+}
+
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #4b304e;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.back-button:hover {
+    background: #ed65ff;
+    transform: translateX(-5px);
+    border: 2px solid #4b304e;
 }
 
