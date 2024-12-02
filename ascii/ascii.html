@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+    <title>ASCII Art Gallery - ASCII Draw</title> <!-- Page title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .ascii-viewer {
+            font-family: monospace;
+            text-align: center;
+            padding: 1rem;
+            width: 90%; /* Reduced from 100% */
+            height: 70vh; /* Fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto; /* Center the viewer */
+        }
+
+        .ascii-viewer pre {
+            font-size: 10px;
+            line-height: 6px; /* Reduced for vertical compression */
+            white-space: pre;
+            overflow: auto;
+            background-color: #fff;
+            border: 2px solid #4b304e;
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%; /* Reduced from 95% */
+            height: 100%; /* Fill container height */
+            box-shadow: 4px 4px 0 #4b304e;
+            margin: 0;
+            transition: all 0.3s ease;
+            display: inline-block;
+            transform: scaleX(1); /* Reduced from 1.35 */
+            transform-origin: center;
+        }
+
+        .zoom-control {
+            text-align: center;
+            margin: 1.5rem auto; /* Increased margin */
+            padding: 0.75rem;    /* Reduced padding */
+            background: white;
+            border: 2px solid #4b304e;
+            border-radius: 8px;
+            max-width: 500px; /* Increased from 300px */
+            box-shadow: 4px 4px 0 #4b304e;
+        }
+
+        .zoom-control label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #4b304e;
+            font-weight: bold;
+        }
+
+        .zoom-control input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #ed65ff;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .zoom-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4b304e;
+            cursor: pointer;
+            border: 2px solid #ed65ff;
+        }
+
+        .file-select {
+            margin-bottom: 1rem;
+        }
+
+        .ascii-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #4b304e;
+            border-radius: 4px;
+            background: white;
+            color: #4b304e;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ascii-select:hover {
+            border-color: #ed65ff;
+        }
+
+        .ascii-select:focus {
+            outline: none;
+            border-color: #ed65ff;
+            box-shadow: 0 0 0 2px rgba(237, 101, 255, 0.2);
+        }
+
+        /* Add styles for image container */
+        .original-image-container {
+            text-align: center;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border: 2px solid #4b304e;
+            border-radius: 8px;
+            box-shadow: 4px 4px 0 #4b304e;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .original-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">ASCII Art Gallery</h1>
+            <a href="javascript:history.back()" class="back-button">
+                <span>←</span>
+                <span>Back</span>
+            </a>
+            <div class="zoom-control">
+                <div class="file-select">
+                    <label for="file-selector">Select Image:</label>
+                    <select id="file-selector" class="ascii-select">
+                        <option value="sabbath.txt">Black Sabbath</option>
+                        <option value="sabbath_downsample_block2.txt">Black Sabbath (Block Size 2)</option>
+                        <option value="sabbath_downsample_block4.txt">Black Sabbath (Block Size 4)</option>
+                        <option value="sabbath_downsample_block8.txt">Black Sabbath (Block Size 8)</option>
+                        <option value="mushy.txt">Mushroom</option>
+                        <option value="mushroom_downsample.txt">Mushroom (Downsampled)</option>
+                        <option value="jimmard.txt">Jimmy Page</option>
+                        <option value="jimmy_downsample.txt">Jimmy Page (Downsampled)</option>
+
+                    </select>
+                </div>
+                <label for="zoom-slider">Zoom Level: <span id="zoom-value">100%</span></label>
+                <input type="range" id="zoom-slider" min="20" max="200" value="100">
+            </div>
+            <div class="ascii-viewer">
+                <pre id="asciiArt"></pre> <!-- Container for ASCII art -->
+            </div>
+            <div class="original-image-container">
+                <img id="originalImage" alt="Original image" class="original-image">
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="/scripts.js"></script>
+    <script>
+        const fileSelector = document.getElementById('file-selector');
+        const zoomSlider = document.getElementById('zoom-slider');
+        const zoomValue = document.getElementById('zoom-value');
+        const asciiArt = document.getElementById('asciiArt');
+        const originalImage = document.getElementById('originalImage');
+
+        const imageMapping = {
+            'sabbath.txt': '/ascii/sabbath.png',
+            'sabbath_downsample_block2.txt': '/ascii/sabbath.png', // Same image, different ASCII
+            'sabbath_downsample_block4.txt': '/ascii/sabbath.png', // Same image, different ASCII
+            'sabbath_downsample_block8.txt': '/ascii/sabbath.png', // Same image, different ASCII
+            'mushy.txt': '/ascii/mush.png',
+            'mushroom_downsample.txt': '/ascii/mush.png',
+            'jimmard.txt': '/ascii/jimmy.png',
+            'jimmy_downsample.txt': '/ascii/jimmy.png'
+        };
+
+        function updateZoomRange(asciiContent) {
+            // Get rough dimensions of ASCII art
+            const lines = asciiContent.split('\n');
+            const width = Math.max(...lines.map(line => line.length));
+            const height = lines.length;
+            
+            // Calculate minimum zoom that would make the content visible
+            // Lower minimum for larger images
+            const minZoom = Math.max(5, Math.min(20, Math.floor(1000 / Math.max(width, height))));
+            
+            // Update slider attributes
+            zoomSlider.min = minZoom;
+            zoomSlider.max = 200;
+            
+            // If current zoom is below new minimum, adjust it
+            if (parseInt(zoomSlider.value) < minZoom) {
+                zoomSlider.value = minZoom;
+                const event = new Event('input');
+                zoomSlider.dispatchEvent(event);
+            }
+        }
+
+        function loadAsciiAndImage(filename) {
+            // Load ASCII
+            fetch(`/ascii/${filename}`)
+                .then(response => response.text())
+                .then(data => {
+                    asciiArt.textContent = data;
+                    updateZoomRange(data); // Add this line
+                })
+                .catch(error => console.error('Error fetching ASCII art:', error));
+            
+            // Update image (unchanged)
+            const imgPath = imageMapping[filename];
+            if (imgPath) {
+                originalImage.src = imgPath;
+                originalImage.style.display = 'block';
+            } else {
+                originalImage.style.display = 'none';
+            }
+        }
+
+        fileSelector.addEventListener('change', function() {
+            loadAsciiAndImage(this.value);
+        });
+
+        // Update the zoom event listener with aspect ratio compensation
+        zoomSlider.addEventListener('input', function() {
+            const zoom = this.value;
+            zoomValue.textContent = zoom + '%';
+            
+            const baseSize = 10;
+            const fontSize = (baseSize * zoom / 100);
+            const lineHeight = (fontSize * 0.6);
+            
+            asciiArt.style.fontSize = `${fontSize}px`;
+            asciiArt.style.lineHeight = `${lineHeight}px`;
+        });
+
+        // Load initial ASCII art
+        loadAsciiAndImage(fileSelector.value);
+    </script>
+</body>
+
+</html>

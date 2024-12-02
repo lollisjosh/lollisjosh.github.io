@@ -1,0 +1,124 @@
+<!-- 
+  File: index.html
+  Description: A standard login form with fields for username, 
+    password, gender, programming languages, favorite fruit, and comments.
+  Author: Josh Lollis
+  Date: 11/2/24
+  Course: CPSC-349 HW-2
+-->
+<!DOCTYPE html>
+<html lang="en"> <!-- Language: English -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+  <title>Login Form</title> <!-- Page title -->
+  <link rel="stylesheet" href="styles.css"> <!-- Stylesheet -->
+</head>
+
+<body>
+
+  <div class="form-container"> <!-- Form container -->
+    <h2>Login Form</h2> <!-- Form heading -->
+
+    <form id="loginForm"> <!-- Form ID for JS -->
+      <div class="form-group"> <!-- Username group -->
+        <label for="username">Username:</label> <!-- Username label -->
+        <input type="text" id="username" name="username" required> <!-- Required username input -->
+      </div>
+
+      <div class="form-group"> <!-- Password group -->
+        <label for="password">Password:</label> <!-- Password label -->
+        <input type="password" id="password" name="password" required> <!-- Required password input -->
+      </div>
+
+      <div class="form-group"> <!-- Gender selection -->
+        <label>Gender:</label> <!-- Gender label -->
+        <div class="radio-group"> <!-- Radio buttons -->
+          <label><input type="radio" name="gender" value="male" required> Male</label> <!-- Male -->
+          <label><input type="radio" name="gender" value="female"> Female</label> <!-- Female -->
+          <label><input type="radio" name="gender" value="other"> Other</label> <!-- Other -->
+          <label><input type="radio" name="gender" value="opt-out"> No Response</label> <!-- No response -->
+        </div>
+      </div>
+
+      <div class="form-group"> <!-- Programming languages group -->
+        <label>Programming Languages:</label> <!-- Languages label -->
+        <div class="checkbox-group"> <!-- Checkboxes -->
+          <div class="column"> <!-- First column -->
+            <label><input type="checkbox" name="programming" value="java" checked> Java</label> <!-- Java -->
+            <label><input type="checkbox" name="programming" value="cpp" checked> C++</label> <!-- C++ -->
+            <label><input type="checkbox" name="programming" value="csharp" checked> C#</label> <!-- C# -->
+            <label><input type="checkbox" name="programming" value="python"> Python</label> <!-- Python -->
+            <label><input type="checkbox" name="programming" value="javascript"> JavaScript</label> <!-- JS -->
+            <label><input type="checkbox" name="programming" value="typescript"> TypeScript</label> <!-- TS -->
+          </div>
+          <div class="column"> <!-- Second column -->
+            <label><input type="checkbox" name="programming" value="ruby"> Ruby</label> <!-- Ruby -->
+            <label><input type="checkbox" name="programming" value="php"> PHP</label> <!-- PHP -->
+            <label><input type="checkbox" name="programming" value="swift"> Swift</label> <!-- Swift -->
+            <label><input type="checkbox" name="programming" value="go"> Go</label> <!-- Go -->
+            <label><input type="checkbox" name="programming" value="kotlin"> Kotlin</label> <!-- Kotlin -->
+            <label><input type="checkbox" name="programming" value="rust"> Rust</label> <!-- Rust -->
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group"> <!-- Favorite fruit selection -->
+        <label for="fruit">Favorite Fruit:</label> <!-- Fruit label -->
+        <select id="fruit" name="fruit"> <!-- Fruit dropdown -->
+          <option value="banana">Banana</option> <!-- Banana -->
+          <option value="apple">Apple</option> <!-- Apple -->
+          <option value="orange">Orange</option> <!-- Orange -->
+          <option value="grapes">Grapes</option> <!-- Grapes -->
+          <option value="strawberries">Strawberries</option> <!-- Strawberries -->
+          <option value="mangos">Mangos</option> <!-- Mangos -->
+          <option value="kiwi">Kiwi</option> <!-- Kiwi -->
+          <option value="pineapple">Pineapple</option> <!-- Pineapple -->
+          <option value="watermelon">Watermelon</option> <!-- Watermelon -->
+          <option value="peach">Peach</option> <!-- Peach -->
+          <option value="blueberries">Blueberries</option> <!-- Blueberries -->
+          <option value="raspberries">Raspberries</option> <!-- Raspberries -->
+          <option value="blackberries">Blackberries</option> <!-- Blackberries -->
+          <option value="pear">Pear</option> <!-- Pear -->
+          <option value="plum">Plum</option> <!-- Plum -->
+          <option value="cherries">Cherries</option> <!-- Cherries -->
+          <option value="pomegranate">Pomegranate</option> <!-- Pomegranate -->
+          <option value="apricot">Apricot</option> <!-- Apricot -->
+          <option value="cantaloupe">Cantaloupe</option> <!-- Cantaloupe -->
+          <option value="honeydew">Honeydew</option> <!-- Honeydew -->
+        </select>
+      </div>
+
+      <div class="form-group"> <!-- Comments input -->
+        <label for="comments">Comments:</label> <!-- Comments label -->
+        <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
+        <!-- Comments textarea -->
+      </div>
+
+      <div class="form-buttons"> <!-- Form buttons -->
+        <button type="submit" class="send-btn">Send</button> <!-- Submit button -->
+        <button type="reset" class="reset-btn">Reset</button> <!-- Reset button -->
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script> <!-- JS file -->
+</body>
+<footer style="text-align: center; margin-top: 30px;">
+  <a href="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/23026322-b806-49de-a295-5548cc253655"
+    style="display: inline-block; padding: 10px;">
+    <img
+      src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/23026322-b806-49de-a295-5548cc253655.svg"
+      alt="wakatime" style="width: auto; height: 30px;">
+  </a>
+  <!-- Link to ASCII Art page -->
+  <div style="margin-top: 15px;">
+    <a href="ascii.html" style="color: #ddd; text-decoration: none;">View ASCII Art</a>
+  </div>
+</footer>
+
+
+
+
+</html>

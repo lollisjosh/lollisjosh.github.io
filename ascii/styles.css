@@ -1,0 +1,193 @@
+/* 
+  File: styles.css
+  Description: Styles for the login form, 
+    including layout, colors, and responsiveness.
+  Author: Josh Lollis
+  Date: 11/2/24
+  Course: CPSC-349 HW-2
+*/
+
+/* General Styles */
+body {
+  font-family: 'Arial';
+  /* Modern font */
+  background: linear-gradient(to bottom, #e8f0fe, #f4a0ff);
+  /* Soft gradient */
+  margin: 0;
+  /* Remove default margin */
+  padding: 10px;
+  /* Body padding */
+}
+
+h2 {
+  text-align: center;
+  /* Center heading */
+  color: #333;
+  /* Dark grey */
+  margin-bottom: 20px;
+  /* Space below */
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  /* White background */
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* Shadow for depth */
+  padding: 30px;
+  /* Inner padding */
+  max-width: 400px;
+  /* Max width */
+  margin: auto;
+  /* Center container */
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 20px;
+  /* Space between groups */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Inner padding */
+  border: 2px solid #c758d3;
+  /* Pink border */
+  border-radius: 8px;
+  /* Rounded corners */
+  box-sizing: border-box;
+  /* Include padding in width */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  /* Transition on focus */
+}
+
+input:focus {
+  border-color: #825588;
+  /* Focus border */
+  box-shadow: 0 0 5px #734679;
+  /* Focus shadow */
+}
+
+/* Textarea Styles */
+textarea {
+  min-height: 100px;
+  /* Minimum height */
+  resize: vertical;
+  /* Vertical resize only */
+  cursor: text;
+  /* Text cursor */
+}
+
+/* Label Styles */
+label {
+  display: block;
+  /* Block display */
+  margin-bottom: 8px;
+  /* Space below */
+  font-weight: bold;
+  /* Bold labels */
+  color: #555;
+  /* Medium grey */
+}
+
+/* Button Styles */
+.form-buttons {
+  display: flex;
+  /* Button row */
+  justify-content: space-between;
+  /* Space between buttons */
+}
+
+button {
+  background: #4b304e;
+  /* Button background */
+  color: white;
+  /* Text color */
+  border: none;
+  /* No border */
+  width: 40%;
+  /* Button width */
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 12px 20px;
+  /* Inner padding */
+  cursor: pointer;
+  /* Pointer cursor */
+  transition: background-color 0.3s, transform 0.2s;
+  /* Hover transitions */
+}
+
+button:hover {
+  background: #ed65ff;
+  /* Hover background */
+  transform: translateY(-2px);
+  /* Lift effect */
+}
+
+/* Radio and Checkbox Group Styles */
+.radio-group {
+  display: flex;
+  /* Row alignment */
+  flex-direction: column;
+  /* Vertical stack */
+  accent-color: #4b304e;
+  /* Accent color */
+}
+
+.checkbox-group {
+  display: flex;
+  /* Side by side */
+  flex-wrap: wrap;
+  /* Wrap if needed */
+  accent-color: #e8f0fe;
+  /* Accent color */
+}
+
+/* Cursor Styles */
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: crosshair;
+  /* Crosshair on checkboxes/radios */
+}
+
+/* Styles for Columns */
+.column {
+  flex: 1;
+  /* Equal space */
+  min-width: 150px;
+  /* Min width */
+  margin-right: 20px;
+  /* Space between columns */
+}
+
+.column:last-child {
+  margin-right: 0;
+  /* No margin on last column */
+}
+
+/* Optional: Adjust label spacing */
+.column label {
+  margin-bottom: 8px;
+  /* Space between labels */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+    /* Less padding on small screens */
+  }
+
+  h2 {
+    font-size: 1.5em;
+    /* Smaller heading */
+  }
+}
