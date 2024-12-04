@@ -1,10 +1,23 @@
+<!--
+    Guitar & Bass Portfolio Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Portfolio page showcasing guitar and bass performances with
+    embedded video players and equipment details
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar & Bass | Personal Portfolio</title>
+    <title>Guitar & Bass | Portfolio</title>
+
+    <!-- Font imports and styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
@@ -12,12 +25,15 @@
 </head>
 
 <body>
+    <!-- Header injection point -->
     <div id="header-placeholder"></div>
     <main>
         <div class="content-container">
             <h1 class="funnel-display-header">Guitar & Bass</h1>
 
+            <!-- Navigation menu -->
             <nav class="toc-nav">
+                <!-- Table of contents cards -->
                 <a href="#overview" class="toc-card">
                     <span class="toc-icon">📝</span>
                     <span class="toc-title">Overview</span>
@@ -38,6 +54,7 @@
 
             <!-- Overview Section -->
             <section id="overview" class="version-section">
+                <!-- Project overview and equipment details -->
                 <h2 class="funnel-display-header">Overview</h2>
                 <p>A collection of guitar and bass performances showcasing various techniques and styles. Future
                     recordings will feature higher quality audio production through professional interface and DAW
@@ -68,6 +85,7 @@
 
             <!-- Guitar Section -->
             <section id="guitar" class="version-section">
+                <!-- Guitar performance videos -->
                 <h2 class="funnel-display-header">Guitar</h2>
                 <div class="video-section">
                     <div class="iframe-border">
@@ -82,6 +100,7 @@
 
             <!-- Bass Section -->
             <section id="bass" class="version-section">
+                <!-- Bass performance videos -->
                 <h2 class="funnel-display-header">Bass</h2>
                 <div class="video-section">
                     <div class="iframe-border">
@@ -94,9 +113,9 @@
                 </div>
             </section>
         </div>
-       
     </main>
 
+    <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
     <script src="/scripts.js"></script>
 </body>

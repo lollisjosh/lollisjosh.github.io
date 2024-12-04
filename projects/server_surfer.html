@@ -1,10 +1,23 @@
+<!--
+    Server Surfer Project Documentation Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Documentation page for Server Surfer - a cyberpunk-themed
+    endless runner game built with Unity
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Server Surfer</title>
+    <title>Projects | Server Surfer</title>
+
+    <!-- Font imports and styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
@@ -12,125 +25,121 @@
 </head>
 
 <body>
+    <!-- Header injection point -->
     <div id="header-placeholder"></div>
+
     <main>
+        <!-- Project navigation and content -->
         <div class="content-container">
+            <h1 class="funnel-display-header">Server Surfer</h1>
+            <h4>A 2D ZEN-dless Runner</h4>
+            
+            <!-- Navigation cards -->
+            <nav class="toc-nav">
+                <!-- Table of contents navigation -->
+                <a href="#overview" class="toc-card">
+                    <span class="toc-icon">📝</span>
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#implementation" class="toc-card">
+                    <span class="toc-icon">⚙️</span>
+                    <span class="toc-title">Implementation</span>
+                </a>
+                <a href="#challenges" class="toc-card">
+                    <span class="toc-icon">🔧</span>
+                    <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#videos" class="toc-card">
+                    <span class="toc-icon">🎥</span>
+                    <span class="toc-title">Videos</span>
+                </a>
+                <a href="https://github.com/TelloViz/Server-Surfer" 
+                   target="_blank" 
+                   class="toc-card repo-card">
+                    <span class="toc-icon fa fa-github"></span>
+                    <span class="toc-title">Repository</span>
+                </a>
+            </nav>
+
             <a href="javascript:history.back()" class="back-button">
                 <span>←</span>
                 <span>Back</span>
             </a>
-            
-            <h1 class="funnel-display-header">Server Surfer (Neon Cloud)</h1>
-            <h4>A 2D ZEN-dless runner</h4>
-            <h2>Coming Soon...</h2>
 
-            <!-- <img src="/assets/images/surfer-t.png" class="img-thumbnail" alt="Surfer">
+            <!-- Project documentation sections -->
+            <section id="overview" class="version-section">
+                <!-- Project overview and demo gif -->
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>A cyberpunk-themed endless runner where you surf the data stream. Collect loot, reach root, or get reboot!</p>
+                <img src="/assets/gifs/surfer.gif" class="img-thumbnail" alt="Surfer">
+            </section>
 
-        <hr>
+            <section id="implementation" class="version-section">
+                <!-- Technical details and features -->
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Core Features</h3>
+                        <ul>
+                            <li>3-stance gameplay mechanic</li>
+                            <li>Dynamic enemy behavior system</li>
+                            <li>Custom flight pattern designer</li>
+                            <li>Procedural background generation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technologies</h3>
+                        <ul>
+                            <li>Unity Engine</li>
+                            <li>C# Programming</li>
+                            <li>Scriptable Objects</li>
+                            <li>Linear Interpolation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <h3>Synopsis</h3>
-        <p>You are the Server Surfer! Surf the wave forms of the data stream.</p>
-        <p>Collect loot, reach root, or get the reboot.</p>
+            <section id="challenges" class="version-section">
+                <!-- Development challenges -->
+                <h2 class="funnel-display-header">Current Challenges</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <ul>
+                            <li>Functionality spread across branches</li>
+                            <li>Scene assembly needed</li>
+                            <li>Legacy code refactoring required</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <h3>Showcases</h3>
-        <div class="surfer-features">
-        <ul id="surfer-showcase-ul">
-            <li class="server-showcase-ul-li">Unity Engine</li>
-            <li class="server-showcase-ul-li">C#</li>
-            <li class="server-showcase-ul-li">Dependency Injection
-                <ul>
-                    <li>Scriptable Objects as a state machine</li>
-                </ul>
-            </li>
-            <li class="server-showcase-ul-li">Dynamic enemy behavior
-                <ul>
-                    <li>Drag and drop flight patterns onto enemies to alter behavior at run-time.</li>
-                </ul>
-            </li>
-            <li class="server-showcase-ul-li">Gameplay design
-                <ul>
-                    <li>Character can take on 3 stances that affect the control of the board.</li>
-                </ul>
-            </li>
-            <li class="server-showcase-ul-li">Linear Interpolation
-                <ul>
-                    <li>Background is a series of panels lerped over a chosen color scheme.</li>
-                </ul>
-            </li>
-        </ul>
-        </div>
-
-        <h3>Shortcomings</h3>
-        <ul>
-            <li>Functionality spread over multiple branches</li>
-            <li>Not fully packaged game
-                <ul>
-                    <li>Needs assembly of various scenes</li>
-                </ul>
-            </li>
-            <li>Created with outdated skill-level</li>
-        </ul>
-
-        <h3>Progress Videos</h3>
-
-        <blockquote>3-stance mechanic and flight-path</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/cOl0YcgvyA0?si=DV5msCV0-Xeq4_Iy" 
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>Converted player character to my own design</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/2yQsls8u0wg?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>Created more aesthetically appealing movement for player</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/kCTCbXfQMr0?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>Introduced flight patterns</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/ghEL2NIQV_0?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>More on flight patterns</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/TxkyfSkyaFY?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>Looped enemy via custom event triggers</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/c8jDT2u8Ty0?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe>
-        <hr>
-
-        <blockquote>Introduced project originally as Flappy Koopa</blockquote>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3BDFBor0CzU?si=DV5msCV0-Xeq4_Iy"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-            </iframe> -->
-
+            <section id="videos" class="version-section">
+                <!-- Development progress videos -->
+                <h2 class="funnel-display-header">Development Progress</h2>
+                <div class="video-section">
+                    <!-- Video embeds for different features -->
+                    <h3>3-Stance Mechanic Demo</h3>
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/cOl0YcgvyA0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <h3>Custom Character Design</h3>
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/2yQsls8u0wg" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <h3>Movement Refinement</h3>
+                    <div class="iframe-border">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/kCTCbXfQMr0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
+    <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
     <script src="/scripts.js"></script>
 </body>

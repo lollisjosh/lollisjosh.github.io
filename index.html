@@ -1,79 +1,52 @@
+<!--
+    Portfolio Home Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Landing page with personal introduction and profile information
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Personal Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <title>Home | Portfolio</title>
+
+    <!-- Font imports and styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
-
-    <style>
-        /* Desktop styles (>768px) */
-        @media screen and (min-width: 769px) {
-            main h1.snug-header {
-                font-size: 4.5rem; /* Make h1 larger */
-                color: #4b304e;
-                padding-top: 0;
-                text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
-            }
-
-            .intro-greeting {
-                font-size: 3.5rem; /* Make h2 smaller than h1 */
-                text-align: center;
-                font-family: "Funnel Display", sans-serif;
-                color: #4b304e;
-                margin: 1rem 0;
-            }
-        }
-
-        /* Mobile styles (<=768px) */
-        @media screen and (max-width: 768px) {
-            main h1.snug-header {
-                font-size: 3rem; /* Make h1 larger */
-                color: #4b304e;
-                padding-top: 0;
-                text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
-            }
-
-            .intro-greeting {
-                font-size: 2.5rem; /* Make h2 smaller than h1 */
-                text-align: center;
-                font-family: "Funnel Display", sans-serif;
-                color: #4b304e;
-                margin: 1rem 0;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header placeholder -->
+    <!-- Header injection point -->
     <div id="header-placeholder"></div>
 
     <main>
         <div class="content-container">
+            <!-- Introduction section -->
+            <section id="intro">
+                <h1 class="snug-header funnel-display-header">Welcome to My Portfolio</h1>
 
-        <section id="intro">
-            <h1 class="snug-header funnel-display-header">Welcome to My Portfolio</h1>
-
-            <!-- Profile picture with gradient border -->
-            <div id="pfp-placeholder">
-                <div class="pfp-border">
-                    <img src="/assets/images/pfp.png" alt="Profile Picture" class="pfp">
+                <!-- Profile picture with gradient border -->
+                <div id="pfp-placeholder">
+                    <div class="pfp-border">
+                        <img src="/assets/images/pfp.png" alt="Profile Picture" class="pfp">
+                    </div>
                 </div>
-            </div>
-            <h2 class="intro-greeting">Hi, I'm Josh!</h2>
-            <div id="bio-placeholder"></div>
-        </section>
+                <h2 class="intro-greeting">Hi, I'm Josh!</h2>
+                <div id="bio-placeholder"></div>
+            </section>
         </div>
     </main>
 
-    <!-- Footer placeholder -->
+    <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
-
     <script src="/scripts.js"></script>
 </body>
 

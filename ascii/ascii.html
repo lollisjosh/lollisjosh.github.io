@@ -1,3 +1,13 @@
+<!--
+    ASCII Art Gallery Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    This page displays ASCII art versions of images with zoom controls
+    and the ability to compare with original images
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <style>
+        /* Main container for ASCII display - keeps everything centered and contained */
         .ascii-viewer {
             font-family: monospace;
             text-align: center;
@@ -22,6 +33,7 @@
             margin: 0 auto; /* Center the viewer */
         }
 
+        /* ASCII art display area - handles font settings and scaling */
         .ascii-viewer pre {
             font-size: 10px;
             line-height: 6px; /* Reduced for vertical compression */
@@ -41,6 +53,7 @@
             transform-origin: center;
         }
 
+        /* Zoom control panel styling */
         .zoom-control {
             text-align: center;
             margin: 1.5rem auto; /* Increased margin */
@@ -68,6 +81,7 @@
             -webkit-appearance: none;
         }
 
+        /* Custom styling for range slider thumb */
         .zoom-control input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -105,7 +119,7 @@
             box-shadow: 0 0 0 2px rgba(237, 101, 255, 0.2);
         }
 
-        /* Add styles for image container */
+        /* Container for original image comparison */
         .original-image-container {
             text-align: center;
             margin: 2rem auto;
@@ -132,16 +146,20 @@
 <body>
     <div id="header-placeholder"></div>
     <main>
+        <!-- Main content wrapper -->
         <div class="content-container">
             <h1 class="funnel-display-header">ASCII Art Gallery</h1>
             <a href="javascript:history.back()" class="back-button">
                 <span>←</span>
                 <span>Back</span>
             </a>
+            <!-- File selection and zoom controls -->
             <div class="zoom-control">
+                <!-- File dropdown with different ASCII versions -->
                 <div class="file-select">
                     <label for="file-selector">Select Image:</label>
                     <select id="file-selector" class="ascii-select">
+                        <!-- Image options with different downsampling levels -->
                         <option value="sabbath.txt">Black Sabbath</option>
                         <option value="sabbath_downsample_block2.txt">Black Sabbath (Block Size 2)</option>
                         <option value="sabbath_downsample_block4.txt">Black Sabbath (Block Size 4)</option>
@@ -153,15 +171,16 @@
                         <option value="florence.txt">Florence</option>
                         <option value="florence_downsample_block3.txt">Florence (Block Size 3)</option>
                         <option value="florence_downsample_block4.txt">Florence (Block Size 4)</option>
-
                     </select>
                 </div>
                 <label for="zoom-slider">Zoom Level: <span id="zoom-value">100%</span></label>
                 <input type="range" id="zoom-slider" min="20" max="200" value="100">
             </div>
+            <!-- ASCII art display area -->
             <div class="ascii-viewer">
                 <pre id="asciiArt"></pre> <!-- Container for ASCII art -->
             </div>
+            <!-- Original image for comparison -->
             <div class="original-image-container">
                 <img id="originalImage" alt="Original image" class="original-image">
             </div>
@@ -171,6 +190,7 @@
 
     <script src="/scripts.js"></script>
     <script>
+        // Map ASCII files to their corresponding original images
         const fileSelector = document.getElementById('file-selector');
         const zoomSlider = document.getElementById('zoom-slider');
         const zoomValue = document.getElementById('zoom-value');
@@ -191,6 +211,7 @@
             'florence_downsample_block4.txt': '/ascii/florence.png' // Same image, different ASCII
         };
 
+        // Adjusts zoom range based on ASCII content size
         function updateZoomRange(asciiContent) {
             // Get rough dimensions of ASCII art
             const lines = asciiContent.split('\n');
@@ -213,6 +234,7 @@
             }
         }
 
+        // Loads both ASCII art and corresponding original image
         function loadAsciiAndImage(filename) {
             // Load ASCII
             fetch(`/ascii/${filename}`)
@@ -233,6 +255,7 @@
             }
         }
 
+        // Event listeners for file selection and zoom control
         fileSelector.addEventListener('change', function() {
             loadAsciiAndImage(this.value);
         });

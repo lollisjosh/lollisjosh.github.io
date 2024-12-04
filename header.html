@@ -1,6 +1,16 @@
+<!--
+    Site Header Component
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Site-wide header component with navigation menu and mobile toggle
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website</title>
@@ -11,17 +21,20 @@
     <!-- Main Visual Header (Navbar) -->
     <div class="navbar-container">
         <nav id="navbar">
+            <!-- Mobile menu toggle -->
             <button id="mobile-menu" class="menu-toggle">
                 <span class="toggle-button-text">☲</span>
             </button>
+            <!-- Home button -->
             <a href="/index.html" class="home-button">
                 <span class="home-button-text">⌂</span>
             </a>
         </nav>
     </div>
 
-    <!-- Menu List -->
+    <!-- Navigation menu list -->
     <ul class="header-list">
+        <!-- Navigation links -->
         <li class="header-list-item"><a class="header-list-item-a" href="/index.html">Home</a></li>
         <li class="header-list-item"><a class="header-list-item-a" href="/about.html">About</a></li>
         <li class="header-list-item"><a class="header-list-item-a" href="/skills.html">Skills</a></li>
@@ -36,7 +49,7 @@
         <!-- Main content of the page -->
     </div>
 
-    <!-- Reference to scripts.js to handle toggle functionality and other scripts -->
+    <!-- Scripts -->
     <script src="/scripts.js"></script>
 </body>
 </html>

@@ -1,4 +1,45 @@
+/*
+    Portfolio Site JavaScript
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Main JavaScript file handling:
+    - Component injection (header, footer, bio)
+    - Image carousel functionality
+    - WakaTime data visualization
+    - Mobile menu interactions
+    - Modal image viewing
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // NOTE: Iz put all of the descriptions at the top for now so I don't accidently break something again.
+
+    // ===== Accessibility Toolbar (Currently Disabled) =====
+    // Accessibility implementation commented out for future use
+    
+    // ===== Component Loading =====
+    // Load bio section from external file
+    
+    // ===== Carousel Configuration =====
+    // Image click handlers for full-size viewing
+    // Carousel navigation and auto-rotation setup
+    
+    // ===== Header Component & Navigation =====
+    // Dynamic header loading and mobile menu functionality
+    // Header height calculations and menu toggle behavior
+    
+    // ===== Footer & Profile Components =====
+    // Load footer and profile picture sections
+    
+    // ===== WakaTime Data Visualization =====
+    // Programming language usage charts (30 days and all time)
+    // Editor usage statistics
+    // Mobile and desktop chart configurations
+    
+    // ===== Modal Image Handling =====
+    // Grid image click handlers and modal display controls
 
     //  // Dynamically load the locally hosted Accessibility Toolbar script
     //  const toolbarScript = document.createElement('script');

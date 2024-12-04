@@ -1,10 +1,23 @@
+<!--
+    Card Collection Project Documentation Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Documentation page for the Pokémon Card Collection desktop application,
+    showcasing development progress and technical implementation
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Card Collection</title>
+    <title>Projects | Card Collection</title>
+
+    <!-- Font imports and styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
@@ -12,12 +25,16 @@
 </head>
 
 <body>
+    <!-- Header injection point -->
     <div id="header-placeholder"></div>
+
     <main>
+        <!-- Project navigation and content -->
         <div class="content-container">
             <h1 class="funnel-display-header">Card Collection Project</h1>
 
             <nav class="toc-nav">
+                <!-- Table of contents navigation cards -->
                 <a href="#overview" class="toc-card">
                     <span class="toc-icon">📝</span>
                     <span class="toc-title">Overview</span>
@@ -55,8 +72,9 @@
                 <span>Back</span>
             </a>
 
-            <!-- Overview Section -->
+            <!-- Documentation sections -->
             <section id="overview" class="version-section">
+                <!-- Project overview and tech stack -->
                 <h2 class="funnel-display-header">Project Overview</h2>
                 <p>A desktop application for discovering and collecting Pokémon cards. Features include API-driven card searching, a "discover" mode simulating wild Pokémon encounters, and collection management. The application emphasizes minimal local storage, with dynamic resource loading at runtime.</p>
                 
@@ -83,8 +101,8 @@
                 </div>
             </section>
 
-            <!-- Implementation Section -->
             <section id="implementation" class="version-section">
+                <!-- Technical implementation details -->
                 <h2 class="funnel-display-header">Implementation Details</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
@@ -108,8 +126,8 @@
                 </div>
             </section>
 
-            <!-- Challenges Section -->
             <section id="challenges" class="version-section">
+                <!-- Development challenges and solutions -->
                 <h2 class="funnel-display-header">Challenges Faced</h2>
                 
                 <blockquote>
@@ -134,8 +152,8 @@
                 </blockquote>
             </section>
 
-            <!-- Outcomes Section -->
             <section id="outcomes" class="version-section">
+                <!-- Project results and future plans -->
                 <h2 class="funnel-display-header">Project Outcomes</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
@@ -159,8 +177,8 @@
                 </div>
             </section>
 
-            <!-- Videos Section -->
             <section id="videos" class="version-section">
+                <!-- Project demo videos -->
                 <h2 class="funnel-display-header">Demo Videos</h2>
                 <div class="video-section">
                     <div class="iframe-border">
@@ -171,28 +189,31 @@
                 </div>
             </section>
 
-            <!-- Gallery Section -->
             <section id="gallery" class="version-section">
+                <!-- Development progress gallery with version history -->
                 <h2 class="funnel-display-header">Development Gallery</h2>
                 
-                <!-- Version 1 -->
+                <!-- Version 1: Initial mockup -->
                 <section class="version-section">
+                    <!-- Initial design screenshots -->
                     <h2 class="funnel-display-header">Version 1 - Initial Mockup</h2>
                     <div class="image-grid">
                         <img src="/assets/images/card-collection/version1-mockup.png" alt="Initial Mockup Design">
                     </div>
                 </section>
 
-                <!-- Version 2 -->
+                <!-- Version 2: Basic UI -->
                 <section class="version-section">
+                    <!-- UI implementation screenshots -->
                     <h2 class="funnel-display-header">Version 2 - Basic UI Implementation</h2>
                     <div class="image-grid">
                         <img src="/assets/images/card-collection/version2-ui.png" alt="Basic UI Implementation">
                     </div>
                 </section>
 
-                <!-- Version 3 -->
+                <!-- Version 3: Search features -->
                 <section class="version-section">
+                    <!-- Search functionality screenshots -->
                     <h2 class="funnel-display-header">Version 3 - Search Functionality</h2>
                     <div class="image-grid">
                         <img src="/assets/images/card-collection/version3-ui.png" alt="Version 3 UI">
@@ -203,8 +224,9 @@
                     </div>
                 </section>
 
-                <!-- Version 4 -->
+                <!-- Version 4: Advanced features -->
                 <section class="version-section">
+                    <!-- Final version screenshots -->
                     <h2 class="funnel-display-header">Version 4 - Discover, Modularized, and 3D View</h2>
                     <div class="image-grid">
                         <img src="/assets/images/card-collection/version4-searchui.png" alt="Search UI">
@@ -221,10 +243,12 @@
         </div>
     </main>
 
+    <!-- Footer and modal injection points -->
     <div id="footer-placeholder"></div>
     <div id="imageModal" class="modal">
         <img id="modalImage" src="" alt="">
     </div>
+    
     <script src="/scripts.js"></script>
 </body>
 

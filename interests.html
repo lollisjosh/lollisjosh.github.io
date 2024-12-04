@@ -1,26 +1,45 @@
+<!--
+    Other Interests Landing Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Landing page showcasing music, art, and other creative pursuits
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other Interests | Personal Portfolio</title>
+    <title>Other Interests | Portfolio</title>
+
+    <!-- Font imports and styling -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
+    <!-- Header injection point -->
     <div id="header-placeholder"></div>
+
     <main>
         <div class="content-container">
+            <!-- Project navigation -->
             <h1 class="funnel-display-header">Other Interests</h1>
             <a href="javascript:history.back()" class="back-button">
                 <span>←</span>
                 <span>Back</span>
             </a>
+
+            <!-- Project grid layout -->
             <div id="projects-grid">
+                <!-- Music section link -->
                 <div class="project-item">
-                    <a href="/music.html">  <!-- Changed from /guitar.html -->
+                    <a href="/music.html">
                         <h2>Music & Production</h2>
                         <div class="thumbnail-container">
                             <img alt="Music & Production" class="img-thumbnail" src="/assets/images/guitar.png">
@@ -28,6 +47,7 @@
                     </a>
                 </div>
 
+                <!-- Art section link -->
                 <div class="project-item">
                     <a href="/art.html">
                         <h2>Art & Design</h2>
@@ -40,6 +60,7 @@
         </div>
     </main>
     
+    <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
     <script src="/scripts.js"></script>
 </body>
