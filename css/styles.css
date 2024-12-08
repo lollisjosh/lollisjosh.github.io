@@ -1,3 +1,16 @@
+/*
+*    Portfolio CSS
+*    Author: Josh Lollis
+*    Date: December 8, 2024
+*    CPSC 349 Portfolio Final Project
+*    
+*    The main styles for just about everything on the site.
+*     
+*    NOTE: 
+*       This file has tons of duplicate styles and is somewhat chaotic. I was mid refactor and the due date was approaching so
+*       I had to leave it as is for fear of breaking things I've tested. I removed comments with an online tool to make it
+*       meet standards based on many css cleaners online. I will likely continue to refactor this file in the future.
+*/
 body,
 html {
 min-height: 100vh;
