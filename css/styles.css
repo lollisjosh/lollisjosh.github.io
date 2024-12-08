@@ -1752,6 +1752,7 @@ opacity: 0.9;
 font-size: 1.5em;
 }
 .back-button {
+display: none;
 position: absolute;
 top: 1rem;
 left: 1rem;
@@ -1777,6 +1778,7 @@ transform: translateX(-5px);
 border: 2px solid #4b304e;
 }
 .back-button {
+display: none;
 position: absolute;
 top: 1rem;
 left: 1rem;
@@ -1794,5 +1796,6 @@ z-index: 5;
 }
 .back-button,
 .back-button * {
+    display: none;
 z-index: 5;
 }
