@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antillery Devlog | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <div class="content-container">
+      <article>
+        <h1 class="funnel-display-header">Antillery Development Log</h1>
+        <p>This is the first devlog post for Antillery, a 2D artillery game being developed as a Computer Science capstone project.</p>
+
+        <section class="devlog-section">
+          <h2>Choosing a Unity Version</h2>
+          <p>At project proposal time, I wrote that Antillery would use the “latest Unity LTS version.” Since then, Unity 6.0.0 LTS was released. However, after evaluating the available options, I decided to use <strong>Unity 2022.3.62f1</strong>.</p>
+        </section>
+
+        <section class="devlog-section">
+          <h2>Unity Version Overview</h2>
+          <p>There are three current categories of Unity releases to consider:</p>
+          <ul>
+            <li><strong>2022.3 LTS</strong>: The most mature and widely supported version. Long-term support until mid-2025.</li>
+            <li><strong>2023 Tech Stream</strong>: A feature-forward branch not intended for long-term stability. No LTS designation.</li>
+            <li><strong>Unity 6.0.0 LTS</strong>: Recently released. Includes newer systems like DOTS and UI Toolkit upgrades, but some packages and tooling are still catching up.</li>
+          </ul>
+          <p>The 2022.3.62f1 version used in this project is the latest patch release in the 2022 LTS series.<br>
+          Link: <a href="https://unity.com/releases/editor/whats-new/2022.3.62" target="_blank">Unity 2022.3.62f1 Release Notes</a></p>
+        </section>
+
+        <section class="devlog-section">
+          <h2>Why Not Unity 6?</h2>
+          <ul>
+            <li>This project does not require ECS, high-performance multithreading, or UI Toolkit-specific features.</li>
+            <li>The Unity 6 ecosystem is still stabilizing. Not all community tooling or packages have caught up.</li>
+            <li>As a solo developer, minimizing risk from low-level system changes is a higher priority than adopting newer paradigms.</li>
+          </ul>
+        </section>
+
+        <section class="devlog-section">
+          <h2>Why 2022.3 LTS Works</h2>
+          <ul>
+            <li>Full compatibility with the packages I plan to use (Input System, URP, TextMeshPro, etc.)</li>
+            <li>Established documentation and wide community support</li>
+            <li>Fewer surprises during build, platform deployment, or asset import</li>
+            <li>Long-term support coverage that will last beyond the capstone timeline</li>
+          </ul>
+          <p>The game's scale and scope are well within the performance thresholds of this version.</p>
+        </section>
+
+        <section class="devlog-section">
+          <h2>Conclusion</h2>
+          <p>Unity 2022.3.62f1 was chosen for its maturity, reliability, and compatibility with my solo development pipeline. This allows me to focus on building core gameplay systems without being slowed down by under-documented or transitional technology.</p>
+          <p>The next devlog will cover the specific Unity packages I’ve chosen and how they support the systems required for Antillery.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="/scripts.js"></script>
+</body>
+</html>
