@@ -23,9 +23,9 @@
           <h2>What is Antillery?</h2>
           <p>Antillery is a 2D turn-based artillery game that blends classical projectile combat with peace-oriented mechanics. Inspired by games like <i>Worms</i> and <i>Scorched Earth</i>, it introduces satirical and subversive tools such as sunflowers, butterflies, and terrain-repairing sod to alter the battlefield.</p>
           
-          <!-- Added visual element to break up text -->
-          <div class="image-grid" style="grid-template-columns: 1fr;">
-            <img src="/assets/images/ant.png" alt="Antillery Logo" class="img-thumbnail" style="max-width: 200px; margin: 20px auto;">
+          <!-- Simplified image container with consistent styling -->
+          <div class="text-center">
+            <img src="/assets/images/ant.png" alt="Antillery Logo" style="max-width: 200px; margin: 20px auto;">
           </div>
           
           <p>Players take turns repositioning their ants, choosing tools, and aiming shots across a destructible terrain. Wind, gravity, and other environmental factors affect trajectory and impact. Terrain deformation and restoration are central to the game's tactical identity.</p>
@@ -35,17 +35,17 @@
           <h2>Why Antillery?</h2>
           <p>The game seeks to reinvigorate a genre that has seen little evolution in recent years. Modern artillery games often rehash existing mechanics or move away from turn-based strategy entirely. Antillery returns to the roots of the genre while challenging its assumptions.</p>
           
-          <!-- Enhanced blockquote styling -->
-          <blockquote class="highlight-box">
+          <!-- Clean blockquote without hover effects -->
+          <blockquote>
             <p>Instead of only offering weapons that destroy, Antillery introduces nonviolent tools that disrupt, obstruct, or restore. The goal is to create new kinds of tension and decision-making, without losing the chaos and unpredictability that defines the genre.</p>
           </blockquote>
         </section>
 
         <section class="devlog-section">
           <h2>Design Goals</h2>
-          <!-- More visually interesting list styling -->
-          <div class="skills-grid">
-            <div class="skill-category">
+          <!-- Simplified list structure with consistent styling -->
+          <div class="two-column-container">
+            <div class="column">
               <h3>Gameplay Goals</h3>
               <ul>
                 <li>Support for 2–4 player local multiplayer</li>
@@ -53,7 +53,7 @@
                 <li>Balanced mix of traditional and peace-oriented tools</li>
               </ul>
             </div>
-            <div class="skill-category">
+            <div class="column">
               <h3>Technical Goals</h3>
               <ul>
                 <li>Modular, testable architecture using Unity's ScriptableObjects and State Patterns</li>
@@ -66,14 +66,10 @@
         <section class="devlog-section">
           <h2>Technical Plan</h2>
           <blockquote>
-            <b>
-              <h5 class="challenge">Core Technologies</h5>
-            </b>
+            <h5>Core Technologies</h5>
             <p>The game is being built in Unity (2022.3.62f1 LTS) using C#. Terrain will be implemented as an alpha-mask texture with per-pixel deformation logic. Game logic is modularized into decoupled systems for turn order, player input, weapon behavior, and terrain interaction.</p>
             
-            <b>
-              <h5 class="remedy">Development Approach</h5>
-            </b>
+            <h5>Development Approach</h5>
             <p>Development follows an Agile sprint model with weekly goals and GitHub for version control. Core systems will be prioritized first, followed by gameplay polish and visual clarity. The MVP will include functional core gameplay, UI, and local multiplayer support.</p>
           </blockquote>
         </section>
@@ -82,25 +78,25 @@
           <h2>Target Audience</h2>
           <p>Antillery is designed for a wide spectrum of players:</p>
           
-          <!-- More visually appealing audience breakdown -->
-          <div class="image-grid">
-            <div class="project-item" style="padding: 15px; text-align: center;">
-              <h3 class="blog-title">Veteran Fans</h3>
+          <!-- Simplified audience cards with consistent styling -->
+          <div class="audience-grid">
+            <div class="audience-card">
+              <h4>Veteran Fans</h4>
               <p>Seeking chaos, creativity, and precision in their artillery gameplay</p>
             </div>
             
-            <div class="project-item" style="padding: 15px; text-align: center;">
-              <h3 class="blog-title">Newcomers</h3>
+            <div class="audience-card">
+              <h4>Newcomers</h4>
               <p>Who want approachable controls and emergent gameplay</p>
             </div>
             
-            <div class="project-item" style="padding: 15px; text-align: center;">
-              <h3 class="blog-title">Casual Players</h3>
+            <div class="audience-card">
+              <h4>Casual Players</h4>
               <p>Who enjoy unpredictable outcomes and on-the-couch fun</p>
             </div>
             
-            <div class="project-item" style="padding: 15px; text-align: center;">
-              <h3 class="blog-title">Competitive Players</h3>
+            <div class="audience-card">
+              <h4>Competitive Players</h4>
               <p>Who thrive on mind games and space control</p>
             </div>
           </div>
@@ -110,24 +106,21 @@
           <h2>Proposal Download</h2>
           <p>You can read the full capstone proposal document here:</p>
           
-          <!-- More visually appealing download link -->
-          <div class="iframe-border" style="text-align: center; padding: 20px; margin: 20px auto;">
-            <a href="/assets/docs/AntilleryProposal.pdf" target="_blank" class="toc-card" style="display: inline-block; width: auto; margin: 0 auto;">
-              <span class="toc-icon">📄</span>
-              <span class="toc-title">Download Antillery Proposal (PDF)</span>
+          <!-- Clearly interactive download button -->
+          <div class="text-center" style="margin: 30px 0;">
+            <a href="/assets/docs/AntilleryProposal.pdf" target="_blank" class="download-button">
+              <span>📄 Download Antillery Proposal (PDF)</span>
             </a>
           </div>
         </section>
 
         <section class="devlog-section">
           <h2>Next Time</h2>
-          <blockquote class="highlight-box">
-            <p>In the next post, I'll explain why I chose Unity 2022.3 LTS over Unity 6.0, despite having access to newer hardware and newer engine features.</p>
-          </blockquote>
+          <p>In the next post, I'll explain why I chose Unity 2022.3 LTS over Unity 6.0, despite having access to newer hardware and newer engine features.</p>
         </section>
 
-        <!-- Consistent signature styling -->
-        <div style="text-align: right; margin-top: 40px;">
+        <!-- Clean signature styling -->
+        <div class="signature">
           <h6>Until next time!</h6>
           <h4>- Josh ✌️</h4>
         </div>
