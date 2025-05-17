@@ -41,8 +41,24 @@
                 <span>Back</span>
             </a>
 
+            <!-- Quick Navigation ToC -->
+            <nav class="toc-nav">
+                <a href="#active" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🚀</span>
+                    <span class="toc-title">Active</span>
+                </a>
+                <a href="#complete" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">✅</span>
+                    <span class="toc-title">Complete</span>
+                </a>
+                <a href="#prototype" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🧪</span>
+                    <span class="toc-title">Prototype</span>
+                </a>
+            </nav>
+
             <!-- Active Projects Section -->
-            <section class="projects-section">
+            <section id="active" class="projects-section">
                 <div class="section-header">
                     <h2 class="funnel-display-header">Active</h2>
                     <p>Projects in active development</p>
@@ -62,7 +78,7 @@
             </section>
 
             <!-- Completed Projects Section -->
-            <section class="projects-section">
+            <section id="complete" class="projects-section">
                 <div class="section-header">
                     <h2 class="funnel-display-header">Complete</h2>
                     <p>Fully implemented projects</p>
@@ -109,7 +125,7 @@
             </section>
 
             <!-- Prototype Projects Section -->
-            <section class="projects-section">
+            <section id="prototype" class="projects-section">
                 <div class="section-header">
                     <h2 class="funnel-display-header">Prototype</h2>
                     <p>Experiments pending further development</p>

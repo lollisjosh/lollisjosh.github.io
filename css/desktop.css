@@ -1165,6 +1165,17 @@ canvas {
   margin-top: 4rem;
 }
 
+/* Scroll margin for anchor navigation */
+[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 2rem);
+  scroll-behavior: smooth;
+}
+
+/* Add specific scroll margin for project sections */
+.projects-section {
+  scroll-margin-top: calc(var(--navbar-height) + 3rem);
+}
+
 /* Tablet-specific styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .menu-toggle {
