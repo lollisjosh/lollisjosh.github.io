@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
     
     <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+    <!-- <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)"> -->
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -22,43 +22,43 @@
         <h1 class="funnel-display-header">Antillery Devlog #1</h1>
         <h4>Project Introduction</h4>
         
-               <nav class="toc-nav">
-          <a href="/projects/antillery.html" class="toc-card">
+        <nav class="toc-nav">
+          <a href="/projects/antillery.html" class="toc-card hover-transform-left">
             <span class="toc-icon">🎮</span>
             <span class="toc-title">Project Page</span>
           </a>
           
-          <a href="#what-is" class="toc-card">
+          <a href="#what-is" class="toc-card hover-transform-left">
             <span class="toc-icon">📌</span>
             <span class="toc-title">What is Antillery?</span>
           </a>
           
-          <a href="#why" class="toc-card">
+          <a href="#why" class="toc-card hover-transform-left">
             <span class="toc-icon">🤔</span>
             <span class="toc-title">Why Antillery?</span>
           </a>
           
-          <a href="#goals" class="toc-card">
+          <a href="#goals" class="toc-card hover-transform-left">
             <span class="toc-icon">🎯</span>
             <span class="toc-title">Design Goals</span>
           </a>
           
-          <a href="#technical" class="toc-card">
+          <a href="#technical" class="toc-card hover-transform-left">
             <span class="toc-icon">⚙️</span>
             <span class="toc-title">Technical Plan</span>
           </a>
           
-          <a href="#audience" class="toc-card">
+          <a href="#audience" class="toc-card hover-transform-left">
             <span class="toc-icon">👥</span>
             <span class="toc-title">Target Audience</span>
           </a>
           
-          <a href="#proposal" class="toc-card">
+          <a href="#proposal" class="toc-card hover-transform-left">
             <span class="toc-icon">📄</span>
             <span class="toc-title">Proposal</span>
           </a>
           
-          <a href="#next" class="toc-card">
+          <a href="#next" class="toc-card hover-transform-left">
             <span class="toc-icon">⏭️</span>
             <span class="toc-title">Next Time</span>
           </a>
@@ -71,7 +71,7 @@
           <p>Antillery is a 2D turn-based artillery game that blends classical projectile combat with peace-oriented mechanics. Inspired by games like <i>Worms</i> and <i>Scorched Earth</i>, it introduces satirical and subversive tools such as sunflowers, butterflies, and terrain-repairing sod to alter the battlefield.</p>
           
           <div class="iframe-border">
-            <img src="/assets/gifs/ant.gif" alt="Antillery Logo" style="max-width: 200px; margin: 0 auto; display: block;">
+            <img src="/assets/gifs/ant.gif" alt="Antillery Logo" class="hover-scale" style="max-width: 200px; margin: 0 auto; display: block;">
           </div>
           
           <p>Players take turns repositioning their ants, choosing tools, and aiming shots across a destructible terrain. Wind, gravity, and other environmental factors affect trajectory and impact. Terrain deformation and restoration are central to the game's tactical identity.</p>
@@ -96,7 +96,7 @@
         <section id="goals" class="devlog-section">
           <h2 class="section-heading">Design Goals</h2>
           <div class="skills-grid" style="margin-top: 25px;">
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
               <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Gameplay Goals</h3>
               <ul>
                 <li>Support for 2–4 player local multiplayer</li>
@@ -104,7 +104,7 @@
                 <li>Balanced mix of traditional and peace-oriented tools</li>
               </ul>
             </div>
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
               <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Technical Goals</h3>
               <ul>
                 <li>Modular, testable architecture using Unity's ScriptableObjects</li>
@@ -137,22 +137,22 @@
           <p>Antillery is designed for a wide spectrum of players:</p>
           
           <div class="skills-grid" style="margin-top: 25px; gap: 20px;">
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
               <h3 style="color: #4b304e; text-align: center;">Veteran Fans</h3>
               <p>Seeking chaos, creativity, and precision in their artillery gameplay</p>
             </div>
             
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
               <h3 style="color: #4b304e; text-align: center;">Newcomers</h3>
               <p>Who want approachable controls and emergent gameplay</p>
             </div>
             
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
               <h3 style="color: #4b304e; text-align: center;">Casual Players</h3>
               <p>Who enjoy unpredictable outcomes and on-the-couch fun</p>
             </div>
             
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
               <h3 style="color: #4b304e; text-align: center;">Competitive Players</h3>
               <p>Who thrive on mind games and space control</p>
             </div>
@@ -167,7 +167,7 @@
           <p>You can read the full capstone proposal document here:</p>
           
           <div class="iframe-border" style="text-align: center; margin: 20px 0; padding: 15px; background-color: #f9f5ff;">
-            <a href="/assets/pdf/AntilleryProposal.pdf" target="_blank" class="toc-card repo-card" style="display: inline-block; width: auto; min-width: 250px; margin: 0 auto;">
+            <a href="/assets/pdf/AntilleryProposal.pdf" target="_blank" class="toc-card repo-card hover-transform-left" style="display: inline-block; width: auto; min-width: 250px; margin: 0 auto;">
               <span class="toc-icon">📄</span>
               <span class="toc-title">Download Proposal (PDF)</span>
             </a>

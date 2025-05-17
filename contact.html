@@ -21,31 +21,32 @@
 
     <main>
         <div class="content-container">
-            <a href="javascript:history.back()" class="back-button">
+            <a href="javascript:history.back()" class="back-button hover-transform-left">
                 <span>←</span>
                 <span>Back</span>
             </a>
-        <h1 class="funnel-display-header">Contact Me!</h1>
-<!-- Profile picture with gradient border -->
-<div id="pfp-placeholder">
-    <div class="pfp-border">
-        <img src="/assets/images/pfp.png" alt="Profile Picture" class="pfp">
-    </div>
-</div>        <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mlderkrv" method="POST">
-            <fieldset id="fs-frm-inputs">
-                <label for="full-name">Full Name</label>
-                <input type="text" name="name" id="full-name" placeholder="First and Last" required>
-        
-                <label for="email-address">Email Address</label>
-                <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
-        
-                <label for="message">Message</label>
-                <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required></textarea>
-                
-                <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-            </fieldset>
-            <input type="submit" value="Submit">
-        </form>
+            <h1 class="funnel-display-header">Contact Me!</h1>
+            <!-- Profile picture with gradient border -->
+            <div id="pfp-placeholder">
+                <div class="pfp-border hover-scale">
+                    <img src="/assets/images/pfp.png" alt="Profile Picture" class="pfp">
+                </div>
+            </div>        
+            <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mlderkrv" method="POST" class="hover-transform-up">
+                <fieldset id="fs-frm-inputs">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" name="name" id="full-name" placeholder="First and Last" required>
+            
+                    <label for="email-address">Email Address</label>
+                    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
+            
+                    <label for="message">Message</label>
+                    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required></textarea>
+                    
+                    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+                </fieldset>
+                <input type="submit" value="Submit" class="hover-transform-left">
+            </form>
         </div>
     </main>
 

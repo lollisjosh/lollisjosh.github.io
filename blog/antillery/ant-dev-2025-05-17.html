@@ -7,11 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
- <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+<!--  -->
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -22,43 +18,43 @@
         <h1 class="funnel-display-header">Antillery Devlog #2</h1>
         <h4>Unity Version Selection</h4>
         
-               <nav class="toc-nav">
-          <a href="/projects/antillery.html" class="toc-card">
+        <nav class="toc-nav">
+          <a href="/projects/antillery.html" class="toc-card hover-transform-left">
             <span class="toc-icon">🎮</span>
             <span class="toc-title">Project Page</span>
           </a>
           
-          <a href="#what-is" class="toc-card">
+          <a href="#what-is" class="toc-card hover-transform-left">
             <span class="toc-icon">📌</span>
             <span class="toc-title">What is Antillery?</span>
           </a>
           
-          <a href="#why" class="toc-card">
+          <a href="#why" class="toc-card hover-transform-left">
             <span class="toc-icon">🤔</span>
             <span class="toc-title">Why Antillery?</span>
           </a>
           
-          <a href="#goals" class="toc-card">
+          <a href="#goals" class="toc-card hover-transform-left">
             <span class="toc-icon">🎯</span>
             <span class="toc-title">Design Goals</span>
           </a>
           
-          <a href="#technical" class="toc-card">
+          <a href="#technical" class="toc-card hover-transform-left">
             <span class="toc-icon">⚙️</span>
             <span class="toc-title">Technical Plan</span>
           </a>
           
-          <a href="#audience" class="toc-card">
+          <a href="#audience" class="toc-card hover-transform-left">
             <span class="toc-icon">👥</span>
             <span class="toc-title">Target Audience</span>
           </a>
           
-          <a href="#proposal" class="toc-card">
+          <a href="#proposal" class="toc-card hover-transform-left">
             <span class="toc-icon">📄</span>
             <span class="toc-title">Proposal</span>
           </a>
           
-          <a href="#next" class="toc-card">
+          <a href="#next" class="toc-card hover-transform-left">
             <span class="toc-icon">⏭️</span>
             <span class="toc-title">Next Time</span>
           </a>
@@ -91,23 +87,23 @@
           <p>There are three current categories of Unity releases to consider:</p>
           
           <div class="skills-grid" style="margin-top: 25px;">
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
               <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">2022.3 LTS</h3>
               <p>The most mature and widely supported version. Long-term support until mid-2025.</p>
             </div>
             
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
               <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">2023 Tech Stream</h3>
               <p>A feature-forward branch not intended for long-term stability. No LTS designation.</p>
             </div>
             
-            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
               <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Unity 6.0.0 LTS</h3>
               <p>Recently released. Includes newer systems like DOTS and UI Toolkit upgrades, but some packages and tooling are still catching up.</p>
             </div>
           </div>
           
-          <div class="highlight-box" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+          <div class="highlight-box hover-transform-up" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
             <p>The 2022.3.62f1 version used in this project is the latest patch release in the 2022 LTS series.<br>
             Link: <a href="https://unity.com/releases/editor/whats-new/2022.3.62" target="_blank">Unity 2022.3.62f1 Release Notes</a></p>
           </div>
@@ -119,7 +115,7 @@
         <section id="factors" class="devlog-section">
           <h2 class="section-heading">Decision Factors</h2>
           <!-- Added styling to the blockquote for better visual distinction -->
-          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;">
+          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;" class="hover-transform-up">
             <h5 class="challenge" style="color: #d44; border-bottom: 1px solid #d44; padding-bottom: 5px;">Why Not Unity 6?</h5>
             <ul>
               <li>This project does not require ECS, high-performance multithreading, or UI Toolkit-specific features.</li>
@@ -145,7 +141,7 @@
           <h2 class="section-heading">Conclusion</h2>
           <p>Unity 2022.3.62f1 was chosen for its maturity, reliability, and compatibility with my solo development pipeline. This allows me to focus on building core gameplay systems without being slowed down by under-documented or transitional technology.</p>
           
-          <div class="highlight-box" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+          <div class="highlight-box hover-transform-up" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
             <p>In the next devlog, I'll cover the specific Unity packages I've chosen and how they support the systems required for Antillery.</p>
           </div>
         </section>

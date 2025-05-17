@@ -18,6 +18,7 @@
   --text-light: #4a4a4a;
   --text-muted: #666;
   --white: #ffffff;
+  --black: #000000;
   --error: #e74c3c;
   --success: #27ae60;
   --secondary-blue: #181986;
@@ -75,6 +76,40 @@ a {
 .hover-lift:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--primary);
+}
+
+/* Additional hover effect utility classes */
+.hover-transform-up {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-transform-up:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.hover-transform-left {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-transform-left:hover {
+  transform: translateX(-5px);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.hover-scale {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
 }
 
@@ -191,12 +226,6 @@ main {
 }
 
 
-.menu-toggle:hover .toggle-button-text,
-.home-button:hover .home-button-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: white;
-}
-
 /* Home button styling */
 .home-button {
   display: flex;
@@ -255,7 +284,7 @@ main {
 .menu-toggle:hover .toggle-button-text,
 .home-button:hover .home-button-text {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: white;
+  color: var(--white);
 }
 
 
@@ -294,7 +323,7 @@ main {
 }
 
 .header-list-item a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   font-size: 32px;
   margin-left: 10px;
@@ -330,7 +359,7 @@ main {
 
 /* Project item styling */
 .project-item {
-  background: white;
+  background: var(--white);
   border-radius: var(--border-radius-md);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -349,7 +378,7 @@ main {
 
 .project-item:hover {
   transform: translateY(-5px);
-  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
 }
 
@@ -464,7 +493,7 @@ canvas {
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--white);
   padding: 10px;
   cursor: pointer;
   border: none;
@@ -535,7 +564,7 @@ canvas {
   border: 2px solid var(--primary);
   border-radius: var(--border-radius-sm);
   box-sizing: border-box;
-  background: white;
+  background: var(--white);
 }
 
 #role-tags {
@@ -585,7 +614,7 @@ canvas {
   align-items: center;
   padding: 10px;
   background-color: var(--primary);
-  color: white;
+  color: var(--white);
   border-top: 4px solid var(--accent);
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -606,7 +635,7 @@ canvas {
   height: 20px;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: var(--white);
   border: 4px solid var(--dark-accent);
   border-radius: var(--border-radius-sm);
 }
@@ -617,7 +646,7 @@ canvas {
 
 /* Individual social icon background colors */
 #site-footer .fa-github {
-  background: #000000;
+  background: var(--black);
 }
 
 #site-footer .fa-instagram {
@@ -781,7 +810,7 @@ canvas {
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   background: var(--accent);
 }
 
@@ -809,7 +838,7 @@ canvas {
   display: inline-block;
   padding: 0.5rem 1rem;
   background: var(--primary);
-  color: white;
+  color: var(--white);
   text-decoration: none;
   border-radius: var(--border-radius-sm);
   transition: var(--transition-fast);
@@ -868,7 +897,7 @@ canvas {
 
 #fs-frm [type="submit"] {
   background: var(--primary);
-  color: white;
+    color: var(--white);
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: var(--border-radius-sm);
@@ -949,7 +978,7 @@ canvas {
 }
 
 .toc-card {
-  background: white;
+  background: var(--white);
   padding: 1rem 2rem;
   border-radius: var(--border-radius-lg);
   border: 2px solid var(--primary);
@@ -969,7 +998,7 @@ canvas {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0 var(--primary);
   background: var(--accent);
-  color: white;
+  color: var(--white);
 }
 
 .toc-icon {
@@ -1009,7 +1038,7 @@ canvas {
 
 .skill-category:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
 }
 
@@ -1039,7 +1068,7 @@ canvas {
 .section-container {
   margin: 2rem 0;
   padding: 1rem;
-  background: white;
+  background: var(--white);
   border-radius: var(--border-radius-md);
   border: 2px solid var(--primary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1061,8 +1090,8 @@ canvas {
   text-align: center;
   text-decoration: none;
   border-radius: var(--border-radius-md);
-  background: #000000;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   border: 4px solid var(--dark-accent);
   transition: var(--transition-standard);
 }
@@ -1074,8 +1103,8 @@ canvas {
 }
 
 .repo-card {
-  background: #000000 !important;
-  color: white !important;
+  background: var(--black) !important;
+  color: var(--white) !important;
   border: 2px solid var(--dark-accent);
 }
 
@@ -1096,7 +1125,7 @@ canvas {
   top: 1rem;
   left: 1rem;
   background: var(--primary);
-  color: white;
+  color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-sm);
   text-decoration: none;
