@@ -21,13 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
- <!-- Mobile CSS (screens ≤ 768px) -->
+    
+    <!-- Mobile CSS (screens ≤ 768px) -->
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
     
     <!-- Desktop CSS (screens ≥ 769px) -->
     <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-
 </head>
 
 <body>
@@ -36,83 +35,114 @@
 
     <main>
         <div class="content-container">
+            <h1 class="funnel-display-header">Projects</h1>
             <a href="javascript:history.back()" class="back-button hover-transform-left">
                 <span>←</span>
                 <span>Back</span>
             </a>
-            <h1 class="funnel-display-header">Projects</h1>
 
-            <!-- Active Projects -->
-            <section class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Active</h2>
-                <div class="image-grid">
-                    <a href="./projects/antillery.html" class="project-item hover-transform-up">
-                        <h2>Antillery</h2>
-                        <div class="thumbnail-container">
-                            <img src="./assets/gifs/ant.gif" class="img-thumbnail" alt="Antillery - Coming Soon">
-                        </div>
-                    </a>
+            <!-- Active Projects Section -->
+            <section class="projects-section">
+                <div class="section-header">
+                    <h2 class="funnel-display-header">Active</h2>
+                    <p>Projects in active development</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project cards remain the same -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/antillery.html">
+                            <h3>Antillery</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Antillery" class="img-thumbnail" src="/assets/gifs/ant.gif">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- Complete Projects -->
-            <section class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Complete</h2>
-                <div class="image-grid">
-                    <a href="./projects/card_collection.html" class="project-item hover-transform-up">
-                        <h2>Card Collection</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/card.gif">
-                        </div>
-                    </a>
+            <!-- Completed Projects Section -->
+            <section class="projects-section">
+                <div class="section-header">
+                    <h2 class="funnel-display-header">Complete</h2>
+                    <p>Fully implemented projects</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project cards remain the same -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/card_collection.html">
+                            <h3>Card Collection</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Card Collection" class="img-thumbnail" src="/assets/gifs/card.gif">
+                            </div>
+                        </a>
+                    </div>
 
-                    <a href="./projects/ascii_draw.html" class="project-item hover-transform-up">
-                        <h2>ASCII Draw</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/sabbath.gif">
-                        </div>
-                    </a>
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/ascii_draw.html">
+                            <h3>ASCII Draw</h3>
+                            <div class="thumbnail-container">
+                                <img alt="ASCII Draw" class="img-thumbnail" src="/assets/gifs/sabbath.gif">
+                            </div>
+                        </a>
+                    </div>
 
-                    <a href="./projects/office.html" class="project-item hover-transform-up">
-                        <h2>My Office</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/office.gif">
-                        </div>
-                    </a>
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/office.html">
+                            <h3>My Office</h3>
+                            <div class="thumbnail-container">
+                                <img alt="My Office" class="img-thumbnail" src="/assets/gifs/office.gif">
+                            </div>
+                        </a>
+                    </div>
 
-                    <a href="./projects/snake.html" class="project-item hover-transform-up">
-                        <h2>Snake</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/snake.gif">
-                        </div>
-                    </a>
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/snake.html">
+                            <h3>Snake</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Snake" class="img-thumbnail" src="/assets/gifs/snake.gif">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- Prototype Projects -->
-            <section class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Prototype</h2>
-                <div class="image-grid">
-                    <a href="./projects/project_gal.html" class="project-item hover-transform-up">
-                        <h2>Project GAL</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/Gal_Target_Prefab.gif">
-                        </div>
-                    </a>
+            <!-- Prototype Projects Section -->
+            <section class="projects-section">
+                <div class="section-header">
+                    <h2 class="funnel-display-header">Prototype</h2>
+                    <p>Experiments pending further development</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project cards remain the same -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/project_gal.html">
+                            <h3>Project GAL</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Project GAL" class="img-thumbnail" src="/assets/gifs/gal-logo.gif">
+                            </div>
+                        </a>
+                    </div>
 
-                    <a href="./projects/server_surfer.html" class="project-item hover-transform-up">
-                        <h2>Server Surfer</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/surfer.gif">
-                        </div>
-                    </a>
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/server_surfer.html">
+                            <h3>Server Surfer</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Server Surfer" class="img-thumbnail" src="/assets/gifs/surfer.gif">
+                            </div>
+                        </a>
+                    </div>
 
-                    <a href="./projects/lunar.html" class="project-item hover-transform-up">
-                        <h2>Lunar Lander</h2>
-                        <div class="thumbnail-container">
-                            <img alt="" class="img-thumbnail" src="./assets/gifs/lunar.gif">
-                        </div>
-                    </a>
+                    <div class="project-item hover-transform-up">
+                        <a href="/projects/lunar.html">
+                            <h3>Lunar Lander</h3>
+                            <div class="thumbnail-container">
+                                <img alt="Lunar Lander" class="img-thumbnail" src="/assets/gifs/lunar.gif">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </section>
         </div>
@@ -120,8 +150,7 @@
 
     <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
-
-    <script src="./scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 
 </html>
