@@ -223,8 +223,10 @@ text-decoration: none;
 color: inherit;
 display: block;
 cursor: pointer;
-max-width: 400px; /* Add max-width to prevent excessive stretching */
-justify-self: center; /* Center the item in its grid cell */
+max-width: 400px; /* Keep max-width */
+width: 100%; /* Add 100% width */
+margin: 0 auto; /* Center horizontally */
+justify-self: stretch; /* Change to stretch instead of center */
 }
 .project-item:hover {
 transform: translateY(-5px);
@@ -1560,7 +1562,7 @@ box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 .image-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 gap: 2rem;
 padding: 2rem;
 margin: 1rem 0;
