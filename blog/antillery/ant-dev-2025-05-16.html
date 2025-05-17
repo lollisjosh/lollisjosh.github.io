@@ -19,8 +19,11 @@
         <h4>Project Introduction</h4>
         <p>See the ongoing project page <a href="/projects/antillery.html">here!</a></p>
         
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+        
         <section class="devlog-section">
-          <h2>What is Antillery?</h2>
+          <h2 class="section-heading">What is Antillery?</h2>
           <p>Antillery is a 2D turn-based artillery game that blends classical projectile combat with peace-oriented mechanics. Inspired by games like <i>Worms</i> and <i>Scorched Earth</i>, it introduces satirical and subversive tools such as sunflowers, butterflies, and terrain-repairing sod to alter the battlefield.</p>
           
           <div class="iframe-border">
@@ -30,28 +33,35 @@
           <p>Players take turns repositioning their ants, choosing tools, and aiming shots across a destructible terrain. Wind, gravity, and other environmental factors affect trajectory and impact. Terrain deformation and restoration are central to the game's tactical identity.</p>
         </section>
 
-        <section class="devlog-section">
-          <h2>Why Antillery?</h2>
-          <p>The game seeks to reinvigorate a genre that has seen little evolution in recent years. Modern artillery games often rehash existing mechanics or move away from turn-based strategy entirely. Antillery returns to the roots of the genre while challenging its assumptions.</p>
-          
-          <blockquote>
-            <p>Instead of only offering weapons that destroy, Antillery introduces nonviolent tools that disrupt, obstruct, or restore. The goal is to create new kinds of tension and decision-making, without losing the chaos and unpredictability that defines the genre.</p>
-          </blockquote>
-        </section>
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
 
         <section class="devlog-section">
-          <h2>Design Goals</h2>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3>Gameplay Goals</h3>
+          <h2 class="section-heading">Why Antillery?</h2>
+          <p>The game seeks to reinvigorate a genre that has seen little evolution in recent years. Modern artillery games often rehash existing mechanics or move away from turn-based strategy entirely. Antillery returns to the roots of the genre while challenging its assumptions.</p>
+          
+          <!-- Changed to a styled paragraph instead of blockquote to avoid hover effect -->
+          <div class="highlight-box" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+            <p>Instead of only offering weapons that destroy, Antillery introduces nonviolent tools that disrupt, obstruct, or restore. The goal is to create new kinds of tension and decision-making, without losing the chaos and unpredictability that defines the genre.</p>
+          </div>
+        </section>
+
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
+        <section class="devlog-section">
+          <h2 class="section-heading">Design Goals</h2>
+          <div class="skills-grid" style="margin-top: 25px;">
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Gameplay Goals</h3>
               <ul>
                 <li>Support for 2–4 player local multiplayer</li>
                 <li>Fully destructible and constructible terrain</li>
                 <li>Balanced mix of traditional and peace-oriented tools</li>
               </ul>
             </div>
-            <div class="skill-category">
-              <h3>Technical Goals</h3>
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Technical Goals</h3>
               <ul>
                 <li>Modular, testable architecture using Unity's ScriptableObjects</li>
                 <li>Offline-first design prioritizing accessibility</li>
@@ -60,49 +70,59 @@
           </div>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Technical Plan</h2>
-          <blockquote>
-            <h5 class="challenge">Core Technologies</h5>
+          <h2 class="section-heading">Technical Plan</h2>
+          <!-- Added styling to the blockquote for better visual distinction -->
+          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;">
+            <h5 class="challenge" style="color: #d44; border-bottom: 1px solid #d44; padding-bottom: 5px;">Core Technologies</h5>
             <p>The game is being built in Unity (2022.3.62f1 LTS) using C#. Terrain will be implemented as an alpha-mask texture with per-pixel deformation logic. Game logic is modularized into decoupled systems for turn order, player input, weapon behavior, and terrain interaction.</p>
             
-            <h5 class="remedy">Development Approach</h5>
+            <h5 class="remedy" style="color: #4a4; border-bottom: 1px solid #4a4; padding-bottom: 5px; margin-top: 20px;">Development Approach</h5>
             <p>Development follows an Agile sprint model with weekly goals and GitHub for version control. Core systems will be prioritized first, followed by gameplay polish and visual clarity. The MVP will include functional core gameplay, UI, and local multiplayer support.</p>
           </blockquote>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Target Audience</h2>
+          <h2 class="section-heading">Target Audience</h2>
           <p>Antillery is designed for a wide spectrum of players:</p>
           
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3>Veteran Fans</h3>
+          <div class="skills-grid" style="margin-top: 25px; gap: 20px;">
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="color: #4b304e; text-align: center;">Veteran Fans</h3>
               <p>Seeking chaos, creativity, and precision in their artillery gameplay</p>
             </div>
             
-            <div class="skill-category">
-              <h3>Newcomers</h3>
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="color: #4b304e; text-align: center;">Newcomers</h3>
               <p>Who want approachable controls and emergent gameplay</p>
             </div>
             
-            <div class="skill-category">
-              <h3>Casual Players</h3>
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="color: #4b304e; text-align: center;">Casual Players</h3>
               <p>Who enjoy unpredictable outcomes and on-the-couch fun</p>
             </div>
             
-            <div class="skill-category">
-              <h3>Competitive Players</h3>
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="color: #4b304e; text-align: center;">Competitive Players</h3>
               <p>Who thrive on mind games and space control</p>
             </div>
           </div>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Proposal Download</h2>
+          <h2 class="section-heading">Proposal Download</h2>
           <p>You can read the full capstone proposal document here:</p>
           
-          <div class="iframe-border" style="text-align: center; margin: 20px 0;">
+          <div class="iframe-border" style="text-align: center; margin: 20px 0; padding: 15px; background-color: #f9f5ff;">
             <a href="/assets/docs/AntilleryProposal.pdf" target="_blank" class="toc-card repo-card" style="display: inline-block; width: auto; min-width: 250px; margin: 0 auto;">
               <span class="toc-icon">📄</span>
               <span class="toc-title">Download Proposal (PDF)</span>
@@ -110,12 +130,15 @@
           </div>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Next Time</h2>
+          <h2 class="section-heading">Next Time</h2>
           <p>In the next post, I'll explain why I chose Unity 2022.3 LTS over Unity 6.0, despite having access to newer hardware and newer engine features.</p>
         </section>
 
-        <div style="text-align: right; margin-top: 40px;">
+        <div style="text-align: right; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
           <h6>Until next time!</h6>
           <h4>- Josh ✌️</h4>
         </div>
