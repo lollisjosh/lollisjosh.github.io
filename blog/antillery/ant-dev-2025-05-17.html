@@ -18,46 +18,72 @@
         <h1 class="funnel-display-header">Antillery Development Log #2</h1>
         <h4>Unity Version Selection</h4>
         <p>See the ongoing project page <a href="/projects/antillery.html">here!</a></p>
+        
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
 
         <section class="devlog-section">
-          <h2>Introduction</h2>
+          <h2 class="section-heading">Introduction</h2>
           <p>In this second devlog post for Antillery, I'll discuss the decision-making process for selecting the appropriate Unity version for development. After careful consideration of the available options and project requirements, I chose to use Unity 2022.3.62f1 for this project.</p>
         </section>
 
-        <section class="devlog-section">
-          <h2>Choosing a Unity Version</h2>
-          <p>At the time of the project proposal, I had planned to use the "latest Unity LTS version." Since then, I've upgraded my hardware and briefly considered using Unity 6.0.0 LTS. However, after evaluating the available options, I decided to use <strong>Unity 2022.3.62f1</strong>.</p>
-        </section>
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
 
         <section class="devlog-section">
-          <h2>Unity Version Overview</h2>
+          <h2 class="section-heading">Choosing a Unity Version</h2>
+          <p>At the time of the project proposal, I had planned to use the "latest Unity LTS version." Since then, I've upgraded my hardware and briefly considered using Unity 6.0.0 LTS. However, after evaluating the available options, I decided to use <strong>Unity 2022.3.62f1</strong>.</p>
+          
+          <div class="iframe-border">
+            <img src="/assets/images/unity-logo.png" alt="Unity Logo" style="max-width: 200px; margin: 0 auto; display: block;">
+          </div>
+        </section>
+
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
+        <section class="devlog-section">
+          <h2 class="section-heading">Unity Version Overview</h2>
           <p>There are three current categories of Unity releases to consider:</p>
-          <blockquote>
-            <ul>
-              <li><strong>2022.3 LTS</strong>: The most mature and widely supported version. Long-term support until mid-2025.</li>
-              <li><strong>2023 Tech Stream</strong>: A feature-forward branch not intended for long-term stability. No LTS designation.</li>
-              <li><strong>Unity 6.0.0 LTS</strong>: Recently released. Includes newer systems like DOTS and UI Toolkit upgrades, but some packages and tooling are still catching up.</li>
-            </ul>
+          
+          <div class="skills-grid" style="margin-top: 25px;">
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">2022.3 LTS</h3>
+              <p>The most mature and widely supported version. Long-term support until mid-2025.</p>
+            </div>
+            
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">2023 Tech Stream</h3>
+              <p>A feature-forward branch not intended for long-term stability. No LTS designation.</p>
+            </div>
+            
+            <div class="skill-category" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Unity 6.0.0 LTS</h3>
+              <p>Recently released. Includes newer systems like DOTS and UI Toolkit upgrades, but some packages and tooling are still catching up.</p>
+            </div>
+          </div>
+          
+          <div class="highlight-box" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
             <p>The 2022.3.62f1 version used in this project is the latest patch release in the 2022 LTS series.<br>
             Link: <a href="https://unity.com/releases/editor/whats-new/2022.3.62" target="_blank">Unity 2022.3.62f1 Release Notes</a></p>
-          </blockquote>
+          </div>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Decision Factors</h2>
-          <blockquote>
-            <b>
-              <h5 class="challenge">Why Not Unity 6?</h5>
-            </b>
+          <h2 class="section-heading">Decision Factors</h2>
+          <!-- Added styling to the blockquote for better visual distinction -->
+          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;">
+            <h5 class="challenge" style="color: #d44; border-bottom: 1px solid #d44; padding-bottom: 5px;">Why Not Unity 6?</h5>
             <ul>
               <li>This project does not require ECS, high-performance multithreading, or UI Toolkit-specific features.</li>
               <li>The Unity 6 ecosystem is still stabilizing. Not all community tooling or packages have caught up.</li>
               <li>As a solo developer, minimizing risk from low-level system changes is a higher priority than adopting newer paradigms.</li>
             </ul>
             
-            <b>
-              <h5 class="remedy">Why 2022.3 LTS Works</h5>
-            </b>
+            <h5 class="remedy" style="color: #4a4; border-bottom: 1px solid #4a4; padding-bottom: 5px; margin-top: 20px;">Why 2022.3 LTS Works</h5>
             <ul>
               <li>Full compatibility with the packages I plan to use (Input System, URP, TextMeshPro, etc.)</li>
               <li>Established documentation and wide community support</li>
@@ -68,14 +94,25 @@
           </blockquote>
         </section>
 
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
         <section class="devlog-section">
-          <h2>Conclusion</h2>
+          <h2 class="section-heading">Conclusion</h2>
           <p>Unity 2022.3.62f1 was chosen for its maturity, reliability, and compatibility with my solo development pipeline. This allows me to focus on building core gameplay systems without being slowed down by under-documented or transitional technology.</p>
-          <p>In the next devlog, I'll cover the specific Unity packages I've chosen and how they support the systems required for Antillery.</p>
+          
+          <div class="highlight-box" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+            <p>In the next devlog, I'll cover the specific Unity packages I've chosen and how they support the systems required for Antillery.</p>
+          </div>
         </section>
 
-        <h6>Until next time!</h6>
-        <h4>- Josh ✌️</h4>
+        <!-- Added horizontal ruler for better section separation -->
+        <hr class="section-divider">
+
+        <div style="text-align: right; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
+          <h6>Until next time!</h6>
+          <h4>- Josh ✌️</h4>
+        </div>
       </article>
     </div>
   </main>
