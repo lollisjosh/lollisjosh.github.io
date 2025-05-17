@@ -79,7 +79,7 @@ a {
   border: 2px solid var(--primary);
 }
 
-/* Additional hover effect utility classes */
+/* Position/transform hover utilities */
 .hover-transform-up {
   transition: var(--transition-standard);
   border: 2px solid transparent;
@@ -111,6 +111,76 @@ a {
   transform: scale(1.05);
   box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
+}
+
+/* Color/effect hover utilities */
+.hover-accent-bg {
+  transition: var(--transition-standard);
+}
+
+.hover-accent-bg:hover {
+  background: var(--accent);
+}
+
+.hover-accent-text {
+  transition: var(--transition-standard);
+}
+
+.hover-accent-text:hover {
+  color: var(--accent);
+}
+
+.hover-white-text {
+  transition: var(--transition-standard);
+}
+
+.hover-white-text:hover {
+  color: var(--white);
+}
+
+.hover-white-border {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-white-border:hover {
+  border: 2px solid var(--white);
+}
+
+.hover-fade {
+  transition: var(--transition-standard);
+}
+
+.hover-fade:hover {
+  opacity: 0.7;
+}
+
+.hover-text-shadow {
+  transition: var(--transition-standard);
+}
+
+.hover-text-shadow:hover {
+  text-shadow: 0 0 8px rgba(237, 101, 255, 0.4);
+}
+
+/* Special case utilities for specific elements */
+.hover-toc-card {
+  transition: var(--transition-standard);
+}
+
+.hover-toc-card:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--primary);
+}
+
+.hover-button-glow {
+  transition: var(--transition-standard);
+}
+
+.hover-button-glow:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 /* Typography classes */
@@ -172,11 +242,6 @@ h3.funnel-display-header {
   margin: 1rem 0;
   border: none;
   transition: var(--transition-fast);
-}
-
-.content-container blockquote:hover {
-  transform: translateY(-5px);
-  box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Special heading styles */
@@ -248,13 +313,6 @@ main {
   border: 2px solid transparent;
 }
 
-.home-button:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(var(--accent-rgb), 0.4);
-  border: 2px solid var(--white);
-}
-
 /* Menu toggle styling */
 .menu-toggle {
   display: flex;
@@ -272,22 +330,6 @@ main {
   transition: var(--transition-standard);
   border: 2px solid transparent;
 }
-
-.menu-toggle:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(var(--accent-rgb), 0.4);
-  border: 2px solid var(--white);
-}
-
-/* Text styling for both buttons */
-.menu-toggle:hover .toggle-button-text,
-.home-button:hover .home-button-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-  color: var(--white);
-}
-
-
 
 /* Header list styles */
 .header-list {
@@ -327,12 +369,6 @@ main {
   text-decoration: none;
   font-size: 32px;
   margin-left: 10px;
-}
-
-.header-list-item-a:hover {
-  color: var(--accent);
-  text-shadow: 0 0 8px rgba(237, 101, 255, 0.4);
-  transition: var(--transition-standard);
 }
 
 @keyframes slideDown {
@@ -376,12 +412,6 @@ main {
   justify-self: stretch;
 }
 
-.project-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--primary);
-}
-
 .thumbnail-container {
   width: 100%;
   height: 70%;
@@ -397,10 +427,6 @@ main {
   height: 100%;
   object-fit: cover;
   transition: var(--transition-standard);
-}
-
-.project-item:hover .thumbnail-container img {
-  transform: scale(1.08);
 }
 
 .project-item h2 {
@@ -640,10 +666,6 @@ canvas {
   border-radius: var(--border-radius-sm);
 }
 
-#site-footer .fa:hover {
-  opacity: 0.7;
-}
-
 /* Individual social icon background colors */
 #site-footer .fa-github {
   background: var(--black);
@@ -750,11 +772,6 @@ canvas {
   transition: var(--transition-fast);
 }
 
-.devlog-content blockquote:hover {
-  transform: translateY(-2px);
-  box-shadow: 8px 8px 2px rgba(0, 0, 0, 0.397);
-}
-
 .devlog-content h5 {
   color: var(--primary);
   font-size: 1.1rem;
@@ -808,12 +825,6 @@ canvas {
   display: block;
 }
 
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  background: var(--accent);
-}
-
 .blog-content {
   padding: 1.5rem;
 }
@@ -844,10 +855,6 @@ canvas {
   transition: var(--transition-fast);
 }
 
-.blog-link:hover {
-  background: var(--accent);
-}
-
 /* Version sections */
 .version-section {
   background: var(--white);
@@ -857,11 +864,6 @@ canvas {
   margin: 3rem 0;
   border: 2px solid var(--primary);
   transition: var(--transition-standard);
-}
-
-.version-section:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
 }
 
 /* Form styling */
@@ -906,10 +908,6 @@ canvas {
   transition: var(--transition-standard);
 }
 
-#fs-frm [type="submit"]:hover {
-  background: var(--accent);
-}
-
 /* Image grid */
 .image-grid {
   display: grid;
@@ -932,12 +930,6 @@ canvas {
   padding: 1rem;
   border: 2px solid transparent;
   box-shadow: var(--shadow-sm);
-}
-
-.image-grid img:hover {
-  transform: scale(1.05);
-  border: 2px solid var(--primary);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Modal */
@@ -994,13 +986,6 @@ canvas {
   text-align: center;
 }
 
-.toc-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--primary);
-  background: var(--accent);
-  color: var(--white);
-}
-
 .toc-icon {
   font-size: 1.5rem;
 }
@@ -1034,12 +1019,6 @@ canvas {
   padding: 1rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-standard);
-}
-
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--primary);
 }
 
 .skill-category h3 {
@@ -1096,22 +1075,10 @@ canvas {
   transition: var(--transition-standard);
 }
 
-.repo-link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0.7;
-}
-
 .repo-card {
   background: var(--black) !important;
   color: var(--white) !important;
   border: 2px solid var(--dark-accent);
-}
-
-.repo-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0.9;
 }
 
 .repo-card .toc-icon {
@@ -1136,12 +1103,6 @@ canvas {
   z-index: 5;
 }
 
-.back-button:hover {
-  background: var(--accent);
-  transform: translateX(-5px);
-  border: 2px solid var(--primary);
-}
-
 .back-button * {
   display: inline;
   z-index: 5;
@@ -1154,3 +1115,4 @@ canvas {
     font-size: clamp(28px, calc(var(--navbar-height) * 0.45), 40px);
   }
 }
+
