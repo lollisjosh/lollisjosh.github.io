@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antillery Devlog | Portfolio</title>
+  <title>Antillery Devlog #1 | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
@@ -11,55 +11,84 @@
 </head>
 <body>
   <div id="header-placeholder"></div>
-
+  
   <main>
     <div class="content-container">
       <article>
-        <h1 class="funnel-display-header">Antillery Development Log</h1>
-        <p>This is the first devlog post for Antillery, a 2D artillery game being developed as a Computer Science capstone project.</p>
+        <h1 class="funnel-display-header">Antillery Development Log #1</h1>
+        <h4>Project Introduction</h4>
+        <p>See the ongoing project page <a href="/projects/antillery.html">here!</a></p>
 
         <section class="devlog-section">
-          <h2>Choosing a Unity Version</h2>
-<p>At the time of the project proposal, I had planned to use the “latest Unity LTS version.” Since then, I’ve upgraded my hardware and briefly considered using Unity 6.0.0 LTS. However, after evaluating the available options, I decided to use <strong>Unity 2022.3.62f1</strong>.</p>
+          <h2>What is Antillery?</h2>
+          <p>Antillery is a 2D turn-based artillery game that blends classical projectile combat with peace-oriented mechanics. Inspired by games like <i>Worms</i> and <i>Scorched Earth</i>, it introduces satirical and subversive tools such as sunflowers, butterflies, and terrain-repairing sod to alter the battlefield.</p>
+          <p>Players take turns repositioning their ants, choosing tools, and aiming shots across a destructible terrain. Wind, gravity, and other environmental factors affect trajectory and impact. Terrain deformation and restoration are central to the game's tactical identity.</p>
         </section>
 
         <section class="devlog-section">
-          <h2>Unity Version Overview</h2>
-          <p>There are three current categories of Unity releases to consider:</p>
-          <ul>
-            <li><strong>2022.3 LTS</strong>: The most mature and widely supported version. Long-term support until mid-2025.</li>
-            <li><strong>2023 Tech Stream</strong>: A feature-forward branch not intended for long-term stability. No LTS designation.</li>
-            <li><strong>Unity 6.0.0 LTS</strong>: Recently released. Includes newer systems like DOTS and UI Toolkit upgrades, but some packages and tooling are still catching up.</li>
-          </ul>
-          <p>The 2022.3.62f1 version used in this project is the latest patch release in the 2022 LTS series.<br>
-          Link: <a href="https://unity.com/releases/editor/whats-new/2022.3.62" target="_blank">Unity 2022.3.62f1 Release Notes</a></p>
+          <h2>Why Antillery?</h2>
+          <p>The game seeks to reinvigorate a genre that has seen little evolution in recent years. Modern artillery games often rehash existing mechanics or move away from turn-based strategy entirely. Antillery returns to the roots of the genre while challenging its assumptions.</p>
+          <blockquote>
+            <p>Instead of only offering weapons that destroy, Antillery introduces nonviolent tools that disrupt, obstruct, or restore. The goal is to create new kinds of tension and decision-making, without losing the chaos and unpredictability that defines the genre.</p>
+          </blockquote>
         </section>
 
         <section class="devlog-section">
-          <h2>Why Not Unity 6?</h2>
-          <ul>
-            <li>This project does not require ECS, high-performance multithreading, or UI Toolkit-specific features.</li>
-            <li>The Unity 6 ecosystem is still stabilizing. Not all community tooling or packages have caught up.</li>
-            <li>As a solo developer, minimizing risk from low-level system changes is a higher priority than adopting newer paradigms.</li>
-          </ul>
+          <h2>Design Goals</h2>
+          <blockquote>
+            <ul>
+              <li>Support for 2–4 player local multiplayer</li>
+              <li>Fully destructible and constructible terrain</li>
+              <li>Balanced mix of traditional and peace-oriented tools</li>
+              <li>Modular, testable architecture using Unity's ScriptableObjects and State Patterns</li>
+              <li>Offline-first design prioritizing accessibility and software ownership</li>
+            </ul>
+          </blockquote>
         </section>
 
         <section class="devlog-section">
-          <h2>Why 2022.3 LTS Works</h2>
-          <ul>
-            <li>Full compatibility with the packages I plan to use (Input System, URP, TextMeshPro, etc.)</li>
-            <li>Established documentation and wide community support</li>
-            <li>Fewer surprises during build, platform deployment, or asset import</li>
-            <li>Long-term support coverage that will last beyond the capstone timeline</li>
-          </ul>
-          <p>The game's scale and scope are well within the performance thresholds of this version.</p>
+          <h2>Technical Plan</h2>
+          <blockquote>
+            <b>
+              <h5 class="challenge">Core Technologies</h5>
+            </b>
+            <p>The game is being built in Unity (2022.3.62f1 LTS) using C#. Terrain will be implemented as an alpha-mask texture with per-pixel deformation logic. Game logic is modularized into decoupled systems for turn order, player input, weapon behavior, and terrain interaction.</p>
+            
+            <b>
+              <h5 class="remedy">Development Approach</h5>
+            </b>
+            <p>Development follows an Agile sprint model with weekly goals and GitHub for version control. Core systems will be prioritized first, followed by gameplay polish and visual clarity. The MVP will include functional core gameplay, UI, and local multiplayer support.</p>
+          </blockquote>
         </section>
 
         <section class="devlog-section">
-          <h2>Conclusion</h2>
-          <p>Unity 2022.3.62f1 was chosen for its maturity, reliability, and compatibility with my solo development pipeline. This allows me to focus on building core gameplay systems without being slowed down by under-documented or transitional technology.</p>
-          <p>The next devlog will cover the specific Unity packages I’ve chosen and how they support the systems required for Antillery.</p>
+          <h2>Target Audience</h2>
+          <p>Antillery is designed for a wide spectrum of players:</p>
+          <blockquote>
+            <ul>
+              <li><strong>Veteran artillery fans:</strong> seeking chaos, creativity, and precision</li>
+              <li><strong>Newcomers:</strong> who want approachable controls and emergent gameplay</li>
+              <li><strong>Casual players:</strong> who enjoy unpredictable outcomes and on-the-couch fun</li>
+              <li><strong>Competitive players:</strong> who thrive on mind games and space control</li>
+            </ul>
+          </blockquote>
         </section>
+
+        <section class="devlog-section">
+          <h2>Proposal Download</h2>
+          <p>You can read the full capstone proposal document here:</p>
+          <blockquote>
+            <p><a href="/assets/docs/AntilleryProposal.pdf" target="_blank">📄 Antillery Capstone Proposal (PDF)</a></p>
+          </blockquote>
+        </section>
+
+        <section class="devlog-section">
+          <h2>Next Time</h2>
+          <p>In the next post, I'll explain why I chose Unity 2022.3 LTS over Unity 6.0, despite having access to newer hardware and newer engine features.</p>
+        </section>
+
+        <h6>Until next time!</h6>
+        <h4>- Josh ✌️</h4>
       </article>
     </div>
   </main>
