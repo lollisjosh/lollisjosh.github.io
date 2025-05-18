@@ -1,0 +1,259 @@
+<!--
+    Legacy Portfolio Project Documentation Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Documentation page for the previous Jekyll-based portfolio site
+    that was hosted on Netlify with Staticman comments integration
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta and resource imports -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Legacy Portfolio</title>
+
+    <!-- Font imports and styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <!-- Mobile CSS (screens ≤ 768px) -->
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
+    
+    <!-- Desktop CSS (screens ≥ 769px) -->
+    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+</head>
+
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Legacy Portfolio</h1>
+            <h4>Jekyll-based Static Site</h4>
+            
+            <!-- Navigation cards for project sections -->
+            <nav class="toc-nav">
+                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">📝</span>
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">⚙️</span>
+                    <span class="toc-title">Implementation</span>
+                </a>
+                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🔧</span>
+                    <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#features" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">✨</span>
+                    <span class="toc-title">Features</span>
+                </a>
+                <a href="#evolution" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🔄</span>
+                    <span class="toc-title">Evolution</span>
+                </a>
+                <a href="#future-improvements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🚀</span>
+                    <span class="toc-title">Future Plans</span>
+                </a>
+                <a href="https://telloviz.netlify.app/" 
+                   target="_blank" 
+                   class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🌐</span>
+                    <span class="toc-title">Live Site</span>
+                </a>
+                <a href="https://github.com/TelloViz/telloviz.github.io" 
+                   target="_blank" 
+                   class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon fa fa-github"></span>
+                    <span class="toc-title">Repository</span>
+                </a>
+            </nav>
+            
+            <a href="javascript:history.back()" class="back-button hover-transform-left">
+                <span>←</span>
+                <span>Back</span>
+            </a>
+
+            <!-- Project overview section -->
+            <section id="overview" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>This was my first professional portfolio website, built as a personally driven project during summer 2023 specifically to showcase my skills while applying for internships. The site was built using a Jekyll template that I customized to fit my specific needs and aesthetic preferences.</p>
+                
+                <h3>Technologies Used</h3>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Core Technologies</h3>
+                        <ul>
+                            <li>Jekyll Static Site Generator</li>
+                            <li>Liquid Templating</li>
+                            <li>SCSS/SASS</li>
+                            <li>Markdown</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Hosting & Integration</h3>
+                        <ul>
+                            <li>Netlify Deployment</li>
+                            <li>Staticman Comments</li>
+                            <li>GitHub Version Control</li>
+                            <li>Form Handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation details section -->
+            <section id="implementation" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Site Architecture</h3>
+                        <ul>
+                            <li>Template-Based Page Generation</li>
+                            <li>Custom Layouts for Different Content Types</li>
+                            <li>Component-Based Structure</li>
+                            <li>Content/Code Separation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Customizations</h3>
+                        <ul>
+                            <li>Modified Layout Structure</li>
+                            <li>Custom Color Scheme & Typography</li>
+                            <li>Project Gallery System</li>
+                            <li>Responsive Navigation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and solutions section -->
+            <section id="challenges" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Challenges Faced</h2>
+                
+                <blockquote class="hover-transform-up">
+                    <h5 class="challenge">Staticman Integration</h5>
+                    <b>Implementing comments on a static site without a backend</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Set up Staticman to handle form submissions and automatically generate pull requests to add comments as data files</p>
+                </blockquote>
+
+                <blockquote class="hover-transform-up">
+                    <h5 class="challenge">Jekyll Template Customization</h5>
+                    <b>Modifying an existing template without breaking its core functionality</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Took an incremental approach to modifications, creating component overrides rather than directly modifying template files</p>
+                </blockquote>
+
+                <blockquote class="hover-transform-up">
+                    <h5 class="challenge">Build Configuration</h5>
+                    <b>Configuring the correct build settings for Netlify deployment</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Created a detailed Netlify configuration file with precise build commands and environment settings</p>
+                </blockquote>
+            </section>
+
+            <!-- Features and highlights section -->
+            <section id="features" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Key Features</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>User Experience</h3>
+                        <ul>
+                            <li>Fast Loading Times</li>
+                            <li>Responsive Design</li>
+                            <li>Project Filtering</li>
+                            <li>Blog Section</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Technical Features</h3>
+                        <ul>
+                            <li>Static Site with Dynamic Features</li>
+                            <li>Comment System Integration</li>
+                            <li>Automatic Deployment</li>
+                            <li>Markdown-Based Content</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evolution to current portfolio section -->
+            <section id="evolution" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Evolution to Current Portfolio</h2>
+                <p>This legacy portfolio served as an important stepping stone in my web development journey. While this Jekyll-based version offered powerful features and architecture, the current portfolio represents a different approach—built entirely from scratch without templates.</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Skills Development</h3>
+                        <ul>
+                            <li>Hand-crafted HTML/CSS/JS without generators</li>
+                            <li>Building components from the ground up</li>
+                            <li>Custom implementation of content injection</li>
+                            <li>Personal design system development</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Different Approaches</h3>
+                        <ul>
+                            <li>Simplified architecture focus</li>
+                            <li>Direct control over all aspects</li>
+                            <li>Learning through building fundamentals</li>
+                            <li>Academic exercise in web fundamentals</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Improvements section -->
+            <section id="future-improvements" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Future Improvements</h2>
+                <p>As this portfolio continues to evolve, several enhancements are planned to further improve the user experience and technical implementation:</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>User Experience</h3>
+                        <ul>
+                            <li>Light/Dark theme toggle for better accessibility</li>
+                            <li>Improved navigation patterns for deeper content</li>
+                            <li>Enhanced keyboard navigation support</li>
+                            <li>Interactive project demos embedded in project pages</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Technical Enhancements</h3>
+                        <ul>
+                            <li>CSS optimization and refactoring for smaller bundles</li>
+                            <li>Implementing content pre-loading for faster transitions</li>
+                            <li>Progressive Web App (PWA) capabilities</li>
+                            <li>Enhancing visual cohesiveness across all pages</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Content Expansion</h3>
+                        <ul>
+                            <li>Completing "Coming Soon" placeholder pages</li>
+                            <li>Expanded project documentation with process details</li>
+                            <li>More comprehensive devlog entries</li>
+                            <li>Case studies of key projects with metrics</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+    <!-- Footer injection point -->    </main>        </div>    <div id="footer-placeholder"></div>
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
