@@ -536,13 +536,62 @@ canvas {
 }
 
 /* Video styling */
+.iframe-border {
+  padding: 8px;  /* Creates space for the hover border */
+  transition: var(--transition-standard);
+  background-color: transparent;
+  display: flex;  /* Use flexbox for centering */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+  box-sizing: border-box;  /* Include padding in width calculation */
+  border-radius: var(--border-radius-md);  /* Add border radius to match other containers */
+}
+
 .project-video {
-  margin: 2%;
   width: 100%;
   aspect-ratio: 16/9;
   border: 4px solid var(--primary);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-md);
+  margin: 0;  /* Remove margin so padding controls spacing */
+  display: block;
+}
+
+/* Fix video hover border behavior */
+.iframe-border.hover-transform-up:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);  /* Preserve border radius on hover */
+  overflow: hidden;  /* Keep video within the rounded corners */
+}
+
+/* Add medium-sized carousel class */
+.carousel-container-medium {
+  width: 50%;
+  height: 40vh;  /* Reduce height proportionally */
+  margin: 0 auto;  /* Center the carousel */
+  border-radius: var(--border-radius-md);  /* Add border radius to match other containers */
+  overflow: hidden;  /* Keep images within the rounded corners */
+  padding: 4px;  /* Add some internal padding */
+}
+
+/* Ensure carousel images fit properly in the smaller container */
+.carousel-container-medium .carousel-images img {
+  max-height: 100%;
+  width: 100%;  /* Set to 100% to ensure full width */
+  flex-shrink: 0;  /* Prevent shrinking */
+  flex-grow: 0;    /* Prevent growing */
+  object-fit: contain;
+  border-radius: var(--border-radius-sm);  /* Add slight rounding to images */
+}
+
+/* Make sure hover-transform-up preserves border-radius when applied to carousels */
+.carousel-container.hover-transform-up:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);  /* Preserve border radius on hover */
 }
 
 /* Wakatime stats styling */

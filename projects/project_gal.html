@@ -237,34 +237,41 @@
             <section id="gallery" class="version-section hover-transform-up">
                 <!-- Development progress gallery -->
                 <h2 class="funnel-display-header">Development Gallery</h2>
-                <div class="image-grid">
-                    <img src="/assets/gifs/GAL_aim.gif" 
-                         alt="Target aim demonstration"
-                         class="hover-scale">
-                    <img src="/assets/gifs/Gal_FPS_Demo.gif" 
-                         alt="First person shooter demo"
-                         class="hover-scale">
-                    <img src="/assets/gifs/Gal_Target_Prefab.gif" 
-                         alt="Target prefab interaction"
-                         class="hover-scale">
-                    <img src="/assets/gifs/hammer.gif" 
-                         alt="Hammer animation"
-                         class="hover-scale">
-                    <img src="/assets/gifs/hitFX.gif" 
-                         alt="Hit effects visualization"
-                         class="hover-scale">
-                    <img src="/assets/gifs/peekaboo.gif" 
-                         alt="Peekaboo game mechanic"
-                         class="hover-scale">
-                    <img src="/assets/gifs/pop.gif" 
-                         alt="Pop animation effect"
-                         class="hover-scale">
-                    <img src="/assets/gifs/revIso.gif" 
-                         alt="Isometric view reveal"
-                         class="hover-scale">
-                    <img src="/assets/gifs/targetshoot.gif" 
-                         alt="Target shooting demonstration"
-                         class="hover-scale">
+                <div class="carousel-container carousel-container-medium hover-transform-up">
+                    <!-- Gallery display area -->
+                    <div class="carousel-images">
+                        <img src="/assets/gifs/GAL_aim.gif" 
+                             alt="Target aim demonstration"
+                             data-full-res="/assets/gifs/GAL_aim.gif">
+                        <img src="/assets/gifs/Gal_FPS_Demo.gif" 
+                             alt="First person shooter demo"
+                             data-full-res="/assets/gifs/Gal_FPS_Demo.gif">
+                        <img src="/assets/gifs/Gal_Target_Prefab.gif" 
+                             alt="Target prefab interaction"
+                             data-full-res="/assets/gifs/Gal_Target_Prefab.gif">
+                        <img src="/assets/gifs/hammer.gif" 
+                             alt="Hammer animation"
+                             data-full-res="/assets/gifs/hammer.gif">
+                        <img src="/assets/gifs/hitFX.gif" 
+                             alt="Hit effects visualization"
+                             data-full-res="/assets/gifs/hitFX.gif">
+                        <img src="/assets/gifs/peekaboo.gif" 
+                             alt="Peekaboo game mechanic"
+                             data-full-res="/assets/gifs/peekaboo.gif">
+                        <img src="/assets/gifs/pop.gif" 
+                             alt="Pop animation effect"
+                             data-full-res="/assets/gifs/pop.gif">
+                        <img src="/assets/gifs/revIso.gif" 
+                             alt="Isometric view reveal"
+                             data-full-res="/assets/gifs/revIso.gif">
+                        <img src="/assets/gifs/targetshoot.gif" 
+                             alt="Target shooting demonstration"
+                             data-full-res="/assets/gifs/targetshoot.gif">
+                    </div>
+                    
+                    <!-- Carousel navigation buttons -->
+                    <button class="carousel-btn prev hover-transform-left" onclick="prevImage()">&#10094;</button>
+                    <button class="carousel-btn next hover-transform-left" onclick="nextImage()">&#10095;</button>
                 </div>
             </section>
         </div>
