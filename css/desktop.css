@@ -517,7 +517,7 @@ canvas {
 .carousel-btn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   background-color: rgba(0, 0, 0, 0.5);
   color: var(--white);
   padding: 10px;
@@ -573,17 +573,22 @@ canvas {
   margin: 0 auto;  /* Center the carousel */
   border-radius: var(--border-radius-md);  /* Add border radius to match other containers */
   overflow: hidden;  /* Keep images within the rounded corners */
-  padding: 4px;  /* Add some internal padding */
+  padding: 0;  /* Remove padding that's causing overflow issues */
+  box-sizing: border-box;
 }
 
 /* Ensure carousel images fit properly in the smaller container */
+.carousel-container-medium .carousel-images {
+  width: 100%;
+  height: 100%;
+}
+
 .carousel-container-medium .carousel-images img {
   max-height: 100%;
   width: 100%;  /* Set to 100% to ensure full width */
-  flex-shrink: 0;  /* Prevent shrinking */
-  flex-grow: 0;    /* Prevent growing */
+  min-width: 100%;  /* Force exact width */
+  flex: 0 0 100%;  /* Don't grow or shrink */
   object-fit: contain;
-  border-radius: var(--border-radius-sm);  /* Add slight rounding to images */
 }
 
 /* Make sure hover-transform-up preserves border-radius when applied to carousels */
@@ -1226,10 +1231,10 @@ canvas {
 }
 
 /* Tablet-specific styles */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
   .menu-toggle {
     height: calc(var(--navbar-height) * 0.7);
     font-size: clamp(28px, calc(var(--navbar-height) * 0.45), 40px);
   }
-}
+} */
 
