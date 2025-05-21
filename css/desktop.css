@@ -236,27 +236,29 @@ h3.funnel-display-header {
 
 /* Sliding project tabs - Updated */
 .sliding-projects {
-  position: absolute;
-  right: -60px; 
+  position: fixed;
+  right: 0;
   top: 50%;
-  transform: translateY(-60%);
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 20px;
-  z-index: 5;
+  z-index: 0; /* Increase z-index if needed so it's above content */
+  /* Optional: Add pointer-events: none; and then re-enable on children if needed */
 }
+
 
 .project-tab {
   position: relative;
   display: flex;
   align-items: stretch;
   width: 500px; /* Total width when expanded */
-  transform: translateX(550px); /* Use the value that worked for you */
+  transform: translateX(350px); /* Adjust as needed for new positioning */
   transition: transform 0.4s ease-out;
   border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  height: 140px; /* Increased height for bigger preview */
+  height: 120px; /* Increased height for bigger preview */
   cursor: pointer;
   background: var(--white);
   border: 2px solid var(--primary);
@@ -266,14 +268,14 @@ h3.funnel-display-header {
 /* Make sure hover state properly overrides the animation */
 .project-tab:hover {
   animation: none !important;
-  transform: translateX(220px) !important; /* Force slide out on hover */
+  transform: translateX(0) !important; /* Fully slide into view on hover */
   box-shadow: var(--shadow-lg);
 }
 
-@keyframes gentleBounce {
-  0%, 100% { transform: translateX(550px); }
-  50% { transform: translateX(540px); }
-}
+/* @keyframes gentleBounce {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(0px); }
+} */
 
 /* Apply animation to tabs */
 .project-tab:nth-child(odd) {
