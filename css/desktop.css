@@ -220,6 +220,7 @@ h3.funnel-display-header {
 
 /* Content container styles */
 .content-container {
+  /* background: linear-gradient(to bottom, var(--white) 0%, var(--white) 10%, var(--accent) 20%, var(--dark-accent) 75%); */
   background: var(--white);
   max-width: 1200px;
   width: 60%;
