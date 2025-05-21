@@ -234,6 +234,111 @@ h3.funnel-display-header {
   min-height: 90%;
 }
 
+/* Sliding project tabs - Updated */
+.sliding-projects {
+  position: absolute;
+  right: -60px; 
+  top: 50%;
+  transform: translateY(-60%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 5;
+}
+
+.project-tab {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 500px; /* Total width when expanded */
+  transform: translateX(550px); /* Use the value that worked for you */
+  transition: transform 0.4s ease-out;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 140px; /* Increased height for bigger preview */
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-right: none;
+}
+
+/* Make sure hover state properly overrides the animation */
+.project-tab:hover {
+  animation: none !important;
+  transform: translateX(220px) !important; /* Force slide out on hover */
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes gentleBounce {
+  0%, 100% { transform: translateX(550px); }
+  50% { transform: translateX(540px); }
+}
+
+/* Apply animation to tabs */
+.project-tab:nth-child(odd) {
+  animation: gentleBounce 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.project-tab:nth-child(even) {
+  animation: gentleBounce 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.tab-preview {
+  flex: 0 0 150px; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+}
+
+.tab-preview img {
+  width: 100%;
+  height: 120px; /* Match height to project-tab */
+  object-fit: cover;
+}
+
+/* Update content styling for larger tabs */
+.tab-content {
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tab-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-family: "Funnel Display", sans-serif;
+}
+
+.tab-content p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.view-more {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.project-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
 .content-container blockquote {
   background: var(--white);
   border-radius: var(--border-radius-lg);

@@ -84,6 +84,11 @@ main {
   flex-direction: column;
 }
 
+/* Hide sliding project tabs on mobile */
+.sliding-projects {
+  display: none;
+}
+
 .content-container {
   background: #ffffff;
   width: 90%;
