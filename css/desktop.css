@@ -247,6 +247,17 @@ h3.funnel-display-header {
   /* Optional: Add pointer-events: none; and then re-enable on children if needed */
 }
 
+/* Left-side sliding projects - New */
+.sliding-projects-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 0;
+}
 
 .project-tab {
   position: relative;
@@ -265,8 +276,34 @@ h3.funnel-display-header {
   border-right: none;
 }
 
+/* Left-side project tab styling - New */
+.project-tab-left {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse; /* Flip the layout */
+  align-items: stretch;
+  width: 500px;
+  transform: translateX(-350px); /* Hide most of tab off-screen to the left */
+  transition: transform 0.4s ease-out;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 120px;
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-left: none;
+}
+
 /* Make sure hover state properly overrides the animation */
 .project-tab:hover {
+  animation: none !important;
+  transform: translateX(0) !important; /* Fully slide into view on hover */
+  box-shadow: var(--shadow-lg);
+}
+
+/* Left-side tab hover behavior - New */
+.project-tab-left:hover {
   animation: none !important;
   transform: translateX(0) !important; /* Fully slide into view on hover */
   box-shadow: var(--shadow-lg);
