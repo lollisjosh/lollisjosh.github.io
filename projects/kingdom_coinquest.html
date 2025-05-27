@@ -1,0 +1,335 @@
+<!--
+    Kingdom Coinquest Project Documentation Page
+    Author: Josh Lollis
+    Date: December 3, 2024
+    CPSC 349 Portfolio Final Project
+    
+    Documentation for Kingdom Coinquest - a strategic card game
+    using a standard deck of playing cards
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta and resource imports -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Kingdom Coinquest</title>
+
+    <!-- Font imports and styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <!-- Mobile CSS (screens ≤ 768px) -->
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
+    
+    <!-- Desktop CSS (screens ≥ 769px) -->
+    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+</head>
+
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Kingdom Coinquest</h1>
+            <h3>by <a href="https://telloviz.netlify.app">Tello-Vision</a> Studio</h3>
+            <h4>Turn an ordinary deck of cards into a strategic battle for Kingdom Conquest!</h4>
+            
+            <!-- Navigation cards for project sections -->
+            <nav class="toc-nav">
+                <!-- Table of contents with emoji icons -->
+                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">📝</span>
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#requirements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">📋</span>
+                    <span class="toc-title">Requirements</span>
+                </a>
+                <a href="#setup" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🎮</span>
+                    <span class="toc-title">Setup</span>
+                </a>
+                <a href="#gameplay" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">⚔️</span>
+                    <span class="toc-title">Gameplay</span>
+                </a>
+                <a href="#playfield" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🏰</span>
+                    <span class="toc-title">Play Field</span>
+                </a>
+                <a href="#cards" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">♠️</span>
+                    <span class="toc-title">Card Types</span>
+                </a>
+                <a href="#contact" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">✉️</span>
+                    <span class="toc-title">Contact</span>
+                </a>
+            </nav>
+            <a href="javascript:history.back()" class="back-button hover-transform-left">
+                <span>←</span>
+                <span>Back</span>
+            </a>
+            
+            <!-- Project documentation sections -->
+            <section id="overview" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Game Overview</h2>
+                <p><em>The Deck of the Four Kingdoms is rife with conflict. You must crown your king,
+                    hone your steel, and command your people. Do you have the strategic mind to defeat your rival kings? Or, will your
+                    name fade with time? It's time to breathe life into that dusty old deck of cards!</em></p>
+                
+                <img src="/assets/images/kingdom-coinquest/CardSeparator.png" alt="Card Separator" class="img-thumbnail blog-gif hover-transform-up">
+                
+                <h3>The Goal</h3>
+                <p>The goal of Kingdom Coinquest is to defeat your rival kingdoms. Players will draw
+                until they have 3 cards in hand each turn. Choose strategically the source from where you draw your cards. You have
+                3 options, The Forge (deck), The Graveyard (community discard) or your Salvage Yard (your set of 3 personal discard
+                slots).</p>
+                
+                <h3>Victory</h3>
+                <p>Victory is accomplished by playing Equipment Cards on your Quartermaster to be prepared for use by your Knight and Peasant. Once prepared, an Equipment card can then be equipped to either your Knight or your Peasant, during your Play Phase. Use your Peasants to attack a rival kingdom. Use your Knight to defend your King. Once a King has depleted his 20 health points, he is no longer in play. Be the last King standing and you are victorious!</p>
+            </section>
+
+            <section id="requirements" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Requirements</h2>
+                <div class="skill-category hover-transform-up">
+                    <ul>
+                        <li>2-4 players <em>(*untested beyond 2)</em></li>
+                        <li>Deck of 52 standard playing cards</li>
+                        <li>Quarter, Nickel, Penny <em>(optional placement reminders for Quartermaster, Knight, and Peasant)</em></li>
+                        <li>Counters <em>(Ex: Beans, beads, pencil/paper, <em>sharp memory</em>)</em></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="setup" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Game Setup</h2>
+                <img src="/assets/images/kingdom-coinquest/GameSetup-t.png" alt="Game Setup" class="img-thumbnail blog-gif hover-transform-up">
+                <p>This setup will be duplicated by each player. <em>(Note: Forge and Graveyard are community piles!)</em></p>
+                
+                <div class="skill-category hover-transform-up">
+                    <h3>Setup Steps:</h3>
+                    <ol>
+                        <li>Set aside Joker Cards</li>
+                        <li>Separate the 4 Kings from the deck.
+                            <ul>
+                                <li>Shuffle the Kings and place them face down.</li>
+                                <li>Each player in turn then draws their King for the game.</li>
+                                <li>Place your King as shown in the figure above.</li>
+                                <li>Set the remaining Kings aside for the remainder of the game.</li>
+                            </ul>
+                        </li>
+                        <li>Shuffle the remaining cards that are the non-Kings/non-joker.
+                            <ul>
+                                <li>This is the <strong>forge</strong>. It is essentially the deck that players will draw from.</li>
+                                <li>Place the Forge in the location indicated in the figure above.</li>
+                            </ul>
+                        </li>
+                        <li>Each player place 20 counters on their King.
+                            <ul>
+                                <li>This is to keep track of his Health Points remaining.</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h3>Turn Order:</h3>
+                    <ol>
+                        <li>Heart Kingdom</li>
+                        <li>Spade Kingdom</li>
+                        <li>Diamond Kingdom</li>
+                        <li>Club Kingdom</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="gameplay" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Gameplay</h2>
+                <blockquote class="hover-transform-up"><em>It is <u>important</u> to take your turn in the following order:</em></blockquote>
+                
+                <div class="skill-category hover-transform-up">
+                    <h3>Turn Sequence:</h3>
+                    <ol>
+                        <li><strong>Draw Phase</strong>
+                            <ul>
+                                <li>Draw cards in any combination from the Forge, Graveyard, or Salvage Yard, until you have 3 cards in your hand.</li>
+                                <li><u>Immediately</u> remove 1 counter from your Quartermaster if preparing Equipment.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Play Phase</strong>
+                            <ul>
+                                <li>Make 1 Play Move. <em>(see Play Move List below)</em></li>
+                            </ul>
+                        </li>
+                        <li><strong>Discard Phase</strong>
+                            <ul>
+                                <li>Place 1 card from your hand to either your Salvage Yard or the top of the Graveyard.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>Play Moves:</h3>
+                    <ul>
+                        <li>Placing an Equipment Card on the Quartermaster to be prepared.</li>
+                        <li>Moving Prepared Equipment from the Quartermaster to your Knight or Peasant.</li>
+                        <li>Attacking a rival Kingdom with your Equipped Peasant.</li>
+                        <li>Placing your suit's Queen next to the King.</li>
+                        <li>Playing a Recruited Card.</li>
+                        <li>Using an Ace to resurrect a card from the Graveyard.</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>Attack and Defending:</h3>
+                    
+                    <h4>Attack</h4>
+                    <ul>
+                        <li>The Peasant attacks for damage points equal to the number value on the Equipment Card.</li>
+                        <li>Any Attack damage from your Peasant, that doesn't get defended, is applied to the defending King.</li>
+                        <li>An attacking Peasant may only use an Equipment Card once.
+                            <ul>
+                                <li>The Equipment breaks and is placed on the top of the Graveyard face-up</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h4>Defend</h4>
+                    <ul>
+                        <li>A Defending Knight absorbs Peasant attack damage only up to the value listed on the Knight's Equipment.</li>
+                        <li>Peasant attack damage beyond the Knight's defense value is applied as Damage to the Kings Health Points.</li>
+                        <li>In the event that a Knight falls short in battle, a Queen in play MUST absorb the remaining incoming damage points for her King.</li>
+                        <li>Any damage points remaining that have not been defended or absorbed, will be decremented from the defending King's health points.</li>
+                        <li>A Defending Knight may only use an Equipment Card once.
+                            <ul>
+                                <li>The Equipment breaks and is placed on the top of the Graveyard face-up</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="playfield" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Play Field Slots</h2>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>Forge</h3>
+                    <p>The Forge is your primary source for stocking your hand each turn. The Forge deck is 1 of the 3 places you can draw from during the Draw Phase of your turn.</p>
+                    
+                    <h3>Graveyard</h3>
+                    <p>The Graveyard is a community shared discard pile. The Graveyard serves a dual purpose. It is also 1 of 3 places you can choose to draw from during the Draw Phase of your turn. The Graveyard is always stacked face up, and only the top card is accessible at any time.</p>
+                    <p><strong>Be careful! Anything you discard to the Graveyard is then retrievable during the Draw Phase of a rival kingdom's turn!</strong></p>
+                    
+                    <h3>Salvage Yard</h3>
+                    <p>There are 3 spots in your area of the play field labeled "Salvage". These are additional discard slots which can hold 1 card each. These cards can be retrieved just like drawing from the Forge or the Graveyard. However, your Salvage Cards are only accessible to you.</p>
+                    <p><strong>Note:</strong> <em>Only 1 card per Salvage spot. 3 total salvage cards per player at any time.</em></p>
+                    
+                    <h3>Quartermaster Slot</h3>
+                    <p>The preparer and provider of weapons and armor for your Knight and Peasant. One card may be played here at a time. An Equipment card played here enters preparation. The only time an Equipment card will not need to be prepared by your Quartermaster is when you play an Ace Card. An Ace can Resurrect the top card of the Graveyard directly onto the Knight or Peasant. Depending on the value of the Equipment Card, the preparation cost varies. The cost of preparation is paid in turns.</p>
+                    <p><strong>Note:</strong> <em>The only way to remove an Equipment Card in process is to either wait until it's done being prepared or discard it directly to the Graveyard on your Discard Phase.</em></p>
+                    
+                    <h4>Preparation Costs (based on numeric card value)</h4>
+                    <ul>
+                        <li>2-4 = 1 turn preparation</li>
+                        <li>5-7 = 2 turns preparation</li>
+                        <li>8-10 = 3 turns preparation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>Knight Slot</h3>
+                    <ul>
+                        <li>Defender of the King.</li>
+                        <li>Play a piece of prepared Equipment on your Knight to provide defense for your King.</li>
+                        <li>When an opponent attacks, your Equipped Knight is required to defend the King.</li>
+                        <li>Once a Knight has seen battle, the Equipment card must be placed on the top of the Graveyard.</li>
+                    </ul>
+                    <p><strong>Note:</strong> <em>Equipping counts as a play move, as does Attacking. Therefore, you may not Equip and Attack on the same turn!</em></p>
+                    
+                    <h3>Queen Slot</h3>
+                    <ul>
+                        <li>Your Queen is the last line of defense for your King.</li>
+                        <li>A Queen played in this slot will absorb all damage done to your King one time.</li>
+                        <li>A Kingdom with no Knight <strong>MUST</strong> be defended by your Queen.</li>
+                        <li>A Queen that has seen battle must then be placed at the very bottom of the Graveyard.</li>
+                    </ul>
+                    
+                    <h3>King Slot</h3>
+                    <ul>
+                        <li>Simply the place where your King sits.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="cards" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Card Types</h2>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>King</h3>
+                    <div class="flex-center">
+                        <img width="80" src="/assets/images/kingdom-coinquest/HeartKing.png" alt="Heart King" class="hover-transform-up">
+                    </div>
+                    <p>The leader of your Kingdom. He must be protected at all costs. The King starts with 20 health points. A king is defeated when he has 0 or less health. The final King standing is the victor.</p>
+                    <p><strong>Non-Player Kings:</strong> These kings are not used in the game; they are set aside outside of the play area.</p>
+                    
+                    <h3>Queen</h3>
+                    <div class="flex-center">
+                        <img width="80" src="/assets/images/kingdom-coinquest/HeartQueen.png" alt="Heart Queen" class="hover-transform-up">
+                    </div>
+                    <p>The King's right hand. She has vowed to protect her people and their way of life. The Queen will fully absorb 1 incoming attack, in <strong>all</strong> cases where a Knight is not available to defend the King. The Queen stays in play until defeated. A defeated Queen is then discarded to the <strong>bottom</strong> of the Graveyard.</p>
+                    <p><strong>Note:</strong> <em>Only 1 Queen can be active per player at a time.</em></p>
+                    
+                    <h3>Jack</h3>
+                    <div class="flex-center">
+                        <img width="80" src="/assets/images/kingdom-coinquest/Jacks.png" alt="Jacks" class="hover-transform-up">
+                    </div>
+                    <p>The <em>Jack of all trades</em> has no particular allegiance. Jacks are a wild card that can be used to recruit any equipment card to your allegiance. A card that was Recruited by using a Jack still needs to be prepared by the Quartermaster.</p>
+                    <p><strong>Note:</strong> <em>Only 1 Jack can be in play per player at any time.</em></p>
+                    <p><strong>Note:</strong> <em>A Jack can only be used on Equipment Cards. (He may not be used to Recruit a Queen or an Ace. These cards may be Recruited, but not with a Jack.)</em></p>
+                </div>
+
+                <div class="skill-category hover-transform-up">
+                    <h3>Equipment Cards (numbered suits)</h3>
+                    <p>These cards represent weapons and armor. The Quartermaster prepares these resources for use by your Peasant or Knight. The value of the card influences its effect and preparation cost. Equip an Equipment Card to your Peasant to allow him to attack on a future play move. The Peasant can attack for the value indicated on the Equipment Card. Likewise, equip your Equipment Card to a Knight, to add that card's value in defense to your Knight. Use the Knight to defend your King.</p>
+                    <p><strong>Note:</strong> <em>To unequip an Equipment Card, simply replace it with a different prepared Equipment Card. The equipment being replaced is then placed on the top of the Graveyard. This <strong>does not</strong> count as your Discard Phase.</em></p>
+                    
+                    <h3>Recruited Cards</h3>
+                    <p>A pair of cards not of your kingdom's suit of arms. They count as individual cards until played together. Playing the 2 cards together is known as <strong>recruiting.</strong> A recruited card can be played as a card of your suit. Any card may become a recruited card when paired with another card of its same type regardless of suit. However, a Jack (wild card) may only be used for Recruiting Equipment (number-valued cards). A Jack cannot be used in Recruiting a Queen or Ace.</p>
+                </div>
+            </section>
+
+            <section id="contact" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Questions, Comments or Feedback?</h2>
+                <p>I'm interested in hearing what you've got to say!</p>
+                
+                <div class="skill-category hover-transform-up">
+                    <ul>
+                        <li>Inconsistencies in mechanics</li>
+                        <li>Trouble interpreting the rules</li>
+                        <li>Suggestions on adjustments</li>
+                        <li>Readme Suggestions</li>
+                    </ul>
+                    
+                    <h3>Contact me at:</h3>
+                    <p>lollisjosh@csu.fullerton.edu</p>
+                    <p>www.github.com/TelloViz</p>
+                </div>
+            </section>
+
+            <section id="disclaimer" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Disclaimer</h2>
+                <p>Card artwork does not belong to me. It was added for visual flair for a school project. This project was and is for educational purposes. I made this game as part of my Game Design class. All copyright artwork belongs to the copyright holders. I have not, do not, and will not make money off of this game, this repo, my portfolio site, or my YouTube.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

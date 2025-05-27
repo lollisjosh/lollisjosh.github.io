@@ -970,6 +970,12 @@ canvas {
   transition: var(--transition-fast);
 }
 
+.devlog-content blockquote.editors-note {
+  background-color: #fff9e6 !important; 
+  padding: 15px !important; 
+  border-left: 4px solid #e6b800 !important;
+}
+
 .devlog-content h5 {
   color: var(--primary);
   font-size: 1.1rem;
@@ -1381,4 +1387,126 @@ canvas {
     font-size: clamp(28px, calc(var(--navbar-height) * 0.45), 40px);
   }
 } */
+
+/* Editor's Note styling */
+.editors-note, 
+blockquote.editors-note {
+  background-color: #fff9e6 !important; 
+  padding: 15px !important; 
+  border-left: 4px solid #e6b800 !important;
+}
+
+.editors-note h5,
+blockquote.editors-note h5 {
+  color: #b38600;
+  margin-top: 0;
+}
+
+/* Solution Note styling */
+.solution-note, 
+blockquote.solution-note {
+  background-color: #f0f8ff !important; 
+  padding: 15px !important; 
+  border-left: 4px solid #0078d7 !important;
+}
+
+/* Code sample styling - extracted from inline styles */
+.code-samples-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.code-sample {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: white;
+}
+
+.code-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.code-sample pre {
+  margin: 0;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  overflow-x: auto;
+}
+
+.code-sample code {
+  font-family: monospace;
+}
+
+/* Note box styling */
+.note-box {
+  background-color: #f0f8ff;
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.note-box strong {
+  color: var(--primary);
+}
+
+/* Clean list styling for technical content - updated */
+.clean-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.clean-list li {
+  /*margin-bottom: 0.8rem;*/
+  line-height: 1.5;
+  /* display: flex;*/
+  align-items: baseline;
+}
+
+.clean-list li:before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Make terms before colons bold - Update to use inherited color instead of primary */
+.clean-list li strong {
+  color: inherit; /* Changed from var(--primary) to inherit parent text color */
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+/* Fix code formatting within lists */
+.clean-list code {
+  font-size: 0.95em; /* Less size reduction */
+  background-color: rgba(75, 48, 78, 0.08); /* Light background based on primary color */
+  padding: 0.2em 0.4em; /* Add some padding */
+  border-radius: 3px; /* Rounded corners */
+  font-family: monospace;
+  white-space: nowrap;
+  margin: 0 0.2em; /* Add spacing on both sides */
+  display: inline; /* Ensure inline display */
+}
+
+/* Make all content headings consistent regardless of parent container */
+.content-heading,
+h3.content-heading,
+.skill-category h3.content-heading {
+  color: var(--text) !important; /* Use text color (black) instead of primary (purple) */
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
 
