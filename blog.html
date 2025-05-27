@@ -11,6 +11,7 @@
 <!-- blog.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Standard meta and resource imports -->
     <meta charset="UTF-8">
@@ -21,16 +22,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
- <!-- Mobile CSS (screens ≤ 768px) -->
+    <!-- Mobile CSS (screens ≤ 768px) -->
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
+
     <!-- Desktop CSS (screens ≥ 769px) -->
     <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
 </head>
+
 <body>
     <!-- Header injection point -->
     <div id="header-placeholder"></div>
-    
+
     <main>
         <div class="content-container">
             <h1 class="funnel-display-header">Blog Posts</h1>
@@ -38,7 +40,7 @@
                 <span>←</span>
                 <span>Back</span>
             </a>
-            
+
             <!-- Quick Access Navigation -->
             <nav class="toc-nav">
                 <a href="#antillery-logs" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
@@ -55,33 +57,15 @@
                     <span class="toc-title">Technical Blogs</span>
                 </a> -->
             </nav>
-            
+
             <!-- Antillery Development Logs -->
             <section id="antillery-logs" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Antillery Devlogs</h2>
                 <div class="image-grid">
-                    <a href="/blog/antillery/ant-dev-2025-05-16.html" class="project-item hover-transform-up">
-                        <h3 class="blog-title">Antillery Devlog #1</h3>
-                        <h5 class="blog-date">May 16, 2025</h5>
-                        <h6 class="blog-preview">Antillery: A 2D turn-based artillery game.</h6>
-                        <div class="thumbnail-container">
-                            <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/images/ant.png">
-                        </div>
-                    </a>
-                    
-                    <a href="/blog/antillery/ant-dev-2025-05-17.html" class="project-item hover-transform-up">
-                        <h3 class="blog-title">Antillery Devlog #2</h3>
-                        <h5 class="blog-date">May 17, 2025</h5>
-                        <h6 class="blog-preview">Choosing a Unity Version</h6>
-                        <div class="thumbnail-container">
-                            <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/images/ant.png">
-                        </div>
-                    </a>
-
-                    <a href="/blog/antillery/ant-dev-2025-05-18.html" class="project-item hover-transform-up">
-                        <h3 class="blog-title">Antillery Devlog #3</h3>
-                        <h5 class="blog-date">May 18, 2025</h5>
-                        <h6 class="blog-preview">Unity Packages in Consideration</h6>
+                    <a href="/blog/antillery/ant-dev-2025-05-27.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">Antillery Devlog #5</h3>
+                        <h5 class="blog-date">May 27, 2025</h5>
+                        <h6 class="blog-preview">Revised Game Flow</h6>
                         <div class="thumbnail-container">
                             <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/gifs/ant.gif">
                         </div>
@@ -95,22 +79,49 @@
                             <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/gifs/ant.gif">
                         </div>
                     </a>
+
+                    <a href="/blog/antillery/ant-dev-2025-05-18.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">Antillery Devlog #3</h3>
+                        <h5 class="blog-date">May 18, 2025</h5>
+                        <h6 class="blog-preview">Unity Packages in Consideration</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/gifs/ant.gif">
+                        </div>
+                    </a>
+
+                    <a href="/blog/antillery/ant-dev-2025-05-17.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">Antillery Devlog #2</h3>
+                        <h5 class="blog-date">May 17, 2025</h5>
+                        <h6 class="blog-preview">Choosing a Unity Version</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/images/ant.png">
+                        </div>
+                    </a>
+
+                    <a href="/blog/antillery/ant-dev-2025-05-16.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">Antillery Devlog #1</h3>
+                        <h5 class="blog-date">May 16, 2025</h5>
+                        <h6 class="blog-preview">Antillery: A 2D turn-based artillery game.</h6>
+                        <div class="thumbnail-container">
+                            <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/images/ant.png">
+                        </div>
+                    </a>
                 </div>
             </section>
 
-            <!-- Project GAL Development Logs -->
+            <!-- Project GAL Development Logs - should be reversed in the same way -->
             <section id="gal-logs" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Project GAL Devlogs</h2>
                 <div class="image-grid">
-                    <a href="/blog/GAL-Dev-2023-09-11.html" class="project-item hover-transform-up">
-                        <h3 class="blog-title">GAL Devlog #1</h3>
-                        <h5 class="blog-date">September 11, 2023</h5>
-                        <h6 class="blog-preview">Initial development setup and project planning...</h6>
+                    <a href="/blog/GAL-Dev-2023-10-01.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">GAL Devlog #3</h3>
+                        <h5 class="blog-date">October 1, 2023</h5>
+                        <h6 class="blog-preview">Gameplay mechanics demo and development progress...</h6>
                         <div class="thumbnail-container">
                             <img alt="Gal Dev Log" class="blog-thumbnail" src="/assets/gifs/gal-logo.gif">
                         </div>
                     </a>
-                    
+
                     <a href="/blog/GAL-Dev-2023-09-18.html" class="project-item hover-transform-up">
                         <h3 class="blog-title">GAL Devlog #2</h3>
                         <h5 class="blog-date">September 18, 2023</h5>
@@ -120,10 +131,10 @@
                         </div>
                     </a>
 
-                    <a href="/blog/GAL-Dev-2023-10-01.html" class="project-item hover-transform-up">
-                        <h3 class="blog-title">GAL Devlog #3</h3>
-                        <h5 class="blog-date">October 1, 2023</h5>
-                        <h6 class="blog-preview">Gameplay mechanics demo and development progress...</h6>
+                    <a href="/blog/GAL-Dev-2023-09-11.html" class="project-item hover-transform-up">
+                        <h3 class="blog-title">GAL Devlog #1</h3>
+                        <h5 class="blog-date">September 11, 2023</h5>
+                        <h6 class="blog-preview">Initial development setup and project planning...</h6>
                         <div class="thumbnail-container">
                             <img alt="Gal Dev Log" class="blog-thumbnail" src="/assets/gifs/gal-logo.gif">
                         </div>
@@ -154,4 +165,5 @@
     <div id="footer-placeholder"></div>
     <script src="/scripts.js"></script>
 </body>
+
 </html>
