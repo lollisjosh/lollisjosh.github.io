@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antillery Devlog | Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
+        <!-- Mobile CSS (screens ≤ 768px) -->
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="screen and (max-width: 768px)">
+        <!-- Desktop CSS (screens ≥ 769px) -->
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="screen and (min-width: 769px)">
+    </head>
+
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Antillery Devlog #5</h1>
+                    <h2>Flexible Scene Management with State Machines</h2>
+                    <p class="devlog-date">May 27, 2025</p>
+                    <p>Building a robust application flow architecture with
+                        ScriptableObjects and configurable scene loading
+                    </p>
+
+                    <!-- Navigation TOC -->
+                    <nav class="toc-nav">
+                        <a href="/projects/antillery.html"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎮</span>
+                            <span class="toc-title">Project Page</span>
+                        </a>
+
+                        <a href="#overview"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🔍</span>
+                            <span class="toc-title">Architecture Overview</span>
+                        </a>
+
+                        <a href="#state-machine"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">⚙️</span>
+                            <span class="toc-title">State Machine Core</span>
+                        </a>
+
+                        <a href="#scene-driver"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🔄</span>
+                            <span class="toc-title">Scene Management</span>
+                        </a>
+
+                        <a href="#editor-tools"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🛠️</span>
+                            <span class="toc-title">Editor Extensions</span>
+                        </a>
+
+                        <a href="#benefits"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">✅</span>
+                            <span class="toc-title">System Benefits</span>
+                        </a>
+
+                        <a href="#next-steps"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🚀</span>
+                            <span class="toc-title">Next Steps</span>
+                        </a>
+                    </nav>
+
+                    <hr class="section-divider">
+
+                    <section id="overview"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Architecture
+                            Overview</h2>
+
+                        <!-- Intro paragraph - always outside blockquotes -->
+                        <p class="section-intro">This week I implemented a
+                            complete game flow architecture for Antillery
+                            that handles state transitions, scene management,
+                            and UI events in a decoupled, data-driven way
+                            with a strong focus on designer empowerment.</p>
+
+                        <!-- Main content -->
+                        <blockquote>
+                            <h3 class="content-heading">Design Goals</h3>
+                            <ul class="clean-list">
+                                <li>Create a designer-friendly system that
+                                    requires zero coding to customize game
+                                    flow</li>
+                                <li>Support both scene replacement and additive
+                                    scene loading based on state requirements
+                                </li>
+                                <li>Make state transitions configurable entirely
+                                    through the Unity inspector</li>
+                                <li>Ensure all configuration is done via
+                                    inspector-friendly ScriptableObjects</li>
+                                <li>Enable designers to create and modify
+                                    application flow without programmer
+                                    involvement
+                                </li>
+                            </ul>
+                        </blockquote>
+
+                        <p>The architecture consists of three main subsystems: a
+                            state machine core, a flexible scene
+                            manager, and custom editor extensions designed to be
+                            accessible to non-programmers.</p>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="state-machine"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">State Machine
+                            Core</h2>
+
+                        <p class="section-intro">At the heart of the
+                            architecture is a ScriptableObject-driven state
+                            machine
+                            that manages the game flow using events and
+                            transitions.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3 class="content-heading">Core Components</h3>
+                                <ul class="clean-list">
+                                    <li><strong>State:</strong> ScriptableObject
+                                        that serves as a marker for application
+                                        states</li>
+                                    <li><strong>StateMachine:</strong>
+                                        MonoBehaviour that manages transitions
+                                        between states
+                                        and listens for trigger events</li>
+                                    <li><strong>GameEvent:</strong>
+                                        ScriptableObject that serves as a
+                                        decoupled messaging
+                                        system</li>
+                                    <li><strong>StateTransition:</strong> Data
+                                        structure connecting trigger events to
+                                        destination states</li>
+                                    <li><strong>PreserveGameFlowManager:</strong>
+                                        Keeps the state machine alive between
+                                        scenes</li>
+                                    <li><strong>AddressableSceneDriver:</strong>
+                                        Maps states to scenes with configurable
+                                        loading behavior</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <blockquote>
+                            <h3 class="content-heading">How It Works</h3>
+                            <p>The StateMachine maintains a current state and a
+                                list of possible transitions. Each
+                                transition connects an event trigger to a
+                                destination state. When a GameEvent is raised,
+                                the
+                                StateMachine checks if that event should trigger
+                                a state transition, and if so, it changes
+                                to the new state.</p>
+                        </blockquote>
+
+                        <div class="content-container">
+                            <img
+                                src="/assets/images/state-machine/gameflowmanager.png"
+                                alt="GameFlowManager GameObject in Unity Hierarchy"
+                                class="blog-image">
+                            <p class="image-caption">The GameFlowManager
+                                GameObject hosts both the StateMachine and
+                                AddressableSceneDriver components and persists
+                                across scene loads.</p>
+                        </div>
+
+                        <blockquote>
+                            <h3 class="content-heading">GameFlowManager: The
+                                Persistent Core</h3>
+                            <p>A crucial aspect of this architecture is the
+                                GameFlowManager GameObject, which is marked with
+                                DontDestroyOnLoad to persist throughout the
+                                entire application lifecycle. This GameObject
+                                hosts both the StateMachine and
+                                AddressableSceneDriver components, ensuring the
+                                state
+                                machine remains active even as scenes change.
+                                The PreserveGameFlowManager component is
+                                responsible for keeping this GameObject alive
+                                across scene transitions, maintaining the
+                                application's state regardless of what scene is
+                                currently loaded.</p>
+                        </blockquote>
+
+                        <div class="code-samples-container">
+                            <!-- First code file -->
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    State.cs
+                                </div>
+                                <pre><code class="language-csharp">[CreateAssetMenu(menuName = "State Machine/State")]
+public class State : ScriptableObject
+{
+    [Tooltip("Transitions from this state: on triggerEvent, go to nextState.")]
+    public List<StateTransition> transitions = new List<StateTransition>();
+
+    [Header("State Callbacks")]
+    public UnityEvent OnEnter;
+    public UnityEvent OnExit;
+}</code></pre>
+                            </div>
+
+                            <!-- Second code file -->
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    StateMachine.cs
+                                </div>
+                                <pre><code class="language-csharp">public class StateMachine : MonoBehaviour
+{
+    [Tooltip("Initial state to start in.")]
+    public State initialState;
+
+    private State currentState;
+    private readonly List<StateTransition> activeTransitions = new List<StateTransition>();
+    private readonly Dictionary<StateTransition, Action> callbacks = 
+        new Dictionary<StateTransition, Action>();
+
+    private void Start()
+    {
+        if (initialState != null)
+            GoToState(initialState);
+    }
+
+    public void GoToState(State newState)
+    {
+        if (currentState != null)
+        {
+            currentState.OnExit?.Invoke();
+            UnregisterCurrentTransitions();
+        }
+
+        currentState = newState;
+        currentState.OnEnter?.Invoke();
+        RegisterTransitions();
+    }
+
+    private void RegisterTransitions()
+    {
+        foreach (var t in currentState.transitions)
+        {
+            Action callback = () => OnTransitionTriggered(t);
+            callbacks[t] = callback;
+            t.triggerEvent.RegisterListener(callback);
+            activeTransitions.Add(t);
+        }
+    }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="note-box">
+                            <p><strong>Design Note:</strong> The beauty of this
+                                system is its simplicity - states are just
+                                markers, with the actual behavior defined by
+                                what listens to the OnEnter/OnExit events and
+                                what triggers state transitions. This creates a
+                                highly decoupled system where UI, game
+                                logic, and scene management can all respond to
+                                state changes without direct dependencies.
+                            </p>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <!-- Scene Management Section -->
+                    <section id="scene-driver"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Scene Management</h2>
+
+                        <p class="section-intro">The real power of this
+                            architecture lies in the scene driver component,
+                            which provides complete control over how scenes are
+                            loaded and unloaded in response to state
+                            changes.</p>
+
+                        <blockquote>
+                            <h3 class="content-heading">SceneDriver: The Heart
+                                of Scene Management</h3>
+                            <p>This component is arguably the most crucial part
+                                of the entire system. It listens to state
+                                OnEnter/OnExit events and manages scene
+                                loading/unloading with configurable behaviors
+                                per
+                                state. What makes it especially powerful is the
+                                ability to define, on a per-state basis,
+                                whether a scene should replace the current scene
+                                entirely or be loaded additively alongside
+                                it.</p>
+                        </blockquote>
+
+                        <div class="code-sample hover-transform-up">
+                            <div class="code-header">
+                                AddressableSceneDriver.cs
+                            </div>
+
+                           <pre><code class="language-csharp">[System.Serializable]
+public struct AddressableSceneMapping
+{
+    public State state;           // ScriptableObject state
+    public AssetReference sceneReference;  // Scene asset
+    public bool additive;       // Load additively if true
+}
+
+public class AddressableSceneDriver : MonoBehaviour
+{
+    public StateMachine stateMachine;
+    public List&lt;AddressableSceneMapping&gt; mappings = new List&lt;AddressableSceneMapping&gt;();
+    private Dictionary&lt;State, AsyncOperationHandle&lt;SceneInstance&gt;&gt; handles = 
+        new Dictionary&lt;State, AsyncOperationHandle&lt;SceneInstance&gt;&gt;();
+
+    private void OnEnable()
+    {
+        foreach (var m in mappings)
+        {
+            var mapping = m; // capture for closure
+            UnityAction onEnter = () =&gt; {
+                if (!mapping.additive)
+                {
+                    // Unload all previously loaded additive scenes
+                    foreach (var kv in handles)
+                    {
+                        Addressables.UnloadSceneAsync(kv.Value, true);
+                    }
+                    handles.Clear();
+                    // Load this scene in single mode (auto-unloads non-persistent scenes)
+                    mapping.sceneReference.LoadSceneAsync(LoadSceneMode.Single);
+                }
+                else
+                {
+                    // Additive load: stack on top of existing
+                    var handle = mapping.sceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+                    handles[mapping.state] = handle;
+                }
+            };
+            
+            UnityAction onExit = () =&gt; {
+                if (mapping.additive &amp;&amp; handles.TryGetValue(mapping.state, out var h))
+                {
+                    Addressables.UnloadSceneAsync(h, true);
+                    handles.Remove(mapping.state);
+                }
+            };
+            
+            mapping.state.OnEnter.AddListener(onEnter);
+            mapping.state.OnExit.AddListener(onExit);
+        }
+    }
+}</code></pre>
+                        </div>
+
+                        <div class="note-box">
+                            <p><strong>Implementation Note:</strong> The scene
+                                driver tracks handles to additive scenes in a
+                                dictionary, ensuring they can be properly
+                                unloaded when no longer needed. This prevents
+                                memory leaks and scene conflicts while allowing
+                                great flexibility in how scenes are
+                                combined.</p>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <!-- Editor Extensions Section -->
+                    <section id="editor-tools"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Editor Extensions</h2>
+
+                        <p class="section-intro">To complete the architecture,
+                            I've implemented several custom editor
+                            extensions that make working with the state machine
+                            intuitive and provide excellent debugging
+                            capabilities.</p>
+
+                        <blockquote>
+                            <h3 class="content-heading">Custom Inspectors</h3>
+                            <p>I created specialized editor tools for each
+                                component of the system to provide better
+                                visualization, debugging, and configuration
+                                options.</p>
+                        </blockquote>
+
+                        <div class="code-samples-container">
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    StateMachineEditor.cs
+                                </div>
+                             <pre><code class="language-csharp">using UnityEditor;
+using UnityEngine;
+using System.Reflection;
+using System.Collections.Generic;
+
+[CustomEditor(typeof(StateMachine))]
+public class StateMachineEditor : Editor
+{
+    private FieldInfo currentStateField;
+
+    private void OnEnable()
+    {
+        // Grab the private 'currentState' field
+        currentStateField = typeof(StateMachine).GetField("currentState", BindingFlags.NonPublic | BindingFlags.Instance);
+    }
+
+    public override void OnInspectorGUI()
+    {
+        // Draw default fields (initialState, etc.)
+        DrawDefaultInspector();
+        EditorGUILayout.Space();
+
+        // Show the active state
+        if (Application.isPlaying)
+        {
+            var sm = (StateMachine)target;
+            var state = currentStateField?.GetValue(sm) as State;
+            EditorGUILayout.LabelField("Current State:", state != null ? state.name : "None", EditorStyles.boldLabel);
+
+            // If we have a current state, list its transitions as buttons
+            if (state != null)
+            {
+                EditorGUILayout.Space();
+                EditorGUILayout.LabelField("Available Triggers:", EditorStyles.boldLabel);
+
+                foreach (var transition in state.transitions)
+                {
+                    var ev = transition.triggerEvent;
+                    // reflect listener count
+                    int count = 0;
+                    var listenersField = typeof(GameEvent).GetField("listeners", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (listenersField != null)
+                    {
+                        var list = listenersField.GetValue(ev) as IList&lt;System.Action&gt;;
+                        count = list?.Count ?? 0;
+                    }
+                    // disable if no listeners
+                    EditorGUI.BeginDisabledGroup(count == 0);
+                    if (GUILayout.Button($"&lbrace;ev.name&rbrace; (&lbrace;count&rbrace;)"))
+                    {
+                        ev.Raise();
+                    }
+                    EditorGUI.EndDisabledGroup();
+                }
+            }
+        }
+        else
+        {
+            EditorGUILayout.HelpBox("Play the scene to inspect and fire triggers on the current state.", MessageType.Info);
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="content-container">
+                                <img
+                                    src="/assets/images/state-machine/state_machine_editor.png"
+                                    alt="State Machine Editor in Unity Inspector"
+                                    class="blog-image">
+                                <p class="image-caption">The State Machine
+                                    Editor showing the current state and
+                                    available transitions during play mode.</p>
+                            </div>
+
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    AddressableSceneDriverEditor.cs
+                                </div>
+                               <pre><code class="language-csharp">#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+
+[CustomEditor(typeof(AddressableSceneDriver))]
+public class AddressableSceneDriverEditor : Editor
+{
+    private SerializedProperty stateMachineProp;
+    private SerializedProperty mappingsProp;
+
+    private void OnEnable()
+    {
+        stateMachineProp = serializedObject.FindProperty("stateMachine");
+        mappingsProp = serializedObject.FindProperty("mappings");
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        // Draw core fields
+        EditorGUILayout.PropertyField(stateMachineProp);
+        EditorGUILayout.PropertyField(mappingsProp, true);
+        EditorGUILayout.Space();
+
+        // Show last Addressables build info
+        var settings = AddressableAssetSettingsDefaultObject.Settings;
+        if (settings != null)
+        {
+            var profileId = settings.activeProfileId;
+            var buildPath = settings.profileSettings.EvaluateString(profileId, AddressableAssetSettings.kLocalBuildPath);
+            var fullPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", buildPath));
+
+            if (Directory.Exists(fullPath))
+            {
+                var jsons = Directory.GetFiles(fullPath, "*.json");
+                if (jsons.Length > 0)
+                {
+                    var latest = jsons.OrderBy(f =&gt; File.GetLastWriteTime(f)).Last();
+                    EditorGUILayout.HelpBox(
+                        $"Addressables catalog found at:\n{fullPath}\nLast build: {File.GetLastWriteTime(latest)}", MessageType.Info);
+                }
+                else
+                {
+                    EditorGUILayout.HelpBox($"No Addressables catalog JSON in:{fullPath}", MessageType.Warning);
+                }
+                if (GUILayout.Button("Open Addressables Build Folder"))
+                {
+                    EditorUtility.RevealInFinder(fullPath);
+                }
+            }
+            else
+            {
+                EditorGUILayout.HelpBox($"Addressables build folder missing:\n{fullPath}", MessageType.Warning);
+            }
+        }
+        else
+        {
+            EditorGUILayout.HelpBox("AddressableAssetSettings not found.", MessageType.Error);
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+#endif
+</code></pre>
+                            </div>
+
+                            <!-- Add the image for AddressableSceneDriverEditor.cs -->
+                            <div class="content-container">
+                                <img
+                                    src="/assets/images/state-machine/addressable_scene_driver_editor.png"
+                                    alt="Addressable Scene Driver Editor showing state to scene mappings"
+                                    class="blog-image">
+                                <p class="image-caption">The Addressable Scene
+                                    Driver Editor showing how states map to
+                                    scenes with configurable loading modes
+                                    (additive or replacement).</p>
+                            </div>
+
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    StateEditor.cs
+                                </div>
+                                <pre><code class="language-csharp">using UnityEditor;
+using UnityEditorInternal;
+using UnityEngine;
+
+[CustomEditor(typeof(State))]
+public class StateEditor : Editor
+{
+    private ReorderableList transitionsList;
+
+    private void OnEnable()
+    {
+        transitionsList = new ReorderableList(serializedObject,
+            serializedObject.FindProperty("transitions"),
+            true, true, true, true);
+
+        transitionsList.drawHeaderCallback = rect =&gt;
+            EditorGUI.LabelField(rect, "State Transitions (Event -&gt; Next State)");
+
+        transitionsList.drawElementCallback = (rect, index, isActive, isFocused) =&gt; {
+            var element = transitionsList.serializedProperty.GetArrayElementAtIndex(index);
+            var eventProp = element.FindPropertyRelative("triggerEvent");
+            var stateProp = element.FindPropertyRelative("nextState");
+            float half = rect.width / 2;
+            const float pad = 4f;
+
+            EditorGUI.PropertyField(
+                new Rect(rect.x, rect.y + 2, half - pad, EditorGUIUtility.singleLineHeight),
+                eventProp, GUIContent.none);
+            EditorGUI.PropertyField(
+                new Rect(rect.x + half + pad, rect.y + 2, half - pad, EditorGUIUtility.singleLineHeight),
+                stateProp, GUIContent.none);
+        };
+    }
+
+    public override void OnInspectorGUI()
+    {
+        serializedObject.Update();
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("OnEnter"));
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("OnExit"));
+        GUILayout.Space(8);
+        transitionsList.DoLayoutList();
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+</code></pre>
+                            </div>
+
+                            <!-- Add the image for StateEditor.cs -->
+                            <div class="content-container">
+                                <img
+                                    src="/assets/images/state-machine/state_editor.png"
+                                    alt="State Editor in Unity Inspector"
+                                    class="blog-image">
+                                <p class="image-caption">The custom State Editor
+                                    showing the transition list with
+                                    drag-and-drop reordering.</p>
+                            </div>
+
+                            <hr class="section-divider">
+
+                            <p>These tools provide several key features:</p>
+                            <ul class="clean-list">
+                                <li>Live visualization of the current state</li>
+                                <li>Ability to trigger state transitions
+                                    directly from the inspector</li>
+                                <li>Display of event listener counts to help
+                                    debug transition issues</li>
+                                <li>Streamlined state configuration with a
+                                    custom transition editor</li>
+                                <li>Scene mapping validation to catch
+                                    configuration errors early</li>
+                            </ul>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <section id="benefits"
+                            class="devlog-section version-section hover-transform-up">
+                            <h2 class="funnel-display-header">System
+                                Benefits</h2>
+                            <p class="section-intro">This architecture provides
+                                numerous benefits for game development:</p>
+                            <div class="skills-grid">
+                                <div class="skill-category hover-transform-up">
+                                    <h3>Designer Empowerment</h3>
+                                    <ul class="clean-list">
+                                        <li>Complete control over game flow
+                                            without writing a single line of
+                                            code</li>
+                                        <li>Visual configuration of state
+                                            transitions through the
+                                            inspector</li>
+                                        <li>Ability to create, modify, and
+                                            connect new game states without
+                                            programming</li>
+                                        <li>Designers can map states to scenes
+                                            and control scene loading
+                                            behavior</li>
+                                        <li>Drag-and-drop connection of UI
+                                            elements to game events</li>
+                                    </ul>
+                                </div>
+
+                                <div class="skill-category hover-transform-up">
+                                    <h3>Technical Benefits</h3>
+                                    <ul class="clean-list">
+                                        <li>Complete decoupling of UI, logic,
+                                            and scene management</li>
+                                        <li>Optimized memory usage through
+                                            configurable scene loading</li>
+                                        <li>Clean persistence of state between
+                                            scene transitions</li>
+                                        <li>Separation of concerns keeps code
+                                            maintainable</li>
+                                    </ul>
+                                </div>
+
+                                <div class="skill-category hover-transform-up">
+                                    <h3>Flexibility</h3>
+                                    <ul class="clean-list">
+                                        <li>Support for both scene replacement
+                                            and additive scene loading</li>
+                                        <li>Easy to extend without modifying
+                                            existing code</li>
+                                        <li>Adaptable to various game types and
+                                            structures</li>
+                                        <li>Clean integration with Unity's scene
+                                            management system</li>
+                                        <li>Scales well from simple to complex
+                                            game flows</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <section id="next-steps"
+                            class="devlog-section version-section hover-transform-up">
+                            <h2 class="funnel-display-header">Next Steps</h2>
+
+                            <p>With this robust architecture in place, I can now
+                                focus on implementing the actual gameplay
+                                systems:</p>
+                            <ul class="clean-list">
+                                <li>Creating the unit selection and
+                                    configuration interface</li>
+                                <li>Implementing the core gameplay loop</li>
+                                <li>Building the match setup flow</li>
+                                <li>Developing the AI opponent behavior</li>
+                                <li>Implementing the post-match summary and
+                                    statistics screen</li>
+                            </ul>
+                            <p>The next devlog will focus on the unit selection
+                                and deployment mechanics, which form the core of
+                                the player's strategic decisions in
+                                Antillery.</p>
+                        </section>
+
+                        <hr class="section-divider">
+
+                        <!-- Editor's Note without section wrapper -->
+                        <blockquote class="editors-note">
+                            <h5>Development Philosophy</h5>
+                            <p>This architecture reflects my commitment to
+                                create systems that empower designers to iterate
+                                quickly without programmer bottlenecks. By
+                                focusing on ScriptableObject-based configuration
+                                and
+                                custom inspector tools, I've aimed to give
+                                non-programmers maximum control over the game's
+                                structure and flow.</p>
+                        </blockquote>
+
+                        <hr class="section-divider">
+
+                        <!-- Post Navigation - Using CSS classes instead of inline styles -->
+                        <div class="post-navigation">
+                            <a href="/blog/antillery/ant-dev-2025-05-25.html"
+                                class="post-nav-button prev-post">
+                                <span class="post-nav-icon">←</span>
+                                <div class="post-nav-content">
+                                    <span class="post-nav-label">Previous
+                                        Post</span>
+                                    <span class="post-nav-title">States, Events,
+                                        and Application Flow</span>
+                                </div>
+                            </a>
+
+                            <a href="/blog/antillery/ant-dev-2025-06-03.html"
+                                class="post-nav-button next-post">
+                                <div class="post-nav-content">
+                                    <span class="post-nav-label">Next
+                                        Post</span>
+                                    <span class="post-nav-title">Unit Selection
+                                        & Deployment</span>
+                                </div>
+                                <span class="post-nav-icon">→</span>
+                            </a>
+                        </div>
+
+                        <div class="signature">
+                            <h6>Until next time!</h6>
+                            <h4>- Josh ✌️</h4>
+                        </div>
+                    </article>
+                </div>
+            </main>
+
+            <div id="footer-placeholder"></div>
+            <script src="/scripts.js"></script>
+        </body>
+
+    </html>

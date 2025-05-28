@@ -632,6 +632,23 @@ canvas {
   border-radius: var(--border-radius-sm);
 }
 
+/* Blog-specific image styling */
+.blog-image {
+    width: 100%; /* Ensure the image scales to fit its container */
+    max-width: 800px; /* Set a reasonable max width for blog images */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing issues */
+    margin: 1.5rem auto; /* Center the image and add spacing */
+    border-radius: var(--border-radius-md); /* Match the blog's rounded corners */
+    box-shadow: var(--shadow-md); /* Add a subtle shadow for better visibility */
+}
+
+.blog-image:hover {
+    transform: scale(1.02); /* Slightly enlarge the image on hover */
+    box-shadow: var(--shadow-lg); /* Add a stronger shadow on hover */
+    transition: var(--transition-fast); /* Smooth transition effect */
+}
+
 /* Carousel styling for desktop */
 .carousel-container {
   width: 100%;

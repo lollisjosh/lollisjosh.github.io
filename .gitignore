@@ -1,3 +1,5 @@
 # .gitignore
 /blog/*            # Ignore everything in blog
 !/blog/GAL-Dev*    # Except GAL-Dev files
+
+/references/*    # Ignore everything in references
