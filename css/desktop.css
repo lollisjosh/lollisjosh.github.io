@@ -424,7 +424,7 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: var(--primary);
+  background: linear-gradient(to bottom, var(--black), var(--primary));
   height: var(--navbar-height);
   border-bottom: 4px solid var(--accent);
   box-shadow: var(--shadow-md);
@@ -854,7 +854,7 @@ canvas {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: var(--primary);
+  background: linear-gradient(to bottom, var(--primary), var(--black));
   color: var(--white);
   border-top: 4px solid var(--accent);
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
