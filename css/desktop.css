@@ -1428,18 +1428,18 @@ blockquote.solution-note {
 }
 
 /* Code sample styling - extracted from inline styles */
-.code-samples-container {
+/* .code-samples-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: 1.5rem 0;
-}
+} */
 
 .code-sample {
-  border: 1px solid #e0e0e0;
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-  background-color: white;
+  border-radius: var(--border-radius-lg); /* Use the large border radius */
+  overflow: hidden; /* Ensure content stays within the rounded corners */
+  transition: var(--transition-standard); /* Smooth transition for hover effect */
+  box-shadow: var(--shadow-md); /* Add a subtle shadow */
 }
 
 .code-header {
@@ -1448,17 +1448,20 @@ blockquote.solution-note {
   padding: 0.5rem 1rem;
   font-family: monospace;
   font-weight: bold;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
 }
 
-.code-sample pre {
-  margin: 0;
-  padding: 1rem;
-  background-color: #f8f8f8;
-  overflow-x: auto;
+
+pre[class*="language-"] {
+  margin: 0; 
+  padding: 1rem; 
+  overflow-x: auto; 
 }
 
-.code-sample code {
-  font-family: monospace;
+code[class*="language-"] {
+  font-family: inherit; /* Use the font from the Prism.js theme */
+  font-size: 0.95rem; /* Adjust font size if needed */
+  white-space: pre-wrap; /* Allow wrapping for long lines */
 }
 
 /* Note box styling */

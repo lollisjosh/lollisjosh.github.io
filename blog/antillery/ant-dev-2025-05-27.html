@@ -16,6 +16,14 @@
         <!-- Desktop CSS (screens ≥ 769px) -->
         <link rel="stylesheet" href="/css/desktop.css"
             media="screen and (min-width: 769px)">
+
+<link
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
+    rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
     </head>
 
     <body>
@@ -311,7 +319,7 @@ public class State : ScriptableObject
                                 AddressableSceneDriver.cs
                             </div>
 
-                           <pre><code class="language-csharp">[System.Serializable]
+                            <pre><code class="language-csharp">[System.Serializable]
 public struct AddressableSceneMapping
 {
     public State state;           // ScriptableObject state
@@ -403,7 +411,7 @@ public class AddressableSceneDriver : MonoBehaviour
                                 <div class="code-header">
                                     StateMachineEditor.cs
                                 </div>
-                             <pre><code class="language-csharp">using UnityEditor;
+                                <pre><code class="language-csharp">using UnityEditor;
 using UnityEngine;
 using System.Reflection;
 using System.Collections.Generic;
@@ -482,7 +490,7 @@ public class StateMachineEditor : Editor
                                 <div class="code-header">
                                     AddressableSceneDriverEditor.cs
                                 </div>
-                               <pre><code class="language-csharp">#if UNITY_EDITOR
+                                <pre><code class="language-csharp">#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
@@ -554,7 +562,6 @@ public class AddressableSceneDriverEditor : Editor
 </code></pre>
                             </div>
 
-                            <!-- Add the image for AddressableSceneDriverEditor.cs -->
                             <div class="content-container">
                                 <img
                                     src="/assets/images/state-machine/addressable_scene_driver_editor.png"
@@ -619,7 +626,6 @@ public class StateEditor : Editor
 </code></pre>
                             </div>
 
-                            <!-- Add the image for StateEditor.cs -->
                             <div class="content-container">
                                 <img
                                     src="/assets/images/state-machine/state_editor.png"
