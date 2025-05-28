@@ -17,9 +17,9 @@
         <link rel="stylesheet" href="/css/desktop.css"
             media="screen and (min-width: 769px)">
 
-<link
-    href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
-    rel="stylesheet" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
+            rel="stylesheet" />
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
         <script
@@ -225,11 +225,14 @@ public class State : ScriptableObject
 }</code></pre>
                             </div>
 
+                            <hr class="section-divider">
+
                             <!-- Second code file -->
                             <div class="code-sample hover-transform-up">
                                 <div class="code-header">
                                     StateMachine.cs
                                 </div>
+
                                 <pre><code class="language-csharp">public class StateMachine : MonoBehaviour
 {
     [Tooltip("Initial state to start in.")]
@@ -272,7 +275,7 @@ public class State : ScriptableObject
 }</code></pre>
                             </div>
                         </div>
-
+                        <hr class="section-divider">
                         <div class="note-box">
                             <p><strong>Design Note:</strong> The beauty of this
                                 system is its simplicity - states are just
@@ -373,6 +376,7 @@ public class AddressableSceneDriver : MonoBehaviour
     }
 }</code></pre>
                         </div>
+                        <hr class="section-divider">
 
                         <div class="note-box">
                             <p><strong>Implementation Note:</strong> The scene
@@ -486,6 +490,8 @@ public class StateMachineEditor : Editor
                                     available transitions during play mode.</p>
                             </div>
 
+                            <hr class="section-divider">
+
                             <div class="code-sample hover-transform-up">
                                 <div class="code-header">
                                     AddressableSceneDriverEditor.cs
@@ -572,6 +578,8 @@ public class AddressableSceneDriverEditor : Editor
                                     scenes with configurable loading modes
                                     (additive or replacement).</p>
                             </div>
+
+                                                    <hr class="section-divider">
 
                             <div class="code-sample hover-transform-up">
                                 <div class="code-header">
@@ -741,15 +749,18 @@ public class StateEditor : Editor
 
                         <!-- Editor's Note without section wrapper -->
                         <blockquote class="editors-note">
-                            <h5>Development Philosophy</h5>
-                            <p>This architecture reflects my commitment to
-                                create systems that empower designers to iterate
-                                quickly without programmer bottlenecks. By
-                                focusing on ScriptableObject-based configuration
-                                and
-                                custom inspector tools, I've aimed to give
-                                non-programmers maximum control over the game's
-                                structure and flow.</p>
+                            <h5>Design Philosophy</h5>
+                            <p>This system is built to empower game designers to
+                                focus on designing without needing to dive into
+                                the code. By separating concerns between
+                                programming and design, the architecture ensures
+                                that both teams can work in parallel without
+                                bottlenecks. Designers can iterate on game flow
+                                and mechanics freely, while programmers maintain
+                                clean, scalable systems. This approach prevents
+                                ad-hoc solutions and keeps the project moving
+                                smoothly, with each team contributing their
+                                expertise where it matters most.</p>
                         </blockquote>
 
                         <hr class="section-divider">
