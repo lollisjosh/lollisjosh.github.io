@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antillery Devlog | Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
+        <!-- Mobile CSS (screens ≤ 768px) -->
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="screen and (max-width: 768px)">
+        <!-- Desktop CSS (screens ≥ 769px) -->
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="screen and (min-width: 769px)">
+
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
+            rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    </head>
+
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Antillery Devlog #6</h1>
+                    <h2>Development Roadmap: 16-Week Sprint Plan</h2>
+                    <p class="devlog-date">May 28, 2025</p>
+                    <p>A comprehensive development plan using Agile methodology to organize project sprints and establish a clear path to completion</p>
+
+                    <!-- Navigation TOC -->
+                    <nav class="toc-nav">
+                        <a href="/projects/antillery.html"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎮</span>
+                            <span class="toc-title">Project Page</span>
+                        </a>
+
+                        <a href="#overview"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">📋</span>
+                            <span class="toc-title">Development Overview</span>
+                        </a>
+
+                        <a href="#week1-4"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🚀</span>
+                            <span class="toc-title">Foundation (Weeks 1-4)</span>
+                        </a>
+
+                        <a href="#week5-8"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🧱</span>
+                            <span class="toc-title">Core Systems (Weeks 5-8)</span>
+                        </a>
+
+                        <a href="#week9-12"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎨</span>
+                            <span class="toc-title">Interfaces & Art (Weeks 9-12)</span>
+                        </a>
+
+                        <a href="#week13-16"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🧪</span>
+                            <span class="toc-title">Polish & Launch (Weeks 13-16)</span>
+                        </a>
+
+                        <a href="#next-steps"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🔮</span>
+                            <span class="toc-title">Next Steps</span>
+                        </a>
+                    </nav>
+
+                    <hr class="section-divider">
+
+                    <section id="overview" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Development Overview</h2>
+
+                        <p class="section-intro">
+                            This devlog presents the detailed development roadmap for Antillery. The project follows a 16-week Agile methodology, with each week representing a sprint focused on specific systems, mechanics, or improvements. This structured approach ensures consistent momentum and organized progress toward completion.
+                        </p>
+
+                        <blockquote>
+                            <h3 class="content-heading">Agile Approach</h3>
+                            <p>By breaking down the project into weekly sprints, we gain several advantages:</p>
+                            <ul class="clean-list">
+                                <li>Clear, achievable goals for each development period</li>
+                                <li>Regular milestone achievements to maintain motivation</li>
+                                <li>Opportunity to reassess and adjust as development progresses</li>
+                                <li>Focused development efforts on one system at a time</li>
+                                <li>Regular integration points to ensure systems work together</li>
+                            </ul>
+                        </blockquote>
+
+                        <div class="note-box">
+                            <p><strong>Development Note:</strong> While the schedule is carefully planned, I recognize that software development often presents unexpected challenges. The sprint structure provides flexibility to adjust scope within each sprint while maintaining the overall project timeline.</p>
+                        </div>
+                        
+                        <blockquote class="editors-note">
+                            <h5>Schedule Context</h5>
+                            <p>This activity schedule represents a 16-week period that aligns with a semester timeframe, but actual development is beginning several months ahead (starting in May 2025). This early start may result in significant timeline adjustments as the project progresses. Such flexibility and adaptation to changing circumstances is precisely the strength of the Agile methodology being employed. The roadmap serves as a directional guide rather than a rigid timeline.</p>
+                        </blockquote>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="week1-4" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Foundation Phase (Weeks 1-4)</h2>
+
+                        <p class="section-intro">The first month focuses on establishing the project foundation and implementing core gameplay mechanics that everything else will build upon.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 1: Setup</h3>
+                                <ul class="clean-list">
+                                    <li>Create a Unity project with a versioned folder hierarchy</li>
+                                    <li>Setup GitHub repo and enable Git LFS for Unity assets</li>
+                                    <li>Initialize the Kanban board with sprint columns and core tasks</li>
+                                    <li>Create design document scaffolds: MVP checklist, coding conventions, asset pipeline</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 2: Core Architecture</h3>
+                                <ul class="clean-list">
+                                    <li>Implement core game-state and turn-state machines</li>
+                                    <li>Integrate event-driven architecture for turn handling</li>
+                                    <li>Define project-wide enums and ScriptableObject data models (weapon/tool definitions)</li>
+                                    <li>Begin technical documentation for the codebase</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 3: Movement</h3>
+                                <ul class="clean-list">
+                                    <li>Implement player input and per-turn movement limits</li>
+                                    <li>Set up Unity Input System with action maps</li>
+                                    <li>Basic UI feedback: directional arrows and movement readiness indicator</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 4: Projectiles</h3>
+                                <ul class="clean-list">
+                                    <li>Implement aiming mechanics and trajectory controls (angle, power)</li>
+                                    <li>Basic projectile instantiations and travel arc</li>
+                                    <li>Simulate collisions and test destructible terrain hooks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="week5-8" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Core Systems Phase (Weeks 5-8)</h2>
+
+                        <p class="section-intro">The second month is dedicated to implementing the core gameplay systems that define Antillery's unique experience.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 5: Terrain</h3>
+                                <p class="note">Subject to revision based on integration considerations with Unity's collision system specifics.</p>
+                                <ul class="clean-list">
+                                    <li>Implement bitmap-based terrain using a black/white mask texture</li>
+                                    <li>Apply real-time alpha-based pixel removal upon impact</li>
+                                    <li>Rebuild mesh collider after terrain mutation</li>
+                                    <li>Integrate terrain change logic with projectile and hazard systems</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 6: Physics</h3>
+                                <ul class="clean-list">
+                                    <li>Add wind system affecting projectile trajectories</li>
+                                    <li>Finalize physics parameters: gravity, drag, impact force</li>
+                                    <li>Display wind vectors using onscreen HUD indicators</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 7: War Weapons</h3>
+                                <ul class="clean-list">
+                                    <li>Implement Bazooka, Grenade, and TNT mechanics</li>
+                                    <li>Add distinct audio/visual feedback and impact animations</li>
+                                    <li>Tune explosion radius and test terrain deformation integrity</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 8: Peace Tools</h3>
+                                <ul class="clean-list">
+                                    <li>Implement Sod Roll, Doom Bloom, and Luster Bomb mechanics</li>
+                                    <li>Ensure Sod Roll mechanics work properly in edge cases</li>
+                                    <li>Ensure visual and audio effects distinguish tone from war tools</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                                                        <div class="note-box">
+                                    <p><strong>Design Note:</strong> Peace-based tools offer unique tactical options beyond simple destruction.</p>
+                                </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="week9-12" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Interface & Art Phase (Weeks 9-12)</h2>
+
+                        <p class="section-intro">The third month focuses on user experience, interfaces, and bringing the visual elements together.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 9: UI</h3>
+                                <ul class="clean-list">
+                                    <li>Build weapon/tool selection HUD and contextual menus</li>
+                                    <li>Implement the power meter, turn timer, and wind indicators</li>
+                                    <li>Validate real-time feedback for all core turn actions</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 10: Map Editor</h3>
+                                <ul class="clean-list">
+                                    <li>Build in-game bitmap-based map editor using brush and stamp tools</li>
+                                    <li>Enable saving and loading of custom PNGs from local storage</li>
+                                    <li>Validate file I/O and bitmap handling</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 11: Art & Animation</h3>
+                                <ul class="clean-list">
+                                    <li>Import 3D ant models and set orthographic 2D camera rig</li>
+                                    <li>Configure idle, walk, aim, and fire animations</li>
+                                    <li>Integrate state transitions using Unity Animator and gameplay triggers</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 12: Multiplayer</h3>
+                                <ul class="clean-list">
+                                    <li>Implement a round-robin player-switching system</li>
+                                    <li>Track player state across turns and reset between rounds</li>
+                                    <li>Test gameplay for 2-4 players on a shared device</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="week13-16" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Polish & Launch Phase (Weeks 13-16)</h2>
+
+                        <p class="section-intro">The final month is dedicated to refining the experience, optimizing performance, and preparing for release.</p>
+
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 13: Dev Tools</h3>
+                                <ul class="clean-list">
+                                    <li>Build internal Map Generator for rapid test scenario creation</li>
+                                    <li>Create debugging overlays (e.g., collision boxes, terrain debug mask)</li>
+                                    <li>Add shortcut keys for level reset, weapon cycling, and log output</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 14: Optimize</h3>
+                                <ul class="clean-list">
+                                    <li>Profile memory use and garbage collection during gameplay</li>
+                                    <li>Optimize terrain mutation, physics checks, and render performance</li>
+                                    <li>Refactor redundant scripts and batch costly operations</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 15: Polish</h3>
+                                <ul class="clean-list">
+                                    <li>Conduct internal playtests and log balance/UX notes</li>
+                                    <li>Address gameplay issues, pacing, terrain abuse, and unclear interactions</li>
+                                    <li>Final pass on audio mix, visual clarity, and turn flow transitions</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3 class="content-heading">Week 16: Ship</h3>
+                                <ul class="clean-list">
+                                    <li>Export the final Windows build using Unity's build pipeline</li>
+                                    <li>Package installer and create a release branch with MVP tag</li>
+                                    <li>Assemble README, documentation, and a gameplay demo video</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="next-steps" class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Next Steps</h2>
+
+                        <p class="section-intro">With this roadmap in place, I'm ready to kick off development starting next week. I'll be documenting progress in these devlogs, sharing both successes and challenges.</p>
+
+                        <blockquote>
+                            <p>The first sprint will focus on establishing the project's foundation:</p>
+                            <ul class="clean-list">
+                                <li>Setting up a proper Unity project structure</li>
+                                <li>Configuring version control with Git LFS for Unity assets</li>
+                                <li>Creating a Kanban board to track sprint progress</li>
+                                <li>Drafting essential design documents to guide development</li>
+                            </ul>
+                        </blockquote>
+
+                        <p>Each weekly devlog will cover the previous sprint's accomplishments, challenges faced, and adjustments made to the plan. I'm excited to share this journey and look forward to providing regular updates on Antillery's development progress.</p>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <!-- Editor's Note without section wrapper -->
+                    <blockquote class="editors-note">
+                        <h5>Development Philosophy</h5>
+                        <p>Antillery's development approach emphasizes steady progress through structured sprints, allowing for adaptation while maintaining clear forward momentum. By focusing on one system at a time and ensuring thorough integration, we aim to create a cohesive experience where every element works harmoniously with the others. This methodical approach helps prevent the common pitfall of feature creep while ensuring that each component receives the attention it deserves.</p>
+                    </blockquote>
+
+                    <hr class="section-divider">
+
+                    <!-- Post Navigation -->
+                    <div class="post-navigation">
+                        <a href="/blog/antillery/ant-dev-2025-05-27.html" class="post-nav-button prev-post">
+                            <span class="post-nav-icon">←</span>
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Previous Post</span>
+                                <span class="post-nav-title">Flexible Scene Management with State Machines</span>
+                            </div>
+                        </a>
+
+                        <!-- Coming Soon -->
+                        <!-- <a href="/blog/antillery/ant-dev-2025-06-01.html" class="post-nav-button next-post">
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Next Post</span>
+                                <span class="post-nav-title">Project Initialization and Setup</span>
+                            </div>
+                            <span class="post-nav-icon">→</span>
+                        </a> -->
+                    </div>
+
+                    <div class="signature">
+                        <h6>Until next time!</h6>
+                        <h4>- Josh ✌️</h4>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
+
+</html>

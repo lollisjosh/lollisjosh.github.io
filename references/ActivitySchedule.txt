@@ -1,0 +1,70 @@
+15 Activities 
+The development of Antillery will follow a 16-week Agile methodology, with each week representing a spring. Each sprint will introduce or improve upon a system, mechanic, interface component, or improvement task. These weekly sprints will set a pace to ensure project completion and organization.
+15.1 Week 1: Project Initialization
+Create a Unity project with a versioned folder hierarchy
+Setup GitHub repo and enable Git LFS for Unity assets
+Initialize the Kanban board with sprint columns and core tasks
+Create design document scaffolds: MVP checklist, coding conventions, asset pipeline
+15.2 Week 2: Core Systems Architecture
+Implement core game-state and turn-state machines
+Integrate event-driven architecture for turn handling
+Define project-wide enums and ScriptableObject data models (weapon/tool definitions)
+Begin technical documentation for the codebase
+15.3 Week 3: Movement & Input Layer
+Implement player input and per-turn movement limits
+Set up Unity Input System with action maps
+Basic UI feedback: directional arrows and movement readiness indicator
+15.4 Week 4: Projectile System & Aiming
+Implement aiming mechanics and trajectory controls (angle, power)
+Basic projectile instantiations and travel arc
+Simulate collisions and test destructible terrain hooks
+15.5 Week 5: Destructible Terrain System
+(subject to revision based on integration considerations with Unity's collision system specifics.)
+Implement bitmap-based terrain using a black/white mask texture
+Apply real-time alpha-based pixel removal upon impact
+Rebuild mesh collider after terrain mutation
+Integrate terrain change logic with projectile and hazard systems.
+15.6 Week 6: Environmental Forces & Physics
+Add wind system affecting projectile trajectories
+Finalize physics parameters: gravity, drag, impact force
+Display wind vectors using onscreen HUD indicators
+15.7 Week 7: War Weapon Implementation
+Implement Bazooka, Grenade, and TNT mechanics
+Add distinct audio/visual feedback and impact animations
+Tune explosion radius and test terrain deformation integrity
+15.8 Week 8: Weapon System (Peace-based)
+Implement Sod Roll, Doom Bloom, and Luster Bomb mechanics
+Ensure Sod Roll mechanics work properly in edge cases
+Ensure visual and audio effects distinguish tone from war tools
+15.9 Week 9: User Interface Systems
+Build weapon/tool selection HUD and contextual menus
+Implement the power meter, turn timer, and wind indicators
+Validate real-time feedback for all core turn actions
+15.10 Week 10: Map Editor and Level System
+Build in-game bitmap-based map editor using brush and stamp tools
+Enable saving and loading of custom PNGs from local storage
+Validate file I/O and bitmap
+15.11 Week 11: Art Integration and Animation Systems
+Import 3D ant models and set orthographic 2D camera rig
+Configure idle, walk, aim, and fire animations
+Integrate state transitions using Unity Animator and gameplay triggers
+15.12 Week 12: Multiplayer Setup (Local)
+Implement a round-robin player-switching system
+Track player state across turns and reset between rounds
+Test gameplay for 2-4 players on a shared device
+15.13 Week 13: Internal Dev Tools and Debug Features
+Bild internal Map Generator for rapid test scenario creation
+Create debugging overlays (e.g., collision boxes, terrain debug mask)
+Add shortcut keys for level reset, weapon cycling, and log output
+15.14 Week 14: Optimization & Profiling
+Profile memory use and garbage collection during gameplay
+Optimize terrain mutation, physics checks, and render performance
+Refactor redundant scripts and batch costly operations
+15.15 Week 15: Playtesting & Polish
+Conduct internal playtests and log balance/UX notes
+Address gameplay issues, pacing, terrain abuse, and unclear interactions
+Final pass on the audio mix, visual clarity, and turn flow transitions
+15.16 Week 16: Release Preparation
+Export the final Windows build using Unity's build pipeline
+Package installer and create a release branch with MVP tag
+Assemble README, documentation, and a gameplay demo video
