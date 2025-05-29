@@ -1601,7 +1601,7 @@ h3.content-heading,
   display: flex;
   align-items: center;
   background: linear-gradient(to right, rgba(75, 48, 78, 0.1), rgba(237, 101, 255, 0.1));
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: var(--border-radius-md);
   margin: 1rem auto 2rem;
   max-width: 80%;
@@ -1658,10 +1658,13 @@ h3.content-heading,
   margin: 0;
   font-weight: 500;
   white-space: nowrap;
-  display: block;
+  display: flex; /* Changed to flex for better clone handling */
   padding-left: 5px; /* Space after the slit */
-  /* Animation removed - now handled by JavaScript */
   will-change: transform; /* Optimize animation performance */
+}
+
+#status .ticker-text {
+  padding-right: 100px; /* Increased spacing between repeated texts */
 }
 
 /* Remove the keyframes animation as it's now handled by JS */

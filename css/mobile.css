@@ -1064,3 +1064,8 @@ html {
 .blog-link:hover {
   background: #ed65ff;
 }
+
+/* Hide status ticker on mobile */
+#status-container {
+  display: none !important; /* Hide the entire ticker container on mobile */
+}
