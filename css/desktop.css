@@ -1659,18 +1659,13 @@ h3.content-heading,
   font-weight: 500;
   white-space: nowrap;
   display: block;
-  animation: ticker 20s linear infinite;
   padding-left: 5px; /* Space after the slit */
+  /* Animation removed - now handled by JavaScript */
+  will-change: transform; /* Optimize animation performance */
 }
 
-@keyframes ticker {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
+/* Remove the keyframes animation as it's now handled by JS */
+/* @keyframes ticker {...} removed */
 
 @keyframes pulse {
   0% {
