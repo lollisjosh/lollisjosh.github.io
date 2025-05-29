@@ -724,7 +724,6 @@ canvas {
   box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
   border-radius: var(--border-radius-md);  /* Preserve border radius on hover */
-  overflow: hidden;  /* Keep video within the rounded corners */
 }
 
 /* Add medium-sized carousel class */
@@ -840,7 +839,6 @@ canvas {
   line-height: 1.6;
   font-size: 1rem;
   color: var(--text);
-  text-align: center;
 }
 
 #resume-header {
@@ -1517,8 +1515,6 @@ code[class*="language-"] {
   border-radius: 3px; /* Rounded corners */
   font-family: monospace;
   white-space: nowrap;
-  margin: 0 0.2em; /* Add spacing on both sides */
-  display: inline; /* Ensure inline display */
 }
 
 /* Make all content headings consistent regardless of parent container */
@@ -1598,5 +1594,113 @@ h3.content-heading,
 
 .post-navigation:has(.next-post:only-child) {
   justify-content: flex-end;
+}
+
+/* Status update styling - completely restructured */
+#status-container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, rgba(75, 48, 78, 0.1), rgba(237, 101, 255, 0.1));
+  padding: 10px 20px;
+  border-radius: var(--border-radius-md);
+  margin: 1rem auto 2rem;
+  max-width: 80%;
+  border-left: 4px solid var(--accent);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-standard);
+  position: relative;
+}
+
+#status-container:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Left section with dot indicator */
+.status-indicator-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  /* background: linear-gradient(to right, rgba(75, 48, 78, 0.1), rgba(237, 101, 255, 0.1)); */
+  position: relative;
+  z-index: 5;
+  margin-right: 5px;
+  /* border-right: 3px solid rgba(237, 101, 255, 0.3);  */
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-indicator i {
+  font-size: 0.8rem;
+  color: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+/* Text container - separate from the indicator */
+.status-text-container {
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 35px); /* Full width minus indicator section */
+  height: 1.5rem;
+  margin-left: -2px; /* Overlap the borders to create slit */
+}
+
+#status {
+  font-family: "Funnel Display", sans-serif;
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  display: block;
+  animation: ticker 20s linear infinite;
+  padding-left: 5px; /* Space after the slit */
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Status appearance variants */
+.status-online .status-indicator i {
+  color: #27ae60;
+}
+
+.status-away .status-indicator i {
+  color: #e6b800;
+}
+
+.status-online #status-container {
+  border-left-color: #27ae60;
+}
+
+.status-away #status-container {
+  border-left-color: #e6b800;
 }
 

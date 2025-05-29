@@ -20,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for the status icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
  <!-- Mobile CSS (screens ≤ 768px) -->
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
     
@@ -34,8 +36,22 @@
     <main>
         <div class="content-container">
             <!-- Introduction section -->
+
+
             <section id="intro">
                 <h1 class="snug-header funnel-display-header">Welcome to My Portfolio</h1>
+
+                <!-- Status update section - restructured -->
+                <div id="status-container">
+                    <div class="status-indicator-section">
+                        <div class="status-indicator">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div class="status-text-container">
+                        <p id="status">Currently working on my portfolio website</p>
+                    </div>
+                </div>
 
                 <!-- Profile picture with gradient border -->
                 <div id="pfp-placeholder">
