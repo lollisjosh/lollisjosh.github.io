@@ -1,0 +1,158 @@
+/* 
+*   Project Tabs CSS
+*   Author: Josh Lollis
+*   Date: May 17, 2025
+*   Extracted from desktop.css for better organization
+*/
+
+/* Sliding project tabs - right side */
+.sliding-projects {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 0;
+}
+
+/* Left-side sliding projects */
+.sliding-projects-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 0;
+}
+
+/* Right-side project tab styling */
+.project-tab {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 500px; /* Total width when expanded */
+  transform: translateX(350px); /* Adjust as needed for new positioning */
+  transition: transform 0.4s ease-out;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 120px; /* Increased height for bigger preview */
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-right: none;
+}
+
+/* Left-side project tab styling */
+.project-tab-left {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse; /* Flip the layout */
+  align-items: stretch;
+  width: 500px;
+  transform: translateX(-350px); /* Hide most of tab off-screen to the left */
+  transition: transform 0.4s ease-out;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 120px;
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-left: none;
+}
+
+/* Hover states for project tabs */
+.project-tab:hover {
+  animation: none !important;
+  transform: translateX(0) !important; /* Fully slide into view on hover */
+  box-shadow: var(--shadow-lg);
+}
+
+.project-tab-left:hover {
+  animation: none !important;
+  transform: translateX(0) !important; /* Fully slide into view on hover */
+  box-shadow: var(--shadow-lg);
+}
+
+/* Project tab animations */
+@keyframes gentleBounce {
+  0%, 100% { transform: translateX(350px); }
+  50% { transform: translateX(340px); }
+}
+
+/* Apply animation to tabs */
+.project-tab:nth-child(odd) {
+  animation: gentleBounce 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.project-tab:nth-child(even) {
+  animation: gentleBounce 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Tab content elements */
+.tab-preview {
+  flex: 0 0 150px; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+}
+
+.tab-preview img {
+  width: 100%;
+  height: 120px; /* Match height to project-tab */
+  object-fit: cover;
+}
+
+.tab-content {
+  padding: 15px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tab-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-family: "Funnel Display", sans-serif;
+}
+
+.tab-content p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.view-more {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.project-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* Hide project tabs on smaller screens */
+@media screen and (max-width: 1000px) {
+  .sliding-projects,
+  .sliding-projects-left {
+    display: none;
+  }
+}
