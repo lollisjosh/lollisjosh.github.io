@@ -378,6 +378,159 @@ h3.funnel-display-header {
   z-index: 10;
 }
 
+/* Sliding blog tabs - Updated */
+.sliding-blogs {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 0; /* Increase z-index if needed so it's above content */
+  /* Optional: Add pointer-events: none; and then re-enable on children if needed */
+}
+
+/* Left-side sliding blogs - New */
+.sliding-blogs-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 0;
+}
+
+.blog-tab {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 500px; /* Total width when expanded */
+  transform: translateX(350px); /* Adjust as needed for new positioning */
+  transition: transform 0.4s ease-out;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 120px; /* Increased height for bigger preview */
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-right: none;
+}
+
+/* Blog tabs styling - updated to position under content container */
+.sliding-blog-tabs {
+  position: absolute;
+  left: 35%; /* Position toward the left side of the container */
+  top: 30%; /* Position near the bottom of the container */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* z-index: -1; Position underneath the content container */
+}
+
+.blog-tab {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: auto; /* Slightly narrower than project tabs */
+  transform: translateX(-320px); /* Hide most of the tab */
+  transition: transform 0.4s ease-out;
+  border-radius: var(--border-radius-md) var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 50px; /* Smaller than project tabs */
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-left: none;
+}
+
+/* Blog tab hover behavior - make it slide leftward instead of rightward */
+.blog-tab:hover {
+  animation: none !important;
+  transform: translateX(-438px) !important; /* More negative value to slide leftward */
+  box-shadow: var(--shadow-lg);
+}
+
+/* Blog tab animation */
+@keyframes blogPeek {
+  0%, 100% { transform: translateX(-320px); }
+  50% { transform: translateX(-330px); }
+}
+
+/* Apply blog tab animation */
+.blog-tab:nth-child(odd) {
+  animation: blogPeek 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.blog-tab:nth-child(even) {
+  animation: blogPeek 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Blog tab content elements */
+.blog-tab-preview {
+  /* flex: 0 0 100px; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+}
+
+.blog-tab-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-tab-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  padding-left: 4%;
+  padding-right: 4%; 
+}
+
+.blog-tab-content h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary);
+  font-family: "Funnel Display", sans-serif;
+}
+
+.blog-tab-content h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--primary);
+  font-family: "Funnel Display", sans-serif;
+}
+
+.blog-tab-content p {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.blog-tab-content .view-more {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+/* Update content container z-index to ensure proper layering */
+.content-container {
+  /* ...existing properties... */
+  z-index: 1; /* Ensure content is above blog tabs by default */
+}
+
 .content-container blockquote {
   background: var(--white);
   border-radius: var(--border-radius-lg);
@@ -1064,14 +1217,14 @@ canvas {
   margin-bottom: 1.5rem;
 }
 
+/* Ensure blog-link covers the entire tab area */
 .blog-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: var(--primary);
-  color: var(--white);
-  text-decoration: none;
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition-fast);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 /* Version sections */
@@ -1700,5 +1853,14 @@ h3.content-heading,
 
 .status-away #status-container {
   border-left-color: #e6b800;
+}
+
+/* Hide project tabs and blog tabs on smaller screens */
+@media screen and (max-width: 1000px) {
+  .sliding-projects,
+  .sliding-projects-left,
+  .sliding-blog-tabs {
+    display: none;
+  }
 }
 
