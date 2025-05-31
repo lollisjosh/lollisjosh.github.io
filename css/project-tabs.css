@@ -34,7 +34,7 @@
   position: relative;
   display: flex;
   align-items: stretch;
-  width: 500px; /* Total width when expanded */
+  width: 100%; /* Total width when expanded */
   transform: translateX(350px); /* Adjust as needed for new positioning */
   transition: transform 0.4s ease-out;
   border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);

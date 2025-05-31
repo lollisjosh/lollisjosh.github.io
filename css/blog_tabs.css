@@ -7,7 +7,7 @@
 
 /* Blog tabs styling - positioned under content container */
 .sliding-blog-tabs {
-  position: absolute;
+  position: fixed;
   left: 35%; /* Position toward the left side of the container */
   top: 30%; /* Position near the bottom of the container */
   display: flex;
@@ -20,8 +20,9 @@
   display: flex;
   align-items: stretch;
   width: 100%; /* Total width when expanded */
-  transform: translateX(350px); /* Adjust as needed for new positioning */
-  transition: transform 0.4s ease-out;
+  transform: translateX(-320px); /* Match the animation's position */
+  /* Add transition for returning from hover only */
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease-out;
   border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -32,11 +33,13 @@
   border-right: none;
 }
 
-/* Blog tab hover behavior - make it slide leftward instead of rightward */
+/* Blog tab hover behavior - make it slide leftward instantly */
 .blog-tab:hover {
   animation: none !important;
-  transform: translateX(-438px) !important; /* More negative value to slide leftward */
+  transform: translateX(-442px) !important; /* More negative value to slide leftward */
   box-shadow: var(--shadow-lg);
+  /* Skip transition on hover */
+  transition: box-shadow 0.3s ease-out;
 }
 
 /* Blog tab animation */
@@ -85,7 +88,7 @@
 .blog-tab-content h4,
 .blog-tab-content h5 {
   margin: 0;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   color: var(--primary);
   font-family: "Funnel Display", sans-serif;
 }
