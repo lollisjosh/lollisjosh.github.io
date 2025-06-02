@@ -389,6 +389,17 @@ canvas {
   box-shadow: 4px 4px 6px rgb(0, 0, 0, 0.5);
 }
 
+/* Blog-specific image styling */
+.blog-image {
+    width: 100%; /* Ensure the image scales to fit its container */
+    max-width: 800px; /* Set a reasonable max width for blog images */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing issues */
+    margin: 1.5rem auto; /* Center the image and add spacing */
+    border-radius: var(--border-radius-md); /* Match the blog's rounded corners */
+    box-shadow: var(--shadow-md); /* Add a subtle shadow for better visibility */
+}
+
 .blog-gif {
   border: 4px solid #4b304e;
   border-radius: 6px;
