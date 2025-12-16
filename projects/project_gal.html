@@ -87,9 +87,11 @@
                 <h2 class="funnel-display-header">Project Overview</h2>
                 <p>Project GAL is a first-person shooter game focused on target practice and aim training. Built with Unity, it features dynamic target systems, custom animations, and visual effects to create an engaging training environment.</p>
                 
-                <!-- Add overview image with consistent styling -->
-                <img src="/assets/gifs/targetshoot.gif" alt="Target Shooting Demonstration" 
-                     class="img-thumbnail blog-gif hover-transform-up">
+                <!-- Add overview video thumbnail (lazy-loaded WebM, muted loop) -->
+                <video class="project-thumb img-thumbnail blog-gif hover-transform-up" width="300" height="207" playsinline muted loop preload="none" poster="/assets/gifs/targetshoot.gif" data-webm="/assets/webm/targetshoot.webm" data-mp4="/assets/webm/targetshoot.mp4">
+                    <!-- Fallback img if video not supported -->
+                    <img src="/assets/gifs/targetshoot.gif" alt="Target Shooting Demonstration" width="300" height="207" loading="lazy">
+                </video>
             </section>
 
             <!-- New separate Technologies section -->

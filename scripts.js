@@ -215,4 +215,56 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })();
 
+    // Lazy-load small project thumbnail videos (WebM/MP4). Videos should have data-webm/data-mp4 attributes.
+    (function lazyLoadThumbVideos() {
+        const vids = document.querySelectorAll('video.project-thumb[data-webm], video.project-thumb[data-mp4]');
+        if (!vids.length) return;
+
+        function loadVideo(v) {
+            if (v.dataset.loaded) return;
+            const webmRaw = v.getAttribute('data-webm');
+            const mp4Raw = v.getAttribute('data-mp4');
+            function normalizePath(p) {
+                if (!p) return null;
+                if (p.startsWith('http') || p.startsWith('//') || p.startsWith('/')) return p;
+                return '/' + p.replace(/^\.?\/+/, '');
+            }
+            const webm = normalizePath(webmRaw);
+            const mp4 = normalizePath(mp4Raw);
+            const existingSources = Array.from(v.querySelectorAll('source')).map(s => s.src);
+            if (webm && !existingSources.includes(new URL(webm, location.href).href)) {
+                const s = document.createElement('source'); s.src = webm; s.type = 'video/webm'; v.appendChild(s);
+            }
+            if (mp4 && !existingSources.includes(new URL(mp4, location.href).href)) {
+                const s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; v.appendChild(s2);
+            }
+            try { v.load(); v.play().catch(() => {}); } catch (e) {}
+            v.dataset.loaded = '1';
+        }
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadVideo(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '200px' });
+            vids.forEach(v => obs.observe(v));
+            // Also immediately load any videos already visible in the viewport
+            vids.forEach(v => {
+                const rect = v.getBoundingClientRect();
+                if (rect.top < (window.innerHeight + 200) && rect.bottom > -200) {
+                    loadVideo(v);
+                    try { obs.unobserve(v); } catch (e) {}
+                }
+            });
+        } else {
+            // Fallback: load after short delay and on first scroll
+            setTimeout(() => vids.forEach(loadVideo), 3000);
+            window.addEventListener('scroll', () => vids.forEach(loadVideo), { once: true });
+        }
+    })();
+
 });
