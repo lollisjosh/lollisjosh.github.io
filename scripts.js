@@ -177,4 +177,42 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => console.error('Failed to load modal component script.'));
     })();
 
+    /**
+     * Lazy-load images across the site by setting `loading="lazy"` on images
+     * Exclude images that must be loaded eagerly: icons, profile picture, wakatime badge, or images marked `.no-lazy`.
+     */
+    (function lazyLoadImages() {
+        const exclude = 'img.no-lazy, img#pfp-img, a#wakatime-site-hours img, img.icon, img.small';
+        const images = document.querySelectorAll('img:not(' + exclude + ')');
+        images.forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                try { img.setAttribute('loading', 'lazy'); } catch (e) { /* defensive */ }
+            }
+        });
+
+        // Fallback for browsers that don't support native loading attribute and use data-src pattern
+        if (!('loading' in HTMLImageElement.prototype)) {
+            const lazyImgs = document.querySelectorAll('img[data-src]');
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.src = el.getAttribute('data-src');
+                            el.removeAttribute('data-src');
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { rootMargin: '200px' });
+                lazyImgs.forEach(img => io.observe(img));
+            } else {
+                // No support: load them all after a timeout
+                setTimeout(() => lazyImgs.forEach(img => {
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                }), 2000);
+            }
+        }
+    })();
+
 });
