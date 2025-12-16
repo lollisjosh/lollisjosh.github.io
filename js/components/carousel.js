@@ -17,7 +17,7 @@
         const intervalMs = options.interval || 10000;
 
         const carouselEl = document.querySelector(carouselSelector);
-        if (!carouselEl) return console.warn('carouselComponent.init: carousel element not found', carouselSelector);
+        if (!carouselEl) return; // nothing to do if no carousel on this page
 
         const images = carouselEl.querySelectorAll('img');
         if (!images.length) return;

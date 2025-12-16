@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initialize carousel component
     (function loadCarousel() {
+        // Only load carousel on pages that include a carousel element
+        if (!document.querySelector('.carousel-images')) return;
         if (window.carouselComponent) {
             window.carouselComponent.init();
             return;
@@ -122,19 +124,42 @@ document.addEventListener("DOMContentLoaded", function () {
     })();
 
 
-    // Load WakaTime charts component
-    (function loadWakaTime() {
-        if (window.wakatimeComponent) {
-            window.wakatimeComponent.init();
-            return;
+    // Lazy-load WakaTime charts when their canvas becomes visible
+    (function lazyLoadWaka() {
+        const chartSelectors = ['#desktop-wakatime30DayLangChart', '#mobile-wakatime30DayLangChart', '#desktop-wakatimeAllTimeLangChart', '#mobile-wakatimeAllTimeLangChart', '#desktop-editorsUsedChart', '#mobile-editorsUsedChart', '#desktop-editorChart', '#mobile-editorChart'];
+        const firstChart = document.querySelector(chartSelectors.join(','));
+        if (!firstChart) return; // no charts on this page
+
+        const loadWaka = () => {
+            if (window.wakatimeLoaded) return;
+            window.wakatimeLoaded = true;
+            loadComponentScript('/js/components/wakatime.js')
+                .then(() => {
+                    if (window.wakatimeComponent && window.wakatimeComponent.init) {
+                        window.wakatimeComponent.init();
+                    }
+                })
+                .catch(() => console.error('Failed to load wakatime component script.'));
+        };
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        loadWaka();
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: '200px' });
+            obs.observe(firstChart);
+
+            // Fallback: if user doesn't scroll into view within 10s, load automatically
+            setTimeout(() => { if (!window.wakatimeLoaded) loadWaka(); }, 10000);
+        } else {
+            // Older browsers: load after small delay and on first scroll
+            setTimeout(loadWaka, 3000);
+            window.addEventListener('scroll', loadWaka, { once: true });
         }
-        loadComponentScript('/js/components/wakatime.js')
-            .then(() => {
-                if (window.wakatimeComponent && window.wakatimeComponent.init) {
-                    window.wakatimeComponent.init();
-                }
-            })
-            .catch(() => console.error('Failed to load wakatime component script.'));
     })();
 
     // Load modal component
