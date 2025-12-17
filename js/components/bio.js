@@ -6,7 +6,7 @@
 (function (global) {
     const bioData = {
         tags: ["Junior Software Engineer"],
-        bio: "I build interactive desktop and web applications using C#, Python, C++, and JavaScript. My work includes Unity projects, Qt/QML desktop applications with Python backends, C++ desktop applications and games, and web projects using HTML, CSS, and JavaScript. I’m currently seeking an entry-level software engineering role."
+        bio: "I build interactive desktop and web applications using C#, Python, C++, and JavaScript. Projects I’ve shipped include my senior capstone game and other Unity projects, as well as Qt/QML desktop applications with Python backends, C++ desktop applications and games, and web projects built with HTML, CSS, and JavaScript."
     };
 
     function generateBioHTML(data) {
