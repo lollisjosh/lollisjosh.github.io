@@ -46,6 +46,10 @@
                     <span class="toc-icon">📝</span>
                     <span class="toc-title">Overview</span>
                 </a>
+                <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">💻</span>
+                    <span class="toc-title">Build Download</span>
+                </a>
                 <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon">🛠️</span>
                     <span class="toc-title">Technologies</span>
@@ -58,9 +62,9 @@
                     <span class="toc-icon">🔧</span>
                     <span class="toc-title">Challenges</span>
                 </a>
-                <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">💻</span>
-                    <span class="toc-title">How to Play</span>
+                <a href="#controls" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🎮</span>
+                    <span class="toc-title">Controls</span>
                 </a>
                 <a href="#enhancements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon">🚀</span>
@@ -99,6 +103,12 @@
                     <img src="/assets/images/antillery/title-screen.png" alt="Antillery title screen"
                         class="img-thumbnail hover-scale" style="max-width: 300px; margin: 0 auto;">
                 </div>
+            </section>
+
+            <!-- Build Download Section -->
+            <section id="build" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Build Download</h2>
+                <p>Coming soon.</p>
             </section>
 
             <!-- Technologies Used Section -->
@@ -169,56 +179,81 @@
                 </div>
             </section>
 
-            <!-- How to Play Section -->
-            <section id="build" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">How to Play</h2>
+            <!-- Controls Section -->
+            <section id="controls" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Controls</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
-                        <h3>Controls</h3>
-                        <p>Move and jump during your turn; aim with the cursor; hold and release to fire; use the
-                            inventory toggle and direct slot keys to swap weapons.</p>
+                        <h3>Main Menu</h3>
+                        <p><strong>W/S</strong>: Move up/down<br><strong>Space</strong>: Select</p>
                     </div>
                     <div class="skill-category hover-transform-up">
-                        <h3>Build Download</h3>
-                        <p>Coming soon.</p>
+                        <h3>Options Menu</h3>
+                        <p><strong>W/S</strong>: Move up/down<br><strong>Space</strong>: Select</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Gameplay</h3>
+                        <p><strong>A/D</strong>: Move left/right<br><strong>Shift</strong>: Jump<br><strong>I</strong>: Inventory<br><strong>1/2/3</strong>: Select weapon<br><strong>Space</strong>: Charge/shoot</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Results Screen</h3>
+                        <p><strong>Space</strong>: Select option</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Challenges Section -->
-            <section id="challenges" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Development Challenges</h2>
+<!-- Challenges Section -->
+<section id="challenges" class="version-section hover-transform-up">
+    <h2 class="funnel-display-header">Development Challenges</h2>
 
-                <blockquote>
-                    <h5 class="challenge">Separating global menus from gameplay input without leakage</h5>
-                    <b>Ensuring input contexts do not leak between menu and gameplay states</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Action maps per state; InputManager disables all maps then enables only the relevant one.</p>
-                </blockquote>
+    <div class="skills-grid">
+        <div class="skill-category hover-transform-up">
+            <h3>State-Scoped Input Maps</h3>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+            <p>Menus and gameplay need different bindings and behaviors (navigation and selection versus movement and aiming). Without strict switching, inputs can leak and trigger actions in the wrong context.</p>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-                <blockquote>
-                    <h5 class="challenge">Turn-based control when many units exist in the scene</h5>
-                    <b>Managing turn-based control with multiple units in the scene</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Units read input through an interface and wrapper; Turn Flow gates control to the active unit
-                        only.</p>
-                </blockquote>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+            <p>Mapped input by Game Flow state. On every state transition, the InputManager disables all action maps and enables only the one for the active state.</p>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+        </div>
 
-                <blockquote>
-                    <h5 class="challenge">Synchronizing weapon explosions, damage, and terrain deformation</h5>
-                    <b>Coordinating explosions, damage application, and terrain deformation</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Weapons report explosion data; resolution applies distance-based damage; terrain is carved via
-                        TerraformingTerrain2D.</p>
-                </blockquote>
+        <div class="skill-category hover-transform-up">
+            <h3>Active-Unit Input Gating</h3>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+            <p>Multiple ants run in the scene, but only the current unit should respond to movement and weapon input. Early on, more than one unit could react to the same controls.</p>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-                <blockquote>
-                    <h5 class="challenge">Balancing scope vs. proposal vision (alpha focus)</h5>
-                    <b>Prioritizing core gameplay and systems for a polished alpha deliverable</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>The capstone deliverable is a focused alpha build, with future enhancements listed below.</p>
-                </blockquote>
-            </section>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+            <p>Routed gameplay input through an IInput abstraction and a ControllableInput wrapper. The Turn Flow system enables input only for the active unit each turn, while all other units ignore player control.</p>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+        </div>
+
+        <div class="skill-category hover-transform-up">
+            <h3>Explosion Resolution Ordering</h3>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+            <p>Explosions must stay consistent across damage, terrain deformation, and collision updates. If the order is wrong, craters, colliders, and damage timing fall out of sync.</p>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+            <p>Weapons publish explosion data (position, radius, damage). The resolution phase applies distance-based damage, then uses TerraformingTerrain2D to carve terrain and refresh colliders.</p>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+        </div>
+
+        <div class="skill-category hover-transform-up">
+            <h3>Alpha Scope Lock</h3>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+            <p>The proposal included more stretch features than a single semester could support. The priority was shipping a complete, stable alpha match loop with the core systems working together.</p>
+            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+            <p>Focused delivery on turn flow, state-driven input routing, destructible terrain, and a small core weapon set (projectile weapon, grenade, and TNT), then captured the rest as a roadmap below.</p>
+            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+        </div>
+    </div>
+</section>
+
+
 
 <!-- Future Enhancements Section -->
 <section id="enhancements" class="version-section hover-transform-up">
