@@ -1,9 +1,7 @@
 <!--
     Antillery Project Documentation Page
     Author: Josh Lollis
-    Date: December 3, 2024
-    CPSC 349 Portfolio Final Project
-    
+
     Documentation hub for the Antillery senior capstone project
 -->
 
@@ -20,12 +18,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Mobile CSS (screens ≤ 768px) -->
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
 
@@ -47,6 +46,10 @@
                     <span class="toc-icon">📝</span>
                     <span class="toc-title">Overview</span>
                 </a>
+                <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🛠️</span>
+                    <span class="toc-title">Technologies</span>
+                </a>
                 <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon">⚙️</span>
                     <span class="toc-title">Implementation</span>
@@ -54,6 +57,14 @@
                 <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon">🔧</span>
                     <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">💻</span>
+                    <span class="toc-title">How to Play</span>
+                </a>
+                <a href="#enhancements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon">🚀</span>
+                    <span class="toc-title">Enhancements</span>
                 </a>
                 <a href="#devlogs" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon">📓</span>
@@ -75,38 +86,42 @@
             <section id="overview" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Project Overview</h2>
                 <p>Antillery is a 2D turn-based artillery game developed in Unity as my senior capstone project. It is
-                    designed for offline local play, with quick matches on a single machine. Two teams of ants battle
-                    across deformable terrain, taking turns moving, jumping, choosing weapons, and firing projectiles
-                    while the map changes around them.</p>
+                    designed for offline two-player local play on a single machine. Two teams of ants battle across
+                    destructible terrain, taking turns moving, jumping, selecting weapons, and firing while the map
+                    changes around them.</p>
 
-                <p>The alpha uses object-oriented design, state machines to manage game flow, and a layered structure
-                    that keeps gameplay, UI, and systems separated. It is structured to facilitate future additions,
-                    such as new weapons, tools, and additional content.</p>
+                <p>The alpha build focuses on clean system boundaries and extensibility: a ScriptableObject-driven game
+                    flow coordinates scene transitions, a runtime turn-flow state machine enforces the match loop, and
+                    input is gated so only the active unit responds. Weapons share a common charge-to-fire framework,
+                    with an inventory UI designed for fast selection.</p>
 
-                
                 <div class="image-grid" style="grid-template-columns: 1fr;">
-                    <img src="/assets/images/antillery/title-screen.png" alt="Antillery title screen" class="img-thumbnail hover-scale"
-                        style="max-width: 300px; margin: 0 auto;">
+                    <img src="/assets/images/antillery/title-screen.png" alt="Antillery title screen"
+                        class="img-thumbnail hover-scale" style="max-width: 300px; margin: 0 auto;">
                 </div>
+            </section>
 
-                <h3>Technologies Used</h3>
+            <!-- Technologies Used Section -->
+            <section id="technologies" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Technologies Used</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
                         <h3>Core Technologies</h3>
                         <ul>
-                            <li>Unity Game Engine with C# programming</li>
-                            <li>Modern Unity Input System for player controls</li>
-                            <li>Modular ScriptableObject architecture</li>
-                            <li>Dynamic bitmap-based destructible terrain</li>
+                            <li>Unity 2D, C#</li>
+                            <li>Unity Input System (action maps)</li>
+                            <li>ScriptableObject state/events, Addressables</li>
+                            <li>Destructible terrain (TerraformingTerrain2D)</li>
+                            <li>UI Toolkit, TextMeshPro</li>
                         </ul>
                     </div>
                     <div class="skill-category hover-transform-up">
                         <h3>Development Tools</h3>
                         <ul>
-                            <li>Custom-built Map Generation Tool</li>
-                            <li>Intuitive Weapon & Tool Selection Interface</li>
-                            <li>GitHub with LFS for collaborative development</li>
-                            <li>Extended Unity Editor with custom workflows</li>
+                            <li>Unity Editor</li>
+                            <li>GitHub, Git LFS</li>
+                            <li>Rider / Visual Studio / VS Code</li>
+                            <li>.NET 9 supporting utilities</li>
                         </ul>
                     </div>
                 </div>
@@ -115,27 +130,57 @@
             <!-- Implementation Section -->
             <section id="implementation" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Implementation Details</h2>
-                <p>This section will be updated as the project develops with information about architecture, design
-                    patterns, and key implementation decisions.</p>
+
+                <p>The alpha build delivers a complete match loop: teams take turns controlling one ant at a time,
+                    moving and jumping, selecting a weapon, aiming with the cursor, and firing to end the turn. Each
+                    turn includes a brief countdown, a time limit, and a resolution phase that applies damage and
+                    deforms terrain.</p>
+
+                <p>Under the hood, Antillery is driven by state machines and input gating. The InputManager enables a
+                    single action map per game state, and weapon behavior is implemented through a shared charge-to-fire
+                    framework (including projectiles and TNT with a fuse). The inventory UI supports quick weapon
+                    selection via keyboard slots.</p>
 
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
                         <h3>Key Features</h3>
                         <ul>
-                            <li>Local multiplayer for 2-4 players on one device</li>
-                            <li>Real-time destructible & constructible terrain</li>
-                            <li>Unique warfare and environmental tools system</li>
-                            <li>Strategic gameplay with multifunctional tools</li>
+                            <li>Offline 2-player local play</li>
+                            <li>Turn limited by time or action</li>
+                            <li>Destructible terrain</li>
+                            <li>Charge-to-fire weapons (projectiles and TNT)</li>
+                            <li>Inventory UI with quick slot keys</li>
                         </ul>
                     </div>
                     <div class="skill-category hover-transform-up">
                         <h3>Project Architecture</h3>
                         <ul>
-                            <li>Robust state machine-based game flow</li>
-                            <li>Flexible player input system with AI capability</li>
-                            <li>Advanced terrain manipulation technology</li>
-                            <li>Highly extensible and maintainable codebase</li>
+                            <li>Layered systems (Flow / Input / Turns / Entities / Services)</li>
+                            <li>Game Flow state machine (ScriptableObjects)</li>
+                            <li>Addressables-driven scene loading</li>
+                            <li>Turn flow states (begin, act, resolve, end)</li>
+                            <li>Input routed to the active unit only</li>
                         </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Platform & Requirements</h3>
+                        <p>Windows desktop (tested on 64-bit Windows 11). Offline play; no internet required.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How to Play Section -->
+            <section id="build" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">How to Play</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Controls</h3>
+                        <p>Move and jump during your turn; aim with the cursor; hold and release to fire; use the
+                            inventory toggle and direct slot keys to swap weapons.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Build Download</h3>
+                        <p>Coming soon.</p>
                     </div>
                 </div>
             </section>
@@ -143,22 +188,85 @@
             <!-- Challenges Section -->
             <section id="challenges" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Development Challenges</h2>
-                <p>Documentation of key challenges faced during development and their solutions will be added here as
-                    the project progresses.</p>
 
-                <!-- This will be populated as challenges arise -->
                 <blockquote>
-                    <h5 class="challenge">Project Setup Challenge</h5>
-                    <b>Initial project configuration and environment setup</b>
+                    <h5 class="challenge">Separating global menus from gameplay input without leakage</h5>
+                    <b>Ensuring input contexts do not leak between menu and gameplay states</b>
                     <h5 class="remedy">Solution</h5>
-                    <p>Details about how this was addressed will be added as development progresses</p>
+                    <p>Action maps per state; InputManager disables all maps then enables only the relevant one.</p>
+                </blockquote>
+
+                <blockquote>
+                    <h5 class="challenge">Turn-based control when many units exist in the scene</h5>
+                    <b>Managing turn-based control with multiple units in the scene</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Units read input through an interface and wrapper; Turn Flow gates control to the active unit
+                        only.</p>
+                </blockquote>
+
+                <blockquote>
+                    <h5 class="challenge">Synchronizing weapon explosions, damage, and terrain deformation</h5>
+                    <b>Coordinating explosions, damage application, and terrain deformation</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>Weapons report explosion data; resolution applies distance-based damage; terrain is carved via
+                        TerraformingTerrain2D.</p>
+                </blockquote>
+
+                <blockquote>
+                    <h5 class="challenge">Balancing scope vs. proposal vision (alpha focus)</h5>
+                    <b>Prioritizing core gameplay and systems for a polished alpha deliverable</b>
+                    <h5 class="remedy">Solution</h5>
+                    <p>The capstone deliverable is a focused alpha build, with future enhancements listed below.</p>
                 </blockquote>
             </section>
+
+<!-- Future Enhancements Section -->
+<section id="enhancements" class="version-section hover-transform-up">
+    <h2 class="funnel-display-header">Future Enhancements</h2>
+    <div class="skills-grid">
+        <div class="skill-category hover-transform-up">
+            <h3>Bug Fixes</h3>
+            <p>Fix the inventory UI opening and closing at the start of each unit’s turn, and resolve grounding edge cases
+                (for example, landing on another ant’s head) that can leave a unit stuck.</p>
+        </div>
+        <div class="skill-category hover-transform-up">
+            <h3>Camera</h3>
+            <p>Replace the static camera with a dynamic view that tracks the active unit and smoothly recenters when the
+                next unit becomes active.</p>
+        </div>
+        <div class="skill-category hover-transform-up">
+            <h3>Options Screen</h3>
+            <p>Implement real audio and video settings, wire them to configuration values, and save preferences between
+                sessions.</p>
+        </div>
+        <div class="skill-category hover-transform-up">
+            <h3>Visual Polish</h3>
+            <p>Redraw the ant sprites to feel more cohesive and do an aesthetic pass on menus, inventory, and the results
+                screen.</p>
+        </div>
+        <div class="skill-category hover-transform-up">
+            <h3>Weapons & Tools</h3>
+            <p>Add more weapon types and introduce peace-oriented tools that patch terrain or briefly pin a unit in
+                place.</p>
+        </div>
+        <div class="skill-category hover-transform-up">
+            <h3>Map Editor</h3>
+            <p>Build a simple map editor and support loading and sharing custom maps.</p>
+        </div>
+    </div>
+</section>
+
 
             <!-- Devlogs Section -->
             <section id="devlogs" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Devlogs</h2>
-                <p>Follow the development journey through these detailed devlogs:</p>
+
+                <h3>Alpha Implementation Phase</h3>
+                <p>Check back soon for logs pertaining to the final capstone implementation development.</p>
+
+                <hr>
+                <h3>Proposal Phase</h3>
+                <p>Explore the devlogs from the initial proposal phase below:</p>
 
                 <div class="image-grid">
                     <a href="/blog/antillery/ant-dev-2025-05-16.html" class="project-item hover-transform-up">
@@ -223,6 +331,7 @@
                             <img alt="Antillery Devlog" class="blog-thumbnail" src="/assets/gifs/ant.gif">
                         </div>
                     </a>
+
                     <a href="/blog/antillery/ant-dev-2025-06-02.html" class="project-item hover-transform-up">
                         <h3 class="blog-title">Antillery Devlog #8</h3>
                         <h5 class="blog-date">June 2, 2025</h5>
