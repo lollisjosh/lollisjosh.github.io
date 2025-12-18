@@ -123,6 +123,23 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => console.error('Failed to load pfp component script.'));
     })();
 
+    // Load blog dropdown component
+    (function loadBlogDropdown() {
+        // Only load on pages that have dropdown sections
+        if (!document.querySelector('.dropdown-section')) return;
+        if (window.blogDropdownComponent) {
+            window.blogDropdownComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/blogDropdown.js')
+            .then(() => {
+                if (window.blogDropdownComponent && window.blogDropdownComponent.init) {
+                    window.blogDropdownComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load blog dropdown component script.'));
+    })();
+
 
     // Lazy-load WakaTime charts when their canvas becomes visible
     (function lazyLoadWaka() {
