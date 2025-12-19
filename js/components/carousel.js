@@ -111,6 +111,25 @@
             updateControls(container);
             update(container);
 
+            const prevBtn = container.querySelector('.carousel-btn.prev');
+            const nextBtn = container.querySelector('.carousel-btn.next');
+
+            if (prevBtn && !prevBtn.dataset.bound) {
+                prevBtn.dataset.bound = '1';
+                prevBtn.addEventListener('click', (evt) => {
+                    const c = getContainerFromEvent(evt);
+                    if (c) navigate(c, 'prev');
+                });
+            }
+
+            if (nextBtn && !nextBtn.dataset.bound) {
+                nextBtn.dataset.bound = '1';
+                nextBtn.addEventListener('click', (evt) => {
+                    const c = getContainerFromEvent(evt);
+                    if (c) navigate(c, 'next');
+                });
+            }
+            
             if (autoRotate && images.length > 1) {
                 const timer = setInterval(() => navigate(container, 'next'), intervalMs);
                 autoRotateTimers.push(timer);
@@ -120,19 +139,6 @@
         window.removeEventListener('resize', handleResize);
         window.addEventListener('resize', handleResize);
     }
-
-    // Navigate to the previous image in the carousel
-    global.prevImage = function () {
-        const container = getContainerFromEvent(event);
-        if (container) navigate(container, 'prev');
-    };
-
-    // Navigate to the next image in the carousel
-    global.nextImage = function () {
-        const container = getContainerFromEvent(event);
-        if (container) navigate(container, 'next');
-    };
-
 
     global.carouselComponent = {
         init
