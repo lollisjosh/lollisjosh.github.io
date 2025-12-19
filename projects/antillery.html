@@ -193,7 +193,9 @@
                     </div>
                     <div class="skill-category hover-transform-up">
                         <h3>Gameplay</h3>
-                        <p><strong>A/D</strong>: Move left/right<br><strong>Shift</strong>: Jump<br><strong>I</strong>: Inventory<br><strong>1/2/3</strong>: Select weapon<br><strong>Space</strong>: Charge/shoot</p>
+                        <p><strong>A/D</strong>: Move left/right<br><strong>Shift</strong>: Jump<br><strong>I</strong>:
+                            Inventory<br><strong>1/2/3</strong>: Select weapon<br><strong>Space</strong>: Charge/shoot
+                        </p>
                     </div>
                     <div class="skill-category hover-transform-up">
                         <h3>Results Screen</h3>
@@ -202,100 +204,118 @@
                 </div>
             </section>
 
-<!-- Challenges Section -->
-<section id="challenges" class="version-section hover-transform-up">
-    <h2 class="funnel-display-header">Development Challenges</h2>
+            <!-- Challenges Section -->
+            <section id="challenges" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Development Challenges</h2>
 
-    <div class="skills-grid">
-        <div class="skill-category hover-transform-up">
-            <h3>State-Scoped Input Maps</h3>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-            <p>Menus and gameplay need different bindings and behaviors (navigation and selection versus movement and aiming). Without strict switching, inputs can leak and trigger actions in the wrong context.</p>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>State-Scoped Input Maps</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Menus and gameplay need different bindings and behaviors (navigation and selection versus
+                            movement and aiming). Without strict switching, inputs can leak and trigger actions in the
+                            wrong context.</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-            <p>Mapped input by Game Flow state. On every state transition, the InputManager disables all action maps and enables only the one for the active state.</p>
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-        </div>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Mapped input by Game Flow state. On every state transition, the InputManager disables all
+                            action maps and enables only the one for the active state.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
 
-        <div class="skill-category hover-transform-up">
-            <h3>Active-Unit Input Gating</h3>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-            <p>Multiple ants run in the scene, but only the current unit should respond to movement and weapon input. Early on, more than one unit could react to the same controls.</p>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Active-Unit Input Gating</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Multiple ants run in the scene, but only the current unit should respond to movement and
+                            weapon input. Early on, more than one unit could react to the same controls.</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-            <p>Routed gameplay input through an IInput abstraction and a ControllableInput wrapper. The Turn Flow system enables input only for the active unit each turn, while all other units ignore player control.</p>
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-        </div>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Routed gameplay input through an IInput abstraction and a ControllableInput wrapper. The Turn
+                            Flow system enables input only for the active unit each turn, while all other units ignore
+                            player control.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
 
-        <div class="skill-category hover-transform-up">
-            <h3>Explosion Resolution Ordering</h3>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-            <p>Explosions must stay consistent across damage, terrain deformation, and collision updates. If the order is wrong, craters, colliders, and damage timing fall out of sync.</p>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Explosion Resolution Ordering</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Explosions must stay consistent across damage, terrain deformation, and collision updates. If
+                            the order is wrong, craters, colliders, and damage timing fall out of sync.</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-            <p>Weapons publish explosion data (position, radius, damage). The resolution phase applies distance-based damage, then uses TerraformingTerrain2D to carve terrain and refresh colliders.</p>
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-        </div>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Weapons publish explosion data (position, radius, damage). The resolution phase applies
+                            distance-based damage, then uses TerraformingTerrain2D to carve terrain and refresh
+                            colliders.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
 
-        <div class="skill-category hover-transform-up">
-            <h3>Alpha Scope Lock</h3>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-            <p>The proposal included more stretch features than a single semester could support. The priority was shipping a complete, stable alpha match loop with the core systems working together.</p>
-            <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Alpha Scope Lock</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>The proposal included more stretch features than a single semester could support. The
+                            priority was shipping a complete, stable alpha match loop with the core systems working
+                            together.</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-            <p>Focused delivery on turn flow, state-driven input routing, destructible terrain, and a small core weapon set (projectile weapon, grenade, and TNT), then captured the rest as a roadmap below.</p>
-            <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-        </div>
-    </div>
-</section>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Focused delivery on turn flow, state-driven input routing, destructible terrain, and a small
+                            core weapon set (projectile weapon, grenade, and TNT), then captured the rest as a roadmap
+                            below.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+                </div>
+            </section>
 
 
 
-<!-- Future Enhancements Section -->
-<section id="enhancements" class="version-section hover-transform-up">
-    <h2 class="funnel-display-header">Future Enhancements</h2>
-    <div class="skills-grid">
-        <div class="skill-category hover-transform-up">
-            <h3>Bug Fixes</h3>
-            <p>Fix the inventory UI opening and closing at the start of each unit’s turn, and resolve grounding edge cases
-                (for example, landing on another ant’s head) that can leave a unit stuck.</p>
-        </div>
-        <div class="skill-category hover-transform-up">
-            <h3>Camera</h3>
-            <p>Replace the static camera with a dynamic view that tracks the active unit and smoothly recenters when the
-                next unit becomes active.</p>
-        </div>
-        <div class="skill-category hover-transform-up">
-            <h3>Options Screen</h3>
-            <p>Implement real audio and video settings, wire them to configuration values, and save preferences between
-                sessions.</p>
-        </div>
-        <div class="skill-category hover-transform-up">
-            <h3>Visual Polish</h3>
-            <p>Redraw the ant sprites to feel more cohesive and do an aesthetic pass on menus, inventory, and the results
-                screen.</p>
-        </div>
-        <div class="skill-category hover-transform-up">
-            <h3>Weapons & Tools</h3>
-            <p>Add more weapon types and introduce peace-oriented tools that patch terrain or briefly pin a unit in
-                place.</p>
-        </div>
-        <div class="skill-category hover-transform-up">
-            <h3>Map Editor</h3>
-            <p>Build a simple map editor and support loading and sharing custom maps.</p>
-        </div>
-    </div>
-</section>
+            <!-- Future Enhancements Section -->
+            <section id="enhancements" class="version-section hover-transform-up">
+                <h2 class="funnel-display-header">Future Enhancements</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Bug Fixes</h3>
+                        <p>Fix the inventory UI opening and closing at the start of each unit’s turn, and resolve
+                            grounding edge cases
+                            (for example, landing on another ant’s head) that can leave a unit stuck.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Camera</h3>
+                        <p>Replace the static camera with a dynamic view that tracks the active unit and smoothly
+                            recenters when the
+                            next unit becomes active.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Options Screen</h3>
+                        <p>Implement real audio and video settings, wire them to configuration values, and save
+                            preferences between
+                            sessions.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Visual Polish</h3>
+                        <p>Redraw the ant sprites to feel more cohesive and do an aesthetic pass on menus, inventory,
+                            and the results
+                            screen.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Weapons & Tools</h3>
+                        <p>Add more weapon types and introduce peace-oriented tools that patch terrain or briefly pin a
+                            unit in
+                            place.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Map Editor</h3>
+                        <p>Build a simple map editor and support loading and sharing custom maps.</p>
+                    </div>
+                </div>
+            </section>
 
 
             <!-- Devlogs Section -->
             <section id="devlogs" class="version-section hover-transform-up">
                 <h2 class="funnel-display-header">Devlogs</h2>
-                
+
                 <div class="dropdown-section">
                     <div class="dropdown-header" data-dropdown="devlogs">
                         <h3>View All Devlogs</h3>
@@ -303,14 +323,22 @@
                     </div>
                     <div class="dropdown-content" id="devlogs-content">
                         <ul>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-16.html">Antillery: A 2D turn-based artillery game (May 16, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-17.html">Choosing a Unity Version (May 17, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-18.html">Unity Packages in Consideration (May 18, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-25.html">Game Flow State System (May 25, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-27.html">Revised Game Flow (May 27, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-28.html">Development Roadmap (May 28, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-05-31.html">Introduction to Antillery (May 31, 2025)</a></li>
-                            <li><a href="/blog/antillery/ant-dev-2025-06-02.html">Who is Antillery For? (June 2, 2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-16.html">Antillery: A 2D turn-based artillery
+                                    game (May 16, 2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-17.html">Choosing a Unity Version (May 17,
+                                    2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-18.html">Unity Packages in Consideration (May
+                                    18, 2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-25.html">Game Flow State System (May 25,
+                                    2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-27.html">Revised Game Flow (May 27, 2025)</a>
+                            </li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-28.html">Development Roadmap (May 28, 2025)</a>
+                            </li>
+                            <li><a href="/blog/antillery/ant-dev-2025-05-31.html">Introduction to Antillery (May 31,
+                                    2025)</a></li>
+                            <li><a href="/blog/antillery/ant-dev-2025-06-02.html">Who is Antillery For? (June 2,
+                                    2025)</a></li>
                         </ul>
                     </div>
                 </div>
