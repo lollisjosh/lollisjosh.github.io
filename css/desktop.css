@@ -534,6 +534,8 @@ canvas {
   object-position: center;
   display: block;
   cursor: pointer;
+  box-sizing: border-box;
+  padding: 2.5rem;
 }
 
 .carousel-btn {
@@ -588,8 +590,6 @@ canvas {
 }
 
 
-
-}
 
 /* Wakatime stats styling */
 #wakatime-site-hours {

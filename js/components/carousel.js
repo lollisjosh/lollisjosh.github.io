@@ -22,13 +22,13 @@
         container.dataset.carouselIndex = String(index);
     }
 
-    function update(container) {
-        const strip = getStrip(container);
-        if (!strip) return;
-        const index = getIndex(container);
-        const stepWidth = strip.clientWidth;
-        strip.style.transform = `translateX(-${index * stepWidth}px)`;
-    }
+function update(container) {
+    const strip = getStrip(container);
+    if (!strip) return;
+    const index = getIndex(container);
+    const stepWidth = strip.getBoundingClientRect().width;
+    strip.style.transform = `translate3d(-${index * stepWidth}px, 0, 0)`;
+}
 
     function navigate(container, direction) {
         const count = getCount(container);
