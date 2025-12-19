@@ -94,10 +94,11 @@ a {
 .hover-transform-left {
   transition: var(--transition-standard);
   border: 2px solid transparent;
+  --hover-translate-x: -5px;
 }
 
 .hover-transform-left:hover {
-  transform: translateX(-5px);
+  transform: translateX(var(--hover-translate-x));
   box-shadow: var(--shadow-md);
   border: 2px solid var(--primary);
 }
@@ -528,10 +529,11 @@ canvas {
 .carousel-images img {
   width: 100%;
   height: 100%;
-  flex: 0 0 100%;  /* Each image takes exactly 100% width */
-  object-fit: contain;  /* Scale to fit while maintaining aspect ratio */
-  object-position: center;  /* Center images within bounds */
+  flex: 0 0 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
+  cursor: pointer;
 }
 
 .carousel-btn {
@@ -548,6 +550,7 @@ canvas {
 
 .prev {
   left: 10px;
+  --hover-translate-x: 5px;
 }
 
 .next {

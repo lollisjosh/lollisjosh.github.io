@@ -66,13 +66,6 @@
             const images = carouselEl.querySelectorAll('img');
             if (!images.length) return;
 
-            images.forEach(img => {
-                img.addEventListener('click', () => {
-                    const full = img.getAttribute('data-full-res') || img.src;
-                    window.open(full, '_blank');
-                });
-            });
-
             setIndex(container, 0);
             update(container);
 
