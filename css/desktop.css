@@ -511,6 +511,7 @@ canvas {
 .carousel-container {
   width: 100%;
   max-width: 800px;
+  /* aspect-ratio can be set dynamically by JavaScript, fallback to viewport height */
   height: 70vh;
   position: relative;
   margin: 2rem auto;
@@ -527,16 +528,15 @@ canvas {
 .carousel-images img {
   width: 100%;
   height: 100%;
-  flex-shrink: 0;
-  flex-grow: 0;
-  object-fit: contain;
+  flex: 0 0 100%;  /* Each image takes exactly 100% width */
+  object-fit: contain;  /* Scale to fit while maintaining aspect ratio */
+  object-position: center;  /* Center images within bounds */
   display: block;
 }
 
 .carousel-btn {
   position: absolute;
   top: 50%;
-  /* transform: translateY(-50%); */
   background-color: rgba(0, 0, 0, 0.5);
   color: var(--white);
   padding: 10px;
@@ -576,7 +576,7 @@ canvas {
   display: block;
 }
 
-/* Fix video hover border behavior */
+
 .iframe-border.hover-transform-up:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
@@ -584,37 +584,8 @@ canvas {
   border-radius: var(--border-radius-md);  /* Preserve border radius on hover */
 }
 
-/* Add medium-sized carousel class */
-.carousel-container-medium {
-  width: 50%;
-  height: 40vh;  /* Reduce height proportionally */
-  margin: 0 auto;  /* Center the carousel */
-  border-radius: var(--border-radius-md);  /* Add border radius to match other containers */
-  overflow: hidden;  /* Keep images within the rounded corners */
-  padding: 0;  /* Remove padding that's causing overflow issues */
-  box-sizing: border-box;
-}
 
-/* Ensure carousel images fit properly in the smaller container */
-.carousel-container-medium .carousel-images {
-  width: 100%;
-  height: 100%;
-}
 
-.carousel-container-medium .carousel-images img {
-  max-height: 100%;
-  width: 100%;  /* Set to 100% to ensure full width */
-  min-width: 100%;  /* Force exact width */
-  flex: 0 0 100%;  /* Don't grow or shrink */
-  object-fit: contain;
-}
-
-/* Make sure hover-transform-up preserves border-radius when applied to carousels */
-.carousel-container.hover-transform-up:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border: 2px solid var(--primary);
-  border-radius: var(--border-radius-md);  /* Preserve border radius on hover */
 }
 
 /* Wakatime stats styling */

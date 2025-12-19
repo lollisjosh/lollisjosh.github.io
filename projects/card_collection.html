@@ -3,7 +3,7 @@
     Author: Josh Lollis
     Date: December 3, 2024
     CPSC 349 Portfolio Final Project
-    
+
     Documentation page for the Pokémon Card Collection desktop application,
     showcasing development progress and technical implementation
 -->
@@ -21,15 +21,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome for icons -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style"
+        crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
- <!-- Mobile CSS (screens ≤ 768px) -->
+
+    <!-- Mobile CSS (screens ≤ 768px) -->
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
+
     <!-- Desktop CSS (screens ≥ 769px) -->
     <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
 </head>
@@ -69,9 +70,8 @@
                     <span class="toc-icon">🖼️</span>
                     <span class="toc-title">Gallery</span>
                 </a>
-                <a href="https://github.com/TelloViz/Card-Collection" 
-                   target="_blank" 
-                   class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                <a href="https://github.com/TelloViz/Card-Collection" target="_blank"
+                    class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-icon fab fa-github"></span>
                     <span class="toc-title">Repository</span>
                 </a>
@@ -86,8 +86,10 @@
             <section id="overview" class="version-section hover-transform-up">
                 <!-- Project overview and tech stack -->
                 <h2 class="funnel-display-header">Project Overview</h2>
-                <p>A desktop application for discovering and collecting Pokémon cards. Features include API-driven card searching, a "discover" mode simulating wild Pokémon encounters, and collection management. The application emphasizes minimal local storage, with dynamic resource loading at runtime.</p>
-                
+                <p>A desktop application for discovering and collecting Pokémon cards. Features include API-driven card
+                    searching, a "discover" mode simulating wild Pokémon encounters, and collection management. The
+                    application emphasizes minimal local storage, with dynamic resource loading at runtime.</p>
+
                 <h3>Technologies Used</h3>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
@@ -139,27 +141,40 @@
             <section id="challenges" class="version-section hover-transform-up">
                 <!-- Development challenges and solutions -->
                 <h2 class="funnel-display-header">Challenges Faced</h2>
-                
-                <blockquote class="hover-transform-up">
-                    <h5 class="challenge">Dynamic Resource Management</h5>
-                    <b>Efficiently loading and managing card images and UI assets at runtime</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Implemented asynchronous loading system with caching mechanisms</p>
-                </blockquote>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Dynamic Resource Management</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Efficiently loading and managing card images and UI assets at runtime</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-                <blockquote class="hover-transform-up">
-                    <h5 class="challenge">Qt/Python Integration</h5>
-                    <b>Complex interactions between Python backend and QML frontend</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Developed robust signal/slot system for seamless data flow</p>
-                </blockquote>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Implemented asynchronous loading system with caching mechanisms</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
 
-                <blockquote class="hover-transform-up">
-                    <h5 class="challenge">API Rate Limiting</h5>
-                    <b>Managing API request limits while maintaining responsiveness</b>
-                    <h5 class="remedy">Solution</h5>
-                    <p>Implemented request queueing and local data caching</p>
-                </blockquote>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Qt/Python Integration</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Complex interactions between Python backend and QML frontend</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Developed robust signal/slot system for seamless data flow</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>API Rate Limiting</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Managing API request limits while maintaining responsiveness</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Implemented request queueing and local data caching</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+                </div>
             </section>
 
             <section id="outcomes" class="version-section hover-transform-up">
@@ -192,8 +207,8 @@
                 <h2 class="funnel-display-header">Demo Videos</h2>
                 <div class="video-section">
                     <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" src="https://www.youtube.com/embed/R87BgCDg6Oo" 
-                                allowfullscreen></iframe>
+                        <iframe class="project-video" src="https://www.youtube.com/embed/R87BgCDg6Oo"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
@@ -201,51 +216,89 @@
             <section id="gallery" class="version-section hover-transform-up">
                 <!-- Development progress gallery with version history -->
                 <h2 class="funnel-display-header">Development Gallery</h2>
-                
-                <!-- Version 1: Initial mockup -->
+
+                <!-- Version 1: Initial mockup (single image, NO carousel) -->
                 <section class="version-section hover-transform-up">
-                    <!-- Initial design screenshots -->
-                    <h2 class="funnel-display-header">Version 1 - Initial Mockup</h2>
-                    <div class="image-grid">
-                        <img src="/assets/images/card-collection/version1-mockup.png" alt="Initial Mockup Design" class="hover-scale">
+                    <h3 class="funnel-display-header">Version 1 - Initial Mockup</h3>
+                    <div class="image-grid" style="grid-template-columns: 1fr;">
+                        <img src="/assets/images/card-collection/version1-mockup.png" alt="Initial Mockup Design"
+                            class="img-thumbnail hover-scale"
+                            style="max-width: 900px; margin: 0 auto;"
+                            data-full-res="/assets/images/card-collection/version1-mockup.png"
+                            loading="lazy">
                     </div>
                 </section>
 
-                <!-- Version 2: Basic UI -->
+                <!-- Version 2: Basic UI (single image, NO carousel) -->
                 <section class="version-section hover-transform-up">
-                    <!-- UI implementation screenshots -->
-                    <h2 class="funnel-display-header">Version 2 - Basic UI Implementation</h2>
-                    <div class="image-grid">
-                        <img src="/assets/images/card-collection/version2-ui.png" alt="Basic UI Implementation" class="hover-scale">
+                    <h3 class="funnel-display-header">Version 2 - Basic UI Implementation</h3>
+                    <div class="image-grid" style="grid-template-columns: 1fr;">
+                        <img src="/assets/images/card-collection/version2-ui.png" alt="Basic UI Implementation"
+                            class="img-thumbnail hover-scale"
+                            style="max-width: 900px; margin: 0 auto;"
+                            data-full-res="/assets/images/card-collection/version2-ui.png"
+                            loading="lazy">
                     </div>
                 </section>
 
-                <!-- Version 3: Search features -->
+                <!-- Version 3: Search features (multiple images, USE carousel) -->
                 <section class="version-section hover-transform-up">
-                    <!-- Search functionality screenshots -->
-                    <h2 class="funnel-display-header">Version 3 - Search Functionality</h2>
-                    <div class="image-grid">
-                        <img src="/assets/images/card-collection/version3-ui.png" alt="Version 3 UI" class="hover-scale">
-                        <img src="/assets/images/card-collection/version3-displaycard.png" alt="Card Display Feature" class="hover-scale">
-                        <img src="/assets/images/card-collection/version3-displayresults.png" alt="Search Results Display" class="hover-scale">
-                        <img src="/assets/images/card-collection/version3-setslist.png" alt="Sets List Feature" class="hover-scale">
-                        <img src="/assets/images/card-collection/version3-tooltip.png" alt="Tooltip Feature" class="hover-scale">
+                    <h3 class="funnel-display-header">Version 3 - Search Functionality</h3>
+                    <div class="carousel-container carousel-container-medium">
+                        <div class="carousel-images">
+                            <img src="/assets/images/card-collection/version3-ui.png" alt="Version 3 UI"
+                                data-full-res="/assets/images/card-collection/version3-ui.png" loading="lazy">
+                            <img src="/assets/images/card-collection/version3-displaycard.png" alt="Card Display Feature"
+                                data-full-res="/assets/images/card-collection/version3-displaycard.png" loading="lazy">
+                            <img src="/assets/images/card-collection/version3-displayresults.png"
+                                alt="Search Results Display"
+                                data-full-res="/assets/images/card-collection/version3-displayresults.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version3-setslist.png" alt="Sets List Feature"
+                                data-full-res="/assets/images/card-collection/version3-setslist.png" loading="lazy">
+                            <img src="/assets/images/card-collection/version3-tooltip.png" alt="Tooltip Feature"
+                                data-full-res="/assets/images/card-collection/version3-tooltip.png" loading="lazy">
+                        </div>
+                        <button class="carousel-btn prev hover-transform-left" onclick="prevImage()">&#10094;</button>
+                        <button class="carousel-btn next hover-transform-left" onclick="nextImage()">&#10095;</button>
                     </div>
                 </section>
 
-                <!-- Version 4: Advanced features -->
+                <!-- Version 4: Advanced features (multiple images, USE carousel) -->
                 <section class="version-section hover-transform-up">
-                    <!-- Final version screenshots -->
-                    <h2 class="funnel-display-header">Version 4 - Discover, Modularized, and 3D View</h2>
-                    <div class="image-grid">
-                        <img src="/assets/images/card-collection/version4-searchui.png" alt="Search UI" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-3dcard.png" alt="3D Card View" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-discoverresults.png" alt="Discover Results" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-modularTypeBlock.png" alt="Type Block Component" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-modularAbilityBlock.png" alt="Ability Block Component" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-modularAttackBlock.png" alt="Attack Block Component" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-modularSubTypeBlock.png" alt="SubType Block Component" class="hover-scale">
-                        <img src="/assets/images/card-collection/version4-modularTypefilters.png" alt="Type Filters Component" class="hover-scale">
+                    <h3 class="funnel-display-header">Version 4 - Discover, Modularized, and 3D View</h3>
+                    <div class="carousel-container carousel-container-medium">
+                        <div class="carousel-images">
+                            <img src="/assets/images/card-collection/version4-searchui.png" alt="Search UI"
+                                data-full-res="/assets/images/card-collection/version4-searchui.png" loading="lazy">
+                            <img src="/assets/images/card-collection/version4-3dcard.png" alt="3D Card View"
+                                data-full-res="/assets/images/card-collection/version4-3dcard.png" loading="lazy">
+                            <img src="/assets/images/card-collection/version4-discoverresults.png" alt="Discover Results"
+                                data-full-res="/assets/images/card-collection/version4-discoverresults.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version4-modularTypeBlock.png"
+                                alt="Type Block Component"
+                                data-full-res="/assets/images/card-collection/version4-modularTypeBlock.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version4-modularAbilityBlock.png"
+                                alt="Ability Block Component"
+                                data-full-res="/assets/images/card-collection/version4-modularAbilityBlock.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version4-modularAttackBlock.png"
+                                alt="Attack Block Component"
+                                data-full-res="/assets/images/card-collection/version4-modularAttackBlock.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version4-modularSubTypeBlock.png"
+                                alt="SubType Block Component"
+                                data-full-res="/assets/images/card-collection/version4-modularSubTypeBlock.png"
+                                loading="lazy">
+                            <img src="/assets/images/card-collection/version4-modularTypefilters.png"
+                                alt="Type Filters Component"
+                                data-full-res="/assets/images/card-collection/version4-modularTypefilters.png"
+                                loading="lazy">
+                        </div>
+                        <button class="carousel-btn prev hover-transform-left" onclick="prevImage()">&#10094;</button>
+                        <button class="carousel-btn next hover-transform-left" onclick="nextImage()">&#10095;</button>
                     </div>
                 </section>
             </section>
@@ -257,7 +310,7 @@
     <div id="imageModal" class="modal">
         <img id="modalImage" src="" alt="">
     </div>
-    
+
     <script src="/scripts.js"></script>
 </body>
 
