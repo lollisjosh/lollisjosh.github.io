@@ -508,6 +508,10 @@ canvas {
     transition: var(--transition-fast); /* Smooth transition effect */
 }
 
+.carousel-single .carousel-btn {
+  display: none;
+}
+
 /* Carousel styling for desktop */
 .carousel-container {
   width: 100%;
