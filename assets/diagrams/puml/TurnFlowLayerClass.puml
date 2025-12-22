@@ -1,0 +1,88 @@
+@startuml Turn Flow Layer Class Diagram
+left to right direction
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam class {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+    AttributeFontColor #540d6e
+    StereotypeFontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+class TurnFlowStateMachine <<MonoBehaviour>> {
+    + Instance : TurnFlowStateMachine
+    - stateMachine : SM.StateMachine
+    - turnDuration : float
+    - teamAUnits : GameObject[]
+    - teamBUnits : GameObject[]
+    + CurrentTeam : Team
+    + PlayerHasFired : bool
+    + TurnTimedOut : bool
+    + OnPlayerFired()
+    + OnExplosionFinished()
+    + IsGameOver() : bool
+    + AdvanceTurn()
+}
+
+class "SM.StateMachine" as SMStateMachine {
+    - states : List<SMState>
+    + ActiveState : SMState
+    + PreviousState : SMState
+    + OnStateChange : Action<SMState>
+    + AddState(state : SMState)
+    + ChangeState(name : string)
+    + UpdateActiveState()
+}
+
+abstract class "SM.State" as SMState <<Abstract>> {
+    + Name : string
+    + {abstract} OnEnter()
+    + {abstract} OnExit()
+    + {abstract} Update()
+    + {abstract} FixedUpdate()
+}
+
+class TurnBeginState {
+    + OnEnter()
+    + OnExit()
+}
+
+class WaitingForPlayerActionState {
+    + OnEnter()
+    + Update()
+    + OnExit()
+}
+
+class WaitingForResolutionState {
+    + SetExplosionData()
+    + OnEnter()
+    + Update()
+}
+
+class TurnEndState {
+    + OnEnter()
+}
+
+class GameOverState {
+    + OnEnter()
+}
+
+' Inheritance
+TurnBeginState --|> SMState
+WaitingForPlayerActionState --|> SMState
+WaitingForResolutionState --|> SMState
+TurnEndState --|> SMState
+GameOverState --|> SMState
+
+' Core relationships (no multiplicity labels)
+TurnFlowStateMachine --> SMStateMachine : uses
+SMStateMachine o-- SMState : manages
+SMStateMachine --> SMState : ActiveState
+
+
+@enduml

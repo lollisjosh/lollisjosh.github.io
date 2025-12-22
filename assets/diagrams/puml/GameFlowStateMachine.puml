@@ -1,0 +1,32 @@
+@startuml Game Flow State Machine
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam state {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+}
+
+skinparam defaultFontName Arial
+
+[*] --> TelloVisionSplashState
+
+TelloVisionSplashState --> TitleScreenState : SplashDurationEvent\n(Splash timer lapses)
+
+TitleScreenState --> MainMenuState : AnyKeyPressedEvent\n(Any key pressed)
+
+MainMenuState --> PlayingState : PlayPressedEvent\n("Start Game" selected)
+MainMenuState --> OptionsState : OptionsPressedEvent\n("Options" selected)
+MainMenuState --> QuitState : QuitPressedEvent\n("Quit" selected)
+
+OptionsState --> MainMenuState : BackToMainMenuEvent\n("Back" selected)
+
+PlayingState --> GameOverState : GameOverEvent\n(Game over detected)
+
+GameOverState --> MainMenuState : BackToMainMenuEvent\n("Return to Main Menu" selected)
+
+QuitState --> [*]
+
+@enduml

@@ -1,0 +1,69 @@
+@startuml Entity Layer - Weapon System
+top to bottom direction
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam class {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+    AttributeFontColor #540d6e
+    StereotypeFontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+abstract class Weapon <<Abstract>> {
+    # SpawnPoint : Transform
+    + {abstract} Shoot()
+    + Equip()
+    + Hide()
+}
+
+abstract class ChargeableWeapon <<Abstract, ICoroutineRunner>> {
+    - _weaponCharge : WeaponCharge
+    - _weaponChargeView : WeaponChargeView
+    # _minDamage : float
+    # _maxDamage : float
+    + Shoot()
+    # {abstract} OnCharged(energy, normalized)
+}
+
+class ChargeableProjectileWeapon {
+    - _projectile : Projectile
+    - _factory : MonoBehaviourFactory
+    # OnCharged(energy, normalized)
+}
+
+class TNT {
+    - _tntPrefab : GameObject
+    - _explosionPrefab : GameObject
+    - _dropOffset : float
+    # OnCharged(energy, normalized)
+    - ExplodeAfterDelay()
+}
+
+class WeaponHolder {
+    - _weapon : Weapon
+    + Current : Weapon
+    + SetWeapon(weapon : Weapon)
+    + Shoot()
+}
+
+class WeaponShooting <<IUpdate>> {
+    - _weaponHolder : WeaponHolder
+    - _isCharging : bool
+    + Update()
+}
+
+' Inheritance
+ChargeableWeapon --|> Weapon
+ChargeableProjectileWeapon --|> ChargeableWeapon
+TNT --|> ChargeableWeapon
+
+' Relationships
+WeaponShooting --> WeaponHolder : uses
+WeaponHolder --> Weapon : holds
+
+@enduml

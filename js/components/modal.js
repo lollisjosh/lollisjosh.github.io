@@ -1,6 +1,6 @@
 (function (global) {
     function init(options = {}) {
-        const gridSelector = options.gridSelector || '.image-grid img, .carousel-images img';
+        const gridSelector = options.gridSelector || 'img[data-full-res]';
         const modalSelector = options.modalSelector || '#imageModal';
         const modalImageSelector = options.modalImageSelector || '#modalImage';
 

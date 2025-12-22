@@ -1,0 +1,81 @@
+@startuml Game Flow Layer Class Diagram
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+' Class styling
+skinparam class {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+    AttributeFontColor #540d6e
+    StereotypeFontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+class GameFlowManager <<Singleton>> {
+    - states : Dictionary<string, State>
+    - gameEvents : Dictionary<string, GameEvent>
+    - stateMachine : StateMachine
+    + Instance : GameFlowManager
+    + LoadState(key : string)
+    + LoadGameEvent(key : string)
+    - HandleStateChange(state : State)
+}
+
+class StateMachine <<MonoBehaviour>> {
+    - currentState : State
+    - activeTransitions : List<StateTransition>
+    - callbacks : Dictionary<StateTransition, Action>
+    + OnStateChange : Action<State>
+    + SetInitialState(state : State)
+    + GoToState(state : State)
+    - RegisterTransitions()
+    - UnregisterTransitions()
+}
+
+class State <<ScriptableObject>> {
+    + transitions : List<StateTransition>
+    + OnEnter : UnityEvent
+    + OnExit : UnityEvent
+}
+
+class GameEvent <<ScriptableObject>> {
+    - _listeners : List<Action>
+    + RegisterListener(listener : Action)
+    + UnregisterListener(listener : Action)
+    + Raise()
+}
+
+class StateTransition <<Serializable>> {
+    + triggerEventName : string
+    + nextStateName : string
+    + triggerEvent : GameEvent
+    + nextState : State
+}
+
+class AddressableSceneDriver <<MonoBehaviour>> {
+    + mappings : List<AddressableSceneMappingByName>
+    - handles : Dictionary<State, AsyncOperationHandle>
+    + RegisterStateListeners()
+    - OnStateEnter(state : State)
+    - OnStateExit(state : State)
+}
+
+' Relationships (no multiplicity labels)
+GameFlowManager --> StateMachine : manages
+GameFlowManager o-- State : loads
+GameFlowManager o-- GameEvent : loads
+
+StateMachine --> State : currentState
+StateMachine --> StateTransition : registers listeners
+
+State *-- StateTransition : contains
+StateTransition --> GameEvent : triggerEvent
+StateTransition --> State : nextState
+
+AddressableSceneDriver ..> State : listens to\nOnEnter/OnExit
+AddressableSceneDriver ..> GameFlowManager : accesses states
+
+@enduml

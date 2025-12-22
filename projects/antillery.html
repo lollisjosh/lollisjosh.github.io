@@ -3,6 +3,9 @@
     Author: Josh Lollis
 
     Documentation hub for the Antillery senior capstone project
+
+    Note: Single-image carousels are used for consistent styling, sizing, and clickability features across all diagrams.
+    This is a temporary styling that will be refactored later. 
 -->
 
 <!DOCTYPE html>
@@ -38,40 +41,44 @@
     <main>
         <div class="content-container">
             <h1 class="funnel-display-header">Antillery</h1>
-            <h4>Senior Capstone Project</h4>
+            <h4 class="funnel-display-header">Senior Capstone Project</h4>
 
             <!-- Navigation TOC -->
             <nav class="toc-nav">
                 <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
+                    <!-- <span class="toc-icon">📝</span> -->
                     <span class="toc-title">Overview</span>
                 </a>
                 <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">💻</span>
+                    <!-- <span class="toc-icon">💻</span> -->
                     <span class="toc-title">Build Download</span>
                 </a>
                 <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🛠️</span>
+                    <!-- <span class="toc-icon">🛠️</span> -->
                     <span class="toc-title">Technologies</span>
                 </a>
+                <a href="#architecture" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <!-- <span class="toc-icon">🏗️</span> -->
+                    <span class="toc-title">Architecture</span>
+                </a>
                 <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">⚙️</span>
+                    <!-- <span class="toc-icon">⚙️</span> -->
                     <span class="toc-title">Implementation</span>
                 </a>
                 <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔧</span>
+                    <!-- <span class="toc-icon">🔧</span> -->
                     <span class="toc-title">Challenges</span>
                 </a>
                 <a href="#controls" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎮</span>
+                    <!-- <span class="toc-icon">🎮</span> -->
                     <span class="toc-title">Controls</span>
                 </a>
                 <a href="#enhancements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🚀</span>
+                    <!-- <span class="toc-icon">🚀</span> -->
                     <span class="toc-title">Enhancements</span>
                 </a>
                 <a href="#devlogs" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📓</span>
+                    <!-- <span class="toc-icon">📓</span> -->
                     <span class="toc-title">Devlogs</span>
                 </a>
                 <a href="https://github.com/TelloViz/Antillery" target="_blank"
@@ -87,32 +94,35 @@
             </a>
 
             <!-- Project Overview Section -->
-            <section id="overview" class="version-section hover-transform-up">
+            <section id="overview" class="section-level-1">
                 <h2 class="funnel-display-header">Project Overview</h2>
-                <p>Antillery is a 2D turn-based artillery game developed in Unity as my senior capstone project. It is
-                    designed for offline two-player local play on a single machine. Two teams of ants battle across
-                    destructible terrain, taking turns moving, jumping, selecting weapons, and firing while the map
-                    changes around them.</p>
+                <p>Antillery is a 2D, turn-based artillery game I built in Unity using C# for my senior capstone at
+                    CSUF. I wanted it to be an extensible sandbox that I could keep developing after graduation. The
+                    Worms titles by Team17 brought me a lot of joy with my family as a kid, so I wanted to celebrate the
+                    couch multiplayer experience.</p>
 
-                <p>The alpha build focuses on clean system boundaries and extensibility: a ScriptableObject-driven game
-                    flow coordinates scene transitions, a runtime turn-flow state machine enforces the match loop, and
-                    input is gated so only the active unit responds. Weapons share a common charge-to-fire framework,
-                    with an inventory UI designed for fast selection.</p>
+                <section class="section-level-2">
+                        <img src="/assets/images/antillery/title-screen.png" alt="Antillery title screen"
+                            data-full-res="/assets/images/antillery/title-screen.png" class="square-image"
+                            loading="lazy">
+                </section>
 
-                <div class="image-grid" style="grid-template-columns: 1fr;">
-                    <img src="/assets/images/antillery/title-screen.png" alt="Antillery title screen"
-                        class="img-thumbnail hover-scale" style="max-width: 300px; margin: 0 auto;">
-                </div>
+                <p>I proposed Antillery in Spring 2025 with a very ambitious scope and a long-term vision of evolving
+                    what makes Worms-style games so fun. During the implementation period in Fall 2025, I had to
+                    significantly reduce the scope to ship a viable MVP alpha build. The original proposal remains the
+                    long-term direction for the project, and it now serves as my roadmap for moving forward. During a
+                    match, two teams take turns moving, aiming, and blowing holes in a destructible map using an array
+                    of artillery options.</p>
             </section>
 
             <!-- Build Download Section -->
-            <section id="build" class="version-section hover-transform-up">
+            <section id="build" class="section-level-1">
                 <h2 class="funnel-display-header">Build Download</h2>
                 <p>Coming soon.</p>
             </section>
 
             <!-- Technologies Used Section -->
-            <section id="technologies" class="version-section hover-transform-up">
+            <section id="technologies" class="section-level-1">
                 <h2 class="funnel-display-header">Technologies Used</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
@@ -137,9 +147,148 @@
                 </div>
             </section>
 
+            <!-- Architecture Section -->
+            <section id="architecture" class="section-level-1">
+                <h2 class="funnel-display-header">Architecture</h2>
+
+                <section class="section-level-2">
+                    <h3 class="funnel-display-header">Game Flow System</h3>
+                    <p>Architecturally, everything revolves around two state machines. The first is a software-level
+                        state
+                        machine (GameFlowStateMachine) built with ScriptableObjects. Each state represents a screen or
+                        mode,
+                        such as splash and title screens, menus, playing mode, and the game-over results screen. Each
+                        ScriptableObject state is associated with a Unity scene, which I load and unload asynchronously
+                        using Unity Addressables. Scene controller objects raise ScriptableObject events that drive
+                        transitions in the Game Flow layer.</p>
+
+
+                        <section class="section-level-3">
+                    <h4 class="funnel-display-header">Game Flow State Machine</h4>
+
+                    
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/GameFlowStateMachine.png" alt="Game Flow State Machine Diagram"
+                            data-full-res="/assets/diagrams/GameFlowStateMachine.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+</section>
+                        <section class="section-level-3">
+
+                    <h4 class="funnel-display-header">Game Flow Layer Class Diagram</h4>
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/GameFlowLayerClass.png" alt="Game Flow Layer Class Diagram"
+                            data-full-res="/assets/diagrams/GameFlowLayerClass.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+                    </section>
+                </section>
+
+
+                <section class="section-level-2">
+                    <h3 class="funnel-display-header">Turn Flow System</h3>
+                    <p>The Turn Flow layer exists within the PlayingState of the GameFlowStateMachine, its key
+                        coordinator
+                        being
+                        the TurnFlowStateMachine. It enforces the match loop through states like TurnBegin,
+                        WaitingForPlayerAction, WaitingForResolution, TurnEnd, and GameOver. It cycles active units,
+                        runs a
+                        turn
+                        timer, and ends the action phase when the player fires or when time runs out. It then resolves
+                        explosions and damage before moving to the next turn or finishing the match.</p>
+
+                        <section class="section-level-3">
+                    <h4 class="funnel-display-header">Turn Flow State Diagram</h4>
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/TurnFLowStateDiagram.png" alt="Turn Flow State Diagram"
+                            data-full-res="/assets/diagrams/TurnFLowStateDiagram.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+</section>
+<section class="section-level-3">
+                    <h4 class="funnel-display-header">Turn Flow Layer Class Diagram</h4>
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/TurnFlowLayerClass.png" alt="Turn Flow Layer Class Diagram"
+                            data-full-res="/assets/diagrams/TurnFlowLayerClass.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+                    </section>
+                </section>
+
+                <section class="section-level-2">
+                    
+                    <h3 class="funnel-display-header">Unit System</h3>
+                    <section class="section-level-3">
+                    <h4 class="funnel-display-header">Unit State Machine</h4>
+
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/UnitStateMachine.png" alt="Unit State Machine Diagram"
+                            data-full-res="/assets/diagrams/UnitStateMachine.png" class="diagram-image" loading="lazy">
+                    </div>
+                    </section>
+                </section>
+
+                <section class="section-level-2">
+                    <h3 class="funnel-display-header">Weapon & Inventory Systems</h3>
+                    <p>Input uses the Unity Input System. Any interactive Game Flow state has an associated action map
+                        that
+                        is
+                        enabled based on context, so menu input cannot trigger gameplay actions. During gameplay, units
+                        receive
+                        input through an IInput abstraction wrapped by a ControllableInput gate, and the turn system
+                        only
+                        enables that gate for the active unit.</p>
+
+                        <section class="section-level-3">
+                    <h4 class="funnel-display-header">Weapon System Class Diagram</h4>
+
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/WeaponSystemClass.png" alt="Weapon System Class Diagram"
+                            data-full-res="/assets/diagrams/WeaponSystemClass.png" class="diagram-image" loading="lazy">
+                    </div>
+</section>
+<section class="section-level-3">
+                    <h4 class="funnel-display-header">Chargeable Weapon Activity Diagram</h4>
+
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/ChargeableWeaponActivityDiagram.png"
+                            alt="Chargeable Weapon Activity Diagram"
+                            data-full-res="/assets/diagrams/ChargeableWeaponActivityDiagram.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+                    </section>
+                    <section class="section-level-3">
+
+
+                    <h4 class="funnel-display-header">Inventory System Class Diagram</h4>
+
+                    <div class="diagram-image-container">
+                        <img src="/assets/diagrams/InventorySystemClass.png" alt="Inventory System Class Diagram"
+                            data-full-res="/assets/diagrams/InventorySystemClass.png" class="diagram-image"
+                            loading="lazy">
+                    </div>
+                </section>
+                </section>
+            </section>
+
+
             <!-- Implementation Section -->
-            <section id="implementation" class="version-section hover-transform-up">
+            <section id="implementation" class="section-level-1">
                 <h2 class="funnel-display-header">Implementation Details</h2>
+
+                <p>On the gameplay side, Antillery features player movement and jumping, a weapon inventory UI, and
+                    multiple destruction-based weapons (a future version will also include constructive tools). The
+                    current weapon set (Bazooka, TNT, Grenades) is a specialization of the ChargeableWeapon base class.
+                    When a projectile impacts or when timed explosives, such as TNT and grenades, detonate, it
+                    broadcasts explosion data, including position, blast radius, and damage. The TurnFlowStateMachine
+                    uses this data during its resolution step to apply damage and manage terrain deformation.</p>
+
+                <p>For destructible terrain, I prototyped utilities in .NET for generating Signed Distance Field (SDF)
+                    files from map images. I also researched a Marching Squares-based approach for generating collider
+                    rectangles from those SDFs. I ultimately chose to integrate the TerraformingTerrain2D Unity package
+                    to keep the project moving after my initial attempts failed to meet my performance expectations.
+                    TerraformingTerrain2D also employs a Marching Squares-based approach, providing real-time terrain
+                    deformation and collider recalculation without interrupting the match flow.</p>
 
                 <p>The alpha build delivers a complete match loop: teams take turns controlling one ant at a time,
                     moving and jumping, selecting a weapon, aiming with the cursor, and firing to end the turn. Each
@@ -180,7 +329,7 @@
             </section>
 
             <!-- Controls Section -->
-            <section id="controls" class="version-section hover-transform-up">
+            <section id="controls" class="section-level-1">
                 <h2 class="funnel-display-header">Controls</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
@@ -205,7 +354,7 @@
             </section>
 
             <!-- Challenges Section -->
-            <section id="challenges" class="version-section hover-transform-up">
+            <section id="challenges" class="section-level-1">
                 <h2 class="funnel-display-header">Development Challenges</h2>
 
                 <div class="skills-grid">
@@ -265,13 +414,29 @@
                             below.</p>
                         <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
                     </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Testing and Validation</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Ensuring the game works reliably through full matches, identifying edge cases, and
+                            incorporating feedback from playtesters to catch issues not apparent during solo testing.
+                        </p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Conducted repeated full matches to validate turn rotation, timers, active-unit input gating,
+                            weapon charging and resolution, terrain deformation, and game-over conditions. Brought in
+                            playtesters to expose unknown problems. The current build targets 64-bit Windows 11 and
+                            does not require an internet connection. There are still many known bugs, and likely
+                            unknown ones as well. I plan to address them as I continue to develop beyond the current
+                            alpha.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
                 </div>
             </section>
 
-
-
             <!-- Future Enhancements Section -->
-            <section id="enhancements" class="version-section hover-transform-up">
+            <section id="enhancements" class="section-level-1">
                 <h2 class="funnel-display-header">Future Enhancements</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
@@ -313,7 +478,7 @@
 
 
             <!-- Devlogs Section -->
-            <section id="devlogs" class="version-section hover-transform-up">
+            <section id="devlogs" class="section-level-1">
                 <h2 class="funnel-display-header">Devlogs</h2>
 
                 <div class="dropdown-section">
@@ -348,6 +513,9 @@
 
     <!-- Footer injection point -->
     <div id="footer-placeholder"></div>
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src="" alt="">
+    </div>
 
     <script src="/scripts.js"></script>
 </body>
