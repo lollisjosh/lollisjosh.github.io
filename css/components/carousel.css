@@ -1,0 +1,106 @@
+/* components/carousel.css
+   Mobile-first carousel module
+*/
+
+/* Base carousel strip */
+.carousel-images {
+  display: flex;
+  transition: var(--transition-standard, transform 0.5s ease);
+  width: 100%;
+  height: 100%;
+}
+
+/* Prev/Next positions (shared base moved from css/base.css) */
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Mobile defaults */
+.carousel-container {
+  width: 90%;
+  max-width: 600px;
+  height: 60vh;
+  max-height: 70vh;
+  position: relative;
+  margin: 1.5rem auto;
+  overflow: hidden;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white, #ffffff);
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+  border-radius: var(--border-radius-sm, 6px);
+}
+
+.carousel-bordered {
+  border: 2px solid var(--primary, #4b304e);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* Desktop overrides */
+@media (min-width: 769px) {
+  .carousel-single .carousel-btn {
+    display: none;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 800px;
+    height: 70vh;
+    position: relative;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+
+  .carousel-images img {
+    padding: 2.5rem;
+  }
+
+  .carousel-btn {
+    /* reset the mobile transform since desktop originally did not use it */
+    transform: none;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 2;
+    border-radius: var(--border-radius-sm);
+  }
+
+  .prev {
+    --hover-translate-x: 5px;
+  }
+
+  .carousel-bordered {
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+  }
+}

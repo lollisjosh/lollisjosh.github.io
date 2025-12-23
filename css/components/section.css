@@ -1,0 +1,23 @@
+/* section.css — component module for section containers and related rules */
+
+.section-container {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 769px) {
+  /* Desktop overrides moved from css/desktop.css */
+  .section-container {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    margin: 1rem 0 3rem 0;
+  }
+}
+.section-container:not(:last-child) {
+  margin-bottom: 3rem;
+}

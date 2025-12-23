@@ -1,0 +1,33 @@
+/* main.css
+   Composed entry for production/deployment.
+   Order: base -> utilities -> components
+   Keep tokens separate (loaded before main.css in head.js)
+*/
+
+@import url("/css/base.css");
+@import url("/css/utilities.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/dropdown.css");
+@import url("/css/components/modal.css");
+@import url("/css/components/footer.css");
+@import url("/css/components/carousel.css");
+@import url("/css/components/devlog.css");
+@import url("/css/components/image-grid.css");
+@import url("/css/components/carousel.css");
+@import url("/css/utilities.css");
+@import url("/css/components/skills.css");
+@import url("/css/components/home.css");
+@import url("/css/components/section.css");
+@import url("/css/components/wakatime.css");
+@import url("/css/components/post-navigation.css");
+@import url("/css/components/pfp.css");
+@import url("/css/components/bio.css");
+@import url("/css/components/post-card.css");
+@import url("/css/components/repo-card.css");
+@import url("/css/components/project-card.css");
+@import url("/css/components/blog-tabs.css");
+@import url("/css/components/iframe-border.css");
+@import url("/css/components/toc-card.css");
+/* Add other components here as they are extracted:
+   @import url("/css/components/<component>.css");
+*/

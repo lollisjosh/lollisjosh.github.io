@@ -1,0 +1,115 @@
+/*
+  base.css
+  Shared, non-responsive rules that are identical in both desktop.css and mobile.css.
+  Load AFTER tokens.css and BEFORE desktop.css/mobile.css.
+*/
+
+/* Bio module moved to css/components/bio.css */
+
+
+#fs-frm fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* PFP module moved to css/components/pfp.css */
+
+
+#resume-header {
+    margin-top: 5%;
+}
+
+/* Wakatime module moved to css/components/wakatime.css */
+/* Post-card module moved to css/components/post-card.css */
+
+/* Image Grid module moved to css/components/image-grid.css */
+/* Dropdown module moved to css/components/dropdown.css *//* Modal module moved to css/components/modal.css */
+
+/* Navbar container moved to css/components/navbar.css */
+
+/* Carousel module moved to css/components/carousel.css */
+
+/* PFP module moved to css/components/pfp.css */
+
+/* Repo-card module moved to css/components/repo-card.css */
+
+/* Section module moved to css/components/section.css */
+
+/* Skills module moved to css/components/skills.css */
+
+/* Image Grid module moved to css/components/image-grid.css */
+
+/* TOC module moved to css/components/toc-card.css */
+
+main {
+    margin-top: var(--navbar-height);
+    width: 100%;
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
+    overflow-x: hidden;
+    color: var(--text, #333);
+}
+
+a {
+    color: var(--primary, #4b304e);
+    text-decoration: none;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover utilities moved to css/utilities.css */
+/* Carousel module moved to css/components/carousel.css */
+
+/* Moved from breakpoint styles (desktop/mobile) */
+
+/* Image Grid module moved to css/components/image-grid.css */
+
+/* Devlog module moved to css/components/devlog.css */
+/* Dropdown module moved to css/components/dropdown.css */
+
+/* Home module moved to css/components/home.css */
+
+.skill-category h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.tag-separator {
+    color: var(--accent);
+    margin: 0 0.2rem;
+}
+
+h5.issue,
+h5.challenge {
+    color: var(--error);
+}
+
+h5.remedy {
+    color: var(--success);
+    margin-top: 1rem;
+}

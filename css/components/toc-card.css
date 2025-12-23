@@ -1,0 +1,77 @@
+/* toc-card.css — component module (mobile-first) */
+
+.toc-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Shared (base) TOC helpers moved from css/base.css */
+.toc-icon {
+  font-size: 1.5rem;
+}
+
+.toc-title {
+  font-family: "Funnel Display", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.toc-card {
+  width: 90%;
+  margin: 0.5rem auto;
+  min-width: unset;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #4b304e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #4b304e;
+  box-shadow: 4px 4px 0 #4b304e;
+  text-align: center;
+}
+
+.toc-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #4b304e;
+  background: #ed65ff;
+  color: white;
+}
+
+@media (min-width: 769px) {
+  .toc-nav {
+    /* Desktop layout: flow in rows */
+    flex-direction: row;
+  }
+
+  .toc-card {
+    background: var(--white);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition-standard);
+    text-decoration: none;
+    color: var(--primary);
+    min-width: 200px;
+    width: auto; /* allow natural width on desktop */
+    margin: 0.5rem; /* standard spacing around each card */
+    flex: 0 1 220px; /* consistent wrapping basis */
+    max-width: 260px; /* prevent overly wide cards */
+    box-shadow: 4px 4px 0 var(--primary);
+    text-align: center;
+  }
+}

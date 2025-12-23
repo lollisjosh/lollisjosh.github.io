@@ -1,0 +1,41 @@
+/* iframe-border.css — component module (mobile-first) */
+
+/* Mobile defaults */
+.iframe-border {
+  width: 90%;
+}
+
+.project-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 4px solid #4b304e;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+  margin: 0;
+  display: block;
+}
+
+@media (min-width: 769px) {
+  /* Desktop overrides */
+  .iframe-border {
+    padding: 8px;
+    transition: var(--transition-standard);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: var(--border-radius-md);
+  }
+
+  .iframe-border.hover-transform-up:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius-md);
+  }
+
+  .project-video {
+    border: 4px solid var(--primary);
+  }
+}

@@ -89,7 +89,8 @@
 
     // Site CSS stack
     const tokens = appendLink({ rel: "stylesheet", href: "/css/tokens.css" });
-    const base = appendLink({ rel: "stylesheet", href: "/css/base.css" });
+    // main.css composes base + utilities + components (mobile-first modules)
+    const main = appendLink({ rel: "stylesheet", href: "/css/main.css" });
 
     // Responsive split: both are injected, but media controls which applies.
     const isDesktop = window.matchMedia("(min-width: 769px)").matches;
@@ -111,7 +112,7 @@
      * Note: If faster reveal preferred with icons/fonts popping in later,
      * remove `fontAwesome` and/or `googleFont` from this list.
      */
-    const wanted = [tokens, base, isDesktop ? desktop : mobile, fontAwesome, googleFont].filter(Boolean);
+    const wanted = [tokens, main, isDesktop ? desktop : mobile, fontAwesome, googleFont].filter(Boolean);
 
     // Reveal the page when styles are ready or after a safety timeout.
     await Promise.race([

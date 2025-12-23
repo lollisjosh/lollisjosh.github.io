@@ -1,0 +1,41 @@
+/* pfp.css — component module (mobile-first) */
+
+#pfp-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pfp {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.pfp-border {
+  width: 280px;
+  height: 258px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #4b304e, #181986);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 769px) {
+  .pfp-border {
+    /* Desktop overrides */
+    width: 280px;
+    height: 258px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary-blue));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+  }
+}

@@ -1,0 +1,97 @@
+/* post-card.css — component module (mobile-first) */
+
+.blog-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #ed65ff;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.blog-title {
+  color: #4b304e;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.blog-date {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.blog-preview {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.blog-link {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  background: #4b304e;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 769px) {
+  .blog-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-standard);
+    overflow: hidden;
+    padding: 2%;
+    cursor: pointer;
+  }
+
+  .blog-content {
+    padding: 1.5rem;
+  }
+
+  .blog-title {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-preview {
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+}

@@ -1,0 +1,121 @@
+/* blog-tabs.css — component module (mobile-first)
+   Extracted from css/blog_tabs.css
+*/
+
+.sliding-blog-tabs {
+  position: fixed;
+  left: 35%; /* Position toward the left side of the container */
+  top: 30%; /* Position near the bottom of the container */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.blog-tab {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%; /* Total width when expanded */
+  transform: translateX(-320px); /* Match the animation's position */
+  /* Add transition for returning from hover only */
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease-out;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  height: 50px; /* Increased height for bigger preview */
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--primary);
+  border-right: none;
+}
+
+/* Blog tab hover behavior - make it slide leftward instantly */
+.blog-tab:hover {
+  animation: none !important;
+  transform: translateX(-442px) !important; /* More negative value to slide leftward */
+  box-shadow: var(--shadow-lg);
+  /* Skip transition on hover */
+  transition: box-shadow 0.3s ease-out;
+}
+
+/* Blog tab animation */
+@keyframes blogPeek {
+  0%, 100% { transform: translateX(-320px); }
+  50% { transform: translateX(-330px); }
+}
+
+/* Apply blog tab animation */
+.blog-tab:nth-child(odd) {
+  animation: blogPeek 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.blog-tab:nth-child(even) {
+  animation: blogPeek 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Blog tab content elements */
+.blog-tab-preview {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+}
+
+.blog-tab-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-tab-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.blog-tab-content h3,
+.blog-tab-content h4,
+.blog-tab-content h5 {
+  margin: 0;
+  /* font-size: 1rem; */
+  color: var(--primary);
+  font-family: "Funnel Display", sans-serif;
+}
+
+.blog-tab-content p {
+  margin: 2px 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.blog-tab-content .view-more {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+/* Ensure blog-link covers the entire tab area */
+.blog-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* Hide blog tabs on smaller screens */
+@media screen and (max-width: 1000px) {
+  .sliding-blog-tabs,
+  .blog-tab {
+    display: none;
+  }
+}

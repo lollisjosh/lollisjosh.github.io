@@ -1,0 +1,85 @@
+/* bio.css — component module (mobile-first) */
+
+#bio-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#bio-container {
+  width: 90%;
+  padding: 1rem;
+}
+
+#role-tags {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 1%;
+}
+
+.tags-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.5rem;
+}
+
+.tag {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #4b304e;
+  white-space: nowrap;
+}
+
+#role-tags ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+#role-tags ul li {
+  font-weight: bold;
+  font-size: 14pt;
+  white-space: nowrap;
+}
+
+#bio p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  /* Desktop overrides */
+  #role-tags {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .tags-list {
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary);
+    white-space: nowrap;
+  }
+
+  #bio p {
+    color: var(--text);
+  }
+}

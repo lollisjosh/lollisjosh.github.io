@@ -1,0 +1,87 @@
+/* components/post-navigation.css
+   Mobile-first post navigation for blog posts
+*/
+
+/* Mobile defaults: stacked layout */
+.post-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.post-nav-button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--white);
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-md);
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition-standard);
+  width: 100%;
+}
+
+.post-nav-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.post-nav-icon {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0.5rem;
+}
+
+.post-nav-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.prev-post .post-nav-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.next-post .post-nav-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.post-nav-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.post-nav-title {
+  font-weight: bold;
+  font-family: "Funnel Display", sans-serif;
+}
+
+/* Desktop overrides: side-by-side cards */
+@media (min-width: 769px) {
+  .post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 1rem;
+  }
+
+  .post-nav-button {
+    padding: 1rem;
+    min-width: 45%;
+    max-width: 48%;
+  }
+
+  .post-navigation:has(.prev-post:only-child) {
+    justify-content: flex-start;
+  }
+
+  .post-navigation:has(.next-post:only-child) {
+    justify-content: flex-end;
+  }
+}

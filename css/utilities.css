@@ -1,0 +1,126 @@
+/* utilities.css
+   Small utilities and helpers
+   Add utility classes as we extract them (e.g., .flex-center, hover helpers)
+*/
+
+/* Placeholder for small reusable utilities */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover / helper utilities moved from css/base.css */
+.hover-accent-bg {
+  transition: var(--transition-standard);
+}
+
+.hover-accent-bg:hover {
+  background: var(--accent);
+}
+
+.hover-accent-text {
+  transition: var(--transition-standard);
+}
+
+.hover-accent-text:hover {
+  color: var(--accent);
+}
+
+.hover-button-glow {
+  transition: var(--transition-standard);
+}
+
+.hover-button-glow:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.hover-fade {
+  transition: var(--transition-standard);
+}
+
+.hover-fade:hover {
+  opacity: 0.7;
+}
+
+.hover-lift {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--primary);
+}
+
+.hover-scale {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.hover-text-shadow {
+  transition: var(--transition-standard);
+}
+
+.hover-text-shadow:hover {
+  text-shadow: 0 0 8px rgba(237, 101, 255, 0.4);
+}
+
+.hover-toc-card {
+  transition: var(--transition-standard);
+}
+
+.hover-toc-card:hover {
+  background: var(--accent);
+  color: var(--white);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--primary);
+}
+
+.hover-transform-left {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+  --hover-translate-x: -5px;
+}
+
+.hover-transform-left:hover {
+  transform: translateX(var(--hover-translate-x));
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.hover-transform-up {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-transform-up:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--primary);
+}
+
+.hover-white-border {
+  transition: var(--transition-standard);
+  border: 2px solid transparent;
+}
+
+.hover-white-border:hover {
+  border: 2px solid var(--white);
+}
+
+.hover-white-text {
+  transition: var(--transition-standard);
+}
+
+.hover-white-text:hover {
+  color: var(--white);
+}
