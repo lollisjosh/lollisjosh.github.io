@@ -12,30 +12,19 @@
 <html lang="en">
 
     <head>
-        <!-- Standard meta and resource imports -->
+        <!-- Standard meta -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projects | Server Surfer</title>
+        <title>Server Surfer | Projects</title>
 
-        <!-- Font imports and styling -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
-            rel="stylesheet">
-        <!-- Font Awesome for icons -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-        <link rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            as="style" crossorigin>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="/css/tokens.css">
-        <link rel="stylesheet" href="/css/desktop.css"
-            media="(min-width: 769px)">
-        <link rel="stylesheet" href="/css/mobile.css"
-            media="(max-width: 768px)">
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
 
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
+
+        <!-- Page-specific CSS (if any) -->
+        <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
     </head>
 
     <body>
