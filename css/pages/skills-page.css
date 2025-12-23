@@ -29,12 +29,23 @@
   display: flex;
 }
 
+/* Canvas sizing (Skills page only) */
+.mobile-chart-container canvas,
+.desktop-chart-container canvas {
+  height: auto;
+  margin-bottom: 10%;
+}
+
+.mobile-chart-container canvas {
+  width: 100%;
+}
+
 /* Desktop: show desktop charts, hide mobile charts + desktop layout */
 @media (min-width: 769px) {
   #desktop-chart-column-container {
     display: block;
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
 
   #desktop-lang-row,
@@ -60,15 +71,20 @@
   }
 
   .desktop-lang-header {
-    text-align: center;
     width: 45%;
     margin: 0 auto;
+    text-align: center;
   }
 
+  /* Hide the mobile chart UI on desktop */
   .mobile-chart-column-container,
   .mobile-chart-header,
   .mobile-chart-container,
   .mobile-wakatimeLangChart {
     display: none;
+  }
+
+  .desktop-chart-container canvas {
+    width: 75%;
   }
 }
