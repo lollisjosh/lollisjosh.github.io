@@ -1,4 +1,4 @@
-/* pages/skills.css — Skills page only */
+/* pages/skills-page.css — Skills page only */
 
 /* Mobile-first: show mobile charts, hide desktop charts */
 #desktop-chart-column-container {
@@ -29,13 +29,46 @@
   display: flex;
 }
 
-/* Desktop: show desktop charts, hide mobile charts */
+/* Desktop: show desktop charts, hide mobile charts + desktop layout */
 @media (min-width: 769px) {
   #desktop-chart-column-container {
     display: block;
+    text-align: center;
+    width: 100%;
   }
 
-  .mobile-chart-column-container {
+  #desktop-lang-row,
+  #desktop-editors-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  #desktop-lang-headers-row,
+  #desktop-editors-headers-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .desktop-chart-container {
+    width: 45%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .desktop-lang-header {
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+  }
+
+  .mobile-chart-column-container,
+  .mobile-chart-header,
+  .mobile-chart-container,
+  .mobile-wakatimeLangChart {
     display: none;
   }
 }
