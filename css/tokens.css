@@ -1,0 +1,43 @@
+/*
+    Design Tokens (shared)
+    Load this BEFORE desktop.css / mobile.css 
+    Source: extracted from desktop.css :root and normalized for shared use.
+    This is a step toward refactoring the CSS file structure toward a more modern maintainable architecture.
+*/
+
+:root {
+    --navbar-height: 10vh;
+    --header-height: var(--navbar-height);
+    /*This is used in mobile.css but was never defined, so this is a temp way to address it. */
+
+    /* Color palette */
+    --primary: #4b304e;
+    --accent: #ed65ff;
+    --accent-rgb: 237, 101, 255;
+    --dark-accent: #331236;
+    --text: #333;
+    --text-light: #4a4a4a;
+    --text-muted: #666;
+    --white: #ffffff;
+    --black: #000000;
+    --error: #e74c3c;
+    --success: #27ae60;
+    --secondary-blue: #181986;
+    --bg-light: #f5f5f5;
+    --border-light: #f0f0f0;
+
+    /* Box shadows */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 8px 8px 8px rgba(0, 0, 0, 0.253);
+    --shadow-xl: 12px 12px 24px rgba(0, 0, 0, 0.3);
+
+    /* Border properties */
+    --border-radius-sm: 6px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Transitions */
+    --transition-standard: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+}

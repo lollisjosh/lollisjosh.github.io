@@ -5,129 +5,148 @@
     CPSC 349 Portfolio Final Project
     
     Landing page with personal introduction and profile information
+
+    Updated: Dec 22, 2025
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <!-- Add Font Awesome for the status icon -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-    
-    <!-- Blog tabs CSS -->
-    <link rel="stylesheet" href="/css/blog_tabs.css" media="screen and (min-width: 769px)">
-    
-    <!-- Project tabs CSS -->
-    <link rel="stylesheet" href="/css/project-tabs.css" media="screen and (min-width: 769px)">
-</head>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
+        <!-- Shared tokens + responsive CSS -->
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.refactor.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.refactor.css"
+            media="(max-width: 768px)">
 
-    <main>
-        <div class="content-container">
-            <!-- Introduction section -->
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="/css/blog_tabs.css"
+            media="screen and (min-width: 769px)">
+        <link rel="stylesheet" href="/css/project-tabs.css"
+            media="screen and (min-width: 769px)">
 
+    </head>
 
-            <section id="intro">
-                <h1 class="snug-header funnel-display-header">Welcome to My Portfolio</h1>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-                <!-- Status update section - restructured -->
-                <div id="status-container">
-                    <div class="status-indicator-section">
-                        <div class="status-indicator">
-                            <i class="fas fa-circle"></i>
+        <main>
+            <div class="content-container">
+                <!-- Introduction section -->
+
+                <section id="intro">
+                    <h1 class="snug-header funnel-display-header">Welcome to My
+                        Portfolio</h1>
+
+                    <!-- Status update section - restructured -->
+                    <div id="status-container">
+                        <div class="status-indicator-section">
+                            <div class="status-indicator">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                        </div>
+                        <div class="status-text-container">
+                            <p id="status">Senior capstone project submitted Dec
+                                12, 2025! Now seeking an entry-level software
+                                engineering role.</p>
                         </div>
                     </div>
-                    <div class="status-text-container">
-                        <p id="status">Senior capstone project submitted Dec 12, 2025! Now seeking an entry-level software engineering role.</p>
-                    </div>
-                </div>
 
-                <!-- Profile picture with gradient border -->
-                <div id="pfp-placeholder">
-                    <div class="pfp-border hover-scale">
-                        <img src="./assets/images/pfp.png" alt="Profile Picture" class="pfp">
+                    <!-- Profile picture with gradient border -->
+                    <div id="pfp-placeholder">
+                        <div class="pfp-border hover-scale">
+                            <img src="./assets/images/pfp.png"
+                                alt="Profile Picture" class="pfp">
+                        </div>
                     </div>
-                </div>
-                <h2 class="intro-greeting">Hi, I'm Josh!</h2>
-                <div id="bio-placeholder"></div>
-            </section>
+                    <h2 class="intro-greeting">Hi, I'm Josh!</h2>
+                    <div id="bio-placeholder"></div>
+                </section>
 
-            <!-- Project sliding tabs -->
-            <div class="sliding-projects">
-                <!-- Active Projects -->
-                <div class="project-tab" data-project="antillery">
-                    <div class="tab-preview">
-                        <img src="/assets/images/antillery/title-screen.png" alt="Antillery">
+                <!-- Project sliding tabs -->
+                <div class="sliding-projects">
+                    <!-- Active Projects -->
+                    <div class="project-tab" data-project="antillery">
+                        <div class="tab-preview">
+                            <img src="/assets/images/antillery/title-screen.png"
+                                alt="Antillery">
+                        </div>
+                        <div class="tab-content">
+                            <h3>Antillery</h3>
+                            <p>A 2D turn-based artillery capstone project</p>
+                            <span class="view-more">View Project →</span>
+                        </div>
+                        <a href="/projects/antillery.html"
+                            class="project-link"></a>
                     </div>
-                    <div class="tab-content">
-                        <h3>Antillery</h3>
-                        <p>A 2D turn-based artillery capstone project</p>
-                        <span class="view-more">View Project →</span>
-                    </div>
-                    <a href="/projects/antillery.html" class="project-link"></a>
-                </div>
 
-                <div class="project-tab" data-project="card_collection">
-                    <div class="tab-preview">
-                        <img src="/assets/gifs/card.gif" alt="Card Collection">
+                    <div class="project-tab" data-project="card_collection">
+                        <div class="tab-preview">
+                            <img src="/assets/gifs/card.gif"
+                                alt="Card Collection">
+                        </div>
+                        <div class="tab-content">
+                            <h3>Card Collection</h3>
+                            <p>A TCG card viewer and collection application</p>
+                            <span class="view-more">View Project →</span>
+                        </div>
+                        <a href="/projects/card_collection.html"
+                            class="project-link"></a>
                     </div>
-                    <div class="tab-content">
-                        <h3>Card Collection</h3>
-                        <p>A TCG card viewer and collection application</p>
-                        <span class="view-more">View Project →</span>
-                    </div>
-                    <a href="/projects/card_collection.html" class="project-link"></a>
-                </div>
 
-                <div class="project-tab" data-project="snake">
-                    <div class="tab-preview">
-                        <img src="/assets/gifs/snake.gif" alt="Snake Game">
+                    <div class="project-tab" data-project="snake">
+                        <div class="tab-preview">
+                            <img src="/assets/gifs/snake.gif" alt="Snake Game">
+                        </div>
+                        <div class="tab-content">
+                            <h3>Snake</h3>
+                            <p>A snake game with challenging new mechanics</p>
+                            <span class="view-more">View Project →</span>
+                        </div>
+                        <a href="/projects/snake.html" class="project-link"></a>
                     </div>
-                    <div class="tab-content">
-                        <h3>Snake</h3>
-                        <p>A snake game with challenging new mechanics</p>
-                        <span class="view-more">View Project →</span>
-                    </div>
-                    <a href="/projects/snake.html" class="project-link"></a>
-                </div>
 
-                <div class="project-tab" data-project="portfolio">
-                    <div class="tab-preview">
-                        <img src="/assets/gifs/portfolio.gif" alt="Portfolio Website">
+                    <div class="project-tab" data-project="portfolio">
+                        <div class="tab-preview">
+                            <img src="/assets/gifs/portfolio.gif"
+                                alt="Portfolio Website">
+                        </div>
+                        <div class="tab-content">
+                            <h3>Portfolio Website</h3>
+                            <p>This responsive developer portfolio site</p>
+                            <span class="view-more">View Project →</span>
+                        </div>
+                        <a href="/projects/portfolio.html"
+                            class="project-link"></a>
                     </div>
-                    <div class="tab-content">
-                        <h3>Portfolio Website</h3>
-                        <p>This responsive developer portfolio site</p>
-                        <span class="view-more">View Project →</span>
-                    </div>
-                    <a href="/projects/portfolio.html" class="project-link"></a>
                 </div>
             </div>
-        </div>
 
-        <!-- Blog tabs that slide out from under the content container -->
-         <!-- Commented out because there is no noteable blog content -->
-          <!--and because the tab wasn't fully responsive to different screen sizes -->
-        <!-- <div class="sliding-blog-tabs">
+            <!-- Blog tabs that slide out from under the content container -->
+            <!-- Commented out because there is no noteable blog content -->
+            <!--and because the tab wasn't fully responsive to different screen sizes -->
+            <!-- <div class="sliding-blog-tabs">
             <div class="blog-tab" data-blog="blog1">
                 <div class="blog-tab-preview">
                     <img src="/assets/gifs/ant.gif" alt="Latest Antillery Blog Post">
@@ -138,12 +157,12 @@
                 <a href="/blog/antillery/ant-dev-2025-06-02.html" class="blog-link"></a>
             </div>
         </div> -->
-    </main>
+        </main>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="./scripts.js"></script>
-    <script src="./js/ticker.js"></script>
-</body>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="./scripts.js"></script>
+        <script src="./js/ticker.js"></script>
+    </body>
 
 </html>

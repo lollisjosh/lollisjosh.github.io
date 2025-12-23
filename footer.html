@@ -1,64 +1,38 @@
-<!--
-    Footer Component
-    Author: Josh Lollis
-    Date: December 3, 2024
-    CPSC 349 Portfolio Final Project
-    
-    Site-wide footer component with social media links and development stats
--->
+<!-- Footer Component (fragment) -->
 
-<!DOCTYPE html>
-<html lang="en">
+<footer id="site-footer">
+  <p>Designed and Developed by Josh Lollis</p>
 
-    <head>
-        <!-- Standard meta and resource imports -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Mobile CSS (screens ≤ 768px) -->
-        <link rel="stylesheet" href="/css/mobile.css"
-            media="screen and (max-width: 768px)">
+  <div id="social-div" aria-label="Social links">
+    <a href="https://github.com/TelloViz"
+       class="fab fa fa-github hover-transform-up"
+       aria-label="GitHub"
+       target="_blank" rel="noopener noreferrer"></a>
 
-        <!-- Desktop CSS (screens ≥ 769px) -->
-        <link rel="stylesheet" href="/css/desktop.css"
-            media="screen and (min-width: 769px)">
+    <a href="https://instagram.com/tello.vision"
+       class="fab fa fa-instagram hover-transform-up"
+       aria-label="Instagram"
+       target="_blank" rel="noopener noreferrer"></a>
 
-        <!-- Font Awesome for social icons -->
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-        <link rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-            as="style" crossorigin>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <a href="https://www.youtube.com/@tello-visiongames4464"
+       class="fab fa fa-youtube hover-transform-up"
+       aria-label="YouTube"
+       target="_blank" rel="noopener noreferrer"></a>
 
-    </head>
+    <a href="https://www.linkedin.com/in/lollisjosh/"
+       class="fab fa fa-linkedin hover-transform-up"
+       aria-label="LinkedIn"
+       target="_blank" rel="noopener noreferrer"></a>
+  </div>
 
-    <body>
-        <div id="site-footer">
-            <!-- Footer content -->
-            <p>Designed and Developed by Josh Lollis</p>
-
-            <!-- Social media links -->
-            <div id="social-div">
-                <!-- Font awesome social icons -->
-                <a href="https://github.com/TelloViz"
-                    class="fab fa fa-github hover-transform-up"></a>
-                <a href="https://instagram.com/tello.vision"
-                    class="fab fa fa-instagram hover-transform-up"></a>
-                <a href="https://www.youtube.com/@tello-visiongames4464"
-                    class="fab fa fa-youtube hover-transform-up"></a>
-                <a href="https://www.linkedin.com/in/lollisjosh/"
-                    class="fab fa fa-linkedin hover-transform-up"></a>
-            </div>
-
-            <!-- WakaTime development tracking -->
-            <div id="wakatime-container">
-                <h5>Coding time (Since Aug '23)</h5>
-                <a id="wakatime-site-hours"
-                    href="https://wakatime.com/@a45be745-6431-45a2-8c9d-c19040dcd283"><img
-                        src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283.svg"
-                        alt="Total time coded since Aug 12 2023" /></a>
-            </div>
-        </div>
-    </body>
-
-</html>
+  <div id="wakatime-container">
+    <h5>Coding time (Since Aug '23)</h5>
+    <a id="wakatime-site-hours"
+       href="https://wakatime.com/@a45be745-6431-45a2-8c9d-c19040dcd283"
+       target="_blank" rel="noopener noreferrer">
+      <img
+        src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283.svg"
+        alt="Total time coded since Aug 12 2023" />
+    </a>
+  </div>
+</footer>

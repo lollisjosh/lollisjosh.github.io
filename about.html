@@ -5,60 +5,72 @@
     CPSC 349 Portfolio Final Project
     
     Personal profile page with biography and professional resume sections
+
+    Updated: Dec 22, 2025
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
- <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-</head>
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.refactor.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.refactor.css"
+            media="(max-width: 768px)">
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-    <main>
-        <div class="content-container">
-            <h1 class="snug-header funnel-display-header">About Me</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <!-- Profile section -->
-            <div id="pfp-placeholder">
-                <!-- Profile picture with gradient border -->
-                <div class="pfp-border hover-scale">
-                    <img src="assets/images/pfp.png" alt="Profile Picture" class="pfp">
+    </head>
+
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="snug-header funnel-display-header">About Me</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
+                <!-- Profile section -->
+                <div id="pfp-placeholder">
+                    <!-- Profile picture with gradient border -->
+                    <div class="pfp-border hover-scale">
+                        <img src="assets/images/pfp.png" alt="Profile Picture"
+                            class="pfp">
+                    </div>
                 </div>
-            </div>
-            <div id="bio-placeholder"></div>
+                <div id="bio-placeholder"></div>
 
-            <!-- Resume sections -->
-            <section class="version-section hover-transform-up">
-                <!-- Software Engineer Resume PDF viewer -->
-                <h2 class="funnel-display-header">Software Engineer Resume</h2>
-                <div class="pdf-container">
-                    <object data="/assets/pdf/SoftwareEngineer_OnePage.pdf" type="application/pdf">
-                        <p>Unable to display PDF file. <a href="/assets/pdf/SoftwareEngineer_OnePage.pdf" class="hover-transform-left">Download</a> instead.</p>
-                    </object>
-                </div>
-            </section>
+                <!-- Resume sections -->
+                <section class="version-section hover-transform-up">
+                    <!-- Software Engineer Resume PDF viewer -->
+                    <h2 class="funnel-display-header">Software Engineer
+                        Resume</h2>
+                    <div class="pdf-container">
+                        <object data="/assets/pdf/SoftwareEngineer_OnePage.pdf"
+                            type="application/pdf">
+                            <p>Unable to display PDF file. <a
+                                    href="/assets/pdf/SoftwareEngineer_OnePage.pdf"
+                                    class="hover-transform-left">Download</a>
+                                instead.</p>
+                        </object>
+                    </div>
+                </section>
 
-            <!-- Template for future resume sections -->
-            <!--
+                <!-- Template for future resume sections -->
+                <!--
             <section class="version-section hover-transform-up">
                  Additional resume types 
                 <h2 class="funnel-display-header">Software Engineering Resume</h2>
@@ -69,13 +81,13 @@
                 </div>
             </section>
             -->
-        </div>
-    </main>
+            </div>
+        </main>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
 
-    <script src="/scripts.js"></script>
-</body>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

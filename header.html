@@ -1,60 +1,23 @@
-<!--
-    Site Header Component
-    Author: Josh Lollis
-    Date: December 3, 2024
-    CPSC 349 Portfolio Final Project
-    
-    Site-wide header component with navigation menu and mobile toggle
--->
+<!-- Site Header Component (fragment) -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-   <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-</head>
-<body>
+<div class="navbar-container">
+  <nav id="navbar">
+    <button id="mobile-menu" class="menu-toggle hover-transform-up hover-accent-bg hover-white-border hover-button-glow">
+      <span class="toggle-button-text">☲</span>
+    </button>
 
-    <!-- Main Visual Header (Navbar) -->
-    <div class="navbar-container">
-        <nav id="navbar">
-            <!-- Mobile menu toggle -->
-            <button id="mobile-menu" class="menu-toggle hover-transform-up hover-accent-bg hover-white-border hover-button-glow">
-                <span class="toggle-button-text">☲</span>
-            </button>
-            
-            <!-- Home button -->
-            <a href="/index.html" class="home-button hover-transform-up hover-accent-bg hover-white-border hover-button-glow">
-                <span class="home-button-text">⌂</span>
-            </a>
-        </nav>
-    </div>
+    <a href="/index.html" class="home-button hover-transform-up hover-accent-bg hover-white-border hover-button-glow">
+      <span class="home-button-text">⌂</span>
+    </a>
+  </nav>
+</div>
 
-    <!-- Navigation menu list -->
-    <ul class="header-list">
-        <!-- Navigation links -->
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/index.html">Home</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/about.html">About</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/skills.html">Skills</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/projects.html">Projects</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/blog.html">Blogs</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/interests.html">Other</a></li>
-        <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/contact.html">Contact</a></li>
-    </ul>
-
-    <!-- Placeholder for main content -->
-   <!-- <div id="content"> -->
-        <!-- Main content of the page -->
-    </div>
-
-    <!-- Scripts -->
-    <script src="/scripts.js"></script>
-</body>
-</html>
+<ul class="header-list">
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/index.html">Home</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/about.html">About</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/skills.html">Skills</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/projects.html">Projects</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/blog.html">Blogs</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/interests.html">Other</a></li>
+  <li class="header-list-item"><a class="header-list-item-a hover-transform-left hover-accent-text hover-text-shadow" href="/contact.html">Contact</a></li>
+</ul>

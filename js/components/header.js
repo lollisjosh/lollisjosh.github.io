@@ -20,6 +20,11 @@
             .then(data => {
                 placeholder.innerHTML = data;
 
+                // If header.html includes <link rel="stylesheet"> tags, remove them.
+                // Styles should be loaded by the page, not by the injected header fragment.
+                placeholder.querySelectorAll('link[rel="stylesheet"]').forEach(l => l.remove());
+
+
                 const navbar = document.getElementById('navbar');
                 if (navbar) {
                     const setHeaderHeight = () => {
