@@ -6,6 +6,8 @@
 
 @import url("/css/base.css");
 @import url("/css/utilities.css");
+
+/* Components */
 @import url("/css/components/navbar.css");
 @import url("/css/components/dropdown.css");
 @import url("/css/components/modal.css");
@@ -13,8 +15,6 @@
 @import url("/css/components/carousel.css");
 @import url("/css/components/devlog.css");
 @import url("/css/components/image-grid.css");
-@import url("/css/components/carousel.css");
-@import url("/css/utilities.css");
 @import url("/css/components/skills.css");
 @import url("/css/components/home.css");
 @import url("/css/components/section.css");

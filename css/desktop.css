@@ -104,22 +104,6 @@ canvas {
   background: var(--white);
 }
 
-#role-tags {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  width: 100%;
-}
-
-.tags-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.5rem;
-}
-
-
 #desktop-chart-column-container {
   text-align: center;
   width: 100%;
