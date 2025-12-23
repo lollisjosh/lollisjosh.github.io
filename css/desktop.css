@@ -1255,6 +1255,7 @@ margin: 0 auto;
   height: auto;
   display: block;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .game-image-small {
@@ -1264,6 +1265,7 @@ margin: 0 auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
   
 }
 

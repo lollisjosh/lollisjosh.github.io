@@ -96,7 +96,7 @@ main {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.253);
-  border: 4px solid #4b304e;
+  border: 8px solid #4b304e;
   word-wrap: break-word;
   overflow-wrap: break-word;
   position: relative;
@@ -412,6 +412,74 @@ canvas {
   max-width: 100%;
 }
 
+/* Diagram image container and image styles (non-square for full visibility) */
+.diagram-image-container {
+  width: 90%;
+  height: auto; /* Allow natural height based on image aspect ratio */
+  position: relative;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.diagram-image {
+  width: 100%;
+  height: auto; /* Scale height naturally */
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Square image container and image styles */
+.square-image-container {
+  width: 90%;
+  height: auto; /* Use auto for mobile to maintain aspect ratio */
+  position: relative;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.square-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.square-image-small {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Game image styles */
+.game-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.game-image-small {
+  width: 90%; /* Responsive width for mobile instead of fixed 25rem */
+  height: auto;
+  object-position: center;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
 /* Wakatime stats */
 #wakatime-site-hours {
   margin-left: 10px;
@@ -463,41 +531,61 @@ iframe {
 }
 
 /* Carousel */
+/* Carousel (updated to match desktop behavior on mobile) */
 .carousel-container {
-  position: relative;
   width: 90%;
   max-width: 600px;
+  /* Keep a stable viewport-based height so contain/center works reliably */
+  height: 60vh;
+  max-height: 70vh;
+  position: relative;
+  margin: 1.5rem auto;
   overflow: hidden;
 }
 
 .carousel-images {
   display: flex;
-  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-standard, transform 0.5s ease);
 }
 
 .carousel-images img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  flex: 0 0 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
+/* Buttons */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--white, #ffffff);
   padding: 10px;
   cursor: pointer;
   border: none;
+  z-index: 2;
+  border-radius: var(--border-radius-sm, 6px);
 }
 
-.prev {
-  left: 10px;
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Utility class for bordered carousels */
+.carousel-bordered {
+  border: 2px solid var(--primary, #4b304e);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
 }
 
-.next {
-  right: 10px;
-}
 
 /* Bio section */
 #bio-placeholder {
@@ -808,18 +896,19 @@ iframe {
 
 .modal img {
   max-width: 95%;
-  max-height: 80vh;
+  max-height: 90vh;
   margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 8px;
+  border-radius: var(--border-radius-md, 12px);
   object-fit: contain;
-  background-color: white;
-  padding: 0.5rem;
+  background-color: var(--white, #ffffff);
+  padding: 0.75rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
 
 /* Table of contents navigation */
 .toc-nav {
@@ -968,6 +1057,58 @@ html {
 .section-container:not(:last-child) {
   margin-bottom: 3rem;
 }
+
+/* Section level classes for nested styling with decreasing border widths (mobile) */
+.section-level-1,
+.section-level-2,
+.section-level-3,
+.section-level-4 {
+  background: var(--white, #ffffff);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+  padding: 1rem; /* smaller on mobile */
+  margin: 0.75rem 0 2rem 0;
+  transition: var(--transition-standard, all 0.3s ease);
+  box-sizing: border-box;
+}
+
+.section-level-1 { border: 4px solid var(--primary, #4b304e); }
+.section-level-2 { border: 2.5px solid var(--primary, #4b304e); }
+.section-level-3 { border: 1px solid var(--primary, #4b304e); }
+.section-level-4 { border: 0.5px solid var(--primary, #4b304e); }
+
+/* Image wrappers that visually match the section-level-* borders (mobile) */
+.image-section-1,
+.image-section-2,
+.image-section-3,
+.image-section-4 {
+  background: var(--white, #ffffff);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+  padding: 0.5rem; /* tighter image fit */
+  margin: 0.5rem auto 1.25rem;
+  transition: var(--transition-standard, all 0.3s ease);
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.image-section-1 { border: 4px solid var(--primary, #4b304e); }
+.image-section-2 { border: 2.5px solid var(--primary, #4b304e); }
+.image-section-3 { border: 1px solid var(--primary, #4b304e); }
+.image-section-4 { border: 0.5px solid var(--primary, #4b304e); }
+
+/* Make sure images inside image-section wrappers never overflow on mobile */
+.image-section-1 img,
+.image-section-2 img,
+.image-section-3 img,
+.image-section-4 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 
 /* Repository links */
 .repo-link {
