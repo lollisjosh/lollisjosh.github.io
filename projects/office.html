@@ -11,207 +11,253 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Office</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Office</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">    
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
-
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-    <main>
-        <!-- Project navigation and content -->
-        <div class="content-container">
-            <h1 class="funnel-display-header">My Office</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <!-- Navigation menu -->
-            <nav class="toc-nav">
-                <!-- Table of contents cards -->
-                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+        <main>
+            <!-- Project navigation and content -->
+            <div class="content-container">
+                <h1 class="funnel-display-header">My Office</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">⚙️</span>
-                    <span class="toc-title">Implementation</span>
-                </a>
-                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔧</span>
-                    <span class="toc-title">Challenges</span>
-                </a>
-                <a href="#outcomes" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎯</span>
-                    <span class="toc-title">Outcomes</span>
-                </a>
-                <a href="#gallery" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🖼️</span>
-                    <span class="toc-title">Gallery</span>
-                </a>
-            </nav>
+                <!-- Navigation menu -->
+                <nav class="toc-nav">
+                    <!-- Table of contents cards -->
+                    <a href="#overview"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
+                    </a>
+                    <a href="#implementation"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">⚙️</span>
+                        <span class="toc-title">Implementation</span>
+                    </a>
+                    <a href="#challenges"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔧</span>
+                        <span class="toc-title">Challenges</span>
+                    </a>
+                    <a href="#outcomes"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🎯</span>
+                        <span class="toc-title">Outcomes</span>
+                    </a>
+                    <a href="#gallery"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🖼️</span>
+                        <span class="toc-title">Gallery</span>
+                    </a>
+                </nav>
 
-            <!-- Project documentation sections -->
-            <section id="overview" class="version-section hover-transform-up">
-                <!-- Project overview and technologies -->
-                <h2 class="funnel-display-header">Project Overview</h2>
-                <p>A detailed 3D visualization project created for CPSC 484 Principles of Computer Graphics. This 1:1 scale model of my home office demonstrates advanced lighting techniques, caustics, reflections, and detailed modeling work, taking over 100 hours to complete.</p>
-                
-                <h3>Technologies Used</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Software</h3>
-                        <ul>
-                            <li>Autodesk 3ds Max</li>
-                            <li>Chaos Corona</li>
-                            <li>Blender</li>
-                        </ul>
+                <!-- Project documentation sections -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <!-- Project overview and technologies -->
+                    <h2 class="funnel-display-header">Project Overview</h2>
+                    <p>A detailed 3D visualization project created for CPSC 484
+                        Principles of Computer Graphics. This 1:1 scale model of
+                        my home office demonstrates advanced lighting
+                        techniques, caustics, reflections, and detailed modeling
+                        work, taking over 100 hours to complete.</p>
+
+                    <h3>Technologies Used</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Software</h3>
+                            <ul>
+                                <li>Autodesk 3ds Max</li>
+                                <li>Chaos Corona</li>
+                                <li>Blender</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Technical Skills</h3>
+                            <ul>
+                                <li>3D Modeling</li>
+                                <li>Lighting Design</li>
+                                <li>Material Creation</li>
+                                <li>Scene Composition</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>3D Modeling</li>
-                            <li>Lighting Design</li>
-                            <li>Material Creation</li>
-                            <li>Scene Composition</li>
-                        </ul>
+                </section>
+
+                <section id="implementation"
+                    class="version-section hover-transform-up">
+                    <!-- Technical implementation details -->
+                    <h2 class="funnel-display-header">Implementation
+                        Details</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Custom Models</h3>
+                            <ul>
+                                <li>Ceiling Lamp</li>
+                                <li>Office Chair</li>
+                                <li>Record Stand</li>
+                                <li>Desk</li>
+                                <li>Treasure Chest</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Multiple Light Sources</li>
+                                <li>Caustic Effects</li>
+                                <li>Accurate Reflections</li>
+                                <li>Detailed Texturing</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="implementation" class="version-section hover-transform-up">
-                <!-- Technical implementation details -->
-                <h2 class="funnel-display-header">Implementation Details</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Custom Models</h3>
-                        <ul>
-                            <li>Ceiling Lamp</li>
-                            <li>Office Chair</li>
-                            <li>Record Stand</li>
-                            <li>Desk</li>
-                            <li>Treasure Chest</li>
-                        </ul>
+                <section id="challenges"
+                    class="version-section hover-transform-up">
+                    <!-- Development challenges and solutions -->
+                    <h2 class="funnel-display-header">Challenges Faced</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Software Learning Curve</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>First time using 3ds Max and Chaos Corona with no
+                                prior experience</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Learned through extensive hands-on
+                                experimentation and trial-and-error</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>Computing Resources</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Renders taking 10+ hours to complete</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Utilized CPU rendering via Chaos Corona to
+                                complete the project despite hardware
+                                limitations</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>Time Management</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Project requiring constant monitoring and
+                                adjustments</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Developed systematic workflow with regular render
+                                checkpoints to catch issues early</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li>Multiple Light Sources</li>
-                            <li>Caustic Effects</li>
-                            <li>Accurate Reflections</li>
-                            <li>Detailed Texturing</li>
-                        </ul>
+                </section>
+
+                <section id="outcomes"
+                    class="version-section hover-transform-up">
+                    <!-- Project results and achievements -->
+                    <h2 class="funnel-display-header">Project Outcomes</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Achievements</h3>
+                            <ul>
+                                <li>1:1 Scale Accuracy</li>
+                                <li>Detailed Modeling</li>
+                                <li>Complex Lighting</li>
+                                <li>Authentic Details</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Project Highlights</h3>
+                            <ul>
+                                <li>Custom Models</li>
+                                <li>Accurate Guitar Stickers</li>
+                                <li>Real-world Match</li>
+                                <li>Professional Renders</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="challenges" class="version-section hover-transform-up">
-                <!-- Development challenges and solutions -->
-                <h2 class="funnel-display-header">Challenges Faced</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Software Learning Curve</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>First time using 3ds Max and Chaos Corona with no prior experience</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Learned through extensive hands-on experimentation and trial-and-error</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                <section id="gallery"
+                    class="version-section hover-transform-up">
+                    <!-- 3D render gallery -->
+                    <h2 class="funnel-display-header">3D Renders</h2>
+                    <div class="image-grid">
+                        <!-- Project image gallery -->
+                        <img src="/assets/images/treasure-chest.png"
+                            alt="A 3D render of an office space with a wooden desk, chair, lamps, vinyl records, and a Monstera plant in the corner."
+                            data-full-res="/assets/images/treasure-chest.png"
+                            class="hover-scale">
+                        <img src="/assets/images/early.png"
+                            alt="Early render of the office space"
+                            class="hover-scale">
+                        <img src="/assets/images/early-updated.png"
+                            alt="Updated early render" class="hover-scale">
+                        <img src="/assets/images/patio.png" alt="Patio view"
+                            class="hover-scale">
+                        <img src="/assets/images/coffee-table.png"
+                            alt="Coffee table detail" class="hover-scale">
+                        <img src="/assets/images/office.png"
+                            alt="Complete office view" class="hover-scale">
                     </div>
+                </section>
+            </div>
+        </main>
 
-                    <div class="skill-category hover-transform-up">
-                        <h3>Computing Resources</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Renders taking 10+ hours to complete</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Utilized CPU rendering via Chaos Corona to complete the project despite hardware limitations</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-
-                    <div class="skill-category hover-transform-up">
-                        <h3>Time Management</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Project requiring constant monitoring and adjustments</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Developed systematic workflow with regular render checkpoints to catch issues early</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-                </div>
-            </section>
-
-            <section id="outcomes" class="version-section hover-transform-up">
-                <!-- Project results and achievements -->
-                <h2 class="funnel-display-header">Project Outcomes</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li>1:1 Scale Accuracy</li>
-                            <li>Detailed Modeling</li>
-                            <li>Complex Lighting</li>
-                            <li>Authentic Details</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Project Highlights</h3>
-                        <ul>
-                            <li>Custom Models</li>
-                            <li>Accurate Guitar Stickers</li>
-                            <li>Real-world Match</li>
-                            <li>Professional Renders</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="gallery" class="version-section hover-transform-up">
-                <!-- 3D render gallery -->
-                <h2 class="funnel-display-header">3D Renders</h2>
-                <div class="image-grid">
-                    <!-- Project image gallery -->
-                    <img src="/assets/images/treasure-chest.png" 
-                         alt="A 3D render of an office space with a wooden desk, chair, lamps, vinyl records, and a Monstera plant in the corner." 
-                         data-full-res="/assets/images/treasure-chest.png"
-                         class="hover-scale">
-                    <img src="/assets/images/early.png" alt="Early render of the office space" class="hover-scale">
-                    <img src="/assets/images/early-updated.png" alt="Updated early render" class="hover-scale">
-                    <img src="/assets/images/patio.png" alt="Patio view" class="hover-scale">
-                    <img src="/assets/images/coffee-table.png" alt="Coffee table detail" class="hover-scale">
-                    <img src="/assets/images/office.png" alt="Complete office view" class="hover-scale">
-                </div>
-            </section>
+        <!-- Footer and modal injection points -->
+        <div id="footer-placeholder"></div>
+        <div id="imageModal" class="modal">
+            <img id="modalImage" src alt>
         </div>
-    </main>
+        <script src="/scripts.js"></script>
 
-    <!-- Footer and modal injection points -->
-    <div id="footer-placeholder"></div>
-    <div id="imageModal" class="modal">
-        <img id="modalImage" src="" alt="">
-    </div>
-    <script src="/scripts.js"></script>
-
-</body>
+    </body>
 
 </html>

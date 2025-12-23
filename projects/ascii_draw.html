@@ -11,55 +11,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | ASCII Draw</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | ASCII Draw</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">    
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
+    <body>
+        <!-- Header will be injected here -->
+        <div id="header-placeholder"></div>
 
-<body>
-    <!-- Header will be injected here -->
-    <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">ASCII Draw</h1>
 
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">ASCII Draw</h1>
-            
-            <!-- Navigation cards for different sections -->
-            <nav class="toc-nav">
-                <!-- Table of contents cards -->
-                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
-                </a>
-                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">⚙️</span>
-                    <span class="toc-title">Implementation</span>
-                </a>
-                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔧</span>
-                    <span class="toc-title">Challenges</span>
-                </a>
-                <a href="#outcomes" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎯</span>
-                    <span class="toc-title">Outcomes</span>
-                </a>
-                <!-- <a href="#videos" class="toc-card hover-transform-left">
+                <!-- Navigation cards for different sections -->
+                <nav class="toc-nav">
+                    <!-- Table of contents cards -->
+                    <a href="#overview"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
+                    </a>
+                    <a href="#implementation"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">⚙️</span>
+                        <span class="toc-title">Implementation</span>
+                    </a>
+                    <a href="#challenges"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔧</span>
+                        <span class="toc-title">Challenges</span>
+                    </a>
+                    <a href="#outcomes"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🎯</span>
+                        <span class="toc-title">Outcomes</span>
+                    </a>
+                    <!-- <a href="#videos" class="toc-card hover-transform-left">
                     <span class="toc-icon">🎥</span>
                     <span class="toc-title">Videos</span>
                 </a>
@@ -67,150 +77,181 @@
                     <span class="toc-icon">🖼️</span>
                     <span class="toc-title">Gallery</span>
                 </a> -->
-                <!-- Add new ASCII viewer card -->
-                <a href="/ascii/ascii.html" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📟</span>
-                    <span class="toc-title">ASCII Viewer</span>
+                    <!-- Add new ASCII viewer card -->
+                    <a href="/ascii/ascii.html"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📟</span>
+                        <span class="toc-title">ASCII Viewer</span>
+                    </a>
+                    <!-- Repository link -->
+                    <a href="https://github.com/TelloViz/CPSC254-OpenSource"
+                        target="_blank"
+                        class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon fab fa-github"></span>
+                        <span class="toc-title">Repository</span>
+                    </a>
+                </nav>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <!-- Repository link -->
-                <a href="https://github.com/TelloViz/CPSC254-OpenSource" 
-                   target="_blank" 
-                   class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon fab fa-github"></span>
-                    <span class="toc-title">Repository</span>
-                </a>
-            </nav>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <!-- Project documentation sections -->
-            <section id="overview" class="version-section hover-transform-up">
-                <!-- Project overview and technologies -->
-                <h2 class="funnel-display-header">Project Overview</h2>
-                <p>An open-source contribution project that extends ASCII Draw with image import functionality, allowing users to convert PNG files into ASCII art. The imported images can be edited using the program's existing tools and saved or copied to the clipboard.</p>
-                
-                <h3>Technologies Used</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Technologies</h3>
-                        <ul>
-                            <li>Python</li>
-                            <li>GTK/GDK</li>
-                            <li>GNOME Builder</li>
-                            <li>Meson Build System</li>
-                        </ul>
+                <!-- Project documentation sections -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <!-- Project overview and technologies -->
+                    <h2 class="funnel-display-header">Project Overview</h2>
+                    <p>An open-source contribution project that extends ASCII
+                        Draw with image import functionality, allowing users to
+                        convert PNG files into ASCII art. The imported images
+                        can be edited using the program's existing tools and
+                        saved or copied to the clipboard.</p>
+
+                    <h3>Technologies Used</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Technologies</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>GTK/GDK</li>
+                                <li>GNOME Builder</li>
+                                <li>Meson Build System</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Development Tools</h3>
+                            <ul>
+                                <li>Git/GitHub</li>
+                                <li>Pylint</li>
+                                <li>XML</li>
+                                <li>GitHub Projects (Kanban)</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Development Tools</h3>
-                        <ul>
-                            <li>Git/GitHub</li>
-                            <li>Pylint</li>
-                            <li>XML</li>
-                            <li>GitHub Projects (Kanban)</li>
-                        </ul>
+                </section>
+
+                <section id="implementation"
+                    class="version-section hover-transform-up">
+                    <!-- Implementation details and features -->
+                    <h2 class="funnel-display-header">Implementation
+                        Details</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>PNG to ASCII Conversion</li>
+                                <li>Image Downsampling</li>
+                                <li>Brightness-based Character Mapping</li>
+                                <li>Integration with Existing Tools</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Functions</h3>
+                            <ul>
+                                <li>import_image</li>
+                                <li>pixbuf_to_rgb_hsb</li>
+                                <li>rgb_to_hsb</li>
+                                <li>brightness_to_ascii</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="implementation" class="version-section hover-transform-up">
-                <!-- Implementation details and features -->
-                <h2 class="funnel-display-header">Implementation Details</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li>PNG to ASCII Conversion</li>
-                            <li>Image Downsampling</li>
-                            <li>Brightness-based Character Mapping</li>
-                            <li>Integration with Existing Tools</li>
-                        </ul>
+                <section id="challenges"
+                    class="version-section hover-transform-up">
+                    <!-- Development challenges and solutions -->
+                    <h2 class="funnel-display-header">Challenges Faced</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>GTK/GDK Integration</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Complex image handling and conversion of GDK
+                                pixbuf to usable format</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Implemented custom conversion functions after
+                                thorough documentation review and testing</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>Performance Optimization</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Large images caused slow processing and
+                                impractical ASCII output</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Implemented downsampling techniques to reduce
+                                image sizes before conversion</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>UI Integration</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Versioning conflicts with Glade UI tool</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Directly edited window.ui XML file for UI
+                                modifications</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Functions</h3>
-                        <ul>
-                            <li>import_image</li>
-                            <li>pixbuf_to_rgb_hsb</li>
-                            <li>rgb_to_hsb</li>
-                            <li>brightness_to_ascii</li>
-                        </ul>
+                </section>
+
+                <section id="outcomes"
+                    class="version-section hover-transform-up">
+                    <!-- Project results and future improvements -->
+                    <h2 class="funnel-display-header">Project Outcomes</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Achievements</h3>
+                            <ul>
+                                <li>Successfully implemented image import
+                                    feature</li>
+                                <li>Integrated with existing save
+                                    functionality</li>
+                                <li>Optimized for performance with large
+                                    images</li>
+                                <li>Maintained consistent UI/UX</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Future Improvements</h3>
+                            <ul>
+                                <li>CLI functionality</li>
+                                <li>Enhanced canvas features</li>
+                                <li>Reverse conversion capability</li>
+                                <li>Performance optimization</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="challenges" class="version-section hover-transform-up">
-                <!-- Development challenges and solutions -->
-                <h2 class="funnel-display-header">Challenges Faced</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>GTK/GDK Integration</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Complex image handling and conversion of GDK pixbuf to usable format</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                <!-- Commented out sections for future content -->
+                <!-- videos section -->
+                <!-- gallery section -->
+            </div>
+        </main>
 
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Implemented custom conversion functions after thorough documentation review and testing</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-
-                    <div class="skill-category hover-transform-up">
-                        <h3>Performance Optimization</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Large images caused slow processing and impractical ASCII output</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Implemented downsampling techniques to reduce image sizes before conversion</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-
-                    <div class="skill-category hover-transform-up">
-                        <h3>UI Integration</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Versioning conflicts with Glade UI tool</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Directly edited window.ui XML file for UI modifications</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-                </div>
-            </section>
-
-            <section id="outcomes" class="version-section hover-transform-up">
-                <!-- Project results and future improvements -->
-                <h2 class="funnel-display-header">Project Outcomes</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li>Successfully implemented image import feature</li>
-                            <li>Integrated with existing save functionality</li>
-                            <li>Optimized for performance with large images</li>
-                            <li>Maintained consistent UI/UX</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Future Improvements</h3>
-                        <ul>
-                            <li>CLI functionality</li>
-                            <li>Enhanced canvas features</li>
-                            <li>Reverse conversion capability</li>
-                            <li>Performance optimization</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Commented out sections for future content -->
-            <!-- videos section -->
-            <!-- gallery section -->
-        </div>
-    </main>
-
-    <!-- Footer will be injected here -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        <!-- Footer will be injected here -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

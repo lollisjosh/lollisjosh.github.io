@@ -11,294 +11,356 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Project Gal</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Project Gal</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
+        <!-- Font Awesome for icons -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
-</head>
+    </head>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Project GAL</h1>
-            
-            <!-- Navigation cards for project sections -->
-            <nav class="toc-nav">
-                <!-- Table of contents with emoji icons -->
-                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Project GAL</h1>
+
+                <!-- Navigation cards for project sections -->
+                <nav class="toc-nav">
+                    <!-- Table of contents with emoji icons -->
+                    <a href="#overview"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
+                    </a>
+                    <a href="#technologies"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">💻</span>
+                        <span class="toc-title">Technologies</span>
+                    </a>
+                    <a href="#implementation"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">⚙️</span>
+                        <span class="toc-title">Implementation</span>
+                    </a>
+                    <a href="#challenges"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔧</span>
+                        <span class="toc-title">Challenges</span>
+                    </a>
+                    <a href="#outcomes"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🎯</span>
+                        <span class="toc-title">Outcomes</span>
+                    </a>
+                    <a href="#blogs"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📓</span>
+                        <span class="toc-title">Dev Logs</span>
+                    </a>
+                    <a href="#videos"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🎥</span>
+                        <span class="toc-title">Videos</span>
+                    </a>
+                    <a href="#gallery"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🖼️</span>
+                        <span class="toc-title">Gallery</span>
+                    </a>
+                    <a href="https://github.com/TelloViz/Gal"
+                        target="_blank"
+                        class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon fab fa-github"></span>
+                        <span class="toc-title">Repository</span>
+                    </a>
+                </nav>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">💻</span>
-                    <span class="toc-title">Technologies</span>
-                </a>
-                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">⚙️</span>
-                    <span class="toc-title">Implementation</span>
-                </a>
-                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔧</span>
-                    <span class="toc-title">Challenges</span>
-                </a>
-                <a href="#outcomes" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎯</span>
-                    <span class="toc-title">Outcomes</span>
-                </a>
-                <a href="#blogs" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📓</span>
-                    <span class="toc-title">Dev Logs</span>
-                </a>
-                <a href="#videos" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎥</span>
-                    <span class="toc-title">Videos</span>
-                </a>
-                <a href="#gallery" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🖼️</span>
-                    <span class="toc-title">Gallery</span>
-                </a>
-                <a href="https://github.com/TelloViz/Gal" 
-                   target="_blank" 
-                   class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon fab fa-github"></span>
-                    <span class="toc-title">Repository</span>
-                </a>
-            </nav>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <!-- Project documentation sections -->
-            <section id="overview" class="version-section hover-transform-up">
-                <!-- Project overview and technologies -->
-                <h2 class="funnel-display-header">Project Overview</h2>
-                <p>Project GAL is a first-person shooter game focused on target practice and aim training. Built with Unity, it features dynamic target systems, custom animations, and visual effects to create an engaging training environment.</p>
-                
-                <!-- Add overview GIF thumbnail -->
-                <img class="project-thumb img-thumbnail blog-gif hover-transform-up" src="/assets/gifs/targetshoot.gif" alt="Target Shooting Demonstration" width="300" height="207" loading="lazy">
-            </section>
+                <!-- Project documentation sections -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <!-- Project overview and technologies -->
+                    <h2 class="funnel-display-header">Project Overview</h2>
+                    <p>Project GAL is a first-person shooter game focused on
+                        target practice and aim training. Built with Unity, it
+                        features dynamic target systems, custom animations, and
+                        visual effects to create an engaging training
+                        environment.</p>
 
-            <!-- New separate Technologies section -->
-            <section id="technologies" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Technologies Used</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Technologies</h3>
-                        <ul>
-                            <li>Unity Engine</li>
-                            <li>C#</li>
-                            <li>Unity Physics</li>
-                            <li>Unity Particle System</li>
-                        </ul>
+                    <!-- Add overview GIF thumbnail -->
+                    <img
+                        class="project-thumb img-thumbnail blog-gif hover-transform-up"
+                        src="/assets/gifs/targetshoot.gif"
+                        alt="Target Shooting Demonstration" width="300"
+                        height="207" loading="lazy">
+                </section>
+
+                <!-- New separate Technologies section -->
+                <section id="technologies"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Technologies Used</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Technologies</h3>
+                            <ul>
+                                <li>Unity Engine</li>
+                                <li>C#</li>
+                                <li>Unity Physics</li>
+                                <li>Unity Particle System</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Development Tools</h3>
+                            <ul>
+                                <li>Visual Studio</li>
+                                <li>Git/GitHub</li>
+                                <li>Unity Asset Store</li>
+                                <li>Unity ProBuilder</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Development Tools</h3>
-                        <ul>
-                            <li>Visual Studio</li>
-                            <li>Git/GitHub</li>
-                            <li>Unity Asset Store</li>
-                            <li>Unity ProBuilder</li>
-                        </ul>
+                </section>
+
+                <section id="implementation"
+                    class="version-section hover-transform-up">
+                    <!-- Technical implementation details -->
+                    <h2 class="funnel-display-header">Implementation
+                        Details</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>First-Person Controls</li>
+                                <li>Dynamic Target System</li>
+                                <li>Hit Detection</li>
+                                <li>Visual Effects System</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Systems</h3>
+                            <ul>
+                                <li>Player Controller</li>
+                                <li>Weapon System</li>
+                                <li>Target Management</li>
+                                <li>Score Tracking</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="implementation" class="version-section hover-transform-up">
-                <!-- Technical implementation details -->
-                <h2 class="funnel-display-header">Implementation Details</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Key Features</h3>
-                        <ul>
-                            <li>First-Person Controls</li>
-                            <li>Dynamic Target System</li>
-                            <li>Hit Detection</li>
-                            <li>Visual Effects System</li>
-                        </ul>
+                <section id="challenges"
+                    class="version-section hover-transform-up">
+                    <!-- Development challenges and solutions -->
+                    <h2 class="funnel-display-header">Challenges Faced</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Physics-Based Hit Detection</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Implementing accurate and responsive hit
+                                detection for moving targets</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Developed custom raycasting system with Unity
+                                Physics</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>Performance Optimization</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Managing particle effects and physics
+                                calculations efficiently</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Implemented object pooling and optimized particle
+                                systems</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
+
+                        <div class="skill-category hover-transform-up">
+                            <h3>Target Movement Patterns</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Creating varied and engaging target behaviors</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Designed modular movement system with
+                                customizable patterns</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Systems</h3>
-                        <ul>
-                            <li>Player Controller</li>
-                            <li>Weapon System</li>
-                            <li>Target Management</li>
-                            <li>Score Tracking</li>
-                        </ul>
+                </section>
+
+                <section id="outcomes"
+                    class="version-section hover-transform-up">
+                    <!-- Project achievements and future plans -->
+                    <h2 class="funnel-display-header">Project Outcomes</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Achievements</h3>
+                            <ul>
+                                <li>Smooth FPS mechanics</li>
+                                <li>Responsive controls</li>
+                                <li>Dynamic target system</li>
+                                <li>Polished visual effects</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Future Improvements</h3>
+                            <ul>
+                                <li>Additional game modes</li>
+                                <li>Score tracking system</li>
+                                <li>Advanced target patterns</li>
+                                <li>Multiplayer functionality</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="challenges" class="version-section hover-transform-up">
-                <!-- Development challenges and solutions -->
-                <h2 class="funnel-display-header">Challenges Faced</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Physics-Based Hit Detection</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Implementing accurate and responsive hit detection for moving targets</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Developed custom raycasting system with Unity Physics</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-
-                    <div class="skill-category hover-transform-up">
-                        <h3>Performance Optimization</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Managing particle effects and physics calculations efficiently</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Implemented object pooling and optimized particle systems</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-
-                    <div class="skill-category hover-transform-up">
-                        <h3>Target Movement Patterns</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Creating varied and engaging target behaviors</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Designed modular movement system with customizable patterns</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-                </div>
-            </section>
-
-            <section id="outcomes" class="version-section hover-transform-up">
-                <!-- Project achievements and future plans -->
-                <h2 class="funnel-display-header">Project Outcomes</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li>Smooth FPS mechanics</li>
-                            <li>Responsive controls</li>
-                            <li>Dynamic target system</li>
-                            <li>Polished visual effects</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Future Improvements</h3>
-                        <ul>
-                            <li>Additional game modes</li>
-                            <li>Score tracking system</li>
-                            <li>Advanced target patterns</li>
-                            <li>Multiplayer functionality</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="videos" class="version-section hover-transform-up">
-                <!-- YouTube video embeds -->
-                <h2 class="funnel-display-header">Demo Videos</h2>
-                <div class="video-section">
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" src="https://www.youtube.com/embed/tzEoc89jLjY" 
+                <section id="videos" class="version-section hover-transform-up">
+                    <!-- YouTube video embeds -->
+                    <h2 class="funnel-display-header">Demo Videos</h2>
+                    <div class="video-section">
+                        <div class="iframe-border hover-transform-up">
+                            <iframe class="project-video"
+                                src="https://www.youtube.com/embed/tzEoc89jLjY"
                                 allowfullscreen></iframe>
-                    </div>
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" src="https://www.youtube.com/embed/01thEJaXwEs" 
+                        </div>
+                        <div class="iframe-border hover-transform-up">
+                            <iframe class="project-video"
+                                src="https://www.youtube.com/embed/01thEJaXwEs"
                                 allowfullscreen></iframe>
-                    </div>
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" src="https://www.youtube.com/embed/Hy1No7ok5Zk" 
+                        </div>
+                        <div class="iframe-border hover-transform-up">
+                            <iframe class="project-video"
+                                src="https://www.youtube.com/embed/Hy1No7ok5Zk"
                                 allowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section id="gallery" class="version-section hover-transform-up">
-                <!-- Development progress gallery -->
-                <h2 class="funnel-display-header">Development Gallery</h2>
-                <div class="carousel-container">
-                    <!-- Gallery display area -->
-                    <div class="carousel-images">
-                        <img src="/assets/gifs/GAL_aim.gif" 
-                             alt="Target aim demonstration"
-                             data-full-res="/assets/gifs/GAL_aim.gif">
-                        <img src="/assets/gifs/Gal_FPS_Demo.gif" 
-                             alt="First person shooter demo"
-                             data-full-res="/assets/gifs/Gal_FPS_Demo.gif">
-                        <img src="/assets/gifs/Gal_Target_Prefab.gif" 
-                             alt="Target prefab interaction"
-                             data-full-res="/assets/gifs/Gal_Target_Prefab.gif">
-                        <img src="/assets/gifs/hammer.gif" 
-                             alt="Hammer animation"
-                             data-full-res="/assets/gifs/hammer.gif">
-                        <img src="/assets/gifs/hitFX.gif" 
-                             alt="Hit effects visualization"
-                             data-full-res="/assets/gifs/hitFX.gif">
-                        <img src="/assets/gifs/peekaboo.gif" 
-                             alt="Peekaboo game mechanic"
-                             data-full-res="/assets/gifs/peekaboo.gif">
-                        <img src="/assets/gifs/pop.gif" 
-                             alt="Pop animation effect"
-                             data-full-res="/assets/gifs/pop.gif">
-                        <img src="/assets/gifs/revIso.gif" 
-                             alt="Isometric view reveal"
-                             data-full-res="/assets/gifs/revIso.gif">
-                        <img src="/assets/gifs/targetshoot.gif" 
-                             alt="Target shooting demonstration"
-                             data-full-res="/assets/gifs/targetshoot.gif">
+                <section id="gallery"
+                    class="version-section hover-transform-up">
+                    <!-- Development progress gallery -->
+                    <h2 class="funnel-display-header">Development Gallery</h2>
+                    <div class="carousel-container">
+                        <!-- Gallery display area -->
+                        <div class="carousel-images">
+                            <img src="/assets/gifs/GAL_aim.gif"
+                                alt="Target aim demonstration"
+                                data-full-res="/assets/gifs/GAL_aim.gif">
+                            <img src="/assets/gifs/Gal_FPS_Demo.gif"
+                                alt="First person shooter demo"
+                                data-full-res="/assets/gifs/Gal_FPS_Demo.gif">
+                            <img src="/assets/gifs/Gal_Target_Prefab.gif"
+                                alt="Target prefab interaction"
+                                data-full-res="/assets/gifs/Gal_Target_Prefab.gif">
+                            <img src="/assets/gifs/hammer.gif"
+                                alt="Hammer animation"
+                                data-full-res="/assets/gifs/hammer.gif">
+                            <img src="/assets/gifs/hitFX.gif"
+                                alt="Hit effects visualization"
+                                data-full-res="/assets/gifs/hitFX.gif">
+                            <img src="/assets/gifs/peekaboo.gif"
+                                alt="Peekaboo game mechanic"
+                                data-full-res="/assets/gifs/peekaboo.gif">
+                            <img src="/assets/gifs/pop.gif"
+                                alt="Pop animation effect"
+                                data-full-res="/assets/gifs/pop.gif">
+                            <img src="/assets/gifs/revIso.gif"
+                                alt="Isometric view reveal"
+                                data-full-res="/assets/gifs/revIso.gif">
+                            <img src="/assets/gifs/targetshoot.gif"
+                                alt="Target shooting demonstration"
+                                data-full-res="/assets/gifs/targetshoot.gif">
+                        </div>
+
+                        <!-- Carousel navigation buttons -->
+                        <button
+                            class="carousel-btn prev hover-transform-left">&#10094;</button>
+                        <button
+                            class="carousel-btn next hover-transform-left">&#10095;</button>
                     </div>
-                    
-                    <!-- Carousel navigation buttons -->
-                    <button class="carousel-btn prev hover-transform-left">&#10094;</button>
-                    <button class="carousel-btn next hover-transform-left">&#10095;</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Devlogs Section -->
-<section id="devlogs" class="version-section hover-transform-up">
-    <h2 class="funnel-display-header">Devlogs</h2>
+                <!-- Devlogs Section -->
+                <section id="devlogs"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Devlogs</h2>
 
-    <div class="dropdown-section">
-        <div class="dropdown-header" data-dropdown="devlogs">
-            <h3>View All Devlogs</h3>
-            <i class="fas fa-chevron-down dropdown-icon"></i>
+                    <div class="dropdown-section">
+                        <div class="dropdown-header" data-dropdown="devlogs">
+                            <h3>View All Devlogs</h3>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </div>
+                        <div class="dropdown-content" id="devlogs-content">
+                            <ul>
+                                <li><a
+                                        href="/blog/GAL-Dev-2023-09-11.html">Initial
+                                        development setup and project planning
+                                        (September 11, 2023)</a></li>
+                                <li><a
+                                        href="/blog/GAL-Dev-2023-09-18.html">Progress
+                                        update and challenge solutions
+                                        (September 18, 2023)</a></li>
+                                <li><a
+                                        href="/blog/GAL-Dev-2023-10-01.html">Mechanics
+                                        demo and development progress (October
+                                        1, 2023)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Footer and modal injection points -->
+        <div id="footer-placeholder"></div>
+        <div id="imageModal" class="modal">
+            <img id="modalImage" src alt>
         </div>
-        <div class="dropdown-content" id="devlogs-content">
-            <ul>
-                <li><a href="/blog/GAL-Dev-2023-09-11.html">Initial development setup and project planning (September 11, 2023)</a></li>
-                <li><a href="/blog/GAL-Dev-2023-09-18.html">Progress update and challenge solutions (September 18, 2023)</a></li>
-                <li><a href="/blog/GAL-Dev-2023-10-01.html">Mechanics demo and development progress (October 1, 2023)</a></li>
-            </ul>
-        </div>
-    </div>
-</section>
 
-        </div>
-    </main>
-
-    <!-- Footer and modal injection points -->
-    <div id="footer-placeholder"></div>
-    <div id="imageModal" class="modal">
-        <img id="modalImage" src="" alt="">
-    </div>
-
-    <script src="/scripts.js"></script>
-</body>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

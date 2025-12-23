@@ -10,113 +10,121 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composition | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Composition | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
-    <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome (social icons) -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
- <!-- Mobile CSS (screens ≤ 768px) -->
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Mobile CSS (screens ≤ 768px) -->
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Composition</h1>
 
-</head>
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Composition</h1>
-
-            <nav class="toc-nav">
-                <a href="#overview" class="toc-card hover-transform-left">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
+                <nav class="toc-nav">
+                    <a href="#overview" class="toc-card hover-transform-left">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
+                    </a>
+                    <a href="#videos" class="toc-card hover-transform-left">
+                        <span class="toc-icon">🎥</span>
+                        <span class="toc-title">Videos</span>
+                    </a>
+                </nav>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <a href="#videos" class="toc-card hover-transform-left">
-                    <span class="toc-icon">🎥</span>
-                    <span class="toc-title">Videos</span>
-                </a>
-            </nav>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
 
-            <!-- Overview Section -->
-            <section id="overview" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Project Overview</h2>
-                <p>Original music compositions created for various projects and personal works. These pieces showcase different musical styles and emotional themes, from epic orchestral arrangements to tragic thematic elements.</p>
-                
-                <h3>Technologies Used</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Tools</h3>
-                        <ul>
-                            <li>Digital Audio Workstation</li>
-                            <li>Virtual Instruments</li>
-                            <li>Audio Processing</li>
-                            <li>MIDI Controllers</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Musical Elements</h3>
-                        <ul>
-                            <li>Orchestral Arrangement</li>
-                            <li>Thematic Development</li>
-                            <li>Sound Design</li>
-                            <li>Music Theory</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                <!-- Overview Section -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Project Overview</h2>
+                    <p>Original music compositions created for various projects
+                        and personal works. These pieces showcase different
+                        musical styles and emotional themes, from epic
+                        orchestral arrangements to tragic thematic elements.</p>
 
-            <!-- Videos Section -->
-            <section id="videos" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Music Compositions</h2>
-                <div class="video-section">
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" 
-                            src="https://www.youtube.com/embed/dke6jsHlGzA" 
-                            title="&quot;Epic Theme&quot; from Eek! My Boyfriend Turned Into A Worm" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                    <h3>Technologies Used</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Tools</h3>
+                            <ul>
+                                <li>Digital Audio Workstation</li>
+                                <li>Virtual Instruments</li>
+                                <li>Audio Processing</li>
+                                <li>MIDI Controllers</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Musical Elements</h3>
+                            <ul>
+                                <li>Orchestral Arrangement</li>
+                                <li>Thematic Development</li>
+                                <li>Sound Design</li>
+                                <li>Music Theory</li>
+                            </ul>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video" 
-                            src="https://www.youtube.com/embed/QdSxFJrew5E" 
-                            title="&quot;Tragic Theme&quot; from Eek! My Boyfriend Turned Into A Worm" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen>
-                        </iframe>
+                <!-- Videos Section -->
+                <section id="videos" class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Music Compositions</h2>
+                    <div class="video-section">
+                        <div class="iframe-border hover-transform-up">
+                            <iframe class="project-video"
+                                src="https://www.youtube.com/embed/dke6jsHlGzA"
+                                title="&quot;Epic Theme&quot; from Eek! My Boyfriend Turned Into A Worm"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="iframe-border hover-transform-up">
+                            <iframe class="project-video"
+                                src="https://www.youtube.com/embed/QdSxFJrew5E"
+                                title="&quot;Tragic Theme&quot; from Eek! My Boyfriend Turned Into A Worm"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </div>
-    </main>
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+                </section>
+            </div>
+        </main>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 </html>

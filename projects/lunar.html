@@ -10,130 +10,161 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Lunar Lander</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Lunar Lander</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
+        <!-- Font Awesome for icons -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-</head>
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Lunar Lander</h1>
-            
-            <!-- Navigation cards for project sections -->
-            <nav class="toc-nav">
-                <!-- Table of contents with emoji icons -->
-                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
+    </head>
+
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Lunar Lander</h1>
+
+                <!-- Navigation cards for project sections -->
+                <nav class="toc-nav">
+                    <!-- Table of contents with emoji icons -->
+                    <a href="#overview"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
+                    </a>
+                    <a href="#features"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔍</span>
+                        <span class="toc-title">Features</span>
+                    </a>
+                    <a href="#audio"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔊</span>
+                        <span class="toc-title">Audio</span>
+                    </a>
+                    <a href="#video"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🎥</span>
+                        <span class="toc-title">Demo</span>
+                    </a>
+                    <a href="#disclaimer"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📜</span>
+                        <span class="toc-title">Disclaimer</span>
+                    </a>
+                </nav>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <a href="#features" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔍</span>
-                    <span class="toc-title">Features</span>
-                </a>
-                <a href="#audio" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔊</span>
-                    <span class="toc-title">Audio</span>
-                </a>
-                <a href="#video" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🎥</span>
-                    <span class="toc-title">Demo</span>
-                </a>
-                <a href="#disclaimer" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📜</span>
-                    <span class="toc-title">Disclaimer</span>
-                </a>
-            </nav>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            
-            <!-- Project documentation sections -->
-            <section id="overview" class="version-section hover-transform-up">
-                <!-- Project overview -->
-                <h2 class="funnel-display-header">Lunar Lander in Unity Engine</h2>
-                <p>A modern take on the classic Lunar Lander game, built with Unity. This project combines procedural generation with physics-based gameplay and cinematic effects.</p>
-                
-                <!-- Using existing CSS classes instead of inline styles -->
-                <img src="/assets/gifs/lunar.gif" alt="Lunar Lander Gameplay" 
-                     class="img-thumbnail blog-gif hover-transform-up">
-            </section>
 
-            <section id="features" class="version-section hover-transform-up">
-                <!-- Key features -->
-                <h2 class="funnel-display-header">Key Features</h2>
-                <div class="skill-category hover-transform-up">
-                    <h3>Technical Highlights</h3>
-                    <ul>
-                        <li><strong>Perlin Noise:</strong> Procedurally generated landscape for unique terrain each game</li>
-                        <li><strong>Cinematography:</strong> Dynamic camera zoom that adjusts based on player movement and landing zones</li>
-                        <li><strong>Particle Effects:</strong> Realistic plasma-like rocket torch with dynamic lighting and physics interactions</li>
-                    </ul>
-                </div>
-            </section>
+                <!-- Project documentation sections -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <!-- Project overview -->
+                    <h2 class="funnel-display-header">Lunar Lander in Unity
+                        Engine</h2>
+                    <p>A modern take on the classic Lunar Lander game, built
+                        with Unity. This project combines procedural generation
+                        with physics-based gameplay and cinematic effects.</p>
 
-            <section id="video" class="version-section hover-transform-up">
-                <!-- YouTube video demonstration -->
-                <h2 class="funnel-display-header">Gameplay Demo</h2>
-                <div class="iframe-border hover-transform-up">
-                    <iframe class="project-video" src="https://www.youtube.com/embed/O9CsgTUTqkI?si=DV5msCV0-Xeq4_Iy" 
+                    <!-- Using existing CSS classes instead of inline styles -->
+                    <img src="/assets/gifs/lunar.gif"
+                        alt="Lunar Lander Gameplay"
+                        class="img-thumbnail blog-gif hover-transform-up">
+                </section>
+
+                <section id="features"
+                    class="version-section hover-transform-up">
+                    <!-- Key features -->
+                    <h2 class="funnel-display-header">Key Features</h2>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li><strong>Perlin Noise:</strong> Procedurally
+                                generated landscape for unique terrain each
+                                game</li>
+                            <li><strong>Cinematography:</strong> Dynamic camera
+                                zoom that adjusts based on player movement and
+                                landing zones</li>
+                            <li><strong>Particle Effects:</strong> Realistic
+                                plasma-like rocket torch with dynamic lighting
+                                and physics interactions</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="video" class="version-section hover-transform-up">
+                    <!-- YouTube video demonstration -->
+                    <h2 class="funnel-display-header">Gameplay Demo</h2>
+                    <div class="iframe-border hover-transform-up">
+                        <iframe class="project-video"
+                            src="https://www.youtube.com/embed/O9CsgTUTqkI?si=DV5msCV0-Xeq4_Iy"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
-                </div>
-            </section>
+                    </div>
+                </section>
 
-            <section id="audio" class="version-section hover-transform-up">
-                <!-- Audio information -->
-                <h2 class="funnel-display-header">Audio Production</h2>
-                <div class="skill-category hover-transform-up">
-                    <h3>🔊 Feelin' It?</h3>
-                    <p>All audio elements were created by myself, including:</p>
-                    <ul>
-                        <li>Bass Guitar performance</li>
-                        <li>Audio sampling and slicing</li>
-                        <li>Mixing and mastering</li>
-                        <li>Original composition</li>
-                    </ul>
-                </div>
-            </section>
+                <section id="audio" class="version-section hover-transform-up">
+                    <!-- Audio information -->
+                    <h2 class="funnel-display-header">Audio Production</h2>
+                    <div class="skill-category hover-transform-up">
+                        <h3>🔊 Feelin' It?</h3>
+                        <p>All audio elements were created by myself,
+                            including:</p>
+                        <ul>
+                            <li>Bass Guitar performance</li>
+                            <li>Audio sampling and slicing</li>
+                            <li>Mixing and mastering</li>
+                            <li>Original composition</li>
+                        </ul>
+                    </div>
+                </section>
 
-            <section id="disclaimer" class="version-section hover-transform-up">
-                <!-- Legal disclaimer -->
-                <h2 class="funnel-display-header">Disclaimer</h2>
-                <p>Some samples in the beat are sourced from <a href="https://www.sounds-resource.com/" target="_blank">The Sounds Resource</a> and are used strictly for educational purposes in my portfolio.</p>
-                <p>This game is not to be sold.</p>
-                <p>No money is made from my Youtube content, or the content here on my portfolio website.</p>
-                <p><b>All copyrights belong to original creators.</b></p>
-            </section>
-        </div>
-    </main>
+                <section id="disclaimer"
+                    class="version-section hover-transform-up">
+                    <!-- Legal disclaimer -->
+                    <h2 class="funnel-display-header">Disclaimer</h2>
+                    <p>Some samples in the beat are sourced from <a
+                            href="https://www.sounds-resource.com/"
+                            target="_blank">The Sounds Resource</a> and are used
+                        strictly for educational purposes in my portfolio.</p>
+                    <p>This game is not to be sold.</p>
+                    <p>No money is made from my Youtube content, or the content
+                        here on my portfolio website.</p>
+                    <p><b>All copyrights belong to original creators.</b></p>
+                </section>
+            </div>
+        </main>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
 
-    <script src="/scripts.js"></script>
-</body>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

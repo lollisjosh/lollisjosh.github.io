@@ -9,70 +9,76 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art & Design | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Art & Design | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
-    <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome (social icons) -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Art & Design</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
+                <!-- Project grid layout -->
+                <div id="projects-grid">
+                    <!-- Artwork section link -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/artwork.html">
+                            <h2>Artwork</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Artwork" class="img-thumbnail"
+                                    src="/assets/images/splat.png">
+                            </div>
+                        </a>
+                    </div>
 
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Art & Design</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <!-- Project grid layout -->
-            <div id="projects-grid">
-                <!-- Artwork section link -->
-                <div class="project-item hover-transform-up">
-                    <a href="/artwork.html">
-                        <h2>Artwork</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Artwork" class="img-thumbnail" src="/assets/images/splat.png">
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Design section link -->
-                <div class="project-item hover-transform-up">
-                    <a href="/design.html">
-                        <h2>Design</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Design" class="img-thumbnail" src="/assets/images/shoe.png">
-                        </div>
-                    </a>
+                    <!-- Design section link -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/design.html">
+                            <h2>Design</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Design" class="img-thumbnail"
+                                    src="/assets/images/shoe.png">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 </html>

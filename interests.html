@@ -9,75 +9,79 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Other Interests | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Other Interests | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
-    <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome (social icons) -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <!-- Project navigation -->
+                <h1 class="funnel-display-header">Other Interests</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
 
-    <main>
-        <div class="content-container">
-            <!-- Project navigation -->
-            <h1 class="funnel-display-header">Other Interests</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
+                <!-- Project grid layout -->
+                <div id="projects-grid">
+                    <!-- Music section link -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/music.html">
+                            <h2>Music & Production</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Music & Production"
+                                    class="img-thumbnail"
+                                    src="/assets/images/guitar.png">
+                            </div>
+                        </a>
+                    </div>
 
-            <!-- Project grid layout -->
-            <div id="projects-grid">
-                <!-- Music section link -->
-                <div class="project-item hover-transform-up">
-                    <a href="/music.html">
-                        <h2>Music & Production</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Music & Production" class="img-thumbnail" src="/assets/images/guitar.png">
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Art section link -->
-                <div class="project-item hover-transform-up">
-                    <a href="/art.html">
-                        <h2>Art & Design</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Art & Design" class="img-thumbnail" src="/assets/images/shoe.png">
-                        </div>
-                    </a>
+                    <!-- Art section link -->
+                    <div class="project-item hover-transform-up">
+                        <a href="/art.html">
+                            <h2>Art & Design</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Art & Design" class="img-thumbnail"
+                                    src="/assets/images/shoe.png">
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        </main>
+
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 </html>
-
-
-

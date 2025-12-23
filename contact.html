@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact | Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
         <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
+    <body>
+        <!-- Header placeholder -->
+        <div id="header-placeholder"></div>
 
-    
-    
-</head>
-<body>
-    <!-- Header placeholder -->
-    <div id="header-placeholder"></div>
-
-    <main>
-        <div class="content-container">
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-            <h1 class="funnel-display-header">Contact Me!</h1>
-            <!-- Profile picture with gradient border -->
-            <div id="pfp-placeholder">
-                <div class="pfp-border hover-scale">
-                    <img src="/assets/images/pfp.png" alt="Profile Picture" class="pfp">
+        <main>
+            <div class="content-container">
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
+                <h1 class="funnel-display-header">Contact Me!</h1>
+                <!-- Profile picture with gradient border -->
+                <div id="pfp-placeholder">
+                    <div class="pfp-border hover-scale">
+                        <img src="/assets/images/pfp.png" alt="Profile Picture"
+                            class="pfp">
+                    </div>
                 </div>
-            </div>        
-            <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/mlderkrv" method="POST" class="hover-transform-up">
-                <fieldset id="fs-frm-inputs">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" name="name" id="full-name" placeholder="First and Last" required>
-            
-                    <label for="email-address">Email Address</label>
-                    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required>
-            
-                    <label for="message">Message</label>
-                    <textarea rows="5" name="message" id="message" placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus." required></textarea>
-                    
-                    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                </fieldset>
-                <input type="submit" value="Submit" class="hover-transform-left">
-            </form>
-        </div>
-    </main>
+                <form id="fs-frm" name="simple-contact-form"
+                    accept-charset="utf-8"
+                    action="https://formspree.io/f/mlderkrv" method="POST"
+                    class="hover-transform-up">
+                    <fieldset id="fs-frm-inputs">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" name="name" id="full-name"
+                            placeholder="First and Last" required>
 
-    <!-- Footer placeholder -->
-    <div id="footer-placeholder"></div>
+                        <label for="email-address">Email Address</label>
+                        <input type="email" name="_replyto" id="email-address"
+                            placeholder="email@domain.tld" required>
 
-    <script src="/scripts.js"></script>
-</body>
+                        <label for="message">Message</label>
+                        <textarea rows="5" name="message" id="message"
+                            placeholder="Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla nullam quis risus."
+                            required></textarea>
+
+                        <input type="hidden" name="_subject" id="email-subject"
+                            value="Contact Form Submission">
+                    </fieldset>
+                    <input type="submit" value="Submit"
+                        class="hover-transform-left">
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer placeholder -->
+        <div id="footer-placeholder"></div>
+
+        <script src="/scripts.js"></script>
+    </body>
 </html>

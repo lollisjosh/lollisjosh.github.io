@@ -9,75 +9,79 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Work | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Design Work | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome (social icons) -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
+        <main>
+            <div class="content-container">
+                <!-- Page header -->
+                <h1 class="funnel-display-header">Design Work</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
 
-    <main>
-        <div class="content-container">
-            <!-- Page header -->
-            <h1 class="funnel-display-header">Design Work</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
+                <!-- Image carousel container -->
+                <div class="carousel-container hover-transform-up">
+                    <!-- Design work display area -->
+                    <div class="carousel-images">
+                        <img src="/assets/images/shoe.png"
+                            alt="Shoe Design"
+                            data-full-res="/assets/images/shoe.png"
+                            class="hover-scale">
+                        <img src="/assets/images/bob.png"
+                            alt="Digital Art"
+                            data-full-res="/assets/images/bob.png"
+                            class="hover-scale">
+                        <img src="/assets/images/dugg.png"
+                            alt="Digital Art"
+                            data-full-res="/assets/images/dugg.png"
+                            class="hover-scale">
+                        <img src="/assets/images/duo.png"
+                            alt="Digital Art"
+                            data-full-res="/assets/images/duo.png"
+                            class="hover-scale">
+                    </div>
 
-            <!-- Image carousel container -->
-            <div class="carousel-container hover-transform-up">
-                <!-- Design work display area -->
-                <div class="carousel-images">
-                    <img src="/assets/images/shoe.png" 
-                         alt="Shoe Design" 
-                         data-full-res="/assets/images/shoe.png"
-                         class="hover-scale">
-                         <img src="/assets/images/bob.png" 
-                         alt="Digital Art" 
-                         data-full-res="/assets/images/bob.png"
-                         class="hover-scale">
-                         <img src="/assets/images/dugg.png" 
-                         alt="Digital Art" 
-                         data-full-res="/assets/images/dugg.png"
-                         class="hover-scale">
-                         <img src="/assets/images/duo.png" 
-                         alt="Digital Art" 
-                         data-full-res="/assets/images/duo.png"
-                         class="hover-scale">
+                    <!-- Carousel navigation buttons -->
+                    <button class="carousel-btn prev hover-transform-left"
+                        onclick="prevImage()">&#10094;</button>
+                    <button class="carousel-btn next hover-transform-left"
+                        onclick="nextImage()">&#10095;</button>
                 </div>
-                
-                <!-- Carousel navigation buttons -->
-                <button class="carousel-btn prev hover-transform-left" onclick="prevImage()">&#10094;</button>
-                <button class="carousel-btn next hover-transform-left" onclick="nextImage()">&#10095;</button>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 </html>

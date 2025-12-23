@@ -11,253 +11,312 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Portfolio Website</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Portfolio Website</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
+        <!-- Font Awesome for icons -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
-</head>
+    </head>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Portfolio Website</h1>
-            <h4>Web Development Showcase</h4>
-            
-            <!-- Navigation cards for project sections -->
-            <nav class="toc-nav">
-                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">📝</span>
-                    <span class="toc-title">Overview</span>
-                </a>
-                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">⚙️</span>
-                    <span class="toc-title">Implementation</span>
-                </a>
-                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🔧</span>
-                    <span class="toc-title">Challenges</span>
-                </a>
-                <a href="#features" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">✨</span>
-                    <span class="toc-title">Features</span>
-                </a>
-                <a href="https://lollisjosh.github.io/" 
-                   target="_blank" 
-                   class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🌐</span>
-                    <span class="toc-title">Live Site</span>
-                </a>
-                <a href="https://github.com/lollisjosh/lollisjosh.github.io" 
-                   target="_blank" 
-                   class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon fab fa-github"></span>
-                    <span class="toc-title">Repository</span>
-                </a>
-            </nav>
-            
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Portfolio Website</h1>
+                <h4>Web Development Showcase</h4>
 
-            <!-- Project overview section -->
-            <section id="overview" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Project Overview</h2>
-                
-                <!-- WakaTime tracking widget with proper vertical centering -->
-                <div style="text-align: center; margin: 0.5rem 0 1.5rem 0; display: flex; justify-content: center; align-items: center; min-height: 40px;">
-                    <a href="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/22b9f1bf-fc78-4b34-a031-c769df92a570" 
-                       class="hover-scale" 
-                       style="display: inline-block;">
-                        <img src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/22b9f1bf-fc78-4b34-a031-c769df92a570.svg?style=for-the-badge" 
-                             alt="wakatime development hours" 
-                             title="Total development time tracked with WakaTime">
+                <!-- Navigation cards for project sections -->
+                <nav class="toc-nav">
+                    <a href="#overview"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">📝</span>
+                        <span class="toc-title">Overview</span>
                     </a>
-                </div>
-                
-                <p>This portfolio website is a comprehensive showcase of my skills, projects, and experience as a developer. Built as a semester-long project for my Web Development Engineering class at CSUF, it features responsive design, interactive elements, and an organized structure to effectively communicate my work to potential employers and collaborators.</p>
-                                
-                <h3 class="funnel-display-header">Technologies Used</h3>
-                
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Core Technologies</h3>
-                        <ul>
-                            <li>HTML5</li>
-                            <li>CSS3 with Media Queries</li>
-                            <li>Vanilla JavaScript</li>
-                            <li>Chart.js for Data Visualization</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Design Approach</h3>
-                        <ul>
-                            <li>Mobile-First Responsive Design</li>
-                            <li>Consistent Color Scheme</li>
-                            <li>Custom Typography</li>
-                            <li>Modular Component Structure</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                    <a href="#implementation"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">⚙️</span>
+                        <span class="toc-title">Implementation</span>
+                    </a>
+                    <a href="#challenges"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🔧</span>
+                        <span class="toc-title">Challenges</span>
+                    </a>
+                    <a href="#features"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">✨</span>
+                        <span class="toc-title">Features</span>
+                    </a>
+                    <a href="https://lollisjosh.github.io/"
+                        target="_blank"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🌐</span>
+                        <span class="toc-title">Live Site</span>
+                    </a>
+                    <a href="https://github.com/lollisjosh/lollisjosh.github.io"
+                        target="_blank"
+                        class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon fab fa-github"></span>
+                        <span class="toc-title">Repository</span>
+                    </a>
+                </nav>
 
-            <!-- Implementation details section -->
-            <section id="implementation" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Implementation Details</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Site Architecture</h3>
-                        <ul>
-                            <li>Template-Based Page Generation</li>
-                            <li>Custom Layouts for Different Content Types</li>
-                            <li>Component-Based Structure</li>
-                            <li>Content/Code Separation</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Responsive Design</h3>
-                        <ul>
-                            <li>Separate mobile/desktop CSS files</li>
-                            <li>Device-specific component layouts</li>
-                            <li>Adaptive chart displays on Skills page</li>
-                            <li>Thoughtful space utilization across viewports</li>
-                        </ul>
-                    </div>
-                </div>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
+                </a>
 
-                <!-- New section highlighting responsive design achievement -->
-                <h3 class="funnel-display-header">Responsive Design Highlight</h3>
-                <p>One achievement I'm particularly proud of is the mobile/desktop responsiveness implementation on the Skills page. Rather than simply rearranging elements, I created completely separate HTML structures with tailored interaction models for each device type. Desktop charts use hover interactions with "Hover to see data" prompts, while mobile versions use touch interactions with "Select to see data" instructions. This device-specific approach delivers truly optimized experiences without requiring JavaScript to restructure the page based on screen size.</p>
-                
-                <!-- Using project card styling for the GIF displays -->
-                <div class="image-grid">
-                    <div class="project-item hover-transform-up">
-                        <h3>Desktop Layout</h3>
-                        <div class="thumbnail-container">
-                            <img src="/assets/gifs/desktop_skills.gif" 
-                                 alt="Skills page on desktop" 
-                                 class="img-thumbnail" 
-                                 onclick="showModal(this.src)"
-                                 style="cursor: pointer;">
+                <!-- Project overview section -->
+                <section id="overview"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Project Overview</h2>
+
+                    <!-- WakaTime tracking widget with proper vertical centering -->
+                    <div
+                        style="text-align: center; margin: 0.5rem 0 1.5rem 0; display: flex; justify-content: center; align-items: center; min-height: 40px;">
+                        <a
+                            href="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/22b9f1bf-fc78-4b34-a031-c769df92a570"
+                            class="hover-scale"
+                            style="display: inline-block;">
+                            <img
+                                src="https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/22b9f1bf-fc78-4b34-a031-c769df92a570.svg?style=for-the-badge"
+                                alt="wakatime development hours"
+                                title="Total development time tracked with WakaTime">
+                        </a>
+                    </div>
+
+                    <p>This portfolio website is a comprehensive showcase of my
+                        skills, projects, and experience as a developer. Built
+                        as a semester-long project for my Web Development
+                        Engineering class at CSUF, it features responsive
+                        design, interactive elements, and an organized structure
+                        to effectively communicate my work to potential
+                        employers and collaborators.</p>
+
+                    <h3 class="funnel-display-header">Technologies Used</h3>
+
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Core Technologies</h3>
+                            <ul>
+                                <li>HTML5</li>
+                                <li>CSS3 with Media Queries</li>
+                                <li>Vanilla JavaScript</li>
+                                <li>Chart.js for Data Visualization</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Design Approach</h3>
+                            <ul>
+                                <li>Mobile-First Responsive Design</li>
+                                <li>Consistent Color Scheme</li>
+                                <li>Custom Typography</li>
+                                <li>Modular Component Structure</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="project-item hover-transform-up">
-                        <h3>Mobile Layout</h3>
-                        <div class="thumbnail-container">
-                            <img src="/assets/gifs/mobile_skills.gif" 
-                                 alt="Skills page on mobile" 
-                                 class="img-thumbnail" 
-                                 onclick="showModal(this.src)"
-                                 style="cursor: pointer;">
+                </section>
+
+                <!-- Implementation details section -->
+                <section id="implementation"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Implementation
+                        Details</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Site Architecture</h3>
+                            <ul>
+                                <li>Template-Based Page Generation</li>
+                                <li>Custom Layouts for Different Content
+                                    Types</li>
+                                <li>Component-Based Structure</li>
+                                <li>Content/Code Separation</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Responsive Design</h3>
+                            <ul>
+                                <li>Separate mobile/desktop CSS files</li>
+                                <li>Device-specific component layouts</li>
+                                <li>Adaptive chart displays on Skills page</li>
+                                <li>Thoughtful space utilization across
+                                    viewports</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- Challenges and solutions section -->
-            <section id="challenges" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Challenges Faced</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Responsive Navigation</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Creating a navigation system that works seamlessly on both mobile and desktop</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                    <!-- New section highlighting responsive design achievement -->
+                    <h3 class="funnel-display-header">Responsive Design
+                        Highlight</h3>
+                    <p>One achievement I'm particularly proud of is the
+                        mobile/desktop responsiveness implementation on the
+                        Skills page. Rather than simply rearranging elements, I
+                        created completely separate HTML structures with
+                        tailored interaction models for each device type.
+                        Desktop charts use hover interactions with
+                        "Hover to see data" prompts, while mobile versions use
+                        touch interactions with "Select to see data"
+                        instructions. This device-specific approach delivers
+                        truly optimized experiences without requiring JavaScript
+                        to restructure the page based on screen size.</p>
 
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Implemented separate mobile and desktop CSS files with device-specific navigation patterns that maintain consistent user experience</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    <!-- Using project card styling for the GIF displays -->
+                    <div class="image-grid">
+                        <div class="project-item hover-transform-up">
+                            <h3>Desktop Layout</h3>
+                            <div class="thumbnail-container">
+                                <img src="/assets/gifs/desktop_skills.gif"
+                                    alt="Skills page on desktop"
+                                    class="img-thumbnail"
+                                    onclick="showModal(this.src)"
+                                    style="cursor: pointer;">
+                            </div>
+                        </div>
+                        <div class="project-item hover-transform-up">
+                            <h3>Mobile Layout</h3>
+                            <div class="thumbnail-container">
+                                <img src="/assets/gifs/mobile_skills.gif"
+                                    alt="Skills page on mobile"
+                                    class="img-thumbnail"
+                                    onclick="showModal(this.src)"
+                                    style="cursor: pointer;">
+                            </div>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="skill-category hover-transform-up">
-                        <h3>Content Organization</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Structuring diverse content including projects, blogs, and artwork in a cohesive way</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                <!-- Challenges and solutions section -->
+                <section id="challenges"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Challenges Faced</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Responsive Navigation</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Creating a navigation system that works
+                                seamlessly on both mobile and desktop</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Developed a unified card-based interface with consistent styling but flexible content display options</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Implemented separate mobile and desktop CSS files
+                                with device-specific navigation patterns that
+                                maintain consistent user experience</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
 
-                    <div class="skill-category hover-transform-up">
-                        <h3>Performance Optimization</h3>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                        <p>Ensuring fast page loads despite numerous images and interactive elements</p>
-                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <div class="skill-category hover-transform-up">
+                            <h3>Content Organization</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Structuring diverse content including projects,
+                                blogs, and artwork in a cohesive way</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        <p>Utilized optimized images, modern CSS techniques, and efficient JavaScript to maintain responsive performance</p>
-                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                    </div>
-                </div>
-            </section>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Developed a unified card-based interface with
+                                consistent styling but flexible content display
+                                options</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
 
-            <!-- Features and highlights section -->
-            <section id="features" class="version-section hover-transform-up">
-                <h2 class="funnel-display-header">Key Features</h2>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>User Experience</h3>
-                        <ul>
-                            <li>Interactive Hover Effects</li>
-                            <li>Smooth Scrolling Navigation</li>
-                            <li>Consistent Design Language</li>
-                            <li>Accessible Color Scheme</li>
-                        </ul>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Performance Optimization</h3>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                            <p>Ensuring fast page loads despite numerous images
+                                and interactive elements</p>
+                            <hr
+                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                            <p>Utilized optimized images, modern CSS techniques,
+                                and efficient JavaScript to maintain responsive
+                                performance</p>
+                            <hr
+                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Technical Features</h3>
-                        <ul>
-                            <li>Dynamic Data Visualization</li>
-                            <li>Modular Code Structure</li>
-                            <li>Content Component Reuse</li>
-                            <li>Custom Table of Contents System</li>
-                        </ul>
+                </section>
+
+                <!-- Features and highlights section -->
+                <section id="features"
+                    class="version-section hover-transform-up">
+                    <h2 class="funnel-display-header">Key Features</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h3>User Experience</h3>
+                            <ul>
+                                <li>Interactive Hover Effects</li>
+                                <li>Smooth Scrolling Navigation</li>
+                                <li>Consistent Design Language</li>
+                                <li>Accessible Color Scheme</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Technical Features</h3>
+                            <ul>
+                                <li>Dynamic Data Visualization</li>
+                                <li>Modular Code Structure</li>
+                                <li>Content Component Reuse</li>
+                                <li>Custom Table of Contents System</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h3>Future Enhancements</h3>
+                            <ul>
+                                <li>Dark Mode Toggle</li>
+                                <li>Progressive Web App Features</li>
+                                <li>Blog Post Search Functionality</li>
+                                <li>Interactive Project Demos</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Future Enhancements</h3>
-                        <ul>
-                            <li>Dark Mode Toggle</li>
-                            <li>Progressive Web App Features</li>
-                            <li>Blog Post Search Functionality</li>
-                            <li>Interactive Project Demos</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+
+        <!-- Image modal for viewing larger images -->
+        <div id="imageModal" class="modal" onclick="this.style.display='none'">
+            <img id="modalImage" src alt="Enlarged image">
         </div>
-    </main>
-    
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    
-    <!-- Image modal for viewing larger images -->
-    <div id="imageModal" class="modal" onclick="this.style.display='none'">
-        <img id="modalImage" src="" alt="Enlarged image">
-    </div>
-    
-    <script src="/scripts.js"></script>
-    <script>
+
+        <script src="/scripts.js"></script>
+        <script>
         // Simple image modal function
         function showModal(src) {
             const modal = document.getElementById('imageModal');
@@ -266,6 +325,6 @@
             modalImg.src = src;
         }
     </script>
-</body>
+    </body>
 
 </html>

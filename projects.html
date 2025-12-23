@@ -11,180 +11,210 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <!-- Standard meta and resource imports -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Portfolio</title>
+    <head>
+        <!-- Standard meta and resource imports -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Portfolio</title>
 
-    <!-- Font imports and styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <!-- Font imports and styling -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
+            rel="stylesheet">
 
-    <!-- Font Awesome (social icons) -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      as="style" crossorigin>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome (social icons) -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preload"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            as="style" crossorigin>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<link rel="stylesheet" href="/css/tokens.css">
-<link rel="stylesheet" href="/css/desktop.css" media="(min-width: 769px)">
-<link rel="stylesheet" href="/css/mobile.css" media="(max-width: 768px)">
+        <link rel="stylesheet" href="/css/tokens.css">
+        <link rel="stylesheet" href="/css/desktop.css"
+            media="(min-width: 769px)">
+        <link rel="stylesheet" href="/css/mobile.css"
+            media="(max-width: 768px)">
 
+    </head>
 
-</head>
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
 
-<body>
-    <!-- Header injection point -->
-    <div id="header-placeholder"></div>
-
-    <main>
-        <div class="content-container">
-            <h1 class="funnel-display-header">Projects</h1>
-            <a href="javascript:history.back()" class="back-button hover-transform-left">
-                <span>←</span>
-                <span>Back</span>
-            </a>
-
-            <!-- Quick Navigation ToC -->
-            <nav class="toc-nav">
-                <a href="#active" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🚀</span>
-                    <span class="toc-title">Active</span>
+        <main>
+            <div class="content-container">
+                <h1 class="funnel-display-header">Projects</h1>
+                <a href="javascript:history.back()"
+                    class="back-button hover-transform-left">
+                    <span>←</span>
+                    <span>Back</span>
                 </a>
-                <a href="#complete" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🏁</span>
-                    <span class="toc-title">Complete</span>
-                </a>
-                <a href="#prototype" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                    <span class="toc-icon">🧪</span>
-                    <span class="toc-title">Prototype</span>
-                </a>
-            </nav>
 
-            <!-- Active Projects Section -->
-            <section id="active" class="projects-section version-section hover-transform-up">
-                <div class="section-header">
-                    <h2 class="funnel-display-header">Active</h2>
-                    <p>Projects in active development</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <!-- Project cards remain the same -->
-                    <div class="project-item hover-transform-up">
-                        <a href="/projects/antillery.html">
-                            <h3>Antillery</h3>
-                            <div class="thumbnail-container">
-                                <img alt="Antillery" class="img-thumbnail" src="/assets/gifs/ant.gif">
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- New project card for the website itself -->
-                    <div class="project-item hover-transform-up">
-                        <a href="/projects/portfolio.html">
-                            <h3>Portfolio Website</h3>
-                            <div class="thumbnail-container">
-                                <img alt="Portfolio Website" class="img-thumbnail" src="/assets/gifs/portfolio.gif">
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Completed Projects Section -->
-            <section id="complete" class="projects-section version-section hover-transform-up">
-                <div class="section-header">
-                    <h2 class="funnel-display-header">Complete</h2>
-                    <p>Fully implemented projects</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <!-- Complete project cards -->
-                    <a href="/projects/card_collection.html" class="project-item hover-transform-up">
-                        <h2>Card Collection</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Card Collection" class="img-thumbnail" src="/assets/gifs/card.gif">
-                        </div>
+                <!-- Quick Navigation ToC -->
+                <nav class="toc-nav">
+                    <a href="#active"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🚀</span>
+                        <span class="toc-title">Active</span>
                     </a>
+                    <a href="#complete"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🏁</span>
+                        <span class="toc-title">Complete</span>
+                    </a>
+                    <a href="#prototype"
+                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                        <span class="toc-icon">🧪</span>
+                        <span class="toc-title">Prototype</span>
+                    </a>
+                </nav>
 
-                    <!-- <a href="/projects/kingdom_coinquest.html" class="project-item hover-transform-up">
+                <!-- Active Projects Section -->
+                <section id="active"
+                    class="projects-section version-section hover-transform-up">
+                    <div class="section-header">
+                        <h2 class="funnel-display-header">Active</h2>
+                        <p>Projects in active development</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Project cards remain the same -->
+                        <div class="project-item hover-transform-up">
+                            <a href="/projects/antillery.html">
+                                <h3>Antillery</h3>
+                                <div class="thumbnail-container">
+                                    <img alt="Antillery" class="img-thumbnail"
+                                        src="/assets/gifs/ant.gif">
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- New project card for the website itself -->
+                        <div class="project-item hover-transform-up">
+                            <a href="/projects/portfolio.html">
+                                <h3>Portfolio Website</h3>
+                                <div class="thumbnail-container">
+                                    <img alt="Portfolio Website"
+                                        class="img-thumbnail"
+                                        src="/assets/gifs/portfolio.gif">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Completed Projects Section -->
+                <section id="complete"
+                    class="projects-section version-section hover-transform-up">
+                    <div class="section-header">
+                        <h2 class="funnel-display-header">Complete</h2>
+                        <p>Fully implemented projects</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Complete project cards -->
+                        <a href="/projects/card_collection.html"
+                            class="project-item hover-transform-up">
+                            <h2>Card Collection</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Card Collection" class="img-thumbnail"
+                                    src="/assets/gifs/card.gif">
+                            </div>
+                        </a>
+
+                        <!-- <a href="/projects/kingdom_coinquest.html" class="project-item hover-transform-up">
                         <h2>Kingdom Coinquest</h2>
                         <div class="thumbnail-container">
                             <img alt="Kingdom Coinquest" class="img-thumbnail" src="/assets/images/kingdom-coinquest/CardSeparator.png">
                         </div>
                     </a> -->
 
-                    <a href="/projects/ascii_draw.html" class="project-item hover-transform-up">
-                        <h2>ASCII Draw</h2>
-                        <div class="thumbnail-container">
-                            <img alt="ASCII Draw" class="img-thumbnail" src="/assets/gifs/sabbath.gif">
-                        </div>
-                    </a>
+                        <a href="/projects/ascii_draw.html"
+                            class="project-item hover-transform-up">
+                            <h2>ASCII Draw</h2>
+                            <div class="thumbnail-container">
+                                <img alt="ASCII Draw" class="img-thumbnail"
+                                    src="/assets/gifs/sabbath.gif">
+                            </div>
+                        </a>
 
-                    <a href="/projects/office.html" class="project-item hover-transform-up">
-                        <h2>My Office</h2>
-                        <div class="thumbnail-container">
-                            <img alt="My Office" class="img-thumbnail" src="/assets/gifs/office.gif">
-                        </div>
-                    </a>
+                        <a href="/projects/office.html"
+                            class="project-item hover-transform-up">
+                            <h2>My Office</h2>
+                            <div class="thumbnail-container">
+                                <img alt="My Office" class="img-thumbnail"
+                                    src="/assets/gifs/office.gif">
+                            </div>
+                        </a>
 
-                    <a href="/projects/snake.html" class="project-item hover-transform-up">
-                        <h2>Snake</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Snake Game" class="img-thumbnail" src="/assets/gifs/snake.gif">
-                        </div>
-                    </a>
-                    
-                    <a href="/projects/old_portfolio.html" class="project-item hover-transform-up">
-                        <h2>Legacy Portfolio</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Legacy Portfolio" class="img-thumbnail" src="/assets/gifs/old_portfolio.gif">
-                        </div>
-                    </a>
-                </div>
-            </section>
+                        <a href="/projects/snake.html"
+                            class="project-item hover-transform-up">
+                            <h2>Snake</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Snake Game" class="img-thumbnail"
+                                    src="/assets/gifs/snake.gif">
+                            </div>
+                        </a>
 
-            <!-- Prototype Projects Section -->
-            <section id="prototype" class="projects-section version-section hover-transform-up">
-                <div class="section-header">
-                    <h2 class="funnel-display-header">Prototype</h2>
-                    <p>Experiments pending further development</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <!-- Prototype project cards -->
-                    <a href="/projects/project_gal.html" class="project-item hover-transform-up">
-                        <h2>Project GAL</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Project GAL" class="img-thumbnail" src="/assets/gifs/GAL_aim.gif">
-                        </div>
-                    </a>
+                        <a href="/projects/old_portfolio.html"
+                            class="project-item hover-transform-up">
+                            <h2>Legacy Portfolio</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Legacy Portfolio"
+                                    class="img-thumbnail"
+                                    src="/assets/gifs/old_portfolio.gif">
+                            </div>
+                        </a>
+                    </div>
+                </section>
 
-                    <a href="/projects/server_surfer.html" class="project-item hover-transform-up">
-                        <h2>Server Surfer</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Server Surfer" class="img-thumbnail" src="/assets/gifs/surfer.gif">
-                        </div>
-                    </a>
+                <!-- Prototype Projects Section -->
+                <section id="prototype"
+                    class="projects-section version-section hover-transform-up">
+                    <div class="section-header">
+                        <h2 class="funnel-display-header">Prototype</h2>
+                        <p>Experiments pending further development</p>
+                    </div>
 
-                    <a href="/projects/lunar.html" class="project-item hover-transform-up">
-                        <h2>Lunar Lander</h2>
-                        <div class="thumbnail-container">
-                            <img alt="Lunar Lander" class="img-thumbnail" src="/assets/gifs/lunar.gif">
-                        </div>
-                    </a>
-                </div>
-            </section>
-        </div>
-    </main>
+                    <div class="projects-grid">
+                        <!-- Prototype project cards -->
+                        <a href="/projects/project_gal.html"
+                            class="project-item hover-transform-up">
+                            <h2>Project GAL</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Project GAL" class="img-thumbnail"
+                                    src="/assets/gifs/GAL_aim.gif">
+                            </div>
+                        </a>
 
-    <!-- Footer injection point -->
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+                        <a href="/projects/server_surfer.html"
+                            class="project-item hover-transform-up">
+                            <h2>Server Surfer</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Server Surfer" class="img-thumbnail"
+                                    src="/assets/gifs/surfer.gif">
+                            </div>
+                        </a>
+
+                        <a href="/projects/lunar.html"
+                            class="project-item hover-transform-up">
+                            <h2>Lunar Lander</h2>
+                            <div class="thumbnail-container">
+                                <img alt="Lunar Lander" class="img-thumbnail"
+                                    src="/assets/gifs/lunar.gif">
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>
