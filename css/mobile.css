@@ -45,7 +45,7 @@ h3 {
   font-size: 1.5rem;
 }
 
-
+/* Hide the home page sliding project tabs (desktop only feature) */
 .sliding-projects {
   display: none;
 }
@@ -90,49 +90,10 @@ h5.challenge {
   margin-bottom: 0px;
 }
 
-
-#language-data-message,
-#chart-data-message {
-  display: block;
-}
-
 canvas {
   width: 100%;
   height: auto;
   margin-bottom: 10%;
-}
-
-.mobile-chart-container {
-  display: flex;
-  width: 100%;
-  height: auto;
-  padding: 0 10%;
-  margin-bottom: 20px;
-}
-
-.mobile-wakatimeLangChart {
-  display: flex;
-}
-
-.mobile-chart-column-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#desktop-lang-row,
-#desktop-lang-headers-row,
-.desktop-lang-header,
-.desktop-editor-header,
-#desktop-editors-row,
-#desktop-editors-headers-row,
-#desktop-language-data-message,
-#desktop-chart-data-message,
-.desktop-wakatimeLangChart,
-.desktop-chart-column-container,
-#desktop-language-data-messag {
-  display: none;
 }
 
 .game-image-small {
@@ -211,22 +172,16 @@ iframe {
   box-sizing: border-box;
 }
 
+
+/* Hide the back button on mobile (desktop only feature) */
 .back-button,
 .back-button * {
   display: none !important;
 }
 
+/* Hide the back button on mobile (desktop only feature) */
 .content-container .back-button {
   display: none !important;
-}
-
-.section-container {
-  margin: 2rem 0;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  border: 2px solid #4b304e;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .blog-grid {

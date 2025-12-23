@@ -40,11 +40,6 @@
   border-bottom: none;
 }
 
-.tag-separator {
-  color: var(--accent);
-  margin: 0 0.2rem;
-}
-
 @media (min-width: 769px) {
   /* Desktop overrides moved from css/desktop.css */
   .skill-category {

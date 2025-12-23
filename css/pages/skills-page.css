@@ -1,0 +1,41 @@
+/* pages/skills.css — Skills page only */
+
+/* Mobile-first: show mobile charts, hide desktop charts */
+#desktop-chart-column-container {
+  display: none;
+}
+
+.mobile-chart-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#language-data-message,
+#chart-data-message {
+  display: block;
+}
+
+.mobile-chart-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 0 10%;
+  margin-bottom: 20px;
+}
+
+.mobile-wakatimeLangChart {
+  display: flex;
+}
+
+/* Desktop: show desktop charts, hide mobile charts */
+@media (min-width: 769px) {
+  #desktop-chart-column-container {
+    display: block;
+  }
+
+  .mobile-chart-column-container {
+    display: none;
+  }
+}

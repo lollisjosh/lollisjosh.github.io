@@ -36,6 +36,11 @@
   white-space: nowrap;
 }
 
+.tag-separator {
+  color: var(--accent);
+  margin: 0 0.2rem;
+}
+
 #role-tags ul {
   width: 100%;
   display: flex;
