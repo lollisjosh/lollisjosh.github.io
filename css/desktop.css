@@ -69,12 +69,6 @@ h5.challenge {
   color: var(--error);
 }
 
-/* Navbar module moved to css/components/navbar.css (desktop overrides) */
-
-/* Project-card module moved to css/components/project-card.css (desktop overrides) */
-
-/* PFP module moved to css/components/pfp.css (desktop overrides) */
-
 
 canvas {
   width: 75%;
@@ -82,14 +76,6 @@ canvas {
   margin-bottom: 10%;
 }
 
-/* Image Grid module moved to css/components/image-grid.css (desktop overrides) */
-/* Carousel module moved to css/components/carousel.css */
-
-/* Video module moved to css/components/iframe-border.css (desktop overrides) */
-
-
-
-/* Wakatime module moved to css/components/wakatime.css (desktop overrides) */
 .pdf-container {
   display: flex;
   justify-content: center;
@@ -132,10 +118,6 @@ canvas {
   gap: 0.5rem;
   padding: 0.5rem;
 }
-
-/* Bio module moved to css/components/bio.css (desktop overrides) */
-
-/* Footer module moved to css/components/footer.css */
 
 
 #desktop-chart-column-container {
@@ -187,61 +169,6 @@ canvas {
   padding: 2rem;
 }
 
-/* Post-card module moved to css/components/post-card.css (desktop overrides) */
-
-/* Dropdown module moved to css/components/dropdown.css */
-
-.version-section {
-  background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  margin: 3rem 0;
-  border: 2px solid var(--primary);
-  transition: var(--transition-standard);
-}
-
-.section-level-1 {
-  background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 1rem 0 3rem 0;
-  border: 4px solid var(--primary);
-  transition: var(--transition-standard);
-}
-
-.section-level-2 {
-  background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 1rem 0 3rem 0;
-  border: 2.5px solid var(--primary);
-  transition: var(--transition-standard);
-}
-
-.section-level-3 {
-  background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 1rem 0 3rem 0;
-  border: 1px solid var(--primary);
-  transition: var(--transition-standard);
-}
-
-.section-level-4 {
-  background: var(--white);
-  border-radius: var(--border-radius-md);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 1rem 0 3rem 0;
-  border: 0.5px solid var(--primary);
-  transition: var(--transition-standard);
-}
-
-/* Image Grid module moved to css/components/image-grid.css (desktop overrides) */
 
 #fs-frm {
   width: 90%;
@@ -276,8 +203,6 @@ canvas {
   transition: var(--transition-standard);
 }
 
-/* Image Grid module moved to css/components/image-grid.css (desktop overrides) */
-
 
 .toc-nav {
   display: flex;
@@ -287,18 +212,11 @@ canvas {
   margin: 2rem 0;
 }
 
-/* TOC module moved to css/components/toc-card.css (desktop overrides) */
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
-
-/* Skills module moved to css/components/skills.css (desktop overrides) */
-/* Section module moved to css/components/section.css (desktop overrides) */
-/* Repo-card module moved to css/components/repo-card.css (desktop overrides) */
-/* Repo-card module moved to css/components/repo-card.css (desktop overrides) */
 
 .back-button {
   display: flex;
@@ -492,7 +410,6 @@ h3.content-heading,
   margin-bottom: 1rem;
   font-weight: 600;
 }
-/* Post navigation module moved to css/components/post-navigation.css */
 
 #status-container {
   display: flex;

@@ -86,16 +86,9 @@ h5.challenge {
   color: #e74c3c;
 }
 
-/* Navbar module moved to css/components/navbar.css (mobile defaults) */
-
-
 .snug-header {
   margin-bottom: 0px;
 }
-
-/* PFP module moved to css/components/pfp.css (mobile defaults) */
-
-/* Project-card module moved to css/components/project-card.css (mobile defaults) */
 
 
 #language-data-message,
@@ -142,8 +135,6 @@ canvas {
   display: none;
 }
 
-/* Image Grid module moved to css/components/image-grid.css (mobile defaults) */
-
 .game-image-small {
   width: 90%;
   height: auto;
@@ -154,14 +145,12 @@ canvas {
   cursor: pointer;
 }
 
-/* Wakatime module moved to css/components/wakatime.css (mobile defaults) */
 iframe {
   width: 75%;
   height: auto;
   margin: 5px;
 }
 
-/* Video module moved to css/components/iframe-border.css (mobile defaults) */
 
 .pdf-container {
   display: flex;
@@ -179,12 +168,6 @@ iframe {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 }
-/* Carousel module moved to css/components/carousel.css */
-
-/* Bio module moved to css/components/bio.css (mobile defaults) */
-
-/* Footer module moved to css/components/footer.css */
-
 
 #fs-frm {
   width: 85%;
@@ -218,15 +201,6 @@ iframe {
   background: #ed65ff;
 }
 
-/* Devlog module moved to css/components/devlog.css (mobile defaults) */
-
-/* Image Grid module moved to css/components/image-grid.css (mobile defaults) */
-/* Modal module moved to css/components/modal.css */
-
-
-/* TOC module moved to css/components/toc-card.css (mobile defaults) */
-
-
 .skills-grid {
   display: flex;
   flex-direction: column;
@@ -237,20 +211,6 @@ iframe {
   box-sizing: border-box;
 }
 
-/* Skills module moved to css/components/skills.css (mobile defaults) */
-
-/* Section module moved to css/components/section.css */
-
-.version-section {
-  margin: 2rem 0;
-  padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  border: 2px solid #4b304e;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  box-sizing: border-box;
-}
 .back-button,
 .back-button * {
   display: none !important;
@@ -269,51 +229,12 @@ iframe {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.section-level-1,
-.section-level-2,
-.section-level-3,
-.section-level-4 {
-  background: var(--white, #ffffff);
-  border-radius: var(--border-radius-md, 12px);
-  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
-  padding: 1rem;
-  margin: 0.75rem 0 2rem 0;
-  transition: var(--transition-standard, all 0.3s ease);
-  box-sizing: border-box;
-}
-
-.section-level-1 {
-  border: 4px solid var(--primary, #4b304e);
-}
-
-.section-level-2 {
-  border: 2.5px solid var(--primary, #4b304e);
-}
-
-.section-level-3 {
-  border: 1px solid var(--primary, #4b304e);
-}
-
-.section-level-4 {
-  border: 0.5px solid var(--primary, #4b304e);
-}
-
-/* Image Grid module moved to css/components/image-grid.css (mobile defaults) */
-
-
-/* Repo-card module moved to css/components/repo-card.css (mobile defaults) */
-/* Repo-card module moved to css/components/repo-card.css (mobile defaults) */
-
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   padding: 1rem;
 }
-
-/* Post-card module moved to css/components/post-card.css (mobile defaults) */
-
-/* Dropdown module moved to css/components/dropdown.css */
 
 #status-container {
   display: none !important;
