@@ -594,7 +594,7 @@ canvas {
   border: 4px solid var(--primary);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-md);
-  margin: 0;  /* Remove margin so padding controls spacing */
+  margin: 0;
   display: block;
 }
 
@@ -609,14 +609,23 @@ canvas {
 
 
 /* Wakatime stats styling */
-#wakatime-site-hours {
-  margin-left: 10px;
-  margin-right: 3%;
-}
-
 #wakatime-site-hours img {
   border: 4px solid var(--dark-accent);
   border-radius: var(--border-radius-sm);
+}
+
+#wakatime-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+#wakatime-container h5 {
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--white);
 }
 
 /* PDF container styling */
@@ -694,7 +703,7 @@ canvas {
   margin-top: 5%;
 }
 
-/* Footer styling for desktop - CONSOLIDATED */
+
 #site-footer {
   display: flex;
   width: 100%;
@@ -705,10 +714,11 @@ canvas {
   color: var(--white);
   border-top: 4px solid var(--accent);
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 #site-footer p {
-  font-size: large;
+  /* font-size: large; */
   text-wrap: wrap;
 }
 
