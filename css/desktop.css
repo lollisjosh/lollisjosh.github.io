@@ -318,12 +318,3 @@ h3.content-heading,
     display: none;
   }
 }
-
-
-@media screen and (max-width: 1000px) {
-
-  .sliding-projects,
-  .sliding-projects-left {
-    display: none;
-  }
-}
