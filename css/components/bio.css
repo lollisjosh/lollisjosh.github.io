@@ -65,8 +65,23 @@
   text-align: center;
 }
 
+#resume-header {
+    margin-top: 5%;
+}
+
 @media (min-width: 769px) {
   /* Desktop overrides */
+  #bio-container {
+    width: 95%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius-sm);
+    box-sizing: border-box;
+    background: var(--white);
+  }
+
   #role-tags {
     margin: 0 0 1.5rem 0;
     padding: 0;

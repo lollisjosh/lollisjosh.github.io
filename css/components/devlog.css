@@ -85,6 +85,16 @@
   box-shadow: 8px 8px 2px rgba(0, 0, 0, 0.397);
 }
 
+h5.issue,
+h5.challenge {
+    color: var(--error);
+}
+
+h5.remedy {
+    color: var(--success);
+    margin-top: 1rem;
+}
+
 @media (min-width: 769px) {
   .devlog-content {
     border-radius: var(--border-radius-md);

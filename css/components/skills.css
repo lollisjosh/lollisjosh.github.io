@@ -1,21 +1,40 @@
-/* skills.css — component module for skill categories and tags */
+/* skills.css — component module for skill grid, categories, and tags */
 
+/* Grid layout (mobile-first) */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Skill category card */
 .skill-category {
   width: 85%;
   margin: 0 auto;
   padding: 1rem;
+
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
+
   border: 2px solid #4b304e;
   border-radius: 6px;
+
   box-sizing: border-box;
   max-width: 100%;
 }
 
-.skill-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  border: 2px solid #4b304e;
+/* Only apply hover motion on devices that actually support hover */
+@media (hover: hover) and (pointer: fine) {
+  .skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #4b304e;
+  }
 }
 
 .skill-category h3 {
@@ -40,9 +59,25 @@
   border-bottom: none;
 }
 
+/* Desktop overrides */
 @media (min-width: 769px) {
-  /* Desktop overrides moved from css/desktop.css */
+  /* Grid: switch to multi-column */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    /* optional: remove the mobile padding so grid aligns with container edges */
+    padding: 0;
+    align-items: stretch;
+  }
+
+  /* Card: allow it to fill its grid cell (don’t stay 85% wide) */
   .skill-category {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid transparent;
     border-radius: var(--border-radius-md);

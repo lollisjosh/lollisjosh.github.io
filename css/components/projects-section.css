@@ -1,0 +1,37 @@
+/* projects-section.css
+   Layout template for the Projects landing page sections
+   Used with: <section class="projects-section version-section ...">
+*/
+
+/* Mobile-first: stack header above grid */
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  /* Better anchor offset for the section itself */
+  scroll-margin-top: calc(var(--navbar-height) + 2rem);
+}
+
+/* Spacing between sections */
+.projects-section + .projects-section {
+  margin-top: 2rem;
+}
+
+/* Desktop: header column + grid column */
+@media (min-width: 769px) {
+  .projects-section {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    /* Matches your previous desktop intent */
+    scroll-margin-top: calc(var(--navbar-height) + 3rem);
+  }
+
+  .projects-section + .projects-section {
+    margin-top: 4rem;
+  }
+}

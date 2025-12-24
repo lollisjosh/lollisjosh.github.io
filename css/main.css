@@ -8,6 +8,13 @@
 @import url("/css/utilities.css");
 
 /* Components */
+@import url("/css/components/typography.css");
+@import url("/css/components/content-container.css");
+@import url("/css/components/post-content.css");
+@import url("/css/components/embed.css");
+@import url("/css/components/contact-form.css");
+@import url("/css/components/blog-grid.css");
+@import url("/css/components/back-button.css");
 @import url("/css/components/navbar.css");
 @import url("/css/components/dropdown.css");
 @import url("/css/components/modal.css");
@@ -25,10 +32,12 @@
 @import url("/css/components/bio.css");
 @import url("/css/components/post-card.css");
 @import url("/css/components/repo-card.css");
+@import url("/css/components/projects-section.css");
 @import url("/css/components/project-card.css");
-@import url("/css/components/blog-tabs.css");
+@import url("/css/components/project-tabs.css");
 @import url("/css/components/iframe-border.css");
 @import url("/css/components/toc-card.css");
+
 /* Add other components here as they are extracted:
    @import url("/css/components/<component>.css");
 */

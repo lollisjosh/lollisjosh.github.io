@@ -1,0 +1,21 @@
+/* blog-grid.css — component module for blog grid layouts */
+
+/* Mobile: single column */
+@media (max-width: 768px) {
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Desktop: multi-column */
+@media (min-width: 769px) {
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+}

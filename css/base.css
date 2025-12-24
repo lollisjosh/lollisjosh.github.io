@@ -6,21 +6,6 @@
 
 
 
-#fs-frm fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-}
-
-
-
-#resume-header {
-    margin-top: 5%;
-}
-
-
 main {
     margin-top: var(--navbar-height);
     width: 100%;
@@ -34,6 +19,11 @@ main {
 
 html {
     scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 2rem);
+  scroll-behavior: smooth;
 }
 
 body,
@@ -50,14 +40,4 @@ html {
 a {
     color: var(--primary, #4b304e);
     text-decoration: none;
-}
-
-h5.issue,
-h5.challenge {
-    color: var(--error);
-}
-
-h5.remedy {
-    color: var(--success);
-    margin-top: 1rem;
 }

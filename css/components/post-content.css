@@ -1,0 +1,119 @@
+/* post-content.css — component module for blog post content styling */
+
+/* Used in some blog entries */
+.editors-note,
+blockquote.editors-note {
+  background-color: #fff9e6 !important;
+  padding: 15px !important;
+  border-left: 4px solid #e6b800 !important;
+}
+
+/* Used in some blog entries */
+.editors-note h5,
+blockquote.editors-note h5 {
+  color: #b38600;
+  margin-top: 0;
+}
+
+/* Not currently used but meant for blog entries */
+.solution-note,
+blockquote.solution-note {
+  background-color: #f0f8ff !important;
+  padding: 15px !important;
+  border-left: 4px solid #0078d7 !important;
+}
+
+/* Used in some blog entries */
+.code-sample {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: var(--transition-standard);
+  box-shadow: var(--shadow-md);
+}
+
+/* Used in some blog entries */
+.code-header {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: monospace;
+  font-weight: bold;
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code[class*="language-"] {
+  font-family: inherit;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* Used in some blog entries */
+.note-box {
+  background-color: #f0f8ff;
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  margin: 0.5rem 0 1.5rem 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Used in some blog entries */
+.note-box strong {
+  color: var(--primary);
+}
+
+/* Used in some blog entries */
+.clean-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Used in some blog entries */
+.clean-list li {
+  line-height: 1.5;
+  align-items: baseline;
+}
+
+/* Used in some blog entries */
+.clean-list li:before {
+  content: "•";
+  color: var(--accent);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Used in some blog entries */
+.clean-list li strong {
+  color: inherit;
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+/* Used in some blog entries */
+.clean-list code {
+  font-size: 0.95em;
+  background-color: rgba(75, 48, 78, 0.08);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+/* .content-heading used in some blog entries */
+.content-heading,
+h3.content-heading,
+.skill-category h3.content-heading {
+  color: var(--text) !important;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}

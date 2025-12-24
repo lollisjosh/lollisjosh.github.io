@@ -1,0 +1,74 @@
+/*  content-container.css
+    Shared content wrapper + blockquote styling (mobile-first)
+*/
+
+/* Mobile-first (<=768px baseline) */
+.content-container {
+    background: var(--white, #ffffff);
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+
+    border-radius: 12px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.253);
+    border: 8px solid var(--primary, #4b304e);
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    position: relative;
+
+    /* Look into if this is needed, it was in mobile.css, 
+    otherwise remove to prevent unintended clipping of positioned children. 
+    (Desktop doesn't hide overflow)*/
+    overflow: hidden;
+
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.content-container blockquote {
+    background: var(--white, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    padding: 1.5rem;
+    margin: 1rem 0;
+
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Support hover motion on devices that support hover only */
+@media (hover: hover) and (pointer: fine) {
+    .content-container blockquote:hover {
+        transform: translateY(-5px);
+        box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Desktop overrides (>=769px) */
+@media (min-width: 769px) {
+    .content-container {
+        max-width: 1200px;
+        width: 60%;
+        margin: 2rem auto;
+        padding: 2rem;
+
+        border-radius: var(--border-radius-lg, 12px);
+        box-shadow: var(--shadow-lg, 8px 8px 8px rgba(0, 0, 0, 0.253));
+        border: 8px solid var(--primary, #4b304e);
+
+        min-height: 90%;
+        z-index: 1;
+
+        /* Desktop version did not force overflow hidden */
+        overflow: visible;
+    }
+
+    .content-container blockquote {
+        border-radius: var(--border-radius-lg, 12px);
+        box-shadow: var(--shadow-sm, 0 4px 6px rgba(0, 0, 0, 0.05));
+        transition: var(--transition-fast, transform 0.2s ease);
+    }
+}

@@ -1,0 +1,39 @@
+/* back-button.css
+   Back button form styles (mobile-first)
+*/
+
+/* Hide the back button on mobile (desktop only feature) */
+.back-button,
+.back-button * {
+  display: none !important;
+}
+
+/* Hide the back button on mobile (desktop only feature) */
+.content-container .back-button {
+  display: none !important;
+}
+
+
+@media (min-width: 769px) {
+    .back-button {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--primary);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius-sm);
+        text-decoration: none;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition-standard);
+        border: 2px solid transparent;
+        z-index: 5;
+    }
+
+    .back-button * {
+        display: inline;
+        z-index: 5;
+    }
+}

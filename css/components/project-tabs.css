@@ -5,6 +5,19 @@
 *   Extracted from desktop.css for better organization
 */
 
+/* TODO: THis file needs to be updated i think, since sliding project tabs don't get used on mobile, i think this file can be better breakpointed. */
+
+
+/* Sliding projects not used on mobile.*/ 
+
+@media (max-width: 768px) {
+
+/* Hide the home page sliding project tabs (desktop only feature) */
+.sliding-projects {
+  display: none;
+}
+}
+
 /* Sliding project tabs - right side */
 .sliding-projects {
   position: fixed;
