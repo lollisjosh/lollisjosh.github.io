@@ -84,4 +84,39 @@
         border-radius: var(--border-radius-md, 12px);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+
+    /* Section header desktop layout moved from css/desktop.css */
+    .section-header {
+        width: 200px;
+        min-width: 200px;
+        padding-right: 1rem;
+        padding-top: 1rem;
+        text-align: left;
+        position: sticky;
+        top: 100px;
+    }
+
+    /* Ensure section header h2 wins over general h2 rules in desktop.css */
+    .section-header h2,
+    .section-header h2.funnel-display-header {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .section-header p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .section-header h2::after,
+    .section-header h2.funnel-display-header::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background-color: var(--accent);
+        margin-top: 0.5rem;
+    }
 }

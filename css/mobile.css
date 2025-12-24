@@ -185,6 +185,5 @@ iframe {
   padding: 1rem;
 }
 
-#status-container {
-  display: none !important;
-}
+/* Status widget moved to css/components/status.css (hidden on mobile) */
+/* See: /css/components/status.css */
