@@ -1,7 +1,6 @@
 /* section.css — component module for section containers and related rules */
 
 /* Shared section primitives */
-.section-container,
 .version-section,
 .section-level-1,
 .section-level-2,
@@ -12,17 +11,6 @@
     padding: 1rem;
     box-sizing: border-box;
     transition: var(--transition-standard, all 0.3s ease);
-}
-
-/* Section container (general wrapper) */
-.section-container {
-    margin: 2rem 0;
-    border: 2px solid var(--primary, #4b304e);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.section-container:not(:last-child) {
-    margin-bottom: 3rem;
 }
 
 /* Version section (slightly different shadow + full width) */
@@ -61,12 +49,6 @@
 
 /* Desktop overrides */
 @media (min-width: 769px) {
-    .section-container {
-        padding: 2rem;
-        margin: 1rem 0 3rem 0;
-        border-radius: var(--border-radius-md, 12px);
-        box-shadow: var(--shadow-sm, 0 4px 12px rgba(0, 0, 0, 0.1));
-    }
 
     .version-section {
         padding: 3rem;
