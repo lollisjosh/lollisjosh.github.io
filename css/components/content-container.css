@@ -2,6 +2,46 @@
     Shared content wrapper + blockquote styling (mobile-first)
 */
 
+/* Used in:
+   index.html
+   about.html
+   art.html
+   artwork.html
+   ascii/ascii.html
+   blog.html
+   blog/GAL-Dev-2023-09-11.html
+   blog/GAL-Dev-2023-09-18.html
+   blog/GAL-Dev-2023-10-01.html
+   blog/antillery/ant-dev-2025-05-16.html
+   blog/antillery/ant-dev-2025-05-17.html
+   blog/antillery/ant-dev-2025-05-18.html
+   blog/antillery/ant-dev-2025-05-25.html
+   blog/antillery/ant-dev-2025-05-27.html
+   blog/antillery/ant-dev-2025-05-28.html
+   blog/antillery/ant-dev-2025-05-31.html
+   blog/antillery/ant-dev-2025-06-02.html
+   blog/antillery (all devlogs)
+   blog/GAL-Dev (all GAL devlogs)
+   projects.html
+   projects/portfolio.html
+   projects/old_portfolio.html
+   projects/ascii_draw.html
+   projects/server_surfer.html
+   projects/project_gal.html
+   projects/snake.html
+   projects/card_collection.html
+   projects/lunar.html
+   projects/kingdom_coinquest.html
+   projects/office.html
+   projects/antillery.html
+   contact.html
+   composition.html
+   design.html
+   guitar.html
+   interests.html
+   music.html
+   skills.html
+*/
 /* Mobile-first (<=768px baseline) */
 .content-container {
     background: var(--white, #ffffff);
@@ -27,6 +67,23 @@
     text-align: left;
 }
 
+/* Blockquote styles — used in these files:
+   projects/kingdom_coinquest.html
+   blog/GAL-Dev-2023-09-11.html
+   blog/GAL-Dev-2023-09-18.html
+   blog/antillery/ant-dev-2025-05-16.html
+   blog/antillery/ant-dev-2025-05-17.html
+   blog/antillery/ant-dev-2025-05-18.html
+   blog/antillery/ant-dev-2025-05-25.html
+   blog/antillery/ant-dev-2025-05-27.html
+   blog/antillery/ant-dev-2025-05-28.html
+   blog/antillery/ant-dev-2025-05-31.html
+
+   This rule targets any <blockquote> element that appears inside a
+   .content-container wrapper in the files above. Many blockquotes also include
+   utility or semantic classes (for example, `hover-transform-up` or
+   `editors-note`) but the selector is generic to the element.
+*/
 .content-container blockquote {
     background: var(--white, #ffffff);
     border-radius: 12px;
@@ -39,7 +96,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Support hover motion on devices that support hover only */
+/* Hover motion for blockquotes: applies on devices that support hover (desktop) */
 @media (hover: hover) and (pointer: fine) {
     .content-container blockquote:hover {
         transform: translateY(-5px);

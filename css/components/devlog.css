@@ -1,55 +1,5 @@
 /* devlog.css — component module (mobile-first) */
 
-/* Not used in HTML files */
-.devlog-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
-}
-
-/* Not used in HTML files */
-.devlog-content b {
-  display: block;
-  border-bottom: 2px solid var(--accent);
-  margin-bottom: 1rem;
-}
-
-/* Not used in HTML files */
-.devlog-content blockquote b:last-of-type {
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-light);
-}
-
-/* Not used in HTML files */
-.devlog-content h2 {
-  color: var(--primary);
-  margin-top: 2rem;
-}
-
-/* Not used in HTML files */
-.devlog-content h5 {
-  color: var(--primary);
-  font-size: 1.1rem;
-  margin: 0;
-  padding: 0.5rem 0;
-  font-family: "Funnel Display", sans-serif;
-}
-
-/* Not used in HTML files */
-.devlog-content h5:first-of-type { color: var(--error); }
-/* Not used in HTML files */
-.devlog-content h5:last-of-type { color: var(--success); margin-top: 1rem; }
-
-/* Not used in HTML files */
-.devlog-content p {
-  line-height: 1.6;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: var(--text-light);
-}
 
 /* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, blog/GAL-Dev-2023-10-01.html, 
    blog/antillery/ant-dev-2025-05-16.html, blog/antillery/ant-dev-2025-05-17.html, blog/antillery/ant-dev-2025-05-18.html,
@@ -79,30 +29,6 @@
 .devlog-list li {
   text-align: left;
   margin-bottom: 0.5rem;
-}
-
-/* Not used in HTML files */
-.devlog-content {
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Not used in HTML files */
-.devlog-content blockquote {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  margin: 2rem 0;
-  border: none;
-  transition: transform 0.2s ease;
-  text-align: left;
-}
-
-/* Not used in HTML files */
-.devlog-content blockquote:hover {
-  transform: translateY(-2px);
-  box-shadow: 8px 8px 2px rgba(0, 0, 0, 0.397);
 }
 
 /* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, 
@@ -137,28 +63,5 @@ h5.remedy {
   /* Used in: GAL-Dev-2023-09-11.html */
   .devlog-list li {
     margin-bottom: 0.5rem;
-  }
-
-  /* Not used: blockquotes are present in the posts but there is no `.devlog-content` wrapper,
-     so this selector will not match the current markup */
-  .devlog-content blockquote {
-    background: var(--white);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border: none;
-    transition: var(--transition-fast);
-  }
-
-  /* Editors-note blockquotes used in: blog/antillery/ant-dev-2025-05-25.html, 
-     blog/antillery/ant-dev-2025-05-27.html, blog/antillery/ant-dev-2025-05-28.html. 
-     Note: these blockquotes are not inside `.devlog-content`, and `post-content.css` already
-     styles `blockquote.editors-note` (so the selector `.devlog-content blockquote.editors-note` in
-     this file will not match the current markup). */
-  .devlog-content blockquote.editors-note {
-    background-color: var(--editors-note-bg) !important;
-    padding: 15px !important;
-    border-left: 4px solid var(--editors-note-border) !important;
   }
 }

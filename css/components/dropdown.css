@@ -3,10 +3,12 @@
 */
 
 /* Base / Mobile defaults */
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-section {
   margin: 1.5rem 0;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-header {
   display: flex;
   justify-content: space-between;
@@ -21,14 +23,16 @@
   z-index: 2;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-header h2,
 .dropdown-header h3 {
   margin: 0;
   color: #4b304e;
   font-size: 1rem;
   font-weight: 600;
-}
+} 
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content {
   max-height: 0;
   overflow: hidden;
@@ -38,6 +42,7 @@
   z-index: 1;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content.active {
   max-height: 5000px;
   padding: 0.5rem 1rem;
@@ -47,35 +52,41 @@
   border-radius: 0 0 8px 8px;
   background: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} 
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-icon {
   transition: transform 0.3s ease;
   font-size: 0.9rem;
   color: #4b304e;
-}
+} 
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul {
   list-style: none;
   padding: 0;
   margin: 0.25rem 0;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul li {
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--border-light);
   transition: var(--transition-fast);
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul li:hover {
   background: rgba(237, 101, 255, 0.1);
   padding-left: 1.5rem;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul li:last-child {
   border-bottom: none;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul li a {
   color: #4b304e;
   text-decoration: none;
@@ -84,19 +95,21 @@
   font-size: 0.95rem;
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-content ul li a:hover {
   color: var(--accent);
-}
-
+} 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-header.active .dropdown-icon {
   transform: rotate(180deg);
 }
 
+/* Used in: projects/project_gal.html, projects/antillery.html */
 .dropdown-header:hover {
   background: rgba(237, 101, 255, 0.05);
 }
 
-/* Desktop overrides */
+/* Desktop overrides — apply on the same files above */
 @media (min-width: 769px) {
   .dropdown-header {
     padding: 0.75rem 1.25rem;

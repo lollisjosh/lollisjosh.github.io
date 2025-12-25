@@ -1,6 +1,17 @@
 /* skills.css — component module for skill grid, categories, and tags */
 
 /* Grid layout (mobile-first) */
+/* Usage:
+ *  .skills-grid (mobile) — used in these pages:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skills-grid {
   display: flex;
   flex-direction: column;
@@ -10,9 +21,20 @@
   width: 100%;
   padding: 0.5rem;
   box-sizing: border-box;
-}
+} 
 
 /* Skill category card */
+/* Usage:
+ *  .skill-category (mobile) — used in these pages (many occurrences):
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skill-category {
   width: 85%;
   margin: 0 auto;
@@ -26,42 +48,108 @@
 
   box-sizing: border-box;
   max-width: 100%;
-}
+} 
 
 /* Only apply hover motion on devices that actually support hover */
+/* Usage:
+ *  .skill-category:hover — hover motion applied to skill cards in:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 @media (hover: hover) and (pointer: fine) {
   .skill-category:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     border: 2px solid var(--primary);
   }
-}
+} 
 
+/* Usage:
+ *  .skill-category h3 — headings inside skill cards found in:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skill-category h3 {
   color: var(--primary);
   margin-bottom: 1rem;
   transition: color 0.3s ease;
-}
+} 
 
+/* Usage:
+ *  .skill-category ul — lists inside skill cards used in:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skill-category ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
+} 
 
+/* Usage:
+ *  .skill-category li — individual list items inside skill cards used in:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skill-category li {
   padding: 0.8rem 0;
   border-bottom: 1px solid rgba(75, 48, 78, 0.2);
   transition: padding 0.3s ease;
-}
+} 
 
+/* Usage:
+ *  .skill-category li:last-child — used in same skill-card lists in:
+ *   - projects/snake.html
+ *   - projects/portfolio.html
+ *   - skills.html
+ *   - projects/ascii_draw.html
+ *   - projects/office.html
+ *   - projects/old_portfolio.html
+ *   - projects/server_surfer.html
+ *   - projects/project_gal.html
+ */
 .skill-category li:last-child {
   border-bottom: none;
-}
+} 
 
 /* Desktop overrides */
 @media (min-width: 769px) {
   /* Grid: switch to multi-column */
+  /* Usage:
+   *  .skills-grid (desktop) — used in:
+   *   - projects/snake.html
+   *   - projects/portfolio.html
+   *   - skills.html
+   *   - projects/ascii_draw.html
+   *   - projects/office.html
+   *   - projects/old_portfolio.html
+   *   - projects/server_surfer.html
+   *   - projects/project_gal.html
+   */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -70,9 +158,20 @@
     /* optional: remove the mobile padding so grid aligns with container edges */
     padding: 0;
     align-items: stretch;
-  }
+  } 
 
   /* Card: allow it to fill its grid cell (don’t stay 85% wide) */
+  /* Usage:
+   *  .skill-category (desktop) — used in:
+   *   - projects/snake.html
+   *   - projects/portfolio.html
+   *   - skills.html
+   *   - projects/ascii_draw.html
+   *   - projects/office.html
+   *   - projects/old_portfolio.html
+   *   - projects/server_surfer.html
+   *   - projects/project_gal.html
+   */
   .skill-category {
     width: 100%;
     margin: 0;
