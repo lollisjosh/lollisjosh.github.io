@@ -1,179 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antillery Devlog #3 | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
- <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-</head>
-<body>
-  <div id="header-placeholder"></div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antillery Devlog #3 | Portfolio</title>
 
-  <main>
-    <div class="content-container">
-      <article>
-        <h1 class="funnel-display-header">Antillery Devlog #3</h1>
-        <h4>Unity Package Selection</h4>
-        
-        <!-- Navigation TOC -->
-        <nav class="toc-nav">
-          <a href="/projects/antillery.html" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">🎮</span>
-            <span class="toc-title">Project Page</span>
-          </a>
-          
-          <a href="#why-planning" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">🤔</span>
-            <span class="toc-title">Why Planning Matters</span>
-          </a>
-          
-          <a href="#core-packages" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">📦</span>
-            <span class="toc-title">Core Packages</span>
-          </a>
-          
-          <a href="#optional-packages" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">✨</span>
-            <span class="toc-title">Optional Packages</span>
-          </a>
-          
-          <a href="#avoided-packages" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">⛔</span>
-            <span class="toc-title">Packages to Avoid</span>
-          </a>
-          
-          <a href="#strategy" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-            <span class="toc-icon">📊</span>
-            <span class="toc-title">Package Strategy</span>
-          </a>
-        </nav>
-        
-        <hr class="section-divider">
-        
-        <section id="why-planning" class="devlog-section">
-          <h2 class="section-heading">Why Package Planning Matters</h2>
-          <p>Unity offers a wide range of optional packages. While powerful, not all are suitable for a short-cycle, solo-developed game. Prioritizing stable, well-documented packages helps reduce project risk and unnecessary bloat. This post outlines the packages I'm currently planning to use or explore.</p>
-          
-          <!-- <div class="iframe-border">
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">html{visibility:hidden}</style>
+
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <div class="content-container">
+        <article>
+          <h1 class="funnel-display-header">Antillery Devlog #3</h1>
+          <h4>Unity Package Selection</h4>
+
+          <!-- Navigation TOC -->
+          <nav class="toc-nav">
+            <a href="/projects/antillery.html"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">🎮</span>
+              <span class="toc-title">Project Page</span>
+            </a>
+
+            <a href="#why-planning"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">🤔</span>
+              <span class="toc-title">Why Planning Matters</span>
+            </a>
+
+            <a href="#core-packages"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">📦</span>
+              <span class="toc-title">Core Packages</span>
+            </a>
+
+            <a href="#optional-packages"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">✨</span>
+              <span class="toc-title">Optional Packages</span>
+            </a>
+
+            <a href="#avoided-packages"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">⛔</span>
+              <span class="toc-title">Packages to Avoid</span>
+            </a>
+
+            <a href="#strategy"
+              class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+              <span class="toc-icon">📊</span>
+              <span class="toc-title">Package Strategy</span>
+            </a>
+          </nav>
+
+          <hr class="section-divider">
+
+          <section id="why-planning" class="devlog-section">
+            <h2 class="section-heading">Why Package Planning Matters</h2>
+            <p>Unity offers a wide range of optional packages. While powerful,
+              not all are suitable for a short-cycle, solo-developed game.
+              Prioritizing stable, well-documented packages helps reduce project
+              risk and unnecessary bloat. This post outlines the packages I'm
+              currently planning to use or explore.</p>
+
+            <!-- <div class="iframe-border">
             <img src="/assets/images/unity-packages.png" alt="Unity Package Manager" style="max-width: 300px; margin: 0 auto; display: block;">
           </div> -->
-        </section>
+          </section>
 
-        <hr class="section-divider">
+          <hr class="section-divider">
 
-        <section id="core-packages" class="devlog-section">
-          <h2 class="section-heading">Core Packages (In Use)</h2>
-          
-          <div class="skills-grid" style="margin-top: 25px;">
-            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
-              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Input System</h3>
-              <p>Used for managing per-player control bindings and input events across gamepads and keyboard.</p>
+          <section id="core-packages" class="devlog-section">
+            <h2 class="section-heading">Core Packages (In Use)</h2>
+
+            <div class="skills-grid" style="margin-top: 25px;">
+              <div class="skill-category hover-transform-up"
+                style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+                <h3
+                  style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">Input
+                  System</h3>
+                <p>Used for managing per-player control bindings and input
+                  events across gamepads and keyboard.</p>
+              </div>
+
+              <div class="skill-category hover-transform-up"
+                style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+                <h3
+                  style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">TextMeshPro</h3>
+                <p>Used for UI overlays including player indicators, timers, and
+                  HUD elements.</p>
+              </div>
+
+              <div class="skill-category hover-transform-up"
+                style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
+                <h3
+                  style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">URP
+                  (Universal Render Pipeline)</h3>
+                <p>Chosen for its lightweight 2D rendering, built-in support for
+                  Shader Graph, and easy post-processing.</p>
+              </div>
             </div>
-            
-            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
-              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">TextMeshPro</h3>
-              <p>Used for UI overlays including player indicators, timers, and HUD elements.</p>
+          </section>
+
+          <hr class="section-divider">
+
+          <section id="optional-packages" class="devlog-section">
+            <h2 class="section-heading">Nice-to-Have Packages</h2>
+
+            <blockquote
+              style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;"
+              class="hover-transform-up">
+              <h5 class="remedy"
+                style="color: #4a4; border-bottom: 1px solid #4a4; padding-bottom: 5px;">Optional
+                Packages Being Considered</h5>
+              <ul>
+                <li><strong>Cinemachine</strong><br>
+                  Could simplify smooth camera motion and camera shake effects
+                  when tools impact terrain.</li>
+                <li><strong>SpriteShape</strong><br>
+                  May be used for terrain embellishments or border smoothing
+                  depending on performance and visual needs.</li>
+                <li><strong>Shader Graph</strong><br>
+                  Likely to be used for weapon effects, impact visuals, or
+                  terrain interactions.</li>
+                <li><strong>2D Pixel Perfect</strong><br>
+                  Could help enforce pixel scale if the final art direction
+                  leans heavily retro.</li>
+              </ul>
+            </blockquote>
+
+            <div class="highlight-box hover-transform-up"
+              style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+              <p>These packages will be added only if they serve a specific need
+                that arises during development. Each introduces its own learning
+                curve and potential issues, so I'm being selective about
+                implementation.</p>
             </div>
-            
-            <div class="skill-category hover-transform-up" style="background-color: #f9f5ff; padding: 20px; border-radius: 8px;">
-              <h3 style="color: #4b304e; border-bottom: 2px solid #4b304e; padding-bottom: 10px; margin-bottom: 15px;">URP (Universal Render Pipeline)</h3>
-              <p>Chosen for its lightweight 2D rendering, built-in support for Shader Graph, and easy post-processing.</p>
+          </section>
+
+          <hr class="section-divider">
+
+          <section id="avoided-packages" class="devlog-section">
+            <h2 class="section-heading">Packages I'm Avoiding</h2>
+
+            <blockquote
+              style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;"
+              class="hover-transform-up">
+              <h5 class="challenge"
+                style="color: #d44; border-bottom: 1px solid #d44; padding-bottom: 5px;">Packages
+                Not Needed for This Project</h5>
+              <ul>
+                <li><strong>DOTS Entity System</strong><br>
+                  Not needed. The game will have 8–16 player-controlled entities
+                  and no AI or large-scale simulation.</li>
+                <li><strong>Netcode for GameObjects</strong><br>
+                  Antillery is local-only. Network syncing would introduce
+                  unnecessary complexity for this project.</li>
+                <li><strong>Timeline</strong><br>
+                  No planned cutscenes or timeline-based animation
+                  sequences.</li>
+                <li><strong>AI Navigation</strong><br>
+                  No pathfinding or agent-based AI is planned.</li>
+              </ul>
+            </blockquote>
+          </section>
+
+          <hr class="section-divider">
+
+          <section id="strategy" class="devlog-section">
+            <h2 class="section-heading">Package Strategy Summary</h2>
+            <p>Antillery's codebase is being built with modularity and
+              minimalism in mind. Every package added should either save time,
+              increase clarity, or enable a core gameplay feature. Any that
+              introduce more maintenance or risk than benefit are intentionally
+              left out.</p>
+
+            <div class="highlight-box hover-transform-up"
+              style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
+              <p>In future posts, I'll cover how these packages integrate into
+                systems like turn management, terrain modification, and UI.</p>
             </div>
+          </section>
+
+          <hr class="section-divider">
+
+          <!-- Post Navigation -->
+          <div class="post-navigation">
+            <a href="/blog/antillery/ant-dev-2025-05-17.html"
+              class="post-nav-button prev-post">
+              <span class="post-nav-icon">←</span>
+              <div class="post-nav-content">
+                <span class="post-nav-label">Previous Post</span>
+                <span class="post-nav-title">Unity Version Selection</span>
+              </div>
+            </a>
+
+            <a href="/blog/antillery/ant-dev-2025-05-25.html"
+              class="post-nav-button next-post">
+              <div class="post-nav-content">
+                <span class="post-nav-label">Next Post</span>
+                <span class="post-nav-title">States, Events, and Application
+                  Flow</span>
+              </div>
+              <span class="post-nav-icon">→</span>
+            </a>
           </div>
-        </section>
 
-        <hr class="section-divider">
-
-        <section id="optional-packages" class="devlog-section">
-          <h2 class="section-heading">Nice-to-Have Packages</h2>
-          
-          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;" class="hover-transform-up">
-            <h5 class="remedy" style="color: #4a4; border-bottom: 1px solid #4a4; padding-bottom: 5px;">Optional Packages Being Considered</h5>
-            <ul>
-              <li><strong>Cinemachine</strong><br>
-              Could simplify smooth camera motion and camera shake effects when tools impact terrain.</li>
-              <li><strong>SpriteShape</strong><br>
-              May be used for terrain embellishments or border smoothing depending on performance and visual needs.</li>
-              <li><strong>Shader Graph</strong><br>
-              Likely to be used for weapon effects, impact visuals, or terrain interactions.</li>
-              <li><strong>2D Pixel Perfect</strong><br>
-              Could help enforce pixel scale if the final art direction leans heavily retro.</li>
-            </ul>
-          </blockquote>
-          
-          <div class="highlight-box hover-transform-up" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
-            <p>These packages will be added only if they serve a specific need that arises during development. Each introduces its own learning curve and potential issues, so I'm being selective about implementation.</p>
+          <div
+            style="text-align: right; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
+            <h6>Until next time!</h6>
+            <h4>- Josh ✌️</h4>
           </div>
-        </section>
+        </article>
+      </div>
+    </main>
 
-        <hr class="section-divider">
-
-        <section id="avoided-packages" class="devlog-section">
-          <h2 class="section-heading">Packages I'm Avoiding</h2>
-          
-          <blockquote style="background-color: #f8f8f8; border-radius: 8px; margin: 20px 0; padding: 5px 20px;" class="hover-transform-up">
-            <h5 class="challenge" style="color: #d44; border-bottom: 1px solid #d44; padding-bottom: 5px;">Packages Not Needed for This Project</h5>
-            <ul>
-              <li><strong>DOTS Entity System</strong><br>
-              Not needed. The game will have 8–16 player-controlled entities and no AI or large-scale simulation.</li>
-              <li><strong>Netcode for GameObjects</strong><br>
-              Antillery is local-only. Network syncing would introduce unnecessary complexity for this project.</li>
-              <li><strong>Timeline</strong><br>
-              No planned cutscenes or timeline-based animation sequences.</li>
-              <li><strong>AI Navigation</strong><br>
-              No pathfinding or agent-based AI is planned.</li>
-            </ul>
-          </blockquote>
-        </section>
-
-        <hr class="section-divider">
-
-        <section id="strategy" class="devlog-section">
-          <h2 class="section-heading">Package Strategy Summary</h2>
-          <p>Antillery's codebase is being built with modularity and minimalism in mind. Every package added should either save time, increase clarity, or enable a core gameplay feature. Any that introduce more maintenance or risk than benefit are intentionally left out.</p>
-          
-          <div class="highlight-box hover-transform-up" style="background-color: #f8f8f8; padding: 15px; border-left: 4px solid #4b304e; margin: 20px 0;">
-            <p>In future posts, I'll cover how these packages integrate into systems like turn management, terrain modification, and UI.</p>
-          </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <!-- Post Navigation -->
-        <div class="post-navigation">
-          <a href="/blog/antillery/ant-dev-2025-05-17.html" class="post-nav-button prev-post">
-            <span class="post-nav-icon">←</span>
-            <div class="post-nav-content">
-              <span class="post-nav-label">Previous Post</span>
-              <span class="post-nav-title">Unity Version Selection</span>
-            </div>
-          </a>
-          
-          <a href="/blog/antillery/ant-dev-2025-05-25.html" class="post-nav-button next-post">
-            <div class="post-nav-content">
-              <span class="post-nav-label">Next Post</span>
-              <span class="post-nav-title">States, Events, and Application Flow</span>
-            </div>
-            <span class="post-nav-icon">→</span>
-          </a>
-        </div>
-
-        <div style="text-align: right; margin-top: 40px; border-top: 1px solid #ddd; padding-top: 20px;">
-          <h6>Until next time!</h6>
-          <h4>- Josh ✌️</h4>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <div id="footer-placeholder"></div>
-  <script src="/scripts.js"></script>
-</body>
+    <div id="footer-placeholder"></div>
+    <script src="/scripts.js"></script>
+  </body>
 </html>

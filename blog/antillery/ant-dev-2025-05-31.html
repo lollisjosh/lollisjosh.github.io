@@ -1,401 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antillery Devlog | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antillery Devlog | Portfolio</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
-        rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-</head>
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
 
-<body>
-    <div id="header-placeholder"></div>
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
 
-    <main>
-        <div class="content-container">
-            <article>
-                <h1 class="funnel-display-header">Antillery Devlog #7</h1>
-                <h2>Introduction to Antillery</h2>
-                <p class="devlog-date">May 31, 2025</p>
-                <p>A look at the concept, history, and creative direction behind this artillery game with a peaceful
-                    twist</p>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
+            rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    </head>
 
-                <!-- Navigation TOC -->
-                <nav class="toc-nav">
-                    <a href="/projects/antillery.html"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🎮</span>
-                        <span class="toc-title">Project Page</span>
-                    </a>
+    <body>
+        <div id="header-placeholder"></div>
 
-                    <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">📋</span>
-                        <span class="toc-title">Project Overview</span>
-                    </a>
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Antillery Devlog #7</h1>
+                    <h2>Introduction to Antillery</h2>
+                    <p class="devlog-date">May 31, 2025</p>
+                    <p>A look at the concept, history, and creative direction
+                        behind this artillery game with a peaceful
+                        twist</p>
 
-                    <a href="#history" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">📜</span>
-                        <span class="toc-title">Historical Context</span>
-                    </a>
+                    <!-- Navigation TOC -->
+                    <nav class="toc-nav">
+                        <a href="/projects/antillery.html"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎮</span>
+                            <span class="toc-title">Project Page</span>
+                        </a>
 
-                    <a href="#concept" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">💡</span>
-                        <span class="toc-title">Conceptual Context</span>
-                    </a>
+                        <a href="#overview"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">📋</span>
+                            <span class="toc-title">Project Overview</span>
+                        </a>
 
-                    <a href="#weapons" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">💣</span>
-                        <span class="toc-title">Weapons & Tools</span>
-                    </a>
+                        <a href="#history"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">📜</span>
+                            <span class="toc-title">Historical Context</span>
+                        </a>
 
-                    <a href="#gameplay" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">⚙️</span>
-                        <span class="toc-title">Gameplay Mechanics</span>
-                    </a>
-                </nav>
+                        <a href="#concept"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">💡</span>
+                            <span class="toc-title">Conceptual Context</span>
+                        </a>
 
-                <hr class="section-divider">
+                        <a href="#weapons"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">💣</span>
+                            <span class="toc-title">Weapons & Tools</span>
+                        </a>
 
-                <section id="overview" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Project Overview</h2>
-
-                    <p class="section-intro">
-                        This proposal outlines the concept, inspiration, and creative goals behind <em>Antillery</em>, a
-                        senior capstone project that aims to turn the artillery game genre on its warhead.
-                    </p>
-
-                                    <hr class="section-divider">
-
-
-                    <h3 class="content-heading">What is Antillery?</h3>
-
-                    <p><em>Antillery</em> is a satirical take on the beloved artillery game format. Inspired by the
-                        iconic "Worms" franchise created by Team17, <em>Antillery</em> maintains the same strategic,
-                        turn-based, destructively chaotic gameplay typical of an artillery-type game while
-                        introducing peace-oriented mechanics that border on disruptive and destructive in their own
-                        right.</p>
-
-                    <p>In addition to the traditional arsenal of artillery, <em>Antillery</em> arms players with a new
-                        category of "eco-friendly" and "nonviolent" weaponry and tools, eco-friendly, restorative, or
-                        passive-aggressive, but still disruptive and impactful in battle.</p>
-
-                                        <hr class="section-divider">
-
-
-                    <h3 class="content-heading">Genre Classification</h3>
-
-                    <p>Antillery fits the classification of a 2D turn-based strategy game, belonging specifically to the
-                        artillery subgenre. It draws from the tradition of artillery games while building on the
-                        genre's core loop of indirect, physics-based combat within a turn-based system.</p>
-
-                    <p>Artillery games typically involve players alternating turns to reposition units, aim and fire
-                        projectiles, and adapt to environmental variables such as wind or destructible terrain. These
-                        features create emergent gameplay scenarios that are easy for most players to pick up but have
-                        a level of strategic depth that offers extensive replayability.</p>
-
-                    <div class="content-container">
-                        <img src="/assets/images/blogs/antillery/genre_table.jpg"
-                            alt="Table of Antillery's genre classifications" class="blog-image">
-                        <p class="image-caption">Antillery can be categorized by these genre classifications.</p>
-                    </div>
-
-                </section>
-
-                <hr class="section-divider">
-
-                <section id="history" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Historical Context</h2>
-
-                    <h3 class="content-heading">Text & Vector-Based Simulation: Origin Story</h3>
-
-                    <p>The earliest artillery games emerged as text-based simulations on mainframe computers in the
-                        1960s. While primitive compared to today's games, these early experiments in electronic
-                        entertainment established many of the core mechanics defining the genre for decades.</p>
-
-                    <p>The earliest simulations were developed using BASIC and were entirely text-based, requiring
-                        players to imagine the evolving battlefield. Players took turns entering parameters such as
-                        barrel angle and firing velocity.</p>
-
-                    <p>These early simulations had a limited player base of mainframe operators who implemented and
-                        circulated their new features. Although direct visual records of mainframe-era artillery games
-                        are scarce, their design legacy persisted. By the early 1980s, successors like Artillery Duel
-                        (1983) began introducing simple vector graphics and visual interfaces on home consoles.</p>
-
-                    <div class="content-container">
-                        <img src="/assets/images/blogs/antillery/mobygames_artilleryduel.png"
-                            alt="Screenshot of Artillery Duel from 1983" class="blog-image">
-                                                <hr class="section-divider">
-
-                        <img src="/assets/images/blogs/antillery/mobygames_artilleryduel2.png"
-                            alt="Screenshot of Artillery Duel from 1983" class="blog-image">
-                        <p class="image-caption">Artillery Duel (1983) brought simple vector graphics to the artillery
-                            game format (MobyGames).</p>
-                        
-                    
-                    </div>
+                        <a href="#gameplay"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">⚙️</span>
+                            <span class="toc-title">Gameplay Mechanics</span>
+                        </a>
+                    </nav>
 
                     <hr class="section-divider">
 
+                    <section id="overview"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Project Overview</h2>
 
-                    <h3 class="content-heading">Scorched Earth: The Evolution of Customization</h3>
+                        <p class="section-intro">
+                            This proposal outlines the concept, inspiration, and
+                            creative goals behind <em>Antillery</em>, a
+                            senior capstone project that aims to turn the
+                            artillery game genre on its warhead.
+                        </p>
 
-                    <p class="section-intro">Scorched Earth was released in 1991 and marked a pivotal moment, breathing
-                        new life into the artillery genre. Unlike its text-based predecessors, it was in full color,
-                        real-time, and standardized many of the hallmark conventions of artillery games.</p>
+                        <hr class="section-divider">
 
-                    <p>Scorched Earth expanded significantly on the foundational mechanics of earlier artillery games by
-                        implementing over thirty weapons, ranging from conventional missiles to napalm. Much of its
-                        acclaim came from its level of strategic depth, afforded by its fully destructible terrain,
-                        customizable parameters such as wind and gravity, and a robust in-game economy.</p>
+                        <h3 class="content-heading">What is Antillery?</h3>
 
-                    <p>This landmark artillery title introduced several design ideas that became hallmarks of the genre
-                        today. Its focus on dynamic strategy through choice and customization shaped the landscape of
-                        future artillery games.</p>
+                        <p><em>Antillery</em> is a satirical take on the beloved
+                            artillery game format. Inspired by the
+                            iconic "Worms" franchise created by Team17,
+                            <em>Antillery</em> maintains the same strategic,
+                            turn-based, destructively chaotic gameplay typical
+                            of an artillery-type game while
+                            introducing peace-oriented mechanics that border on
+                            disruptive and destructive in their own
+                            right.</p>
 
-                    <div class="content-container">
-                        <img src="/assets/images/blogs/antillery/barton_scorchedearth.png"
-                            alt="Screenshot of Scorched Earth from 1991 showing UI and terrain" class="blog-image">
-                        <p class="image-caption">Scorched Earth (1991) UI and terrain interaction established many genre
-                            conventions (Barton).</p>
-                    </div>
+                        <p>In addition to the traditional arsenal of artillery,
+                            <em>Antillery</em> arms players with a new
+                            category of "eco-friendly" and "nonviolent" weaponry
+                            and tools, eco-friendly, restorative, or
+                            passive-aggressive, but still disruptive and
+                            impactful in battle.</p>
 
-                    <hr class="section-divider">
+                        <hr class="section-divider">
 
+                        <h3 class="content-heading">Genre Classification</h3>
 
-                    <h3 class="content-heading">Worms: Giving Artillery a New Backbone</h3>
+                        <p>Antillery fits the classification of a 2D turn-based
+                            strategy game, belonging specifically to the
+                            artillery subgenre. It draws from the tradition of
+                            artillery games while building on the
+                            genre's core loop of indirect, physics-based combat
+                            within a turn-based system.</p>
 
-                    <p class="section-intro">Worms, released by Team17 in 1995, marked a turning point in the artillery
-                        game genre. While its gameplay preserved core projectile mechanics, its presentation shifted the
-                        genre from simulation to satirical multiplayer chaos.</p>
+                        <p>Artillery games typically involve players alternating
+                            turns to reposition units, aim and fire
+                            projectiles, and adapt to environmental variables
+                            such as wind or destructible terrain. These
+                            features create emergent gameplay scenarios that are
+                            easy for most players to pick up but have
+                            a level of strategic depth that offers extensive
+                            replayability.</p>
 
-                    <p>Creator Andy Davidson entered the game, called initially Total Wormage, into a competition by
-                        Amiga Format magazine. Though it did not win, it caught Team17's attention, which went on to
-                        publish it across multiple platforms (Nuttall 26; Barton).</p>
-
-                    <p>Worms emphasized player mobility, absurdity, and personality, unlike its tank-centric
-                        predecessors. Worms could walk, jump, and swing across terrain using ninja ropes and parachutes,
-                        adding momentum and physical comedy to a genre previously rooted in physics realism.</p>
-
-                    <p>Barton observed, "The worms can do much more than tanks," describing moments of dramatic
-                        acrobatics. Its tone embraced British comedic absurdity, transforming once-serious combat into a
-                        stage for slapstick and satire.</p>
-
-                    <p>Exploding sheep, banana bombs, and absurd weapons blurred the line between threat and punchline.
-                        Cheeky voice lines like "First blood!" and "This worm is an ex-worm!" gave the game personality
-                        and flair, establishing a new kind of identity for artillery games, one dripping in irony,
-                        theatricality, and joyful nonsense.</p>
-
-                    <div class="content-container">
-                        <img src="/assets/images/blogs/antillery/worms_laflame.jpg"
-                            alt="Screenshot from Worms (1995) showing the game's cartoonish style" class="blog-image">
-                        <p class="image-caption">Worms (1995) featuring destructible terrain and satirical visuals that
-                            redefined the genre (LaFlame).</p>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h3>Artillery Genre Evolution</h3>
-                            <ul class="clean-list">
-                                <li><strong>1960s:</strong> Text-based BASIC simulations on mainframes</li>
-                                <li><strong>1980s:</strong> Vector graphics with Artillery Duel (1983)</li>
-                                <li><strong>1991:</strong> Scorched Earth - color, customization, economy</li>
-                                <li><strong>1995:</strong> Worms - mobility, personality, satirical tone</li>
-                                <li><strong>2025:</strong> Antillery - peace tools alongside traditional weapons</li>
-                            </ul>
+                        <div class="content-container">
+                            <img
+                                src="/assets/images/blogs/antillery/genre_table.jpg"
+                                alt="Table of Antillery's genre classifications"
+                                class="blog-image">
+                            <p class="image-caption">Antillery can be
+                                categorized by these genre classifications.</p>
                         </div>
-                    </div>
-                </section>
 
-                <hr class="section-divider">
+                    </section>
 
-                <section id="concept" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Conceptual Context</h2>
+                    <hr class="section-divider">
 
-                    <p class="section-intro"><em>Antillery's</em> goal is to push the boundaries of artillery combat,
-                        drawing inspiration from Worms while evolving the genre in bold new directions.</p>
+                    <section id="history"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Historical
+                            Context</h2>
 
-                                        <hr class="section-divider">
+                        <h3 class="content-heading">Text & Vector-Based
+                            Simulation: Origin Story</h3>
 
+                        <p>The earliest artillery games emerged as text-based
+                            simulations on mainframe computers in the
+                            1960s. While primitive compared to today's games,
+                            these early experiments in electronic
+                            entertainment established many of the core mechanics
+                            defining the genre for decades.</p>
 
-                    <h3 class="content-heading">Following Worms' Legacy of Innovation</h3>
+                        <p>The earliest simulations were developed using BASIC
+                            and were entirely text-based, requiring
+                            players to imagine the evolving battlefield. Players
+                            took turns entering parameters such as
+                            barrel angle and firing velocity.</p>
 
-                    <p>Worms redefined artillery combat through absurdist humor and player mobility, transforming a
-                        simulation-focused genre into something entirely new. <em>Antillery</em> takes its lead by
-                        blending modern cultural satire with new peace-driven gameplay mechanics, honoring the spirit of
-                        innovation introduced by Worms while pushing the artillery genre into a new frontier.</p>
+                        <p>These early simulations had a limited player base of
+                            mainframe operators who implemented and
+                            circulated their new features. Although direct
+                            visual records of mainframe-era artillery games
+                            are scarce, their design legacy persisted. By the
+                            early 1980s, successors like Artillery Duel
+                            (1983) began introducing simple vector graphics and
+                            visual interfaces on home consoles.</p>
 
-                    <p>The goal of <em>Antillery</em> is not to apply new paint to a formulaic experience but to evolve
-                        the artillery genre in the way that Worms did in its day. Just as Worms brought personality and
-                        absurdity to what was once a sterile simulation, <em>Antillery</em> introduces a satirical
-                        examination of conflict resolution through gameplay.</p>
+                        <div class="content-container">
+                            <img
+                                src="/assets/images/blogs/antillery/mobygames_artilleryduel.png"
+                                alt="Screenshot of Artillery Duel from 1983"
+                                class="blog-image">
+                            <hr class="section-divider">
 
-                                        <hr class="section-divider">
+                            <img
+                                src="/assets/images/blogs/antillery/mobygames_artilleryduel2.png"
+                                alt="Screenshot of Artillery Duel from 1983"
+                                class="blog-image">
+                            <p class="image-caption">Artillery Duel (1983)
+                                brought simple vector graphics to the artillery
+                                game format (MobyGames).</p>
 
+                        </div>
 
-                    <h3 class="content-heading">The Balance of War and Peace</h3>
+                        <hr class="section-divider">
 
-                    <p>Players still have access to traditional artillery weapons like bazookas and grenades. However,
-                        in <em>Antillery</em>, they may also employ new strategies centered on peace, love, and
-                        environmental restoration. This duality challenges players to rethink what combat can be,
-                        forcing them to balance war and peace as part of their tactical thinking.</p>
+                        <h3 class="content-heading">Scorched Earth: The
+                            Evolution of Customization</h3>
 
-                    <p>Nevertheless, even actions of peace, love, and environmentalism sometimes create destructive
-                        outcomes. A sunflower might create a shielding canopy, an isolating barrier, or a bridge to
-                        strategic ground. In <em>Antillery</em>, every action, whether peaceful or aggressive, becomes
-                        part of a larger strategy shaped by the player.</p>
+                        <p class="section-intro">Scorched Earth was released in
+                            1991 and marked a pivotal moment, breathing
+                            new life into the artillery genre. Unlike its
+                            text-based predecessors, it was in full color,
+                            real-time, and standardized many of the hallmark
+                            conventions of artillery games.</p>
 
-                    <!-- <div class="content-container">
+                        <p>Scorched Earth expanded significantly on the
+                            foundational mechanics of earlier artillery games by
+                            implementing over thirty weapons, ranging from
+                            conventional missiles to napalm. Much of its
+                            acclaim came from its level of strategic depth,
+                            afforded by its fully destructible terrain,
+                            customizable parameters such as wind and gravity,
+                            and a robust in-game economy.</p>
+
+                        <p>This landmark artillery title introduced several
+                            design ideas that became hallmarks of the genre
+                            today. Its focus on dynamic strategy through choice
+                            and customization shaped the landscape of
+                            future artillery games.</p>
+
+                        <div class="content-container">
+                            <img
+                                src="/assets/images/blogs/antillery/barton_scorchedearth.png"
+                                alt="Screenshot of Scorched Earth from 1991 showing UI and terrain"
+                                class="blog-image">
+                            <p class="image-caption">Scorched Earth (1991) UI
+                                and terrain interaction established many genre
+                                conventions (Barton).</p>
+                        </div>
+
+                        <hr class="section-divider">
+
+                        <h3 class="content-heading">Worms: Giving Artillery a
+                            New Backbone</h3>
+
+                        <p class="section-intro">Worms, released by Team17 in
+                            1995, marked a turning point in the artillery
+                            game genre. While its gameplay preserved core
+                            projectile mechanics, its presentation shifted the
+                            genre from simulation to satirical multiplayer
+                            chaos.</p>
+
+                        <p>Creator Andy Davidson entered the game, called
+                            initially Total Wormage, into a competition by
+                            Amiga Format magazine. Though it did not win, it
+                            caught Team17's attention, which went on to
+                            publish it across multiple platforms (Nuttall 26;
+                            Barton).</p>
+
+                        <p>Worms emphasized player mobility, absurdity, and
+                            personality, unlike its tank-centric
+                            predecessors. Worms could walk, jump, and swing
+                            across terrain using ninja ropes and parachutes,
+                            adding momentum and physical comedy to a genre
+                            previously rooted in physics realism.</p>
+
+                        <p>Barton observed,
+                            "The worms can do much more than tanks," describing
+                            moments of dramatic
+                            acrobatics. Its tone embraced British comedic
+                            absurdity, transforming once-serious combat into a
+                            stage for slapstick and satire.</p>
+
+                        <p>Exploding sheep, banana bombs, and absurd weapons
+                            blurred the line between threat and punchline.
+                            Cheeky voice lines like "First blood!" and
+                            "This worm is an ex-worm!" gave the game personality
+                            and flair, establishing a new kind of identity for
+                            artillery games, one dripping in irony,
+                            theatricality, and joyful nonsense.</p>
+
+                        <div class="content-container">
+                            <img
+                                src="/assets/images/blogs/antillery/worms_laflame.jpg"
+                                alt="Screenshot from Worms (1995) showing the game's cartoonish style"
+                                class="blog-image">
+                            <p class="image-caption">Worms (1995) featuring
+                                destructible terrain and satirical visuals that
+                                redefined the genre (LaFlame).</p>
+                        </div>
+
+                        <hr class="section-divider">
+
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3>Artillery Genre Evolution</h3>
+                                <ul class="clean-list">
+                                    <li><strong>1960s:</strong> Text-based BASIC
+                                        simulations on mainframes</li>
+                                    <li><strong>1980s:</strong> Vector graphics
+                                        with Artillery Duel (1983)</li>
+                                    <li><strong>1991:</strong> Scorched Earth -
+                                        color, customization, economy</li>
+                                    <li><strong>1995:</strong> Worms - mobility,
+                                        personality, satirical tone</li>
+                                    <li><strong>2025:</strong> Antillery - peace
+                                        tools alongside traditional weapons</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="concept"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Conceptual
+                            Context</h2>
+
+                        <p class="section-intro"><em>Antillery's</em> goal is to
+                            push the boundaries of artillery combat,
+                            drawing inspiration from Worms while evolving the
+                            genre in bold new directions.</p>
+
+                        <hr class="section-divider">
+
+                        <h3 class="content-heading">Following Worms' Legacy of
+                            Innovation</h3>
+
+                        <p>Worms redefined artillery combat through absurdist
+                            humor and player mobility, transforming a
+                            simulation-focused genre into something entirely
+                            new. <em>Antillery</em> takes its lead by
+                            blending modern cultural satire with new
+                            peace-driven gameplay mechanics, honoring the spirit
+                            of
+                            innovation introduced by Worms while pushing the
+                            artillery genre into a new frontier.</p>
+
+                        <p>The goal of <em>Antillery</em> is not to apply new
+                            paint to a formulaic experience but to evolve
+                            the artillery genre in the way that Worms did in its
+                            day. Just as Worms brought personality and
+                            absurdity to what was once a sterile simulation,
+                            <em>Antillery</em> introduces a satirical
+                            examination of conflict resolution through
+                            gameplay.</p>
+
+                        <hr class="section-divider">
+
+                        <h3 class="content-heading">The Balance of War and
+                            Peace</h3>
+
+                        <p>Players still have access to traditional artillery
+                            weapons like bazookas and grenades. However,
+                            in <em>Antillery</em>, they may also employ new
+                            strategies centered on peace, love, and
+                            environmental restoration. This duality challenges
+                            players to rethink what combat can be,
+                            forcing them to balance war and peace as part of
+                            their tactical thinking.</p>
+
+                        <p>Nevertheless, even actions of peace, love, and
+                            environmentalism sometimes create destructive
+                            outcomes. A sunflower might create a shielding
+                            canopy, an isolating barrier, or a bridge to
+                            strategic ground. In <em>Antillery</em>, every
+                            action, whether peaceful or aggressive, becomes
+                            part of a larger strategy shaped by the player.</p>
+
+                        <!-- <div class="content-container">
                         <img src="/assets/images/antillery/concept_art.jpg"
                             alt="Concept art showing peaceful tools in action" class="blog-image">
                         <p class="image-caption">Concept art depicting how peaceful tools can serve multiple strategic
                             purposes depending on player creativity.</p>
                     </div> -->
-                </section>
+                    </section>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <section id="weapons" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Weapons & Tools</h2>
+                    <section id="weapons"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Weapons & Tools</h2>
 
-                    <p class="section-intro">
-                        <em>Antillery</em> presents players with a choice between overtly destructive methods and
-                        seemingly benevolent alternatives that can achieve equally devastating results through different
-                        means. Don't be fooled by the peaceful branding, these "eco-friendly" and "nonviolent" tools
-                        can be just as devious and destructively impactful as any conventional weapon, forming the heart
-                        of <em>Antillery's</em> satirical commentary on conflict resolution.
-                    </p>
+                        <p class="section-intro">
+                            <em>Antillery</em> presents players with a choice
+                            between overtly destructive methods and
+                            seemingly benevolent alternatives that can achieve
+                            equally devastating results through different
+                            means. Don't be fooled by the peaceful branding,
+                            these "eco-friendly" and "nonviolent" tools
+                            can be just as devious and destructively impactful
+                            as any conventional weapon, forming the heart
+                            of <em>Antillery's</em> satirical commentary on
+                            conflict resolution.
+                        </p>
 
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h3>War</h3>
-                            <p>Honest about their destructive intent, these weapons deliver straightforward damage and
-                                terrain modification.</p>
-                            <ul class="clean-list">
-                                <li><strong>Conventional Explosives:</strong> Direct damage through familiar artillery
-                                    projectiles</li>
-                                <li><strong>Area Effect Weapons:</strong> Wide blast radius for strategic terrain
-                                    removal</li>
-                                <li><strong>Precision Strikes:</strong> Targeted elimination of specific threats</li>
-                            </ul>
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3>War</h3>
+                                <p>Honest about their destructive intent, these
+                                    weapons deliver straightforward damage and
+                                    terrain modification.</p>
+                                <ul class="clean-list">
+                                    <li><strong>Conventional
+                                            Explosives:</strong> Direct damage
+                                        through familiar artillery
+                                        projectiles</li>
+                                    <li><strong>Area Effect Weapons:</strong>
+                                        Wide blast radius for strategic terrain
+                                        removal</li>
+                                    <li><strong>Precision Strikes:</strong>
+                                        Targeted elimination of specific
+                                        threats</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3>Peace</h3>
+                                <p>Marketed as environmentally conscious and
+                                    nonviolent, yet capable of achieving
+                                    devastating tactical advantages through
+                                    creative application.</p>
+                                <ul class="clean-list">
+                                    <li><strong>Restorative Solutions:</strong>
+                                        "Healing" the battlefield in ways that
+                                        trap,
+                                        isolate, or disadvantage opponents</li>
+                                    <li><strong>Passive-Aggressive
+                                            Disruption:</strong> Indirect
+                                        methods that can be more
+                                        psychologically and strategically
+                                        devastating than direct attacks</li>
+                                    <li><strong>Constructive
+                                            Manipulation:</strong> Building
+                                        terrain that creates kill
+                                        zones, blocks escape routes, or sets
+                                        elaborate traps</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="skill-category hover-transform-up">
-                            <h3>Peace</h3>
-                            <p>Marketed as environmentally conscious and nonviolent, yet capable of achieving
-                                devastating tactical advantages through creative application.</p>
-                            <ul class="clean-list">
-                                <li><strong>Restorative Solutions:</strong> "Healing" the battlefield in ways that trap,
-                                    isolate, or disadvantage opponents</li>
-                                <li><strong>Passive-Aggressive Disruption:</strong> Indirect methods that can be more
-                                    psychologically and strategically devastating than direct attacks</li>
-                                <li><strong>Constructive Manipulation:</strong> Building terrain that creates kill
-                                    zones, blocks escape routes, or sets elaborate traps</li>
-                            </ul>
-                        </div>
-                    </div>
+                    </section>
 
-                </section>
+                    <hr class="section-divider">
 
-                <hr class="section-divider">
+                    <section id="gameplay"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Gameplay
+                            Mechanics</h2>
 
-                <section id="gameplay" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Gameplay Mechanics</h2>
+                        <p class="section-intro">Antillery builds upon the
+                            traditional artillery game format with
+                            distinctive mechanics that enhance strategic depth
+                            and player expression.</p>
 
-                    <p class="section-intro">Antillery builds upon the traditional artillery game format with
-                        distinctive mechanics that enhance strategic depth and player expression.</p>
+                        <hr class="section-divider">
 
-                                        <hr class="section-divider">
+                        <h3 class="content-heading">Core Gameplay Loop</h3>
 
+                        <p>Players control teams of ants in turn-based combat on
+                            destructible 2D terrain. Each turn follows
+                            a structured sequence:</p>
 
-                    <h3 class="content-heading">Core Gameplay Loop</h3>
+                        <ul class="clean-list">
+                            <li><strong>Movement Phase:</strong> Reposition your
+                                active ant within movement limits, navigating
+                                terrain and hazards.</li>
+                            <li><strong>Tool Selection:</strong> Choose between
+                                traditional weapons or peace-oriented tools,
+                                each with unique tactical implications.</li>
+                            <li><strong>Aim & Power:</strong> Set trajectory and
+                                power using intuitive angle/strength controls,
+                                factoring in environmental variables.</li>
+                            <li><strong>Execution:</strong> Observe the results
+                                as physics-based interactions play out, altering
+                                the battlefield dynamically.</li>
+                            <li><strong>Environmental Response:</strong> Adapt
+                                to terrain changes, wind shifts, and other
+                                evolving conditions to plan your next move.</li>
+                        </ul>
 
-                    <p>Players control teams of ants in turn-based combat on destructible 2D terrain. Each turn follows
-                        a structured sequence:</p>
+                        <hr class="section-divider">
 
-                    <ul class="clean-list">
-                        <li><strong>Movement Phase:</strong> Reposition your active ant within movement limits, navigating terrain and hazards.</li>
-                        <li><strong>Tool Selection:</strong> Choose between traditional weapons or peace-oriented tools, each with unique tactical implications.</li>
-                        <li><strong>Aim & Power:</strong> Set trajectory and power using intuitive angle/strength controls, factoring in environmental variables.</li>
-                        <li><strong>Execution:</strong> Observe the results as physics-based interactions play out, altering the battlefield dynamically.</li>
-                        <li><strong>Environmental Response:</strong> Adapt to terrain changes, wind shifts, and other evolving conditions to plan your next move.</li>
-                    </ul>
+                        <h3 class="content-heading">Environmental Systems</h3>
 
-                                    <hr class="section-divider">
+                        <p>Dynamic environmental factors create emergent
+                            gameplay situations that evolve throughout each
+                            match:</p>
 
+                        <ul class="clean-list">
+                            <li><strong>Destructible Terrain:</strong> Terrain
+                                deforms realistically from explosions and can be
+                                rebuilt or manipulated using peace tools.</li>
+                            <li><strong>Variable Wind:</strong> Wind direction
+                                and strength change between turns, significantly
+                                affecting projectile trajectories.</li>
+                            <li><strong>Gravity Settings:</strong> Adjustable
+                                gravity levels allow for diverse gameplay
+                                experiences, from low-gravity lunar battles to
+                                high-gravity challenges.</li>
+                            <li><strong>Water Hazards:</strong> Flooding in
+                                lower terrain areas introduces movement
+                                challenges and strategic opportunities.</li>
+                        </ul>
 
-                    <h3 class="content-heading">Environmental Systems</h3>
+                        <hr class="section-divider">
 
-                    <p>Dynamic environmental factors create emergent gameplay situations that evolve throughout each match:</p>
+                        <h3 class="content-heading">Strategic Depth</h3>
 
-                    <ul class="clean-list">
-                        <li><strong>Destructible Terrain:</strong> Terrain deforms realistically from explosions and can be rebuilt or manipulated using peace tools.</li>
-                        <li><strong>Variable Wind:</strong> Wind direction and strength change between turns, significantly affecting projectile trajectories.</li>
-                        <li><strong>Gravity Settings:</strong> Adjustable gravity levels allow for diverse gameplay experiences, from low-gravity lunar battles to high-gravity challenges.</li>
-                        <li><strong>Water Hazards:</strong> Flooding in lower terrain areas introduces movement challenges and strategic opportunities.</li>
-                    </ul>
+                        <p>The interplay between traditional weapons and peace
+                            tools creates a rich strategic landscape. Players
+                            must weigh their options carefully, considering:</p>
 
-                                    <hr class="section-divider">
+                        <ul class="clean-list">
+                            <li>Current terrain configuration and team
+                                positioning</li>
+                            <li>Available tools and their specific tactical
+                                applications</li>
+                            <li>Environmental conditions like wind, gravity, and
+                                water hazards</li>
+                            <li>Long-term resource management across multiple
+                                turns and ants</li>
+                        </ul>
 
+                        <p>Antillery's mechanics encourage creativity and
+                            adaptability, rewarding players who can think
+                            several moves ahead while responding to the
+                            unpredictable nature of the battlefield.</p>
+                        <hr class="section-divider">
 
-                    <h3 class="content-heading">Strategic Depth</h3>
+                    </section>
 
-                    <p>The interplay between traditional weapons and peace tools creates a rich strategic landscape. Players must weigh their options carefully, considering:</p>
+                    <!-- Post Navigation -->
+                    <div class="post-navigation">
+                        <a href="/blog/antillery/ant-dev-2025-05-28.html"
+                            class="post-nav-button prev-post">
+                            <span class="post-nav-icon">←</span>
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Previous
+                                    Post</span>
+                                <span class="post-nav-title">#6 Development
+                                    Roadmap</span>
+                            </div>
+                        </a>
 
-                    <ul class="clean-list">
-                        <li>Current terrain configuration and team positioning</li>
-                        <li>Available tools and their specific tactical applications</li>
-                        <li>Environmental conditions like wind, gravity, and water hazards</li>
-                        <li>Long-term resource management across multiple turns and ants</li>
-                    </ul>
-
-                    <p>Antillery's mechanics encourage creativity and adaptability, rewarding players who can think several moves ahead while responding to the unpredictable nature of the battlefield.</p>
-                               <hr class="section-divider">
-
-                </section>
-
-                <!-- Post Navigation -->
-                <div class="post-navigation">
-                    <a href="/blog/antillery/ant-dev-2025-05-28.html" class="post-nav-button prev-post">
-                        <span class="post-nav-icon">←</span>
-                        <div class="post-nav-content">
-                            <span class="post-nav-label">Previous Post</span>
-                            <span class="post-nav-title">#6 Development Roadmap</span>
-                        </div>
-                    </a>
-
-                    <!-- Coming Soon -->
-                    <a href="/blog/antillery/ant-dev-2025-06-02.html" class="post-nav-button next-post">
+                        <!-- Coming Soon -->
+                        <a href="/blog/antillery/ant-dev-2025-06-02.html"
+                            class="post-nav-button next-post">
                             <div class="post-nav-content">
                                 <span class="post-nav-label">Next Post</span>
-                                <span class="post-nav-title">#8 Who Is Antillery For?</span>
+                                <span class="post-nav-title">#8 Who Is Antillery
+                                    For?</span>
                             </div>
                             <span class="post-nav-icon">→</span>
                         </a>
-                </div>
+                    </div>
 
-                <div class="signature">
-                    <h6>Until next time!</h6>
-                    <h4>- Josh ✌️</h4>
-                </div>
-            </article>
-        </div>
-    </main>
+                    <div class="signature">
+                        <h6>Until next time!</h6>
+                        <h4>- Josh ✌️</h4>
+                    </div>
+                </article>
+            </div>
+        </main>
 
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

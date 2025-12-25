@@ -32,7 +32,7 @@
 .tag {
   font-weight: bold;
   font-size: 0.9rem;
-  color: #4b304e;
+  color: var(--primary);
   white-space: nowrap;
 }
 

@@ -2,6 +2,7 @@
    Extracted from css/blog_tabs.css
 */
 
+/* Used in: index.html (commented out) */
 .sliding-blog-tabs {
   position: fixed;
   left: 35%; /* Position toward the left side of the container */
@@ -11,6 +12,7 @@
   gap: 15px;
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab {
   position: relative;
   display: flex;
@@ -29,7 +31,7 @@
   border-right: none;
 }
 
-/* Blog tab hover behavior - make it slide leftward instantly */
+/* Used in: index.html (commented out) */
 .blog-tab:hover {
   animation: none !important;
   transform: translateX(-442px) !important; /* More negative value to slide leftward */
@@ -38,13 +40,13 @@
   transition: box-shadow 0.3s ease-out;
 }
 
-/* Blog tab animation */
+/* Used in: index.html (commented out) */
 @keyframes blogPeek {
   0%, 100% { transform: translateX(-320px); }
   50% { transform: translateX(-330px); }
 }
 
-/* Apply blog tab animation */
+/* Used in: index.html (commented out) */
 .blog-tab:nth-child(odd) {
   animation: blogPeek 4s ease-in-out infinite;
   animation-delay: 0.5s;
@@ -55,7 +57,7 @@
   animation-delay: 2s;
 }
 
-/* Blog tab content elements */
+/* Used in: index.html (commented out) */
 .blog-tab-preview {
   overflow: hidden;
   display: flex;
@@ -64,12 +66,14 @@
   background: var(--primary);
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab-preview img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab-content {
   flex-grow: 1;
   display: flex;
@@ -80,6 +84,7 @@
   padding-right: 4%;
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab-content h3,
 .blog-tab-content h4,
 .blog-tab-content h5 {
@@ -89,12 +94,14 @@
   font-family: "Funnel Display", sans-serif;
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab-content p {
   margin: 2px 0;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
 
+/* Used in: index.html (commented out) */
 .blog-tab-content .view-more {
   color: var(--accent);
   font-size: 0.8rem;
@@ -102,7 +109,7 @@
   align-self: flex-start;
 }
 
-/* Ensure blog-link covers the entire tab area */
+/* Used in: index.html (commented out) */
 .blog-link {
   position: absolute;
   top: 0;
@@ -114,6 +121,7 @@
 
 /* Hide blog tabs on smaller screens */
 @media screen and (max-width: 1000px) {
+  /* Used in: index.html (commented out) */
   .sliding-blog-tabs,
   .blog-tab {
     display: none;

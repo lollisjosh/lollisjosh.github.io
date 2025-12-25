@@ -21,8 +21,8 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.8);
 
-  border: 2px solid #4b304e;
-  border-radius: 6px;
+  border: 2px solid var(--primary);
+  border-radius: var(--border-radius-sm);
 
   box-sizing: border-box;
   max-width: 100%;
@@ -33,7 +33,7 @@
   .skill-category:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border: 2px solid #4b304e;
+    border: 2px solid var(--primary);
   }
 }
 

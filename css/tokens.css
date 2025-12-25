@@ -22,8 +22,11 @@
     --black: #000000;
     --error: #e74c3c;
     --success: #27ae60;
+    --editors-note-bg: #fff9e6;
+    --editors-note-border: #e6b800;
     --secondary-blue: #181986;
     --bg-light: #f5f5f5;
+    --bg-light-purple: #f4a0ff;
     --border-light: #f0f0f0;
 
     /* Box shadows */

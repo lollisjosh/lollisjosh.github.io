@@ -1,325 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antillery Devlog | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antillery Devlog | Portfolio</title>
 
-            <link
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
+
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
+
+        <link
             href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
             rel="stylesheet" />
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-</head>
+    </head>
 
-<body>
-    <div id="header-placeholder"></div>
+    <body>
+        <div id="header-placeholder"></div>
 
-    <main>
-        <div class="content-container">
-            <article>
-                <h1 class="funnel-display-header">Antillery Devlog #4</h1>
-                <h2>States, Events, and Application Flow</h2>
-                <p class="devlog-date">May 25, 2025</p>
-                <p>Planning for a modular, event-driven application flow architecture</p>
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Antillery Devlog #4</h1>
+                    <h2>States, Events, and Application Flow</h2>
+                    <p class="devlog-date">May 25, 2025</p>
+                    <p>Planning for a modular, event-driven application flow
+                        architecture</p>
 
-                <!-- Navigation TOC -->
-                <nav class="toc-nav">
-                    <a href="/projects/antillery.html"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🎮</span>
-                        <span class="toc-title">Project Page</span>
-                    </a>
+                    <!-- Navigation TOC -->
+                    <nav class="toc-nav">
+                        <a href="/projects/antillery.html"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎮</span>
+                            <span class="toc-title">Project Page</span>
+                        </a>
 
-                    <a href="#problem" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🤔</span>
-                        <span class="toc-title">Problem</span>
-                    </a>
+                        <a href="#problem"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🤔</span>
+                            <span class="toc-title">Problem</span>
+                        </a>
 
-                    <a href="#approach" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🛠️</span>
-                        <span class="toc-title">Approach</span>
-                    </a>
+                        <a href="#approach"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🛠️</span>
+                            <span class="toc-title">Approach</span>
+                        </a>
 
-                    <a href="#results" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">✅</span>
-                        <span class="toc-title">Results</span>
-                    </a>
+                        <a href="#results"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">✅</span>
+                            <span class="toc-title">Results</span>
+                        </a>
 
-                    <a href="#limitations" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">⚠️</span>
-                        <span class="toc-title">Limitations</span>
-                    </a>
+                        <a href="#limitations"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">⚠️</span>
+                            <span class="toc-title">Limitations</span>
+                        </a>
 
-                    <a href="#improvements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🚀</span>
-                        <span class="toc-title">Future Improvements</span>
-                    </a>
+                        <a href="#improvements"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🚀</span>
+                            <span class="toc-title">Future Improvements</span>
+                        </a>
 
-                    <a href="#impact" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">📊</span>
-                        <span class="toc-title">Project Impact</span>
-                    </a>
-                </nav>
+                        <a href="#impact"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">📊</span>
+                            <span class="toc-title">Project Impact</span>
+                        </a>
+                    </nav>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <section id="problem" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Problem</h2>
+                    <section id="problem"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Problem</h2>
 
-                    <!-- Intro paragraph - always outside blockquotes -->
-                    <p class="section-intro">Before building any gameplay systems in <b>Antillery</b>, I needed a
-                        reliable, flexible way to manage the overall structure of the game. This includes switching
-                        between scenes like the Main Menu, Match Setup, the active game loop, and Post-Match summary.
-                    </p>
+                        <!-- Intro paragraph - always outside blockquotes -->
+                        <p class="section-intro">Before building any gameplay
+                            systems in <b>Antillery</b>, I needed a
+                            reliable, flexible way to manage the overall
+                            structure of the game. This includes switching
+                            between scenes like the Main Menu, Match Setup, the
+                            active game loop, and Post-Match summary.
+                        </p>
 
-                    <!-- Main content -->
-                    <blockquote>
-                        <h3 class="content-heading">Key Challenges</h3>
-                        <ul class="clean-list">
-                            <li>Prevent tight the tight coupling that would occur if states handled their own
-                                transitions.</li>
-                            <li>Ensure that scene transitions are clean, observable, and modular.</li>
-                            <li>Allow for easy debugging and extensibility of the application flow.</li>
-                            <li>Support a flexible architecture that can adapt to future gameplay systems.</li>
-                            <li>Maintain a clear separation of concerns between state logic and transition management.
-                            </li>
-                            <li>Allow designers to create and modify game flow without needing to write code.</li>
-                            <li>Ensure that the application flow is version-control friendly and inspector-friendly.
-                            </li>
-                        </ul>
-                    </blockquote>
-                </section>
-
-                <hr class="section-divider">
-
-                <section id="approach" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Approach</h2>
-
-                    <!-- Intro paragraph -->
-                    <p class="section-intro">I designed a modular architecture to provide flexibility and clear
-                        separation of concerns between different aspects of the application flow.</p>
-
-                    <!-- Main content - removed hover effect -->
-                    <blockquote>
-                        <h3 class="content-heading">Architecture Overview</h3>
-                        <p>The implemented application flow architecture uses a modular, ScriptableObject-driven state
-                            machine backed by a polymorphic <code>IState</code> interface, enabling clean, observable
-                            transitions between game scenes.</p>
-                    </blockquote>
-
-                    <!-- Skill grid always outside blockquotes for visual variety -->
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3 class="content-heading">Architecture</h3>
+                        <!-- Main content -->
+                        <blockquote>
+                            <h3 class="content-heading">Key Challenges</h3>
                             <ul class="clean-list">
-                                <li><strong>Interface-Based Design:</strong> States implement <code>IState</code> for
-                                    flexibility and separation of concerns</li>
-                                <li><strong>Event-Driven Communication:</strong> States define their own event contracts
-                                    that external systems can subscribe to</li>
-                                <li><strong>Decoupled Transitions:</strong> GameFlowManager centralizes transition logic
-                                    separate from the states themselves</li>
-                                <li><strong>Inspector Support:</strong> StateMachine works with interfaces while
-                                    maintaining Unity editor compatibility</li>
-                                <li><strong>Scene Management:</strong> Scenes load additively to preserve persistent
-                                    game systems</li>
+                                <li>Prevent tight the tight coupling that would
+                                    occur if states handled their own
+                                    transitions.</li>
+                                <li>Ensure that scene transitions are clean,
+                                    observable, and modular.</li>
+                                <li>Allow for easy debugging and extensibility
+                                    of the application flow.</li>
+                                <li>Support a flexible architecture that can
+                                    adapt to future gameplay systems.</li>
+                                <li>Maintain a clear separation of concerns
+                                    between state logic and transition
+                                    management.
+                                </li>
+                                <li>Allow designers to create and modify game
+                                    flow without needing to write code.</li>
+                                <li>Ensure that the application flow is
+                                    version-control friendly and
+                                    inspector-friendly.
+                                </li>
                             </ul>
-                        </div>
-                    </div>
+                        </blockquote>
+                    </section>
 
-                    <blockquote>
-                        <h3 class="content-heading">Core Systems</h3>
-                        <ul class="clean-list">
-                            <li><code>IState.cs</code> - interface contract for all state logic</li>
-                            <li><code>State.cs</code> - base SO implementation with lifecycle + scene handling</li>
-                            <li><code>StateMachine.cs</code> - tracks active/previous state, handles transitions with
-                                safety guards</li>
-                            <li><code>AppManager.cs</code> - SO configuration container for initial state and
-                                registration</li>
-                            <li><code>GameFlowManager.cs</code> - MonoBehaviour that connects state signals to
-                                transition logic</li>
-                        </ul>
-                    </blockquote>
+                    <hr class="section-divider">
 
-                    <p>Example state and transition flow:</p>
+                    <section id="approach"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Approach</h2>
 
-                    <div class="code-samples-container">
-                        <!-- First code file -->
-                        <div class="code-sample hover-transform-up">
-                            <div class="code-header">
-                                MainMenuState.cs
+                        <!-- Intro paragraph -->
+                        <p class="section-intro">I designed a modular
+                            architecture to provide flexibility and clear
+                            separation of concerns between different aspects of
+                            the application flow.</p>
+
+                        <!-- Main content - removed hover effect -->
+                        <blockquote>
+                            <h3 class="content-heading">Architecture
+                                Overview</h3>
+                            <p>The implemented application flow architecture
+                                uses a modular, ScriptableObject-driven state
+                                machine backed by a polymorphic
+                                <code>IState</code> interface, enabling clean,
+                                observable
+                                transitions between game scenes.</p>
+                        </blockquote>
+
+                        <!-- Skill grid always outside blockquotes for visual variety -->
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3 class="content-heading">Architecture</h3>
+                                <ul class="clean-list">
+                                    <li><strong>Interface-Based Design:</strong>
+                                        States implement <code>IState</code> for
+                                        flexibility and separation of
+                                        concerns</li>
+                                    <li><strong>Event-Driven
+                                            Communication:</strong> States
+                                        define their own event contracts
+                                        that external systems can subscribe
+                                        to</li>
+                                    <li><strong>Decoupled Transitions:</strong>
+                                        GameFlowManager centralizes transition
+                                        logic
+                                        separate from the states themselves</li>
+                                    <li><strong>Inspector Support:</strong>
+                                        StateMachine works with interfaces while
+                                        maintaining Unity editor
+                                        compatibility</li>
+                                    <li><strong>Scene Management:</strong>
+                                        Scenes load additively to preserve
+                                        persistent
+                                        game systems</li>
+                                </ul>
                             </div>
-                            <pre><code class="language-csharp">public event Action OnPlaySelected;
+                        </div>
+
+                        <blockquote>
+                            <h3 class="content-heading">Core Systems</h3>
+                            <ul class="clean-list">
+                                <li><code>IState.cs</code> - interface contract
+                                    for all state logic</li>
+                                <li><code>State.cs</code> - base SO
+                                    implementation with lifecycle + scene
+                                    handling</li>
+                                <li><code>StateMachine.cs</code> - tracks
+                                    active/previous state, handles transitions
+                                    with
+                                    safety guards</li>
+                                <li><code>AppManager.cs</code> - SO
+                                    configuration container for initial state
+                                    and
+                                    registration</li>
+                                <li><code>GameFlowManager.cs</code> -
+                                    MonoBehaviour that connects state signals to
+                                    transition logic</li>
+                            </ul>
+                        </blockquote>
+
+                        <p>Example state and transition flow:</p>
+
+                        <div class="code-samples-container">
+                            <!-- First code file -->
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    MainMenuState.cs
+                                </div>
+                                <pre><code class="language-csharp">public event Action OnPlaySelected;
 
 public override void Update()
 {
     if (Input.GetKeyDown(KeyCode.P))
         OnPlaySelected?.Invoke();
 }</code></pre>
-                        </div>
-
-                                                    <hr class="section-divider">
-
-                                                    
-                        <!-- Second code file -->
-                        <div class="code-sample hover-transform-up">
-                            <div class="code-header">
-                                GameFlowManager.cs
                             </div>
-                            <pre><code class="language-csharp">mainMenuState.OnPlaySelected += () =>
+
+                            <hr class="section-divider">
+
+                            <!-- Second code file -->
+                            <div class="code-sample hover-transform-up">
+                                <div class="code-header">
+                                    GameFlowManager.cs
+                                </div>
+                                <pre><code class="language-csharp">mainMenuState.OnPlaySelected += () =>
 {
     stateMachine.ChangeState(matchSetupState);
 };</code></pre>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="note-box">
-                        <p><strong>Note:</strong> The actual implementation uses Unity's new Input System package with action-based input events, not the legacy Input.GetKeyDown shown in this simplified example.</p>
-                    </div>
-                </section>
+                        <div class="note-box">
+                            <p><strong>Note:</strong> The actual implementation
+                                uses Unity's new Input System package with
+                                action-based input events, not the legacy
+                                Input.GetKeyDown shown in this simplified
+                                example.</p>
+                        </div>
+                    </section>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <section id="results" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Results</h2>
-                    <p>The application state system is complete and functional:</p>
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h3>Scene Boot Flow</h3>
+                    <section id="results"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Results</h2>
+                        <p>The application state system is complete and
+                            functional:</p>
+                        <div class="skills-grid">
+                            <div class="skill-category hover-transform-up">
+                                <h3>Scene Boot Flow</h3>
+                                <ul class="clean-list">
+                                    <li>App starts from
+                                        <code>BootstrapScene</code></li>
+                                    <li><code>BootstrapScene</code> loads
+                                        <code>MainMenuScene</code></li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category hover-transform-up">
+                                <h3>Modularity & Debugging</h3>
+                                <ul class="clean-list">
+                                    <li>All state assets are inspectable and
+                                        reusable</li>
+                                    <li>Debug logs clearly trace lifecycle
+                                        events</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="limitations"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Limitations</h2>
+                        <blockquote class="hover-transform-up">
+                            <h5 class="challenge">Centralized Transition
+                                Management</h5>
+                            <p>One limitation of the current architecture is
+                                that the GameFlowManager becomes a central
+                                point that must be aware of all systems that
+                                could trigger state transitions. As the project
+                                grows, this could lead to:</p>
                             <ul class="clean-list">
-                                <li>App starts from <code>BootstrapScene</code></li>
-                                <li><code>BootstrapScene</code> loads <code>MainMenuScene</code></li>
+                                <li>A bloated GameFlowManager that knows too
+                                    much about disparate game systems</li>
+                                <li>Potential tight coupling between the manager
+                                    and various specialized systems</li>
+                                <li>Scalability challenges when adding new types
+                                    of state transitions</li>
                             </ul>
-                        </div>
+                        </blockquote>
 
-                        <div class="skill-category hover-transform-up">
-                            <h3>Modularity & Debugging</h3>
+                        <blockquote class="hover-transform-up">
+                            <h5 class="challenge">Forced Additive Scene
+                                Loading</h5>
+                            <p>A significant limitation I've discovered is that
+                                using a persistent GameFlowManager
+                                MonoBehaviour forces all scenes to be loaded
+                                additively rather than replacing the current
+                                scene:</p>
                             <ul class="clean-list">
-                                <li>All state assets are inspectable and reusable</li>
-                                <li>Debug logs clearly trace lifecycle events</li>
+                                <li>This creates performance overhead from
+                                    maintaining multiple scenes simultaneously
+                                    (e.g.,
+                                    having the menu scene still loaded while
+                                    playing)</li>
+                                <li>Requires complex management to hide/show
+                                    objects between scenes</li>
+                                <li>Increases memory usage by keeping multiple
+                                    scenes resident</li>
+                                <li>Creates potential conflicts between
+                                    scene-specific systems and resources</li>
+                                <li>Complicates object references and scene
+                                    hierarchy management</li>
                             </ul>
-                        </div>
-                    </div>
-                </section>
+                        </blockquote>
+                    </section>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <section id="limitations" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Limitations</h2>
-                    <blockquote class="hover-transform-up">
-                        <h5 class="challenge">Centralized Transition Management</h5>
-                        <p>One limitation of the current architecture is that the GameFlowManager becomes a central
-                            point that must be aware of all systems that could trigger state transitions. As the project
-                            grows, this could lead to:</p>
+                    <section id="improvements"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Future
+                            Improvements</h2>
+
+                        <p>For the next iteration, I'm exploring potential
+                            solutions such as:</p>
                         <ul class="clean-list">
-                            <li>A bloated GameFlowManager that knows too much about disparate game systems</li>
-                            <li>Potential tight coupling between the manager and various specialized systems</li>
-                            <li>Scalability challenges when adding new types of state transitions</li>
-                        </ul>
-                    </blockquote>
-
-                    <blockquote class="hover-transform-up">
-                        <h5 class="challenge">Forced Additive Scene Loading</h5>
-                        <p>A significant limitation I've discovered is that using a persistent GameFlowManager
-                            MonoBehaviour forces all scenes to be loaded additively rather than replacing the current
-                            scene:</p>
-                        <ul class="clean-list">
-                            <li>This creates performance overhead from maintaining multiple scenes simultaneously (e.g.,
-                                having the menu scene still loaded while playing)</li>
-                            <li>Requires complex management to hide/show objects between scenes</li>
-                            <li>Increases memory usage by keeping multiple scenes resident</li>
-                            <li>Creates potential conflicts between scene-specific systems and resources</li>
-                            <li>Complicates object references and scene hierarchy management</li>
-                        </ul>
-                    </blockquote>
-                </section>
-
-                <hr class="section-divider">
-
-                <section id="improvements" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Future Improvements</h2>
-                
-                        <p>For the next iteration, I'm exploring potential solutions such as:</p>
-                        <ul class="clean-list">
-                            <li>A more decentralized event bus system that allows systems to broadcast state change
+                            <li>A more decentralized event bus system that
+                                allows systems to broadcast state change
                                 requests</li>
-                            <li>State transition rules defined in data rather than hardcoded in the GameFlowManager</li>
-                            <li>Hierarchical state machines that handle domain-specific state changes locally</li>
-                            <li>A DontDestroyOnLoad-based service locator pattern that persists without requiring
+                            <li>State transition rules defined in data rather
+                                than hardcoded in the GameFlowManager</li>
+                            <li>Hierarchical state machines that handle
+                                domain-specific state changes locally</li>
+                            <li>A DontDestroyOnLoad-based service locator
+                                pattern that persists without requiring
                                 additive scenes</li>
-                            <li>Scene-independent state persistence using ScriptableObjects to maintain state between
+                            <li>Scene-independent state persistence using
+                                ScriptableObjects to maintain state between
                                 full scene transitions</li>
                         </ul>
-                        <p>For now, the centralized approach is sufficient for the current scope, but future scalability
-                            will require addressing these architectural considerations.</p>
-                </section>
+                        <p>For now, the centralized approach is sufficient for
+                            the current scope, but future scalability
+                            will require addressing these architectural
+                            considerations.</p>
+                    </section>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <section id="impact" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Project Impact</h2>
-                    <blockquote>
-                        <p>This architecture milestone sets the foundation for all gameplay systems in Antillery.</p>
-                        <p>By developing a clean, modular, event-driven app flow with interface-backed flexibility, I've
-                            removed friction for future development of in-match logic, input context switching, UI
-                            overlays, and more.</p>
-                        <p>The project is now version-control friendly, inspector-friendly, and scalable, ready for
-                            iterative solo work but also cleanly extensible for future collaborators.</p>
+                    <section id="impact"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Project Impact</h2>
+                        <blockquote>
+                            <p>This architecture milestone sets the foundation
+                                for all gameplay systems in Antillery.</p>
+                            <p>By developing a clean, modular, event-driven app
+                                flow with interface-backed flexibility, I've
+                                removed friction for future development of
+                                in-match logic, input context switching, UI
+                                overlays, and more.</p>
+                            <p>The project is now version-control friendly,
+                                inspector-friendly, and scalable, ready for
+                                iterative solo work but also cleanly extensible
+                                for future collaborators.</p>
+                        </blockquote>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <!-- Editor's Note without section wrapper -->
+                    <blockquote class="editors-note">
+                        <h5>Editor's Note</h5>
+                        <p>Since drafting this devlog post, I've continued
+                            exploring alternative architecture patterns and
+                            have designed a new state machine/game flow system
+                            that addresses several of the limitations
+                            mentioned above. I'll be discussing this evolution
+                            in a future devlog post, showing how
+                            iterative design thinking leads to better
+                            solutions!</p>
                     </blockquote>
-                </section>
 
-                <hr class="section-divider">
+                    <hr class="section-divider">
 
-                <!-- Editor's Note without section wrapper -->
-                <blockquote class="editors-note">
-                    <h5>Editor's Note</h5>
-                    <p>Since drafting this devlog post, I've continued exploring alternative architecture patterns and
-                        have designed a new state machine/game flow system that addresses several of the limitations
-                        mentioned above. I'll be discussing this evolution in a future devlog post, showing how
-                        iterative design thinking leads to better solutions!</p>
-                </blockquote>
+                    <!-- Post Navigation - Using CSS classes instead of inline styles -->
+                    <div class="post-navigation">
+                        <a href="/blog/antillery/ant-dev-2025-05-18.html"
+                            class="post-nav-button prev-post">
+                            <span class="post-nav-icon">←</span>
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Previous
+                                    Post</span>
+                                <span class="post-nav-title">Unity Packages in
+                                    Consideration</span>
+                            </div>
+                        </a>
 
-                <hr class="section-divider">
+                        <a href="/blog/antillery/ant-dev-2025-05-27.html"
+                            class="post-nav-button next-post">
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Next Post</span>
+                                <span class="post-nav-title">Revised Game
+                                    Flow</span>
+                            </div>
+                            <span class="post-nav-icon">→</span>
+                        </a>
+                    </div>
 
-                <!-- Post Navigation - Using CSS classes instead of inline styles -->
-                <div class="post-navigation">
-                    <a href="/blog/antillery/ant-dev-2025-05-18.html" class="post-nav-button prev-post">
-                        <span class="post-nav-icon">←</span>
-                        <div class="post-nav-content">
-                            <span class="post-nav-label">Previous Post</span>
-                            <span class="post-nav-title">Unity Packages in Consideration</span>
-                        </div>
-                    </a>
-                    
-                    <a href="/blog/antillery/ant-dev-2025-05-27.html" class="post-nav-button next-post">
-                        <div class="post-nav-content">
-                            <span class="post-nav-label">Next Post</span>
-                            <span class="post-nav-title">Revised Game Flow</span>
-                        </div>
-                        <span class="post-nav-icon">→</span>
-                    </a>
-                </div>
+                    <div class="signature">
+                        <h6>Until next time!</h6>
+                        <h4>- Josh ✌️</h4>
+                    </div>
+                </article>
+            </div>
+        </main>
 
-                <div class="signature">
-                    <h6>Until next time!</h6>
-                    <h4>- Josh ✌️</h4>
-                </div>
-            </article>
-        </div>
-    </main>
-
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

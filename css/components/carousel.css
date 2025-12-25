@@ -2,7 +2,7 @@
    Mobile-first carousel module
 */
 
-/* Base carousel strip */
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .carousel-images {
   display: flex;
   transition: var(--transition-standard, transform 0.5s ease);
@@ -10,16 +10,17 @@
   height: 100%;
 }
 
-/* Prev/Next positions (shared base moved from css/base.css) */
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .prev {
   left: 10px;
 }
 
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .next {
   right: 10px;
 }
 
-/* Mobile defaults */
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .carousel-container {
   width: 90%;
   max-width: 600px;
@@ -30,6 +31,7 @@
   overflow: hidden;
 }
 
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .carousel-images img {
   width: 100%;
   height: 100%;
@@ -42,6 +44,7 @@
   padding: 1rem;
 }
 
+/* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -55,6 +58,7 @@
   border-radius: var(--border-radius-sm, 6px);
 }
 
+/* Not found in codebase */
 .carousel-bordered {
   border: 2px solid var(--primary, #4b304e);
   border-radius: var(--border-radius-md, 12px);
@@ -63,10 +67,12 @@
 
 /* Desktop overrides */
 @media (min-width: 769px) {
+  /* Not found in codebase */
   .carousel-single .carousel-btn {
     display: none;
   }
 
+  /* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
   .carousel-container {
     width: 100%;
     max-width: 800px;
@@ -76,10 +82,12 @@
     overflow: hidden;
   }
 
+  /* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
   .carousel-images img {
     padding: 2.5rem;
   }
 
+  /* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
   .carousel-btn {
     /* reset the mobile transform since desktop originally did not use it */
     transform: none;
@@ -94,10 +102,12 @@
     border-radius: var(--border-radius-sm);
   }
 
+  /* Used in: snake.html, project_gal.html, card_collection.html, design.html, artwork.html */
   .prev {
     --hover-translate-x: 5px;
   }
 
+  /* Not found in codebase */
   .carousel-bordered {
     border: 2px solid var(--primary);
     border-radius: 12px;

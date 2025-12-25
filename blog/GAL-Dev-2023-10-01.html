@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAL Devlog | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
- <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
-</head>
-<body>
-    <div id="header-placeholder"></div>
-    
-    <main>
-        <div class="content-container">
-            <article>
-                <h1 class="funnel-display-header">Project GAL Development Log #3</h1>
-                <h4>Recent Progress Updates</h4>
-                <p>See the ongoing project page <a href="/projects/project_gal.html" class="hover-transform-left">here!</a></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GAL Devlog | Portfolio</title>
 
-                <section class="devlog-section">
-                    <h2>Introduction</h2>
-                    <p>Full write-up coming soon! In the meantime, check out these recent development progress videos.</p>
-                </section>
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
 
-                <section class="devlog-section">
-                    <h2>Development Progress</h2>
-                    <!-- Demo Video Section -->
-                    <section class="video-section">
-                        <h3>Shooting Mechanic Demo</h3>
-                        <div class="iframe-border hover-transform-up">
-                            <iframe class="project-video" 
-                                src="https://www.youtube.com/embed/01thEJaXwEs?si=DV5msCV0-Xeq4_Iy"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
+    </head>
+    <body>
+        <div id="header-placeholder"></div>
+
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Project GAL Development
+                        Log #3</h1>
+                    <h4>Recent Progress Updates</h4>
+                    <p>See the ongoing project page <a
+                            href="/projects/project_gal.html"
+                            class="hover-transform-left">here!</a></p>
+
+                    <section class="devlog-section">
+                        <h2>Introduction</h2>
+                        <p>Full write-up coming soon! In the meantime, check out
+                            these recent development progress videos.</p>
                     </section>
 
-                    <section class="video-section">
-                        <h3>Extended Gameplay Demo</h3>
-                        <div class="iframe-border hover-transform-up">
-                            <iframe class="project-video"
-                                src="https://www.youtube.com/embed/Hy1No7ok5Zk?si=DV5msCV0-Xeq4_Iy"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
+                    <section class="devlog-section">
+                        <h2>Development Progress</h2>
+                        <!-- Demo Video Section -->
+                        <section class="video-section">
+                            <h3>Shooting Mechanic Demo</h3>
+                            <div class="iframe-border hover-transform-up">
+                                <iframe class="project-video"
+                                    src="https://www.youtube.com/embed/01thEJaXwEs?si=DV5msCV0-Xeq4_Iy"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </section>
+
+                        <section class="video-section">
+                            <h3>Extended Gameplay Demo</h3>
+                            <div class="iframe-border hover-transform-up">
+                                <iframe class="project-video"
+                                    src="https://www.youtube.com/embed/Hy1No7ok5Zk?si=DV5msCV0-Xeq4_Iy"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </section>
                     </section>
-                </section>
-                
-                <hr class="section-divider">
 
-                <!-- Post Navigation - Last post only has Previous -->
-                <div class="post-navigation">
-                    <a href="/blog/GAL-Dev-2023-09-18.html" class="post-nav-button prev-post">
-                        <span class="post-nav-icon">←</span>
-                        <div class="post-nav-content">
-                            <span class="post-nav-label">Previous Post</span>
-                            <span class="post-nav-title">Arm'n Aimer</span>
-                        </div>
-                    </a>
-                </div>
-            </article>
-        </div>
-    </main>
+                    <hr class="section-divider">
 
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+                    <!-- Post Navigation - Last post only has Previous -->
+                    <div class="post-navigation">
+                        <a href="/blog/GAL-Dev-2023-09-18.html"
+                            class="post-nav-button prev-post">
+                            <span class="post-nav-icon">←</span>
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Previous
+                                    Post</span>
+                                <span class="post-nav-title">Arm'n Aimer</span>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 </html>

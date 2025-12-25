@@ -1,205 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antillery Devlog | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-    <!-- Mobile CSS (screens ≤ 768px) -->
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
-    <!-- Desktop CSS (screens ≥ 769px) -->
-    <link rel="stylesheet" href="/css/desktop.css" media="screen and (min-width: 769px)">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Antillery Devlog | Portfolio</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
-        rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
-</head>
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
 
-<body>
-    <div id="header-placeholder"></div>
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
 
-    <main>
-        <div class="content-container">
-            <article>
-                <h1 class="funnel-display-header">Antillery Devlog #8</h1>
-                <h2>Who Is Antillery For?</h2>
-                <p class="devlog-date">June 2, 2025</p>
-                <p>
-                    Exploring the audiences Antillery welcomes, from longtime artillery fans to newcomers, casual
-                    players, and those seeking competitive depth.
-                </p>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
+            rel="stylesheet" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    </head>
 
-                <!-- Navigation TOC -->
-                <nav class="toc-nav">
-                    <a href="/projects/antillery.html"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🎮</span>
-                        <span class="toc-title">Project Page</span>
-                    </a>
-                    <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">📋</span>
-                        <span class="toc-title">Overview</span>
-                    </a>
-                    <a href="#longtime-fans" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">💥</span>
-                        <span class="toc-title">Longtime Artillery Fans</span>
-                    </a>
-                    <a href="#newcomers" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🌱</span>
-                        <span class="toc-title">Newcomers</span>
-                    </a>
-                    <a href="#casual" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🎲</span>
-                        <span class="toc-title">Casual Gamers</span>
-                    </a>
-                    <a href="#competitive" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🏆</span>
-                        <span class="toc-title">Competitive Players</span>
-                    </a>
-                    <a href="#conclusion" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon">🔄</span>
-                        <span class="toc-title">Conclusion</span>
-                    </a>
-                </nav>
+    <body>
+        <div id="header-placeholder"></div>
 
-                <hr class="section-divider">
-
-                <section id="overview" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Overview</h2>
+        <main>
+            <div class="content-container">
+                <article>
+                    <h1 class="funnel-display-header">Antillery Devlog #8</h1>
+                    <h2>Who Is Antillery For?</h2>
+                    <p class="devlog-date">June 2, 2025</p>
                     <p>
-                        Antillery invites players who enjoy strategy layered with unpredictability. It draws from the
-                        artillery genre's long history but repurposes familiar systems to explore less familiar
-                        outcomes. While some tools appear restorative or nonviolent, their true power depends on how the
-                        player uses them. Destruction might come from a missile or a well-placed sunflower. This blend
-                        of intent and consequence makes the game accessible to newcomers while rewarding mastery,
-                        mischief, and improvisation. </p>
-                </section>
-
-                <hr class="section-divider">
-
-                <section id="longtime-fans" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Longtime Artillery Fans</h2>
-                    <p>
-                        Players who grew up with Scorched Earth or Worms shaped the artillery genre through precision,
-                        chaos, and clever terrain use. They learned to expect indirect combat, physics-driven tools, and
-                        movement that doubled as personality. That history still defines how the genre feels today.</p>
-
-                    <p>Antillery keeps those features in place: deformable maps, angled shots, limited mobility, and
-                        momentum-based action. However, it adds something unexpected. Some tools restore terrain or
-                        create cover, yet they can also trap enemies or limit their next move. Even a flower can cut off
-                        a retreat.</p>
-
-                    <p>Antillery shifts meaning without changing the form. The shape of the game stays familiar, but
-                        its strategic depth expands.
+                        Exploring the audiences Antillery welcomes, from
+                        longtime artillery fans to newcomers, casual
+                        players, and those seeking competitive depth.
                     </p>
-                </section>
 
-                <hr class="section-divider">
+                    <!-- Navigation TOC -->
+                    <nav class="toc-nav">
+                        <a href="/projects/antillery.html"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎮</span>
+                            <span class="toc-title">Project Page</span>
+                        </a>
+                        <a href="#overview"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">📋</span>
+                            <span class="toc-title">Overview</span>
+                        </a>
+                        <a href="#longtime-fans"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">💥</span>
+                            <span class="toc-title">Longtime Artillery
+                                Fans</span>
+                        </a>
+                        <a href="#newcomers"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🌱</span>
+                            <span class="toc-title">Newcomers</span>
+                        </a>
+                        <a href="#casual"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🎲</span>
+                            <span class="toc-title">Casual Gamers</span>
+                        </a>
+                        <a href="#competitive"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🏆</span>
+                            <span class="toc-title">Competitive Players</span>
+                        </a>
+                        <a href="#conclusion"
+                            class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                            <span class="toc-icon">🔄</span>
+                            <span class="toc-title">Conclusion</span>
+                        </a>
+                    </nav>
 
-                <section id="newcomers" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Newcomers to the Genre</h2>
-                    <p>
-                        Not every player has experience playing artillery games. The skill-based barrier of entry might
-                        be challenging for some, with timed shots, weird angles, and no second chances. Antillery lowers
-                        the barrier without sacrificing depth.
-                    </p>
-                    <p>
-                        It teaches through play. Turns move fast, aiming feels intuitive, and outcomes are visible.
-                        Peace tools soften early mistakes by keeping ants alive longer. These tools act like training
-                        wheels but still carry risk. A misplaced flower can block an escape or flip the match.
-                    </p>
-                    <p>
-                        By offering tools that teach without preaching, Antillery brings new players in without
-                        flattening the experience. The genre stays sharp, but now more players can reach its depth.
-                    </p>
-                </section>
+                    <hr class="section-divider">
 
-                <hr class="section-divider">
+                    <section id="overview"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Overview</h2>
+                        <p>
+                            Antillery invites players who enjoy strategy layered
+                            with unpredictability. It draws from the
+                            artillery genre's long history but repurposes
+                            familiar systems to explore less familiar
+                            outcomes. While some tools appear restorative or
+                            nonviolent, their true power depends on how the
+                            player uses them. Destruction might come from a
+                            missile or a well-placed sunflower. This blend
+                            of intent and consequence makes the game accessible
+                            to newcomers while rewarding mastery,
+                            mischief, and improvisation. </p>
+                    </section>
 
-                <section id="casual" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Casual Gamers</h2>
-                    <p>
-                        Some players want quick games, unpredictable outcomes, and moments worth laughing about.
-                        Antillery welcomes that energy without making the experience disposable.
-                    </p>
-                    <p>
-                        Rounds move fast, but every choice still carries weight. Peace tools shift the flow in ways that
-                        explosions might not, stalling a turn, blocking a shot, or setting up accidental outcomes.
-                        Players who experiment can win by planning or turning chaos into a strategy.
-                    </p>
-                    <p>
-                        Antillery gives casual players room to play without pressure. The game stays fun whether someone
-                        is aiming for mastery or just trying to mess with their friends.
-                    </p>
-                </section>
+                    <hr class="section-divider">
 
-                <hr class="section-divider">
+                    <section id="longtime-fans"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Longtime Artillery
+                            Fans</h2>
+                        <p>
+                            Players who grew up with Scorched Earth or Worms
+                            shaped the artillery genre through precision,
+                            chaos, and clever terrain use. They learned to
+                            expect indirect combat, physics-driven tools, and
+                            movement that doubled as personality. That history
+                            still defines how the genre feels today.</p>
 
-                <section id="competitive" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Competitive Players</h2>
-                    <p>
-                        Players who seek mastery look beyond explosions. Antillery offers layered complexity where every
-                        decision, including restraint, carries weight.
-                    </p>
-                    <p>
-                        Winning depends on more than aim. Terrain can be shaped or repaired. Players can outsmart their
-                        opponent into wasting a turn. Some tools pressure through presence alone, setting traps, or
-                        forcing a mistake without firing a shot. Competitive players learn to control space, deny
-                        momentum, and plan turns ahead.
-                    </p>
-                    <p>
-                        Antillery rewards those who think past raw damage. The strongest matches often hinge on who
-                        considered both sides of combat, not who fired first.
-                    </p>
-                </section>
+                        <p>Antillery keeps those features in place: deformable
+                            maps, angled shots, limited mobility, and
+                            momentum-based action. However, it adds something
+                            unexpected. Some tools restore terrain or
+                            create cover, yet they can also trap enemies or
+                            limit their next move. Even a flower can cut off
+                            a retreat.</p>
 
-                <hr class="section-divider">
+                        <p>Antillery shifts meaning without changing the form.
+                            The shape of the game stays familiar, but
+                            its strategic depth expands.
+                        </p>
+                    </section>
 
-                <section id="conclusion" class="devlog-section version-section hover-transform-up">
-                    <h2 class="funnel-display-header">Strategy Without a Fixed Form</h2>
-                    <p>
-                        Antillery is not one game played one way. It adjusts to the player, whether they chase chaos,
-                        control, mischief, or mastery.
-                    </p>
-                    <p>
-                        The rules stay simple. Shots behave consistently, and movement follows a predictable arc, but
-                        outcomes shift based on what each player hopes to build, block, or break. Even peace tools bend
-                        under pressure.
-                    </p>
-                    <p>
-                        The result is a strategy game without deterministic outcomes. Destruction and restoration share
-                        inputs. Meaning comes from how players use them.
-                    </p>
-                </section>
+                    <hr class="section-divider">
 
-                <hr class="section-divider">
+                    <section id="newcomers"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Newcomers to the
+                            Genre</h2>
+                        <p>
+                            Not every player has experience playing artillery
+                            games. The skill-based barrier of entry might
+                            be challenging for some, with timed shots, weird
+                            angles, and no second chances. Antillery lowers
+                            the barrier without sacrificing depth.
+                        </p>
+                        <p>
+                            It teaches through play. Turns move fast, aiming
+                            feels intuitive, and outcomes are visible.
+                            Peace tools soften early mistakes by keeping ants
+                            alive longer. These tools act like training
+                            wheels but still carry risk. A misplaced flower can
+                            block an escape or flip the match.
+                        </p>
+                        <p>
+                            By offering tools that teach without preaching,
+                            Antillery brings new players in without
+                            flattening the experience. The genre stays sharp,
+                            but now more players can reach its depth.
+                        </p>
+                    </section>
 
-                <!-- Post Navigation -->
-                <div class="post-navigation">
-                    <a href="/blog/antillery/ant-dev-2025-05-31.html" class="post-nav-button prev-post">
-                        <span class="post-nav-icon">←</span>
-                        <div class="post-nav-content">
-                            <span class="post-nav-label">Previous Post</span>
-                            <span class="post-nav-title">#7 Introduction to Antillery</span>
-                        </div>
-                    </a>
-                    <!-- Next post placeholder -->
-                </div>
+                    <hr class="section-divider">
 
-                <div class="signature">
-                    <h6>Until next time!</h6>
-                    <h4>- Josh ✌️</h4>
-                </div>
-            </article>
-        </div>
-    </main>
+                    <section id="casual"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Casual Gamers</h2>
+                        <p>
+                            Some players want quick games, unpredictable
+                            outcomes, and moments worth laughing about.
+                            Antillery welcomes that energy without making the
+                            experience disposable.
+                        </p>
+                        <p>
+                            Rounds move fast, but every choice still carries
+                            weight. Peace tools shift the flow in ways that
+                            explosions might not, stalling a turn, blocking a
+                            shot, or setting up accidental outcomes.
+                            Players who experiment can win by planning or
+                            turning chaos into a strategy.
+                        </p>
+                        <p>
+                            Antillery gives casual players room to play without
+                            pressure. The game stays fun whether someone
+                            is aiming for mastery or just trying to mess with
+                            their friends.
+                        </p>
+                    </section>
 
-    <div id="footer-placeholder"></div>
-    <script src="/scripts.js"></script>
-</body>
+                    <hr class="section-divider">
+
+                    <section id="competitive"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Competitive
+                            Players</h2>
+                        <p>
+                            Players who seek mastery look beyond explosions.
+                            Antillery offers layered complexity where every
+                            decision, including restraint, carries weight.
+                        </p>
+                        <p>
+                            Winning depends on more than aim. Terrain can be
+                            shaped or repaired. Players can outsmart their
+                            opponent into wasting a turn. Some tools pressure
+                            through presence alone, setting traps, or
+                            forcing a mistake without firing a shot. Competitive
+                            players learn to control space, deny
+                            momentum, and plan turns ahead.
+                        </p>
+                        <p>
+                            Antillery rewards those who think past raw damage.
+                            The strongest matches often hinge on who
+                            considered both sides of combat, not who fired
+                            first.
+                        </p>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <section id="conclusion"
+                        class="devlog-section version-section hover-transform-up">
+                        <h2 class="funnel-display-header">Strategy Without a
+                            Fixed Form</h2>
+                        <p>
+                            Antillery is not one game played one way. It adjusts
+                            to the player, whether they chase chaos,
+                            control, mischief, or mastery.
+                        </p>
+                        <p>
+                            The rules stay simple. Shots behave consistently,
+                            and movement follows a predictable arc, but
+                            outcomes shift based on what each player hopes to
+                            build, block, or break. Even peace tools bend
+                            under pressure.
+                        </p>
+                        <p>
+                            The result is a strategy game without deterministic
+                            outcomes. Destruction and restoration share
+                            inputs. Meaning comes from how players use them.
+                        </p>
+                    </section>
+
+                    <hr class="section-divider">
+
+                    <!-- Post Navigation -->
+                    <div class="post-navigation">
+                        <a href="/blog/antillery/ant-dev-2025-05-31.html"
+                            class="post-nav-button prev-post">
+                            <span class="post-nav-icon">←</span>
+                            <div class="post-nav-content">
+                                <span class="post-nav-label">Previous
+                                    Post</span>
+                                <span class="post-nav-title">#7 Introduction to
+                                    Antillery</span>
+                            </div>
+                        </a>
+                        <!-- Next post placeholder -->
+                    </div>
+
+                    <div class="signature">
+                        <h6>Until next time!</h6>
+                        <h4>- Josh ✌️</h4>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <div id="footer-placeholder"></div>
+        <script src="/scripts.js"></script>
+    </body>
 
 </html>

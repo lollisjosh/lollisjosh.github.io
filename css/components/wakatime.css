@@ -11,8 +11,8 @@
 }
 
 #wakatime-site-hours img {
-  border: 2px solid #331236;
-  border-radius: 6px;
+  border: 2px solid var(--dark-accent);
+  border-radius: var(--border-radius-sm);
   width: auto;
   height: 20px;
 }

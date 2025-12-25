@@ -1,11 +1,12 @@
 /* image-grid.css — component module (mobile-first) */
 
-/* Shared (base) image helpers moved from css/base.css */
+/* Used in: server_surfer.html, project_gal.html, lunar.html, kingdom_coinquest.html, GAL-Dev-2023-09-11.html, GAL-Dev-2023-09-18.html */
 .blog-gif {
   border: 4px solid var(--primary);
   border-radius: var(--border-radius-sm);
 }
 
+/* Used in: card_collection.html */
 .game-image {
   width: 100%;
   height: auto;
@@ -14,6 +15,7 @@
   cursor: pointer;
 }
 
+/* Used in: antillery.html */
 .game-image-small {
   width: 90%;
   height: auto;
@@ -24,27 +26,7 @@
   cursor: pointer;
 }
 
-.square-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.square-image-small {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Thumbnails used on project pages */
+/* Used in: projects.html, various project pages (e.g., snake.html, server_surfer.html, project_gal.html, portfolio.html, lunar.html, kingdom_coinquest.html), music.html */
 .img-thumbnail {
   width: 100%;
   height: 100%;
@@ -56,7 +38,7 @@
   margin: 0.75rem auto;
 }
 
-/* Generic diagram / media containers */
+/* Used in: card_collection.html, antillery.html */
 .diagram-image {
   width: 100%;
   height: auto;
@@ -68,6 +50,7 @@
   padding: 0;
 }
 
+/* Used in: antillery.html */
 .diagram-image-container,
 .square-image-container {
   width: 90%;
@@ -77,9 +60,7 @@
   overflow: hidden;
 }
 
-
-
-/* Grid layouts for image galleries */
+/* Used in: portfolio.html, office.html, blog.html */
 .image-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -89,6 +70,7 @@
   box-sizing: border-box;
 }
 
+/* Used in: portfolio.html, office.html, blog.html */
 .image-grid img {
   width: auto;
   max-width: 100%;
@@ -100,7 +82,7 @@
   box-sizing: border-box;
 }
 
-/* Image sections used for inlined images */
+/* Used in: card_collection.html, antillery.html */
 .image-section-1,
 .image-section-2,
 .image-section-3,
@@ -122,6 +104,7 @@
 .image-section-3 { border: 1px solid var(--primary, #4b304e); }
 .image-section-4 { border: 0.5px solid var(--primary, #4b304e); }
 
+/* Used in: card_collection.html, antillery.html */
 .image-section-1 img,
 .image-section-2 img,
 .image-section-3 img,
@@ -132,6 +115,7 @@
 }
 
 @media (min-width: 769px) {
+  /* Used in: projects.html, various project pages (e.g., snake.html, server_surfer.html, project_gal.html, portfolio.html, lunar.html, kingdom_coinquest.html), music.html */
   .img-thumbnail {
     width: 100%;
     max-width: 300px;
@@ -142,6 +126,7 @@
     margin: 1rem auto;
   }
 
+  /* Used in: portfolio.html, office.html, blog.html */
   .image-grid {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
@@ -151,6 +136,7 @@
     box-sizing: border-box;
   }
 
+  /* Used in: portfolio.html, office.html, blog.html */
   .image-grid img {
     width: 100%;
     height: 250px;
@@ -164,6 +150,7 @@
     box-shadow: var(--shadow-sm);
   }
 
+  /* Used in: antillery.html */
   .square-image-container {
     width: 100%;
     max-width: min(800px, 70vh);
@@ -173,6 +160,7 @@
     overflow: hidden;
   }
 
+  /* Used in: antillery.html */
   .diagram-image-container {
     width: 100%;
     max-width: min(800px, 70vh);
@@ -182,6 +170,7 @@
     overflow: hidden;
   }
 
+  /* Used in: antillery.html */
   .game-image-small {
     width: 25rem;
     height: auto;
@@ -192,6 +181,7 @@
     cursor: pointer;
   }
 
+  /* Used in: card_collection.html, antillery.html */
   .image-section-1,
   .image-section-2,
   .image-section-3,
@@ -200,6 +190,7 @@
     transition: var(--transition-standard);
   }
 
+  /* Used in: various blog pages (e.g., ant-dev-2025-05-31.html, ant-dev-2025-05-27.html) */
   .blog-image:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-lg);

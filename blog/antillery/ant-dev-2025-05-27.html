@@ -5,17 +5,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Antillery Devlog | Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap"
-            rel="stylesheet">
-        <!-- Mobile CSS (screens ≤ 768px) -->
-        <link rel="stylesheet" href="/css/mobile.css"
-            media="screen and (max-width: 768px)">
-        <!-- Desktop CSS (screens ≥ 769px) -->
-        <link rel="stylesheet" href="/css/desktop.css"
-            media="screen and (min-width: 769px)">
+
+        <!-- This style prevents flash of unstyled content (FOUC) -->
+        <style id="anti-fouc">html{visibility:hidden}</style>
+
+        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+        <script src="/js/head.js"></script>
 
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css?v=1"
@@ -743,7 +738,8 @@ public class StateEditor : Editor
                                     conventions, and asset pipeline</li>
                             </ul>
                             <p>These boilerplate tasks will establish a solid
-                                framework for keeping the project on track throughout development.</p>
+                                framework for keeping the project on track
+                                throughout development.</p>
                         </section>
 
                         <hr class="section-divider">
@@ -779,13 +775,13 @@ public class StateEditor : Editor
                                 </div>
                             </a>
 
-
                             <a href="/blog/antillery/ant-dev-2025-05-28.html"
                                 class="post-nav-button next-post">
                                 <div class="post-nav-content">
                                     <span class="post-nav-label">Next
                                         Post</span>
-                                    <span class="post-nav-title">Development Roadmap: 16-Week Sprint Plan</span>
+                                    <span class="post-nav-title">Development
+                                        Roadmap: 16-Week Sprint Plan</span>
                                 </div>
                                 <span class="post-nav-icon">→</span>
                             </a>
