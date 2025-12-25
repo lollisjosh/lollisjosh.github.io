@@ -10,14 +10,6 @@
   text-align: left;
 }
 
-/* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, blog/GAL-Dev-2023-10-01.html, 
-   blog/antillery/ant-dev-2025-05-16.html, blog/antillery/ant-dev-2025-05-17.html, blog/antillery/ant-dev-2025-05-18.html,
-   blog/antillery/ant-dev-2025-05-25.html, blog/antillery/ant-dev-2025-05-27.html, blog/antillery/ant-dev-2025-05-28.html,
-   blog/antillery/ant-dev-2025-05-31.html, blog/antillery/ant-dev-2025-06-02.html */
-.devlog-section h2 {
-  text-align: left;
-} 
-
 /* Used in: GAL-Dev-2023-09-11.html */
 .devlog-list {
   text-align: left;
