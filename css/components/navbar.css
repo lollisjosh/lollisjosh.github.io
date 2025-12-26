@@ -27,13 +27,7 @@
   z-index: 10;
 }
 
-/* Used in: header.html */
-.home-button:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(var(--accent-rgb), 0.4);
-  border: 2px solid var(--white);
-}
+
 
 /* Used in: header.html */
 .header-list {
@@ -78,16 +72,13 @@
 }
 
 /* Used in: header.html */
-.menu-toggle:hover {
+.menu-toggle:hover,
+.home-button:hover {
   background: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(var(--accent-rgb), 0.4);
   border: 2px solid var(--white);
-}
 
-/* Used in: header.html */
-.menu-toggle:hover .toggle-button-text,
-.home-button:hover .home-button-text {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   color: white;
 }
