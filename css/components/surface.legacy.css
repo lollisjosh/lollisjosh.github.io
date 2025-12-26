@@ -1,0 +1,25 @@
+/* legacy.css — TEMPORARY compatibility layer
+   Goal: keep old HTML working while migrating to the new system.
+   Do not add new features here. Do not use these classes in new HTML.
+   Delete this file when grep shows no legacy class usage.
+*/
+
+/* =========================
+   Legacy: surfaces / levels
+   ========================= */
+
+.section-level-1, .section-level-2, .section-level-3, .section-level-4,
+.image-section-1, .image-section-2, .image-section-3, .image-section-4,
+.version-section {
+  background: var(--white, #ffffff);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+  box-sizing: border-box;
+  transition: var(--transition-standard, all 0.3s ease);
+  border: var(--surface-border-width, 2px) solid var(--primary, #4b304e);
+}
+
+.section-level-1, .image-section-1 { --surface-border-width: 4px; }
+.section-level-2, .image-section-2 { --surface-border-width: 2.5px; }
+.section-level-3, .image-section-3 { --surface-border-width: 1px; }
+.section-level-4, .image-section-4 { --surface-border-width: 0.5px; }

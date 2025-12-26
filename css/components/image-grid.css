@@ -1,56 +1,24 @@
-/* image-grid.css — component module (mobile-first) */
+/* image-grid.css - grid & thumbnails (mobile first) */
 
-/* Used in: server_surfer.html, project_gal.html, lunar.html, kingdom_coinquest.html, GAL-Dev-2023-09-11.html, GAL-Dev-2023-09-18.html */
+/* Blog gif */
 .blog-gif {
   border: 4px solid var(--primary);
   border-radius: var(--border-radius-sm);
 }
 
-/* Used in: card_collection.html */
-.game-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-/* Used in: antillery.html */
-.game-image-small {
-  width: 90%;
-  height: auto;
-  object-position: center;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-/* Used in: projects.html, various project pages (e.g., snake.html, server_surfer.html, project_gal.html, portfolio.html, lunar.html, kingdom_coinquest.html), music.html */
+/* Thumbnail */
 .img-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
   max-width: 300px;
   max-height: 300px;
-  box-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
   display: block;
   margin: 0.75rem auto;
 }
 
-/* Used in: card_collection.html, antillery.html */
-.diagram-image {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  cursor: pointer;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-/* Used in: antillery.html */
+/* Containers */
 .diagram-image-container,
 .square-image-container {
   width: 90%;
@@ -60,7 +28,7 @@
   overflow: hidden;
 }
 
-/* Used in: portfolio.html, office.html, blog.html */
+/* Grid */
 .image-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -70,7 +38,6 @@
   box-sizing: border-box;
 }
 
-/* Used in: portfolio.html, office.html, blog.html */
 .image-grid img {
   width: auto;
   max-width: 100%;
@@ -82,40 +49,7 @@
   box-sizing: border-box;
 }
 
-/* Used in: card_collection.html, antillery.html */
-.image-section-1,
-.image-section-2,
-.image-section-3,
-.image-section-4 {
-  background: var(--white, #ffffff);
-  border-radius: var(--border-radius-md, 12px);
-  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
-  padding: 0.5rem;
-  margin: 0.5rem auto 1.25rem;
-  transition: var(--transition-standard, all 0.3s ease);
-  width: fit-content;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.image-section-1 { border: 4px solid var(--primary, #4b304e); }
-.image-section-2 { border: 2.5px solid var(--primary, #4b304e); }
-.image-section-3 { border: 1px solid var(--primary, #4b304e); }
-.image-section-4 { border: 0.5px solid var(--primary, #4b304e); }
-
-/* Used in: card_collection.html, antillery.html */
-.image-section-1 img,
-.image-section-2 img,
-.image-section-3 img,
-.image-section-4 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 @media (min-width: 769px) {
-  /* Used in: projects.html, various project pages (e.g., snake.html, server_surfer.html, project_gal.html, portfolio.html, lunar.html, kingdom_coinquest.html), music.html */
   .img-thumbnail {
     width: 100%;
     max-width: 300px;
@@ -126,7 +60,6 @@
     margin: 1rem auto;
   }
 
-  /* Used in: portfolio.html, office.html, blog.html */
   .image-grid {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
@@ -136,7 +69,6 @@
     box-sizing: border-box;
   }
 
-  /* Used in: portfolio.html, office.html, blog.html */
   .image-grid img {
     width: 100%;
     height: 250px;
@@ -150,7 +82,6 @@
     box-shadow: var(--shadow-sm);
   }
 
-  /* Used in: antillery.html */
   .square-image-container {
     width: 100%;
     max-width: min(800px, 70vh);
@@ -160,7 +91,6 @@
     overflow: hidden;
   }
 
-  /* Used in: antillery.html */
   .diagram-image-container {
     width: 100%;
     max-width: min(800px, 70vh);
@@ -170,27 +100,7 @@
     overflow: hidden;
   }
 
-  /* Used in: antillery.html */
-  .game-image-small {
-    width: 25rem;
-    height: auto;
-    object-position: center;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer;
-  }
-
-  /* Used in: card_collection.html, antillery.html */
-  .image-section-1,
-  .image-section-2,
-  .image-section-3,
-  .image-section-4 {
-    width: fit-content;
-    transition: var(--transition-standard);
-  }
-
-  /* Used in: various blog pages (e.g., ant-dev-2025-05-31.html, ant-dev-2025-05-27.html) */
+  /* Blog-specific hover (keep here for now, or move to blog/devlog later) */
   .blog-image:hover {
     transform: scale(1.02);
     box-shadow: var(--shadow-lg);

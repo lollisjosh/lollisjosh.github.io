@@ -1,104 +1,56 @@
-/* section.css — component module for section containers and related rules */
+/* section.css - section containers & layout rules (new system only) */
 
-/* Shared section primitives */
-.version-section,
-.section-level-1,
-.section-level-2,
-.section-level-3,
-.section-level-4 {
-    background: var(--white, #ffffff);
-    border-radius: var(--border-radius-md, 8px);
-    padding: 1rem;
-    box-sizing: border-box;
-    transition: var(--transition-standard, all 0.3s ease);
+/* New preferred section class */
+.section {
+  padding: 1rem;
+  margin: 0.75rem 0 2rem;
 }
 
-/* Version section (slightly different shadow + full width) */
-.version-section {
-    margin: 2rem 0;
-    width: 100%;
-    border: 2px solid var(--primary, #4b304e);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.section--nested {
+  margin: 0.5rem 0 1.25rem;
 }
 
-/* Section “levels” (shared) */
-.section-level-1,
-.section-level-2,
-.section-level-3,
-.section-level-4 {
-    margin: 0.75rem 0 2rem 0;
-    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
-}
-
-/* Level borders */
-.section-level-1 {
-    border: 4px solid var(--primary, #4b304e);
-}
-
-.section-level-2 {
-    border: 2.5px solid var(--primary, #4b304e);
-}
-
-.section-level-3 {
-    border: 1px solid var(--primary, #4b304e);
-}
-
-.section-level-4 {
-    border: 0.5px solid var(--primary, #4b304e);
-}
-
-/* Desktop overrides */
 @media (min-width: 769px) {
+  .section {
+    padding: 2rem;
+    margin: 1rem 0 3rem;
+  }
 
-    .version-section {
-        padding: 3rem;
-        margin: 3rem 0;
-        border-radius: var(--border-radius-md, 12px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+  .section--nested {
+    margin: 0.75rem 0 1.5rem;
+  }
 
-    .section-level-1,
-    .section-level-2,
-    .section-level-3,
-    .section-level-4 {
-        padding: 2rem;
-        margin: 1rem 0 3rem 0;
-        border-radius: var(--border-radius-md, 12px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+  /* Section header desktop layout */
+  .section-header {
+    width: 200px;
+    min-width: 200px;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    text-align: left;
+    position: sticky;
+    top: 100px;
+  }
 
-    /* Section header desktop layout moved from css/desktop.css */
-    .section-header {
-        width: 200px;
-        min-width: 200px;
-        padding-right: 1rem;
-        padding-top: 1rem;
-        text-align: left;
-        position: sticky;
-        top: 100px;
-    }
+  .section-header h2,
+  .section-header h2.funnel-display-header {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
 
-    /* Ensure section header h2 wins over general h2 rules in desktop.css */
-    .section-header h2,
-    .section-header h2.funnel-display-header {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-size: 2.5rem;
-    }
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 
-    .section-header p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-
-    .section-header h2::after,
-    .section-header h2.funnel-display-header::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 3px;
-        background-color: var(--accent);
-        margin-top: 0.5rem;
-    }
+  .section-header h2::after,
+  .section-header h2.funnel-display-header::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 0.5rem;
+  }
 }

@@ -1,0 +1,18 @@
+/* surface.css - shared surface/panel primitives (new system only) */
+
+.surface {
+  background: var(--white, #ffffff);
+  border-radius: var(--border-radius-md, 12px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1));
+  box-sizing: border-box;
+  transition: var(--transition-standard, all 0.3s ease);
+
+  /* Border uses a variable so "levels" only set the width */
+  border: var(--surface-border-width, 2px) solid var(--primary, #4b304e);
+}
+
+/* "Level" modifiers */
+.surface--1 { --surface-border-width: 4px; }
+.surface--2 { --surface-border-width: 2.5px; }
+.surface--3 { --surface-border-width: 1px; }
+.surface--4 { --surface-border-width: 0.5px; }

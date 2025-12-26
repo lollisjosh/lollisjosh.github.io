@@ -1,0 +1,42 @@
+/* section.legacy.css — temporary backward compatibility
+   @deprecated: do not use in new HTML. Remove when unused.
+*/
+
+/* Legacy section levels behave like .section (spacing only) */
+.section-level-1,
+.section-level-2,
+.section-level-3,
+.section-level-4 {
+  padding: 1rem;
+  margin: 0.75rem 0 2rem;
+}
+
+/* Version section (special spacing & full width) */
+.version-section {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem;
+
+  /* Keep old version-section border weight (works with surface.legacy.css) */
+  --surface-border-width: 2px;
+
+  /* Preserve the slightly different shadow you had */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 769px) {
+  .section-level-1,
+  .section-level-2,
+  .section-level-3,
+  .section-level-4 {
+    padding: 2rem;
+    margin: 1rem 0 3rem;
+  }
+
+  .version-section {
+    padding: 3rem;
+    margin: 3rem 0;
+    border-radius: var(--border-radius-md, 12px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}

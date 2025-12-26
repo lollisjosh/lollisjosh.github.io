@@ -1,0 +1,50 @@
+/* image-grid.legacy.css — temporary backward compatibility
+   @deprecated: do not use in new HTML. Remove when unused.
+*/
+
+/* Legacy media names mirror media.css behavior */
+.game-image,
+.diagram-image,
+.game-image-small {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+
+  /* Most of your legacy images were "contain" style */
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Match old small behavior */
+.game-image-small {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 769px) {
+  .game-image-small {
+    width: 25rem;
+  }
+}
+
+/* Legacy wrapper levels (replaced by: .surface.surface--N.media-frame) */
+.image-section-1,
+.image-section-2,
+.image-section-3,
+.image-section-4 {
+  padding: 0.5rem;
+  margin: 0.5rem auto 1.25rem;
+  width: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.image-section-1 img,
+.image-section-2 img,
+.image-section-3 img,
+.image-section-4 img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
