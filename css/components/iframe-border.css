@@ -18,6 +18,7 @@
 @media (min-width: 769px) {
   /* Desktop overrides */
   .iframe-border {
+    width: 100%;
     padding: 8px;
     transition: var(--transition-standard);
     background-color: transparent;
