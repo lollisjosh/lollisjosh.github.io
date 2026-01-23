@@ -2,21 +2,18 @@
 *   Project Tabs CSS
 *   Author: Josh Lollis
 *   Date: May 17, 2025
+*   Updated: January 12, 2026 - Refactored for JS-driven responsive sizing
 *   Extracted from desktop.css for better organization
 */
 
-/* TODO: THis file needs to be updated i think, since sliding project tabs don't get used on mobile, i think this file can be better breakpointed. */
-
-
-/* Sliding projects not used on mobile.*/ 
-
-@media (max-width: 768px) {
-
-/* Hide the home page sliding project tabs (desktop only feature) */
-.sliding-projects {
-  display: none;
-}
-}
+/*
+*   CSS Custom Properties (set by projectTabs.js):
+*   --tab-height: individual tab height (80-120px)
+*   --tab-gap: gap between tabs (10-20px)
+*   --tab-preview-width: preview image width (scales with height)
+*   --tab-slide-distance: how far tabs hide off-screen
+*   --tab-bounce-offset: bounce animation inner position
+*/
 
 /* Sliding project tabs - right side */
 .sliding-projects {
@@ -26,7 +23,7 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--tab-gap, 20px);
   z-index: 0;
 }
 
@@ -38,7 +35,7 @@
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--tab-gap, 20px);
   z-index: 0;
 }
 
@@ -48,12 +45,12 @@
   display: flex;
   align-items: stretch;
   width: 100%; /* Total width when expanded */
-  transform: translateX(350px); /* Adjust as needed for new positioning */
-  transition: transform 0.4s ease-out;
+  transform: translateX(var(--tab-slide-distance, 350px));
+  transition: transform 0.4s ease-out, box-shadow 0.3s ease;
   border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  height: 120px; /* Increased height for bigger preview */
+  height: var(--tab-height, 120px);
   cursor: pointer;
   background: var(--white);
   border: 2px solid var(--primary);
@@ -67,12 +64,12 @@
   flex-direction: row-reverse; /* Flip the layout */
   align-items: stretch;
   width: 500px;
-  transform: translateX(-350px); /* Hide most of tab off-screen to the left */
-  transition: transform 0.4s ease-out;
+  transform: translateX(calc(-1 * var(--tab-slide-distance, 350px)));
+  transition: transform 0.4s ease-out, box-shadow 0.3s ease;
   border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  height: 120px;
+  height: var(--tab-height, 120px);
   cursor: pointer;
   background: var(--white);
   border: 2px solid var(--primary);
@@ -80,38 +77,15 @@
 }
 
 /* Hover states for project tabs */
-.project-tab:hover {
-  animation: none !important;
-  transform: translateX(0) !important; /* Fully slide into view on hover */
-  box-shadow: var(--shadow-lg);
-}
-
+/* Note: transform is handled by JS on hover for smooth animation pause */
+.project-tab:hover,
 .project-tab-left:hover {
-  animation: none !important;
-  transform: translateX(0) !important; /* Fully slide into view on hover */
   box-shadow: var(--shadow-lg);
-}
-
-/* Project tab animations */
-@keyframes gentleBounce {
-  0%, 100% { transform: translateX(350px); }
-  50% { transform: translateX(340px); }
-}
-
-/* Apply animation to tabs */
-.project-tab:nth-child(odd) {
-  animation: gentleBounce 3s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-.project-tab:nth-child(even) {
-  animation: gentleBounce 3s ease-in-out infinite;
-  animation-delay: 1.5s;
 }
 
 /* Tab content elements */
 .tab-preview {
-  flex: 0 0 150px; 
+  flex: 0 0 var(--tab-preview-width, 150px);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -121,7 +95,7 @@
 
 .tab-preview img {
   width: 100%;
-  height: 120px; /* Match height to project-tab */
+  height: var(--tab-height, 120px);
   object-fit: cover;
 }
 

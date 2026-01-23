@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XB2MIDI | Projects</title>
+
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">
+        html {
+            visibility: hidden
+        }
+    </style>
+
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
+</head>
+
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">XB2MIDI</h1>
+            <h4 class="funnel-display-header">Map XBOX Controller Inputs to MIDI Messages, MIDI Macros, Chords, and
+                more!</h4>
+
+            <!-- Navigation TOC -->
+            <nav class="toc-nav">
+                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Build</span>
+                </a>
+                <a href="#backstory" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Backstory</span>
+                </a>
+                <a href="#modes" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Modes</span>
+                </a>
+                <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Technology</span>
+                </a>
+                <a href="#architecture" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Architecture</span>
+                </a>
+                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Implementation</span>
+                </a>
+                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#debug-tools" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Debug Tools</span>
+                </a>
+                <a href="#enhancements" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Enhancements</span>
+                </a>
+                <a href="https://github.com/TelloViz/XBXMIDI" target="_blank"
+                    class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon fab fa-github"></span>
+                    <span class="toc-title">Repository</span>
+                </a>
+            </nav>
+
+            <!-- Project Overview Section -->
+            <section id="overview" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>XB2MIDI is a Windows desktop application that turns a wired Xbox 360 controller into a flexible MIDI
+                    controller. It maps controller inputs to MIDI messages, macros, chords, and more for use with DAWs,
+                    VST instruments, and automation. With multiple mapping modes, from straightforward one-to-one
+                    mappings to chord and arpeggio workflows, you can create, perform, and sequence musical ideas
+                    directly from a gamepad.</p>
+
+                <section class="surface surface--2 media-frame">
+                    <img src="/assets/images/xb2midi/basic.png" alt="XB2MIDI Interface Overview"
+                        data-full-res="/assets/images/xb2midi/basic.png"
+                        class="media media--contain media--clickable media--md" loading="lazy">
+                </section>
+                <hr>
+                <h3 class="funnel-display-header">Introduction Video</h3>
+                <div class="iframe-border hover-transform-up" style="margin: 2rem 0;">
+                    <iframe class="project-video" src="https://www.youtube.com/embed/8KgLmPyrT30?si=PxJCmusiBGySfAr0"
+                        allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <!-- Build Download Section -->
+            <section id="build" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Build Download</h2>
+                <h4>[ Coming Soon ]</h4>
+            </section>
+
+            <!-- Backstory section -->
+            <section id="backstory" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Backstory</h2>
+
+            </section>
+
+            <!-- Modes section -->
+            <section id="modes" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Mapping Modes</h2>
+                <p>XB2MIDI features five distinct mapping modes, each designed for different use cases. Each mode
+                    provides unique ways to transform controller inputs into MIDI data.</p>
+
+                <!-- Basic Mode Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Basic Mode</h3>
+                    <p>Basic Mode is XB2MIDI’s direct 1:1 mapping workflow. Map any Xbox 360 controller input (buttons,
+                        D-pad, sticks, triggers) to a single MIDI output (Note, CC, or Pitch Bend), choose the target
+                        MIDI device and channel, and save or load full presets for repeatable sessions. Pitch Bend works
+                        especially well with continuous inputs like joystick axes and triggers for smooth, expressive
+                        control. With MIDI routing (for example loopMIDI), those mappings can drive DAWs, VST
+                        instruments, effects, and automation, with a live MIDI Activity view for quick validation.</p>
+
+                    <section class="surface surface--2 media-frame">
+                        <img src="/assets/images/xb2midi/basic_mode.png" alt="XB2MIDI Basic Mode Interface"
+                            data-full-res="/assets/images/xb2midi/basic_mode.png"
+                            class="media media--contain media--clickable media--md" loading="lazy">
+                    </section>
+                    <hr>
+
+                    <h4 class="funnel-display-header">Basic Mode Demo</h4>
+                    <div class="iframe-border hover-transform-up" style="margin: 2rem 0;">
+                        <iframe class="project-video"
+                            src="https://www.youtube.com/embed/yEM9zx12QuQ?si=7utEmCSSo6PgT_xD"
+                            allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- Chord Mode Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Chord Mode</h3>
+                    <p>Chord Mode turns the controller into a chord keyboard built around eight root-note buttons. The
+                        face buttons and D-pad provide eight assignable root notes, which can be mapped to a key’s scale
+                        degrees or to any custom note layout. Pressing a root button alone plays the root note. Holding
+                        RB while pressing a root plays a major triad, and holding LB plays a minor triad. Chord
+                        extensions are triggered by tap patterns: double-tap RB/LB for major 7th / minor 7th, and
+                        triple-tap RB/LB for major 9th / minor 9th. Chord inversions are selected with the left stick
+                        before triggering the chord: center is root position, up is 1st inversion, right is 2nd
+                        inversion, down is 3rd inversion, and left is 4th inversion when applicable. For expression,
+                        left trigger depth controls attack (velocity) and right trigger depth controls sustain. This
+                        makes it easy to send multi-note MIDI bursts into a DAW or VST so you can actually perform
+                        chords on an instrument, trigger custom multi-note “macros” you define on the DAW side, or
+                        quickly stamp chords into a MIDI piano roll (for example in FL Studio).</p>
+
+                    <p>Chord Mode also supports multiple mappings at once via tabbed layouts (including the “+” to add
+                        new mappings), full save/load preset workflows, and an activity log for debugging. The
+                        right-side panel provides a built-in reference for the full button-combo scheme, and the
+                        bottom-right chord tester lets you audition chord types and extensions using Windows built-in
+                        tones before committing to a mapping.</p>
+
+                    <section class="surface surface--2 media-frame">
+                        <img src="/assets/images/xb2midi/chord_mode.png" alt="XB2MIDI Chord Mode Interface"
+                            data-full-res="/assets/images/xb2midi/chord_mode.png"
+                            class="media media--contain media--clickable media--md" loading="lazy">
+                    </section>
+                    <hr>
+                    <h4 class="funnel-display-header">Chord Mode Demo</h4>
+                    <div class="iframe-border hover-transform-up" style="margin: 2rem 0;">
+                        <iframe class="project-video"
+                            src="https://www.youtube.com/embed/cDfl2is1ruI?si=eeTrgrNkQ8XWAHCK"
+                            allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- In-Development Modes Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">In-Development Modes</h3>
+                    <p>These modes expand the mapping possibilities beyond static notes and chords, though they are
+                        still in active development:</p>
+
+                    <div class="skills-grid">
+                        <!-- Multi Mode -->
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Multi Mode <span
+                                    style="color: #27ae60; font-size: 0.8em;">✓
+                                    Mostly Complete</span></h4>
+                            <p>Multi Mode enables multiple MIDI messages to be triggered from a single controller input,
+                                functioning as a macro system. A single button press can send multiple notes across
+                                different channels and MIDI devices simultaneously, enabling complex orchestration and
+                                layered sound design. This is essential for building intricate musical arrangements
+                                without
+                                manual sequencing.</p>
+
+                            <img src="/assets/images/xb2midi/multi_mode.png" alt="XB2MIDI Multi Mode Interface"
+                                data-full-res="/assets/images/xb2midi/multi_mode.png"
+                                class="media media--contain media--clickable media--md" loading="lazy">
+                        </div>
+
+                        <!-- Arpeggio Mode -->
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Arpeggio Mode <span
+                                    style="color: #ae2727; font-size: 0.8em;">🚧 In Development</span></h4>
+                            <p>Arpeggio Mode generates automatic note sequences (arpeggios) based on input patterns.
+                                Rather
+                                than playing individual notes, a button press triggers a pre-configured pattern of notes
+                                in
+                                sequence, with control over playback speed, pattern type, and direction. This mode is
+                                pending implementation and will provide powerful melodic pattern generation for dynamic
+                                performances.</p>
+
+                            <img src="/assets/images/xb2midi/arp_mode.png" alt="XB2MIDI Arpeggio Mode Interface"
+                                data-full-res="/assets/images/xb2midi/arp_mode.png"
+                                class="media media--contain media--clickable media--m" loading="lazy">
+                        </div>
+
+                        <!-- Solo Mode -->
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Solo Mode <span
+                                    style="color: #ae2727; font-size: 0.8em;">🚧
+                                    In Development</span></h4>
+                            <p>Solo Mode is designed for continuous melodic control with smooth pitch bending. Using
+                                analog
+                                trigger values from the controller, Solo Mode allows you to play single notes with
+                                expressive pitch bend control for slide-like transitions and vibrato effects. This mode
+                                is
+                                pending completion and will enable natural, violin-like solo performances from your
+                                controller.</p>
+
+                            <img src="/assets/images/xb2midi/solo_mode.png" alt="XB2MIDI Solo Mode Interface"
+                                data-full-res="/assets/images/xb2midi/solo_mode.png"
+                                class="media media--contain media--clickable media--md" loading="lazy">
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4 class="funnel-display-header">Multi Mode Demo and In-Dev Mode Overview</h4>
+                    <div class="iframe-border hover-transform-up" style="margin: 2rem 0;">
+                        <iframe class="project-video"
+                            src="https://www.youtube.com/embed/cA1UDyOW-J0?si=AbPHbs5Y1v053Q6C"
+                            allowfullscreen></iframe>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Technologies Used Section -->
+            <section id="technologies" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Technologies Used</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Core Technologies</h3>
+                        <ul>
+                            <li>C# with .NET 9.0</li>
+                            <li>WPF (Windows Presentation Foundation)</li>
+                            <li>SharpDX.XInput 4.2.0</li>
+                            <li>NAudio 2.2.1 (MIDI output)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Development Tools</h3>
+                        <ul>
+                            <li>Visual Studio 2022</li>
+                            <li>Visual Studio Code / Rider</li>
+                            <li>Git / GitHub</li>
+                            <li>Windows 10+ (target platform)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section id="architecture" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Architecture</h2>
+
+                <p>XB2MIDI employs a robust, layered architecture built on the Model-View-ViewModel (MVVM) pattern,
+                    combined with service-oriented design principles and polymorphic type hierarchies. This design
+                    separates concerns across input handling, MIDI output, business logic, and UI presentation, enabling
+                    testability, extensibility, and clean mode switching across five distinct mapping implementations.
+                </p>
+
+                <!-- Models Layer -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Models Layer</h3>
+                    <p>The Models layer implements core business logic and manages state with polymorphic abstractions
+                        for extensibility.</p>
+
+                    <hr>
+                    <h4 class="funnel-display-header">MappingManager Hierarchy (Polymorphic Strategy Pattern)</h4>
+                    <p>Each manager handles its own <code>HandleControllerInput(ControllerInputEventArgs)</code>
+                        logic, JSON serialization/deserialization (with mode-specific file extensions like
+                        .basic.json, .chord.json), and mapping persistence. This polymorphic design allows new modes
+                        to be added by simply inheriting MappingManagerBase without modifying existing code—a key
+                        advantage for maintaining clean architecture as the application evolves.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MappingManagerBase</h5>
+                            <p>Abstract base class defining the contract for all mapping strategies. Each mode inherits
+                                from this base and implements mode-specific logic.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">BasicMappingManager</h5>
+                            <p>1:1 input-to-MIDI mappings (notes, CC, pitch bend)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ChordMappingManager</h5>
+                            <p>Multi-note chord generation with inversions and extensions</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MultiMappingManager</h5>
+                            <p>Single input triggering multiple simultaneous MIDI messages (macro system)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ArpeggioMappingManager</h5>
+                            <p>Sequenced note patterns with tempo and direction control</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">SoloMappingManager</h5>
+                            <p>Expressive single-note melody with pitch bend modulation</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4 class="funnel-display-header">Input Handling &amp; State Management</h4>
+                    <p>This layer captures and normalizes Xbox controller input, providing clean event-based access
+                        to physical device state while maintaining thread safety and connection reliability.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">XboxController</h5>
+                            <p>Wraps SharpDX.XInput with thread-safe polling, deadzone normalization, and connection
+                                state tracking. Fires <code>InputChanged</code> events for state deltas and
+                                <code>ConnectionChanged</code> events for hot-plug detection. Runs on a background
+                                thread to avoid UI blocking.
+                            </p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ControllerInputEventArgs</h5>
+                            <p>Custom event args encapsulating input name, type (button, stick, trigger), current
+                                value, and context</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MidiMapping</h5>
+                            <p>Data model representing a single controller-to-MIDI binding (controller input, MIDI
+                                device, channel, message type, target note/CC)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MappingMode & ControllerMode</h5>
+                            <p>Enumerations defining operational states (Basic, Chord, Multi, Arpeggio, Solo)</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4 class="funnel-display-header">MIDI Device Lifecycle Management</h4>
+                    <p>Sophisticated device connection management ensures the application gracefully handles device hot-plugging, unavailability, and reconnection scenarios without crashing or losing state.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MidiOutput</h5>
+                            <p>Manages device connections with sophisticated fallback logic, ensuring reliable MIDI device handling and graceful degradation</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Device Handle Management</h5>
+                            <p>Maintains a dictionary of open <code>MidiOut</code> handles (via NAudio)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Device Verification</h5>
+                            <p><code>EnsureDeviceExists()</code> verifies device availability before sending
+                                messages; attempts reconnection if the device was previously open</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Safe Availability Checks</h5>
+                            <p><code>IsDeviceAvailable()</code> performs safe availability checks without throwing
+                                exceptions</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Fallback Logic</h5>
+                            <p>If a mapped device becomes unavailable, automatically routes to the first available
+                                device and logs the event</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Hot-Plug Handling</h5>
+                            <p>Gracefully handles MIDI device hot-plugging without crashing or losing state</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Views Layer -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Views Layer</h3>
+                    <p>Views are XAML-based WPF user controls with minimal code-behind, using data binding and value
+                        converters to render UI without business logic. The view layer includes mode-specific controls,
+                        real-time controller visualization components, and helper dialogs.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Mode Views</h4>
+                            <p>BasicMappingView, ChordMappingView, MultiMappingView, ArpeggioMappingView,
+                                SoloMappingView. Each view binds to its ViewModel and renders mode-specific controls</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Controller Visualization</h4>
+                            <p>BaseControllerVisualizer (abstract), ControllerVisualizer (real-time display of physical
+                                input state), InteractiveControllerVisualizer (simulated input from keyboard)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Auxiliary Views</h4>
+                            <p>ChordModeReferenceView (button-combo legend), ChordSamplerView (chord preview tester),
+                                MainWindow (tab host)</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Value Converters</h4>
+                            <p>StringToVisibilityConverter (toggle UI elements based on string state),
+                                MidiTypeToEnabledConverter (enable/disable fields based on MIDI message type)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View Models Layer -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">View Models Layer</h3>
+                    <p>ViewModels implement <code>INotifyPropertyChanged</code> and expose data via
+                        <code>ObservableCollection&lt;T&gt;</code> for two-way binding, bridging the gap between Models
+                        and Views. Each mode has dedicated ViewModels that coordinate with their corresponding
+                        MappingManager and translate user interactions into business logic.
+                    </p>
+
+                    <hr>
+                    <h4 class="funnel-display-header">Mode-Specific ViewModels</h4>
+                    <p>Each of the five mapping modes has a dedicated ViewModel that coordinates with its corresponding MappingManager, exposes ObservableCollections for UI binding, and implements ICommand-bound methods for user interactions:</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">BasicMappingViewModel</h5>
+                            <p>Coordinates with BasicMappingManager for 1:1 MIDI mappings</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ChordMappingViewModel</h5>
+                            <p>Manages chord mode interactions with inversions and extensions</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MultiMappingViewModel</h5>
+                            <p>Handles multi-message macro system mappings</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ArpeggioMappingViewModel</h5>
+                            <p>Controls arpeggio pattern sequences and playback</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">SoloMappingViewModel</h5>
+                            <p>Manages expressive single-note melody control</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">Shared Collections</h5>
+                            <p>All ViewModels expose ObservableCollections (Mappings, ActivityLog, MidiDevices, ControllerInputs)</p>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <h4 class="funnel-display-header">Orchestration & Support ViewModels</h4>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">MappingTabManager</h5>
+                            <p>Orchestrates mode switching, maintains per-mode state, handles tab activation/deactivation, and coordinates persistent storage across mode transitions</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">ChordSamplerViewModel</h5>
+                            <p>Dedicated ViewModel for the chord preview/tester UI, managing chord type selection and Windows sound API playback for audition purposes</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5 class="funnel-display-header">RelayCommand Pattern</h5>
+                            <p>All ViewModels use RelayCommand (both generic and non-generic) to bind user actions to business logic without code-behind cluttering</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Layer -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Services Layer</h3>
+                    <p>Services provide cross-cutting functionality via dependency injection and interface-based
+                        contracts, enabling testability, loose coupling, and easy mocking in unit tests. Key services
+                        handle MIDI operations and platform-specific dialogs.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">IMidiService / MidiService</h4>
+                            <p>High-level MIDI abstraction wrapping MidiOutput. Exposes methods like
+                                <code>SendNoteOn()</code>, <code>PlayChord()</code>, and device enumeration with
+                                exception handling
+                            </p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">IDialogService / DialogService</h4>
+                            <p>Encapsulates WPF file dialogs for open/save operations, enabling mocking in unit tests
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Utilities & Support -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Utilities &amp; Support Layer</h3>
+                    <p>Utility modules provide reusable functionality for music theory calculations, input
+                        normalization, and command patterns used throughout the application.</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">MusicTheory</h4>
+                            <p>Static utility for chord analysis. Determines chord quality (major, minor, dim, sus4,
+                                etc.) from note sets, handles inversions and extensions, and generates human-readable
+                                chord names</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">ScaleHelper</h4>
+                            <p>Generates scale degrees for chord mode root note assignment</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Extension Methods</h4>
+                            <p>CollectionExtensions and EventArgsExtensions for common operations</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">RelayCommand</h4>
+                            <p>Generic (<code>RelayCommand&lt;T&gt;</code>) and non-generic implementations of ICommand
+                                for binding UI actions without code-behind</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Persistence -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Data Persistence &amp; Configuration</h3>
+                    <p>All mappings are persisted as human-readable JSON files with mode-specific extensions and
+                        structures. This approach provides several key benefits:</p>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Sharing & Version Control</h4>
+                            <p>Easy sharing and version control of presets</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Manual Editing</h4>
+                            <p>Manual editing and debugging of configurations</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Independent State</h4>
+                            <p>Independent state for each mode (switching modes preserves previous mode's state on disk)
+                            </p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Preset Files</h4>
+                            <p>Preset files for chord collections (.chord.json), basic mappings (.basic.json), and
+                                multi-mode macros</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Key Design Principles -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Design Principles &amp; Patterns</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Separation of Concerns</h4>
+                            <p>MVVM cleanly decouples UI from business logic. Models know nothing about Views;
+                                ViewModels translate between them via data binding.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Polymorphism &amp; Strategy</h4>
+                            <p>The MappingManagerBase hierarchy allows each mode to implement its own input handling
+                                strategy without if/else cascades in the main loop.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Dependency Injection</h4>
+                            <p>Services (MidiService, DialogService) are injected into ViewModels, enabling mocking and
+                                testability.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Event-Driven Architecture</h4>
+                            <p>Controller input, MIDI lifecycle, and mode transitions are all event-driven, allowing
+                                decoupled communication without tight coupling.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Thread Safety</h4>
+                            <p>Input polling runs on a background thread; state updates marshal to the UI thread via
+                                Dispatcher to prevent freezing.</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4 class="funnel-display-header">Graceful Degradation</h4>
+                            <p>MIDI device failures trigger fallback logic and logging rather than exceptions. The
+                                application continues to function even if the primary device is unavailable.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Implementation Section -->
+            <section id="implementation" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <p>XB2MIDI is built as a scalable, mode-driven MIDI controller application. The core loop continuously
+                    polls Xbox controller input via SharpDX.XInput, processes state changes through the active
+                    MappingManager, and sends resulting MIDI messages to connected devices via NAudio. Mapping
+                    configurations are persisted as JSON files (.chord.json, .mapping.json, etc.) for easy sharing and
+                    backup.</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Five distinct mapping modes for different use cases</li>
+                            <li>Multi-device MIDI output support</li>
+                            <li>Chord preset system with custom .chord.json files</li>
+                            <li>Real-time controller input visualization</li>
+                            <li>Integrated controller simulator for testing without hardware</li>
+                            <li>Persistent mapping storage</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>System Architecture</h3>
+                        <ul>
+                            <li>MVVM pattern for clean separation of concerns</li>
+                            <li>Pluggable MappingManager system for mode extensibility</li>
+                            <li>Event-driven input polling (no blocking UI)</li>
+                            <li>Async MIDI device lifecycle management</li>
+                            <li>Tab-based UI with seamless mode switching</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Platform &amp; Requirements</h3>
+                        <p><strong>Target Platform:</strong> Windows 10 / 11 (64-bit)</p>
+                        <p><strong>Requirements:</strong> .NET 9.0 runtime, Xbox-compatible controller (XInput), MIDI
+                            device or software synthesizer</p>
+                        <p><strong>Compatibility:</strong> Works with any XInput-compliant gamepad (Xbox One, Xbox
+                            Series X/S, third-party controllers)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges Section -->
+            <section id="challenges" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Development Challenges</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Real-Time Controller Input Polling</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>XInput polling must occur at a consistent refresh rate without blocking the WPF UI thread.
+                            Polling too slowly introduces input lag; blocking the UI makes the application unresponsive.
+                            Additionally, controller connection/disconnection events needed to be detected reliably.</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Implemented a background polling thread running on a fixed timer (e.g., 60 Hz) that captures
+                            controller state and raises events without blocking the main thread. Used ManualResetEvent
+                            patterns to ensure thread-safe state handoffs. Connection status is tracked per-frame to
+                            detect hot-plug scenarios.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>MIDI Device Lifecycle Management</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>MIDI devices can be connected or disconnected at any time. If a mapping references a device
+                            that is no longer available, the application could crash or silently fail to send MIDI data.
+                            Managing open device handles and recovering gracefully from missing devices is non-trivial.
+                        </p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Developed a MidiOutput manager that maintains a dictionary of open MIDI device handles.
+                            Before sending a message, the manager verifies the device is available; if not, it attempts
+                            to re-open it. If the device is permanently unavailable, a fallback device is used, and the
+                            user is notified via the debug log. Mappings are validated on load to warn users of missing
+                            devices.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Cross-Mode State Management</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>With five distinct mapping modes, each with its own state, configuration, and behavior,
+                            switching between modes must preserve each mode's state and avoid data loss. The challenge
+                            is isolating mode-specific state so changes in one mode don't unexpectedly affect another.
+                        </p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Each mode has its own MappingManager instance with independent state. The MappingTabManager
+                            orchestrates switching by pausing the current mode, saving its state to disk, and loading
+                            the target mode's state. ViewModels are mode-specific and updated only when their
+                            corresponding tab is active. Persistent JSON serialization ensures no data is lost during
+                            mode transitions.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Controller Simulator Section -->
+            <!-- Debug Tools Section -->
+            <section id="debug-tools" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Debug Tools</h2>
+                <p>XB2MIDI provides three integrated debug tabs within the application to aid in development, testing, and troubleshooting. These tools offer real-time visualization of controller state, input simulation without hardware, and comprehensive activity logging.</p>
+
+                <!-- Controller Visualizer Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Controller Visualizer</h3>
+                    <p>The Controller Visualizer is a real-time on-screen display of your physical controller's input state. As you press buttons, move sticks, and pull triggers on your Xbox controller, the visualizer reflects each input on a graphical controller representation. This is invaluable for debugging input mapping issues, confirming that inputs are being registered correctly, and understanding how your physical movements translate to MIDI messages.</p>
+
+                    <section class="surface surface--2 media-frame">
+                        <img src="/assets/images/xb2midi/controller_visualizer.png" alt="XB2MIDI Controller Visualizer"
+                            data-full-res="/assets/images/xb2midi/controller_visualizer.png"
+                            class="media media--contain media--clickable media--md" loading="lazy">
+                    </section>
+                </section>
+
+                <!-- Controller Simulator Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Controller Simulator</h3>
+                    <p>The Controller Simulator is both a developer tool and a user-facing feature. It allows you to test and validate mappings without requiring a physical Xbox controller. The simulator replicates controller input by accepting mouse input from your PC, simulating button presses, D-pad directions, and basic analog input (limited to non-combination inputs for developer testing). For users, it provides a way to explore mode features and verify mappings in environments where a controller may not be available.</p>
+
+                    <section class="surface surface--2 media-frame">
+                        <img src="/assets/images/xb2midi/controller_simulator.png"
+                            alt="XB2MIDI Controller Simulator Interface"
+                            data-full-res="/assets/images/xb2midi/controller_simulator.png"
+                            class="media media--contain media--clickable media--md" loading="lazy">
+                    </section>
+<hr>
+                    <h4 class="funnel-display-header">Controller Simulator Demo</h4>
+                    <div class="iframe-border hover-transform-up" style="margin: 2rem 0;">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/9uAkIhGXK8o?si=7k9UpJU7MYiWv02L"
+                            allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- Debug Log Subsection -->
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Activity Log & Debug Output</h3>
+                    <p>The Activity Log provides a comprehensive, real-time record of all controller inputs and MIDI events. This persistent debug output helps you trace the flow of input through your mappings, identify timing issues, validate that expected MIDI messages are being sent, and diagnose unexpected behavior. The log displays input source, type, value, timestamp, and any associated MIDI output, making it essential for troubleshooting complex mapping scenarios and understanding the complete input-to-output pipeline.</p>
+
+                    <section class="surface surface--2 media-frame">
+                        <img src="/assets/images/xb2midi/debug_log.png" alt="XB2MIDI Debug Log Interface"
+                            data-full-res="/assets/images/xb2midi/debug_log.png"
+                            class="media media--contain media--clickable media--md" loading="lazy">
+                    </section>
+                </section>
+            </section>
+
+            <!-- Future Enhancements Section -->
+            <section id="enhancements" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Future Enhancements</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>MIDI Learn Mode</h3>
+                        <p>Implement an automated mapping mode where pressing a controller button automatically assigns
+                            it to the MIDI note or CC message currently being played, eliminating manual mapping entry.
+                        </p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Controller Profiles</h3>
+                        <p>Save and load multiple configuration profiles, allowing quick switching between different
+                            mode setups for different musical genres, games, or use cases.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Complete Arpeggio Mode</h3>
+                        <p>Finish implementation of Arpeggio Mode with pattern sequencing, tempo control, and direction
+                            options, making it production-ready for generating dynamic melodic patterns.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Complete Solo Mode</h3>
+                        <p>Finish implementation of Solo Mode with smooth pitch bend control, vibrato support, and
+                            expressive trigger-based modulation for natural, violin-like solo performances.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>VST Plugin Wrapper</h3>
+                        <p>Wrap XB2MIDI as a VST plugin, allowing direct integration into DAWs (Digital Audio
+                            Workstations) for seamless in-session controller mapping without a separate application
+                            window.</p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src alt>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

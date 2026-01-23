@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     (function loadHeader() {
         if (window.headerComponent) {
             window.headerComponent.init("#header-placeholder");
+                loadProjectTabs(); // Load after header is ready
             return;
         }
         loadComponentScript('/js/components/header.js')
@@ -89,9 +90,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (window.headerComponent && window.headerComponent.init) {
                     window.headerComponent.init("#header-placeholder");
                 }
+                loadProjectTabs(); // Load after header is ready
             })
             .catch(() => console.error('Failed to load header component script.'));
     })();
+
+    // Load project tabs component (depends on header for --header-height)
+    function loadProjectTabs() {
+        // Only load on pages with sliding projects
+        if (!document.querySelector('.sliding-projects')) return;
+        
+        if (window.projectTabsComponent) {
+            window.projectTabsComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/projectTabs.js')
+            .then(() => {
+                if (window.projectTabsComponent && window.projectTabsComponent.init) {
+                    window.projectTabsComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load projectTabs component script.'));
+    }
 
     // Load footer component
     (function loadFooter() {
