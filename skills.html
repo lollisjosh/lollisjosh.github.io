@@ -11,215 +11,216 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <!-- Standard meta -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Skills | Portfolio</title>
+<head>
+    <!-- Standard meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Portfolio</title>
 
-        <!-- This style prevents flash of unstyled content (FOUC) -->
-        <style id="anti-fouc">html{visibility:hidden}</style>
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">
+        html {
+            visibility: hidden
+        }
+    </style>
 
-        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
-        <script src="/js/head.js"></script>
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
 
-        <!-- Page-specific CSS (if any) -->
-        <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
-        <link rel="stylesheet" href="/css/pages/skills-page.css">
+    <!-- Page-specific CSS (if any) -->
+    <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
+    <link rel="stylesheet" href="/css/pages/skills-page.css">
 
-    </head>
+</head>
 
-    <body>
-        <!-- Header injection point -->
-        <div id="header-placeholder"></div>
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
 
-        <main>
-            <div class="content-container">
-                <h1 class="funnel-display-header">Skills</h1>
-                <!-- TODO: Decide if removing back button-->
-                <!-- <a href="javascript:history.back()"
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Skills</h1>
+            <!-- TODO: Decide if removing back button-->
+            <!-- <a href="javascript:history.back()"
                     class="back-button hover-transform-left">
                     <span>←</span>
                     <span>Back</span>
                 </a> -->
-                <nav class="toc-nav">
-                    <a href="#technical-proficiency"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Technical Proficiency</span>
-                    </a>
-                    <a href="#soft-skills"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Soft Skills</span>
-                    </a>
-                    <a href="#technical-competencies"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Technical Competencies</span>
-                    </a>
-                </nav>
+            <nav class="toc-nav">
+                <a href="#technical-proficiency" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Technical Proficiency</span>
+                </a>
+                <a href="#soft-skills" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Soft Skills</span>
+                </a>
+                <a href="#technical-competencies"
+                    class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Technical Competencies</span>
+                </a>
+            </nav>
 
-                <!-- Technical proficiency section with charts -->
-                <section id="technical-proficiency"
-                    class="section-level-1">
-                    <h2 class="funnel-display-header">Technical Proficiency</h2>
-                    <!-- Desktop view charts -->
-                    <div id="desktop-chart-column-container">
-                        <h2 class="desktop-lang-header">Languages Used</h2>
-                        <h5 id="desktop-language-data-message">Hover a piece of
-                            pie for language data.</h5>
+            <!-- Technical proficiency section with charts -->
+            <section id="technical-proficiency" class="section-level-1">
+                <h2 class="funnel-display-header">Technical Proficiency</h2>
 
-                        <div id="desktop-lang-headers-row">
-                            <h3 class="desktop-lang-header">Past 30 Days</h3>
-                            <h3 class="desktop-lang-header">All Time</h3>
-                        </div>
-                        <div id="desktop-lang-row">
+                <div id="skills-telemetry" class="telemetry-anchor" aria-hidden="true"></div>
 
-                            <!-- Chart section for Past 30 Days -->
-                            <div class="desktop-chart-container">
-                                <canvas id="desktop-wakatime30DayLangChart"
-                                    class="desktop-wakatimeLangChart"></canvas>
-                            </div>
+                <div class="telemetry-callout" role="note" aria-label="WakaTime tracking scope">
+                    <p>
+                        WakaTime activity (2023–present). These charts show verified tracked sessions (WakaTime
+                        installed + active) and are not a complete history.
+                        I’ve been programming for 10+ years; earlier work and untracked setups are excluded.
+                    </p>
+                </div>
+                <!-- Desktop view charts -->
+                <div id="desktop-chart-column-container">
+                    <h2 class="desktop-lang-header">Languages Used</h2>
+                    <h5 id="desktop-language-data-message">Hover a piece of
+                        pie for language data.</h5>
 
-                            <!-- Chart section for All Time -->
-                            <div class="desktop-chart-container">
-                                <canvas id="desktop-wakatimeAllTimeLangChart"
-                                    class="desktop-wakatimeLangChart"></canvas>
-                            </div>
-                        </div>
-
-                        <h2 class="desktop-editor-header">Editors Used</h2>
-                        <h5 id="desktop-chart-data-message">Hover a piece of pie
-                            for editor data.</h5>
-
-                        <div id="desktop-editors-headers-row">
-                            <h3 class="desktop-lang-header">Past 30 Days</h3>
-                            <h3 class="desktop-lang-header">All Time</h3>
-                        </div>
-
-                        <div id="desktop-editors-row">
-
-                            <!-- Chart section for 30 Days -->
-                            <div class="desktop-chart-container">
-                                <canvas id="desktop-editorsUsedChart"
-                                    class="desktop-wakatimeLangChart"></canvas>
-                            </div>
-                            <!-- Chart section for All Time -->
-                            <div class="desktop-chart-container">
-                                <canvas id="desktop-editorChart"
-                                    class="desktop-wakatimeLangChart"></canvas>
-                            </div>
-
-                        </div>
+                    <div id="desktop-lang-headers-row">
+                        <h3 class="desktop-lang-header">Past 30 Days</h3>
+                        <h3 class="desktop-lang-header">All Time</h3>
                     </div>
-                    <!-- Mobile view charts -->
-                    <div class="mobile-chart-column-container">
-                        <h2>Languages Used</h2>
-                        <h5 id="language-data-message">Select a piece of pie for
-                            language data.</h5>
-                        <h3>Past 30 Days</h3>
+                    <div id="desktop-lang-row">
+
                         <!-- Chart section for Past 30 Days -->
-                        <div class="mobile-chart-container">
-                            <canvas id="mobile-wakatime30DayLangChart"
-                                class="mobile-wakatimeLangChart"></canvas>
+                        <div class="desktop-chart-container">
+                            <canvas id="desktop-wakatime30DayLangChart" class="desktop-wakatimeLangChart"></canvas>
                         </div>
 
                         <!-- Chart section for All Time -->
-                        <h3>All Time</h3>
-                        <div class="mobile-chart-container">
-                            <canvas id="mobile-wakatimeAllTimeLangChart"
-                                class="mobile-wakatimeLangChart"></canvas>
+                        <div class="desktop-chart-container">
+                            <canvas id="desktop-wakatimeAllTimeLangChart" class="desktop-wakatimeLangChart"></canvas>
                         </div>
+                    </div>
 
-                        <h2 class="mobile-chart-header">Editors Used</h2>
-                        <h5 id="chart-data-message">Select a piece of pie for
-                            editor data.</h5>
+                    <h2 class="desktop-editor-header">Editors Used</h2>
+                    <h5 id="desktop-chart-data-message">Hover a piece of pie
+                        for editor data.</h5>
+
+                    <div id="desktop-editors-headers-row">
+                        <h3 class="desktop-lang-header">Past 30 Days</h3>
+                        <h3 class="desktop-lang-header">All Time</h3>
+                    </div>
+
+                    <div id="desktop-editors-row">
 
                         <!-- Chart section for 30 Days -->
-                        <h3 class="mobile-chart-header">Past 30 Days</h3>
-
-                        <div class="mobile-chart-container">
-                            <canvas id="mobile-editorsUsedChart"
-                                class="mobile-wakatimeLangChart"></canvas>
+                        <div class="desktop-chart-container">
+                            <canvas id="desktop-editorsUsedChart" class="desktop-wakatimeLangChart"></canvas>
                         </div>
                         <!-- Chart section for All Time -->
-                        <h3 class="mobile-chart-header">All Time</h3>
-
-                        <div class="mobile-chart-container">
-                            <canvas id="mobile-editorChart"
-                                class="mobile-wakatimeLangChart"></canvas>
+                        <div class="desktop-chart-container">
+                            <canvas id="desktop-editorChart" class="desktop-wakatimeLangChart"></canvas>
                         </div>
+
                     </div>
-                </section>
-
-                <!-- Soft skills section -->
-                <section id="soft-skills"
-                    class="section-level-1">
-                    <h2 class="funnel-display-header">Soft Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h3>Project Management</h3>
-                            <ul>
-                                <li>Agile/Scrum</li>
-                                <li>Kanban Workflows</li>
-                                <li>Daily Standups</li>
-                                <li>Git/GitHub</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category hover-transform-up">
-                            <h3>Professional Traits</h3>
-                            <ul>
-                                <li>Self-Motivated</li>
-                                <li>Detail Oriented</li>
-                                <li>Leadership</li>
-                                <li>Team Collaboration</li>
-                            </ul>
-                        </div>
+                </div>
+                <!-- Mobile view charts -->
+                <div class="mobile-chart-column-container">
+                    <h2>Languages Used</h2>
+                    <h5 id="language-data-message">Select a piece of pie for
+                        language data.</h5>
+                    <h3>Past 30 Days</h3>
+                    <!-- Chart section for Past 30 Days -->
+                    <div class="mobile-chart-container">
+                        <canvas id="mobile-wakatime30DayLangChart" class="mobile-wakatimeLangChart"></canvas>
                     </div>
-                </section>
 
-                <!-- Technical competencies section -->
-                <section id="technical-competencies"
-                    class="section-level-1">
-                    <h2 class="funnel-display-header">Technical
-                        Competencies</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h3>Game Development</h3>
-                            <ul>
-                                <li>Unity Engine</li>
-                                <li>SFML/Box2D</li>
-                                <li>OpenGL</li>
-                                <li>Win32 API</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category hover-transform-up">
-                            <h3>Development Tools</h3>
-                            <ul>
-                                <li>CMake</li>
-                                <li>Dear ImGui</li>
-                                <li>OOP Patterns</li>
-                                <li>Build Systems</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category hover-transform-up">
-                            <h3>Creative Software</h3>
-                            <ul>
-                                <li>Adobe Photoshop</li>
-                                <li>Adobe Illustrator</li>
-                                <li>Adobe Premiere</li>
-                                <li>3ds Max/Blender</li>
-                            </ul>
-                        </div>
+                    <!-- Chart section for All Time -->
+                    <h3>All Time</h3>
+                    <div class="mobile-chart-container">
+                        <canvas id="mobile-wakatimeAllTimeLangChart" class="mobile-wakatimeLangChart"></canvas>
                     </div>
-                </section>
-            </div>
-        </main>
 
-        <!-- Footer injection point -->
-        <div id="footer-placeholder"></div>
+                    <h2 class="mobile-chart-header">Editors Used</h2>
+                    <h5 id="chart-data-message">Select a piece of pie for
+                        editor data.</h5>
 
-        <!-- External JS dependencies -->
-        <script src="/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    </body>
+                    <!-- Chart section for 30 Days -->
+                    <h3 class="mobile-chart-header">Past 30 Days</h3>
+
+                    <div class="mobile-chart-container">
+                        <canvas id="mobile-editorsUsedChart" class="mobile-wakatimeLangChart"></canvas>
+                    </div>
+                    <!-- Chart section for All Time -->
+                    <h3 class="mobile-chart-header">All Time</h3>
+
+                    <div class="mobile-chart-container">
+                        <canvas id="mobile-editorChart" class="mobile-wakatimeLangChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Soft skills section -->
+            <section id="soft-skills" class="section-level-1">
+                <h2 class="funnel-display-header">Soft Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Project Management</h3>
+                        <ul>
+                            <li>Agile/Scrum</li>
+                            <li>Kanban Workflows</li>
+                            <li>Daily Standups</li>
+                            <li>Git/GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Professional Traits</h3>
+                        <ul>
+                            <li>Self-Motivated</li>
+                            <li>Detail Oriented</li>
+                            <li>Leadership</li>
+                            <li>Team Collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical competencies section -->
+            <section id="technical-competencies" class="section-level-1">
+                <h2 class="funnel-display-header">Technical
+                    Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Game Development</h3>
+                        <ul>
+                            <li>Unity Engine</li>
+                            <li>SFML/Box2D</li>
+                            <li>OpenGL</li>
+                            <li>Win32 API</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Development Tools</h3>
+                        <ul>
+                            <li>CMake</li>
+                            <li>Dear ImGui</li>
+                            <li>OOP Patterns</li>
+                            <li>Build Systems</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Creative Software</h3>
+                        <ul>
+                            <li>Adobe Photoshop</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe Premiere</li>
+                            <li>3ds Max/Blender</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <!-- External JS dependencies -->
+    <script src="/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
 
 </html>
