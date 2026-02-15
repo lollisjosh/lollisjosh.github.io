@@ -160,6 +160,21 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => console.error('Failed to load blog dropdown component script.'));
     })();
 
+    // Load directory tree component
+    (function loadDirectoryTree() {
+        // Only load on pages that have directory tree containers
+        if (!document.querySelector('.directory-tree-container')) return;
+        if (window.directoryTree) {
+            // Trees are initialized via inline script in the page
+            return;
+        }
+        loadComponentScript('/js/components/directoryTree.js')
+            .then(() => {
+                // Trees are initialized via inline script in the page after component loads
+            })
+            .catch(() => console.error('Failed to load directory tree component script.'));
+    })();
+
 
     // Lazy-load WakaTime charts when their canvas becomes visible
     (function lazyLoadWaka() {

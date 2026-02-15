@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNaiKE | Projects</title>
+
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">
+        html {
+            visibility: hidden
+        }
+    </style>
+
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
+</head>
+
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">SNaiKE</h1>
+            <h4 class="funnel-display-header">AI Algorithm Testbed & Research Platform</h4>
+
+            <!-- Navigation TOC -->
+            <nav class="toc-nav">
+                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#status" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Project Status</span>
+                </a>
+                <a href="#research" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Research Areas</span>
+                </a>
+                <a href="#strategies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">AI Strategies</span>
+                </a>
+                <a href="#technologies" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Technologies</span>
+                </a>
+                <a href="#architecture" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Architecture</span>
+                </a>
+                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Implementation</span>
+                </a>
+                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Challenges</span>
+                </a>
+                <a href="#roadmap" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Roadmap</span>
+                </a>
+                <a href="#build" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Build Instructions</span>
+                </a>
+                <a href="https://github.com/lollisjosh/SNaiKE" target="_blank"
+                    class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon fab fa-github"></span>
+                    <span class="toc-title">Repository</span>
+                </a>
+            </nav>
+
+            <!-- Project Overview Section -->
+            <section id="overview" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>SNaiKE is a simulation sandbox built with C++, SFML, and CMake for testing, comparing, and
+                    investigating
+                    the behavior of classical AI algorithms. Rather than focusing on human gameplay, SNaiKE uses a
+                    snake-based
+                    environment as an experimental domain to explore deeper questions about algorithm correctness,
+                    behavioral
+                    thresholds, and the gap between theoretical definitions and real-world constrained environments.</p>
+
+                <p>The project implements a hotswappable AI algorithm testbed where multiple strategies operate in a 2D
+                    grid-based simulation. This allows direct comparison of algorithm performance and behavior under
+                    identical
+                    environmental constraints, making it possible to isolate the effects of implementation choices
+                    versus
+                    mathematical properties of the algorithms themselves.</p>
+
+                <p>At its core, SNaiKE investigates: <strong>What truly constitutes the use of an algorithm versus
+                        incidental
+                        behavior?</strong> When a theoretically perfect algorithm like a Hamiltonian cycle fails to
+                    achieve perfect
+                    performance in practice, is that an implementation flaw, an environmental constraint, or a
+                    fundamental
+                    question about what it means to "implement" an algorithm?</p>
+            </section>
+
+            <!-- Project Status Section -->
+            <section id="status" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Project Status</h2>
+                <p><strong>Status: Work in Progress</strong> - This project is in the midst of a debugging overhaul and
+                    algorithmic refinement phase. Core research questions regarding algorithm correctness, behavioral
+                    thresholds, and design patterns are actively being addressed.</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Current Focus</h3>
+                        <ul>
+                            <li>Algorithm behavior validation against theoretical specifications</li>
+                            <li>Environmental factor quantification</li>
+                            <li>Correctness analysis across grid configurations</li>
+                            <li>Design pattern refinement for experimental isolation</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Development Philosophy</h3>
+                        <ul>
+                            <li>Document trade-offs between algorithmic purity and viability</li>
+                            <li>Explicit justification for environment-specific adaptations</li>
+                            <li>Clear delineation between pure implementations and hybrids</li>
+                            <li>Transparency about implementation limitations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Areas Section -->
+            <section id="research" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Key Research Areas</h2>
+                <p>SNaiKE explores the gap between theoretical algorithm definitions and their behavior in constrained
+                    environments. The testbed is designed to make these distinctions observable and measurable.</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Algorithm Semantics</h3>
+                        <hr style="border-top: 2px solid var(--accent-color, #ae2727); margin: 1rem 0;">
+                        <p>What truly constitutes the use of an algorithm versus incidental behavior? How do we define
+                            the
+                            boundary between "following an algorithm" and "environmental adaptation"?</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Behavioral Thresholds</h3>
+                        <hr style="border-top: 2px solid var(--accent-color, #ae2727); margin: 1rem 0;">
+                        <p>What minimum performance criteria should an AI strategy meet to be considered "implementing"
+                            a given
+                            algorithm? Is it sufficient to run the decision logic, or must performance meet a threshold?
+                        </p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Environmental Constraints</h3>
+                        <hr style="border-top: 2px solid var(--accent-color, #ae2727); margin: 1rem 0;">
+                        <p>How do simulator mechanics, grid boundaries, and spatial topology affect algorithm
+                            performance
+                            independent of the algorithm's mathematical properties?</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Dynamic Obstacle Handling</h3>
+                        <hr style="border-top: 2px solid var(--accent-color, #ae2727); margin: 1rem 0;">
+                        <p>Pathfinding algorithms must account for the snake's body becoming obstacles that change every
+                            simulation step—a fundamental non-stationarity challenge not present in static graph
+                            problems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Strategies Section -->
+            <section id="strategies" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Implemented AI Strategies</h2>
+                <p>The testbed includes multiple AI algorithms at varying stages of validation and refinement. All
+                    strategies
+                    implement a common interface enabling hot-swappable comparison under identical conditions.</p>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Classical Algorithms</h3>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Hamilton Cycle Strategy</h4>
+                        <p>Traverses the grid following a Hamiltonian path—a theoretical perfect strategy that visits
+                            every cell
+                            exactly once before returning to the start. This strategy guarantees the snake can never
+                            trap itself
+                            and provides an upper bound on optimal performance.</p>
+                        <p><strong>Research Focus:</strong> Validating theoretical guarantees against environment
+                            constraints
+                            including spawn mechanics, boundary conditions, and grid topology effects.</p>
+                    </section>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>A* Pathfinding Strategy</h4>
+                        <p>Implements A* with configurable heuristics (Manhattan, Euclidean, Chebyshev) for
+                            pathfinding-based
+                            movement. The strategy dynamically replans paths as the environment changes with each
+                            movement.</p>
+                        <p><strong>Research Focus:</strong> Handling the snake's body as a dynamic obstacle set that
+                            changes
+                            after every move, fundamentally different from static graph pathfinding problems.</p>
+                    </section>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Flood Fill Strategy</h4>
+                        <p>Uses area analysis to evaluate reachable space and detect potential deadlocks before
+                            committing to a
+                            move. Helps prevent the snake from trapping itself in spaces too small to escape.</p>
+                        <p><strong>Research Focus:</strong> Combining spatial awareness with pathfinding to avoid common
+                            failure
+                            modes in greedy approaches.</p>
+                    </section>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Manhattan Distance Strategy</h4>
+                        <p>Greedy baseline using taxicab distance heuristics to move directly toward the food without
+                            sophisticated pathfinding or obstacle avoidance.</p>
+                        <p><strong>Research Focus:</strong> Establishing a simple baseline for comparison and
+                            investigating when
+                            greedy approaches outperform more complex algorithms due to environment-specific
+                            characteristics.</p>
+                    </section>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Experimental Strategies</h3>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Basic Strategy</h4>
+                        <p>Foundational greedy baseline for comparison with minimal decision logic.</p>
+                    </section>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Random Strategy</h4>
+                        <p>Noise baseline for statistical comparison—demonstrates the absolute lower bound of
+                            performance.</p>
+                    </section>
+
+                    <section class="surface surface--3 section section--nested">
+                        <h4>Advanced Strategy</h4>
+                        <p>Hybrid approaches under active development combining multiple algorithm techniques.</p>
+                    </section>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Strategy Interface</h3>
+                    <p>All test candidates inherit from <code>BaseStrategy</code> and must implement:</p>
+                    <ul>
+                        <li><code>Direction calculateNextMove(const Snake& snake, const sf::Vector2i& food)</code> -
+                            Algorithm
+                            decision logic</li>
+                        <li><code>void update()</code> - Internal state management and algorithm-specific bookkeeping
+                        </li>
+                        <li><code>void render(sf::RenderWindow& window)</code> - Visualization of algorithm state and
+                            reasoning
+                            (heat maps, path arrows, etc.)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Technologies Section -->
+            <section id="technologies" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Technologies Used</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Core Technologies</h3>
+                        <ul>
+                            <li>C++17</li>
+                            <li>SFML 2.6+ (Graphics, System, Window)</li>
+                            <li>CMake 3.16+ (Build System)</li>
+                            <li>Modern C++ STL (containers, algorithms)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Design Patterns</h3>
+                        <ul>
+                            <li>Strategy Pattern (hot-swappable algorithms)</li>
+                            <li>State Machine (simulation lifecycle)</li>
+                            <li>Observer Pattern (event system)</li>
+                            <li>Factory Pattern (strategy instantiation)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Development Tools</h3>
+                        <ul>
+                            <li>Git (version control)</li>
+                            <li>Ninja / Make (build backend)</li>
+                            <li>Visual Studio / GCC / Clang</li>
+                            <li>CMake FetchContent (dependency management)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Key Algorithms & Techniques</h3>
+                        <ul>
+                            <li>A* Pathfinding with configurable heuristics</li>
+                            <li>Hamiltonian Cycle generation</li>
+                            <li>Flood Fill for spatial analysis</li>
+                            <li>Heat map visualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section id="architecture" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Architecture</h2>
+                <p>SNaiKE is structured around isolation, experimentation, and extensibility. The architecture supports
+                    systematic comparison of algorithms under identical environmental conditions.</p>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Strategy Pattern</h3>
+                    <p>All AI algorithms implement the <code>ISnakeStrategy</code> interface, enabling hot-swappable
+                        test
+                        candidates. This allows running the same simulation with different algorithms without modifying
+                        the core
+                        simulation engine.</p>
+                    <p>Strategies are selected at runtime via a menu system, making it easy to compare algorithm
+                        behavior
+                        under identical starting conditions.</p>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">State Machine</h3>
+                    <p>The simulation lifecycle is managed through distinct states:</p>
+                    <ul>
+                        <li><strong>MenuState:</strong> Strategy selection and configuration</li>
+                        <li><strong>PlayingState:</strong> Active simulation with chosen strategy</li>
+                        <li><strong>PausedState:</strong> Paused simulation with debug visualization</li>
+                        <li><strong>GameOverState:</strong> Results display and performance metrics</li>
+                    </ul>
+                    <p>This separation allows each state to handle its own input, rendering, and logic independently.
+                    </p>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Observer Pattern</h3>
+                    <p>An event system decouples algorithm updates from logging and visualization. Strategies publish
+                        events
+                        (move decisions, path calculations, collision detection) that are consumed by debug systems
+                        without
+                        coupling the algorithm logic to presentation concerns.</p>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Core Components</h3>
+                    <ul>
+                        <li><strong>Snake:</strong> The simulated entity—defines environment constraints, physics, and
+                            observable
+                            state</li>
+                        <li><strong>AIPlayer:</strong> Manages strategy instantiation and execution, collects
+                            performance
+                            metrics</li>
+                        <li><strong>GameLoop:</strong> Simulation engine controlling update frequency and state
+                            transitions</li>
+                        <li><strong>StateMachine:</strong> Manages simulation lifecycle transitions</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Directory Structure</h3>
+                    <!-- TODO: Consider making files/folders clickable links to GitHub source -->
+                    
+                    <div class="code-sample directory-tree-container" data-tree-id="project-structure">
+                        <div class="code-header">Project Structure</div>
+                        <div class="directory-tree"></div>
+                    </div>
+                    
+                    <!-- Directory Tree Data and Initialization -->
+                    <script>
+                        // Wait for directory tree component to load
+                        document.addEventListener('DOMContentLoaded', function() {
+                            
+                            function initializeTree() {
+                                // Check if directoryTree is available
+                                if (typeof window.directoryTree === 'undefined') {
+                                    // Poll every 100ms until component is loaded
+                                    setTimeout(initializeTree, 100);
+                                    return;
+                                }
+
+                            // AUTO-GENERATED: Directory structure (do not edit manually)
+                            // Generated by scripts/generate-directory-trees.js from GitHub API
+                            const projectStructure = [
+                                {
+                                    name: 'include/',
+                                    type: 'folder',
+                                    comment: '# Header files',
+                                    children: [
+                                        {
+                                            name: 'IntelligentArtifice/',
+                                            type: 'folder',
+                                            comment: '# AI strategy implementations',
+                                            children: [
+                                                { name: 'ISnakeStrategy.hpp', type: 'file', comment: '# Strategy interface' },
+                                                { name: 'BaseStrategy.hpp', type: 'file', comment: '# Base implementation' },
+                                                { name: 'AIPlayer.hpp', type: 'file', comment: '# Strategy executor' },
+                                                { name: 'HamiltonStrategy.hpp', type: 'file', comment: '# Hamiltonian cycle' },
+                                                { name: 'AStarStrategy.hpp', type: 'file', comment: '# A* pathfinding' },
+                                                { name: 'FloodFillStrategy.hpp', type: 'file', comment: '# Flood fill analysis' },
+                                                { name: 'ManhattanStrategy.hpp', type: 'file', comment: '# Manhattan distance' },
+                                                { name: 'BasicStrategy.hpp', type: 'file', comment: '# Basic greedy strategy' },
+                                                { name: 'AdvancedStrategy.hpp', type: 'file', comment: '# Hybrid strategy' },
+                                                { name: 'RandomStrategy.hpp', type: 'file', comment: '# Random movement baseline' },
+                                                { name: 'GridHeatMap.hpp', type: 'file', comment: '# Heat map for visualization' },
+                                                { name: 'HeatMap.hpp', type: 'file', comment: '# Heat map interface' }
+                                            ]
+                                        },
+                                        {
+                                            name: 'state_system/',
+                                            type: 'folder',
+                                            comment: '# State machine & game states',
+                                            children: [
+                                                { name: 'StateMachine.hpp', type: 'file', comment: '# State machine controller' },
+                                                { name: 'State.hpp', type: 'file', comment: '# State base class' },
+                                                {
+                                                    name: 'states/',
+                                                    type: 'folder',
+                                                    children: [
+                                                        { name: 'States.hpp', type: 'file', comment: '# State enumeration' },
+                                                        { name: 'StateClock.hpp', type: 'file', comment: '# Timing for states' },
+                                                        { name: 'MenuState.hpp', type: 'file', comment: '# Strategy selection menu' },
+                                                        { name: 'PlayingState.hpp', type: 'file', comment: '# Active simulation' },
+                                                        { name: 'PausedState.hpp', type: 'file', comment: '# Paused simulation' },
+                                                        { name: 'GameOverState.hpp', type: 'file', comment: '# Results display' }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: 'events/',
+                                            type: 'folder',
+                                            comment: '# Event system',
+                                            children: [
+                                                { name: 'Event.hpp', type: 'file', comment: '# Event base class' },
+                                                { name: 'EventManager.hpp', type: 'file', comment: '# Event dispatcher' },
+                                                { name: 'GameLifecycleEvent.hpp', type: 'file', comment: '# Game lifecycle events' },
+                                                { name: 'StateTransitionEvent.hpp', type: 'file', comment: '# State change events' }
+                                            ]
+                                        },
+                                        {
+                                            name: 'input/',
+                                            type: 'folder',
+                                            comment: '# Input handling',
+                                            children: [
+                                                { name: 'InputHandler.hpp', type: 'file', comment: '# Input processing' }
+                                            ]
+                                        },
+                                        {
+                                            name: 'game/',
+                                            type: 'folder',
+                                            comment: '# Game mechanics',
+                                            children: [
+                                                { name: 'Direction.hpp', type: 'file', comment: '# Movement directions' },
+                                                { name: 'Position.hpp', type: 'file', comment: '# Grid positions' }
+                                            ]
+                                        },
+                                        {
+                                            name: 'window/',
+                                            type: 'folder',
+                                            comment: '# Window management',
+                                            children: [
+                                                { name: 'WindowController.hpp', type: 'file', comment: '# SFML window management' }
+                                            ]
+                                        },
+                                        { name: 'Snake.hpp', type: 'file', comment: '# Snake entity' },
+                                        { name: 'GameLoop.hpp', type: 'file', comment: '# Main simulation loop' },
+                                        { name: 'GameController.hpp', type: 'file', comment: '# Game coordinator' },
+                                        { name: 'GameConfig.hpp', type: 'file', comment: '# Configuration constants' },
+                                        { name: 'GameClock.hpp', type: 'file', comment: '# Timing management' },
+                                        { name: 'ScoreLogger.hpp', type: 'file', comment: '# Performance tracking' },
+                                        { name: 'Debug.hpp', type: 'file', comment: '# Debug utilities' }
+                                    ]
+                                },
+                                {
+                                    name: 'src/',
+                                    type: 'folder',
+                                    comment: '# Source files',
+                                    children: [
+                                        {
+                                            name: 'ai/',
+                                            type: 'folder',
+                                            comment: '# AI strategy implementations',
+                                            children: [
+                                                { name: 'AIPlayer.cpp', type: 'file' },
+                                                { name: 'BaseStrategy.cpp', type: 'file' },
+                                                { name: 'HamiltonStrategy.cpp', type: 'file' },
+                                                { name: 'AStarStrategy.cpp', type: 'file' },
+                                                { name: 'FloodFillStrategy.cpp', type: 'file' },
+                                                { name: 'ManhattanStrategy.cpp', type: 'file' },
+                                                { name: 'BasicStrategy.cpp', type: 'file' },
+                                                { name: 'AdvancedStrategy.cpp', type: 'file' },
+                                                { name: 'RandomStrategy.cpp', type: 'file' }
+                                            ]
+                                        },
+                                        {
+                                            name: 'state_system/',
+                                            type: 'folder',
+                                            comment: '# State machine implementations',
+                                            children: [
+                                                { name: 'StateMachine.cpp', type: 'file' },
+                                                {
+                                                    name: 'states/',
+                                                    type: 'folder',
+                                                    children: [
+                                                        { name: 'MenuState.cpp', type: 'file' },
+                                                        { name: 'PlayingState.cpp', type: 'file' },
+                                                        { name: 'PausedState.cpp', type: 'file' },
+                                                        { name: 'GameOverState.cpp', type: 'file' }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            name: 'input/',
+                                            type: 'folder',
+                                            comment: '# Input handler implementation',
+                                            children: [
+                                                { name: 'InputHandler.cpp', type: 'file' }
+                                            ]
+                                        },
+                                        { name: 'Snake.cpp', type: 'file', comment: '# Snake implementation' },
+                                        { name: 'GameLoop.cpp', type: 'file', comment: '# Main loop implementation' },
+                                        { name: 'GameController.cpp', type: 'file', comment: '# Game coordinator' },
+                                        { name: 'main.cpp', type: 'file', comment: '# Entry point' }
+                                    ]
+                                },
+                                {
+                                    name: 'resources/',
+                                    type: 'folder',
+                                    comment: '# Assets',
+                                    children: [
+                                        { name: 'fonts/', type: 'folder', comment: '# SFML font resources', children: [] }
+                                    ]
+                                }
+                            ];
+
+                            // Initialize the tree
+                            window.directoryTree.init('[data-tree-id="project-structure"]', projectStructure);
+                            }
+                            
+                            // Start initialization
+                            initializeTree();
+                        });
+                    </script>
+                </section>
+            </section>
+
+            <!-- Implementation Section -->
+            <section id="implementation" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <p>SNaiKE provides a complete simulation environment with real-time visualization of algorithm behavior,
+                    decision-making, and performance metrics.</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Visualization Features</h3>
+                        <ul>
+                            <li>Heat maps showing algorithm decision weights</li>
+                            <li>Path arrows displaying planned routes</li>
+                            <li>Real-time performance metrics</li>
+                            <li>Grid-based rendering with SFML</li>
+                            <li>Debug overlays for algorithm state</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Simulation Features</h3>
+                        <ul>
+                            <li>Configurable grid size and update frequency</li>
+                            <li>Hot-swappable strategy selection</li>
+                            <li>Deterministic simulation for reproducibility</li>
+                            <li>Event logging for behavior analysis</li>
+                            <li>Pause/resume with state inspection</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Testing & Validation</h3>
+                        <ul>
+                            <li>Test data files for regression testing</li>
+                            <li>Performance metric collection</li>
+                            <li>Behavioral correctness validation</li>
+                            <li>Statistical comparison framework</li>
+                            <li>Reproducible simulation runs</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Algorithm Support</h3>
+                        <ul>
+                            <li>Common interface for all strategies</li>
+                            <li>Heat map generation for visualization</li>
+                            <li>Configurable heuristics (A*)</li>
+                            <li>Path planning and replanning</li>
+                            <li>Collision detection and avoidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges Section -->
+            <section id="challenges" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Development Challenges</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Algorithm Correctness</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Not all implemented strategies should currently be considered correct or production-ready
+                            representations of their respective algorithms. Several are undergoing refinement to better
+                            align with
+                            theoretical definitions.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Establishing explicit correctness criteria for each algorithm and documenting trade-offs
+                            between
+                            algorithmic purity and environmental viability. Creating validation frameworks for
+                            behavioral
+                            correctness.</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Environment-Algorithm Coupling</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>A mathematically perfect Hamiltonian path is theoretically unbeatable, yet environmental
+                            factors
+                            (spawn mechanics, body dynamics, boundary constraints) create scenarios where theoretical
+                            guarantees
+                            don't translate to measured performance.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Quantifying which performance differences are due to implementation choices versus
+                            fundamental
+                            environmental constraints. Documenting these distinctions explicitly for research
+                            transparency.</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Dynamic Obstacle Navigation</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Pathfinding algorithms designed for static graphs must accommodate the snake's body as a
+                            dynamically
+                            self-modifying obstacle that changes after every move—a fundamental non-stationarity not
+                            present in
+                            classical graph problems.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Implementing efficient replanning mechanisms and investigating how this dynamic obstacle
+                            problem
+                            affects the validity of comparing implementations to their theoretical static-graph
+                            counterparts.</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Behavioral Threshold Definition</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>What constitutes "implementing" an algorithm? Is it sufficient to execute the decision logic,
+                            or must
+                            performance meet a minimum threshold? This question is central to the research but currently
+                            unresolved.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Developing quantitative metrics for algorithm fidelity and establishing performance
+                            thresholds that
+                            distinguish between "implementing an algorithm" and "incidental behavior."</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Hybrid Approach Ambiguity</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Some "advanced" strategies blur the line between pure algorithm implementations and heuristic
+                            hybrids,
+                            requiring clear delineation for meaningful experimental comparison.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Creating explicit taxonomies for strategy types (pure classical, environment-adapted
+                            classical,
+                            hybrid, heuristic) and documenting what adaptations were made and why.</p>
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h3>Grid Topology Effects</h3>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Boundary conditions and spatial constraints fundamentally alter algorithm behavior
+                            independent of
+                            mathematical properties. Grid size affects Hamilton cycle viability and A* efficiency
+                            differently.</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Testing algorithms across multiple grid configurations and quantifying topology-dependent
+                            performance
+                            variations to isolate environmental effects from algorithmic properties.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roadmap Section -->
+            <section id="roadmap" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Development Roadmap</h2>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Phase 1: Algorithm Validation & Correctness (Current)</h3>
+                    <ul>
+                        <li>Validate Hamilton Cycle implementation against theoretical guarantees</li>
+                        <li>Complete A* implementation with all three heuristic variants functional and testable</li>
+                        <li>Establish explicit correctness criteria for each algorithm</li>
+                        <li>Document environment-specific adaptations and their justification</li>
+                        <li>Create regression test suite for behavioral validation</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Phase 2: Refactoring & Architecture Cleanup</h3>
+                    <ul>
+                        <li>Complete refactor of legacy strategy implementations</li>
+                        <li>Unify error handling and state management across all strategies</li>
+                        <li>Extract rendering/visualization logic from algorithm logic</li>
+                        <li>Improve test isolation and reproducibility</li>
+                        <li>Standardize strategy interface and base class functionality</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Phase 3: Metrics & Analysis Framework</h3>
+                    <ul>
+                        <li>Implement comprehensive performance metrics collection</li>
+                        <li>Add statistical analysis tools for comparing algorithm behavior</li>
+                        <li>Create automated regression testing suite</li>
+                        <li>Build visualization tools for algorithm decision trees</li>
+                        <li>Develop quantitative behavioral fidelity metrics</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Phase 4: Extended Algorithm Set</h3>
+                    <ul>
+                        <li>Implement additional classical algorithms (Q-Learning, Genetic Algorithm)</li>
+                        <li>Explore hybrid approaches with explicit design documentation</li>
+                        <li>Add domain-specific optimizations as separate strategy variants</li>
+                        <li>Create algorithm comparison benchmarks</li>
+                        <li>Investigate ML-based algorithm discovery within the testbed</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Potential Future Enhancements</h3>
+                    <ul>
+                        <li>Parameter exploration framework for algorithm tuning</li>
+                        <li>Multi-agent simulation support</li>
+                        <li>Different environment topologies (wraparound, obstacles, variable grid sizes)</li>
+                        <li>Automated experiment orchestration and batch testing</li>
+                        <li>Web-based visualization dashboard</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Build Instructions Section -->
+            <section id="build" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Build Instructions</h2>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Prerequisites</h3>
+                    <ul>
+                        <li>C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)</li>
+                        <li>CMake 3.16 or higher</li>
+                        <li>SFML 2.6+ (automatically fetched via CMake FetchContent)</li>
+                    </ul>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Building the Project</h3>
+                    <div class="code-sample">
+                        <div class="code-header">Build Commands</div>
+                        <pre class="language-bash">
+# Configure the build
+cmake -B build
+
+# Build the project
+cmake --build build
+
+# The executable will be located at:
+# build/bin/main (Unix-like systems)
+# build/bin/main.exe (Windows)</pre>
+                    </div>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Running Simulations</h3>
+                    <div class="code-sample">
+                        <div class="code-header">Run Command</div>
+                        <pre class="language-bash">
+# Run the executable
+./build/bin/main</pre>
+                    </div>
+                    <p>The simulation starts with a strategy selection menu. Select an algorithm to run the testbed with
+                        that
+                        strategy. The visualization allows real-time observation of algorithm behavior, decision-making,
+                        and
+                        performance metrics.</p>
+                </section>
+
+                <section class="surface surface--2 section section--nested">
+                    <h3 class="funnel-display-header">Configuration</h3>
+                    <p>See <code>ORIGINAL_TEMPLATE_README.md</code> in the repository for detailed CMake configuration
+                        options
+                        including build type, compiler selection, and SFML fetch settings.</p>
+                </section>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src alt>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
+
+</html>

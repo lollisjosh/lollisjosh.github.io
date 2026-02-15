@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Dev/SNaiKE"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "lollisjosh.github.io"
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "lollisjosh-portfolio",
+  "version": "1.0.0",
+  "description": "Josh Lollis Portfolio Website",
+  "private": true,
+  "scripts": {
+    "generate-trees": "node scripts/generate-directory-trees.js",
+    "update-trees": "npm run generate-trees"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lollisjosh/lollisjosh.github.io"
+  },
+  "author": "Josh Lollis",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

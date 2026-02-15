@@ -1,0 +1,185 @@
+/* ============================================
+   Directory Tree Component
+   Mobile-first interactive file/folder tree
+   ============================================ */
+
+/* Container */
+.directory-tree-container {
+    position: relative;
+}
+
+.directory-tree {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem;
+    text-align: left;
+}
+
+/* Controls */
+.directory-tree__controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.directory-tree__control-btn {
+    padding: 0.5rem 0.75rem;
+    min-height: 44px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.directory-tree__control-btn:active {
+    transform: scale(0.98);
+}
+
+/* Tree Structure */
+.directory-tree__node {
+    position: relative;
+    user-select: none;
+    text-align: left;
+}
+
+.directory-tree__toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    padding-left: calc(var(--depth, 0) * 1rem + 0.5rem);
+    cursor: default;
+    transition: var(--transition-fast);
+    border-radius: var(--border-radius-sm);
+    min-height: 44px;
+    text-align: left;
+}
+
+.directory-tree__node--folder > .directory-tree__toggle {
+    cursor: pointer;
+}
+
+.directory-tree__node--folder > .directory-tree__toggle:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Icons */
+.directory-tree__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition-fast);
+    color: var(--primary);
+}
+
+.directory-tree__node.is-open > .directory-tree__toggle > .directory-tree__icon {
+    transform: rotate(90deg);
+}
+
+.directory-tree__node--folder .directory-tree__icon {
+    color: var(--accent);
+}
+
+.directory-tree__node--file .directory-tree__icon {
+    color: var(--text-muted);
+}
+
+/* Labels */
+.directory-tree__label {
+    color: var(--text);
+    font-weight: 400;
+    flex: 1;
+    word-break: break-all;
+    text-align: left;
+}
+
+.directory-tree__node--folder > .directory-tree__toggle > .directory-tree__label {
+    font-weight: 600;
+}
+
+.directory-tree__comment {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    opacity: 0.8;
+}
+
+/* Children Container */
+.directory-tree__children {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+.directory-tree__node.is-open > .directory-tree__children {
+    max-height: 5000px;
+    opacity: 1;
+}
+
+/* ============================================
+   Desktop Overrides (min-width: 769px)
+   ============================================ */
+
+@media (min-width: 769px) {
+    .directory-tree {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    .directory-tree__toggle {
+        padding-left: calc(var(--depth, 0) * 1.5rem + 0.5rem);
+        min-height: auto;
+    }
+
+    .directory-tree__control-btn {
+        min-height: auto;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Desktop hover effects */
+    @media (hover: hover) {
+        .directory-tree__control-btn:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .directory-tree__toggle:hover {
+            background: rgba(237, 101, 255, 0.1);
+            transform: translateX(2px);
+        }
+
+        .directory-tree__toggle:hover .directory-tree__label {
+            color: var(--accent);
+        }
+    }
+
+    .directory-tree__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .directory-tree__comment {
+        font-size: 0.9rem;
+    }
+}
