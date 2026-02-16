@@ -14,7 +14,7 @@ const REPOS = [
   {
     owner: 'lollisjosh',
     repo: 'SNaiKE',
-    branch: 'main',
+    branch: 'good-baseline',
     htmlFile: 'projects/snaike.html',
     treeId: 'project-structure',
     includePatterns: [/^include\//, /^src\//, /^resources\//],
