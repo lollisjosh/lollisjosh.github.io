@@ -12,7 +12,7 @@ const https = require('https');
 // Configuration
 const REPOS = [
   {
-    owner: 'lollisjosh',
+    owner: 'TelloViz',
     repo: 'SNaiKE',
     branch: 'good-baseline',
     htmlFile: 'projects/snaike.html',
