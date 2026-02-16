@@ -32,7 +32,7 @@
                 <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-title">Overview</span>
                 </a>
-                <a href="#status" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                <a href="#project-status" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-title">Project Status</span>
                 </a>
                 <a href="#research" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
@@ -94,7 +94,7 @@
             </section>
 
             <!-- Project Status Section -->
-            <section id="status" class="surface surface--1 section">
+            <section id="project-status" class="surface surface--1 section">
                 <h2 class="funnel-display-header">Project Status</h2>
                 <p><strong>Status: Work in Progress</strong> - This project is in the midst of a debugging overhaul and
                     algorithmic refinement phase. Core research questions regarding algorithm correctness, behavioral
@@ -173,84 +173,98 @@
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Classical Algorithms</h3>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4>Hamilton Cycle Strategy</h4>
+                            <p>Traverses the grid following a Hamiltonian path—a theoretical perfect strategy that visits
+                                every cell
+                                exactly once before returning to the start. This strategy guarantees the snake can never
+                                trap itself
+                                and provides an upper bound on optimal performance.</p>
+                            <p><strong>Research Focus:</strong> Validating theoretical guarantees against environment
+                                constraints
+                                including spawn mechanics, boundary conditions, and grid topology effects.</p>
+                        </div>
 
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Hamilton Cycle Strategy</h4>
-                        <p>Traverses the grid following a Hamiltonian path—a theoretical perfect strategy that visits
-                            every cell
-                            exactly once before returning to the start. This strategy guarantees the snake can never
-                            trap itself
-                            and provides an upper bound on optimal performance.</p>
-                        <p><strong>Research Focus:</strong> Validating theoretical guarantees against environment
-                            constraints
-                            including spawn mechanics, boundary conditions, and grid topology effects.</p>
-                    </section>
+                        <div class="skill-category hover-transform-up">
+                            <h4>A* Pathfinding Strategy</h4>
+                            <p>Implements A* with configurable heuristics (Manhattan, Euclidean, Chebyshev) for
+                                pathfinding-based
+                                movement. The strategy dynamically replans paths as the environment changes with each
+                                movement.</p>
+                            <p><strong>Research Focus:</strong> Handling the snake's body as a dynamic obstacle set that
+                                changes
+                                after every move, fundamentally different from static graph pathfinding problems.</p>
+                        </div>
 
-                    <section class="surface surface--3 section section--nested">
-                        <h4>A* Pathfinding Strategy</h4>
-                        <p>Implements A* with configurable heuristics (Manhattan, Euclidean, Chebyshev) for
-                            pathfinding-based
-                            movement. The strategy dynamically replans paths as the environment changes with each
-                            movement.</p>
-                        <p><strong>Research Focus:</strong> Handling the snake's body as a dynamic obstacle set that
-                            changes
-                            after every move, fundamentally different from static graph pathfinding problems.</p>
-                    </section>
+                        <div class="skill-category hover-transform-up">
+                            <h4>Flood Fill Strategy</h4>
+                            <p>Uses area analysis to evaluate reachable space and detect potential deadlocks before
+                                committing to a
+                                move. Helps prevent the snake from trapping itself in spaces too small to escape.</p>
+                            <p><strong>Research Focus:</strong> Combining spatial awareness with pathfinding to avoid common
+                                failure
+                                modes in greedy approaches.</p>
+                        </div>
 
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Flood Fill Strategy</h4>
-                        <p>Uses area analysis to evaluate reachable space and detect potential deadlocks before
-                            committing to a
-                            move. Helps prevent the snake from trapping itself in spaces too small to escape.</p>
-                        <p><strong>Research Focus:</strong> Combining spatial awareness with pathfinding to avoid common
-                            failure
-                            modes in greedy approaches.</p>
-                    </section>
-
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Manhattan Distance Strategy</h4>
-                        <p>Greedy baseline using taxicab distance heuristics to move directly toward the food without
-                            sophisticated pathfinding or obstacle avoidance.</p>
-                        <p><strong>Research Focus:</strong> Establishing a simple baseline for comparison and
-                            investigating when
-                            greedy approaches outperform more complex algorithms due to environment-specific
-                            characteristics.</p>
-                    </section>
+                        <div class="skill-category hover-transform-up">
+                            <h4>Manhattan Distance Strategy</h4>
+                            <p>Greedy baseline using taxicab distance heuristics to move directly toward the food without
+                                sophisticated pathfinding or obstacle avoidance.</p>
+                            <p><strong>Research Focus:</strong> Establishing a simple baseline for comparison and
+                                investigating when
+                                greedy approaches outperform more complex algorithms due to environment-specific
+                                characteristics.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Experimental Strategies</h3>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4>Basic Strategy</h4>
+                            <p>Foundational greedy baseline for comparison with minimal decision logic.</p>
+                        </div>
 
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Basic Strategy</h4>
-                        <p>Foundational greedy baseline for comparison with minimal decision logic.</p>
-                    </section>
+                        <div class="skill-category hover-transform-up">
+                            <h4>Random Strategy</h4>
+                            <p>Noise baseline for statistical comparison—demonstrates the absolute lower bound of
+                                performance.</p>
+                        </div>
 
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Random Strategy</h4>
-                        <p>Noise baseline for statistical comparison—demonstrates the absolute lower bound of
-                            performance.</p>
-                    </section>
-
-                    <section class="surface surface--3 section section--nested">
-                        <h4>Advanced Strategy</h4>
-                        <p>Hybrid approaches under active development combining multiple algorithm techniques.</p>
-                    </section>
+                        <div class="skill-category hover-transform-up">
+                            <h4>Advanced Strategy</h4>
+                            <p>Hybrid approaches under active development combining multiple algorithm techniques.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Strategy Interface</h3>
                     <p>All test candidates inherit from <code>BaseStrategy</code> and must implement:</p>
-                    <ul>
-                        <li><code>Direction calculateNextMove(const Snake& snake, const sf::Vector2i& food)</code> -
-                            Algorithm
-                            decision logic</li>
-                        <li><code>void update()</code> - Internal state management and algorithm-specific bookkeeping
-                        </li>
-                        <li><code>void render(sf::RenderWindow& window)</code> - Visualization of algorithm state and
-                            reasoning
-                            (heat maps, path arrows, etc.)</li>
-                    </ul>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4>calculateNextMove()</h4>
+                            <p><code>Direction calculateNextMove(const Snake& snake, const sf::Vector2i& food)</code></p>
+                            <p>Algorithm decision logic</p>
+                        </div>
+                        
+                        <div class="skill-category hover-transform-up">
+                            <h4>update()</h4>
+                            <p><code>void update()</code></p>
+                            <p>Internal state management and algorithm-specific bookkeeping</p>
+                        </div>
+                        
+                        <div class="skill-category hover-transform-up">
+                            <h4>render()</h4>
+                            <p><code>void render(sf::RenderWindow& window)</code></p>
+                            <p>Visualization of algorithm state and reasoning (heat maps, path arrows, etc.)</p>
+                        </div>
+                    </div>
                 </section>
             </section>
 
@@ -318,12 +332,14 @@
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">State Machine</h3>
                     <p>The simulation lifecycle is managed through distinct states:</p>
-                    <ul>
-                        <li><strong>MenuState:</strong> Strategy selection and configuration</li>
-                        <li><strong>PlayingState:</strong> Active simulation with chosen strategy</li>
-                        <li><strong>PausedState:</strong> Paused simulation with debug visualization</li>
-                        <li><strong>GameOverState:</strong> Results display and performance metrics</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li><strong>MenuState:</strong> Strategy selection and configuration</li>
+                            <li><strong>PlayingState:</strong> Active simulation with chosen strategy</li>
+                            <li><strong>PausedState:</strong> Paused simulation with debug visualization</li>
+                            <li><strong>GameOverState:</strong> Results display and performance metrics</li>
+                        </ul>
+                    </div>
                     <p>This separation allows each state to handle its own input, rendering, and logic independently.
                     </p>
                 </section>
@@ -339,33 +355,35 @@
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Core Components</h3>
-                    <ul>
-                        <li><strong>Snake:</strong> The simulated entity—defines environment constraints, physics, and
-                            observable
-                            state</li>
-                        <li><strong>AIPlayer:</strong> Manages strategy instantiation and execution, collects
-                            performance
-                            metrics</li>
-                        <li><strong>GameLoop:</strong> Simulation engine controlling update frequency and state
-                            transitions</li>
-                        <li><strong>StateMachine:</strong> Manages simulation lifecycle transitions</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li><strong>Snake:</strong> The simulated entity—defines environment constraints, physics, and
+                                observable
+                                state</li>
+                            <li><strong>AIPlayer:</strong> Manages strategy instantiation and execution, collects
+                                performance
+                                metrics</li>
+                            <li><strong>GameLoop:</strong> Simulation engine controlling update frequency and state
+                                transitions</li>
+                            <li><strong>StateMachine:</strong> Manages simulation lifecycle transitions</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Directory Structure</h3>
                     <!-- TODO: Consider making files/folders clickable links to GitHub source -->
-                    
+
                     <div class="code-sample directory-tree-container" data-tree-id="project-structure">
                         <div class="code-header">Project Structure</div>
                         <div class="directory-tree"></div>
                     </div>
-                    
+
                     <!-- Directory Tree Data and Initialization -->
                     <script>
                         // Wait for directory tree component to load
-                        document.addEventListener('DOMContentLoaded', function() {
-                            
+                        document.addEventListener('DOMContentLoaded', function () {
+
                             function initializeTree() {
                                 // Check if directoryTree is available
                                 if (typeof window.directoryTree === 'undefined') {
@@ -374,166 +392,166 @@
                                     return;
                                 }
 
-                            // AUTO-GENERATED: Directory structure (do not edit manually)
-                            // Generated by scripts/generate-directory-trees.js from GitHub API
-                            const projectStructure = [
-                                {
-                                    name: 'include/',
-                                    type: 'folder',
-                                    comment: '# Header files',
-                                    children: [
-                                        {
-                                            name: 'ai/',
-                                            type: 'folder',
-                                            comment: '# AI strategy implementations',
-                                            children: [
-                                                { name: 'ISnakeStrategy.hpp', type: 'file', comment: '# Strategy interface' },
-                                                { name: 'BaseStrategy.hpp', type: 'file', comment: '# Base implementation' },
-                                                { name: 'AIPlayer.hpp', type: 'file', comment: '# Strategy executor' },
-                                                { name: 'HamiltonStrategy.hpp', type: 'file', comment: '# Hamiltonian cycle' },
-                                                { name: 'AStarStrategy.hpp', type: 'file', comment: '# A* pathfinding' },
-                                                { name: 'FloodFillStrategy.hpp', type: 'file', comment: '# Flood fill analysis' },
-                                                { name: 'ManhattanStrategy.hpp', type: 'file', comment: '# Manhattan distance' },
-                                                { name: 'BasicStrategy.hpp', type: 'file', comment: '# Basic greedy strategy' },
-                                                { name: 'AdvancedStrategy.hpp', type: 'file', comment: '# Hybrid strategy' },
-                                                { name: 'RandomStrategy.hpp', type: 'file', comment: '# Random movement baseline' },
-                                                { name: 'GridHeatMap.hpp', type: 'file', comment: '# Heat map for visualization' },
-                                                { name: 'HeatMap.hpp', type: 'file', comment: '# Heat map interface' }
-                                            ]
-                                        },
-                                        {
-                                            name: 'state_system/',
-                                            type: 'folder',
-                                            comment: '# State machine & game states',
-                                            children: [
-                                                { name: 'StateMachine.hpp', type: 'file', comment: '# State machine controller' },
-                                                { name: 'State.hpp', type: 'file', comment: '# State base class' },
-                                                {
-                                                    name: 'states/',
-                                                    type: 'folder',
-                                                    children: [
-                                                        { name: 'States.hpp', type: 'file', comment: '# State enumeration' },
-                                                        { name: 'StateClock.hpp', type: 'file', comment: '# Timing for states' },
-                                                        { name: 'MenuState.hpp', type: 'file', comment: '# Strategy selection menu' },
-                                                        { name: 'PlayingState.hpp', type: 'file', comment: '# Active simulation' },
-                                                        { name: 'PausedState.hpp', type: 'file', comment: '# Paused simulation' },
-                                                        { name: 'GameOverState.hpp', type: 'file', comment: '# Results display' }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            name: 'events/',
-                                            type: 'folder',
-                                            comment: '# Event system',
-                                            children: [
-                                                { name: 'Event.hpp', type: 'file', comment: '# Event base class' },
-                                                { name: 'EventManager.hpp', type: 'file', comment: '# Event dispatcher' },
-                                                { name: 'GameLifecycleEvent.hpp', type: 'file', comment: '# Game lifecycle events' },
-                                                { name: 'StateTransitionEvent.hpp', type: 'file', comment: '# State change events' }
-                                            ]
-                                        },
-                                        {
-                                            name: 'input/',
-                                            type: 'folder',
-                                            comment: '# Input handling',
-                                            children: [
-                                                { name: 'InputHandler.hpp', type: 'file', comment: '# Input processing' }
-                                            ]
-                                        },
-                                        {
-                                            name: 'game/',
-                                            type: 'folder',
-                                            comment: '# Game mechanics',
-                                            children: [
-                                                { name: 'Direction.hpp', type: 'file', comment: '# Movement directions' },
-                                                { name: 'Position.hpp', type: 'file', comment: '# Grid positions' }
-                                            ]
-                                        },
-                                        {
-                                            name: 'window/',
-                                            type: 'folder',
-                                            comment: '# Window management',
-                                            children: [
-                                                { name: 'WindowController.hpp', type: 'file', comment: '# SFML window management' }
-                                            ]
-                                        },
-                                        { name: 'Snake.hpp', type: 'file', comment: '# Snake entity' },
-                                        { name: 'GameLoop.hpp', type: 'file', comment: '# Main simulation loop' },
-                                        { name: 'GameController.hpp', type: 'file', comment: '# Game coordinator' },
-                                        { name: 'GameConfig.hpp', type: 'file', comment: '# Configuration constants' },
-                                        { name: 'GameClock.hpp', type: 'file', comment: '# Timing management' },
-                                        { name: 'ScoreLogger.hpp', type: 'file', comment: '# Performance tracking' },
-                                        { name: 'Debug.hpp', type: 'file', comment: '# Debug utilities' }
-                                    ]
-                                },
-                                {
-                                    name: 'src/',
-                                    type: 'folder',
-                                    comment: '# Source files',
-                                    children: [
-                                        {
-                                            name: 'ai/',
-                                            type: 'folder',
-                                            comment: '# AI strategy implementations',
-                                            children: [
-                                                { name: 'AIPlayer.cpp', type: 'file' },
-                                                { name: 'BaseStrategy.cpp', type: 'file' },
-                                                { name: 'HamiltonStrategy.cpp', type: 'file' },
-                                                { name: 'AStarStrategy.cpp', type: 'file' },
-                                                { name: 'FloodFillStrategy.cpp', type: 'file' },
-                                                { name: 'ManhattanStrategy.cpp', type: 'file' },
-                                                { name: 'BasicStrategy.cpp', type: 'file' },
-                                                { name: 'AdvancedStrategy.cpp', type: 'file' },
-                                                { name: 'RandomStrategy.cpp', type: 'file' }
-                                            ]
-                                        },
-                                        {
-                                            name: 'state_system/',
-                                            type: 'folder',
-                                            comment: '# State machine implementations',
-                                            children: [
-                                                { name: 'StateMachine.cpp', type: 'file' },
-                                                {
-                                                    name: 'states/',
-                                                    type: 'folder',
-                                                    children: [
-                                                        { name: 'MenuState.cpp', type: 'file' },
-                                                        { name: 'PlayingState.cpp', type: 'file' },
-                                                        { name: 'PausedState.cpp', type: 'file' },
-                                                        { name: 'GameOverState.cpp', type: 'file' }
-                                                    ]
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            name: 'input/',
-                                            type: 'folder',
-                                            comment: '# Input handler implementation',
-                                            children: [
-                                                { name: 'InputHandler.cpp', type: 'file' }
-                                            ]
-                                        },
-                                        { name: 'Snake.cpp', type: 'file', comment: '# Snake implementation' },
-                                        { name: 'GameLoop.cpp', type: 'file', comment: '# Main loop implementation' },
-                                        { name: 'GameController.cpp', type: 'file', comment: '# Game coordinator' },
-                                        { name: 'main.cpp', type: 'file', comment: '# Entry point' }
-                                    ]
-                                },
-                                {
-                                    name: 'resources/',
-                                    type: 'folder',
-                                    comment: '# Assets',
-                                    children: [
-                                        { name: 'fonts/', type: 'folder', comment: '# SFML font resources', children: [] }
-                                    ]
-                                }
-                            ];
+                                // AUTO-GENERATED: Directory structure (do not edit manually)
+                                // Generated by scripts/generate-directory-trees.js from GitHub API
+                                const projectStructure = [
+                                    {
+                                        name: 'include/',
+                                        type: 'folder',
+                                        comment: '# Header files',
+                                        children: [
+                                            {
+                                                name: 'ai/',
+                                                type: 'folder',
+                                                comment: '# AI strategy implementations',
+                                                children: [
+                                                    { name: 'ISnakeStrategy.hpp', type: 'file', comment: '# Strategy interface' },
+                                                    { name: 'BaseStrategy.hpp', type: 'file', comment: '# Base implementation' },
+                                                    { name: 'AIPlayer.hpp', type: 'file', comment: '# Strategy executor' },
+                                                    { name: 'HamiltonStrategy.hpp', type: 'file', comment: '# Hamiltonian cycle' },
+                                                    { name: 'AStarStrategy.hpp', type: 'file', comment: '# A* pathfinding' },
+                                                    { name: 'FloodFillStrategy.hpp', type: 'file', comment: '# Flood fill analysis' },
+                                                    { name: 'ManhattanStrategy.hpp', type: 'file', comment: '# Manhattan distance' },
+                                                    { name: 'BasicStrategy.hpp', type: 'file', comment: '# Basic greedy strategy' },
+                                                    { name: 'AdvancedStrategy.hpp', type: 'file', comment: '# Hybrid strategy' },
+                                                    { name: 'RandomStrategy.hpp', type: 'file', comment: '# Random movement baseline' },
+                                                    { name: 'GridHeatMap.hpp', type: 'file', comment: '# Heat map for visualization' },
+                                                    { name: 'HeatMap.hpp', type: 'file', comment: '# Heat map interface' }
+                                                ]
+                                            },
+                                            {
+                                                name: 'state_system/',
+                                                type: 'folder',
+                                                comment: '# State machine & game states',
+                                                children: [
+                                                    { name: 'StateMachine.hpp', type: 'file', comment: '# State machine controller' },
+                                                    { name: 'State.hpp', type: 'file', comment: '# State base class' },
+                                                    {
+                                                        name: 'states/',
+                                                        type: 'folder',
+                                                        children: [
+                                                            { name: 'States.hpp', type: 'file', comment: '# State enumeration' },
+                                                            { name: 'StateClock.hpp', type: 'file', comment: '# Timing for states' },
+                                                            { name: 'MenuState.hpp', type: 'file', comment: '# Strategy selection menu' },
+                                                            { name: 'PlayingState.hpp', type: 'file', comment: '# Active simulation' },
+                                                            { name: 'PausedState.hpp', type: 'file', comment: '# Paused simulation' },
+                                                            { name: 'GameOverState.hpp', type: 'file', comment: '# Results display' }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                name: 'events/',
+                                                type: 'folder',
+                                                comment: '# Event system',
+                                                children: [
+                                                    { name: 'Event.hpp', type: 'file', comment: '# Event base class' },
+                                                    { name: 'EventManager.hpp', type: 'file', comment: '# Event dispatcher' },
+                                                    { name: 'GameLifecycleEvent.hpp', type: 'file', comment: '# Game lifecycle events' },
+                                                    { name: 'StateTransitionEvent.hpp', type: 'file', comment: '# State change events' }
+                                                ]
+                                            },
+                                            {
+                                                name: 'input/',
+                                                type: 'folder',
+                                                comment: '# Input handling',
+                                                children: [
+                                                    { name: 'InputHandler.hpp', type: 'file', comment: '# Input processing' }
+                                                ]
+                                            },
+                                            {
+                                                name: 'game/',
+                                                type: 'folder',
+                                                comment: '# Game mechanics',
+                                                children: [
+                                                    { name: 'Direction.hpp', type: 'file', comment: '# Movement directions' },
+                                                    { name: 'Position.hpp', type: 'file', comment: '# Grid positions' }
+                                                ]
+                                            },
+                                            {
+                                                name: 'window/',
+                                                type: 'folder',
+                                                comment: '# Window management',
+                                                children: [
+                                                    { name: 'WindowController.hpp', type: 'file', comment: '# SFML window management' }
+                                                ]
+                                            },
+                                            { name: 'Snake.hpp', type: 'file', comment: '# Snake entity' },
+                                            { name: 'GameLoop.hpp', type: 'file', comment: '# Main simulation loop' },
+                                            { name: 'GameController.hpp', type: 'file', comment: '# Game coordinator' },
+                                            { name: 'GameConfig.hpp', type: 'file', comment: '# Configuration constants' },
+                                            { name: 'GameClock.hpp', type: 'file', comment: '# Timing management' },
+                                            { name: 'ScoreLogger.hpp', type: 'file', comment: '# Performance tracking' },
+                                            { name: 'Debug.hpp', type: 'file', comment: '# Debug utilities' }
+                                        ]
+                                    },
+                                    {
+                                        name: 'src/',
+                                        type: 'folder',
+                                        comment: '# Source files',
+                                        children: [
+                                            {
+                                                name: 'ai/',
+                                                type: 'folder',
+                                                comment: '# AI strategy implementations',
+                                                children: [
+                                                    { name: 'AIPlayer.cpp', type: 'file' },
+                                                    { name: 'BaseStrategy.cpp', type: 'file' },
+                                                    { name: 'HamiltonStrategy.cpp', type: 'file' },
+                                                    { name: 'AStarStrategy.cpp', type: 'file' },
+                                                    { name: 'FloodFillStrategy.cpp', type: 'file' },
+                                                    { name: 'ManhattanStrategy.cpp', type: 'file' },
+                                                    { name: 'BasicStrategy.cpp', type: 'file' },
+                                                    { name: 'AdvancedStrategy.cpp', type: 'file' },
+                                                    { name: 'RandomStrategy.cpp', type: 'file' }
+                                                ]
+                                            },
+                                            {
+                                                name: 'state_system/',
+                                                type: 'folder',
+                                                comment: '# State machine implementations',
+                                                children: [
+                                                    { name: 'StateMachine.cpp', type: 'file' },
+                                                    {
+                                                        name: 'states/',
+                                                        type: 'folder',
+                                                        children: [
+                                                            { name: 'MenuState.cpp', type: 'file' },
+                                                            { name: 'PlayingState.cpp', type: 'file' },
+                                                            { name: 'PausedState.cpp', type: 'file' },
+                                                            { name: 'GameOverState.cpp', type: 'file' }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                name: 'input/',
+                                                type: 'folder',
+                                                comment: '# Input handler implementation',
+                                                children: [
+                                                    { name: 'InputHandler.cpp', type: 'file' }
+                                                ]
+                                            },
+                                            { name: 'Snake.cpp', type: 'file', comment: '# Snake implementation' },
+                                            { name: 'GameLoop.cpp', type: 'file', comment: '# Main loop implementation' },
+                                            { name: 'GameController.cpp', type: 'file', comment: '# Game coordinator' },
+                                            { name: 'main.cpp', type: 'file', comment: '# Entry point' }
+                                        ]
+                                    },
+                                    {
+                                        name: 'resources/',
+                                        type: 'folder',
+                                        comment: '# Assets',
+                                        children: [
+                                            { name: 'fonts/', type: 'folder', comment: '# SFML font resources', children: [] }
+                                        ]
+                                    }
+                                ];
 
-                            // Initialize the tree
-                            window.directoryTree.init('[data-tree-id="project-structure"]', projectStructure);
+                                // Initialize the tree
+                                window.directoryTree.init('[data-tree-id="project-structure"]', projectStructure);
                             }
-                            
+
                             // Start initialization
                             initializeTree();
                         });
@@ -689,57 +707,67 @@
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Phase 1: Algorithm Validation & Correctness (Current)</h3>
-                    <ul>
-                        <li>Validate Hamilton Cycle implementation against theoretical guarantees</li>
-                        <li>Complete A* implementation with all three heuristic variants functional and testable</li>
-                        <li>Establish explicit correctness criteria for each algorithm</li>
-                        <li>Document environment-specific adaptations and their justification</li>
-                        <li>Create regression test suite for behavioral validation</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>Validate Hamilton Cycle implementation against theoretical guarantees</li>
+                            <li>Complete A* implementation with all three heuristic variants functional and testable</li>
+                            <li>Establish explicit correctness criteria for each algorithm</li>
+                            <li>Document environment-specific adaptations and their justification</li>
+                            <li>Create regression test suite for behavioral validation</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Phase 2: Refactoring & Architecture Cleanup</h3>
-                    <ul>
-                        <li>Complete refactor of legacy strategy implementations</li>
-                        <li>Unify error handling and state management across all strategies</li>
-                        <li>Extract rendering/visualization logic from algorithm logic</li>
-                        <li>Improve test isolation and reproducibility</li>
-                        <li>Standardize strategy interface and base class functionality</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>Complete refactor of legacy strategy implementations</li>
+                            <li>Unify error handling and state management across all strategies</li>
+                            <li>Extract rendering/visualization logic from algorithm logic</li>
+                            <li>Improve test isolation and reproducibility</li>
+                            <li>Standardize strategy interface and base class functionality</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Phase 3: Metrics & Analysis Framework</h3>
-                    <ul>
-                        <li>Implement comprehensive performance metrics collection</li>
-                        <li>Add statistical analysis tools for comparing algorithm behavior</li>
-                        <li>Create automated regression testing suite</li>
-                        <li>Build visualization tools for algorithm decision trees</li>
-                        <li>Develop quantitative behavioral fidelity metrics</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>Implement comprehensive performance metrics collection</li>
+                            <li>Add statistical analysis tools for comparing algorithm behavior</li>
+                            <li>Create automated regression testing suite</li>
+                            <li>Build visualization tools for algorithm decision trees</li>
+                            <li>Develop quantitative behavioral fidelity metrics</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Phase 4: Extended Algorithm Set</h3>
-                    <ul>
-                        <li>Implement additional classical algorithms (Q-Learning, Genetic Algorithm)</li>
-                        <li>Explore hybrid approaches with explicit design documentation</li>
-                        <li>Add domain-specific optimizations as separate strategy variants</li>
-                        <li>Create algorithm comparison benchmarks</li>
-                        <li>Investigate ML-based algorithm discovery within the testbed</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>Implement additional classical algorithms (Q-Learning, Genetic Algorithm)</li>
+                            <li>Explore hybrid approaches with explicit design documentation</li>
+                            <li>Add domain-specific optimizations as separate strategy variants</li>
+                            <li>Create algorithm comparison benchmarks</li>
+                            <li>Investigate ML-based algorithm discovery within the testbed</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Potential Future Enhancements</h3>
-                    <ul>
-                        <li>Parameter exploration framework for algorithm tuning</li>
-                        <li>Multi-agent simulation support</li>
-                        <li>Different environment topologies (wraparound, obstacles, variable grid sizes)</li>
-                        <li>Automated experiment orchestration and batch testing</li>
-                        <li>Web-based visualization dashboard</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>Parameter exploration framework for algorithm tuning</li>
+                            <li>Multi-agent simulation support</li>
+                            <li>Different environment topologies (wraparound, obstacles, variable grid sizes)</li>
+                            <li>Automated experiment orchestration and batch testing</li>
+                            <li>Web-based visualization dashboard</li>
+                        </ul>
+                    </div>
                 </section>
             </section>
 
@@ -749,27 +777,30 @@
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Prerequisites</h3>
-                    <ul>
-                        <li>C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)</li>
-                        <li>CMake 3.16 or higher</li>
-                        <li>SFML 2.6+ (automatically fetched via CMake FetchContent)</li>
-                    </ul>
+                    <div class="skill-category">
+                        <ul>
+                            <li>C++17 compatible compiler (GCC 7+, Clang 5+, MSVC 2017+)</li>
+                            <li>CMake 3.16 or higher</li>
+                            <li>SFML 2.6+ (automatically fetched via CMake FetchContent)</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="surface surface--2 section section--nested">
                     <h3 class="funnel-display-header">Building the Project</h3>
                     <div class="code-sample">
                         <div class="code-header">Build Commands</div>
-                        <pre class="language-bash">
-# Configure the build
-cmake -B build
+                        <pre class="language-bash"
+                            style="text-align: left; white-space: pre; font-family: 'Courier New', monospace;">
+                            # Configure the build
+                            cmake -B build
 
-# Build the project
-cmake --build build
+                            # Build the project
+                            cmake --build build
 
-# The executable will be located at:
-# build/bin/main (Unix-like systems)
-# build/bin/main.exe (Windows)</pre>
+                            # The executable will be located at:
+                            # build/bin/main (Unix-like systems)
+                            # build/bin/main.exe (Windows)</pre>
                     </div>
                 </section>
 
@@ -777,7 +808,8 @@ cmake --build build
                     <h3 class="funnel-display-header">Running Simulations</h3>
                     <div class="code-sample">
                         <div class="code-header">Run Command</div>
-                        <pre class="language-bash">
+                        <pre class="language-bash"
+                            style="text-align: left; white-space: pre; font-family: 'Courier New', monospace;">
 # Run the executable
 ./build/bin/main</pre>
                     </div>
