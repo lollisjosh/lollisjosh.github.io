@@ -1,6 +1,11 @@
 name: Update Directory Trees
 
 on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'projects/snaike.html' # Don't trigger if only snaike.html changed (avoid loops)
   workflow_dispatch: # Manual trigger
   schedule:
     - cron: '0 0 * * 0' # Weekly on Sunday at midnight UTC (optional)
