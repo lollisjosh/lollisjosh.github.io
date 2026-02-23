@@ -40,6 +40,22 @@
   font-size: 1.5em;
 }
 
+.instagram-card {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+  color: white !important;
+  border: 2px solid #331236;
+}
+
+.instagram-card:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+.instagram-card .toc-icon {
+  font-size: 1.5em;
+}
+
 @media (min-width: 769px) {
   .repo-card {
     background: var(--black) !important;
@@ -52,5 +68,11 @@
     background: var(--black);
     color: var(--white);
     border: 4px solid var(--dark-accent);
+  }
+
+  .instagram-card {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    color: var(--white) !important;
+    border: 2px solid var(--dark-accent);
   }
 }

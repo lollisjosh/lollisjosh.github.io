@@ -1,0 +1,157 @@
+<!--
+    Lake Superior Band Page
+    Author: Josh Lollis
+    Date: Feburary 22, 2026
+    
+    Landing page showcasing guitar performances and music compositions
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Standard meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Superior Band | Portfolio</title>
+
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">
+        html {
+            visibility: hidden
+        }
+    </style>
+
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
+
+    <!-- Page-specific CSS (if any) -->
+    <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
+</head>
+
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Lake Superior</h1>
+            <!-- <h4 class="funnel-display-header">Midwest Emo Band</h4> -->
+
+            <!-- Navigation TOC -->
+            <nav class="toc-nav">
+                <a href="#shows" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Upcoming Shows</span>
+                </a>
+                <a href="#members" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Members</span>
+                </a>
+                <a href="#story" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Our Story</span>
+                </a>
+
+                <a href="#past-shows" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Past Shows</span>
+                </a>
+                <a href="https://www.instagram.com/lakesuperiorband" target="_blank"
+                    class="toc-card instagram-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon fab fa fa-instagram"></span>
+                    <span class="toc-title">Instagram</span>
+                </a>
+            </nav>
+
+            <!-- Upcoming Shows Section -->
+            <section id="shows" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Upcoming Shows</h2>
+                <p>[Upcoming show dates and venues will go here]</p>
+            </section>
+
+            <!-- Members Section -->
+            <section id="members" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Members</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <img src="/assets/images/band/taylor.jpg" alt="Taylor" 
+                            class="media media--contain media--clickable media--md"
+                            style="margin-bottom: 1rem;">
+                        <h3>Taylor</h3>
+                        <p>Vocals / Guitar</p>
+                    </div>
+                    
+                    <div class="skill-category hover-transform-up">
+                        <img src="/assets/images/band/josh.jpg" alt="Josh" 
+                            class="media media--contain media--clickable media--md"
+                            style="margin-bottom: 1rem;">
+                        <h3>Josh</h3>
+                        <p>Bass Guitar</p>
+                    </div>
+                    
+                    <div class="skill-category hover-transform-up">
+                        <img src="/assets/images/band/zak.jpg" alt="Zak" 
+                            class="media media--contain media--clickable media--md"
+                            style="margin-bottom: 1rem;">
+                        <h3>Zak</h3>
+                        <p>Drums / Vocals</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Story Section -->
+            <section id="story" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Our Story</h2>
+                <img src="/assets/images/band/FirstBandPhoto.JPG" alt="Lake Superior Band"
+                    class="media media--contain media--clickable media--md">
+                <section id="band-story" class="surface surface--2 section">
+                    <p>[Band history and story will go here]</p>
+                </section>
+            </section>
+
+            <!-- Past Shows Section -->
+            <section id="past-shows" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Past Shows</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h3>Better2Gether Grand Opening</h3>
+                        <p><strong>August 8, 2025</strong><br>Long Beach</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Roxanne's Bar</h3>
+                        <p><strong>August 27, 2025</strong><br>Long Beach</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Live Your Dream, Live Your Purpose</h3>
+                        <p><strong>October 4, 2025</strong><br>USC</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Long Beach Harvest Kickoff Music Festival</h3>
+                        <p><strong>November 1, 2025</strong><br>Hosted by Andrew Beard<br>Long Beach</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Friendsgiving Live Stream</h3>
+                        <p><strong>November 22, 2025</strong><br>Hosted by Jorge Luis<br>Westminster</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h3>Roxanne's Bar</h3>
+                        <p><strong>January 14, 2026</strong><br>Long Beach</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Back to top button -->
+    <button class="back-to-top-button hidden" aria-label="Back to top">
+        <i class="fa-solid fa-circle-chevron-up"></i>
+    </button>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src alt>
+    </div>
+    <script src="/scripts.js"></script>
+</body>
+
+</html>
