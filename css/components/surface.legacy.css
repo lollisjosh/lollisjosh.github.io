@@ -1,4 +1,4 @@
-/* legacy.css — TEMPORARY compatibility layer
+/* legacy.css : TEMPORARY compatibility layer
    Goal: keep old HTML working while migrating to the new system.
    Do not add new features here. Do not use these classes in new HTML.
    Delete this file when grep shows no legacy class usage.

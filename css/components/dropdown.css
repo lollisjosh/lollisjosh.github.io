@@ -109,7 +109,7 @@
   background: rgba(237, 101, 255, 0.05);
 }
 
-/* Desktop overrides — apply on the same files above */
+/* Desktop overrides : apply on the same files above */
 @media (min-width: 769px) {
   .dropdown-header {
     padding: 0.75rem 1.25rem;

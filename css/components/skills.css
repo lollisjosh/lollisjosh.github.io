@@ -1,8 +1,8 @@
-/* skills.css — component module for skill grid, categories, and tags */
+/* skills.css : component module for skill grid, categories, and tags */
 
 /* Grid layout (mobile-first) */
 /* Usage:
- *  .skills-grid (mobile) — used in these pages:
+ *  .skills-grid (mobile) : used in these pages:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -25,7 +25,7 @@
 
 /* Skill category card */
 /* Usage:
- *  .skill-category (mobile) — used in these pages (many occurrences):
+ *  .skill-category (mobile) : used in these pages (many occurrences):
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -52,7 +52,7 @@
 
 /* Only apply hover motion on devices that actually support hover */
 /* Usage:
- *  .skill-category:hover — hover motion applied to skill cards in:
+ *  .skill-category:hover : hover motion applied to skill cards in:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -71,7 +71,7 @@
 } 
 
 /* Usage:
- *  .skill-category h3 — headings inside skill cards found in:
+ *  .skill-category h3 : headings inside skill cards found in:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -88,7 +88,7 @@
 } 
 
 /* Usage:
- *  .skill-category ul — lists inside skill cards used in:
+ *  .skill-category ul : lists inside skill cards used in:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -105,7 +105,7 @@
 } 
 
 /* Usage:
- *  .skill-category li — individual list items inside skill cards used in:
+ *  .skill-category li : individual list items inside skill cards used in:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -122,7 +122,7 @@
 } 
 
 /* Usage:
- *  .skill-category li:last-child — used in same skill-card lists in:
+ *  .skill-category li:last-child : used in same skill-card lists in:
  *   - projects/snake.html
  *   - projects/portfolio.html
  *   - skills.html
@@ -140,7 +140,7 @@
 @media (min-width: 769px) {
   /* Grid: switch to multi-column */
   /* Usage:
-   *  .skills-grid (desktop) — used in:
+   *  .skills-grid (desktop) : used in:
    *   - projects/snake.html
    *   - projects/portfolio.html
    *   - skills.html
@@ -162,7 +162,7 @@
 
   /* Card: allow it to fill its grid cell (don’t stay 85% wide) */
   /* Usage:
-   *  .skill-category (desktop) — used in:
+   *  .skill-category (desktop) : used in:
    *   - projects/snake.html
    *   - projects/portfolio.html
    *   - skills.html

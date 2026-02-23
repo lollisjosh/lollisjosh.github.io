@@ -60,7 +60,7 @@
 
 /* Desktop overrides */
 @media (min-width: 769px) {
-  /* Not found in codebase — `.carousel-single` not used in HTML */
+  /* Not found in codebase : `.carousel-single` not used in HTML */
   .carousel-single .carousel-btn {
     display: none;
   }

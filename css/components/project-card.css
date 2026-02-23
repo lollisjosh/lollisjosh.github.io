@@ -1,7 +1,7 @@
-/* project-card.css — component module (mobile-first) */
+/* project-card.css : component module (mobile-first) */
 
 /* Usage:
- *  #projects-grid (ID) — used in:
+ *  #projects-grid (ID) : used in:
  *   - projects.html (multiple sections)
  *   - music.html
  *   - interests.html
@@ -16,7 +16,7 @@
 }
 
 /* Usage:
- *  .project-item (base) — used in these pages:
+ *  .project-item (base) : used in these pages:
  *   - projects.html
  *   - projects/portfolio.html
  *   - music.html
@@ -37,7 +37,7 @@
 }
 
 /* Usage:
- *  .project-item:hover / .project-item:active — same pages as .project-item
+ *  .project-item:hover / .project-item:active : same pages as .project-item
  *   - projects.html
  *   - projects/portfolio.html
  *   - music.html
@@ -53,7 +53,7 @@
 }
 
 /* Usage:
- *  .project-item h2 — applies where headings use <h2> inside project cards
+ *  .project-item h2 : applies where headings use <h2> inside project cards
  *   - projects.html
  *   - music.html
  *   - interests.html
@@ -67,7 +67,7 @@
 }
 
 /* Usage:
- *  .thumbnail-container — used for project and blog thumbnails in:
+ *  .thumbnail-container : used for project and blog thumbnails in:
  *   - projects.html
  *   - projects/portfolio.html
  *   - music.html
@@ -84,7 +84,7 @@
 }
 
 /* Usage:
- *  .thumbnail-container img — same pages as .thumbnail-container:
+ *  .thumbnail-container img : same pages as .thumbnail-container:
  *   - projects.html
  *   - projects/portfolio.html
  *   - music.html
@@ -102,7 +102,7 @@
 
 /* Usage:
  *  .project-item:hover .thumbnail-container img / .project-item:active .thumbnail-container img
- *  — applied on thumbnails across these pages:
+ *  : applied on thumbnails across these pages:
  *   - projects.html
  *   - projects/portfolio.html
  *   - music.html
@@ -117,7 +117,7 @@
 
 @media (min-width: 769px) {
   /* Usage:
-   *  Desktop layout for #projects-grid — affects:
+   *  Desktop layout for #projects-grid : affects:
    *   - projects.html
    *   - music.html
    *   - interests.html
@@ -136,7 +136,7 @@
   }
 
   /* Usage:
-   *  Desktop .project-item (min-width: 769px) — used in:
+   *  Desktop .project-item (min-width: 769px) : used in:
    *   - projects.html
    *   - projects/portfolio.html
    *   - music.html
@@ -188,7 +188,7 @@
 
   /* Desktop aliases for pages using .projects-grid / .project-item */
   /* Usage:
-   *  .projects-grid — used in:
+   *  .projects-grid : used in:
    *    - projects.html
    */
   .projects-grid {

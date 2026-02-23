@@ -56,72 +56,69 @@
 */
 
 /*
-NEW CSS SYSTEM (2025 refactor) — composable primitives + legacy shims
+CSS SYSTEM (2025 refactor) - Composable primitives and legacy shims
 
-Goal:
-- Stop creating hyper-specific “page/content named” classes (e.g., .game-image) that get reused
-  for unrelated content later.
-- Replace them with small, reusable “behavior/role” classes you can combine like lego.
-- Keep old pages working via *.legacy.css files while you migrate incrementally.
+Objective:
+- Avoid creating hyper-specific, content-named classes (e.g., .game-image) that get reused for unrelated content.
+- Use small, reusable behavior/role classes that can be combined.
+- Maintain old pages via *.legacy.css files during incremental migration.
 
-Mental model (think: 3 layers)
+Structure (3 layers)
 
-1) SURFACE (visual container look)
-   - Use when you want a “panel/card” appearance: background, border, radius, shadow.
+1) SURFACE (Visual container)
+   - Use for a panel/card appearance: background, border, radius, shadow.
    - Classes:
-     - .surface          => panel look (bg + radius + shadow + border)
-     - .surface--1..--4  => border “weight level” via --surface-border-width
+     - .surface          => Base panel look (bg + radius + shadow + border)
+     - .surface--1..--4  => Border weight level via --surface-border-width
    - Example:
      <section class="surface surface--1">...</section>
 
-2) SECTION (spacing/layout semantics)
-   - Use when you want consistent padding/margins for content blocks.
+2) SECTION (Spacing/layout)
+   - Use for consistent padding/margins on content blocks.
    - Classes:
-     - .section          => standard section padding + margins
-     - .section--nested  => tighter spacing for nested sections/panels
+     - .section          => Standard section padding + margins
+     - .section--nested  => Tighter spacing for nested sections/panels
    - Example:
      <section class="surface surface--2 section section--nested">...</section>
 
-3) MEDIA (images/video primitives)
-   - Put “how media behaves” on the media element; put “framing” on a wrapper when needed.
+3) MEDIA (Images/video)
+   - Apply behavior classes directly to the media element; apply framing to a wrapper.
    - Media element classes:
-     - .media            => baseline block + responsive sizing
-     - .media--contain   => fit without cropping (object-fit: contain)
-     - .media--cover     => fill box with cropping (object-fit: cover)
-     - .media--clickable => cursor pointer
-     - .media--sm/md/lg  => size helpers (optional)
+     - .media            => Baseline block + responsive sizing
+     - .media--contain   => Fit without cropping (object-fit: contain)
+     - .media--cover     => Fill box with cropping (object-fit: cover)
+     - .media--clickable => Cursor pointer
+     - .media--sm/md/lg  => Size helpers (optional)
      - .media--full      => 100% width (optional)
    - Media frame classes:
-     - .media-frame      => padding + centering + overflow control for framed media
+     - .media-frame      => Padding + centering + overflow control for framed media
      - (Optional) .media-frame--square / --16x9 / --4x3 for uniform aspect frames
-       NOTE: only use aspect frames when images are meant to share a consistent shape;
-             avoid for mixed-size galleries to prevent awkward framing.
+       NOTE: Only use aspect frames when images share a consistent shape. Avoid for mixed-size galleries.
    - Example:
      <section class="surface surface--2 media-frame">
        <img class="media media--contain media--clickable" ...>
      </section>
 
-Legacy strategy (safe incremental migration)
-- Each refactored component can ship with a sibling legacy file:
+Legacy Strategy
+- Refactored components include a sibling legacy file:
   - surface.css + surface.legacy.css
   - section.css + section.legacy.css
   - image-grid.css + image-grid.legacy.css
 - Canonical files define the new system.
-- *.legacy.css files keep old class names working (aliases/shims), so pages can be migrated
-  one at a time without breaking the site.
-- Once a legacy selector is unused across the site, delete it.
+- *.legacy.css files keep old class names working (aliases/shims) to allow page-by-page migration.
+- Delete legacy selectors once they are no longer used.
 
-Load order principle
+Load Order
 - Load primitives BEFORE components that build on them:
   base -> utilities -> surface -> media -> section -> component modules -> legacy shims
-  (Legacy shims should load right after their canonical module.)
+  (Legacy shims load immediately after their canonical module.)
 
-Naming rule of thumb
-- Prefer names that describe behavior/role, not content:
+Naming Convention
+- Use names that describe behavior/role, not content:
   GOOD: .surface--2, .media--contain, .section--nested
   AVOID: .game-image, .diagram-image, .image-section-2 (these become legacy aliases)
 
-Practical examples
+Examples
 - Old: <section class="section-level-1">...</section>
   New: <section class="surface surface--1 section">...</section>
 
@@ -129,7 +126,4 @@ Practical examples
   New: <section class="surface surface--2 media-frame">
          <img class="media media--contain media--clickable media--md">
        </section>
-
-Outcome
-- Fewer “one-off” classes, easier refactors, consistent UI, and a clear path to remove legacy CSS.
 */
