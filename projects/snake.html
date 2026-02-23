@@ -10,247 +10,265 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <!-- Standard meta -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Snake | Projects</title>
-        
+<head>
+    <!-- Standard meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake | Projects</title>
 
-        <!-- This style prevents flash of unstyled content (FOUC) -->
-        <style id="anti-fouc">html{visibility:hidden}</style>
 
-        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
-        <script src="/js/head.js"></script>
+    <!-- This style prevents flash of unstyled content (FOUC) -->
+    <style id="anti-fouc">
+        html {
+            visibility: hidden
+        }
+    </style>
 
-        <!-- Page-specific CSS (if any) -->
-        <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
-    </head>
+    <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
+    <script src="/js/head.js"></script>
 
-    <body>
-        <!-- Header injection point -->
-        <div id="header-placeholder"></div>
-        <main>
-            <div class="content-container">
-                <h1 class="funnel-display-header">Snake</h1>
-                <h4 class="funnel-display-header">Desktop Game Application | C++ • SFML</h4>
+    <!-- Page-specific CSS (if any) -->
+    <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
+</head>
 
-                <!-- Navigation cards for project sections -->
-                <nav class="toc-nav">
-                    <!-- Table of contents with emoji icons -->
-                    <a href="#overview"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Overview</span>
-                    </a>
-                    <a href="#mechanics"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Mechanics</span>
-                    </a>
-                    <a href="#focus"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Focus</span>
-                    </a>
-                    <a href="#challenges"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Challenges</span>
-                    </a>
-                    <a href="#gallery"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Gallery</span>
-                    </a>
-                    <a href="#videos"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Videos</span>
-                    </a>
-                    <a href="#disclaimer"
-                        class="toc-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-title">Disclaimer</span>
-                    </a>
-                    <a href="https://github.com/TelloViz/Snake-SFML"
-                        target="_blank"
-                        class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
-                        <span class="toc-icon fab fa-github"></span>
-                        <span class="toc-title">Repository</span>
-                    </a>
-                </nav>
-                <!-- TODO: Decide if removing back button-->
-                <!-- <a href="javascript:history.back()"
+<body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Snake</h1>
+            <h4 class="funnel-display-header">Desktop Game Application | C++ • SFML</h4>
+
+            <!-- Navigation cards for project sections -->
+            <nav class="toc-nav">
+                <!-- Table of contents with emoji icons -->
+                <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Overview</span>
+                </a>
+                <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Implementation</span>
+                </a>
+                                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Challenges</span>
+                </a>
+
+
+                <a href="#gallery" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Gallery</span>
+                </a>
+                <a href="#outcomes" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Outcomes</span>
+                </a>
+                <a href="#videos" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Videos</span>
+                </a>
+                <a href="https://github.com/TelloViz/Snake-SFML" target="_blank"
+                    class="toc-card repo-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-icon fab fa-github"></span>
+                    <span class="toc-title">Repository</span>
+                </a>
+            </nav>
+            <!-- TODO: Decide if removing back button-->
+            <!-- <a href="javascript:history.back()"
                     class="back-button hover-transform-left">
                     <span>←</span>
                     <span>Back</span>
                 </a> -->
 
-                <!-- Project documentation sections -->
-                <section id="overview"
-                    class="version-section hover-transform-up">
-                    <!-- Project overview and technologies -->
-                    <h2 class="funnel-display-header">Project Overview</h2>
-                    <p>A classic Snake game reimagined with new mechanics and
-                        features. This project puts a fresh spin on the
-                        traditional gameplay while maintaining the nostalgic
-                        experience.</p>
+            <!-- Project documentation sections -->
+            <section id="overview" class="surface surface--1 section">
+                <!-- Project overview and technologies -->
+                <h2 class="funnel-display-header">Project Overview</h2>
+                <p>A classic Snake game reimagined with new mechanics and
+                    features. This project puts a fresh spin on the
+                    traditional gameplay while maintaining the nostalgic
+                    experience. Built with a custom, lightweight game engine architecture that heavily utilizes
+                    Object-Oriented Programming (OOP) principles and design patterns to keep the code modular and
+                    maintainable.</p>
 
-                    <!-- Snake logo image -->
-                    <img src="/assets/images/snake/snake-logo.png"
-                        alt="Snake Game Logo"
-                        class="img-thumbnail hover-transform-up"
-                        style="max-width: 400px; margin: 2rem auto;">
+                <!-- Snake logo image -->
+                <img src="/assets/images/snake/snake-logo.png" alt="Snake Game Logo"
+                    class="img-thumbnail hover-transform-up" style="max-width: 400px; margin: 2rem auto;">
 
-                    <h3 class="funnel-display-header">Technologies Used</h3>
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h4 class="funnel-display-header">Core Technologies</h4>
-                            <ul>
-                                <li>C++</li>
-                                <li>SFML for graphics, input and audio</li>
-                                <li>Cereal for serialization</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category hover-transform-up">
-                            <h4 class="funnel-display-header">Setup Instructions</h3>
-                            <ol>
-                                <li>Clone the repository</li>
-                                <li>Build for x86 architecture</li>
-                                <li>Enjoy!</li>
-                            </ol>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="mechanics"
-                    class="version-section hover-transform-up">
-                    <!-- Game mechanics details -->
-                    <h2 class="funnel-display-header">New Mechanics</h2>
-                    <p>This version of Snake introduces interesting twists to
-                        the classic gameplay:</p>
-
+                <section id="technologies-section" class="surface surface--2 section">
+                <h3 class="funnel-display-header">Technologies Used</h3>
+                <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Core Technologies</h4>
                         <ul>
-                            <li>Snakes now have <b>3 lives</b>!</li>
-                            <li>Running into your own tail will leave
-                                <b>bones</b> in the playfield</li>
-                            <li>Bones remain as obstacles, increasing difficulty
-                                as you play</li>
-                            <li>Custom graphics designed specifically for this
-                                game</li>
+                            <li>C++17</li>
+                            <li>SFML 2.5.1 for graphics, input and audio</li>
+                            <li>Cereal for serialization</li>
                         </ul>
                     </div>
-                </section>
-
-                <section id="focus" class="version-section hover-transform-up">
-                    <!-- Development focus points -->
-                    <h2 class="funnel-display-header">Development Focus</h2>
                     <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Development Tools</h4>
                         <ul>
-                            <li>Implementing new gameplay mechanics</li>
-                            <li>Creating a high score system</li>
-                            <li>Adding responsive sound effect triggers</li>
-                            <li>Custom-designed graphics</li>
+                            <li>CMake</li>
+                            <li>Git/GitHub</li>
+                            <li>Visual Studio / GCC / Clang</li>
                         </ul>
                     </div>
+                </div>
                 </section>
+            </section>
 
-                <section id="challenges"
-                    class="version-section hover-transform-up">
-                    <!-- Development challenges -->
-                    <h2 class="funnel-display-header">Challenges &
-                        Shortcomings</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category hover-transform-up">
-                            <h4 class="funnel-display-header">Display Issues</h4>
-                            <hr
-                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                            <p>Moire pattern appearing at some resolutions</p>
-                            <hr
-                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                            <hr
-                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                            <p>Implementing resolution-specific texture
-                                scaling</p>
-                            <hr
-                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        </div>
-
-                        <div class="skill-category hover-transform-up">
-                            <h4 class="funnel-display-header">Gameplay Bug</h4>
-                            <hr
-                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-                            <p>Issue with running into bones not creating more
-                                bones</p>
-                            <hr
-                                style="border-top: 2px solid #ae2727; margin: 1rem 0;">
-
-                            <hr
-                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                            <p>Reviewing collision detection logic in the bone
-                                generation system</p>
-                            <hr
-                                style="border-top: 2px solid #27ae60; margin: 1rem 0;">
-                        </div>
+            <section id="implementation" class="surface surface--1 section">
+                <!-- Technical implementation details -->
+                <h2 class="funnel-display-header">Implementation Details</h2>
+                <section id="architecture-section" class="surface surface--2 section">
+                <h3 class="funnel-display-header">Architecture</h3>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Stack-Based State Machine</h4>
+                        <p>The core game loop is managed by a Context (<code>IContext</code>) that handles a stack of states (<code>IState</code>) like <code>Menu_State</code>, <code>Play_State</code>, and <code>Pause_State</code>. This allows pushing a pause menu over the active game without destroying data.</p>
                     </div>
-                </section>
-
-                <section id="gallery"
-                    class="version-section hover-transform-up">
-                    <!-- Development progress gallery -->
-                    <h2 class="funnel-display-header">Snake Game Gallery</h2>
-                    <div
-                        class="carousel-container carousel-container-medium hover-transform-up">
-                        <!-- Gallery display area -->
-                        <div class="carousel-images">
-                            <img src="/assets/images/snake/snake-title.jpg"
-                                alt="Bones mechanics demonstration"
-                                data-full-res="/assets/images/snake/snake-title.jpg">
-                            <img src="/assets/images/snake/snake.jpg"
-                                alt="High score display"
-                                data-full-res="/assets/images/snake/snake.jpg">
-                            <img src="/assets/images/snake/snake-score.jpg"
-                                alt="Game menu screen"
-                                data-full-res="/assets/images/snake/snake-score.jpg">
-
-                        </div>
-
-                        <!-- Carousel navigation buttons -->
-                        <button class="carousel-btn prev hover-transform-left"
-                            onclick="prevImage()">&#10094;</button>
-                        <button class="carousel-btn next hover-transform-left"
-                            onclick="nextImage()">&#10095;</button>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Strict Separation of Concerns</h4>
+                        <p>Gameplay logic is decoupled into specific domain classes. <code>Snake_Controller</code> handles movement and manipulation, while <code>Snake_Rule_Monitor</code> strictly monitors game rules (bounds, collisions, score).</p>
                     </div>
+                </div>
                 </section>
-
-                <section id="videos" class="version-section hover-transform-up">
-                    <!-- YouTube video demonstration -->
-                    <h2 class="funnel-display-header">Gameplay Demo</h2>
-                    <div class="iframe-border hover-transform-up">
-                        <iframe class="project-video"
-                            src="https://www.youtube.com/embed/DtEGNMsFRR8?si=DV5msCV0-Xeq4_Iy"
-                            title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                <section id="build-data-section" class="surface surface--2 section">
+                <h3 class="funnel-display-header" style="margin-top: 2rem;">Build System & Data Structures</h3>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">"Zero-Setup" Build Pipeline</h4>
+                        <p>Uses modern CMake (<code>FetchContent</code>) to automatically pull SFML 2.5.1 during configuration, making the project easy to build on any machine.</p>
                     </div>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Automated Asset Deployment</h4>
+                        <p>Custom post-build commands automatically copy necessary assets (<code>.png</code>, <code>.ogg</code>, <code>.ttf</code>) into the output binary folder.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Efficient Data Structures</h4>
+                        <p>The snake is represented as a <code>std::list</code> of grid coordinates, making movement highly performant $O(1)$ by pushing a new head and popping the tail.</p>
+                    </div>
+                </div>
                 </section>
-
-                <section id="disclaimer"
-                    class="version-section hover-transform-up">
-                    <!-- Legal disclaimer -->
-                    <h2 class="funnel-display-header">Disclaimer</h2>
-                    <p>Sound Effects sourced from <a
-                            href="https://www.sounds-resource.com/"
-                            target="_blank">The Sounds Resource</a> and are used
-                        strictly for educational purposes in my portfolio.</p>
-                    <p>This game is not to be sold.</p>
-                    <p>No money is made from my Youtube content, or the content
-                        here on my portfolio website.</p>
-                    <p><b>All copyrights belong to original creators.</b></p>
+                <section id="mechanics-section" class="surface surface--2 section">
+                <h3 class="funnel-display-header" style="margin-top: 2rem;">New Mechanics</h3>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Multiple Lives</h4>
+                        <p>Unlike the classic game where a single mistake ends the run, players now start with <b>3 lives</b>. This provides a more forgiving learning curve while still maintaining the challenge as the snake grows.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Bone Hazards</h4>
+                        <p>Running into your own tail doesn't just cost a life, it leaves <b>bones</b> in the playfield at the point of collision. These bones act as permanent obstacles, dynamically increasing the difficulty and forcing players to adapt their pathing.</p>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Custom Graphics</h4>
+                        <p>The game features custom-designed sprites and textures, moving away from simple colored shapes to provide a more visually engaging experience.</p>
+                    </div>
+                </div>
                 </section>
-            </div>
-        </main>
+            </section>
 
-        <!-- Footer injection point -->
-        <div id="footer-placeholder"></div>
+            <section id="challenges" class="surface surface--1 section">
+                <!-- Development challenges -->
+                <h2 class="funnel-display-header">Challenges &
+                    Shortcomings</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Display Issues</h4>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Moire pattern appearing at some resolutions</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
 
-        <script src="/scripts.js"></script>
-    </body>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Implementing resolution-specific texture
+                            scaling</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Gameplay Bug</h4>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+                        <p>Issue with running into bones not creating more
+                            bones</p>
+                        <hr style="border-top: 2px solid #ae2727; margin: 1rem 0;">
+
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                        <p>Reviewing collision detection logic in the bone
+                            generation system</p>
+                        <hr style="border-top: 2px solid #27ae60; margin: 1rem 0;">
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="surface surface--1 section">
+                <!-- Development progress gallery -->
+                <h2 class="funnel-display-header">Snake Game Gallery</h2>
+                <div class="carousel-container surface surface--2 media-frame">
+                    <!-- Gallery display area -->
+                    <div class="carousel-images">
+                        <img src="/assets/images/snake/snake-title.jpg" alt="Bones mechanics demonstration"
+                            data-full-res="/assets/images/snake/snake-title.jpg"
+                            class="media media--contain media--clickable" loading="lazy">
+                        <img src="/assets/images/snake/snake.jpg" alt="High score display"
+                            data-full-res="/assets/images/snake/snake.jpg" class="media media--contain media--clickable"
+                            loading="lazy">
+                        <img src="/assets/images/snake/snake-score.jpg" alt="Game menu screen"
+                            data-full-res="/assets/images/snake/snake-score.jpg"
+                            class="media media--contain media--clickable" loading="lazy">
+
+                    </div>
+
+                    <!-- Carousel navigation buttons -->
+                    <button class="carousel-btn prev hover-transform-left" onclick="prevImage()">&#10094;</button>
+                    <button class="carousel-btn next hover-transform-left" onclick="nextImage()">&#10095;</button>
+                </div>
+            </section>
+
+            <section id="outcomes" class="surface surface--1 section">
+                <!-- Project results and future plans -->
+                <h2 class="funnel-display-header">Project Outcomes</h2>
+                <div class="skills-grid">
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Achievements</h4>
+                        <ul>
+                            <li><b>Polished Windows Executable:</b> Uses the <code>WinMain</code> entry point to suppress the
+                                default Windows console, resulting in a clean, professional standalone game window.</li>
+                            <li><b>Robust Architecture:</b> Successfully implemented a stack-based state machine and
+                                decoupled game logic, demonstrating a strong understanding of SOLID principles.</li>
+                            <li><b>Modern Build System:</b> Created a zero-setup CMake pipeline that automatically
+                                fetches dependencies and deploys assets.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category hover-transform-up">
+                        <h4 class="funnel-display-header">Future Improvements</h4>
+                        <ul>
+                            <li>Implement additional power-ups and hazards.</li>
+                            <li>Refine collision detection for bone generation.</li>
+                            <li>Optimize texture scaling for various resolutions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="videos" class="surface surface--1 section">
+                <!-- YouTube video demonstration -->
+                <h2 class="funnel-display-header">Gameplay Demo</h2>
+                <div class="iframe-border hover-transform-up">
+                    <iframe class="project-video" src="https://www.youtube.com/embed/DtEGNMsFRR8?si=DV5msCV0-Xeq4_Iy"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Modal injection point -->
+    <div id="imageModal" class="modal">
+        <img id="modalImage" src alt>
+    </div>
+
+    <script src="/scripts.js"></script>
+</body>
 
 </html>
