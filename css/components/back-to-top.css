@@ -1,0 +1,50 @@
+/* back-to-top.css : minimal icon button for scrolling to page top */
+
+/* Used in: project pages and blog posts */
+
+/* Hide on mobile (desktop-only feature) */
+.back-to-top-button {
+    display: none !important;
+}
+
+/* Show on desktop */
+@media (min-width: 769px) {
+    .back-to-top-button {
+        display: block !important;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 15;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-size: 2.5rem;
+        color: var(--primary);
+        transition: var(--transition-standard);
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .back-to-top-button.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .back-to-top-button.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(10px);
+    }
+
+    .back-to-top-button:hover {
+        color: var(--accent);
+        transform: translateY(-3px);
+    }
+
+    .back-to-top-button:active {
+        transform: translateY(-1px);
+    }
+}

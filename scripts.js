@@ -128,6 +128,21 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => console.error('Failed to load footer component script.'));
     })();
 
+    // Load back-to-top button component
+    (function loadBackToTop() {
+        if (window.backToTopComponent) {
+            window.backToTopComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/backToTop.js')
+            .then(() => {
+                if (window.backToTopComponent && window.backToTopComponent.init) {
+                    window.backToTopComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load back-to-top component script.'));
+    })();
+
     // Load profile picture component
     (function loadPfp() {
         if (window.pfpComponent) {
