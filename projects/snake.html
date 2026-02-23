@@ -36,8 +36,11 @@
     <div id="header-placeholder"></div>
     <main>
         <div class="content-container">
-            <h1 class="funnel-display-header">Snake</h1>
-            <h4 class="funnel-display-header">Desktop Game Application | C++ • SFML</h4>
+            <!-- <h1 class="funnel-display-header">Snake</h1> -->
+            <!-- Snake logo image -->
+            <img src="/assets/images/snake/snake-logo.png" alt="Snake Game Logo"
+                class="img-thumbnail hover-transform-up" style="max-width: 400px; margin: 2rem auto;">
+            <h4 class="funnel-display-header">Desktop Game Application | C++ • SFML • CMake</h4>
 
             <!-- Navigation cards for project sections -->
             <nav class="toc-nav">
@@ -45,10 +48,12 @@
                 <a href="#overview" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-title">Overview</span>
                 </a>
+                <a href="#technologies-section" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                    <span class="toc-title">Technologies</span>
                 <a href="#implementation" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-title">Implementation</span>
                 </a>
-                                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
+                <a href="#challenges" class="toc-card hover-transform-left hover-accent-bg hover-white-text">
                     <span class="toc-title">Challenges</span>
                 </a>
 
@@ -79,6 +84,11 @@
             <section id="overview" class="surface surface--1 section">
                 <!-- Project overview and technologies -->
                 <h2 class="funnel-display-header">Project Overview</h2>
+
+                <!-- Snake logo image
+                    <img src="/assets/images/snake/snake-logo.png" alt="Snake Game Logo"
+                        class="img-thumbnail hover-transform-up" style="max-width: 400px; margin: 2rem auto;"> -->
+
                 <p>A classic Snake game reimagined with new mechanics and
                     features. This project puts a fresh spin on the
                     traditional gameplay while maintaining the nostalgic
@@ -86,12 +96,12 @@
                     Object-Oriented Programming (OOP) principles and design patterns to keep the code modular and
                     maintainable.</p>
 
-                <!-- Snake logo image -->
-                <img src="/assets/images/snake/snake-logo.png" alt="Snake Game Logo"
-                    class="img-thumbnail hover-transform-up" style="max-width: 400px; margin: 2rem auto;">
+                <img src="/assets/images/snake/snakerlogo.png" alt="Snaker Snake Logo"
+                    class="img-thumbnail hover-transform-up">
+            </section>
 
-                <section id="technologies-section" class="surface surface--2 section">
-                <h3 class="funnel-display-header">Technologies Used</h3>
+            <section id="technologies-section" class="surface surface--1 section">
+                <h2 class="funnel-display-header">Technologies Used</h2>
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
                         <h4 class="funnel-display-header">Core Technologies</h4>
@@ -110,58 +120,71 @@
                         </ul>
                     </div>
                 </div>
-                </section>
             </section>
 
             <section id="implementation" class="surface surface--1 section">
                 <!-- Technical implementation details -->
                 <h2 class="funnel-display-header">Implementation Details</h2>
                 <section id="architecture-section" class="surface surface--2 section">
-                <h3 class="funnel-display-header">Architecture</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Stack-Based State Machine</h4>
-                        <p>The core game loop is managed by a Context (<code>IContext</code>) that handles a stack of states (<code>IState</code>) like <code>Menu_State</code>, <code>Play_State</code>, and <code>Pause_State</code>. This allows pushing a pause menu over the active game without destroying data.</p>
+                    <h3 class="funnel-display-header">Architecture</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Stack-Based State Machine</h4>
+                            <p>The core game loop is managed by a Context (<code>IContext</code>) that handles a stack
+                                of states (<code>IState</code>) like <code>Menu_State</code>, <code>Play_State</code>,
+                                and <code>Pause_State</code>. This allows pushing a pause menu over the active game
+                                without destroying data.</p>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Strict Separation of Concerns</h4>
+                            <p>Gameplay logic is decoupled into specific domain classes. <code>Snake_Controller</code>
+                                handles movement and manipulation, while <code>Snake_Rule_Monitor</code> strictly
+                                monitors game rules (bounds, collisions, score).</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Strict Separation of Concerns</h4>
-                        <p>Gameplay logic is decoupled into specific domain classes. <code>Snake_Controller</code> handles movement and manipulation, while <code>Snake_Rule_Monitor</code> strictly monitors game rules (bounds, collisions, score).</p>
-                    </div>
-                </div>
                 </section>
                 <section id="build-data-section" class="surface surface--2 section">
-                <h3 class="funnel-display-header" style="margin-top: 2rem;">Build System & Data Structures</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">"Zero-Setup" Build Pipeline</h4>
-                        <p>Uses modern CMake (<code>FetchContent</code>) to automatically pull SFML 2.5.1 during configuration, making the project easy to build on any machine.</p>
+                    <h3 class="funnel-display-header" style="margin-top: 2rem;">Build System & Data Structures</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">"Zero-Setup" Build Pipeline</h4>
+                            <p>Uses modern CMake (<code>FetchContent</code>) to automatically pull SFML 2.5.1 during
+                                configuration, making the project easy to build on any machine.</p>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Automated Asset Deployment</h4>
+                            <p>Custom post-build commands automatically copy necessary assets (<code>.png</code>,
+                                <code>.ogg</code>, <code>.ttf</code>) into the output binary folder.
+                            </p>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Efficient Data Structures</h4>
+                            <p>The snake is represented as a <code>std::list</code> of grid coordinates, making movement
+                                highly performant $O(1)$ by pushing a new head and popping the tail.</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Automated Asset Deployment</h4>
-                        <p>Custom post-build commands automatically copy necessary assets (<code>.png</code>, <code>.ogg</code>, <code>.ttf</code>) into the output binary folder.</p>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Efficient Data Structures</h4>
-                        <p>The snake is represented as a <code>std::list</code> of grid coordinates, making movement highly performant $O(1)$ by pushing a new head and popping the tail.</p>
-                    </div>
-                </div>
                 </section>
                 <section id="mechanics-section" class="surface surface--2 section">
-                <h3 class="funnel-display-header" style="margin-top: 2rem;">New Mechanics</h3>
-                <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Multiple Lives</h4>
-                        <p>Unlike the classic game where a single mistake ends the run, players now start with <b>3 lives</b>. This provides a more forgiving learning curve while still maintaining the challenge as the snake grows.</p>
+                    <h3 class="funnel-display-header" style="margin-top: 2rem;">New Mechanics</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Multiple Lives</h4>
+                            <p>Unlike the classic game where a single mistake ends the run, players now start with <b>3
+                                    lives</b>. This provides a more forgiving learning curve while still maintaining the
+                                challenge as the snake grows.</p>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Bone Hazards</h4>
+                            <p>Running into your own tail doesn't just cost a life, it leaves <b>bones</b> in the
+                                playfield at the point of collision. These bones act as permanent obstacles, dynamically
+                                increasing the difficulty and forcing players to adapt their pathing.</p>
+                        </div>
+                        <div class="skill-category hover-transform-up">
+                            <h4 class="funnel-display-header">Custom Graphics</h4>
+                            <p>The game features custom-designed sprites and textures, moving away from simple colored
+                                shapes to provide a more visually engaging experience.</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Bone Hazards</h4>
-                        <p>Running into your own tail doesn't just cost a life, it leaves <b>bones</b> in the playfield at the point of collision. These bones act as permanent obstacles, dynamically increasing the difficulty and forcing players to adapt their pathing.</p>
-                    </div>
-                    <div class="skill-category hover-transform-up">
-                        <h4 class="funnel-display-header">Custom Graphics</h4>
-                        <p>The game features custom-designed sprites and textures, moving away from simple colored shapes to provide a more visually engaging experience.</p>
-                    </div>
-                </div>
                 </section>
             </section>
 
@@ -228,7 +251,8 @@
                     <div class="skill-category hover-transform-up">
                         <h4 class="funnel-display-header">Achievements</h4>
                         <ul>
-                            <li><b>Polished Windows Executable:</b> Uses the <code>WinMain</code> entry point to suppress the
+                            <li><b>Polished Windows Executable:</b> Uses the <code>WinMain</code> entry point to
+                                suppress the
                                 default Windows console, resulting in a clean, professional standalone game window.</li>
                             <li><b>Robust Architecture:</b> Successfully implemented a stack-based state machine and
                                 decoupled game logic, demonstrating a strong understanding of SOLID principles.</li>
