@@ -1,0 +1,124 @@
+/* pages/band-page.css : Band page specific styles */
+
+/* Show card wrapper */
+.show-card {
+    width: 100%;
+}
+
+.show-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Mobile: default to poster view */
+.show-title-card {
+    display: none;
+}
+
+.show-title-poster {
+    display: block;
+}
+
+.show-poster {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+.skill-category p {
+    display: none;
+}
+
+/* Desktop: card and poster view styles */
+@media (min-width: 769px) {
+    
+    /* Card/text mode: hide poster title, show card title */
+    .show-title-poster {
+        display: none;
+    }
+    
+    .show-title-card {
+        display: block;
+    }
+    
+    /* Show detail text in card mode */
+    .skill-category p {
+        display: block;
+    }
+    
+    /* Hide posters by default in card view */
+    .show-poster {
+        display: none;
+    }
+    
+    /* Show poster base styles - only visible in poster view */
+    .poster-view .show-poster {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    /* Show poster size modifiers */
+    .poster-view .show-poster--sm { height: 20rem; }
+    .poster-view .show-poster--md { height: 30rem; }
+    .poster-view .show-poster--lg { height: 40rem; }
+
+    /* When poster view is active */
+    .poster-view.skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    /* Poster mode: show poster title, hide card title */
+    .poster-view .show-title-poster {
+        display: block;
+    }
+    
+    .poster-view .show-title-card {
+        display: none;
+    }
+
+    .poster-view .show-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .poster-view .skill-category {
+        padding: 0;
+        background-color: transparent;
+        border: 2px solid var(--primary);
+    }
+    
+    /* Hide detail text in poster view */
+    .poster-view .skill-category p {
+        display: none;
+    }
+
+    /* Style titles in poster view */
+    .poster-view .show-card h3 {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+
+    /* Poster hover effects */
+    .poster-view .show-poster {
+        cursor: pointer;
+    }
+
+    .poster-view .skill-category:hover {
+        border-color: var(--accent);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Override default hover */
+    .poster-view .skill-category.hover-transform-up:hover {
+        transform: translateY(-5px);
+    }
+}

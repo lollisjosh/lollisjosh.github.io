@@ -190,6 +190,23 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => console.error('Failed to load directory tree component script.'));
     })();
 
+    // Load show view toggle component
+    (function loadShowViewToggle() {
+        // Only load on pages that have switch toggles
+        if (!document.querySelector('.switch')) return;
+        if (window.showViewToggleComponent) {
+            window.showViewToggleComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/showViewToggle.js')
+            .then(() => {
+                if (window.showViewToggleComponent && window.showViewToggleComponent.init) {
+                    window.showViewToggleComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load show view toggle component script.'));
+    })();
+
 
     // Lazy-load WakaTime charts when their canvas becomes visible
     (function lazyLoadWaka() {

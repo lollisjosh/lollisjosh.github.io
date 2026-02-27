@@ -25,8 +25,8 @@
     <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
     <script src="/js/head.js"></script>
 
-    <!-- Page-specific CSS (if any) -->
-    <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="/css/pages/band-page.css">
 </head>
 
 <body>
@@ -35,7 +35,8 @@
 
     <main>
         <div class="content-container">
-            <h1 class="funnel-display-header">Lake Superior</h1>
+            <img src="/assets/images/band/lake-superior-logo.png" alt="Lake Superior Band Logo"
+                class="media media--contain media--md" style="margin: 2rem auto; display: block;">
             <!-- <h4 class="funnel-display-header">Midwest Emo Band</h4> -->
 
             <!-- Navigation TOC -->
@@ -63,7 +64,34 @@
             <!-- Upcoming Shows Section -->
             <section id="shows" class="surface surface--1 section">
                 <h2 class="funnel-display-header">Upcoming Shows</h2>
-                <p>[Upcoming show dates and venues will go here]</p>
+
+                <!-- Toggle between card and poster view -->
+                <div class="toggle-wrapper">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="show-card">
+                        <h3 class="show-title-poster"><a href="https://www.instagram.com/reel/DVN2OuIjNqi/?utm_source=ig_web_copy_link"
+                                target="_blank" style="color: inherit; text-decoration: none;">Fire Flow Friday</a></h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card"><a href="https://www.instagram.com/reel/DVN2OuIjNqi/?utm_source=ig_web_copy_link"
+                                target="_blank" style="color: inherit; text-decoration: none;">Fire Flow Friday</a></h3>
+                            <img src="/assets/images/band/posters/fire-flow-friday-poster.PNG" alt="Fire Flow Friday Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/fire-flow-friday-poster.PNG">
+                            <p><strong>February 27, 2026</strong><br>
+                                Party 9pm-2am<br>
+                                Set @10pm<br>
+                                Signal Hill, CA<br>
+                                Hosted by: <a href="https://www.instagram.com/dri.drizzle" target="_blank">@dri.drizzle</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- Members Section -->
@@ -72,25 +100,25 @@
 
                 <div class="skills-grid">
                     <div class="skill-category hover-transform-up">
-                        <img src="/assets/images/band/taylor.jpg" alt="Taylor" 
+                        <img src="/assets/images/band/taylor.jpg" alt="Taylor"
                             class="media media--contain media--clickable media--md"
-                            style="margin-bottom: 1rem;">
+                            data-full-res="/assets/images/band/taylor.jpg">
                         <h3>Taylor</h3>
                         <p>Vocals / Guitar</p>
                     </div>
-                    
+
                     <div class="skill-category hover-transform-up">
-                        <img src="/assets/images/band/josh.jpg" alt="Josh" 
-                            class="media media--contain media--clickable media--md"
-                            style="margin-bottom: 1rem;">
+                        <img src="/assets/images/band/josh.jpg" alt="Josh"
+                            class="media media--contain media--clickable media--md" 
+                            data-full-res="/assets/images/band/josh.jpg">
                         <h3>Josh</h3>
                         <p>Bass Guitar</p>
                     </div>
-                    
+
                     <div class="skill-category hover-transform-up">
-                        <img src="/assets/images/band/zak.jpg" alt="Zak" 
+                        <img src="/assets/images/band/zak.jpg" alt="Zak"
                             class="media media--contain media--clickable media--md"
-                            style="margin-bottom: 1rem;">
+                             data-full-res="/assets/images/band/zak.jpg">
                         <h3>Zak</h3>
                         <p>Drums / Vocals</p>
                     </div>
@@ -100,8 +128,11 @@
             <!-- Our Story Section -->
             <section id="story" class="surface surface--1 section">
                 <h2 class="funnel-display-header">Our Story</h2>
-                <img src="/assets/images/band/FirstBandPhoto.JPG" alt="Lake Superior Band"
-                    class="media media--contain media--clickable media--md">
+                <div class="skill-category hover-transform-up">
+                    <img src="/assets/images/band/FirstBandPhoto.JPG" alt="Lake Superior Band"
+                        class="media media--contain media--clickable media--md"
+                        data-full-res="/assets/images/band/FirstBandPhoto.JPG">
+                </div>
                 <section id="band-story" class="surface surface--2 section">
                     <p>[Band history and story will go here]</p>
                 </section>
@@ -110,30 +141,79 @@
             <!-- Past Shows Section -->
             <section id="past-shows" class="surface surface--1 section">
                 <h2 class="funnel-display-header">Past Shows</h2>
+
+                <!-- Toggle between card and poster view -->
+                <div class="toggle-wrapper">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
                 <div class="skills-grid">
-                    <div class="skill-category hover-transform-up">
-                        <h3>Better2Gether Grand Opening</h3>
-                        <p><strong>August 8, 2025</strong><br>Long Beach</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Better2Gether Grand Opening</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Better2Gether Grand Opening</h3>
+                            <img src="/assets/images/band/posters/better2gether-poster.png"
+                                alt="Better2Gether Grand Opening Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/better2gether-poster.png">
+                            <p><strong>August 8, 2025</strong><br>Long Beach</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Roxanne's Bar</h3>
-                        <p><strong>August 27, 2025</strong><br>Long Beach</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Roxanne's Bar</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Roxanne's Bar</h3>
+                            <img src="/assets/images/band/posters/roxannes-1-poster.png" alt="Roxanne's Bar Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/roxannes-1-poster.png">
+                            <p><strong>August 27, 2025</strong><br>Long Beach</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Live Your Dream, Live Your Purpose</h3>
-                        <p><strong>October 4, 2025</strong><br>USC</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Live Your Dream, Live Your Purpose</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Live Your Dream, Live Your Purpose</h3>
+                            <img src="/assets/images/band/posters/live-your-dreams-poster.png"
+                                alt="Live Your Dream, Live Your Purpose Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/live-your-dreams-poster.png">
+                            <p><strong>October 4, 2025</strong><br>USC</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Long Beach Harvest Kickoff Music Festival</h3>
-                        <p><strong>November 1, 2025</strong><br>Hosted by Andrew Beard<br>Long Beach</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Long Beach Harvest Kickoff Music Festival</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Long Beach Harvest Kickoff Music Festival</h3>
+                            <img src="/assets/images/band/posters/harvest-fest-poster.png"
+                                alt="Long Beach Harvest Kickoff Music Festival Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/harvest-fest-poster.png">
+                            <p><strong>November 1, 2025</strong><br>Hosted by Andrew Beard<br>Long Beach</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Friendsgiving Live Stream</h3>
-                        <p><strong>November 22, 2025</strong><br>Hosted by Jorge Luis<br>Westminster</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Friendsgiving Live Stream</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Friendsgiving Live Stream</h3>
+                            <img src="/assets/images/band/posters/friendsgiving-poster.png"
+                                alt="Friendsgiving Live Stream Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/friendsgiving-poster.png">
+                            <p><strong>November 22, 2025</strong><br>Hosted by Jorge Luis<br>Westminster</p>
+                        </div>
                     </div>
-                    <div class="skill-category hover-transform-up">
-                        <h3>Roxanne's Bar</h3>
-                        <p><strong>January 14, 2026</strong><br>Long Beach</p>
+                    <div class="show-card">
+                        <h3 class="show-title-poster">Roxanne's Bar</h3>
+                        <div class="skill-category hover-transform-up">
+                            <h3 class="show-title-card">Roxanne's Bar</h3>
+                            <img src="/assets/images/band/posters/roxannes-2-poster.png" alt="Roxanne's Bar Poster"
+                                class="media media--contain media--clickable show-poster show-poster--md"
+                                data-full-res="/assets/images/band/posters/roxannes-2-poster.png">
+                            <p><strong>January 14, 2026</strong><br>Long Beach</p>
+                        </div>
                     </div>
                 </div>
             </section>
