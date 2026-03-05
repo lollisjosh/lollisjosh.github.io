@@ -6,7 +6,7 @@
 (function (global) {
     const bioData = {
         tags: ["Junior Software Engineer"],
-        bio: "I build interactive desktop and web applications using C#, Python, C++, and JavaScript. Projects I’ve shipped include my senior capstone game and other Unity projects, as well as Qt/QML desktop applications with Python backends, C++ desktop applications and games, and web projects built with HTML, CSS, and JavaScript."
+        bio: "Career-changing full-stack SWE with 10+ years developing personal and academic projects spanning dev tools, music production utilities, desktop apps, and websites, with a special focus on games. Recently graduated with a B.S. in Computer Science from CSUF (Cum Laude, GPA: 3.63) after a non-traditional educational journey."
     };
 
     function generateBioHTML(data) {

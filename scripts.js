@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load bio component
     (function loadBio() {
         const initialData = {
-            tags: ["Junior Software Engineer"],
-            bio: "I build interactive desktop and web applications using C#, Python, C++, and JavaScript. Projects I’ve shipped include my senior capstone game and other Unity projects, as well as Qt/QML desktop applications with Python backends, C++ desktop applications and games, and web projects built with HTML, CSS, and JavaScript."
+            tags: ["Entry-Level Full-Stack Software Engineer"],
+            bio: "Career-changing full-stack SWE with 10+ years developing personal and academic projects spanning dev tools, music production utilities, desktop apps, and websites, with a special focus on games. Recently graduated with a B.S. in Computer Science from CSUF (Cum Laude, GPA: 3.63) after a non-traditional educational journey."
         };
 
         if (window.bioComponent) {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     (function loadHeader() {
         if (window.headerComponent) {
             window.headerComponent.init("#header-placeholder");
-                loadProjectTabs(); // Load after header is ready
+            loadProjectTabs(); // Load after header is ready
             return;
         }
         loadComponentScript('/js/components/header.js')
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadProjectTabs() {
         // Only load on pages with sliding projects
         if (!document.querySelector('.sliding-projects')) return;
-        
+
         if (window.projectTabsComponent) {
             window.projectTabsComponent.init();
             return;
@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (mp4 && !existingSources.includes(new URL(mp4, location.href).href)) {
                 const s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; v.appendChild(s2);
             }
-            try { v.load(); v.play().catch(() => {}); } catch (e) {}
+            try { v.load(); v.play().catch(() => { }); } catch (e) { }
             v.dataset.loaded = '1';
         }
 
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const rect = v.getBoundingClientRect();
                 if (rect.top < (window.innerHeight + 200) && rect.bottom > -200) {
                     loadVideo(v);
-                    try { obs.unobserve(v); } catch (e) {}
+                    try { obs.unobserve(v); } catch (e) { }
                 }
             });
         } else {
