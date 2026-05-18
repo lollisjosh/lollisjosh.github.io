@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load bio component
     (function loadBio() {
         const initialData = {
-            tags: ["Entry-Level Full-Stack Software Engineer"],
-            bio: "Career-changing full-stack SWE with 10+ years developing personal and academic projects spanning dev tools, music production utilities, desktop apps, and websites, with a special focus on games. Recently graduated with a B.S. in Computer Science from CSUF (Cum Laude, GPA: 3.63) after a non-traditional educational journey."
+            tags: ["Front-End", "Interactive Apps", "Creative Tools"],
+            bio: "Software engineer focused on front-end development, interactive interfaces, and creative tools. I have 10+ years of personal and academic project experience across websites, desktop apps, games, and music-related utilities. Recently graduated Cum Laude with a B.S. in Computer Science from California State University, Fullerton after a non-traditional educational path."
         };
 
         if (window.bioComponent) {
