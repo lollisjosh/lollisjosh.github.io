@@ -1,19 +1,15 @@
 ---
-const pageTitle = "Josh Lollis Portfolio — Astro Test";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{pageTitle}</title>
-    </head>
-
-    <body>
-        <main>
-            <h1>Astro is running</h1>
-            <p>This is a temporary Astro test page.</p>
-        </main>
-    </body>
-</html>
+<BaseLayout
+    title="Josh Lollis Portfolio — Astro Test"
+    description="Temporary Astro migration test page"
+>
+    <main>
+        <div class="content-container">
+            <h1 class="funnel-display-header">Astro is running</h1>
+            <p>This is using the legacy site CSS through the Astro layout.</p>
+        </div>
+    </main>
+</BaseLayout>

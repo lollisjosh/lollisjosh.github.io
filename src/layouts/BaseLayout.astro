@@ -1,0 +1,36 @@
+---
+const {
+    title = "Josh Lollis Portfolio",
+    description = "Josh Lollis Portfolio Website",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Legacy shared CSS/JS bridge -->
+    <script is:inline src="/js/head.js"></script>
+</head>
+
+    <body>
+        <!-- Header injection point -->
+        <div id="header-placeholder"></div>
+
+        <slot />
+
+        <!-- Back to top button -->
+        <button class="back-to-top-button hidden" aria-label="Back to top">
+            <i class="fa-solid fa-circle-chevron-up"></i>
+        </button>
+
+        <!-- Footer injection point -->
+        <div id="footer-placeholder"></div>
+
+<script is:inline src="/scripts.js"></script>
+    </body>
+</html>
