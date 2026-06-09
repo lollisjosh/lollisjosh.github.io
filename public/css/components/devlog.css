@@ -1,0 +1,59 @@
+/* devlog.css : component module (mobile-first) */
+
+
+/* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, blog/GAL-Dev-2023-10-01.html, 
+   blog/antillery/ant-dev-2025-05-16.html, blog/antillery/ant-dev-2025-05-17.html, blog/antillery/ant-dev-2025-05-18.html,
+   blog/antillery/ant-dev-2025-05-25.html, blog/antillery/ant-dev-2025-05-27.html, blog/antillery/ant-dev-2025-05-28.html,
+   blog/antillery/ant-dev-2025-05-31.html, blog/antillery/ant-dev-2025-06-02.html */
+.devlog-section {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* Used in: GAL-Dev-2023-09-11.html */
+.devlog-list {
+  text-align: left;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Used in: GAL-Dev-2023-09-11.html */
+.devlog-list li {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, 
+   blog/antillery/ant-dev-2025-05-16.html, blog/antillery/ant-dev-2025-05-17.html, 
+   blog/antillery/ant-dev-2025-05-18.html, blog/antillery/ant-dev-2025-05-25.html, 
+   blog/antillery/ant-dev-2025-05-27.html, blog/antillery/ant-dev-2025-05-28.html */
+h5.issue,
+h5.challenge {
+    color: var(--error);
+}
+
+/* Used in: blog/GAL-Dev-2023-09-11.html, blog/GAL-Dev-2023-09-18.html, 
+   blog/antillery/ant-dev-2025-05-16.html, blog/antillery/ant-dev-2025-05-17.html, blog/antillery/ant-dev-2025-05-18.html */
+h5.remedy {
+    color: var(--success);
+    margin-top: 1rem;
+}
+
+@media (min-width: 769px) {
+  /* Not used in HTML files */
+  .devlog-content {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Used in: GAL-Dev-2023-09-11.html */
+  .devlog-list {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  /* Used in: GAL-Dev-2023-09-11.html */
+  .devlog-list li {
+    margin-bottom: 0.5rem;
+  }
+}

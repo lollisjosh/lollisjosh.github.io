@@ -1,0 +1,131 @@
+/* main.css
+   Composed entry for production/deployment.
+   Order: base -> utilities -> components
+   Keep tokens separate (loaded before main.css in head.js)
+*/
+
+@import url("/css/base.css");
+@import url("/css/utilities.css");
+
+/* Components */
+@import url("/css/components/typography.css");
+@import url("/css/components/content-container.css");
+@import url("/css/components/post-content.css");
+@import url("/css/components/directory-tree.css");
+@import url("/css/components/embed.css");
+@import url("/css/components/contact-form.css");
+@import url("/css/components/blog-grid.css");
+@import url("/css/components/back-button.css");
+@import url("/css/components/back-to-top.css");
+@import url("/css/components/navbar.css");
+@import url("/css/components/dropdown.css");
+@import url("/css/components/view-toggle.css");
+@import url("/css/components/modal.css");
+@import url("/css/components/footer.css");
+@import url("/css/components/carousel.css");
+@import url("/css/components/devlog.css");
+
+/* Shared primitives (must come before components that build on them) */
+@import url("/css/components/surface.css");
+@import url("/css/components/surface.legacy.css"); /* Temporary for legacy support. Delete when possible. */
+
+@import url("/css/components/media.css");
+
+/* Components that rely on shared primitives */
+@import url("/css/components/section.css");
+@import url("/css/components/section.legacy.css"); /* Temporary for legacy support. Delete when possible. */
+
+@import url("/css/components/image-grid.css");
+@import url("/css/components/image-grid.legacy.css"); /* Temporary for legacy support. Delete when possible. */
+
+@import url("/css/components/skills.css");
+@import url("/css/components/home.css");
+@import url("/css/components/wakatime.css");
+@import url("/css/components/status.css");
+@import url("/css/components/post-navigation.css");
+@import url("/css/components/pfp.css");
+@import url("/css/components/bio.css");
+@import url("/css/components/post-card.css");
+@import url("/css/components/repo-card.css");
+@import url("/css/components/projects-section.css");
+@import url("/css/components/project-card.css");
+@import url("/css/components/project-tabs.css");
+@import url("/css/components/iframe-border.css");
+@import url("/css/components/toc-card.css");
+
+/* Add other components here as they are extracted:
+   @import url("/css/components/<component>.css");
+*/
+
+/*
+CSS SYSTEM (2025 refactor) - Composable primitives and legacy shims
+
+Objective:
+- Avoid creating hyper-specific, content-named classes (e.g., .game-image) that get reused for unrelated content.
+- Use small, reusable behavior/role classes that can be combined.
+- Maintain old pages via *.legacy.css files during incremental migration.
+
+Structure (3 layers)
+
+1) SURFACE (Visual container)
+   - Use for a panel/card appearance: background, border, radius, shadow.
+   - Classes:
+     - .surface          => Base panel look (bg + radius + shadow + border)
+     - .surface--1..--4  => Border weight level via --surface-border-width
+   - Example:
+     <section class="surface surface--1">...</section>
+
+2) SECTION (Spacing/layout)
+   - Use for consistent padding/margins on content blocks.
+   - Classes:
+     - .section          => Standard section padding + margins
+     - .section--nested  => Tighter spacing for nested sections/panels
+   - Example:
+     <section class="surface surface--2 section section--nested">...</section>
+
+3) MEDIA (Images/video)
+   - Apply behavior classes directly to the media element; apply framing to a wrapper.
+   - Media element classes:
+     - .media            => Baseline block + responsive sizing
+     - .media--contain   => Fit without cropping (object-fit: contain)
+     - .media--cover     => Fill box with cropping (object-fit: cover)
+     - .media--clickable => Cursor pointer
+     - .media--sm/md/lg  => Size helpers (optional)
+     - .media--full      => 100% width (optional)
+   - Media frame classes:
+     - .media-frame      => Padding + centering + overflow control for framed media
+     - (Optional) .media-frame--square / --16x9 / --4x3 for uniform aspect frames
+       NOTE: Only use aspect frames when images share a consistent shape. Avoid for mixed-size galleries.
+   - Example:
+     <section class="surface surface--2 media-frame">
+       <img class="media media--contain media--clickable" ...>
+     </section>
+
+Legacy Strategy
+- Refactored components include a sibling legacy file:
+  - surface.css + surface.legacy.css
+  - section.css + section.legacy.css
+  - image-grid.css + image-grid.legacy.css
+- Canonical files define the new system.
+- *.legacy.css files keep old class names working (aliases/shims) to allow page-by-page migration.
+- Delete legacy selectors once they are no longer used.
+
+Load Order
+- Load primitives BEFORE components that build on them:
+  base -> utilities -> surface -> media -> section -> component modules -> legacy shims
+  (Legacy shims load immediately after their canonical module.)
+
+Naming Convention
+- Use names that describe behavior/role, not content:
+  GOOD: .surface--2, .media--contain, .section--nested
+  AVOID: .game-image, .diagram-image, .image-section-2 (these become legacy aliases)
+
+Examples
+- Old: <section class="section-level-1">...</section>
+  New: <section class="surface surface--1 section">...</section>
+
+- Old: <section class="image-section-2"><img class="game-image-small"></section>
+  New: <section class="surface surface--2 media-frame">
+         <img class="media media--contain media--clickable media--md">
+       </section>
+*/

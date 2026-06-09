@@ -1,0 +1,43 @@
+/*
+  base.css
+  Shared, non-responsive rules that are identical in both desktop.css and mobile.css.
+  Load AFTER tokens.css and BEFORE desktop.css/mobile.css.
+*/
+
+
+
+main {
+    margin-top: var(--navbar-height);
+    width: 100%;
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 2rem);
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #f4a0ff, #e8f0fe);
+    overflow-x: hidden;
+    color: var(--text, #333);
+}
+
+a {
+    color: var(--primary, #4b304e);
+    text-decoration: none;
+}

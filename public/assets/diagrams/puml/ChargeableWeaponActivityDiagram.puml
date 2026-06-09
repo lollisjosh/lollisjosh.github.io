@@ -1,0 +1,61 @@
+@startuml Weapon Charge Fire Activity
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam activity {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+}
+
+skinparam diamond {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+}
+
+skinparam defaultFontName Arial
+
+start
+
+:Player Presses Fire Button;
+
+if (In Player Action State\n& Weapon is Chargeable?) then (no)
+    stop
+else (yes)
+endif
+
+:Start Charging;
+
+repeat
+    :Accumulate Energy\n& Update Charge View;
+repeat while (Input Held &\nBelow Max Energy?) is (yes)
+->no;
+
+if (Projectile Weapon?) then (yes)
+    :Fire Projectile\nat Current Charge;
+    :Projectile Travels;
+else (TNT)
+    if (Fully Charged?) then (yes)
+        :Drop TNT;
+        :TNT Timer Countdown;
+    else (no)
+        :Charge Cancelled;
+        stop
+    endif
+endif
+
+:Explode;
+
+fork
+    :Carve Terrain;
+fork again
+    :Spawn VFX;
+fork again
+    :Notify TurnFlowStateMachine;
+end fork
+
+stop
+
+@enduml

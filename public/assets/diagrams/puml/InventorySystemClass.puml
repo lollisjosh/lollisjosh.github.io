@@ -1,0 +1,62 @@
+@startuml Entity Layer - Inventory System
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam class {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+    AttributeFontColor #540d6e
+    StereotypeFontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+class Inventory <<MonoBehaviour>> {
+    - _weaponSelections : WeaponSelection[]
+    - _itemEquipped : AudioSource
+    - _selection : WeaponSelection
+    + Compose(initialUnit, initialWeapon)
+    + SelectWeapon(selection : WeaponSelection)
+    + GetSelection(index : int) : WeaponSelection
+    - SetWeaponWithInitialization(weapon)
+    - SwitchSelection(selection)
+}
+
+class InventoryController <<MonoBehaviour>> {
+    - _inputActions : AntilleryInputActions
+    - _inventory : Inventory
+    - _uiAnimation : UIAnimation
+    - _isOpen : bool
+    - OnInventoryPerformed(context)
+    - ToggleInventory()
+}
+
+class KeyboardWeaponSelection <<MonoBehaviour>> {
+    - _weaponSelections : WeaponSelection[]
+    - _inventory : Inventory
+    - _actions : AntilleryInputActions
+    - OnSelectWeaponSlot1(context)
+    - OnSelectWeaponSlot2(context)
+    - OnSelectWeaponSlot3(context)
+    - SelectWeaponByIndex(index : int)
+}
+
+class WeaponSelection <<MonoBehaviour>> {
+    - _weapon : Weapon
+    - _selectionImage : Image
+    + Weapon : Weapon
+    + Compose()
+    + Select()
+    + Unselect()
+}
+
+' Relationships
+Inventory o-- WeaponSelection : _weaponSelections
+InventoryController --> Inventory : controls
+KeyboardWeaponSelection --> Inventory : routes to
+KeyboardWeaponSelection --> WeaponSelection : selects
+WeaponSelection --> Weapon : _weapon
+
+@enduml

@@ -1,0 +1,354 @@
+/*
+    Portfolio Site JavaScript (orchestrator)
+    Author: Josh Lollis
+    Date: December 3, 2024
+    Refactor: modularized components (December 15, 2025)
+
+    Purpose:
+    - Orchestrates page initialization and dynamic loading of small components
+    - Components now live under `/js/components/` (bio, header, footer, pfp, carousel, modal, wakatime)
+    - Keeps page-level scripts minimal and improves maintainability
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Component loading and initialization
+
+    /**
+     * Dynamically load a component script and return a Promise that resolves when loaded.
+     * Uses `appUtils.loadScript` if available for de-duplication, otherwise inserts a script tag.
+     * @param {string} url - URL to the script to load
+     * @returns {Promise<void>}
+     */
+    function loadComponentScript(url) {
+        if (window.appUtils && typeof window.appUtils.loadScript === 'function') {
+            return window.appUtils.loadScript(url);
+        }
+        return new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = url;
+            s.defer = true;
+            s.onload = () => resolve();
+            s.onerror = (e) => reject(e);
+            document.head.appendChild(s);
+        });
+    }
+
+    // Load bio component
+    (function loadBio() {
+        const initialData = {
+            tags: ["Front-End", "Interactive Apps", "Creative Tools"],
+            bio: "Software engineer focused on front-end development, interactive interfaces, and creative tools. I have 10+ years of personal and academic project experience across websites, desktop apps, games, and music-related utilities. Recently graduated Cum Laude with a B.S. in Computer Science from California State University, Fullerton after a non-traditional educational path."
+        };
+
+        if (window.bioComponent) {
+            window.bioComponent.setData && window.bioComponent.setData(initialData);
+            window.bioComponent.render && window.bioComponent.render("#bio-placeholder");
+            return;
+        }
+
+        loadComponentScript('/js/components/bio.js')
+            .then(() => {
+                if (window.bioComponent && window.bioComponent.setData) {
+                    window.bioComponent.setData(initialData);
+                }
+                if (window.bioComponent && window.bioComponent.render) {
+                    window.bioComponent.render("#bio-placeholder");
+                }
+            })
+            .catch(() => console.error("Failed to load bio component script."));
+    })();
+
+
+
+    // Initialize carousel component
+    (function loadCarousel() {
+        // Only load carousel on pages that include a carousel element
+        if (!document.querySelector('.carousel-images')) return;
+        if (window.carouselComponent) {
+            window.carouselComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/carousel.js')
+            .then(() => {
+                if (window.carouselComponent && window.carouselComponent.init) {
+                    window.carouselComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load carousel component script.'));
+    })();
+
+    // Load header component
+    (function loadHeader() {
+        if (window.headerComponent) {
+            window.headerComponent.init("#header-placeholder");
+            loadProjectTabs(); // Load after header is ready
+            return;
+        }
+        loadComponentScript('/js/components/header.js')
+            .then(() => {
+                if (window.headerComponent && window.headerComponent.init) {
+                    window.headerComponent.init("#header-placeholder");
+                }
+                loadProjectTabs(); // Load after header is ready
+            })
+            .catch(() => console.error('Failed to load header component script.'));
+    })();
+
+    // Load project tabs component (depends on header for --header-height)
+    function loadProjectTabs() {
+        // Only load on pages with sliding projects
+        if (!document.querySelector('.sliding-projects')) return;
+
+        if (window.projectTabsComponent) {
+            window.projectTabsComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/projectTabs.js')
+            .then(() => {
+                if (window.projectTabsComponent && window.projectTabsComponent.init) {
+                    window.projectTabsComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load projectTabs component script.'));
+    }
+
+    // Load footer component
+    (function loadFooter() {
+        if (window.footerComponent) {
+            window.footerComponent.init("#footer-placeholder");
+            return;
+        }
+        loadComponentScript('/js/components/footer.js')
+            .then(() => {
+                if (window.footerComponent && window.footerComponent.init) {
+                    window.footerComponent.init("#footer-placeholder");
+                }
+            })
+            .catch(() => console.error('Failed to load footer component script.'));
+    })();
+
+    // Load back-to-top button component
+    (function loadBackToTop() {
+        if (window.backToTopComponent) {
+            window.backToTopComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/backToTop.js')
+            .then(() => {
+                if (window.backToTopComponent && window.backToTopComponent.init) {
+                    window.backToTopComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load back-to-top component script.'));
+    })();
+
+    // Load profile picture component
+    (function loadPfp() {
+        if (window.pfpComponent) {
+            window.pfpComponent.init('#pfp-placeholder');
+            return;
+        }
+        loadComponentScript('/js/components/pfp.js')
+            .then(() => {
+                if (window.pfpComponent && window.pfpComponent.init) {
+                    window.pfpComponent.init('#pfp-placeholder');
+                }
+            })
+            .catch(() => console.error('Failed to load pfp component script.'));
+    })();
+
+    // Load blog dropdown component
+    (function loadBlogDropdown() {
+        // Only load on pages that have dropdown sections
+        if (!document.querySelector('.dropdown-section')) return;
+        if (window.blogDropdownComponent) {
+            window.blogDropdownComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/blogDropdown.js')
+            .then(() => {
+                if (window.blogDropdownComponent && window.blogDropdownComponent.init) {
+                    window.blogDropdownComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load blog dropdown component script.'));
+    })();
+
+    // Load directory tree component
+    (function loadDirectoryTree() {
+        // Only load on pages that have directory tree containers
+        if (!document.querySelector('.directory-tree-container')) return;
+        if (window.directoryTree) {
+            // Trees are initialized via inline script in the page
+            return;
+        }
+        loadComponentScript('/js/components/directoryTree.js')
+            .then(() => {
+                // Trees are initialized via inline script in the page after component loads
+            })
+            .catch(() => console.error('Failed to load directory tree component script.'));
+    })();
+
+    // Load show view toggle component
+    (function loadShowViewToggle() {
+        // Only load on pages that have switch toggles
+        if (!document.querySelector('.switch')) return;
+        if (window.showViewToggleComponent) {
+            window.showViewToggleComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/showViewToggle.js')
+            .then(() => {
+                if (window.showViewToggleComponent && window.showViewToggleComponent.init) {
+                    window.showViewToggleComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load show view toggle component script.'));
+    })();
+
+
+    // Lazy-load WakaTime charts when their canvas becomes visible
+    (function lazyLoadWaka() {
+        const chartSelectors = ['#desktop-wakatime30DayLangChart', '#mobile-wakatime30DayLangChart', '#desktop-wakatimeAllTimeLangChart', '#mobile-wakatimeAllTimeLangChart', '#desktop-editorsUsedChart', '#mobile-editorsUsedChart', '#desktop-editorChart', '#mobile-editorChart'];
+        const firstChart = document.querySelector(chartSelectors.join(','));
+        if (!firstChart) return; // no charts on this page
+
+        const loadWaka = () => {
+            if (window.wakatimeLoaded) return;
+            window.wakatimeLoaded = true;
+            loadComponentScript('/js/components/wakatime.js')
+                .then(() => {
+                    if (window.wakatimeComponent && window.wakatimeComponent.init) {
+                        window.wakatimeComponent.init();
+                    }
+                })
+                .catch(() => console.error('Failed to load wakatime component script.'));
+        };
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        loadWaka();
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: '200px' });
+            obs.observe(firstChart);
+
+            // Fallback: if user doesn't scroll into view within 10s, load automatically
+            setTimeout(() => { if (!window.wakatimeLoaded) loadWaka(); }, 10000);
+        } else {
+            // Older browsers: load after small delay and on first scroll
+            setTimeout(loadWaka, 3000);
+            window.addEventListener('scroll', loadWaka, { once: true });
+        }
+    })();
+
+    // Load modal component
+    (function loadModal() {
+        if (window.modalComponent) {
+            window.modalComponent.init();
+            return;
+        }
+        loadComponentScript('/js/components/modal.js')
+            .then(() => {
+                if (window.modalComponent && window.modalComponent.init) {
+                    window.modalComponent.init();
+                }
+            })
+            .catch(() => console.error('Failed to load modal component script.'));
+    })();
+
+    /**
+     * Lazy-load images across the site by setting `loading="lazy"` on images
+     * Exclude images that must be loaded eagerly: icons, profile picture, wakatime badge, or images marked `.no-lazy`.
+     */
+    (function lazyLoadImages() {
+        const exclude = 'img.no-lazy, img#pfp-img, a#wakatime-site-hours img, img.icon, img.small';
+        const images = document.querySelectorAll('img:not(' + exclude + ')');
+        images.forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                try { img.setAttribute('loading', 'lazy'); } catch (e) { /* defensive */ }
+            }
+        });
+
+        // Fallback for browsers that don't support native loading attribute and use data-src pattern
+        if (!('loading' in HTMLImageElement.prototype)) {
+            const lazyImgs = document.querySelectorAll('img[data-src]');
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.src = el.getAttribute('data-src');
+                            el.removeAttribute('data-src');
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { rootMargin: '200px' });
+                lazyImgs.forEach(img => io.observe(img));
+            } else {
+                // No support: load them all after a timeout
+                setTimeout(() => lazyImgs.forEach(img => {
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                }), 2000);
+            }
+        }
+    })();
+
+    // Lazy-load small project thumbnail videos (WebM/MP4). Videos should have data-webm/data-mp4 attributes.
+    (function lazyLoadThumbVideos() {
+        const vids = document.querySelectorAll('video.project-thumb[data-webm], video.project-thumb[data-mp4]');
+        if (!vids.length) return;
+
+        function loadVideo(v) {
+            if (v.dataset.loaded) return;
+            const webmRaw = v.getAttribute('data-webm');
+            const mp4Raw = v.getAttribute('data-mp4');
+            function normalizePath(p) {
+                if (!p) return null;
+                if (p.startsWith('http') || p.startsWith('//') || p.startsWith('/')) return p;
+                return '/' + p.replace(/^\.?\/+/, '');
+            }
+            const webm = normalizePath(webmRaw);
+            const mp4 = normalizePath(mp4Raw);
+            const existingSources = Array.from(v.querySelectorAll('source')).map(s => s.src);
+            if (webm && !existingSources.includes(new URL(webm, location.href).href)) {
+                const s = document.createElement('source'); s.src = webm; s.type = 'video/webm'; v.appendChild(s);
+            }
+            if (mp4 && !existingSources.includes(new URL(mp4, location.href).href)) {
+                const s2 = document.createElement('source'); s2.src = mp4; s2.type = 'video/mp4'; v.appendChild(s2);
+            }
+            try { v.load(); v.play().catch(() => { }); } catch (e) { }
+            v.dataset.loaded = '1';
+        }
+
+        if ('IntersectionObserver' in window) {
+            const obs = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadVideo(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '200px' });
+            vids.forEach(v => obs.observe(v));
+            // Also immediately load any videos already visible in the viewport
+            vids.forEach(v => {
+                const rect = v.getBoundingClientRect();
+                if (rect.top < (window.innerHeight + 200) && rect.bottom > -200) {
+                    loadVideo(v);
+                    try { obs.unobserve(v); } catch (e) { }
+                }
+            });
+        } else {
+            // Fallback: load after short delay and on first scroll
+            setTimeout(() => vids.forEach(loadVideo), 3000);
+            window.addEventListener('scroll', () => vids.forEach(loadVideo), { once: true });
+        }
+    })();
+
+});

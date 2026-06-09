@@ -1,0 +1,102 @@
+/* components/carousel.css
+   Mobile-first carousel module
+*/
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.carousel-images {
+  display: flex;
+  transition: var(--transition-standard, transform 0.5s ease);
+  width: 100%;
+  height: 100%;
+}
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.prev {
+  left: 10px;
+}
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.next {
+  right: 10px;
+}
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.carousel-container {
+  width: 90%;
+  max-width: 600px;
+  height: 60vh;
+  max-height: 70vh;
+  position: relative;
+  margin: 1.5rem auto;
+  overflow: hidden;
+}
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white, #ffffff);
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+  border-radius: var(--border-radius-sm, 6px);
+}
+
+/* Desktop overrides */
+@media (min-width: 769px) {
+  /* Not found in codebase : `.carousel-single` not used in HTML */
+  .carousel-single .carousel-btn {
+    display: none;
+  }
+
+  /* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+  .carousel-container {
+    width: 100%;
+    max-width: 800px;
+    height: 70vh;
+    position: relative;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+
+  /* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+  .carousel-images img {
+    padding: 2.5rem;
+  }
+
+  /* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+  .carousel-btn {
+    /* reset the mobile transform since desktop originally did not use it */
+    transform: none;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--white);
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 2;
+    border-radius: var(--border-radius-sm);
+  }
+
+  /* Used in: projects/snake.html, projects/project_gal.html, projects/card_collection.html, design.html, artwork.html */
+  .prev {
+    --hover-translate-x: 5px;
+  }
+}

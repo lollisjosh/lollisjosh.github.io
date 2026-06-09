@@ -1,0 +1,53 @@
+@startuml Use Case Diagram
+left to right direction
+
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam actor {
+    BackgroundColor #3bceac
+    BorderColor #540d6e
+    FontColor #540d6e
+}
+
+skinparam usecase {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+}
+
+skinparam rectangle {
+    BackgroundColor #ffffff
+    BorderColor #ee4266
+    FontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+actor Player
+
+rectangle "Antillery Game" {
+    usecase "Launch Game" as UC0
+    
+    usecase "Navigate Menus" as UC1
+    usecase "Start Match" as UC2
+    usecase "Quit Game" as UC3
+    
+    usecase "Move Unit" as UC4
+    usecase "Jump" as UC5
+    usecase "Use Weapon" as UC6
+    usecase "View HUD" as UC7
+}
+
+Player --> UC0
+
+UC0 --> UC1
+UC0 --> UC2
+UC0 --> UC3
+UC0 --> UC4
+UC0 --> UC5
+UC0 --> UC6
+UC0 --> UC7
+
+@enduml

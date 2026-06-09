@@ -1,0 +1,73 @@
+@startuml Entity Layer - Unit System
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+skinparam class {
+    BackgroundColor #ffd23f
+    BorderColor #540d6e
+    FontColor #540d6e
+    ArrowColor #0ead69
+    AttributeFontColor #540d6e
+    StereotypeFontColor #ee4266
+}
+
+skinparam defaultFontName Arial
+
+class Unit <<MonoBehaviourWrapper>> {
+    - _health : float
+    - _maxHealth : float
+    + IsDead : bool
+    + Compose(input, weapon, dieState)
+    + AnimateDamage(amount : float)
+    + ApplyDamage(amount : float)
+    + Die()
+    + ShowTurnIndicator()
+    + HideTurnIndicator()
+}
+
+class UnitStateMachineFactory {
+    + Create() : StateMachine
+}
+
+class StateMachine <<IUpdate, IFixedUpdate>> {
+    - _state : State
+    - _transitionsPresenter : TransitionsPresenter
+    + Update()
+    + FixedUpdate()
+    + Restart()
+    - SwitchState(newState : State)
+}
+
+class TransitionsPresenter {
+    - _transitions : List<Transition>
+    + Evaluate(currentState : State) : State
+}
+
+abstract class State <<Abstract>> {
+    + Enter()
+    + Exit()
+    + Update()
+    + FixedUpdate()
+}
+
+class IdleState
+class RunState
+class JumpState
+class FallState
+class DieState
+
+' Inheritance
+IdleState --|> State
+RunState --|> State
+JumpState --|> State
+FallState --|> State
+DieState --|> State
+
+' Relationships
+Unit ..> UnitStateMachineFactory : uses
+UnitStateMachineFactory ..> StateMachine : creates
+StateMachine o-- State : manages
+StateMachine --> TransitionsPresenter : uses
+TransitionsPresenter --> State : defines transitions
+
+@enduml
