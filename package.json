@@ -4,6 +4,9 @@
   "description": "Josh Lollis Portfolio Website",
   "private": true,
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "generate-trees": "node scripts/generate-directory-trees.js",
     "update-trees": "npm run generate-trees"
   },
@@ -15,5 +18,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "astro": "^6.4.5"
   }
 }
