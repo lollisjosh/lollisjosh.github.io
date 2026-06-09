@@ -3,3 +3,5 @@
 !/blog/GAL-Dev*    # Except GAL-Dev files
 
 /references/*    # Ignore everything in references
+
+node_modules/

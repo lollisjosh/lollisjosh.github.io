@@ -5,15 +5,28 @@
   "private": true,
   "scripts": {
     "generate-trees": "node scripts/generate-directory-trees.js",
-    "update-trees": "npm run generate-trees"
+    "update-trees": "npm run generate-trees",
+    "tw:build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "tw:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lollisjosh/lollisjosh.github.io"
+    "url": "git+https://github.com/lollisjosh/lollisjosh.github.io.git"
   },
   "author": "Josh Lollis",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
+  },
+  "main": "acctoolbar.min.js",
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lollisjosh/lollisjosh.github.io/issues"
+  },
+  "homepage": "https://github.com/lollisjosh/lollisjosh.github.io#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
   }
 }
