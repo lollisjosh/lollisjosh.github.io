@@ -1,5 +1,26 @@
-# .gitignore
-/blog/*            # Ignore everything in blog
-!/blog/GAL-Dev*    # Except GAL-Dev files
+# Dependencies
+node_modules/
 
-/references/*    # Ignore everything in references
+# Build output
+dist/
+
+# Astro generated files
+.astro/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Blog drafts/generated content
+/blog/*
+!/blog/GAL-Dev*
+
+# References
+/references/*
