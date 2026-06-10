@@ -1,13 +1,13 @@
 ---
 const {
-    title = "Josh Lollis Portfolio",
-    description = "Josh Lollis Portfolio Website",
+  title = 'Josh Lollis Portfolio',
+  description = 'Josh Lollis Portfolio Website',
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
@@ -15,22 +15,28 @@ const {
 
     <!-- Legacy shared CSS/JS bridge -->
     <script is:inline src="/js/head.js"></script>
-</head>
 
-    <body>
-        <!-- Header injection point -->
-        <div id="header-placeholder"></div>
+    <!-- Optional page-specific head content -->
+    <slot name="head" />
+  </head>
 
-        <slot />
+  <body>
+    <!-- Header injection point -->
+    <div id="header-placeholder"></div>
 
-        <!-- Back to top button -->
-        <button class="back-to-top-button hidden" aria-label="Back to top">
-            <i class="fa-solid fa-circle-chevron-up"></i>
-        </button>
+    <slot />
 
-        <!-- Footer injection point -->
-        <div id="footer-placeholder"></div>
+    <!-- Back to top button -->
+    <button class="back-to-top-button hidden" aria-label="Back to top">
+      <i class="fa-solid fa-circle-chevron-up"></i>
+    </button>
 
-<script is:inline src="/scripts.js"></script>
-    </body>
+    <!-- Footer injection point -->
+    <div id="footer-placeholder"></div>
+
+    <script is:inline src="/scripts.js"></script>
+
+    <!-- Optional page-specific scripts -->
+    <slot name="scripts" />
+  </body>
 </html>
