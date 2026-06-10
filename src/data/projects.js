@@ -1,1 +1,42 @@
-export const projects = []
+export const projects = [
+    {
+        id: 'antillery',
+        title: 'Antillery',
+        description: 'A 2D turn-based artillery capstone project',
+        image: '/assets/images/antillery/title-screen.png',
+        imageAlt: 'Antillery',
+        href: '/projects/antillery.html',
+    },
+    {
+        id: 'card_collection',
+        title: 'Card Collection',
+        description: 'A TCG card viewer and collection application',
+        image: '/assets/gifs/card.gif',
+        imageAlt: 'Card Collection',
+        href: '/projects/card_collection.html',
+    },
+    {
+        id: 'snake',
+        title: 'Snake',
+        description: 'A snake game with challenging new mechanics',
+        image: '/assets/gifs/snake.gif',
+        imageAlt: 'Snake Game',
+        href: '/projects/snake.html',
+    },
+    {
+        id: 'portfolio',
+        title: 'Portfolio Website',
+        description: 'This responsive developer portfolio site',
+        image: '/assets/gifs/portfolio.gif',
+        imageAlt: 'Portfolio Website',
+        href: '/projects/portfolio.html',
+    },
+    {
+        id: 'xb2midi',
+        title: 'XB2MIDI',
+        description: 'Map Xbox controller inputs to MIDI messages',
+        image: '/assets/images/xb2midi/basic.png',
+        imageAlt: 'XB2MIDI',
+        href: '/projects/xb2midi.html',
+    },
+]
