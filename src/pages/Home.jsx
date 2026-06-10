@@ -1,5 +1,6 @@
 import '../App.css'
 import Layout from '../components/Layout'
+import ProjectTabs from '../components/ProjectTabs'
 
 function Home() {
   return (
@@ -18,6 +19,9 @@ function Home() {
             className="profile-image"
           />
         </section>
+
+        <ProjectTabs />
+
       </main>
     </Layout>
   )
