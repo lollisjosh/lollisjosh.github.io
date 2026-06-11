@@ -1,16 +1,18 @@
 .project-rail {
     position: fixed;
+    top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer, 2rem));
     right: 0;
-    top: 50%;
-    z-index: 0;
+    bottom: calc(var(--footer-safe-height, 0rem) + var(--project-rail-bottom-buffer, 1.5rem));
+    z-index: 5;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: var(--project-rail-gap, 1rem);
-    transform: translateY(-50%);
 }
 
 .project-rail__item {
     position: relative;
+    flex: 0 0 var(--project-rail-item-height, 120px);
     display: flex;
     align-items: stretch;
     width: var(--project-rail-item-width, 500px);

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import './Header.css'
+
 const navLinks = [
   { href: '/index.html', label: 'Home' },
   { href: '/about.html', label: 'About' },
