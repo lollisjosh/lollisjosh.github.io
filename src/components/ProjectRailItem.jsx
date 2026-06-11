@@ -1,4 +1,4 @@
-function ProjectTab({ project }) {
+function ProjectRailItem({ project }) {
     return (
         <div className="project-tab" data-project={project.id}>
             <div className="tab-preview">
@@ -16,4 +16,4 @@ function ProjectTab({ project }) {
     )
 }
 
-export default ProjectTab
+export default ProjectRailItem

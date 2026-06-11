@@ -1,6 +1,6 @@
 import '../App.css'
 import Layout from '../components/Layout'
-import ProjectTabs from '../components/ProjectTabs'
+import ProjectRail from '../components/ProjectRail'
 import Status from '../components/Status'
 import ProfileImage from '../components/ProfileImage'
 import Bio from '../components/Bio'
@@ -19,7 +19,7 @@ function Home() {
           <Bio />
         </section>
 
-        <ProjectTabs />
+        <ProjectRail />
 
       </main>
     </Layout>

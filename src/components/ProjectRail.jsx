@@ -1,14 +1,14 @@
-import ProjectTab from './ProjectTab'
+import ProjectRailItem from './ProjectRailItem'
 import { projects } from '../data/projects'
 
-function ProjectTabs() {
+function ProjectRail() {
     return (
         <div className="sliding-projects">
             {projects.map((project) => (
-                <ProjectTab key={project.id} project={project} />
+                <ProjectRailItem key={project.id} project={project} />
             ))}
         </div>
     )
 }
 
-export default ProjectTabs
+export default ProjectRail
