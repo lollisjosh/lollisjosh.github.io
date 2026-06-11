@@ -1,22 +1,24 @@
+import './Footer.css'
+
 const socialLinks = [
   {
     href: 'https://github.com/TelloViz',
-    className: 'fab fa fa-github hover-transform-up',
+    className: 'footer-social-link fa-brands fa-github hover-transform-up',
     label: 'GitHub',
   },
   {
     href: 'https://instagram.com/tello.vision',
-    className: 'fab fa fa-instagram hover-transform-up',
+    className: 'footer-social-link fa-brands fa-instagram hover-transform-up',
     label: 'Instagram',
   },
   {
     href: 'https://www.youtube.com/@tello-visiongames4464',
-    className: 'fab fa fa-youtube hover-transform-up',
+    className: 'footer-social-link fa-brands fa-youtube hover-transform-up',
     label: 'YouTube',
   },
   {
     href: 'https://www.linkedin.com/in/lollisjosh/',
-    className: 'fab fa fa-linkedin hover-transform-up',
+    className: 'footer-social-link fa-brands fa-linkedin hover-transform-up',
     label: 'LinkedIn',
   },
 ]
