@@ -2,6 +2,7 @@ import '../App.css'
 import Layout from '../components/Layout'
 import ProjectTabs from '../components/ProjectTabs'
 import Status from '../components/Status'
+import ProfileImage from '../components/ProfileImage'
 
 function Home() {
   return (
@@ -16,11 +17,7 @@ function Home() {
             This is the first React/Vite proof page using my existing portfolio assets.
           </p>
 
-          <img
-            src="/assets/images/pfp.png"
-            alt="Josh Lollis profile"
-            className="profile-image"
-          />
+          <ProfileImage />
         </section>
 
         <ProjectTabs />
