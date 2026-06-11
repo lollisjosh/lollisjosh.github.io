@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import ProjectTabs from '../components/ProjectTabs'
 import Status from '../components/Status'
 import ProfileImage from '../components/ProfileImage'
+import Bio from '../components/Bio'
 
 function Home() {
   return (
@@ -13,11 +14,9 @@ function Home() {
 
           <Status />
 
-          <p>
-            This is the first React/Vite proof page using my existing portfolio assets.
-          </p>
-
           <ProfileImage />
+
+          <Bio />
         </section>
 
         <ProjectTabs />
