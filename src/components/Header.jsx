@@ -25,12 +25,11 @@ function Header() {
   }
 
   return (
-    <header>
-      <div className="navbar-container">
-        <nav id="navbar" aria-label="Main navigation">
+    <header className="site-header">
+      <div className="site-header__bar-wrap">
+        <nav className="site-header__bar" aria-label="Main navigation">
           <button
-            id="mobile-menu"
-            className="menu-toggle"
+            className="site-header__menu-toggle"
             type="button"
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
@@ -41,7 +40,7 @@ function Header() {
 
           <a
             href="/index.html"
-            className="home-button"
+            className="site-header__home-button"
             aria-label="Home"
             onClick={closeMenu}
           >
@@ -50,11 +49,15 @@ function Header() {
         </nav>
       </div>
 
-      <ul className={`header-list${isMenuOpen ? ' active' : ''}`}>
+      <ul
+        className={`site-header__nav-list${
+          isMenuOpen ? ' site-header__nav-list--open' : ''
+        }`}
+      >
         {navLinks.map((link) => (
-          <li className="header-list-item" key={link.href}>
+          <li className="site-header__nav-item" key={link.href}>
             <a
-              className="header-list-item-a"
+              className="site-header__nav-link"
               href={link.href}
               onClick={closeMenu}
             >
