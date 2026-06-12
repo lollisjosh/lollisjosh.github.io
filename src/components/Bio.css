@@ -1,0 +1,41 @@
+.bio {
+  width: min(100%, 42rem);
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.bio__greeting {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.bio__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+
+.bio__tag-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bio__separator {
+  color: #c04dd9;
+}
+
+.bio__content {
+  margin-top: 1rem;
+}
+
+.bio__content p {
+  margin: 0;
+  color: rgb(255 255 255 / 0.86);
+  line-height: 1.6;
+}
