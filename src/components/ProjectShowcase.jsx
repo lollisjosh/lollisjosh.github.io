@@ -1,3 +1,4 @@
+import ProjectPreviewList from './ProjectPreviewList'
 import ProjectRail from './ProjectRail'
 import { projects } from '../data/projects'
 
@@ -15,9 +16,11 @@ function ProjectShowcase({ projectIds = projects.map((project) => project.id) })
                 <h2 id="project-showcase-heading">Projects</h2>
                 <p>
                     A small collection of games, tools, experiments, and interface
-                    work. Hover over a project tab to open the panel.
+                    work.
                 </p>
             </div>
+
+            <ProjectPreviewList projects={selectedProjects} />
 
             <ProjectRail
                 projects={selectedProjects}

@@ -185,7 +185,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 999px) {
     .project-rail {
         display: none;
     }
