@@ -1,53 +1,78 @@
 .project-rail {
+    --project-rail-top-buffer: 2rem;
+    --project-rail-bottom-buffer: 1.5rem;
+    --project-rail-gap: clamp(0.45rem, 1dvh, 1rem);
+    --project-rail-item-height: clamp(82px, 12dvh, 120px);
+    --project-rail-preview-width: clamp(104px, 15dvh, 150px);
+    --project-rail-content-width: clamp(280px, 28vw, 350px);
+    --project-rail-item-width: calc(
+        var(--project-rail-preview-width) +
+        var(--project-rail-content-width)
+    );
+    --project-rail-slide-distance: var(--project-rail-content-width);
+    --project-rail-bounce-distance: clamp(6px, 1dvh, 10px);
+
     position: fixed;
-    top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer, 2rem));
+    top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer));
     right: 0;
-    bottom: calc(var(--footer-safe-height, 0rem) + var(--project-rail-bottom-buffer, 1.5rem));
+    bottom: calc(var(--footer-safe-height, 7rem) + var(--project-rail-bottom-buffer));
     z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: var(--project-rail-gap, 1rem);
+    gap: var(--project-rail-gap);
+}
+
+.project-rail__slot {
+    flex: 0 0 var(--project-rail-item-height);
+    width: var(--project-rail-item-width);
+    pointer-events: none;
+    animation: projectRailIdleNudgeRight 3s ease-in-out infinite;
+    transition: transform 0.2s ease;
+}
+
+.project-rail__slot:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.project-rail__slot:nth-child(even) {
+    animation-delay: 1.5s;
+}
+
+.project-rail__slot:has(.project-rail__item:hover),
+.project-rail__slot:focus-within {
+    animation: none;
+    transform: translateX(0);
 }
 
 .project-rail__item {
     position: relative;
-    flex: 0 0 var(--project-rail-item-height, 120px);
     display: flex;
     align-items: stretch;
-    width: var(--project-rail-item-width, 500px);
-    height: var(--project-rail-item-height, 120px);
+    width: var(--project-rail-item-width);
+    height: var(--project-rail-item-height);
     overflow: hidden;
+    pointer-events: auto;
     cursor: pointer;
     background: white;
     border: 2px solid #6d5dfc;
     border-right: none;
     border-radius: 0.75rem 0 0 0.75rem;
     box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.28);
-    transform: translateX(var(--project-rail-slide-distance, 350px));
-    animation: projectRailIdleRight 3s ease-in-out infinite;
+    transform: translateX(var(--project-rail-slide-distance));
     transition:
-        transform 0.4s ease-out,
+        transform 0.42s ease-out,
         box-shadow 0.3s ease;
-}
-
-.project-rail__item:nth-child(odd) {
-    animation-delay: 0.5s;
-}
-
-.project-rail__item:nth-child(even) {
-    animation-delay: 1.5s;
 }
 
 .project-rail__item:hover,
 .project-rail__item:focus-within {
-    animation: none;
     transform: translateX(0);
     box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.36);
 }
 
 .project-rail__preview {
-    flex: 0 0 var(--project-rail-preview-width, 150px);
+    flex: 0 0 var(--project-rail-preview-width);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,15 +91,16 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
-    padding: 0.9rem 1.25rem;
+    gap: 0.25rem;
+    padding: clamp(0.55rem, 1.2dvh, 0.9rem) 1.25rem;
     color: #111;
 }
 
 .project-rail__content h3 {
     margin: 0;
     color: #352f8f;
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 1.8dvh, 1.2rem);
+    line-height: 1.1;
 }
 
 .project-rail__content p {
@@ -82,7 +108,8 @@
     margin: 0;
     overflow: hidden;
     color: #555;
-    line-height: 1.35;
+    font-size: clamp(0.78rem, 1.35dvh, 0.9rem);
+    line-height: 1.3;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
@@ -91,6 +118,7 @@
     flex-shrink: 0;
     align-self: flex-end;
     color: #c04dd9;
+    font-size: clamp(0.78rem, 1.35dvh, 0.9rem);
     font-weight: 700;
 }
 
@@ -100,25 +128,44 @@
     z-index: 1;
 }
 
-@keyframes projectRailIdleRight {
+@keyframes projectRailIdleNudgeRight {
     0%,
     100% {
-        transform: translateX(var(--project-rail-slide-distance, 350px));
+        transform: translateX(0);
     }
 
     50% {
-        transform: translateX(
-            calc(
-                var(--project-rail-slide-distance, 350px) -
-                var(--project-rail-bounce-distance, 10px)
-            )
-        );
+        transform: translateX(calc(-1 * var(--project-rail-bounce-distance)));
+    }
+}
+
+@media (max-height: 680px) {
+    .project-rail {
+        --project-rail-item-height: clamp(72px, 11dvh, 92px);
+        --project-rail-preview-width: clamp(92px, 14dvh, 115px);
+        --project-rail-content-width: clamp(250px, 26vw, 310px);
+        --project-rail-top-buffer: 1rem;
+        --project-rail-bottom-buffer: 1rem;
+    }
+
+    .project-rail__content p {
+        -webkit-line-clamp: 1;
+    }
+}
+
+@media (max-height: 560px) {
+    .project-rail {
+        display: none;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .project-rail__item {
+    .project-rail__slot {
         animation: none;
+        transition: none;
+    }
+
+    .project-rail__item {
         transition: none;
     }
 }
