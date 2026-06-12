@@ -1,129 +1,141 @@
 :root {
+  --footer-safe-height: 11rem;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  color: white;
+  background: linear-gradient(to bottom, #352f8f, #050505);
+  border-top: 4px solid #c04dd9;
+  box-shadow: 0 -0.5rem 1rem rgb(0 0 0 / 0.28);
+  text-align: center;
+}
+
+.site-footer__credit {
+  max-width: none;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.site-footer__socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  border: 3px solid #211c66;
+  border-radius: 0.5rem;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  opacity: 0.85;
+  box-shadow: 0 0.35rem 0.8rem rgb(0 0 0 / 0.35);
+  transform: translateY(-2px);
+}
+
+.site-footer__social-link.fa-github {
+  background: #050505;
+}
+
+.site-footer__social-link.fa-instagram {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+.site-footer__social-link.fa-youtube {
+  background: #ff0000;
+}
+
+.site-footer__social-link.fa-linkedin {
+  background: #0077b5;
+}
+
+.site-footer__wakatime {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.site-footer__wakatime h5 {
+  margin: 0;
+  color: white;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.site-footer__wakatime-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer__wakatime-link img {
+  display: block;
+  width: auto;
+  height: 1.5rem;
+  border: 3px solid #211c66;
+  border-radius: 0.35rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
     --footer-safe-height: 7rem;
-}
+  }
 
-#site-footer {
-    display: flex;
+  .site-footer {
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
+    justify-items: stretch;
     gap: 1rem;
-    width: 100%;
     padding: 0.75rem 1rem;
-    color: white;
-    background: linear-gradient(to bottom, #352f8f, #050505);
-    border-top: 4px solid #c04dd9;
-    box-shadow: 0 -0.5rem 1rem rgb(0 0 0 / 0.28);
-}
+    text-align: left;
+  }
 
-#site-footer p {
+  .site-footer__credit {
     max-width: 16rem;
-    margin: 0;
-    font-size: 0.85rem;
-    line-height: 1.35;
-}
+  }
 
-#social-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
+  .site-footer__socials {
+    justify-self: center;
+  }
 
-.footer-social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .site-footer__social-link {
     width: 3.25rem;
     height: 3.25rem;
-    color: white;
     font-size: 2rem;
-    text-align: center;
-    text-decoration: none;
-    border: 3px solid #211c66;
-    border-radius: 0.5rem;
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        box-shadow 0.2s ease;
-}
+  }
 
-.footer-social-link:hover,
-.footer-social-link:focus-visible {
-    opacity: 0.85;
-    box-shadow: 0 0.35rem 0.8rem rgb(0 0 0 / 0.35);
-    transform: translateY(-2px);
-}
-
-.footer-social-link.fa-github {
-    background: #050505;
-}
-
-.footer-social-link.fa-instagram {
-    background: linear-gradient(
-        45deg,
-        #f09433,
-        #e6683c,
-        #dc2743,
-        #cc2366,
-        #bc1888
-    );
-}
-
-.footer-social-link.fa-youtube {
-    background: #ff0000;
-}
-
-.footer-social-link.fa-linkedin {
-    background: #0077b5;
-}
-
-#wakatime-container {
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-#wakatime-container h5 {
-    margin: 0;
-    color: white;
-    font-size: 0.75rem;
-    text-align: center;
-}
-
-#wakatime-site-hours {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#wakatime-site-hours img {
-    display: block;
-    width: auto;
-    height: 1.5rem;
-    border: 3px solid #211c66;
-    border-radius: 0.35rem;
-}
-
-@media screen and (max-width: 768px) {
-    :root {
-        --footer-safe-height: 11rem;
-    }
-
-    #site-footer {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    #site-footer p {
-        max-width: none;
-    }
-
-    .footer-social-link {
-        width: 2.75rem;
-        height: 2.75rem;
-        font-size: 1.6rem;
-    }
+  .site-footer__wakatime {
+    justify-self: end;
+  }
 }

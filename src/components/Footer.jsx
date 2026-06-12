@@ -3,37 +3,39 @@ import './Footer.css'
 const socialLinks = [
   {
     href: 'https://github.com/TelloViz',
-    className: 'footer-social-link fa-brands fa-github hover-transform-up',
+    iconClass: 'fa-brands fa-github',
     label: 'GitHub',
   },
   {
     href: 'https://instagram.com/tello.vision',
-    className: 'footer-social-link fa-brands fa-instagram hover-transform-up',
+    iconClass: 'fa-brands fa-instagram',
     label: 'Instagram',
   },
   {
     href: 'https://www.youtube.com/@tello-visiongames4464',
-    className: 'footer-social-link fa-brands fa-youtube hover-transform-up',
+    iconClass: 'fa-brands fa-youtube',
     label: 'YouTube',
   },
   {
     href: 'https://www.linkedin.com/in/lollisjosh/',
-    className: 'footer-social-link fa-brands fa-linkedin hover-transform-up',
+    iconClass: 'fa-brands fa-linkedin',
     label: 'LinkedIn',
   },
 ]
 
 function Footer() {
   return (
-    <footer id="site-footer">
-      <p>Designed and Developed by Josh Lollis</p>
+    <footer className="site-footer">
+      <p className="site-footer__credit">
+        Designed and Developed by Josh Lollis
+      </p>
 
-      <div id="social-div" aria-label="Social links">
+      <div className="site-footer__socials" aria-label="Social links">
         {socialLinks.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className={link.className}
+            className={`site-footer__social-link ${link.iconClass}`}
             aria-label={link.label}
             target="_blank"
             rel="noopener noreferrer"
@@ -41,11 +43,11 @@ function Footer() {
         ))}
       </div>
 
-      <div id="wakatime-container">
+      <div className="site-footer__wakatime">
         <h5>Coding time (Since Aug '23)</h5>
 
         <a
-          id="wakatime-site-hours"
+          className="site-footer__wakatime-link"
           href="https://wakatime.com/@a45be745-6431-45a2-8c9d-c19040dcd283"
           target="_blank"
           rel="noopener noreferrer"
