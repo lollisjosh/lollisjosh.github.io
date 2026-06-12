@@ -19,11 +19,18 @@
     gap: var(--project-rail-gap);
 }
 
-.project-rail[data-side="right"] {
+.project-rail[data-attach-to="viewport"][data-side="right"] {
     position: fixed;
     top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer));
     right: 0;
     bottom: calc(var(--footer-safe-height, 7rem) + var(--project-rail-bottom-buffer));
+}
+
+.project-rail[data-attach-to="parent"][data-side="right"] {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
 }
 
 .project-rail__slot {

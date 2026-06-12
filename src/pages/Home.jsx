@@ -19,9 +19,25 @@ function Home() {
 
             <Bio />
           </section>
-        </main>
 
-        <ProjectRail side="right" revealDirection="left" />
+          <section className="project-showcase" aria-labelledby="project-showcase-heading">
+            <div className="project-showcase__content">
+              <p className="project-showcase__eyebrow">Featured Work</p>
+              <h2 id="project-showcase-heading">Projects</h2>
+              <p>
+                A small collection of games, tools, experiments, and interface
+                work. Hover over a project tab to open the panel.
+              </p>
+            </div>
+
+            <ProjectRail
+              attachTo="parent"
+              side="right"
+              revealDirection="left"
+              label="Featured projects"
+            />
+          </section>
+        </main>
       </div>
     </Layout>
   )
