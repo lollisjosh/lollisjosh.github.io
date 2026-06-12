@@ -1,6 +1,6 @@
 import './Status.css'
 
-const statusMessage = 'Deep into a major CSS refactor. 🙏 Please feel free to contact me if anything seems broken. 🙏'
+const statusMessage = 'Currently migrating this site to React. Many pages are still in transition.'
 
 function Status() {
     return (
