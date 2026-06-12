@@ -1,18 +1,23 @@
+import './Status.css'
+
+const statusMessage = 'Deep into a major CSS refactor. 🙏 Please feel free to contact me if anything seems broken. 🙏'
+
 function Status() {
     return (
-        <div id="status-container">
-            <div className="status-indicator-section">
-                <div className="status-indicator" aria-hidden="true">
-                    ●
-                </div>
-            </div>
+        <aside
+            className="status"
+            aria-label={`Current site status: ${statusMessage}`}
+        >
+            <span className="status__indicator" aria-hidden="true">
+                ●
+            </span>
 
-            <div className="status-text-container">
-                <p id="status">
-                    Deep into a major CSS refactor. 🙏Please feel free to contact me if anything seems broken.🙏
-                </p>
+            <div className="status__ticker" aria-hidden="true">
+                <span className="status__message">
+                    {statusMessage}
+                </span>
             </div>
-        </div>
+        </aside>
     )
 }
 
