@@ -1,54 +1,61 @@
 .project-showcase {
-  position: relative;
-  width: min(52rem, 78vw);
-  min-height: 34rem;
-  margin: 3rem auto 6rem;
-  padding: 2rem 28rem 2rem 2rem;
-  overflow: hidden;
-  border: 2px solid rgb(192 77 217 / 0.65);
-  border-radius: 1.5rem;
-  background:
-    linear-gradient(
-      90deg,
-      rgb(255 255 255 / 0.08),
-      rgb(255 255 255 / 0.03)
-    );
-  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.24);
+  display: none;
 }
 
-.project-showcase::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  width: 4px;
-  content: "";
-  background: #c04dd9;
-}
+@media screen and (min-width: 1000px) {
+  .project-showcase {
+    position: relative;
+    display: block;
+    width: min(52rem, 78vw);
+    min-height: 34rem;
+    margin: 3rem auto 6rem;
+    padding: 2rem 28rem 2rem 2rem;
+    overflow: hidden;
+    border: 2px solid rgb(192 77 217 / 0.65);
+    border-radius: 1.5rem;
+    background:
+      linear-gradient(
+        90deg,
+        rgb(255 255 255 / 0.08),
+        rgb(255 255 255 / 0.03)
+      );
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.24);
+  }
 
-.project-showcase__content {
-  max-width: 22rem;
-}
+  .project-showcase::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 4px;
+    content: "";
+    background: #c04dd9;
+  }
 
-.project-showcase__eyebrow {
-  margin: 0 0 0.5rem;
-  color: #c04dd9;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+  .project-showcase__content {
+    max-width: 22rem;
+  }
 
-.project-showcase__content h2 {
-  margin: 0 0 1rem;
-  color: white;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
-}
+  .project-showcase__eyebrow {
+    margin: 0 0 0.5rem;
+    color: #c04dd9;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
 
-.project-showcase__content p {
-  margin: 0;
-  color: rgb(255 255 255 / 0.86);
-  line-height: 1.6;
+  .project-showcase__content h2 {
+    margin: 0 0 1rem;
+    color: white;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+  }
+
+  .project-showcase__content p {
+    margin: 0;
+    color: rgb(255 255 255 / 0.86);
+    line-height: 1.6;
+  }
 }
