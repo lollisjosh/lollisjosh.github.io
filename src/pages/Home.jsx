@@ -1,4 +1,3 @@
-import '../App.css'
 import './Home.css'
 
 import Layout from '../components/Layout'
