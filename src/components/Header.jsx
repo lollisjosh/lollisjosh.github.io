@@ -30,22 +30,22 @@ function Header() {
         <nav id="navbar" aria-label="Main navigation">
           <button
             id="mobile-menu"
-            className="menu-toggle hover-transform-up hover-accent-bg hover-white-border hover-button-glow"
+            className="menu-toggle"
             type="button"
             aria-label="Toggle navigation menu"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
           >
-            <span className="toggle-button-text">☲</span>
+            <span>☲</span>
           </button>
 
           <a
             href="/index.html"
-            className="home-button hover-transform-up hover-accent-bg hover-white-border hover-button-glow"
+            className="home-button"
             aria-label="Home"
             onClick={closeMenu}
           >
-            <span className="home-button-text">⌂</span>
+            <span>⌂</span>
           </a>
         </nav>
       </div>
