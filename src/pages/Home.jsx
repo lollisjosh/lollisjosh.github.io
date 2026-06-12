@@ -8,20 +8,21 @@ import Bio from '../components/Bio'
 function Home() {
   return (
     <Layout>
-      <main className="app-shell">
-        <section className="intro-card">
-          <h1>Welcome to My Portfolio</h1>
+      <div className="home-page">
+        <main className="app-shell">
+          <section className="intro-card">
+            <h1>Welcome to My Portfolio</h1>
 
-          <Status />
+            <Status />
 
-          <ProfileImage />
+            <ProfileImage />
 
-          <Bio />
-        </section>
+            <Bio />
+          </section>
+        </main>
 
-        <ProjectRail />
-
-      </main>
+        <ProjectRail side="right" revealDirection="left" />
+      </div>
     </Layout>
   )
 }

@@ -12,10 +12,6 @@
     --project-rail-slide-distance: var(--project-rail-content-width);
     --project-rail-bounce-distance: clamp(6px, 1dvh, 10px);
 
-    position: fixed;
-    top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer));
-    right: 0;
-    bottom: calc(var(--footer-safe-height, 7rem) + var(--project-rail-bottom-buffer));
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -23,12 +19,22 @@
     gap: var(--project-rail-gap);
 }
 
+.project-rail[data-side="right"] {
+    position: fixed;
+    top: calc(var(--header-height, 4rem) + var(--project-rail-top-buffer));
+    right: 0;
+    bottom: calc(var(--footer-safe-height, 7rem) + var(--project-rail-bottom-buffer));
+}
+
 .project-rail__slot {
     flex: 0 0 var(--project-rail-item-height);
     width: var(--project-rail-item-width);
     pointer-events: none;
-    animation: projectRailIdleNudgeRight 3s ease-in-out infinite;
     transition: transform 0.2s ease;
+}
+
+.project-rail[data-reveal-direction="left"] .project-rail__slot {
+    animation: projectRailIdleNudgeLeft 3s ease-in-out infinite;
 }
 
 .project-rail__slot:nth-child(odd) {
@@ -56,17 +62,23 @@
     cursor: pointer;
     background: white;
     border: 2px solid #6d5dfc;
-    border-right: none;
     border-radius: 0.75rem 0 0 0.75rem;
     box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 0.28);
-    transform: translateX(var(--project-rail-slide-distance));
     transition:
         transform 0.42s ease-out,
         box-shadow 0.3s ease;
 }
 
-.project-rail__item:hover,
-.project-rail__item:focus-within {
+.project-rail[data-side="right"] .project-rail__item {
+    border-right: none;
+}
+
+.project-rail[data-reveal-direction="left"] .project-rail__item {
+    transform: translateX(var(--project-rail-slide-distance));
+}
+
+.project-rail[data-reveal-direction="left"] .project-rail__item:hover,
+.project-rail[data-reveal-direction="left"] .project-rail__item:focus-within {
     transform: translateX(0);
     box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.36);
 }
@@ -128,7 +140,7 @@
     z-index: 1;
 }
 
-@keyframes projectRailIdleNudgeRight {
+@keyframes projectRailIdleNudgeLeft {
     0%,
     100% {
         transform: translateX(0);
