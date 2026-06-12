@@ -1,7 +1,11 @@
 function ProjectRailItem({ project }) {
     return (
         <div className="project-rail__slot" data-project={project.id}>
-            <div className="project-rail__item">
+            <a
+                href={project.href}
+                className="project-rail__item"
+                aria-label={`View ${project.title}`}
+            >
                 <div className="project-rail__preview">
                     <img src={project.image} alt={project.imageAlt} />
                 </div>
@@ -11,13 +15,7 @@ function ProjectRailItem({ project }) {
                     <p>{project.description}</p>
                     <span className="project-rail__view-more">View Project</span>
                 </div>
-
-                <a
-                    href={project.href}
-                    className="project-rail__link"
-                    aria-label={`View ${project.title}`}
-                ></a>
-            </div>
+            </a>
         </div>
     )
 }
