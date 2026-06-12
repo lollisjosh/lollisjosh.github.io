@@ -1,11 +1,13 @@
+import './ProfileImage.css'
+
 function ProfileImage() {
     return (
-        <div id="pfp-placeholder">
-            <div className="pfp-border hover-scale">
+        <div className="profile-image">
+            <div className="profile-image__frame">
                 <img
                     src="/assets/images/pfp.png"
                     alt="Profile Picture"
-                    className="pfp"
+                    className="profile-image__image"
                 />
             </div>
         </div>
