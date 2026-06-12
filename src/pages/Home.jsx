@@ -1,9 +1,19 @@
 import '../App.css'
+import './Home.css'
+
 import Layout from '../components/Layout'
-import ProjectRail from '../components/ProjectRail'
+import ProjectShowcase from '../components/ProjectShowcase'
 import Status from '../components/Status'
 import ProfileImage from '../components/ProfileImage'
 import Bio from '../components/Bio'
+
+const featuredProjectIds = [
+  'antillery',
+  'card_collection',
+  'snake',
+  'portfolio',
+  'xb2midi',
+]
 
 function Home() {
   return (
@@ -20,23 +30,7 @@ function Home() {
             <Bio />
           </section>
 
-          <section className="project-showcase" aria-labelledby="project-showcase-heading">
-            <div className="project-showcase__content">
-              <p className="project-showcase__eyebrow">Featured Work</p>
-              <h2 id="project-showcase-heading">Projects</h2>
-              <p>
-                A small collection of games, tools, experiments, and interface
-                work. Hover over a project tab to open the panel.
-              </p>
-            </div>
-
-            <ProjectRail
-              attachTo="parent"
-              side="right"
-              revealDirection="left"
-              label="Featured projects"
-            />
-          </section>
+          <ProjectShowcase projectIds={featuredProjectIds} />
         </main>
       </div>
     </Layout>

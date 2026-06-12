@@ -1,9 +1,9 @@
 import ProjectRailItem from './ProjectRailItem'
-import { projects } from '../data/projects'
 
 import './ProjectRail.css'
 
 function ProjectRail({
+    projects = [],
     attachTo = 'viewport',
     side = 'right',
     revealDirection = 'left',
