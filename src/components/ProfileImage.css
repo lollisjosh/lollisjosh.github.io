@@ -5,16 +5,20 @@
 }
 
 .profile-image__frame {
-  width: 12rem;
-  height: 12rem;
-  overflow: hidden;
-  border: 4px solid rgb(255 255 255 / 0.24);
-  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13.5rem;
+  height: 12.5rem;
+  background: linear-gradient(to bottom, #4b304e, #181986);
+  border-radius: 50%;
+  box-shadow: 0.5rem 0.625rem 0.625rem rgb(0 0 0 / 0.5);
 }
 
 .profile-image__image {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 12rem;
+  height: 12rem;
   object-fit: cover;
+  border-radius: 50%;
 }
