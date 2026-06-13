@@ -1,0 +1,7 @@
+.profile-coin {
+  width: 14rem;
+  height: 14rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.08), transparent 68%);
+}
