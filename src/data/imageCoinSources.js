@@ -1,14 +1,14 @@
 /**
- * @typedef {'faces' | 'sequence-loop' | 'sequence-march'} ProfileCoinImageMode
+ * @typedef {'faces' | 'sequence-loop' | 'sequence-march'} ImageCoinImageMode
  */
 
 /**
- * @typedef {'atlas'} ProfileCoinAtlasSourceType
+ * @typedef {'atlas'} ImageCoinAtlasSourceType
  */
 
 /**
- * @typedef {object} ProfileCoinAtlasSource
- * @property {ProfileCoinAtlasSourceType} type - Source format used by the sequence renderer.
+ * @typedef {object} ImageCoinAtlasSource
+ * @property {ImageCoinAtlasSourceType} type - Source format used by the sequence renderer.
  * @property {string} src - Public path to the sprite sheet image.
  * @property {number} columns - Number of columns in the sprite sheet.
  * @property {number} rows - Number of rows in the sprite sheet.
@@ -18,9 +18,9 @@
  */
 
 /**
- * Reusable image-mode constants for ProfileCoin.
+ * Reusable image-mode constants for ImageCoin.
  */
-export const profileCoinImageModes = Object.freeze({
+export const imageCoinImageModes = Object.freeze({
     faces: 'faces',
     sequenceLoop: 'sequence-loop',
     sequenceMarch: 'sequence-march',
@@ -32,7 +32,7 @@ export const profileCoinImageModes = Object.freeze({
  * Frame order is left-to-right, top-to-bottom.
  * The final frame is the Water Dragon result image.
  *
- * @type {ProfileCoinAtlasSource}
+ * @type {ImageCoinAtlasSource}
  */
 export const waterDragonHandSignAtlas = {
     type: 'atlas',

@@ -12,10 +12,10 @@ import {
     getSequenceFrameCount,
     hiddenFaceThreshold,
     maxSpinVelocity,
-} from './profileCoinConfig'
+} from './imageCoinConfig'
 import CoinModel from './CoinModel'
 
-export default function ProfileCoinScene({
+export default function ImageCoinScene({
     ariaLabel,
     backImagePath,
     className,
@@ -41,7 +41,7 @@ export default function ProfileCoinScene({
         return getInitialSequenceState(frameCount)
     })
 
-    const classNames = ['profile-coin', className].filter(Boolean).join(' ')
+    const classNames = ['image-coin', className].filter(Boolean).join(' ')
 
     const frontFrameSource = hasSequence
         ? getFrameSource(source, sequenceState.frontFrameIndex, frontImagePath)
@@ -58,8 +58,8 @@ export default function ProfileCoinScene({
         }
 
     const style = {
-        '--profile-coin-size': size,
-        '--profile-coin-stage-bleed': stageBleed,
+        '--image-coin-size': size,
+        '--image-coin-stage-bleed': stageBleed,
     }
 
     function handleRotationChange(rotation) {
@@ -161,7 +161,7 @@ export default function ProfileCoinScene({
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
         >
-            <div className="profile-coin__stage">
+            <div className="image-coin__stage">
                 <Canvas camera={{ position: [0, 0, 5.2], fov: 35 }}>
                     <ambientLight intensity={1.5} />
                     <directionalLight position={[2, 3, 4]} intensity={2} />

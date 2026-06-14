@@ -1,7 +1,7 @@
-.profile-coin {
+.image-coin {
   position: relative;
-  width: var(--profile-coin-size, 14rem);
-  height: var(--profile-coin-size, 14rem);
+  width: var(--image-coin-size, 14rem);
+  height: var(--image-coin-size, 14rem);
   margin: 1.75rem auto 1.25rem;
   overflow: visible;
   border-radius: 50%;
@@ -10,7 +10,7 @@
   user-select: none;
 }
 
-.profile-coin::before {
+.image-coin::before {
   position: absolute;
   inset: 10%;
   content: '';
@@ -19,11 +19,11 @@
   pointer-events: none;
 }
 
-.profile-coin__stage {
+.image-coin__stage {
   position: absolute;
-  inset: calc(var(--profile-coin-stage-bleed, 4rem) * -1);
+  inset: calc(var(--image-coin-stage-bleed, 4rem) * -1);
 }
 
-.profile-coin:active {
+.image-coin:active {
   cursor: grabbing;
 }

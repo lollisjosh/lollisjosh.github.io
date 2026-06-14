@@ -11,8 +11,8 @@ import {
     snapStrength,
     snapVelocityThreshold,
     spinDecayPerSecond,
-} from './profileCoinConfig'
-import { applyFrameToTexture } from './profileCoinTextures'
+} from './imageCoinConfig'
+import { applyFrameToTexture } from './imageCoinTextures'
 
 export default function CoinModel({
     backFrameSource,

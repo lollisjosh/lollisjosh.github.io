@@ -1,13 +1,13 @@
 import ProfileCoin from './ProfileCoin'
 import {
-    profileCoinImageModes,
+    imageCoinImageModes,
     waterDragonHandSignAtlas,
-} from '../data/profileCoinSources'
+} from '../data/imageCoinSources'
 
 function ProfileImage() {
     return (
         <ProfileCoin
-            imageMode={profileCoinImageModes.sequenceMarch}
+            imageMode={imageCoinImageModes.sequenceMarch}
             source={waterDragonHandSignAtlas}
             size="14rem"
             modelScale={0.95}
