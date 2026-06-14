@@ -1,7 +1,29 @@
 .profile-coin {
-  width: 14rem;
-  height: 14rem;
-  overflow: hidden;
+  position: relative;
+  width: var(--profile-coin-size, 14rem);
+  height: var(--profile-coin-size, 14rem);
+  margin: 1.75rem auto 1.25rem;
+  overflow: visible;
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(255 255 255 / 0.08), transparent 68%);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.profile-coin::before {
+  position: absolute;
+  inset: 10%;
+  content: '';
+  background: radial-gradient(circle, rgb(255 255 255 / 0.06), transparent 66%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.profile-coin__stage {
+  position: absolute;
+  inset: calc(var(--profile-coin-stage-bleed, 4rem) * -1);
+}
+
+.profile-coin:active {
+  cursor: grabbing;
 }
