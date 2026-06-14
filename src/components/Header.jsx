@@ -48,6 +48,15 @@ function Header() {
         </nav>
       </div>
 
+      {isMenuOpen && (
+        <button
+          className="site-header__menu-backdrop"
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={closeMenu}
+        />
+      )}
+
       <ul
         className={`site-header__nav-list${
           isMenuOpen ? ' site-header__nav-list--open' : ''

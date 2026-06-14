@@ -72,6 +72,16 @@
   transform: translateY(-2px);
 }
 
+.site-header__menu-backdrop {
+  position: fixed;
+  inset: var(--header-height) 0 0;
+  z-index: 10;
+  padding: 0;
+  cursor: default;
+  background: transparent;
+  border: 0;
+}
+
 .site-header__nav-list {
   position: fixed;
   top: calc(-100% - var(--header-height));
