@@ -12,6 +12,7 @@ import {
     getSequenceFrameCount,
     hiddenFaceThreshold,
     maxSpinVelocity,
+    hoverHitAreaScale,
 } from './imageCoinConfig'
 import CoinModel from './CoinModel'
 
@@ -22,6 +23,7 @@ export default function ImageCoinScene({
     frontImagePath,
     imageMode,
     modelScale,
+    motionHints,
     size,
     source,
     stageBleed,
@@ -37,6 +39,8 @@ export default function ImageCoinScene({
     const backWasVisibleRef = useRef(false)
     const frontSwappedWhileHiddenRef = useRef(false)
     const backSwappedWhileHiddenRef = useRef(false)
+    const [isDragging, setIsDragging] = useState(false)
+    const [isHovered, setIsHovered] = useState(false)
     const [sequenceState, setSequenceState] = useState(() => {
         return getInitialSequenceState(frameCount)
     })
@@ -116,14 +120,39 @@ export default function ImageCoinScene({
         }
     }
 
+    function getPointerIsInsideCoin(event) {
+        const bounds = event.currentTarget.getBoundingClientRect()
+        const centerX = bounds.left + bounds.width / 2
+        const centerY = bounds.top + bounds.height / 2
+        const deltaX = event.clientX - centerX
+        const deltaY = event.clientY - centerY
+        const radius = Math.min(bounds.width, bounds.height) / 2
+        const hitRadius = radius * hoverHitAreaScale
+
+        return Math.hypot(deltaX, deltaY) <= hitRadius
+    }
+
+    function handlePointerEnter(event) {
+        setIsHovered(getPointerIsInsideCoin(event))
+    }
+
+    function handlePointerLeave() {
+        setIsHovered(false)
+    }
+
     function handlePointerDown(event) {
+        if (!getPointerIsInsideCoin(event)) return
+
         isDraggingRef.current = true
+        setIsDragging(true)
         lastPointerXRef.current = event.clientX
         lastPointerTimeRef.current = performance.now()
         event.currentTarget.setPointerCapture(event.pointerId)
     }
 
     function handlePointerMove(event) {
+        setIsHovered(getPointerIsInsideCoin(event))
+
         if (!isDraggingRef.current) return
 
         const now = performance.now()
@@ -136,6 +165,7 @@ export default function ImageCoinScene({
             deltaX * dragSpinSensitivity / deltaTime,
             -maxSpinVelocity,
             maxSpinVelocity,
+    hoverHitAreaScale,
         )
         lastPointerXRef.current = event.clientX
         lastPointerTimeRef.current = now
@@ -143,6 +173,7 @@ export default function ImageCoinScene({
 
     function handlePointerUp(event) {
         isDraggingRef.current = false
+        setIsDragging(false)
 
         if (event.currentTarget.hasPointerCapture(event.pointerId)) {
             event.currentTarget.releasePointerCapture(event.pointerId)
@@ -156,6 +187,10 @@ export default function ImageCoinScene({
             role="img"
             aria-label={ariaLabel}
             data-image-mode={imageMode}
+            data-is-dragging={isDragging}
+            data-is-hovered={isHovered}
+            onPointerEnter={handlePointerEnter}
+            onPointerLeave={handlePointerLeave}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
@@ -173,7 +208,9 @@ export default function ImageCoinScene({
                                 dragRotationDeltaRef={dragRotationDeltaRef}
                                 frontFrameSource={frontFrameSource}
                                 isDraggingRef={isDraggingRef}
+                                isHovered={isHovered}
                                 modelScale={modelScale}
+                                motionHints={motionHints}
                                 onRotationChange={handleRotationChange}
                                 spinVelocityRef={spinVelocityRef}
                             />

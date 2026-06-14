@@ -7,6 +7,8 @@ import {
     coinModelPath,
     defaultImagePath,
     frontFacingRotation,
+    hoverLiftEasePerSecond,
+    hoverLiftRotationY,
     getNearestFrontRotation,
     snapStrength,
     snapVelocityThreshold,
@@ -19,10 +21,13 @@ export default function CoinModel({
     dragRotationDeltaRef,
     frontFrameSource,
     isDraggingRef,
+    isHovered = false,
     modelScale,
+    motionHints = {},
     onRotationChange,
     spinVelocityRef,
 }) {
+    const presentationGroupRef = useRef(null)
     const groupRef = useRef(null)
     const { scene } = useGLTF(coinModelPath)
 
@@ -119,9 +124,20 @@ export default function CoinModel({
     }, [backMaterial, frontMaterial, rimMaterial, scene])
 
     useFrame((_, delta) => {
+        const presentationGroup = presentationGroupRef.current
         const group = groupRef.current
 
-        if (!group) return
+        if (!presentationGroup || !group) return
+
+        const hoverLiftIsActive = motionHints.hoverLift
+            && isHovered
+            && !isDraggingRef.current
+        const hoverLiftEase = Math.min(delta * hoverLiftEasePerSecond, 1)
+        const targetRotationY = hoverLiftIsActive ? hoverLiftRotationY : 0
+
+        presentationGroup.rotation.y += (
+            targetRotationY - presentationGroup.rotation.y
+        ) * hoverLiftEase
 
         group.rotation.y += dragRotationDeltaRef.current
         dragRotationDeltaRef.current = 0
@@ -149,11 +165,15 @@ export default function CoinModel({
 
     return (
         <group
-            ref={groupRef}
-            rotation={[0, frontFacingRotation, 0]}
+            ref={presentationGroupRef}
             scale={modelScale}
         >
-            <primitive object={texturedScene} />
+            <group
+                ref={groupRef}
+                rotation={[0, frontFacingRotation, 0]}
+            >
+                <primitive object={texturedScene} />
+            </group>
         </group>
     )
 }

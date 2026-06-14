@@ -8,6 +8,9 @@ export const maxSpinVelocity = 42
 export const spinDecayPerSecond = 0.48
 export const snapVelocityThreshold = 0.18
 export const snapStrength = 7
+export const hoverLiftRotationY = 0.75
+export const hoverLiftEasePerSecond = 10
+export const hoverHitAreaScale = 0.86
 
 export function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max)

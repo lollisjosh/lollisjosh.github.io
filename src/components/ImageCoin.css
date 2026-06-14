@@ -5,7 +5,6 @@
   margin: 1.75rem auto 1.25rem;
   overflow: visible;
   border-radius: 50%;
-  cursor: grab;
   touch-action: none;
   user-select: none;
 }
@@ -24,6 +23,10 @@
   inset: calc(var(--image-coin-stage-bleed, 4rem) * -1);
 }
 
-.image-coin:active {
+.image-coin[data-is-hovered="true"] {
+  cursor: grab;
+}
+
+.image-coin[data-is-dragging="true"] {
   cursor: grabbing;
 }
