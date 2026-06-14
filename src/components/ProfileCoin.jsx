@@ -5,123 +5,23 @@ import { MeshStandardMaterial, SRGBColorSpace } from 'three'
 
 import './ProfileCoin.css'
 
-const coinModelPath = '/assets/models/pfp-coin.glb'
-const defaultImagePath = '/assets/images/pfp.png'
-const frontFacingRotation = Math.PI
-const fullTurn = Math.PI * 2
-const hiddenFaceThreshold = 0.28
-const dragSpinSensitivity = 0.016
-const maxSpinVelocity = 42
-const spinDecayPerSecond = 0.48
-const snapVelocityThreshold = 0.18
-const snapStrength = 7
-
-/**
- * @typedef {'faces' | 'sequence-loop' | 'sequence-march'} ProfileCoinImageMode
- */
-
-/**
- * @typedef {'atlas' | 'images'} ProfileCoinSourceType
- */
-
-/**
- * @typedef {object} ProfileCoinAtlasSource
- * @property {'atlas'} type
- * @property {string} src
- * @property {number} columns
- * @property {number} rows
- * @property {number} frameCount
- */
-
-/**
- * @typedef {object} ProfileCoinImageSequenceSource
- * @property {'images'} type
- * @property {string[]} frames
- */
-
-/**
- * @typedef {ProfileCoinAtlasSource | ProfileCoinImageSequenceSource} ProfileCoinSource
- */
-
-function clamp(value, min, max) {
-    return Math.min(Math.max(value, min), max)
-}
-
-function getNearestFrontRotation(rotation) {
-    return frontFacingRotation
-        + Math.round((rotation - frontFacingRotation) / fullTurn) * fullTurn
-}
-
-function getSequenceFrameCount(source) {
-    if (!source) return 0
-
-    if (source.type === 'atlas') {
-        return source.frameCount
-    }
-
-    if (source.type === 'images') {
-        return source.frames.length
-    }
-
-    return 0
-}
-
-function getInitialSequenceState(frameCount) {
-    return {
-        frontFrameIndex: 0,
-        backFrameIndex: frameCount > 1 ? 1 : 0,
-        nextFrameIndex: frameCount > 2 ? 2 : 0,
-    }
-}
-
-function getAdvancedSequenceState(currentState, faceName, frameCount, imageMode) {
-    if (frameCount < 1) return currentState
-
-    const selectedFrameIndex = imageMode === 'sequence-loop'
-        ? currentState.nextFrameIndex % frameCount
-        : Math.min(currentState.nextFrameIndex, frameCount - 1)
-
-    const nextFrameIndex = imageMode === 'sequence-loop'
-        ? currentState.nextFrameIndex + 1
-        : Math.min(currentState.nextFrameIndex + 1, frameCount - 1)
-
-    return {
-        ...currentState,
-        [`${faceName}FrameIndex`]: selectedFrameIndex,
-        nextFrameIndex,
-    }
-}
-
-function getFrameSource(source, frameIndex, fallbackImagePath) {
-    if (!source) {
-        return {
-            type: 'image',
-            src: fallbackImagePath,
-        }
-    }
-
-    if (source.type === 'atlas') {
-        return {
-            type: 'atlas',
-            src: source.src,
-            columns: source.columns,
-            rows: source.rows,
-            frameIndex: Math.min(frameIndex, source.frameCount - 1),
-        }
-    }
-
-    if (source.type === 'images') {
-        return {
-            type: 'image',
-            src: source.frames[Math.min(frameIndex, source.frames.length - 1)],
-        }
-    }
-
-    return {
-        type: 'image',
-        src: fallbackImagePath,
-    }
-}
+import {
+    clamp,
+    coinModelPath,
+    defaultImagePath,
+    dragSpinSensitivity,
+    frontFacingRotation,
+    getAdvancedSequenceState,
+    getFrameSource,
+    getInitialSequenceState,
+    getNearestFrontRotation,
+    getSequenceFrameCount,
+    hiddenFaceThreshold,
+    maxSpinVelocity,
+    snapStrength,
+    snapVelocityThreshold,
+    spinDecayPerSecond,
+} from './profileCoin/profileCoinConfig'
 
 function applyFrameToTexture(texture, frameSource) {
     texture.colorSpace = SRGBColorSpace
