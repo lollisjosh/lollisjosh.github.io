@@ -1,0 +1,124 @@
+.contact-section {
+    display: grid;
+    gap: 1.25rem;
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 1rem;
+    border: 2px solid rgb(192 77 217 / 0.65);
+    border-radius: 1.5rem;
+    background:
+        linear-gradient(90deg,
+            rgb(255 255 255 / 0.08),
+            rgb(255 255 255 / 0.03));
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.24);
+}
+
+.contact-section__content {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.contact-section__eyebrow {
+    margin: 0;
+    color: #c04dd9;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-section__content h2 {
+    margin: 0;
+    color: white;
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1;
+}
+
+.contact-section__content p {
+    margin: 0;
+    color: rgb(255 255 255 / 0.86);
+    line-height: 1.6;
+}
+
+.contact-section__form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-section__fieldset {
+    display: grid;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.contact-section__fieldset label {
+    color: white;
+    font-weight: 700;
+}
+
+.contact-section__fieldset input,
+.contact-section__fieldset textarea {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    color: white;
+    font: inherit;
+    background: rgb(0 0 0 / 0.28);
+    border: 1px solid rgb(255 255 255 / 0.22);
+    border-radius: 0.75rem;
+}
+
+.contact-section__fieldset textarea {
+    resize: vertical;
+}
+
+.contact-section__fieldset input:focus,
+.contact-section__fieldset textarea:focus {
+    border-color: #c04dd9;
+    outline: 3px solid rgb(192 77 217 / 0.28);
+}
+
+.contact-section__submit {
+    justify-self: start;
+    padding: 0.75rem 1.1rem;
+    color: white;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #766cf7, #352f8f);
+    border: 2px solid rgb(255 255 255 / 0.18);
+    border-radius: 0.75rem;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-section__submit:hover,
+.contact-section__submit:focus-visible {
+    background: #c04dd9;
+    border-color: white;
+    box-shadow: 0 0.35rem 0.8rem rgb(192 77 217 / 0.4);
+    transform: translateY(-2px);
+}
+
+@media screen and (min-width: 1000px) {
+    .contact-section {
+        width: min(52rem, 78vw);
+        margin: 0 auto;
+        padding: 2rem;
+        border: 2px solid rgb(192 77 217 / 0.65);
+        border-radius: 1.5rem;
+        background:
+            linear-gradient(90deg,
+                rgb(255 255 255 / 0.08),
+                rgb(255 255 255 / 0.03));
+        box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.24);
+    }
+
+    .contact-section__content h2 {
+        font-size: clamp(2rem, 5vw, 4rem);
+    }
+}

@@ -20,8 +20,10 @@ function ProjectShowcase({ projectIds = projects.map((project) => project.id) })
                 </p>
             </div>
 
+            {/* ProjectPreviewList rendered only on Mobile */}
             <ProjectPreviewList projects={selectedProjects} />
 
+            {/*Project Rail rendered only on Desktop */}
             <ProjectRail
                 projects={selectedProjects}
                 attachTo="parent"

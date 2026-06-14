@@ -5,6 +5,7 @@ import ProjectShowcase from '../components/ProjectShowcase'
 import Status from '../components/Status'
 import ProfileImage from '../components/ProfileImage'
 import Bio from '../components/Bio'
+import ContactSection from '../components/ContactSection'
 
 const featuredProjectIds = [
   'antillery',
@@ -30,6 +31,8 @@ function Home() {
           </section>
 
           <ProjectShowcase projectIds={featuredProjectIds} />
+
+          <ContactSection />
         </main>
       </div>
     </Layout>

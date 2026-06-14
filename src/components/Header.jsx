@@ -10,7 +10,6 @@ const navLinks = [
   { href: '/blog.html', label: 'Blogs' },
   { href: '/band.html', label: 'Band' },
   { href: '/interests.html', label: 'Other' },
-  { href: '/contact.html', label: 'Contact' },
 ]
 
 function Header() {
