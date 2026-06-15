@@ -16,6 +16,7 @@ export default defineConfig({
         main: resolve(root, 'index.html'),
         about: resolve(root, 'about.html'),
         projects: resolve(root, 'projects.html'),
+        skills: resolve(root, 'skills.html'),
       },
     },
   },
