@@ -1,73 +1,21 @@
-<!--
-    About Me Page
-    Author: Josh Lollis
-    Date: December 3, 2024
-    CPSC 349 Portfolio Final Project
-    
-    Personal profile page with biography and professional resume sections
-
-    Updated: Dec 22, 2025
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-    <head>
-        <!-- Standard meta -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About | Portfolio</title>
-
-        <!-- This style prevents flash of unstyled content (FOUC) -->
-        <style id="anti-fouc">html{visibility:hidden}</style>
-
-        <!-- Inject shared head links (fonts, Font Awesome, tokens, base, desktop/mobile) -->
-        <script src="/js/head.js"></script>
-
-        <!-- Page-specific CSS (if any) -->
-        <!-- <link rel="stylesheet" href="/css/some-page-only.css"> -->
-    </head>
-
-    <body>
-        <!-- Header injection point -->
-        <div id="header-placeholder"></div>
-        <main>
-            <div class="content-container">
-                <h1 class="snug-header funnel-display-header">About Me</h1>
-                <!-- Profile section -->
-                <div id="pfp-placeholder">
-                    <!-- Profile picture with gradient border -->
-                    <div class="pfp-border hover-scale">
-                        <img src="assets/images/pfp.png" alt="Profile Picture"
-                            class="pfp">
-                    </div>
-                </div>
-
-                <div id="bio-placeholder"></div>
-
-                <!-- Resume sections -->
-                <section class="section-level-1">
-                    <!-- Software Engineer Resume PDF viewer -->
-                    <h2 class="funnel-display-header">Software Engineer
-                        Resume</h2>
-                    <div class="pdf-container">
-                        <object data="/assets/pdf/Joshua-Lollis_Software-Engineer-Resume.pdf"
-                            type="application/pdf">
-                            <p>Unable to display PDF file. <a
-                                    href="/assets/pdf/Joshua-Lollis_Software-Engineer-Resume.pdf"
-                                    class="hover-transform-left">Download</a>
-                                instead.</p>
-                        </object>
-                    </div>
-                </section>
-
-            </div>
-        </main>
-
-        <!-- Footer injection point -->
-        <div id="footer-placeholder"></div>
-
-        <script src="/scripts.js"></script>
-    </body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Josh Lollis, a front-end focused software engineer building interactive interfaces, creative tools, games, and web applications."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>About | Josh Lollis</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/about-main.jsx"></script>
+  </body>
 </html>

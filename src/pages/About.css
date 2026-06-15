@@ -1,0 +1,110 @@
+.about-page {
+  display: grid;
+  gap: 3rem;
+  min-height: 100vh;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 6rem 1rem 3rem;
+}
+
+.about-card,
+.resume-card {
+  border: 2px solid rgb(192 77 217 / 0.65);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(90deg,
+      rgb(255 255 255 / 0.08),
+      rgb(255 255 255 / 0.03));
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.24);
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-card h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 12vw, 5rem);
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.resume-card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.25rem;
+}
+
+.resume-card__header {
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.resume-card__eyebrow {
+  margin: 0;
+  color: #ff7af0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resume-card h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 8vw, 2.75rem);
+  line-height: 1;
+}
+
+.resume-card p {
+  margin: 0;
+  color: rgb(255 255 255 / 0.78);
+  line-height: 1.55;
+}
+
+.resume-card__link {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+  background: #ff7af0;
+  border: 1px solid #ff7af0;
+  border-radius: 999px;
+}
+
+.resume-card__link:hover,
+.resume-card__link:focus-visible {
+  background: #ffc2f8;
+  border-color: #ffc2f8;
+}
+
+.resume-card__viewer {
+  width: 100%;
+  min-height: 70vh;
+  border: 1px solid rgb(255 255 255 / 0.16);
+  border-radius: 1rem;
+  background: rgb(0 0 0 / 0.24);
+}
+
+@media screen and (min-width: 768px) {
+  .about-page {
+    padding: 7rem 2rem 4rem;
+  }
+
+  .about-card {
+    padding: 2.5rem;
+  }
+
+  .resume-card {
+    padding: 2rem;
+  }
+}
