@@ -1,8 +1,8 @@
+import ContentCard from './ContentCard.jsx'
+
 function ChallengeCard({ problem, solution, title }) {
     return (
-        <article className="content-card challenge-card">
-            <h3>{title}</h3>
-
+        <ContentCard className="challenge-card" title={title}>
             <div className="challenge-card__item challenge-card__item--problem">
                 <p>{problem}</p>
             </div>
@@ -10,7 +10,7 @@ function ChallengeCard({ problem, solution, title }) {
             <div className="challenge-card__item challenge-card__item--solution">
                 <p>{solution}</p>
             </div>
-        </article>
+        </ContentCard>
     )
 }
 

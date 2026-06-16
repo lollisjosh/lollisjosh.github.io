@@ -1,12 +1,12 @@
+import ContentCard from './ContentCard.jsx'
+
 function MediaCard({ image, imageAlt, title }) {
     return (
-        <article className="media-card">
-            <h3>{title}</h3>
-
+        <ContentCard className="media-card" title={title}>
             <div className="media-card__frame">
                 <img alt={imageAlt} src={image} />
             </div>
-        </article>
+        </ContentCard>
     )
 }
 
