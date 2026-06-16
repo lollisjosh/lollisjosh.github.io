@@ -23,7 +23,7 @@
     display: grid;
     gap: 1.15rem;
     padding: 2rem;
-    border: 1px solid rgb(255 255 255 / 0.16);
+    border: 1px solid rgb(192 77 217 / 0.45);
     border-radius: 1.5rem;
     background:
         radial-gradient(circle at top left, rgb(255 122 240 / 0.16), transparent 42%),
@@ -96,7 +96,7 @@
     display: grid;
     gap: 1.85rem;
     padding: 1.5rem;
-    border: 1px solid rgb(255 255 255 / 0.14);
+    border: 1px solid rgb(192 77 217 / 0.45);
     border-radius: 1.5rem;
     background: rgb(255 255 255 / 0.045);
     scroll-margin-top: 6rem;
@@ -114,7 +114,7 @@
     font-size: clamp(1.85rem, 8vw, 2.75rem);
 }
 
-.project-detail-section > h3 {
+.project-detail-section>h3 {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
 }
 
@@ -126,7 +126,7 @@
 
 .project-wakatime-badge {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 2rem;
     min-width: 0;
     overflow: hidden;
@@ -204,7 +204,7 @@
 .project-media-frame {
     width: 100%;
     overflow: hidden;
-    border: 1px solid rgb(255 255 255 / 0.14);
+    border: 1px solid rgb(192 77 217 / 0.45);
     border-radius: 1rem;
     background: rgb(0 0 0 / 0.3);
 }
