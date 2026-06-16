@@ -17,6 +17,7 @@ export default defineConfig({
         about: resolve(root, 'about.html'),
         projects: resolve(root, 'projects.html'),
         skills: resolve(root, 'skills.html'),
+        portfolio: resolve(root, 'projects/portfolio.html'),
       },
     },
   },
