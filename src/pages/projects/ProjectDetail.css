@@ -10,11 +10,11 @@
 }
 
 .project-detail-hero,
-.project-action-nav,
-.project-action-card,
-.project-detail-section,
-.project-detail-card,
-.project-media-card {
+.card-link-nav,
+.card-link,
+.content-section,
+.content-card,
+.media-card {
     box-sizing: border-box;
     min-width: 0;
 }
@@ -54,13 +54,13 @@
     line-height: 1.6;
 }
 
-.project-action-nav {
+.card-link-nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
     gap: 1rem;
 }
 
-.project-action-card {
+.card-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -80,19 +80,19 @@
         background 160ms ease;
 }
 
-.project-action-card:hover,
-.project-action-card:focus-visible {
+.card-link:hover,
+.card-link:focus-visible {
     color: #111;
     background: #ff7af0;
     border-color: #ff7af0;
     transform: translate(-0.18rem, -0.08rem);
 }
 
-.project-action-card__icon {
+.card-link__icon {
     font-size: 1.1rem;
 }
 
-.project-detail-section {
+.content-section {
     display: grid;
     gap: 1.85rem;
     padding: 1.5rem;
@@ -102,29 +102,29 @@
     scroll-margin-top: 6rem;
 }
 
-.project-detail-section h2,
-.project-detail-section h3,
-.project-detail-card h3,
-.project-media-card h3 {
+.content-section h2,
+.content-section h3,
+.content-card h3,
+.media-card h3 {
     margin: 0;
     line-height: 1.08;
 }
 
-.project-detail-section h2 {
+.content-section h2 {
     font-size: clamp(1.85rem, 8vw, 2.75rem);
 }
 
-.project-detail-section>h3 {
+.content-section>h3 {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
 }
 
-.project-detail-section p {
+.content-section p {
     margin: 0;
     color: rgb(255 255 255 / 0.78);
     line-height: 1.75;
 }
 
-.project-wakatime-badge {
+.wakatime-badge {
     display: flex;
     justify-content: flex-start;
     min-height: 2rem;
@@ -132,7 +132,7 @@
     overflow: hidden;
 }
 
-.project-wakatime-badge__link {
+.wakatime-badge__link {
     display: inline-block;
     max-width: 100%;
     line-height: 0;
@@ -142,26 +142,26 @@
         transform 160ms ease;
 }
 
-.project-wakatime-badge__link:hover,
-.project-wakatime-badge__link:focus-visible {
+.wakatime-badge__link:hover,
+.wakatime-badge__link:focus-visible {
     opacity: 1;
     transform: scale(1.04);
 }
 
-.project-wakatime-badge img {
+.wakatime-badge img {
     display: block;
     width: 100%;
     max-width: 11.5rem;
     height: auto;
 }
 
-.project-card-grid {
+.card-grid {
     display: grid;
     gap: 1.35rem;
 }
 
-.project-detail-card,
-.project-media-card {
+.content-card,
+.media-card {
     display: grid;
     align-content: start;
     justify-items: center;
@@ -175,12 +175,12 @@
         rgb(0 0 0 / 0.22);
 }
 
-.project-detail-card h3,
-.project-media-card h3 {
+.content-card h3,
+.media-card h3 {
     font-size: clamp(1.1rem, 4vw, 1.35rem);
 }
 
-.project-detail-card ul {
+.content-card ul {
     display: grid;
     justify-items: center;
     gap: 0.7rem;
@@ -192,16 +192,16 @@
     list-style: none;
 }
 
-.project-detail-card li {
+.content-card li {
     max-width: 18rem;
 }
 
-.project-media-grid {
+.media-grid {
     display: grid;
     gap: 1.35rem;
 }
 
-.project-media-frame {
+.media-card__frame {
     width: 100%;
     overflow: hidden;
     border: 1px solid rgb(192 77 217 / 0.45);
@@ -209,32 +209,32 @@
     background: rgb(0 0 0 / 0.3);
 }
 
-.project-media-frame img {
+.media-card__frame img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-.project-challenge-card {
+.challenge-card {
     gap: 0.9rem;
 }
 
-.project-challenge-card__item {
+.challenge-card__item {
     width: 100%;
     max-width: 18rem;
     padding-block: 0.9rem;
     border-block: 2px solid;
 }
 
-.project-challenge-card__item p {
+.challenge-card__item p {
     margin: 0;
 }
 
-.project-challenge-card__item--problem {
+.challenge-card__item--problem {
     border-color: #ae2727;
 }
 
-.project-challenge-card__item--solution {
+.challenge-card__item--solution {
     border-color: #27ae60;
 }
 
@@ -249,20 +249,20 @@
         padding: 2.75rem;
     }
 
-    .project-detail-section {
+    .content-section {
         gap: 2.1rem;
         padding: 2.25rem;
     }
 
-    .project-card-grid {
+    .card-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-media-grid {
+    .media-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-card-grid--three {
+    .card-grid--three {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }

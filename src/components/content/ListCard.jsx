@@ -1,6 +1,6 @@
-function ProjectInfoCard({ items, title }) {
+function ListCard({ items, title }) {
     return (
-        <article className="project-detail-card">
+        <article className="content-card">
             <h3>{title}</h3>
 
             <ul>
@@ -12,4 +12,4 @@ function ProjectInfoCard({ items, title }) {
     )
 }
 
-export default ProjectInfoCard
+export default ListCard

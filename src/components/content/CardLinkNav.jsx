@@ -1,9 +1,9 @@
-function ProjectActionNav({ links }) {
+function CardLinkNav({ links }) {
     return (
-        <nav className="project-action-nav" aria-label="Portfolio project sections">
+        <nav className="card-link-nav" aria-label="Portfolio project sections">
             {links.map((link) => (
                 <a
-                    className="project-action-card"
+                    className="card-link"
                     href={link.href}
                     key={link.href}
                     rel={link.isExternal ? 'noreferrer' : undefined}
@@ -12,7 +12,7 @@ function ProjectActionNav({ links }) {
                     {link.iconClassName ? (
                         <span
                             aria-hidden="true"
-                            className={`project-action-card__icon ${link.iconClassName}`}
+                            className={`card-link__icon ${link.iconClassName}`}
                         />
                     ) : null}
 
@@ -23,4 +23,4 @@ function ProjectActionNav({ links }) {
     )
 }
 
-export default ProjectActionNav
+export default CardLinkNav

@@ -1,8 +1,8 @@
 function WakaTimeBadge({ badge }) {
     return (
-        <div className="project-wakatime-badge">
+        <div className="wakatime-badge">
             <a
-                className="project-wakatime-badge__link"
+                className="wakatime-badge__link"
                 href={badge.href}
                 rel="noreferrer"
                 target="_blank"

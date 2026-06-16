@@ -1,12 +1,12 @@
 import Layout from '../../components/Layout'
-import ProjectDetailSection from '../../components/projectDetail/ProjectDetailSection.jsx'
-import ProjectActionNav from '../../components/projectDetail/ProjectActionNav.jsx'
-import WakaTimeBadge from '../../components/projectDetail/WakaTimeBadge.jsx'
-import ProjectInfoCard from '../../components/projectDetail/ProjectInfoCard.jsx'
-import ProjectMediaCard from '../../components/projectDetail/ProjectMediaCard.jsx'
-import ProjectChallengeCard from '../../components/projectDetail/ProjectChallengeCard.jsx'
+import ContentSection from '../../components/content/ContentSection.jsx'
+import CardLinkNav from '../../components/content/CardLinkNav.jsx'
+import WakaTimeBadge from '../../components/content/WakaTimeBadge.jsx'
+import ListCard from '../../components/content/ListCard.jsx'
+import MediaCard from '../../components/content/MediaCard.jsx'
+import ChallengeCard from '../../components/content/ChallengeCard.jsx'
 
-import './PortfolioProject.css'
+import './ProjectDetail.css'
 
 const wakatimeBadge = {
     href: 'https://wakatime.com/badge/user/a45be745-6431-45a2-8c9d-c19040dcd283/project/22b9f1bf-fc78-4b34-a031-c769df92a570',
@@ -169,9 +169,9 @@ function PortfolioProject() {
                     </p>
                 </section>
 
-                <ProjectActionNav links={projectLinks} />
+                <CardLinkNav links={projectLinks} />
 
-                <ProjectDetailSection id="overview" title="Project Overview">
+                <ContentSection id="overview" title="Project Overview">
                     <WakaTimeBadge badge={wakatimeBadge} />
 
                     <p>
@@ -186,20 +186,20 @@ function PortfolioProject() {
 
                     <h3>Technologies Used</h3>
 
-                    <div className="project-card-grid">
+                    <div className="card-grid">
                         {overviewCards.map((card) => (
-                            <ProjectInfoCard
+                            <ListCard
                                 items={card.items}
                                 key={card.title}
                                 title={card.title}
                             />
                         ))}
                     </div>
-                </ProjectDetailSection>
-                <ProjectDetailSection id="implementation" title="Implementation Details">
-                    <div className="project-card-grid">
+                </ContentSection>
+                <ContentSection id="implementation" title="Implementation Details">
+                    <div className="card-grid">
                         {implementationCards.map((card) => (
-                            <ProjectInfoCard
+                            <ListCard
                                 items={card.items}
                                 key={card.title}
                                 title={card.title}
@@ -221,9 +221,9 @@ function PortfolioProject() {
                         size.
                     </p>
 
-                    <div className="project-media-grid">
+                    <div className="media-grid">
                         {implementationMedia.map((item) => (
-                            <ProjectMediaCard
+                            <MediaCard
                                 image={item.image}
                                 imageAlt={item.imageAlt}
                                 key={item.title}
@@ -231,12 +231,12 @@ function PortfolioProject() {
                             />
                         ))}
                     </div>
-                </ProjectDetailSection>
+                </ContentSection>
 
-                <ProjectDetailSection id="challenges" title="Challenges Faced">
-                    <div className="project-card-grid project-card-grid--three">
+                <ContentSection id="challenges" title="Challenges Faced">
+                    <div className="card-grid card-grid--three">
                         {challengeCards.map((card) => (
-                            <ProjectChallengeCard
+                            <ChallengeCard
                                 key={card.title}
                                 problem={card.problem}
                                 solution={card.solution}
@@ -244,19 +244,19 @@ function PortfolioProject() {
                             />
                         ))}
                     </div>
-                </ProjectDetailSection>
+                </ContentSection>
 
-                <ProjectDetailSection id="features" title="Key Features">
-                    <div className="project-card-grid project-card-grid--three">
+                <ContentSection id="features" title="Key Features">
+                    <div className="card-grid card-grid--three">
                         {featureCards.map((card) => (
-                            <ProjectInfoCard
+                            <ListCard
                                 items={card.items}
                                 key={card.title}
                                 title={card.title}
                             />
                         ))}
                     </div>
-                </ProjectDetailSection>
+                </ContentSection>
             </main>
         </Layout>
     )
